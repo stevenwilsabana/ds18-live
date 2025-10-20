@@ -1,0 +1,52 @@
+{{ 'styles-when-sold-out.css' | asset_url | stylesheet_tag }}
+
+{% if product.tags contains 'theme_marine' %}
+  <style>
+    section.container-sold-out-products h6{
+        color: #0f5182;
+    }
+
+    section.container-sold-out-products p {
+        color: #0f5182;
+    }
+    
+    section.container-sold-out-products button.button.button--outline.button--text.button--full.hidden-touch {
+        background: #0f5182!important;
+        border: #0f5182 solid 1px!important;
+    }
+    
+    .container-back-in-stock__klaviyo a {
+        background: #0f5182!important;
+    }
+  </style>
+{% endif %}
+
+<section class="container-sold-out-products">
+
+  {% if discontinued == true %}
+    <div class="header">
+      <h6>Discontinued Product</h6>
+      <p>This product is discontinued. Check out these alternatives:</p>
+    </div>
+  {% else %}
+    <div class="header">
+      <h6>Product Out of Stock</h6>
+      <p>This product is currently out of stock. Check out these alternatives:</p>
+    </div>
+  {% endif %}
+  
+    <div class="container-sold-out-products__content">
+      {% assign sorted_variants = productsGrid %}
+      {% for product_object in sorted_variants limit: 6 %}
+        {% if product_object.available %}
+          {%- render 'product-item', product: product_object -%}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="or-class">
+      <h6>Or</h6>
+      <p>We will notify you when it arrives:</p>
+    </div>
+    
+  </section>

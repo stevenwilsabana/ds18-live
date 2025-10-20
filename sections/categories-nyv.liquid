@@ -1,0 +1,64 @@
+{{ 'styles-categories-nyv.css' | asset_url | stylesheet_tag }}
+
+<div class="categories-nvy__container">
+
+  <h3 class="heading">{{ section.settings.heading }}</h3>
+
+  <div class="categories-nvy__content">
+    {% for block in section.blocks %}
+      <div class="categorie categorie--{{ forloop.index }}">
+        <a href="{{ block.settings.link }}">
+          <div class="categorie-imagen">
+            <img src="{{ block.settings.imagen | img_url: 'master' }}">
+          </div>
+          <p class="categorie-name">{{ block.settings.categorie_name }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Categories NVY",
+    "class": "categories-nvy",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Categorie",
+        "type": "categorie",
+        "settings": [
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "imagen",
+            "label": "Imagen"
+          },
+          {
+            "type": "text",
+            "id": "categorie_name",
+            "label": "Categorie Name"
+          }
+        ]
+      }
+  	],
+  	"presets": [
+      {
+        "name": "Categories NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

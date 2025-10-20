@@ -1,0 +1,21 @@
+  div.boost-sd__product-item[data-product-id="6741369028669"] .boost-sd__product-info .boost-sd__product-vendor:before,
+  div.boost-sd__product-item[data-product-id="6743906418749"] .boost-sd__product-info .boost-sd__product-vendor:before {
+      content: "FLASH SALE";
+      display: block;
+      background: #de2a2a;
+      color: white;
+      max-width: 90px;
+      margin: 0 auto 10px;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 11px;
+  }
+  
+  
+  @media only screen and (min-width: 768px){
+      div.boost-sd__product-item[data-product-id="6741369028669"] .boost-sd__product-info .boost-sd__product-vendor:before,
+      div.boost-sd__product-item[data-product-id="6743906418749"] .boost-sd__product-info .boost-sd__product-vendor:before {
+          max-width: 100px;
+          font-size: 12px;
+      }
+  }

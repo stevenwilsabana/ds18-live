@@ -1,0 +1,104 @@
+{%- assign blog = section.settings.blog -%}
+
+<div class="blog-posts-new__container">
+  <div class="blog-posts-new__content">
+    <div class="blog-posts-new__content-general">
+      
+      {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+        <header class="section__header text-container">
+          {%- if section.settings.subheading != blank -%}
+            <h2 class="heading heading--small">{{ section.settings.subheading | escape }}</h2>
+          {%- endif -%}
+
+          {%- if section.settings.title != blank -%}
+            <h3 class="heading h2">{{ section.settings.title | escape }}</h3>
+          {%- endif -%}
+        </header>
+      {%- endif -%}
+
+      <div class="container-slider-blogs">
+        <button class="btn-blog-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">{% render 'icon-preview-arrow' %}</button>
+        <article-list {% if settings.stagger_blog_posts_apparition %}stagger-apparition{% endif %} class="article-list article-list--section article-list--section__{{ section.id }}">
+          {%- for article in blog.articles -%}
+            {% if article.tags contains section.settings.tag %}
+              {%- render 'article-item', article: article, heading_size: 'h4' -%}
+            {% endif %}
+          {%- endfor -%}
+        </article-list>
+        <button class="btn-blog-next--{{ section.id }} slick-button-custom slick-button-custom--next">{% render 'icon-next-arrow' %}</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('.article-list--section__{{ section.id }}').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: false,
+    autoplay: false,
+    prevArrow: $('.btn-blog-prev--{{ section.id }}'),
+    nextArrow: $('.btn-blog-next--{{ section.id }} '),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: false
+        }
+      }
+    ]
+  });
+</script>
+
+
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "class": "shopify-section--blog-posts blog-posts-new",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag Select"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Stay up-to-date"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpt",
+      "info": "Change excerpts by editing your blog posts. [Learn more](https://help.shopify.com/en/manual/online-store/blogs/writing-blogs#display-an-excerpt-from-a-blog-post)",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Blog posts",
+      "settings": {
+        "blog": "news"
+      }
+    }
+  ]
+}
+{% endschema %}

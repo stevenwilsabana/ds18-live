@@ -1,0 +1,64 @@
+{% if product.metafields["custom_fields"]["image_with_text"] != blank %}
+
+<section class="section-overview yth-image-with-text">
+     
+    {% for item in product.metafields["custom_fields"]["image_with_text"] %}
+    <image-with-text
+      reveal-on-scroll=""
+      class="image-with-text image-with-text--overlap-image became-visible
+      {% if forloop.first != true %}
+        image-with-text-not-first
+      {% endif %}
+      "
+      style="--image-aspect-ratio: 1; --image-max-height: px; opacity: 1; --section-animation-play-state:running;"
+    >
+      <div class="container">
+        {% if forloop.first == true %}
+        <h3 class="heading h3"><span class="red">Product</span> Overview</h3>
+        {% endif %}
+        
+        <div class="image-with-text__wrapper image-with-text-{% cycle 'odd', 'even' %}">
+          
+          <div class="image-with-text__image-wrapper">
+            {% if item.image != blank %}
+                {{ item.image | img_tag: item.title }}
+            {% endif %}
+          </div>
+
+          <div class="image-with-text__content-wrapper">
+            <div class="image-with-text__content-list">
+              <image-with-text-item class="image-with-text__content text-container text--center">
+                <h2 class="heading heading--small">
+                  <split-lines reveal="" style="opacity: 1;"
+                    ><span reveal="" style="display: block; opacity: 1;">{{ item.small_title }}</span></split-lines
+                  >
+                </h2>
+                <h3 class="heading h3">
+                  <split-lines reveal="" style="opacity: 1;">
+                    <span reveal="" style="display: block; opacity: 1;">{{ item.title }}</span>
+                    </split-lines>
+                </h3>
+                <div class="image-with-text__text-wrapper" reveal="" style="opacity: 1;">
+                    {{ item.body }}
+                </div>
+              </image-with-text-item>
+            </div>
+          </div>
+        </div>
+      </div>
+    </image-with-text>
+{% endfor %}
+  </div>
+</section>
+
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "DS18 - Image with text",
+  "tag": "section",
+  "class": "yth-image-with-text",
+  "settings": []
+}
+{% endschema %}

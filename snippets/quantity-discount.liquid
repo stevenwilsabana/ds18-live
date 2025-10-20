@@ -1,0 +1,206 @@
+{{ 'styles-quantity-discount.css' | asset_url | stylesheet_tag }}
+
+<section class="quantity-discount">
+
+  <div class="quantity-discount__container">
+
+    <div class="quantity-discount__item">
+      <input type="radio" id="quantity-discount-1" name="quantity-discount" value="1" checked />
+      <label for="quantity-discount-1">
+        <div class="quantity-discount__label">
+          <div class="quantity-discount__heading">
+            <div class="radio-select">
+              <div class="radio-select__checked"></div>
+            </div>  
+            <p>Single</p>
+          </div>
+          <div class="quantity-discount__details">
+            <!--<p class="discount-global">Standard price</p>-->
+            <p class="prices">
+              <span>
+                {{ product.price | money }}
+                {% if product.metafields.prod.each_pair_text %}
+                  <i> / {{ product.metafields.prod.each_pair_text }}</i>
+                {% endif %}
+              </span>
+            </p>
+            <p class="discount-global">Ships Free Next Business Day</p>
+          </div>
+        </div>
+      </label>
+    </div>
+
+
+
+    <div class="quantity-discount__item">
+      <input type="radio" id="quantity-discount-2" name="quantity-discount" value="2" />
+      <label for="quantity-discount-2">
+        <div class="quantity-discount__label">
+          <div class="quantity-discount__heading">
+            <div class="radio-select">
+              <div class="radio-select__checked"></div>
+            </div>  
+            <p>Pairs</p>
+          </div>
+
+          <div class="quantity-discount__details">
+
+            {% assign price_pair_regular = product.price | times: 1 %}
+            {% assign price_pair_offer = price_pair_regular | times: 0.97 %}
+    
+            <!--<p class="discount-global">Save 3%</p>-->
+            <p class="prices">
+              <span class="regular">{{ price_pair_regular | money }}</span>
+              <span class="offert">{{ price_pair_offer | money }}
+
+                {% if product.metafields.prod.each_pair_text %}
+                  <i> / {{ product.metafields.prod.each_pair_text }}</i>
+                {% endif %}
+              
+              </span>
+              <span class="discount">3% OFF</span>
+            </p>
+            <p class="discount-global">Ships Free Next Business Day</p>
+          </div>
+        </div>
+      </label>
+    </div>
+
+
+
+    {% comment %}
+      
+    
+
+    <div class="quantity-discount__item quantity-discount__item--pair-three">
+
+      <div class="quantity-discount__item--pair-three__heading">
+
+        <div class="radio-box-container">
+          <input type="radio" id="quantity-discount-2" name="quantity-discount" value="2" />
+          <label for="quantity-discount-2">
+            <div class="quantity-discount__label">
+              <div class="quantity-discount__heading">
+                <div class="radio-select">
+                  <div class="radio-select__checked"></div>
+                </div>  
+                <p>Pairs</p>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        
+        <div class="radio-box-container">
+          <input type="radio" id="quantity-discount-3" name="quantity-discount" value="3" />
+          <label for="quantity-discount-3">
+            <div class="quantity-discount__label">
+              <div class="quantity-discount__heading">
+                <div class="radio-select">
+                  <div class="radio-select__checked"></div>
+                </div>  
+                <p>Threes</p>
+              </div>
+            </div>
+          </label>
+        </div>
+
+      </div>
+
+
+      <div class="quantity-discount__details">
+
+        {% assign price_pair_regular = product.price | times: 1 %}
+        {% assign price_pair_offer = price_pair_regular | times: 0.97 %}
+
+        <!--<p class="discount-global">Save 3%</p>-->
+        <p class="prices">
+          <span class="regular">{{ price_pair_regular | money }}</span>
+          <span class="offert">{{ price_pair_offer | money }}</span>
+          <span class="discount">3% OFF</span>
+        </p>
+        <p class="discount-global">Ships Free Next Business Day</p>
+      </div>
+
+      
+    </div>
+
+    {% endcomment %}
+
+    
+    {% comment %}
+      <div class="quantity-discount__item">
+        {% assign price_threes_regular = product.price | times: 1 %}
+        {% assign price_threes_offer = price_threes_regular | times: 0.97 %}
+        <input type="radio" id="quantity-discount-3" name="quantity-discount" value="3" />
+        <label for="quantity-discount-3">
+          <div class="quantity-discount__label">
+            <div class="quantity-discount__heading">
+              <div class="radio-select">
+                <div class="radio-select__checked"></div>
+              </div>  
+              <p>Threes</p>
+            </div>
+            <div class="quantity-discount__details">
+              <!--<p class="discount-global">Save 3%</p>-->
+              <p class="prices">
+                <span class="regular">{{ price_threes_regular | money }}</span>
+                <span class="offert">{{ price_threes_offer | money }}</span>
+                <span class="discount">3% OFF</span>
+              </p>
+              <p class="discount-global">Ships Free Next Business Day</p>
+            </div>
+          </div>
+        </label>
+      </div>
+    {% endcomment %}
+
+
+
+    <div class="quantity-discount__item">
+      {% assign price_more_regular = product.price | times: 1 %}
+      {% assign price_more_offer = price_more_regular | times: 0.93 %}
+      <input type="radio" id="quantity-discount-4" name="quantity-discount" value="3" data-price="{{ product.price }}" />
+      <label for="quantity-discount-4">
+        <div class="quantity-discount__label">
+          <div class="quantity-discount__heading">
+            <div class="radio-select">
+              <div class="radio-select__checked"></div>
+            </div>  
+            <p>3 or More</p>
+          </div>
+          <div class="quantity-discount__details">
+            
+            {% assign total_inventory = 0 %}
+            {% for variant in product.variants %}
+              {% assign total_inventory = total_inventory | plus: variant.inventory_quantity %}
+            {% endfor %}
+            <div class="quantity-control">
+              <button type="button" class="quantity-btn quantity-minus">−</button>
+              <input type="number" class="quantity-input" value="3" min="3" max="{{ total_inventory }}" step="1" />
+              <button type="button" class="quantity-btn quantity-plus">+</button>
+            </div>
+            
+            <!--<p class="discount-global">Save 7%</p>-->
+            <p class="prices">
+              <span class="regular">{{ price_more_regular | money }}</span>
+              <span class="offert">{{ price_more_offer | money }}
+                {% if product.metafields.prod.each_pair_text %}
+                  <i> / {{ product.metafields.prod.each_pair_text }}</i>
+                {% endif %}
+              </span>
+              <span class="discount">7% OFF</span>
+            </p>
+            <p class="discount-global">Ships Free Next Business Day</p>
+          </div>
+        </div>
+      </label>
+    </div>
+
+  </div>
+  
+</section>
+
+
+
+{{ 'script-quantity-discount.js' | asset_url | script_tag }}

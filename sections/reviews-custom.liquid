@@ -1,0 +1,466 @@
+<style>
+.section-reviews-home img {
+  width: 100%;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+.section-reviews-home {
+  background: #282828;
+  padding: var(--vertical-breather) 10px!important;
+  opacity: 0;
+}
+
+
+.section-reviews-home .contianer-text-title-main--desktop {
+    display: none;
+}
+
+.section-reviews-home .contianer-text-title-main--mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  padding: 0 50px;
+}
+
+.section-reviews-home .contianer-text-title-main h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 25px!important;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.section-reviews-home .contianer-text-title-main .reviews-new-home__stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    width: 120px;
+}
+
+.section-reviews-home .contianer-text-title-main .reviews-new-home__stars svg {
+    fill: white;
+    width: 100%;
+}
+
+.reviews-new-home__container-reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.reviews-new-home__container-reviews > button  {
+    border: 0px;
+    width: 25px!important;
+    height: 25px!important;
+    border-radius: 0!important;
+    overflow: hidden;
+    background: transparent;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+}
+
+.reviews-new-home__container-reviews > button svg {
+  width: 100%;
+  fill: white;
+}
+
+.reviews-new-home__container-reviews .container-reviews__slider {
+    width: calc(100% - 60px);
+    margin: 0;
+
+}
+
+.reviews-new-home__container-reviews .slick-list {
+    width: 100%;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review {
+    padding: 30px 20px;
+    background: white;
+    margin: 0 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .review__product {
+  margin-bottom: 20px;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .review__product a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .review__product a img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 10px;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .review__product a span {
+    color: #070707;
+    font-weight: 300;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+    font-size: 15px;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .reviews-new-home__contain-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .reviews-new-home__contain-text .reviews-new-home__stars-review {
+    width: 110px;
+    margin-bottom: 5px;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .reviews-new-home__contain-text .reviews-new-home__stars-review svg {
+    width: 100%;
+    fill: red;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .reviews-new-home__contain-text .reviews-new-home__texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .reviews-new-home__contain-text .reviews-new-home__texto h3 {
+  margin: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: unset;
+  color: red;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .reviews-new-home__contain-text .reviews-new-home__texto p {
+    margin: 0;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 14px!important;
+  
+}
+
+.reviews-new-home__container-reviews .reviews-new-home__review .reviews-new-home__contain-text .reviews-new-home__texto .reviews-footer p {
+  margin: 0;
+  color: #ababab;
+}
+
+.reviews-new-home__button {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviews-new-home__button a.button.button--primary {
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: red;
+    color: #fff;
+    min-width: 180px;
+    min-height: 45px;
+    font-weight: 700;
+    padding: 0;
+    transition: all .3s;
+    border: red solid 1px;
+    margin-top: 30px;
+}
+
+
+@media only screen and (min-width: 1200px) {
+  .section-reviews-home {
+    padding: 80px 10px!important;
+  }
+  
+  .section-reviews-home .reviews-new-home {
+      max-width: 1400px;
+      margin: auto;
+  }
+
+  
+  .section-reviews-home .contianer-text-title-main h3 {
+    font-size: 65px!important;
+    line-height: 65px!important;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .section-reviews-home .contianer-text-title-main .reviews-new-home__stars {
+    width: 200px;
+  }
+  
+  .section-reviews-home .contianer-text-title-main--mobile,
+  .reviews-new-home__button--mobile{
+    display: none;
+  }
+
+  .section-reviews-home .contianer-text-title-main--desktop {
+    display: block;
+    width: 30%;
+    padding: 0 30px;
+  }
+
+  .reviews-new-home__container-reviews a.button.button--primary {
+    min-width: 300px;
+    min-height: 60px;
+    font-size: 20px;
+    transition: all .3s;
+    border: red solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: red;
+    color: #fff;
+    margin-top: 60px;
+    transition: all .3s;
+  }
+
+  .reviews-new-home__container-reviews a.button.button--primary:hover {
+    background: white;
+    color: red;
+  }
+
+  .reviews-new-home__container-reviews .container-reviews__slider {
+    width: calc(65% - 40px);
+  }
+
+   .reviews-new-home__button {
+    justify-content: flex-start;
+   }
+
+  .reviews-new-home__container-reviews .reviews-new-home__review {
+    padding: 60px 50px;
+    margin: 0 10px;
+  }
+
+  .reviews-new-home__container-reviews .reviews-new-home__review .reviews-new-home__contain-text .reviews-new-home__texto p {
+    font-size: 15px;
+  }
+
+   
+} 
+</style>
+
+
+
+<section class="reviews-new-home">
+
+  <div class="contianer-text-title-main contianer-text-title-main--mobile">
+      <h3 class="heading h2">{{ section.settings.heading }}</h3>
+      <div class="reviews-new-home__stars">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 88.5 14.9"><polygon points="10,4.8 7.7,0 5.3,4.8 0,5.6 3.8,9.4 2.9,14.9 7.7,12.3 12.5,14.9 11.5,9.4 15.3,5.6"></polygon><polygon points="28.3,4.8 26,0 23.6,4.8 18.3,5.6 22.1,9.4 21.1,14.9 26,12.3 30.8,14.9 29.8,9.4 33.6,5.6"></polygon><polygon points="46.6,4.8 44.2,0 41.9,4.8 36.6,5.6 40.4,9.4 39.4,14.9 44.2,12.3 49.1,14.9 48.1,9.4 51.9,5.6"></polygon><polygon points="64.9,4.8 62.5,0 60.2,4.8 54.9,5.6 58.7,9.4 57.7,14.9 62.5,12.3 67.3,14.9 66.4,9.4 70.2,5.6"></polygon><polygon points="88.5,5.6 83.2,4.8 80.8,0 78.4,4.8 73.2,5.6 77,9.4 76,14.9 80.8,12.3 85.6,14.9 84.7,9.4"></polygon></svg>
+      </div>
+  </div>
+
+  <div class="reviews-new-home__container-reviews">
+
+    <button class="btn-anouncement-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">{% render 'icon-preview-arrow' %}</button>
+
+    <div class="contianer-text-title-main contianer-text-title-main--desktop">
+      <h3 class="heading h2">{{ section.settings.heading }}</h3>
+      <div class="reviews-new-home__stars">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 88.5 14.9"><polygon points="10,4.8 7.7,0 5.3,4.8 0,5.6 3.8,9.4 2.9,14.9 7.7,12.3 12.5,14.9 11.5,9.4 15.3,5.6"></polygon><polygon points="28.3,4.8 26,0 23.6,4.8 18.3,5.6 22.1,9.4 21.1,14.9 26,12.3 30.8,14.9 29.8,9.4 33.6,5.6"></polygon><polygon points="46.6,4.8 44.2,0 41.9,4.8 36.6,5.6 40.4,9.4 39.4,14.9 44.2,12.3 49.1,14.9 48.1,9.4 51.9,5.6"></polygon><polygon points="64.9,4.8 62.5,0 60.2,4.8 54.9,5.6 58.7,9.4 57.7,14.9 62.5,12.3 67.3,14.9 66.4,9.4 70.2,5.6"></polygon><polygon points="88.5,5.6 83.2,4.8 80.8,0 78.4,4.8 73.2,5.6 77,9.4 76,14.9 80.8,12.3 85.6,14.9 84.7,9.4"></polygon></svg>
+      </div>
+      <div class="reviews-new-home__button reviews-new-home__button--desktop">
+        <a class="button button--primary" href="{{ section.settings.link_button }}">{{ section.settings.button }}</a>
+      </div>
+    </div>
+
+    <div class="container-reviews__slider container-reviews__slider--{{ section.id }}">
+      {% for block in section.blocks %}
+
+          {% case block.type %}
+  
+              {% when 'reviews-home' %}
+      
+      			<div {{ block.shopify_attributes }} class="reviews-new-home__review">
+
+                    <div class="review__product">
+                      <a href="{{ block.settings.product_review.url }}" target="_blank">
+                        <img src="{{ block.settings.product_review.featured_image | img_url: 'master' }}">
+                        <span>{{ block.settings.product_review.title }}</span>
+                      </a>
+                    </div>
+
+                  
+                    <div class="reviews-new-home__contain-text">
+                        <div class="reviews-new-home__stars-review">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 88.5 14.9"><polygon points="10,4.8 7.7,0 5.3,4.8 0,5.6 3.8,9.4 2.9,14.9 7.7,12.3 12.5,14.9 11.5,9.4 15.3,5.6"></polygon><polygon points="28.3,4.8 26,0 23.6,4.8 18.3,5.6 22.1,9.4 21.1,14.9 26,12.3 30.8,14.9 29.8,9.4 33.6,5.6"></polygon><polygon points="46.6,4.8 44.2,0 41.9,4.8 36.6,5.6 40.4,9.4 39.4,14.9 44.2,12.3 49.1,14.9 48.1,9.4 51.9,5.6"></polygon><polygon points="64.9,4.8 62.5,0 60.2,4.8 54.9,5.6 58.7,9.4 57.7,14.9 62.5,12.3 67.3,14.9 66.4,9.4 70.2,5.6"></polygon><polygon points="88.5,5.6 83.2,4.8 80.8,0 78.4,4.8 73.2,5.6 77,9.4 76,14.9 80.8,12.3 85.6,14.9 84.7,9.4"></polygon></svg>
+                        </div>
+                        <div class="reviews-new-home__texto">
+                            <h3 class="reviews-new-home__texto-title">{{ block.settings.title_review }}</h3>
+                            <p class="reviews-new-home__texto-content">{{ block.settings.review }}</p>
+                            <div class="reviews-footer">
+                              <p class="reviews-new-home__name">{{ block.settings.buyer }}</p>
+                              <p class="reviews-new-home__date">{{ block.settings.date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+  
+          {% endcase %}
+  
+        {% endfor %}
+
+      </div>
+
+    <button class="btn-anouncement-next--{{ section.id }} slick-button-custom slick-button-custom--next">{% render 'icon-next-arrow' %}</button>
+    
+  </div>
+
+  <div class="reviews-new-home__button reviews-new-home__button--mobile">
+    <a class="button button--primary" href="{{ section.settings.link_button }}">{{ section.settings.button }}</a>
+  </div>
+
+</section>
+
+
+
+<script>
+	
+
+  function reziseReview($review){
+    var $height = $($review).map(function (){ return $(this).outerHeight(true); }).get();
+    var minHeight = Math.max.apply(null, $height); $($review).css({ 'min-height': minHeight });
+  };
+
+  $('.reviews-new-home__container-reviews .container-reviews__slider').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    prevArrow: $('.slick-button-custom--prev'),
+    nextArrow: $('.slick-button-custom--next'),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: false
+        }
+      }
+    ]
+  });
+
+  $('.reviews-new-home__container-reviews .container-reviews__slider').on('sliderLoaded', function() {
+    var $review = ".container-reviews__slider .reviews-new-home__review";
+    reziseReview($review);
+    $('.section-reviews-home').animate({ opacity: 1 }, 300);
+  });
+
+  $('.reviews-new-home__container-reviews .container-reviews__slider').trigger('sliderLoaded');
+
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Reviews",
+	"tag": "section",
+  	"class": "section-reviews-home",
+    "settings": [
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading",
+			"default": "Why Our Customers Love Us"
+		},
+		{
+			"type": "url",
+			"id": "link_button",
+			"label": "Button Link"
+		},
+		{
+			"type": "text",
+			"id": "button",
+			"label": "Button",
+			"default": "Show More"
+		}
+    ],
+	"blocks": [
+		{
+			"name": "Reviews",
+			"type": "reviews-home",
+			"settings": [
+                {
+                  "type": "product",
+                  "id": "product_review",
+                  "label": "Product Review"
+                },
+				{
+					"type": "text",
+                    "id": "title_review",
+                    "label": "Title Review",
+                    "default": "Title Review"
+				},
+				{
+                    "type": "textarea",
+                    "id": "review",
+                    "label": "Review",
+                    "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin sagittis ligula, in tempor lorem interdum ac. Pellentesque tristique vehicula elementum. Nulla id maximus diam. Aliquam molestie iaculis ipsum, at sagittis ante. Sed ante augue, rutrum a tempus id, viverra at justo. Sed vitae efficitur magna."
+                },
+				{
+					"type": "text",
+                    "id": "buyer",
+                    "label": "Name Buyer",
+                    "default": "John D."
+				},
+                {
+					"type": "text",
+                    "id": "date",
+                    "label": "Date Review",
+                    "default": "8 days ago"
+				}
+			]
+		}
+	],
+	"presets": [
+    {
+      "name": "Reviews Custom",
+      "category": "Custom"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

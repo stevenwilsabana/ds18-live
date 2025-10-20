@@ -1,0 +1,144 @@
+.shopify-section.new-header-collection .custom-tabs-section {
+    display: flex;
+    flex-direction: column;
+    background: #F4F4F4;
+    max-width: 1600px;
+    margin: auto;
+    padding: 0px;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section ul.tab-buttons {
+    border-bottom: #E4E4E4 solid 1px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section ul.tab-buttons .tab {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    white-space: nowrap;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #626262;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section ul.tab-buttons li.tab.active {
+    color: black;
+    text-decoration: underline;
+    text-underline-offset: 13px;
+    text-decoration-thickness: 3px;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content {
+    display: none;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content.active {
+    display: block;
+}
+
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 95px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item a.tab-icon-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item a.tab-icon-link img {
+    width: 50%;
+    padding: 0;
+    transition: all .3s;
+    filter: brightness(0) saturate(100%);
+}
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item a.tab-icon-link.is-active img {
+    filter: unset;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item a.tab-icon-link p {
+    font-size: 10px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin: 0;
+    margin-top: 10px;
+    transition: all .3s;
+}
+
+.shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item a.tab-icon-link.is-active p {
+    color: #00AEEE;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 768px){
+    .shopify-section.new-header-collection .custom-tabs-section {
+        padding: 20px;
+    }
+
+    .shopify-section.new-header-collection .custom-tabs-section ul.tab-buttons {
+        gap: 40px;
+    }
+
+    .shopify-section.new-header-collection .custom-tabs-section ul.tab-buttons .tab {
+        padding: 0px 0px 10px;
+        font-size: 15px;
+    }
+
+    .shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item {
+        padding: 20px 0 5px;
+        width: 110px;
+    }
+
+    .shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item a.tab-icon-link img {
+
+        padding: 0;
+    }
+
+    .shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons {
+        gap: 20px;
+    }
+
+    .shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item a.tab-icon-link p {
+        font-size: 11px;
+        margin-top: 15px;
+    }
+
+    .shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item:hover a.tab-icon-link img {
+        filter: unset;
+    }
+
+    .shopify-section.new-header-collection .custom-tabs-section .tab-content .tab-icons .icon-item:hover a.tab-icon-link p {
+        color: #00AEEE;
+        font-weight: bold;
+    }
+
+}

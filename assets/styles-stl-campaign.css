@@ -1,0 +1,53 @@
+/* ESTILOS PARA PRODUCTOS EN CAMPAÑA */
+
+.product-stl .product-stl__details .product-stl__information p.label-campaign-stl {
+    margin: 0;
+    margin-bottom: 8px;
+    background: #de2a2a;
+    padding: 5px 15px;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.product-stl .product-stl__details .product-stl__information .prices > p.discount-campaign-stl {
+    border: rgb(222, 42, 42) solid 1px;
+    font-size: 10px;
+    padding: 3px 5px;
+    background: #de2a2a;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.product-stl .product-stl__details .product-stl__information .prices.prices--campaign {
+    flex-wrap: wrap;
+}
+
+.product-stl .product-stl__details .product-stl__information .prices.prices--campaign > p.container-offert span {
+    font-size: 13px!important;
+    line-height: 13px!important;
+}
+
+shop-the-look-item.shop-the-look__item,
+shop-the-look.shop-the-look {
+    background: white;
+    overflow: unset!important;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .product-stl .product-stl__slider {
+        width: 35%;
+    }
+
+    .product-stl .product-stl__details {
+        width: 65%;
+    }
+
+    openable-element.shop-the-look__product {
+        max-width: 550px;
+        padding: 25px 20px !important;
+    }
+}

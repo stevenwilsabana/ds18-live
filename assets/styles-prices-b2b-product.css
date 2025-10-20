@@ -1,0 +1,100 @@
+/* Precios Principales */
+
+.prices-b2b-pdp {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 25px;
+}
+
+.prices-b2b-pdp p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prices-b2b-pdp p.wholesale,
+.prices-b2b-pdp p.dealer {
+    margin-bottom: 5px;
+}
+
+.prices-b2b-pdp p.wholesale span {
+    margin-left: 5px;
+    font-size: 28px;
+    line-height: 28px;
+}
+
+.prices-b2b-pdp p.wholesale b {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.prices-b2b-pdp p.retail,
+.prices-b2b-pdp p.dealer {
+    opacity: 0.5;
+}
+
+.prices-b2b-pdp p.retail span,
+.prices-b2b-pdp p.dealer span {
+    margin-left: 5px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .prices-b2b-pdp {
+        align-items: flex-start;
+    }
+
+    .prices-b2b-pdp p.wholesale {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* ESTILOS EACH/PAIR & M/C */
+
+.prices-b2b-pdp i {
+    margin-left: 5px;
+}
+
+.quantity-buy-container.container-uniq-form-ds .show-quantity {
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.quantity-buy-container.container-uniq-form-ds .show-quantity > p {
+    margin: 0;
+}
+
+.quantity-buy-container.container-uniq-form-ds .show-quantity > div {
+    border-left: #282828 solid 1px;
+    
+}
+
+.quantity-buy-container.container-uniq-form-ds .show-quantity > p b {
+    margin-right: 5px;
+}
+
+.quantity-buy-container.container-uniq-form-ds .show-quantity > p.full-mc span {
+    font-weight: 400!important;
+    margin: 0;
+}
+
+
+
+
+/* ESTILOS PREORDEN */
+
+p.note-preorder-product-b2b {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    font-size: 13px!important;
+    font-weight: bold!important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: #de2a2a;
+}

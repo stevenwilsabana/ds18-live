@@ -1,0 +1,37 @@
+{% comment %}
+  <div class="banner-manuals-page__container">
+    <img class="banner-mobile" src="{{ section.settings.mobile | img_url: 'master' }}">
+    <img class="banner-desktop" src="{{ section.settings.desktop | img_url: 'master' }}">
+  </div>
+{% endcomment %}
+
+{% if section.settings.steps != blank %}
+  <div class="steps-manuals__container">
+    {{ section.settings.steps }}  
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Banners Manuals Page",
+    "class": "banner-manuals-page",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "mobile",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "richtext",
+        "id": "steps",
+        "label": "Steps"
+      }
+    ]
+  }
+{% endschema %}

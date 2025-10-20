@@ -1,0 +1,988 @@
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+  NOTE TO DEVELOPERS: welcome to Focal theme! We hope that you will enjoy editing this theme as much as we did for
+    developing it. We have put a lot of work to make this theme as developer friendly as possible by offering you
+    hooks to integrate into critical parts of the theme. You will find the complete technical documentation (including
+    all events, dependencies...) in the "custom.js" file, located in the Assets folder.
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<!doctype html>
+
+{%- assign direction = 'ltr' -%}
+{%- case request.locale.iso_code -%}
+  {%- when 'ar', 'arc', 'dv', 'fa', 'ha', 'he', 'kwh', 'ks', 'ku', 'ps', 'ur', 'yi' -%}
+    {%- assign direction = 'rtl' -%}
+{%- endcase -%}
+
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ direction }}">
+  <head>
+<link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://conf.config-security.com/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://whale.camera/' crossorigin />
+<script>
+/* >> TriplePixel :: start*/
+window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"2.11",plat:"SHOPIFY",isHeadless:false},function(W,H,A,L,E,_,B,N){function O(U,T,P,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,P?(H.open("POST",U,!0),H.setRequestHeader("Content-Type","application/json")):H.open("GET",U,!0),H.send(JSON.stringify(P||{})),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):P||(N[B]=R)):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1,P))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1,L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)};try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push({u:location.href,r:document.referrer,t:Date.now(),id:L()}),A.setItem(H+"U",JSON.stringify(E))}catch(e){}var i,m,p;A.getItem('"!nC`')||(_=A,A=N,A[H]||(E=A[H]=function(t,e,a){return void 0===a&&(a=[]),"State"==t?E.s:(W=L(),(E._q=E._q||[]).push([W,t,e].concat(a)),W)},E.s="Installed",E._q=[],E.ch=W,B="configSecurityConfModel",N[B]=1,O("https://conf.config-security.com/model",5),i=L(),m=A[atob("c2NyZWVu")],_.setItem("di_pmt_wt",i),p={id:i,action:"profile",avatar:_.getItem("auth-security_rand_salt_"),time:m[atob("d2lkdGg=")]+":"+m[atob("aGVpZ2h0")],host:A.TriplePixelData.TripleName,plat:A.TriplePixelData.plat,url:window.location.href,ref:document.referrer,ver:A.TriplePixelData.ver},O("https://api.config-security.com/event",5,p),O("https://whale.camera/live/dot.txt",5)))}}("","TriplePixel",localStorage);
+/* << TriplePixel :: end*/
+</script>
+{% render 'replo-head' %}
+<link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin />
+<script>
+/* >> TriplePixel :: start*/
+window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},function(W,H,A,L,E,_,B,N){function O(U,T,P,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,P?(H.open("POST",U,!0),H.setRequestHeader("Content-Type","application/json")):H.open("GET",U,!0),H.send(JSON.stringify(P||{})),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):P||(N[B]=R)):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1;try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push(location.href),A.setItem(H+"U",JSON.stringify(E))}catch(e){}var i,m,p;A.getItem('"!nC`')||(_=A,A=N,A[H]||(L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)},E=A[H]=function(t,e){return"State"==t?E.s:(W=L(),(E._q=E._q||[]).push([W,t,e]),W)},E.s="Installed",E._q=[],E.ch=W,B="configSecurityConfModel",N[B]=1,O("//conf.config-security.com/model",5),i=L(),m=A[atob("c2NyZWVu")],_.setItem("di_pmt_wt",i),p={id:i,action:"profile",avatar:_.getItem("auth-security_rand_salt_"),time:m[atob("d2lkdGg=")]+":"+m[atob("aGVpZ2h0")],host:A.TriplePixelData.TripleName,url:window.location.href,ref:document.referrer,ver:window.TriplePixelData.ver},O("//api.config-security.com/",5,p),O("//triplewhale-pixel.web.app/dot1.9.txt",5)))}}("","TriplePixel",localStorage);
+/* << TriplePixel :: end*/
+</script>
+    
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0"
+    >
+    <meta name="theme-color" content="{{ settings.header_background }}">
+
+    <title>
+      {% if page_title == blank -%}
+        {{- shop.name -}}
+      {%- else -%}
+        {{- page_title -}}
+        {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif -%}
+      {%- endif %}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    <!-- Favicon Setup -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/IMG_5290.jpg?v=1745280387">
+<link rel="icon" type="image/png" sizes="192x192" href="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/IMG_5290.jpg?v=1745280387">
+<link rel="apple-touch-icon" href="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/IMG_5290.jpg?v=1745280387">
+<link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/IMG_5290.jpg?v=1745280387">
+
+
+
+    {% comment %} Customs Fonts NVY {% endcomment %}
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      {{ 'custom-fonts-nvy.css' | asset_url | stylesheet_tag }}
+
+    
+
+    {%- comment -%}Few prefech to increase performance on commonly used third-parties{%- endcomment -%}
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    {%- unless settings.heading_font.system? and settings.text_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    {%- comment -%}Preload important resources{%- endcomment -%}
+    <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
+    <link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
+    <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
+
+    {%- comment -%}
+      IMPLEMENTATION NOTE: for improving performance, Focal tries to preload images on known pages (such as blog page,
+      product or collection pages). In order to keep a main JS file size minimal, the theme also lazyloads non-essential
+      libraries (such as PhotoSwipe or Flickity) and only loads them on demand.
+    {%- endcomment -%}
+    {%- if request.page_type == 'product' -%}
+      {%- assign selected_media = product.selected_variant.featured_media | default: product.featured_media -%}
+
+      <link rel="preload" as="fetch" href="{{ product.url }}.js" crossorigin>
+      <link
+        rel="preload"
+        as="image"
+        imagesizes="(max-width: 999px) calc(100vw - 48px), 640px"
+        imagesrcset="{% render 'image-attributes', image: selected_media, sizes: '400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800', sizes_only: true %}"
+      >
+
+      {%- if product.media.size > 1 -%}
+        <link rel="preload" as="script" href="{{ 'flickity.js' | asset_url }}">
+      {%- endif -%}
+    {%- elsif request.page_type == 'collection' and collection.image -%}
+      <link
+        rel="preload"
+        as="image"
+        media="(max-width: 740px)"
+        imagesizes="100vw"
+        imagesrcset="{% render 'image-attributes', image: collection.image, sizes: '400,500,600,700,800,900,1000', height_constraint: 600, crop: 'center', sizes_only: true %}"
+      >
+      <link
+        rel="preload"
+        as="image"
+        media="(min-width: 741px)"
+        imagesizes="100vw"
+        imagesrcset="{% render 'image-attributes', image: collection.image, sizes: '600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600', sizes_only: true %}"
+      >
+    {%- endif -%}
+
+    {% render 'social-meta-tags' %}
+    {% render 'microdata-schema' %}
+    {% render 'css-variables', direction: direction %}
+    {% render 'js-variables', direction: direction %}
+
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+    {% if template.name == 'product' %}
+      {% unless product.template_suffix == 'nvy' %}
+      <link rel="stylesheet" href="{{ 'new-page.css' | asset_url }}">
+      {% endunless %}
+    {% endif %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="{{ 'vendor.js' | asset_url }}" defer></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+
+    {% comment %}
+    
+    {% endcomment %}
+      
+    {% render 'boost-sd-fallback' %}
+    {{ content_for_header }}
+    {% render 'judgeme_core' %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    >
+
+    {% comment %} JQuery CDN {% endcomment %}
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      
+
+    {% comment %} Slick Slide CDN {% endcomment %}
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    
+    {% comment %} Modal JQUERY {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    
+    {% if template contains 'product' %}
+      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}">
+    {% endif %}
+
+
+
+    {% comment %} Tooltip OPENTIP {% endcomment %}
+      {{ 'opentip-jquery.css' | asset_url | stylesheet_tag }}
+      {{ 'opentip-jquery.min.js' | asset_url | script_tag }}
+
+
+    {% comment %} GSAP {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
+    <script>
+        gsap.registerPlugin(MotionPathPlugin);
+    </script>
+
+
+    {% comment %} FONT AWESOME {% endcomment %}
+    {% comment %}
+      <script src="https://kit.fontawesome.com/85d68f172f.js" crossorigin="anonymous"></script>
+    {% endcomment %}  
+
+    <script src="https://kit.fontawesome.com/f92ebc08f9.js" crossorigin="anonymous"></script>
+    
+    
+
+    <style>
+      /* Estilos SELLY UNITED */
+        div#tdf_sale_widget,
+        div#tdf_wholesale,
+        div#tdf_notify,
+        .tdf_label {
+            display: none!important;
+        }
+        
+        div#rebuy-cart .tdf_label {
+            display: block!important;
+            background: black!important;
+            margin: 5px!important;
+            padding: 5px!important;
+            line-height: 0!important;
+            border-radius: 5px;
+        }
+        
+        div#rebuy-cart .tdf_label span,
+        div#rebuy-cart .tdf_label .tdf_ribbon_span {
+            font-size: 10px!important;
+            line-height: 10px!important;
+            font-weight: bold!important;
+        }
+
+        #tsc--eventModal .tscModalCard .tscModalBody > small {
+            display: none!important;
+        }
+    </style>
+
+    {% if request.path contains 'nvy-by-ds18' or
+      request.path contains 'about-us-nvy' or
+      request.path contains 'nvy-store-locator' or
+      request.path contains '/pages/contact-nvy' or
+      request.path contains '/pages/tech-support-nvy' or
+      request.path contains '/pages/faq-nvy' or
+      request.path contains '/pages/warranty-nvy' or
+      request.path contains '/pages/affirm-financing-nvy' or
+      request.path contains '/pages/warranty-form-nvy' or
+      request.path contains '/pages/catalogs-nvy' or
+      request.path contains '/pages/search-manuals-nvy' or
+      request.path contains '/pages/marketing-material-nvy' or
+      request.path contains '/pages/tuning-frequency-calculator-nvy' or
+      request.path contains '/pages/amp-wire-calculator-nvy' or
+      request.path contains '/pages/recommended-enclosure-spaces-nvy' or
+      request.path contains '/pages/california-prop65-warning-nvy' or
+      request.path contains '/pages/privacy-policy-nvy' or
+      request.path contains '/pages/data-sale-opt-out-nvy' or
+      request.path contains 'nvy' or
+      collection.template_suffix == 'nvy' or
+      (product and product.template_suffix == 'nvy')
+    %}
+
+      {% comment %}
+        {{ 'styles-cart-rebuy-nvy-global.css' | asset_url | stylesheet_tag }}
+        {{ 'styles-search-rebuy.css' | asset_url | stylesheet_tag }}  
+      {% endcomment %}
+
+      {{ 'styles-cart-rebuy.css' | asset_url | stylesheet_tag }}
+
+    {% else %} 
+
+      {{ 'styles-cart-rebuy.css' | asset_url | stylesheet_tag }}
+
+    {% endif %}
+
+    
+
+<!-- Hotjar Tracking Code for https://ds18.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3534785,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+        
+  {{ 'custom-fields.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
+
+
+    {% if customer.b2b? %}
+      {{ 'prices-product-item-b2b.css' | asset_url | stylesheet_tag }}
+      {{ 'rebuy-b2b-styles.css' | asset_url | stylesheet_tag }}
+    {% endif %}
+
+    
+
+    {% comment %} COLOR LABEL 'NEW ARRIVAL' {% endcomment %}
+    <style>
+      .boost-sd__product-item .boost-sd__product-label--new-arrival,
+      .col.container-labels p.label-general-pdp--new {
+        background: {{ settings.background_new_arrival_label }}!important;
+        color: {{ settings.color_new_arrival_label }}!important;
+        border: {{ settings.border_new_arrival_label }} 1px solid!important;
+      }
+
+      .boost-sd__product-item .boost-sd__product-label--pre-sale,
+      .boost-sd__product-item .boost-sd__product-label--pre-order {
+          color: white!important;
+          border: black solid 1px!important;
+          background: black!important
+      }
+    </style>
+
+
+
+    {% comment %} SCRIPT PARA APAGAR CAMPAÑA 
+    {{ 'campaign-off.js' | asset_url | script_tag }}
+    {% endcomment %}
+
+
+
+
+    {% comment %} Estilos Product Item Global 👇 {% endcomment %}
+    {{ 'styles-product-item-global.css' | asset_url | stylesheet_tag }}
+    
+
+
+    {% comment %} Estilos Navigation Items {% endcomment %}
+    {{ 'styles-features-navigation.css' | asset_url | stylesheet_tag }}
+
+
+
+    {% if customer.b2b? %}
+      <script>
+        window.totalCollectionProducts = {{ collections['shop-all'].products_count }};
+        localStorage.setItem("b2bProductsTotal", window.totalCollectionProducts);
+      </script>
+    {% endif %}
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "https://www.ds18.com",
+  "logo": "https://cdn.shopify.com/s/files/1/0018/0142/0861/files/IMG_5290.jpg?v=1745280387"
+}
+</script>
+
+    <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/IMG_5290.jpg?v=1745280387" />
+
+    {% if request.page_type == 'page' and page.handle == 'nvy-by-ds18' %}
+  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/POPUP-LOGO-NVYBY.png?v=1754999821">
+  <meta property="og:image:secure_url" content="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/POPUP-LOGO-NVYBY.png?v=1754999821">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+{% endif %}
+
+{% if request.host == 'nvyusa.com' and request.path == '/' %}
+  <script>location.replace('https://ds18.com/pages/nvy-by-ds18');</script>
+{% endif %}
+
+
+    
+  </head>
+
+  {%- assign feature_classes = '' -%}
+
+  {%- if settings.show_image_zoom -%}
+    {% assign feature_classes = feature_classes | append: ' features--image-zoom' %}
+  {%- endif -%}
+
+  <body
+    class="no-focus-outline {{ feature_classes }}"
+    data-instant-allow-query-string
+    id="{{template.name }}"
+  >
+    
+    {%- comment -%}Common SVG definitions that we are re-using in several places{%- endcomment -%}
+    <svg class="visually-hidden">
+      <linearGradient id="rating-star-gradient-half">
+        <stop offset="50%" stop-color="rgb(var(--product-star-rating))" />
+        <stop offset="50%" stop-color="rgb(var(--product-star-rating))" stop-opacity="0.4" />
+      </linearGradient>
+    </svg>
+
+    <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    <loading-bar class="loading-bar"></loading-bar>
+
+          
+    {%- if request.page_type != 'gift_card' and request.page_type != 'password' -%}
+      
+
+    {% unless request.path contains '/apps/tracktor/track' %}
+
+      {% unless request.path contains 'nvy-by-ds18' or
+        request.path contains 'about-us-nvy' or
+        request.path contains 'nvy-store-locator' or
+        request.path contains '/pages/contact-nvy' or
+        request.path contains '/pages/tech-support-nvy' or
+        request.path contains '/pages/faq-nvy' or
+        request.path contains '/pages/warranty-nvy' or
+        request.path contains '/pages/affirm-financing-nvy' or
+        request.path contains '/pages/warranty-form-nvy' or
+        request.path contains '/pages/catalogs-nvy' or
+        request.path contains '/pages/search-manuals-nvy' or
+        request.path contains '/pages/marketing-material-nvy' or
+        request.path contains '/pages/tuning-frequency-calculator-nvy' or
+        request.path contains '/pages/amp-wire-calculator-nvy' or
+        request.path contains '/pages/recommended-enclosure-spaces-nvy' or
+        request.path contains '/pages/california-prop65-warning-nvy' or
+        request.path contains '/pages/privacy-policy-nvy' or
+        request.path contains '/pages/data-sale-opt-out-nvy' or
+        request.path contains 'nvy' or
+        collection.template_suffix == 'nvy' or
+        (product and product.template_suffix == 'nvy')
+      %}
+        
+        {% section 'countdown-timer' %}
+
+        {%- section 'nav-global-ds' -%}
+        {%- section 'announcement-bar' -%}
+        {%- section 'popup' -%}
+        {%- section 'header' -%}
+      {% else %}
+        {% comment %}
+          {% render 'header-nvy' %}
+        {% endcomment %}
+      
+        <style>
+          body *,
+          body h1,
+          body h2,
+          body h3,
+          body h4,
+          body h5,
+          body h6,
+          body button,
+          body p {
+            font-family: Montserrat, serif !important;
+          }
+      
+          body .jdgm-star {
+            font-family: 'JudgemeStar'!important;
+          }
+      
+          div#rebuy-cart button i {
+              font-family: "Font Awesome 5 Pro"!important;
+          }
+      
+          .fa-classic, .fa-regular, .fa-solid, .far, .fas {
+              font-family: "Font Awesome 6 Free"!important;
+          }
+        </style>
+
+        {% comment %}
+          {{ 'styles-cart-rebuy-nvy.css' | asset_url | stylesheet_tag }}  
+        {% endcomment %}
+        
+          
+        {%- section 'nav-global-nvy' -%}
+        {%- section 'header-nvy' -%}
+      {% endunless %}
+
+    {% endunless %}
+
+      {% unless customer.b2b? %}
+        {% section 'rewards' %}
+      {% endunless %}
+
+      {%- unless settings.cart_type == 'page' or request.page_type == 'cart' -%}
+        {%- section 'mini-cart' -%}
+      {%- endunless -%}
+    {%- endif -%}
+      
+
+
+    <div id="main" role="main" class="anchor {% if request.page_type == 'product' and product.tags contains 'NVY: GATED' %}pp-locked{% endif %}">
+    
+      {%- comment -%}
+        IMPLEMENTATION NOTE: on collection and search page, the theme was designed to show on mobile the filter bar and/or sort
+          by at the very top of the page. However, due to the fact that sections are isolated, I had to move the code
+          here. Then, the collection section, based on the selected settings, will eventually hide those elements in CSS
+      {%- endcomment -%}
+      {%- if request.page_type == 'collection' or request.page_type == 'search' -%}
+        {%- assign active_filters_count = 0 -%}
+
+        {%- if request.page_type == 'collection' -%}
+          {%- assign filters = collection.filters -%}
+        {%- else -%}
+          {%- assign filters = search.filters -%}
+        {%- endif -%}
+
+        {%- for filter in filters -%}
+          {%- if filter.type == 'list' -%}
+            {%- assign active_filters_count = active_filters_count | plus: filter.active_values.size -%}
+          {%- elsif filter.type == 'price_range' and filter.min_value.value or filter.max_value.value -%}
+            {%- assign active_filters_count = active_filters_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- assign is_toolbar_collapsed = false -%}
+
+        {%- if request.page_type == 'search'
+          and search.results.first.object_type != 'product'
+          and search.results_count > 0
+        -%}
+          {%- assign is_toolbar_collapsed = true -%}
+        {%- endif -%}
+
+        <div
+          id="mobile-facet-toolbar"
+          class="mobile-toolbar {% if is_toolbar_collapsed %}is-collapsed{% endif %} hidden-lap-and-up"
+        >
+          <button
+            is="toggle-button"
+            class="mobile-toolbar__item mobile-toolbar__item--filters {% if active_filters_count > 0 %}has-filters{% endif %}"
+            aria-expanded="false"
+            aria-controls="facet-filters"
+            style="display: none"
+          >
+            {%- render 'icon' with 'filters' -%}
+            <span class="mobile-toolbar__item-label">{{- 'collection.general.filters' | t -}}</span>
+          </button>
+
+          <button
+            is="toggle-button"
+            class="mobile-toolbar__item mobile-toolbar__item--sort"
+            aria-expanded="false"
+            aria-controls="sort-by-popover"
+            style="display: none"
+          >
+            <span class="mobile-toolbar__item-label">{{- 'collection.general.sort_by' | t -}}</span>
+            {%- render 'icon' with 'chevron' -%}
+          </button>
+
+
+          {% if customer.b2b? and collection.id == 287525830717 %}
+            <div id="block-filters-mobile"></div>
+          {% endif %}
+
+
+          
+        </div>
+      {%- endif -%}
+
+      {{ content_for_layout }}
+	<noscript class="endOfLayoutContentX" type="text/mark"></noscript><!-- End of layout -->
+
+      {%- unless request.page_type == 'index' or request.page_type == 'password' or request.page_type == 'gift_card' -%}
+        {%- section 'static-text-with-icons' -%}
+        {%- section 'static-newsletter' -%}
+      {%- endunless -%}
+    </div>
+    {% if template.name == 'product' %}
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src="{{ 'slick.min.js' | asset_url }}"></script>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;600&display=swap"
+        rel="stylesheet"
+      >
+      <link rel="stylesheet" type="text/css" href="{{ 'slick-theme.css' | asset_url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'slick.css' | asset_url }}">
+
+      <script>
+        if(screen.width > 800)
+          {
+        $('.responsive').slick({
+          arrows: 'show',
+          infinite: true,
+          speed: 300,
+          dots: false,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          prevArrow:'<button type="button" class="slick-next pull-right"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>',
+          nextArrow:'<button type="button" class="slick-prev pull-left"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button>',
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
+          }
+      </script>
+
+      <script>
+         if(screen.width > 800)
+          {
+        $('.responsives').slick({
+          dots: false,
+          infinite: true,
+          speed: 300,
+          dots: false,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          prevArrow:'<button type="button" class="slick-next pull-right"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>',
+          nextArrow:'<button type="button" class="slick-prev pull-left"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button>',
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
+          }
+      </script>
+      <script>
+         if(screen.width < 800)
+          {
+        $('.logo-list__lists').slick({
+          dots: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          prevArrow:'<button type="button" class="slick-next pull-right"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>',
+          nextArrow:'<button type="button" class="slick-prev pull-left"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button>',
+
+        });
+          }
+      </script>
+    {% endif %}
+
+
+
+  
+    {%- if request.page_type == 'product' and product.tags contains 'NVY: GATED' -%}
+      {%- render 'product-password-gate', container_selector: '#main' -%}
+    {%- endif -%}
+
+
+
+
+
+
+    {%- if request.page_type != 'gift_card' and request.page_type != 'password' -%}
+
+    {% unless request.path contains '/apps/tracktor/track' %}
+
+      {% if request.path contains 'nvy-by-ds18' or
+        request.path contains 'about-us-nvy' or
+        request.path contains 'nvy-store-locator' or
+        request.path contains '/pages/contact-nvy' or
+        request.path contains '/pages/tech-support-nvy' or
+        request.path contains '/pages/faq-nvy' or
+        request.path contains '/pages/warranty-nvy' or
+        request.path contains '/pages/affirm-financing-nvy' or
+        request.path contains '/pages/warranty-form-nvy' or
+        request.path contains '/pages/catalogs-nvy' or
+        request.path contains '/pages/search-manuals-nvy' or
+        request.path contains '/pages/marketing-material-nvy' or
+        request.path contains '/pages/tuning-frequency-calculator-nvy' or
+        request.path contains '/pages/amp-wire-calculator-nvy' or
+        request.path contains '/pages/recommended-enclosure-spaces-nvy' or
+        request.path contains '/pages/california-prop65-warning-nvy' or
+        request.path contains '/pages/privacy-policy-nvy' or
+        request.path contains '/pages/data-sale-opt-out-nvy' or
+        request.path contains 'nvy' or
+        collection.template_suffix == 'nvy' or
+        (product and product.template_suffix == 'nvy')
+      %}
+          
+        {% comment %}
+          {%- section 'footer-nvy' -%}  
+        {% endcomment %}
+        
+        <style>
+          footer.footer p.footer__item-title.heading.heading--small {
+            color: #059bd9!important;
+          }
+        </style>
+
+        {%- section 'footer' -%}
+
+      {% else %}
+
+        {%- section 'footer' -%}
+          
+      {% endif %}
+
+    {% endunless %}
+
+    {%- endif -%}
+
+    
+
+
+  
+
+
+    {% if request.path contains 'nvy-by-ds18' or
+      request.path contains 'about-us-nvy' or
+      request.path contains 'nvy-store-locator' or
+      request.path contains '/pages/contact-nvy' or
+      request.path contains '/pages/tech-support-nvy' or
+      request.path contains '/pages/faq-nvy' or
+      request.path contains '/pages/warranty-nvy' or
+      request.path contains '/pages/affirm-financing-nvy' or
+      request.path contains '/pages/warranty-form-nvy' or
+      request.path contains '/pages/catalogs-nvy' or
+      request.path contains '/pages/search-manuals-nvy' or
+      request.path contains '/pages/marketing-material-nvy' or
+      request.path contains '/pages/tuning-frequency-calculator-nvy' or
+      request.path contains '/pages/amp-wire-calculator-nvy' or
+      request.path contains '/pages/recommended-enclosure-spaces-nvy' or
+      request.path contains '/pages/california-prop65-warning-nvy' or
+      request.path contains '/pages/privacy-policy-nvy' or
+      request.path contains '/pages/data-sale-opt-out-nvy' or
+      request.path contains 'nvy' or
+      collection.template_suffix == 'nvy' or
+      (product and product.template_suffix == 'nvy')
+    %}
+
+      <section class="load-cart-rebuy">
+        <div class="load-cart-rebuy__container">
+          <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/LOGO-DS18-GREY-WEB.png">
+          <p>We are loading your cart...</p>
+        </div>
+      </section>
+
+      <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
+        
+      {% if customer.b2b? %}
+        {{ 'script-rebuy-b2b.js' | asset_url | script_tag }}
+      {% else %}
+        {% comment %}
+          {{ 'script-rebuy-cart-custom-nvy.js' | asset_url | script_tag }}
+        {% endcomment %}
+        {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }}
+      {% endif %}
+      
+
+    {% else %}
+
+      <section class="load-cart-rebuy">
+        <div class="load-cart-rebuy__container">
+          <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/LOGO-DS18-GREY-WEB.png">
+          <p>We are loading your cart...</p>
+        </div>
+      </section>
+
+      <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
+        
+      {% if customer.b2b? %}
+        {{ 'script-rebuy-b2b.js' | asset_url | script_tag }}
+      {% else %}
+        {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }}
+      {% endif %}
+        
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <div style="display: none">
+    <div id="jdgpreviewBagde">
+      {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+    </div>
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){ 
+  setTimeout(() => {
+  var data;
+  data = $.map($('.jdgm-badge-placeholder'), function(element) {
+    var hash = {};
+    var $element = $(element);
+    hash['productHandle'] = $element.data('handle');
+    hash['badgePlaceholder'] ='.jdgm-badge-placeholder[data-handle="' + $element.data('handle') + '"]';
+    return hash;
+  });
+  setTimeout( function(){
+    jdgm.batchRenderBadges(data);
+  }, 900);
+  }, 1700)
+});
+  </script>
+
+<script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#000000', triggerColor : '#000000', triggerRadius : '50%', triggerPositionX : 'left', triggerPositionY : 'center', triggerIcon : 'display', triggerSize : 'small', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'left', triggerPositionY : 'center', triggerOffsetX : 10, triggerOffsetY : 10, triggerRadius : '50%' } }); }; h.appendChild(s); })(); </script>
+          
+  <!--Gorgias Chat Widget Start-->
+<script id="gorgias-chat-widget-install-v2" 
+    src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=29920">
+</script>
+<!--Gorgias Chat Widget End-->
+
+
+
+
+
+    <script>
+      $(window).on('load', function () {
+          $('.the-shop-calendar').parents('.shopify-section.shopify-section--apps').addClass('section-calendar-custom-events');
+      });
+
+      $('a.test-test-test.header__icon-wrapper.tap-area.hidden-lap.hidden-desk').click(function(){
+          $('.predictive-search__input').click();
+        console.log('Open Search');
+      });
+    </script>
+
+    {% if customer.b2b? %}
+
+
+      <script>
+        $(document).ready(function() {
+          var newHref = '/collections/ds18-polaris-slingshot-audio-b2b';
+        
+          $('mobile-navigation .drawer__content > ul.mobile-nav > li.mobile-nav__item > .mobile-nav__link').each(function() {
+            if ($(this).text().trim() === 'Slingshot') {
+              $(this).attr('href', newHref);
+            }
+          });
+        
+          $('desktop-navigation li.header__linklist-item[data-item-title="Slingshot"] a.header__linklist-link').each(function() {
+            $(this).attr('href', newHref);
+          });
+        });
+
+      </script>
+
+
+          
+
+      {% render "rebuy-b2b" %}
+      
+      {% unless template.name == "product" %}
+        <script>
+          // const storefrontAccessToken = '7662b9fe391aa8637b49ce1cb4cf91df';
+          // const storefrontAccessToken = '313f89a7beecd087bb45666a1ba7ed2a';
+          //const storefrontAccessToken = '4ee516c7a1d6b91cc4c41bd4e95593fe';
+          // const storefrontAccessToken = '714f59ed227897e850aedc09c21c50fa';
+          const storefrontAccessToken = 'a6f9f4d0ee33712b11300ae06bb9aa6c';
+          const graphqlEndpoint = 'https://ds18caraudio.myshopify.com/api/2024-04/graphql.json';
+        </script>
+        {% render 'prices-b2b' %}  
+      {% endunless %}
+
+
+      {{ 'script-whishlist.js' | asset_url | script_tag }}
+
+      
+    {% endif %}
+
+
+
+
+    {% if request.path contains 'wishlist' %}
+      {% render 'edits-whislist' %}
+    {% endif %}
+
+
+
+    {% comment %} Script Product Item Global 👇 {% endcomment %}
+    {% if customer.b2b? %}
+      {{ 'script-product-item-b2b.js' | asset_url | script_tag }}
+      {{ 'get-products-collection-page.js' | asset_url | script_tag }}
+
+
+      <script>
+        var locationIdB2B = "{{ customer.current_location.id }}";
+        console.log(`LOCATION ID: ${locationIdB2B}`);
+        fetch(`https://ds-shopify-b2b-catalog-checker-969ba23e317b.herokuapp.com/api/catalog/location/${locationIdB2B}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            const catalogTitle = data.result.catalog?.title || 'Sin catálogo';
+            const locationName = data.result.locationName || 'Sin ubicación';
+            console.log('📦 Catálogo activo:', catalogTitle);
+            console.log('🏢 Ubicación:', locationName);
+
+            if (data.result.catalog?.title === 'Dealer'){
+              console.log('🚨 Bloquear Precios Dealer');
+              document.body.classList.add('has-dealer-catalog-b2b');
+            }
+          }
+        });
+      </script>
+          
+    {% else %}
+      {{ 'script-product-item-global.js' | asset_url | script_tag }}
+    {% endif %}
+
+
+
+
+<script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
+<script>
+    var klaviyo = klaviyo || [];
+    klaviyo.init({
+      account: "Kpn6xz",
+      platform: "shopify",
+      collection_urls: ["/collections/"]
+    });
+    klaviyo.enable("backinstock",{ 
+    trigger: {
+      product_page_text: "Notify Me When Available",
+      product_page_class: "btn",
+      product_page_text_align: "center",
+      product_page_margin: "0px",
+      replace_anchor: false
+    },
+    modal: {
+    headline: "{product_name}",
+    body_content: "Register to receive a notification when this item comes back in stock.",
+    email_field_label: "Email",
+    button_label: "Notify me when available",
+    subscription_success_label: "You're in! We'll let you know when it's back.",
+    footer_content: '',
+    additional_styles: "@import url('https://fonts.googleapis.com/css?family=Helvetica+Neue');",
+    drop_background_color: "#e52e0f",
+    background_color: "#fff",
+    text_color: "#000",
+    button_text_color: "#fff",
+    button_background_color: "#000",
+    close_button_color: "#000",
+    error_background_color: "#e52e0f",
+    error_text_color: "#000",
+    success_background_color: "green",
+    success_text_color: "#fff"
+    }
+  });
+</script>
+
+
+
+
+
+
+
+          
+          
+  </body>
+</html>

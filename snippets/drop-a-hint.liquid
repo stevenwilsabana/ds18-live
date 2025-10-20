@@ -1,0 +1,79 @@
+{%- capture allVariants -%}
+  {% for variant in product.variants -%}
+    <span data-id="{{ variant.id }}" 
+
+      {% if variant.image %}
+        data-image-url="{{ variant.image | img_url: "master" }}" 
+      {% else %}
+        data-image-url="{{ product.featured_image | img_url: "master" }}" 
+      {% endif %}
+
+      data-variant="{{ variant.title | replace: " / ", " - " }}" 
+      data-product="{{ product.title }}" 
+      >
+    </span>
+  {% endfor %}
+{%- endcapture -%}
+
+<div class="content-all-variants" data-template="{{ product.type }}">
+  {{ allVariants }}
+</div>
+
+
+{{ 'style-drop-a-hint.css' | asset_url | stylesheet_tag }}
+
+<section class="modal-drop-a-hint">
+
+  <div class="modal-drop-a-hint__overflow"></div>
+
+  <div class="modal-drop-a-hint__content">
+  	
+    <div class="modal-drop-a-hint__content-close">
+      <span class="modal-drop-a-hint__content-close-icon">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </span>
+    </div>
+    
+    <div class="modal-drop-a-hint__content-information">
+
+      <div class="modal-drop-a-hint__content-preview">
+
+        <div class="modal-drop-a-hint__content-preview-text">
+
+          <p>Hey <span class="change-recipients">{Recipient's Name}</span>,</p>
+          <p><span class="change-referral">{Your Name}</span> wanted to help you out with some gift ideas ;)</p>
+          <p>Here's a super cool gift.</p>
+          <p>Cheers,</p>
+
+          <p><b>DS18</b></p>
+        </div>
+        
+        <div class="modal-drop-a-hint__content-product">
+        	
+          <div class="drop-a-hint-imagen-producto">
+            <div class="modal-drop-a-hint__content-product-imagen">
+              <img alt="Imagen Product">
+            </div>
+          </div>
+            
+          <div class="modal-drop-a-hint__content-product-title">
+            <p class="title-product-drop">{{ product.title }}</p>
+            <p class="variant-product-drop"></p>
+          </div>
+          
+        </div>
+      
+      </div>
+      
+      <div class="modal-drop-a-hint__content-information-form">
+		<div class="klaviyo-form-XhjP5D"></div>
+      </div>
+      
+    </div>
+    
+    
+  </div>
+    
+</section>
+
+{{ 'script-drop-a-hint.js' | asset_url | script_tag }}

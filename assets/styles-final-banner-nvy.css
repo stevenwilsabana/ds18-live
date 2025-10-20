@@ -1,0 +1,80 @@
+.shopify-section.final-banner-nvy {
+    padding-top: 30px;
+}
+
+.shopify-section.final-banner-nvy .final-banner-nvy__content-banner {
+    position: relative;
+}
+
+.shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__imagen {
+    width: 100%;
+}
+
+.shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__imagen img.desktop {
+    display: none;
+}
+
+.shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__imagen img.mobile {
+    width: 100%;
+}
+
+.shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__overlay {
+    position: absolute;
+    width: 80%;
+    right: 10%;
+    top: 10%;
+}
+
+.shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__overlay p {
+    font-family: Montserrat, serif !important;
+    text-align: center;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+    color: black;
+}
+
+@media only screen and (min-width: 768px){
+
+    .shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__imagen img.desktop {
+        display: block;
+    }
+    
+    .shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__imagen img.mobile {
+        display: none
+    }
+
+    .shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__overlay {
+        width: 30%;
+        right: 15%;
+    }
+
+    .shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__overlay p {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1100px){
+    .shopify-section.final-banner-nvy {
+        padding-top: 50px;
+    }
+
+    .shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__overlay {
+        width: 30%;
+        right: 10%;
+        top: 15%;
+    }
+    
+    .shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__overlay p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .shopify-section.final-banner-nvy .final-banner-nvy__content-banner .final-banner-nvy__overlay {
+        width: 20%;
+        right: 23%;
+        top: 15%;
+    }
+}

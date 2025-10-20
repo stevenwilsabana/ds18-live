@@ -1,0 +1,82 @@
+.countdown-timer {
+    margin: 0;
+    padding: 0;
+}
+
+.countdown-timer__container {
+    max-width: 1200px;
+    padding: 20px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.countdown-timer__message {
+    text-align: center;
+}
+
+.countdown-timer__message p {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    text-align: center;
+    font-weight: bold;
+}
+
+.countdown-timer__message a {
+    text-decoration: underline;
+    display: inline-block;
+    text-align: center;
+    font-weight: 400;
+    text-underline-offset: 2px;
+}
+
+.countdown-timer__counter {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.countdown-timer__counter p {
+    display: inline;
+    font-weight: 400;
+}
+
+.countdown-timer__counter p#countdownTimer {
+    font-weight: bold;
+}
+
+.countdown-timer__message p,
+.countdown-timer__message a,
+.countdown-timer__counter p {
+    font-size: 13px;
+} 
+
+@media only screen and (min-width: 768px){
+    .countdown-timer__container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .countdown-timer__counter {
+        margin-top: 0px;
+    }
+
+    .countdown-timer__message {
+        max-width: 550px;
+        text-align: left;
+    }
+
+    .countdown-timer__counter {
+        text-align: right;
+        max-width: 550px;
+    }
+
+    .countdown-timer__message p,
+    .countdown-timer__message a,
+    .countdown-timer__counter p {
+        font-size: 14px;
+    } 
+}

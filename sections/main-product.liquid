@@ -1,0 +1,1404 @@
+<style>
+
+  
+  .pushowl-widget-node.pushowl-widget-node--desktop {
+      display: none !important;
+  }
+
+  
+  .product__info .product__info_continer .product-form ul {
+      list-style-type: disc;
+  }
+
+  @media only screen and (min-width: 1200px){
+      .product__zoom-button {
+          display: none;
+      }
+
+      img.zoomImg {
+          cursor: zoom-in;
+      }
+
+      .image-zoom-product-page {
+        cursor: zoom-in;
+      }
+  }
+</style>
+
+{{ 'new-styles-pdp.css' | asset_url | stylesheet_tag }}
+{{ 'styles-testing-prices-pdp.css' | asset_url | stylesheet_tag }}
+
+<!-- NEW ESTILES EDITS ESTILOS PRODUCT GRID -->
+{{ 'styles-grid-products-recommendation.css' | asset_url | stylesheet_tag }}
+{{ 'new-styles-version-pdp.css' | asset_url | stylesheet_tag }}
+
+
+{% if customer.b2b? %}
+  {{ 'styles-product-pages-b2b.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+
+<style>
+  .footerIcons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    order: 2;
+    margin-top: 0!important;
+  }
+  .footerIcons .fiItem {
+    width: 25% !important;
+    text-align: center;
+      font-size: 11px;
+    margin-bottom: 0 !important;
+  }
+  .footerIcons .fiItem img{
+     width: 125px; 
+  }
+/*   @media screen and (max-width:440px){
+    .footerIcons img{
+      width:22%;
+    }
+  } */
+</style>
+
+
+
+<!-- Estilos B2B -->
+  {% if customer.b2b? %}
+    <style>
+      .quantity-buy-container.container-uniq-form-ds .show-quantity {
+          display: flex!important;
+      }
+  
+      .variant-a__precio-tachado,
+      .units-sold-text {
+          display: none!important;
+      }
+      
+      product-meta.product-meta .container-general-prices .container-general-prices__regular-prices {
+          display: none!important
+      }
+
+
+
+      .footerIcons .fiItem.fiItem--freeshipping,
+      .shipsFreeToday{
+          display: none!important;
+      }
+      
+      .footerIcons .fiItem {
+          width: 33.333333% !important;
+      }
+
+
+      
+      
+      product-item.product-item.product-item--custom-wholesale .container-prices-b2b {
+          align-items: flex-start;
+      }
+      
+      product-meta.product-meta {
+          padding-bottom: 0;
+      }
+      
+      .prices-b2b-pdp {
+          margin-bottom: 10px!important;
+      }
+
+      
+    </style>
+
+    
+  {% endif %}
+
+
+
+{% if product.id == 7194385383485 %}
+  <style>
+    .container-variant__content .label-variant {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+    
+    .container-variant__label {
+        font-weight: 700!important;
+        font-size: 18px!important;
+        letter-spacing: 0.2px;
+        color: black;
+    }
+    
+    .container-variant__content .label-variant.label-variant--select {
+        border-color: black;
+    }
+  </style>
+{% endif %}
+
+
+{% if product.tags contains 'HIDE: KEY FEATURES' %}
+  <style>
+    .shopify-section.yth-key-features {
+        display: none;
+    }
+
+    .shopify-section.yth-technical-data .section__color-wrapper > .container {
+        border-top: red solid 1px;
+        padding-top: 0px;
+    }
+
+    @media only screen and (min-width: 1000px){
+        .shopify-section.yth-technical-data .section__color-wrapper > .container {
+            padding-top: 40px;
+        }
+    }
+  </style>
+{% endif %}
+
+{% if product.tags contains 'HIDE: TECHNICAL DATA' %}
+  <style>
+    .shopify-section.yth-technical-data {
+        display: none;
+    }
+
+    .shopify-section.tecnical-data {
+        display: none!important;
+    }
+  </style>
+{% endif %}
+
+{% if product.id == 7117421969469 %}
+  <style>
+    .shopify-section.yth-technical-data,
+    .shopify-section.yth-image-with-text{
+        display: none;
+    }
+  </style>
+{% endif %}
+
+
+
+{% unless customer.b2b? %}
+  {% if settings.active_campaign == true %}
+    {% if product.tags contains settings.tag_campaign %}
+      <style>
+        .container-general-prices__ab-test-prices {
+            display: block!important
+        }
+        
+        .container-general-prices__regular-prices {
+            display: none!important
+        }
+      </style>
+    {% endif %}
+  {% endif %}
+{% endunless %}
+
+
+
+{% if product.tags contains 'pfs:label-pre-sale' or product.tags contains 'pfs:label-pre-order' %}
+  <style>
+    .shipsFreeToday {
+        display: none!important;
+    }
+  </style>
+{% endif %}
+
+
+
+
+
+
+
+{% if product.tags contains 'theme_marine' %}
+  <link rel="stylesheet" href="{{ 'theme-marine.css' | asset_url }}">
+{% endif %}
+
+{%- unless template.suffix contains 'quick-buy' -%}
+  <style>
+    #shopify-section-{{ section.id }} {
+      {%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
+
+      {%- if buy_buttons_block.settings.show_payment_button -%}
+        {%- if buy_buttons_block.settings.atc_button_background == 'rgba(0,0,0,0)' -%}
+          {%- assign secondary_button_background = settings.secondary_button_background -%}
+        {%- else -%}
+          {%- assign secondary_button_background = buy_buttons_block.settings.atc_button_background -%}
+        {%- endif -%}
+
+        {%- if buy_buttons_block.settings.atc_button_text_color == 'rgba(0,0,0,0)' -%}
+          {%- assign secondary_button_text_color = settings.secondary_button_text_color -%}
+        {%- else -%}
+          {%- assign secondary_button_text_color = buy_buttons_block.settings.atc_button_text_color -%}
+        {%- endif -%}
+
+        {%- if buy_buttons_block.settings.buy_now_button_background == 'rgba(0,0,0,0)' -%}
+          {%- assign primary_button_background = settings.primary_button_background -%}
+        {%- else -%}
+          {%- assign primary_button_background = buy_buttons_block.settings.buy_now_button_background -%}
+        {%- endif -%}
+
+        {%- if buy_buttons_block.settings.buy_now_button_text_color == 'rgba(0,0,0,0)' -%}
+          {%- assign primary_button_text_color = settings.primary_button_text_color -%}
+        {%- else -%}
+          {%- assign primary_button_text_color = buy_buttons_block.settings.buy_now_button_text_color -%}
+        {%- endif -%}
+      {%- else -%}
+        {%- if buy_buttons_block.settings.atc_button_background == 'rgba(0,0,0,0)' -%}
+          {%- assign primary_button_background = settings.primary_button_background -%}
+        {%- else -%}
+          {%- assign primary_button_background = buy_buttons_block.settings.atc_button_background -%}
+        {%- endif -%}
+
+        {%- if buy_buttons_block.settings.atc_button_text_color == 'rgba(0,0,0,0)' -%}
+          {%- assign primary_button_text_color = settings.primary_button_text_color -%}
+        {%- else -%}
+          {%- assign primary_button_text_color = buy_buttons_block.settings.atc_button_text_color -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      --primary-button-background: {{ primary_button_background.red }}, {{ primary_button_background.green }}, {{ primary_button_background.blue }};
+      --primary-button-text-color: {{ primary_button_text_color.red }}, {{ primary_button_text_color.green }}, {{ primary_button_text_color.blue }};
+      --secondary-button-background: {{ secondary_button_background.red }}, {{ secondary_button_background.green }}, {{ secondary_button_background.blue }};
+      --secondary-button-text-color: {{ secondary_button_text_color.red }}, {{ secondary_button_text_color.green }}, {{ secondary_button_text_color.blue }};
+    }
+  </style>
+
+  <section {% if product.tags contains 'theme_marine' %}class="theme-marine--custom"{% else %}class="theme-regular--custom"{% endif %}>
+    {%- if section.settings.show_sticky_add_to_cart and product.available -%}
+      {%- render 'product-sticky-form', product: product -%}
+    {%- endif -%}
+
+    <div class="container">
+      <!-- PRODUCT TOP PART -->
+      <div class="product product--thumbnails-{{ section.settings.desktop_thumbnails_position }}">
+        {%- render 'product-info-mobile', product: product, update_url: true -%}
+        {%- render 'product-media', product: product -%}
+        {%- render 'product-info', product: product, update_url: true -%}
+      </div>
+    </div>
+  </section>
+{%- else -%}
+  {%- comment -%}
+    The quick shop HTML being very different, we render it here. On mobile and tablet/desktop, the product renders also
+    quite differently, as it is in a drawer on tablet/desktop, and a popover on mobile.
+  {%- endcomment -%}
+
+  {%- capture quick_buy_product_info -%}
+    <div class="quick-buy-product">
+      {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+
+      {%- if template.suffix == 'quick-buy-drawer' -%}
+        <img loading="lazy" sizes="114px" class="quick-buy-product__image" {% render 'image-attributes', image: featured_media, sizes: '114,228,342' %}>
+      {%- else -%}
+        <img loading="lazy" sizes="65px" class="quick-buy-product__image" {% render 'image-attributes', image: featured_media, sizes: '65,130,195' %}>
+      {%- endif -%}
+
+      <div class="quick-buy-product__info {% if template.suffix == 'quick-buy-popover' %}text--small{% endif %}">
+        <product-meta form-id="product-form-{{ section.id }}-{{ product.id }}" unit-price-class="text--xsmall" class="product-item-meta">
+          {%- if section.settings.show_vendor -%}
+            {%- assign vendor_handle = product.vendor | handle -%}
+            {%- assign collection_for_vendor = collections[vendor_handle] -%}
+
+            {%- unless collection_for_vendor.empty? -%}
+              <a href="{{ collection_for_vendor.url }}" class="product-item-meta__vendor heading {% if template.suffix == 'quick-buy-drawer' %}heading--small{% else %}heading--xsmall{% endif %}">{{ product.vendor }}</a>
+            {%- else -%}
+              <a href="{{ product.vendor | url_for_vendor }}" class="product-item-meta__vendor heading {% if template.suffix == 'quick-buy-drawer' %}heading--small{% else %}heading--xsmall{% endif %}">{{ product.vendor }}</a>
+            {%- endunless -%}
+          {%- endif -%}
+
+          <a href="{{ product.url }}" class="product-item-meta__title">{{ product.title }}</a>
+
+          <div class="product-item-meta__price-list-container" role="region" aria-live="polite">
+            <div class="price-list" data-product-price-list>
+              {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+                <span class="price price--compare">
+                  <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
+
+                  {%- if settings.currency_code_enabled -%}
+                    {{- product.selected_or_first_available_variant.compare_at_price | money_with_currency -}}
+                  {%- else -%}
+                    {{- product.selected_or_first_available_variant.compare_at_price | money -}}
+                  {%- endif -%}
+                </span>
+                
+                <span class="price price--highlight">
+                  <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+
+                  {%- if settings.currency_code_enabled -%}
+                    {{- product.selected_or_first_available_variant.price | money_with_currency -}}
+                  {%- else -%}
+                    {{- product.selected_or_first_available_variant.price | money -}}
+                  {%- endif -%}
+                </span>
+
+               
+                
+              {%- else -%}
+                <span class="price">
+                  <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+
+                  {%- if settings.currency_code_enabled -%}
+                    {{- product.selected_or_first_available_variant.price | money_with_currency -}}
+                  {%- else -%}
+                    {{- product.selected_or_first_available_variant.price | money -}}
+                  {%- endif -%}
+                </span>
+              {%- endif -%}
+
+              {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
+                <div class="price text--subdued text--xsmall">
+                  <div class="unit-price-measurement">
+                    <span class="unit-price-measurement__price">{{ product.selected_or_first_available_variant.unit_price | money }}</span>
+                    <span class="unit-price-measurement__separator">/</span>
+
+                    {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+                      <span class="unit-price-measurement__reference-value">{{ product.selected_or_first_available_variant.unit_price_measurement.reference_value }}</span>
+                    {%- endif -%}
+
+                    <span class="unit-price-measurement__reference-unit">{{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}</span>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- if template.suffix == 'quick-buy-popover' -%}
+              <a href="{{ product.url }}" class="link text--subdued">{{ 'product.general.view_details' | t }}</a>
+            {%- endif -%}
+          </div>
+        </product-meta>
+      </div>
+    </div>
+  {%- endcapture -%}
+
+  {%- if template.suffix == 'quick-buy-drawer' -%}
+    <quick-buy-drawer class="drawer drawer--large drawer--quick-buy">
+      <cart-notification hidden class="cart-notification cart-notification--drawer"></cart-notification>
+
+      <span class="drawer__overlay"></span>
+
+      <header class="drawer__header">
+        <p class="drawer__title heading h6">{{ 'product.form.choose_options' | t }}</p>
+
+        <button
+          type="button"
+          class="drawer__close-button tap-area"
+          data-action="close"
+          title="{{ 'general.accessibility.close' | t | escape }}"
+        >
+          {%- render 'icon' with 'close' -%}
+        </button>
+      </header>
+
+      <div class="drawer__content">
+        {{- quick_buy_product_info -}}
+        {%- render 'product-form', product: product -%}
+      </div>
+    </quick-buy-drawer>
+  {%- elsif template.suffix == 'quick-buy-popover' -%}
+    <quick-buy-popover class="popover popover--quick-buy">
+      <span class="popover__overlay"></span>
+
+      <header class="popover__header">
+        {{- quick_buy_product_info -}}
+
+        <button
+          type="button"
+          class="popover__close-button tap-area tap-area--large"
+          data-action="close"
+          title="{{ 'general.accessibility.close' | t | escape }}"
+        >
+          {%- render 'icon' with 'close' -%}
+        </button>
+      </header>
+
+      <div class="popover__content popover__content--no-padding">
+        {%- render 'product-form', product: product -%}
+      </div>
+    </quick-buy-popover>
+  {%- endif -%}
+{%- endunless -%}
+
+
+{% render 'drop-a-hint' %}
+
+
+{% if product.tags contains 'pfs:label-pre-sale' or product.tags contains 'pfs:label-pre-order' %}
+  {{ 'script-pre-sale-button.js' | asset_url | script_tag }}
+{% endif %}
+
+
+
+
+
+
+{% if customer.b2b? %}
+  <script>
+    $(document).ready(function() {
+        $('#notes-source-text textarea').on('input', function() {
+            $('#notes-b2b-products').val($(this).val());
+        });
+    });
+  </script>  
+{% endif %}
+
+
+
+{% schema %}
+{
+  "name": "Product page",
+  "class": "shopify-section--main-product",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "set_and_save",
+      "name": "Set & Save",
+      "limit": 1
+    },
+    {
+      "type": "contact_us",
+      "name": "Contact Us",
+      "limit": 1
+    },
+
+    {
+      "type": "variant_customs",
+      "name": "Variant Custom",
+      "limit": 1
+    },
+
+
+    {
+      "type": "complete_your_system",
+      "name": "Complete your System",
+      "limit": 1
+    },
+
+
+
+    
+    {
+      "type": "variant_picker",
+      "name": "Variant picker",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "hide_sold_out_variants",
+          "label": "Hide sold out variants",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "selector_mode",
+          "label": "Selector type",
+          "options": [
+            {
+              "value": "block",
+              "label": "Block"
+            },
+            {
+              "value": "dropdown",
+              "label": "Dropdown"
+            }
+          ],
+          "default": "block"
+        },
+        {
+          "type": "select",
+          "id": "color_mode",
+          "label": "Color selector type",
+          "info": "Variant image mode requires that all variant have an associated image. [Learn more](https://help.shopify.com/en/manual/products/product-media/add-images-variants#add-images-to-existing-variants)",
+          "options": [
+            {
+              "value": "block",
+              "label": "Block"
+            },
+            {
+              "value": "dropdown",
+              "label": "Dropdown"
+            },
+            {
+              "value": "color",
+              "label": "Color swatch"
+            },
+            {
+              "value": "variant_image",
+              "label": "Variant image"
+            }
+          ],
+          "default": "color"
+        },
+        {
+          "type": "page",
+          "id": "size_chart_page",
+          "label": "Size chart page",
+          "info": "Feature a page for size option"
+        }
+      ]
+    },
+    {
+      "type": "quantity_selector",
+      "name": "Quantity selector",
+      "limit": 1
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_payment_button",
+          "label": "Show dynamic checkout button",
+          "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "atc_button_background",
+          "label": "Add to cart background",
+          "default": "rgba(0,0,0,0)"
+        },
+        {
+          "type": "color",
+          "id": "atc_button_text_color",
+          "label": "Add to cart color",
+          "default": "rgba(0,0,0,0)"
+        },
+        {
+          "type": "color",
+          "id": "buy_now_button_background",
+          "label": "Buy now background",
+          "default": "rgba(0,0,0,0)"
+        },
+        {
+          "type": "color",
+          "id": "buy_now_button_text_color",
+          "label": "Buy now color",
+          "default": "rgba(0,0,0,0)"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1
+    },
+    {
+      "type": "description_new",
+      "name": "Description - Taps",
+      "limit": 1
+    },
+    {
+      "type": "inventory",
+      "name": "Inventory",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "low_inventory_threshold",
+          "label": "Low inventory threshold",
+          "info": "Use low stock color when quantity is below the threshold. Choose 0 to always show in stock.",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_alignment",
+          "label": "Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 50,
+          "max": 500,
+          "step": 10,
+          "unit": "px",
+          "label": "Width",
+          "default": 150
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Create link to your contact page, external marketplace..."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "stretch",
+          "label": "Stretch button",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background",
+          "default": "rgba(0,0,0,0)"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "rgba(0,0,0,0)"
+        }
+      ]
+    },
+      {
+      "type": "icons",
+       "name": "icons with text",
+      "settings": [
+       {
+          "type": "image_picker",
+          "id": "icons",
+          "label": "Image",
+          "info": "150 x 150px .png recommended"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+         {
+          "type": "image_picker",
+          "id": "icons2",
+          "label": "Image",
+          "info": "150 x 150px .png recommended"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Text"
+        },
+         {
+          "type": "image_picker",
+          "id": "icons3",
+          "label": "Image",
+          "info": "150 x 150px .png recommended"
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "label": "Text"
+        }
+
+      ]
+    },
+    {
+      "type": "liquid",
+      "name": "Custom Liquid",
+      "settings": [
+        {
+          "type": "text",
+          "id": "class_label",
+          "label": "Class",
+          "default": "section-custom-liquid"
+        },
+        {
+          "type": "liquid",
+          "id": "liquid",
+          "label": "Liquid",
+          "info": "Add app snippets or other Liquid code to create advanced customizations."
+        }
+      ]
+    },
+    {
+      "type": "line_item_property",
+      "name": "Line item property",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Line item properties are used to collect customization information for an item added to the cart."
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Your label"
+        },
+        {
+          "type": "select",
+          "id": "type",
+          "label": "Type",
+          "options": [
+            {
+              "value": "text",
+              "label": "Text"
+            },
+            {
+              "value": "checkbox",
+              "label": "Checkbox"
+            }
+          ],
+          "default": "text"
+        },
+        {
+          "type": "header",
+          "content": "Text",
+          "info": "Only applicable for line item property of type Text."
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "allow_long_text",
+          "label": "Allow long text",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Checkbox",
+          "info": "Only applicable for line item property of type Checkbox."
+        },
+        {
+          "type": "text",
+          "id": "checked_value",
+          "label": "Checked value",
+          "default": "Yes"
+        },
+        {
+          "type": "text",
+          "id": "unchecked_value",
+          "label": "Unchecked value",
+          "default": "No"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sku",
+      "label": "Show SKU",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_taxes_included",
+      "label": "Show taxes included",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_rating",
+      "label": "Show product rating",
+      "info": "To display a rating, add a product rating app. [Learn more](https://help.shopify.com/en/manual/products/product-reviews/installation)",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sticky_add_to_cart",
+      "label": "Show sticky add to cart",
+      "info": "Will be hidden if no Buy buttons block is added onto the page.",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    },
+    {
+      "type": "page",
+      "id": "help_page",
+      "label": "Help page",
+      "info": "Feature a page to help your customers"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_autoplay",
+      "label": "Enable video autoplay",
+      "info": "Video are muted automatically to allow autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable video looping",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "label": "Enable image zoom",
+      "info": "Zoom does not show video nor 3D models.",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_thumbnails_on_mobile",
+      "label": "Show thumbnails on mobile",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "desktop_thumbnails_position",
+      "label": "Desktop thumbnails position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    },
+    {
+      "type": "select",
+      "id": "transition_effect",
+      "label": "Transition effect",
+      "options": [
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ],
+      "default": "slide"
+    }
+  ]
+}
+{% endschema %}
+
+
+<script>
+
+  /* Texto Manuales TECHNICAL DATA */
+  
+  $( document ).ready(function() {
+     $('.shopify-section.yth-technical-data .container.load-more .text-with-icons').append(`
+       <p class="manual-fine-print">* Manuals and/or specifications are subject to change without prior notice.</p>
+     `);
+  });
+
+
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var observer = new MutationObserver(function(mutations, me) {
+      var paymentButton = document.querySelector('.shopify-payment-button');
+      if (paymentButton) {
+        paymentButton.addEventListener('click', function() {
+          const SmartCart = window.Rebuy.SmartCart;
+          SmartCart.destroy();
+          console.log('SmartCart.destroy();');
+        });
+
+        console.log('🟢 🟢 🟢 El botón existe V2.');
+        me.disconnect();
+        return;
+      }
+    });
+  
+    observer.observe(document, {
+      childList: true,
+      subtree: true
+    });
+  });
+
+</script>
+
+
+
+
+
+
+{% if customer.b2b? %}
+  <script>
+    var productHandleGlobal = '{{ product.handle }}';
+  </script>
+  <script src="{{ 'price-b2b-product.js' | asset_url }}" defer></script>
+  {{ 'styles-prices-b2b-product.css' | asset_url | stylesheet_tag }}
+
+  {% if product.metafields.custom.b2b_m_c %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        function addMCInfo() {
+          const quantityContainer = document.querySelector('.product-form .show-quantity');
+          if (quantityContainer && !document.querySelector('.full-mc')) {
+            quantityContainer.insertAdjacentHTML('afterbegin', `
+              <p class="full-mc"><b><i class="fa-solid fa-box"></i> M/C:</b> <span>{{ product.metafields.custom.b2b_m_c.value }}</span></p><div class="line-divisor"></div>
+            `);
+            observer.disconnect();
+          }
+        }
+  
+        const observer = new MutationObserver(() => {
+          addMCInfo();
+        });
+  
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+  
+        addMCInfo();
+      });
+    </script>
+  {% endif %}
+
+
+
+
+
+
+  
+{% else %}
+  {% if product.tags contains 'pfs:label-pre-sale' or product.tags contains 'pfs:label-pre-order' %}
+    {{ 'change-variant-preorder.js' | asset_url | script_tag }}
+  {% else %}
+    {{ 'change-variants-event.js' | asset_url | script_tag }}
+  {% endif %}
+{% endif %}
+
+<!-- A/B TEST -->
+<script>
+
+  $('#btn-add-to-cart__experiment').click(function(){
+    const SmartCart = window.Rebuy.SmartCart;
+    SmartCart.destroy();
+
+    const originalButtonText = $(this).text();
+    $(this).text('Adding...');
+    
+    var variant = $('.product-form__buy-buttons .shopify-product-form input[name="id"]').val();
+    var qty = $('.product-form__quantity quantity-selector input.quantity-selector__input').val();
+    var VariantAdd = {
+        id: variant,
+        quantity: qty
+    };
+    $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: VariantAdd,
+        dataType: 'json',
+        success: function() {
+          $('#btn-add-to-cart__experiment').text('Added!');
+          window.location.href = '/checkout';
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+          console.log('Error al agregar los productos al carrito');
+        }
+      });
+    
+  });
+  
+</script>
+<!-- A/B TEST -->
+
+
+<script>
+
+  /* Evitar lineas en el slider */
+    $( document ).ready(function() {
+      $('.shopify-section.shopify-section--slideshow').prev('.shopify-section').addClass('section-not-arrow-bottom');
+      $('.shopify-section.shopify-section--slideshow').next('.shopify-section').addClass('section-not-arrow-top');
+      console.log( "ready! LINEAS ACTIVAS" );
+    });
+  
+    
+  
+  $(document).on('click','.active-zoom_product-page',function(event){
+      $('.product__zoom-button').click();
+  });
+
+  function zoomProduct(){
+    $('.image-zoom-product-page')
+    .wrap('<span style="display:inline-block"></span>')
+    .css('display', 'block')
+    .parent()
+    .zoom({
+      url: $(this).find('img').attr('data-zoom')
+    });
+  };
+
+  function checkScreenWidth() {
+    if ($(window).width() > 1200) {
+      //zoomProduct();
+      console.log('ZOOM Inactive');
+    };
+  };
+
+  checkScreenWidth();
+
+  $(window).resize(function() {
+    checkScreenWidth();
+  });
+</script>
+
+<script>
+  $('div#widget-fave-html').parents('.shopify-app-block').addClass('container-wishlist-ds');
+  $('product-inventory').parents('.quantity-buy-container').addClass('container-uniq-form-ds');
+
+  /* [STARS] Funciones y Eventos Sold Out */
+  
+    var groups = {};
+    var groupsTwo = {};
+    
+    function buildGroups() {
+      $('.container-variants-sold-out > span').each(function() {
+        var $available = $(this).attr('data-available') === 'true';
+        var $option1 = $(this).attr('data-option-1');
+        var $option2 = $(this).attr('data-option-2');
+        var $option3 = $(this).attr('data-option-3');
+        
+        if (!groups[$option1]) {
+          groups[$option1] = [];
+        };
+
+        if (!groupsTwo[$option2]) {
+          groupsTwo[$option2] = [];
+        };
+        
+        groups[$option1].push({
+          available: $available,
+          option1: $option1,
+          option2: $option2,
+          option3: $option3
+        });
+
+        groupsTwo[$option2].push({
+          available: $available,
+          option1: $option1,
+          option2: $option2,
+          option3: $option3
+        });
+      });
+    };
+
+
+    function updateAvailabilityBasedOnVariant() {
+      var $variantSelect = $('.product-form__buy-buttons .shopify-product-form input[name="id"]').val();
+      var $selection = $('.container-variants-sold-out').find('span.'+ $variantSelect).attr('data-option-1');
+      var selectGroup = groups[$selection];
+      if (selectGroup) {
+        checkGroupAvailability(selectGroup);
+      };
+    };
+  
+    function updateAvailabilityBasedOnVariantTwo() {
+      var $variantSelect = $('.product-form__buy-buttons .shopify-product-form input[name="id"]').val();
+      var $selection = $('.container-variants-sold-out').find('span.'+ $variantSelect).attr('data-option-2');
+      var selectGroup = groupsTwo[$selection];
+      if (selectGroup) {
+        checkGroupAvailabilityTwo(selectGroup);
+      };
+    };
+
+  
+
+    function checkAllGroupsAvailability() {
+      $.each(groups, function(option1, selectGroup) {
+        checkGroupAvailability(selectGroup);
+      });
+    };
+
+    function checkAllGroupsAvailabilityTwo() {
+      $.each(groupsTwo, function(option2, selectGroup) {
+        checkGroupAvailabilityTwo(selectGroup);
+      });
+    };
+
+
+
+
+  
+    function checkGroupAvailability(selectGroup) {
+      let commonOption1 = selectGroup.length > 0 ? selectGroup[0].option1 : null;
+      let allAvailable = true;
+      let noneAvailable = true;
+  
+      $.each(selectGroup, function(index, item) {
+        if (item.available) {
+          noneAvailable = false;
+          $('input[name="option2"][value="' + item.option2 + '"] + label').removeClass('variant-sold-out');
+        } else {
+          allAvailable = false;
+          $('input[name="option2"][value="' + item.option2 + '"] + label').addClass('variant-sold-out');
+        }
+      });
+  
+      if (allAvailable) {
+        console.log('Todos los elementos están disponibles.');
+      } else if (noneAvailable) {
+        if (commonOption1) {
+          $('input[name="option1"][value="' + commonOption1 + '"] + label').addClass('variant-sold-out');
+        }
+        console.log('Ningún elemento está disponible.');
+      } else {
+        console.log('Hay una mezcla de elementos disponibles y no disponibles.');
+      }
+    };
+
+
+
+    function checkGroupAvailabilityTwo(selectGroup) {
+      let commonOption1 = selectGroup.length > 0 ? selectGroup[0].option2 : null;
+      let allAvailable = true;
+      let noneAvailable = true;
+  
+      $.each(selectGroup, function(index, item) {
+        if (item.available) {
+          noneAvailable = false;
+          $('input[name="option1"][value="' + item.option1 + '"] + label').removeClass('variant-sold-out');
+        } else {
+          allAvailable = false;
+          $('input[name="option1"][value="' + item.option1 + '"] + label').addClass('variant-sold-out');
+        }
+      });
+  
+      if (allAvailable) {
+        console.log('Todos los elementos están disponibles.');
+      } else if (noneAvailable) {
+        if (commonOption1) {
+          $('input[name="option2"][value="' + commonOption1 + '"] + label').addClass('variant-sold-out');
+        }
+        console.log('Ningún elemento está disponible.');
+      } else {
+        console.log('Hay una mezcla de elementos disponibles y no disponibles.');
+      }
+    };
+
+    
+  /* [END] Funciones y Eventos Sold Out */
+
+  function $soldOutImageVariantMulti(){
+    setTimeout(function() {
+        var $alertSoldOut = $('product-inventory[hidden]');
+        if ($alertSoldOut.length > 0) {
+            $('product-variants.active-imagen-multiple-variants > .product-form__option-selector input:checked+label').addClass('variant-sold-out');
+        } else {
+            $('product-variants.active-imagen-multiple-variants > .product-form__option-selector label').removeClass('variant-sold-out');
+        };
+    }, 100);
+  };
+
+  
+  var $validationVariants = $('.shopify-section--main-product .product__info product-variants > .product-form__option-selector');
+  var $validationGeneral = $("div[data-selector-media-alt*='VARIANT:']");
+
+
+  $('.shopify-section--main-product .product__info product-variants').hide();
+  $('div.load-variants-general').addClass('multiple-variants-images');
+
+
+  function $loadVariantsImage(){
+    if($('.shopify-section--main-product product-media .flickity-slider').length > 0){
+      
+      var $validationAlts = $(".shopify-section--main-product product-media .flickity-slider > div[data-selector-media-alt*='VARIANT:']");
+      if($validationVariants.length == 2){
+
+          $('.shopify-section--main-product .product__info product-variants').addClass('active-imagen-multiple-variants');
+          $('div.load-variants-general').removeClass('multiple-variants-images');
+          $('.shopify-section--main-product .product__info product-variants').show();
+
+          $($validationAlts).each(function() {
+            var $namePhoto = $(this).attr('data-selector-media-alt').toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
+            var $srcImagen = $(this).attr('data-selector-source');
+            $('product-variants div[data-variant-imagen="' + $namePhoto + '"] > label').addClass('label-with-image__active');
+            $('product-variants div[data-variant-imagen="' + $namePhoto + '"] > label').prepend('<img src="' + $srcImagen + '">');
+          });
+
+          buildGroups();
+          checkAllGroupsAvailability();
+          checkAllGroupsAvailabilityTwo();
+          setTimeout(updateAvailabilityBasedOnVariant, 100);
+          setTimeout(updateAvailabilityBasedOnVariantTwo, 100);
+
+      } else if($validationVariants.length == 3){
+
+          
+
+          $('.shopify-section--main-product .product__info product-variants').addClass('active-imagen-multiple-variants');
+          $('div.load-variants-general').removeClass('multiple-variants-images');
+          $('.shopify-section--main-product .product__info product-variants').show();
+
+          $($validationAlts).each(function() {
+            var $namePhoto = $(this).attr('data-selector-media-alt').toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
+            var $srcImagen = $(this).attr('data-selector-source');
+            $('product-variants div[data-variant-imagen="' + $namePhoto + '"] > label').addClass('label-with-image__active');
+            $('product-variants div[data-variant-imagen="' + $namePhoto + '"] > label').prepend('<img src="' + $srcImagen + '">');
+          });
+
+          $soldOutImageVariantMulti();
+        
+      } else {
+
+        var $validationInputs = $('.shopify-section--main-product .product__info product-variants > .product-form__option-selector input');
+
+        $('.shopify-section--main-product .product__info product-variants').addClass('active-imagen-multiple-variants');
+        $('div.load-variants-general').removeClass('multiple-variants-images');
+        $('.shopify-section--main-product .product__info product-variants').show();
+
+        $($validationInputs).each(function() {
+            var $val = $(this).val();
+            var $imagen = $('.container-images-variants span[data-option="' + $val + '"]').data("imageUrl");
+            var $label = $(this).siblings("label");
+
+            if ($imagen.length > 0){
+              $label.addClass('label-with-image__active');
+              $label.prepend('<img src="' + $imagen + '">');
+            };
+        });
+
+        buildGroups();
+        checkAllGroupsAvailability();
+        checkAllGroupsAvailabilityTwo();
+        setTimeout(updateAvailabilityBasedOnVariant, 100);
+        setTimeout(updateAvailabilityBasedOnVariantTwo, 100);
+
+      };
+
+      $observerVariants.disconnect();
+
+    };
+  };
+
+  const $targetNode = document.documentElement;
+  const $configObserver = { childList: true, subtree: true };
+  const $observerVariants = new MutationObserver($loadVariantsImage);
+  $observerVariants.observe($targetNode, $configObserver);
+
+  if($validationVariants.length == 2){
+    buildGroups();
+    checkAllGroupsAvailability();
+    checkAllGroupsAvailabilityTwo();
+    
+    $(document).on("click",'product-variants.active-imagen-multiple-variants > .product-form__option-selector input[name="option1"] + label',function() {
+      setTimeout(updateAvailabilityBasedOnVariant, 100);
+    });
+
+    $(document).on("click",'product-variants.active-imagen-multiple-variants > .product-form__option-selector input[name="option2"] + label',function() {
+      setTimeout(updateAvailabilityBasedOnVariantTwo, 100);
+    });
+    
+  } else if ($validationVariants.length == 3) {
+    
+    console.log($validationVariants.length);
+    $soldOutImageVariantMulti();
+    
+  } else {
+    
+    buildGroups();
+    checkAllGroupsAvailability();
+    checkAllGroupsAvailabilityTwo();
+    setTimeout(updateAvailabilityBasedOnVariant, 100);
+    setTimeout(updateAvailabilityBasedOnVariantTwo, 100);
+    
+  };
+
+  
+</script>
+
+
+{% if customer.b2b? %}
+
+  {{ 'styles-button-favorites.js' | asset_url | script_tag }}
+
+{% endif %}
+
+
+
+{% if product.available and product.tags contains 'DISABLED: PRODUCT OUT OF STOCK B2B' and customer.b2b? %}
+  <script>
+
+    const targetSelector = '.quantity-buy-container.container-uniq-form-ds .show-quantity';
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+          const element = document.querySelector(targetSelector);
+          if (element) {
+            $('.quantity-buy-container.container-uniq-form-ds .show-quantity').after(`
+              <p class="note-preorder-product-b2b">* Product is currently in backorder and it will ship out as soon as it becomes available.</p>
+            `);
+            observer.disconnect();
+            break;
+          }
+        }
+      }
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+  </script>
+{% endif %}

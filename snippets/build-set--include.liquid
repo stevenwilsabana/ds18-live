@@ -1,0 +1,94 @@
+<div class="container-variants__heading">
+
+  {% if tooltip != blank %}
+    <div class="item-tooltip">
+      <div class="item-tooltip__icon">
+        {% render 'icon-info' %}
+      </div>
+      <div class="item-tooltip__note">
+        <div class="item-tooltip__note-content">
+          {{ tooltip }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  
+  <p class="container-variant__label">
+    <span class="heading">{{ heading }}</span>: <span class="plus">+</span> <span class="price-value"></span>
+  </p>
+</div>
+
+
+
+<div class="container-variant__variants container-variant__variants--includes">
+  {% for variants in variants_set %}
+    {% assign product_variant = variants.product %}
+    {% if variants.featured_image %}{% assign imagenVariant = variants.featured_image %}{% else %}{% assign imagenVariant = product_variant.featured_image %}{% endif %}
+    {% if variants.available %}
+      <div class="variants-items variants-items--includes">
+        <input type="radio"
+          id="{{ input }}-{{ product_variant.id }}-{{ variants.id }}"
+          name="{{ input }}-{{ product_variant.id }}-{{ variants.id }}"
+          value="{{ variants.id }}"
+
+          {% if heading contains 'Speakers' %}
+            {% if variants.id == 40586756259901 or
+                  variants.id == 39885901135933 or
+                  variants.id == 12335978872893
+            %}
+              data-price="{{ variants.price | times: 4 }}"
+              data-qty="4"
+            {% else %}
+              data-price="{{ variants.price | times: 2 }}"
+              data-qty="2"
+            {% endif %}
+          {% else %}
+            data-price="{{ variants.price }}"
+            data-qty="1"
+          {% endif %}
+
+          data-sku="{{ variants.sku }}"
+        >
+        <label for="{{ input }}-{{ product_variant.id }}-{{ variants.id }}">
+          <img src="{{ imagenVariant | img_url: '100x' }}">
+
+          
+          <div class="details">
+            {% if variant.metafields.custom.title_build_set != blank %}
+               <p class="title">{{ variant.metafields.custom.title_build_set.value }}</p>
+            {% else %}
+              {% if variants.title != 'Default Title' %}
+                <p class="title">{{ variants.title }}</p>
+              {% else %}
+                <p class="title">{{ variants.sku }}</p>
+              {% endif %}
+            {% endif %}
+          </div>
+
+          
+        </label>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  {% if offer_not_include == true %}
+    <div class="variants-items">
+        <input type="radio"
+          id="{{ input }}-offer_not_include"
+          name="{{ input }}-offer_not_include"
+          value="offer_not_include"
+          data-price="000"
+          data-sku="Not Include"
+        >
+        <label for="{{ input }}-offer_not_include">
+          <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/Untitled-1_5b473fc2-c680-4df2-843f-a7a53faff683_100x.png">
+          <div class="details">
+              <p class="title">Do Not Include</p>
+          </div>
+        </label>
+      </div>
+  {% endif %}
+
+  
+</div>

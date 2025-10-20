@@ -1,0 +1,54 @@
+{{ 'styles-banner-nvy.css' | asset_url | stylesheet_tag }}
+
+<div class="banner-secundario-nvy__container">
+
+  <div class="item-banner-secundario item-banner-secundario--details">
+    <div class="container-details-nvy">
+      <h3>{{ section.settings.heading }}</h3>
+      <p>{{ section.settings.message }}</p>
+    </div>
+  </div>
+  <div class="imagen-absoluted">
+    <img class="imagen-absoluted" src="{{ section.settings.imagen_absolute | img_url: 'master' }}">
+  </div>
+  <div class="item-banner-secundario item-banner-secundario--imagen">
+    <img src="{{ section.settings.imagen | img_url: 'master' }}">
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Secundario NVY",
+    "class": "banner-secundario-nvy",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "message",
+        "label": "Message"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagen",
+        "label": "Imagen Background"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagen_absolute",
+        "label": "Imagen Absolute"
+      }
+    ],
+	"presets": [
+      {
+        "name": "Banner NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

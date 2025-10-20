@@ -1,0 +1,9 @@
+{% if product.metafields["coll"]["key_points"] != blank %}
+  <div class="custom-field custom-field__key-points custom-field__type--multi-line-text-field">
+    <h3 class="custom-field--title">Key Points</h3>
+    <div class="custom-field--value">
+      {{ product.metafields["coll"]["key_points"] }}
+
+    </div>
+  </div>
+{% endif %}

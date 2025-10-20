@@ -1,0 +1,147 @@
+{{ 'style-video-new-version.css' | asset_url | stylesheet_tag }}
+
+<div class="section-video-new-version__container">
+
+  <div class="container-video-general">
+
+    {% if section.settings.link != blank %}<a href="{{ section.settings.link }}">{% endif %}
+
+      <div class="videoContainer-sections">
+          <video id="{{ section.id }}-video-mobile" class="video-device__mobile" autoplay muted loop playsinline webkit-playsinline>
+            <source src="{{ section.settings.videoMobile }}" type="video/mp4">
+          </video>
+  
+          <video id="{{ section.id }}-video-desktop" class="video-device__desktop" autoplay muted loop playsinline webkit-playsinline>
+            <source src="{{ section.settings.videoDesktop }}" type="video/mp4">
+          </video>
+      </div>
+
+    {% if section.settings.link != blank %}</a>{% endif %}
+
+
+    <div class="videoContainer-buttons videoContainer-overlay">
+
+      <div class="overlay-section">
+
+        {% if section.settings.heading %}
+          <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+
+        {% if section.settings.details %}
+          <p>{{ section.settings.details }}</p>
+        {% endif %}
+
+        {% if section.settings.link and section.settings.button  %}
+          <a href="{{ section.settings.link }}">
+            {{ section.settings.button }}
+          </a>
+        {% endif %}
+        
+      </div>
+
+
+      <div class="buttons-sections">
+        <div class="videoContainer-buttons__container videoContainer-buttons__container--mobile">
+          <button id="{{ section.id }}-button-mobile" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>
+        </div>
+  
+        <div class="videoContainer-buttons__container videoContainer-buttons__container--desktop">
+          <button id="{{ section.id }}-button-desktop" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div>
+
+
+<script>
+
+    $(document).on('click', '#{{ section.id }}-button-desktop.button-active-sound--off', function() {
+      $('#{{ section.id }}-video-desktop').prop("muted", false);
+      $('#{{ section.id }}-video-mobile').prop("muted", true);
+      $(this).replaceWith('<button id="{{ section.id }}-button-desktop" class="button-active-sound--on"><i class="fa-solid fa-volume-high"></i></button>');
+      $('#{{ section.id }}-button-mobile').replaceWith('<button id="{{ section.id }}-button-mobile" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>');
+    });
+
+    $(document).on('click', '#{{ section.id }}-button-desktop.button-active-sound--on', function() {
+      $('#{{ section.id }}-video-desktop').prop("muted", true);
+      $('#{{ section.id }}-video-mobile').prop("muted", true);
+      $(this).replaceWith('<button id="{{ section.id }}-button-desktop" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>');
+      $('#{{ section.id }}-button-mobile').replaceWith('<button id="{{ section.id }}-button-mobile" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>');
+    });
+
+
+
+    $(document).on('click', '#{{ section.id }}-button-mobile.button-active-sound--off', function() {
+      $('#{{ section.id }}-video-mobile').prop("muted", false);
+      $('#{{ section.id }}-video-desktop').prop("muted", true);
+      $(this).replaceWith('<button id="{{ section.id }}-button-mobile" class="button-active-sound--on"><i class="fa-solid fa-volume-high"></i></button>');
+      $('#{{ section.id }}-button-desktop').replaceWith('<button id="{{ section.id }}-button-desktop" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>');
+    });
+
+    $(document).on('click', '#{{ section.id }}-button-mobile.button-active-sound--on', function() {
+      $('#{{ section.id }}-video-mobile').prop("muted", true);
+      $('#{{ section.id }}-video-desktop').prop("muted", true);
+      $(this).replaceWith('<button id="{{ section.id }}-button-mobile" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>');
+      $('#{{ section.id }}-button-desktop').replaceWith('<button id="{{ section.id }}-button-desktop" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>');
+    });
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Video Banner",
+	"tag": "section",
+	"class": "section-video-new-version",
+    "settings": [
+        {
+            "type": "url",
+            "id": "videoMobile",
+            "label": "Link Video Mobile"
+        },
+        {
+            "type": "url",
+            "id": "videoDesktop",
+            "label": "Link Video Desktop"
+        },
+        {
+          "type": "header",
+          "content": "DETAILS"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Details"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link Button"
+        },
+        {
+			"type": "text",
+			"id": "button",
+			"label": "Text Button"
+		}
+	],
+	"presets": [
+      {
+        "name": "Video Banner"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

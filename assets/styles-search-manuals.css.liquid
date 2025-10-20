@@ -1,0 +1,139 @@
+#loader, #search-container {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#loader.visible, #search-container.visible {
+  opacity: 1;
+}
+
+/* Estilos Loader */
+
+#loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+#loader img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 0px;
+    animation: loadCartRebuy 1s linear infinite alternate-reverse both;
+}
+
+@keyframes loadCartRebuy {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+#loader p {
+    margin-top: 5px;
+    font-size: 15px!important;
+    color: red;
+}
+
+@media only screen and (min-width: 768px){
+    #loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    
+    #loader img {
+        max-width: 300px;
+    }
+}
+
+
+
+
+
+/* Estilos Buscador */
+
+#search-container {
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 15px 30px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px #333 solid;
+}
+
+#search-results > div {
+  display: grid;
+ grid-template-columns: 100px 1fr 40px;
+  padding: 15px;
+  background-color: #f4f4f4;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #333;
+  transition: all .3s;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+#search-results > div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#search-results > div a.title {
+    padding: 0 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+#search-results > div span {
+    font-size: 14px!important;
+    line-height: 20px!important;
+    display: block;
+}
+
+#search-results > div b {
+    font-size: 13px!important;
+    line-height: 20px!important;
+    display: block;
+    margin-top: 5px;
+}
+
+div#search-results > div img {
+    width: 100px;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 768px){
+  #search-results > div:hover {
+      background: black;
+      color: white;
+  } 
+
+  #search-results > div span {
+    font-size: 15px!important;
+  }
+
+    #search-results > div a.title {
+        padding: 0 30px;
+    }
+}

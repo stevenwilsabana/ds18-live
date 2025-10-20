@@ -1,0 +1,19 @@
+{% if product.metafields["custom_fields"]["user_manual"] != blank %}
+  <div class="custom-field custom-field__user-manual custom-field__type--file-reference">
+    <h3 class="custom-field--title">User Manual</h3>
+    <div class="custom-field--value">
+      {% assign type = product.metafields["custom_fields"]["user_manual"].value.media_type %}
+      {% case type %}
+        {% when "image" %}
+          {{ product.metafields["custom_fields"]["user_manual"].value | image_url: width: 500 | image_tag }}
+        {% when "video" %}
+          {{ product.metafields["custom_fields"]["user_manual"].value | video_tag: image_size: "500x", width: 500, autoplay: false, controls: true }}
+        {% else %}
+          {% assign file_url = product.metafields["custom_fields"]["user_manual"].value.url %}
+          <a target="_blank" href="{{ file_url }}">{{ product.metafields["custom_fields"]["user_manual"] | media_tag: image_size: "200x" }}</a>
+          <div>{{ file_url | split: '/' | last | split: '?v=' | first }}</div>
+      {% endcase %}
+
+    </div>
+  </div>
+{% endif %}

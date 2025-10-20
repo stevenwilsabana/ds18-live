@@ -1,0 +1,233 @@
+{% comment %}
+  sections/top-bar-alt.liquid
+  Variante del top bar: izquierda activo (DS18), derecha link (NVY).
+{% endcomment %}
+
+{% assign dom_id = 'TopBarAlt-' | append: section.id %}
+
+<style>
+  /* Scope por sección para no afectar otros elementos */
+  #{{ dom_id }} { background: #000000; }
+
+  #{{ dom_id }} .header-nav-global {
+      display: flex;
+      flex-direction: column;
+  }
+  #{{ dom_id }} .header-nav-global__container {
+      display: none;
+      padding: 10px 20px;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+  }
+  #{{ dom_id }} .header-slider-global {
+      width: 100%;
+  }
+  #{{ dom_id }} .header-slider-global__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+  }
+  #{{ dom_id }} .header-slider-global__container > button {
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      font-size: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+  }
+  #{{ dom_id }} .header-slider-global__container > button.slick-prev {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTE0LjMsMjYuNWwxOC40LDE4LjRjMC44LDAuOCwyLjIsMC44LDMuMSwwYzAuOC0wLjgsMC44LTIuMiwwLTMuMUwxOC45LDI1TDM1LjcsOC4yYzAuOC0wLjgsMC44LTIuMiwwLTMuMSBjLTAuNC0wLjQtMS0wLjYtMS41LTAuNnMtMS4xLDAuMi0xLjUsMC42TDE0LjMsMjMuNUMxMy40LDI0LjMsMTMuNCwyNS43LDE0LjMsMjYuNXoiPjwvcGF0aD48L3N2Zz4=);
+  }
+  #{{ dom_id }} .header-slider-global__container > button.slick-next {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTM1LjcsMjMuNUwxNy40LDUuMWMtMC44LTAuOC0yLjItMC44LTMuMSwwYy0wLjgsMC44LTAuOCwyLjIsMCwzLjFMMzEuMSwyNUwxNC4zLDQxLjhjLTAuOCwwLjgtMC44LDIuMiwwLDMuMSBjMC40LDAuNCwxLDAuNiwxLjUsMC42YzAuNiwwLDEuMS0wLjIsMS41LTAuNmwxOC40LTE4LjRDMzYuNiwyNS43LDM2LjYsMjQuMywzNS43LDIzLjV6Ij48L3BhdGg+PC9zdmc+);
+  }
+  #{{ dom_id }} .header-slider-global__container > .slick-list {
+      width: calc(100% - 50px);
+  }
+  #{{ dom_id }} .header-slider-global__container .slick-track {
+      display: flex;
+      align-items: center;
+  }
+  #{{ dom_id }} .header-slider-global__container * { text-align: center; }
+
+  #{{ dom_id }} .header-nav-global__container *,
+  #{{ dom_id }} .header-slider-global__container * {
+      color: white;
+      font-size: 13px;
+  }
+
+  #{{ dom_id }} .header-nav-global__button-active p {
+      font-weight: bold;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+  }
+
+  #{{ dom_id }} p.header-nav-global__title {
+      margin: 0;
+      font-size: 11px;
+      font-weight: bold;
+      opacity: 0.8;
+  }
+
+  @media only screen and (min-width: 768px){
+      #{{ dom_id }} { display: flex; }
+      #{{ dom_id }} .header-nav-global {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+      }
+      #{{ dom_id }} .header-nav-global__container {
+          padding: 15px 30px;
+          width: 200px;
+          gap: 35px;
+      }
+      #{{ dom_id }} .header-slider-global {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-top: 0px;
+      }
+      #{{ dom_id }} .header-slider-global__container {
+          width: 80%;
+          max-width: 800px;
+          position: relative;
+          right: 0px;
+      }
+      #{{ dom_id }} .header-nav-global__container *,
+      #{{ dom_id }} .header-slider-global__container * {
+          font-size: 14px;
+      }
+      #{{ dom_id }} .header-nav-global__button-active { cursor: default; }
+      #{{ dom_id }} .header-nav-global__button:hover {
+          text-decoration: underline;
+          text-underline-offset: 3px;
+      }
+      #{{ dom_id }} p.header-nav-global__title {
+          font-size: 12px;
+          cursor: default;
+      }
+  }
+
+  {% if section.settings.show_arrows == false %}
+      #{{ dom_id }} .header-slider-global__container > .slick-list {
+          width: 100%!important;
+      }
+  {% endif %}
+</style>
+
+<div id="{{ dom_id }}" class="header-nav-global">
+  <div class="header-nav-global__container">
+    {%- comment -%}
+      Variante solicitada:
+      <div class="header-nav-global__button-active"><p>DS18</p></div>
+      <a class="header-nav-global__button" href="/pages/nvy-by-ds18-new-home"><p>NVY</p></a>
+    {%- endcomment -%}
+
+    {% if section.settings.active_left_text != blank %}
+      <div class="header-nav-global__button-active">
+        <p>{{ section.settings.active_left_text }}</p>
+      </div>
+    {% endif %}
+
+    {% if section.settings.right_link_text != blank and section.settings.right_link_url != blank %}
+      <a class="header-nav-global__button" href="{{ section.settings.right_link_url }}">
+        <p>{{ section.settings.right_link_text }}</p>
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="header-slider-global">
+    <div class="header-slider-global__container">
+      {% for block in section.blocks %}
+        {% assign text = block.settings.text %}
+        {% assign link = block.settings.link_url %}
+        <div class="header-slider-global__item" {{ block.shopify_attributes }}>
+          {% if link != blank %}
+            <a href="{{ link }}" {% if block.settings.open_new %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ text }}</a>
+          {% else %}
+            <p>{{ text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var initTopBarAlt{{ section.id | replace: '-', '_' }} = function(){
+      var $container = $('#{{ dom_id }} .header-slider-global__container');
+
+      // Requiere jQuery + Slick ya cargados por el tema
+      if (typeof $ === 'undefined' || typeof $.fn === 'undefined' || typeof $.fn.slick === 'undefined') {
+        return;
+      }
+
+      if ($container.length && $container.children('.header-slider-global__item').length > 1) {
+        $container.not('.is-initialized').addClass('is-initialized').slick({
+          autoplay: {{ section.settings.autoplay | json }},
+          autoplaySpeed: {{ section.settings.autoplay_speed }},
+          arrows: {{ section.settings.show_arrows | json }},
+          dots: false,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          fade: {{ section.settings.fade | json }},
+          speed: {{ section.settings.transition_speed }},
+          prevArrow: '<button type="button" class="slick-prev" aria-label="Previous">Prev</button>',
+          nextArrow: '<button type="button" class="slick-next" aria-label="Next">Next</button>'
+        });
+      }
+    };
+
+    document.addEventListener('shopify:section:load', function(e){
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') { initTopBarAlt{{ section.id | replace: '-', '_' }}(); }
+    });
+    document.addEventListener('DOMContentLoaded', initTopBarAlt{{ section.id | replace: '-', '_' }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Top bar DS (slider)",
+  "settings": [
+    { "type": "text", "id": "active_left_text", "label": "Active left label", "default": "DS18" },
+    { "type": "text", "id": "right_link_text", "label": "Right link text", "default": "NVY" },
+    { "type": "url", "id": "right_link_url", "label": "Right link URL" },
+
+    { "type": "header", "content": "Slider behavior" },
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay", "default": true },
+    { "type": "range", "id": "autoplay_speed", "min": 500, "max": 5000, "step": 500, "unit": "ms", "label": "Time between slides", "default": 1000 },
+    { "type": "range", "id": "transition_speed", "min": 200, "max": 3000, "step": 100, "unit": "ms", "label": "Transition speed", "default": 200 },
+    { "type": "checkbox", "id": "fade", "label": "Fade effect", "default": false },
+    { "type": "checkbox", "id": "show_arrows", "label": "Show arrows", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Free Shipping on All U.S. Orders" },
+        { "type": "url", "id": "link_url", "label": "URL (optional)" },
+        { "type": "checkbox", "id": "open_new", "label": "Open in new tab", "default": false }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Top bar (slider) – ALT",
+      "category": "Header",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide", "settings": { "text": "Sign Up For News and Exclusive Promotions", "link_url": "https://ds18.attn.tv/p/k59/landing-page" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

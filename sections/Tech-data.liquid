@@ -1,0 +1,276 @@
+{%- if section.settings.background != settings.background and section.settings.background != 'rgba(0,0,0,0)' -%}
+  {%- assign blends_with_background = false -%}
+{%- else -%}
+  {%- assign blends_with_background = true -%}
+{%- endif -%}
+
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+    CSS
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    {%- if section.settings.background == 'rgba(0,0,0,0)' -%}
+      {%- assign section_background = settings.background -%}
+    {%- else -%}
+      {%- assign section_background = section.settings.background -%}
+    {%- endif -%}
+
+    {%- if section.settings.text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign heading_color = settings.heading_color -%}
+      {%- assign text_color = settings.text_color -%}
+    {%- else -%}
+      {%- assign heading_color = section.settings.text_color -%}
+      {%- assign text_color = section.settings.text_color -%}
+    {%- endif -%}
+
+    --heading-color: {{ heading_color.red }}, {{ heading_color.green }}, {{ heading_color.blue }};
+    --text-color: {{ text_color.red }}, {{ text_color.green }}, {{ text_color.blue }};
+    --section-background: {{ section_background.red }}, {{ section_background.green }}, {{ section_background.blue }};
+
+  }
+</style>
+
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+    JavaScript: this section composes several custom elements
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<section class="section no-spacing">
+  <div class="section__color-wrapper">
+    <div class="container padding-extra accordion">
+      {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+        <header class="section__header container text-container">
+          {%- if section.settings.subheading != blank -%}
+            <h2 class="heading heading--small">{{ section.settings.subheading | escape }}</h2>
+          {%- endif -%}
+          {%- if section.settings.title != blank -%}
+            <h3 class="heading h3">
+              {%- assign productTitle = section.settings.title | split: ' ' -%}
+              <span class="red">{{ productTitle[0] }}</span>
+              {{- section.settings.title | remove_first: productTitle[0] }}
+            </h3>
+          {%- endif -%}
+          {%- if section.settings.link != blank -%}
+            <a href="{{ section.settings.link }}" class="resto desktop-only">
+              <h4 class="heading h2 resto">
+                <img src="//cdn.shopify.com/s/files/1/0670/1508/2300/t/4/assets/download.png" alt="">
+                {{ section.settings.downloadLink | escape }}
+                <span class="red"></span>
+              </h4>
+            </a>
+          {%- endif -%}
+        </header>
+      {%- endif -%}
+    </div>
+    <div class="panel">
+      <div class="container load-more" id="load-more">
+        <native-carousel class="text-with-icons">
+          <div class="text-with-icons__list hide-scrollbar">
+            {%- for block in section.blocks -%}
+              <native-carousel-item
+                {% unless forloop.first %}
+                  hidden
+                {% endunless %}
+                id="block-{{ section.id }}-{{ block.id }}"
+                class="text-with-icons__item"
+                {{ block.shopify_attributes }}
+              >
+                <div class="text-with-icons__icon-wrapper">
+                  {%- if block.settings.custom_icon != blank -%}
+                    {% capture custom_icon_width %}{{ block.settings.custom_icon_width | times: 2 }}x{% endcapture %}
+                    <img
+                      class="text-with-icons__custom-icon"
+                      style="max-width: {{ block.settings.custom_icon_width }}px"
+                      width="{{ block.settings.custom_icon.width }}"
+                      height="{{ block.settings.custom_icon.height }}"
+                      src="{{ block.settings.custom_icon | img_url: custom_icon_width }}"
+                      alt="{{ block.settings.custom_icon.alt | escape }}"
+                    >
+                  {%- else -%}
+                    {% if block.settings.custom_icon != 'noicon' %}
+                      {%- render 'icon' with block.settings.icon -%}
+                    {% endif %}
+                  {%- endif -%}
+                </div>
+
+                {%- if block.settings.title != blank or block.settings.content != blank -%}
+                  <div class="text-with-icons__content-wrapper" style="text-align:{{ section.settings.text_position }}">
+                    {%- if block.settings.title != blank -%}
+                      <p class="heading heading--small">{{ block.settings.title | escape }}</p>
+                    {%- endif -%}
+
+                    {%- if block.settings.content != blank -%}
+                      {{- block.settings.content -}}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </native-carousel-item>
+            {%- endfor -%}
+          </div>
+        </native-carousel>
+        {%- if section.settings.link != blank -%}
+          <a href="{{ section.settings.link }}" class="resto mobile-only" style="display:none">
+            <h4 class="heading h2 resto links ">
+              <img src="//cdn.shopify.com/s/files/1/0670/1508/2300/t/4/assets/download.png" alt="">
+              {{ section.settings.downloadLink | escape }}
+              <span class="red"></span>
+            </h4>
+          </a>
+        {%- endif -%}
+      </div>
+      <span
+        class="loadmore"
+        style="width: 100%;text-align: center;display: block;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
+        onclick="hide();"
+        >Load More</span
+      >
+      <script>
+           function hide()
+           {
+         $(".loadmore").hide();
+        $("#load-more").removeAttr("id");
+
+           }
+      </script>
+      <script>
+        var width = screen.width;
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        if(width < 800)
+        {
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+        }
+      </script>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Technical Data",
+  "class": "shopify-section--key-with-Featuress technical-data",
+  "max_blocks": 6,
+
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+
+
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Your title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Short content about your store</p>"
+        }
+      ]
+    }
+  ],
+  "settings": [
+     {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Key Features"
+    },
+     {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+     {
+      "type": "text",
+      "id": "downloadLink",
+      "label": "DOWNLOAD THE USER MANUAL",
+      "default": "Key Features"
+    },
+    {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "rgba(0,0,0,0)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Technical Data",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+
+            "title": "Free shipping",
+            "content": "<p>Free worldwide shipping and returns - customs and duties taxes included</p>"
+          }
+        },
+
+        {
+          "type": "item",
+          "settings": {
+
+            "title": "Secure payment",
+            "content": "<p>Your payment information is processed securely.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+
+            "title": "Contact us",
+            "content": "<p>Need to contact us ? Just send us an e-mail at info@yourstore.com</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,35 @@
+{% if product.metafields.custom.nvy_app_banner_desktop %}
+
+  <div class="app-section-nvy">
+    <div class="app-section-nvy__container">
+  
+      <div class="app-section-nvy__images">
+        <img class="app-section-image--mobile" src="{{ product.metafields.custom.nvy_app_banner_mobile | image_url: width: 1000 }}">
+        <img class="app-section-image--desktop" src="{{ product.metafields.custom.nvy_app_banner_desktop | image_url: width: 2000 }}">
+      </div>
+      <div class="app-section-nvy__details">
+        <div class="app-section-nvy__content">
+          <h5>{{ product.metafields.custom.nvy_overview_app_heading }}</h5>
+          <p>{{ product.metafields.custom.nvy_overview_app_content }}</p>
+        </div>
+
+
+        {% assign counterImagesItem = 0 %}
+        {% for image_url in product.metafields.custom.nvy_overview_app_items.value %}
+          {% assign counterImagesItem = counterImagesItem | plus: 1 %}
+        {% endfor %}
+        
+        <div class="app-section-nvy__items {% if counterImagesItem >= 3 %}app-section-nvy__items--tree-items-mobile-desktop{% endif %}">
+          {% for image in product.metafields.custom.nvy_overview_app_items.value %}
+            <div class="app-section-nvy__item">
+              <img src="{{ image | image_url: width: 300 }}">
+              <p>{{ image.alt }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+{% endif %}

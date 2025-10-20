@@ -1,0 +1,141 @@
+<style>
+  section.container-shop-the-look__section {
+      display: none;
+  }
+
+  .shop-the-look__main .stl-general .stl-general__text {
+    background-image: url({{ section.settings.background_image | img_url: 'master' }});
+  }
+
+  @media only screen and (min-width: 768px) {
+    .stl-general__text {
+      background-image: url({{ section.settings.background_image | img_url: 'master' }});
+    }
+  }
+  
+</style>
+
+
+<div class="shop-the-look__container" data-section="{{ section.settings.header }}">
+
+  <div class="shop-the-look__main">
+
+    <div class="stl-general">
+
+      <div class="stl-general__text stl-general__text--mobile">
+        <div class="stl-general__text-container-bg">
+          <div class="information-stl">
+            <h2>{{ section.settings.header }}</h2>
+            <p>{{ section.settings.message }}</p>
+          </div>
+          <div class="add-to-cart-stl">
+            <div class="add-to-cart-stl__prices">
+              <p class="add-to-cart-stl__discount"></p>
+              <p class="add-to-cart-stl__price-offert"></p>
+              <p class="add-to-cart-stl__price-total"></p>
+            </div>
+            <button class="add-all">Add to Cart</button>
+            <div class="disclaimer">
+              <p><b>*</b> Discount is not cumulative or applicable with other offers.</p>
+              <p><b>**</b> Discount applied at the time of checkout.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stl-general__image stl-general__image--mobile">
+        <img src="{{ section.settings.image_mobile | img_url: 'master' }}">
+      </div>
+      
+    </div>
+
+    <div class="stl-collection">
+
+      <div class="stl-collection--overflow">
+
+        <div class="stl-collection__container">
+  
+          <div class="stl-general__text stl-general__text--desktop">
+            <div class="stl-general__text-container-bg">
+              <div class="information-stl">
+                <h2>{{ section.settings.header }}</h2>
+                <p>{{ section.settings.message }}</p>
+              </div>
+              <div class="add-to-cart-stl">
+                <div class="add-to-cart-stl__prices">
+                  <p class="add-to-cart-stl__discount"></p>
+                  <p class="add-to-cart-stl__price-offert"></p>
+                  <p class="add-to-cart-stl__price-total"></p>
+                </div>
+                <button class="add-all">Add to Cart</button>
+                <div class="disclaimer">
+                  <p><b>*</b> Discount is not cumulative or applicable with other offers.</p>
+                  <p><b>**</b> Discount applied at the time of checkout.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="stl-general__image stl-general__image--desktop">
+            <img src="{{ section.settings.image_desktop | img_url: 'master' }}">
+          </div>
+          {% for product in collections[section.settings.collection].products %}
+            {% if product.available %}
+              
+                {% render 'product-shop-the-look', product: product %}
+             
+            {% endif %}
+          {% endfor %}
+          
+        </div>
+
+      </div>
+      
+    </div>
+
+  </div>
+
+  
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "shop the Look",
+    "tag": "section",
+    "class": "shop-the-look",
+    "settings": [
+      {
+          "type": "text",
+          "id": "header",
+          "label": "Header"
+      },
+      {
+          "type": "textarea",
+          "id": "message",
+          "label": "Message"
+      },
+      {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background"
+      },
+      {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop the Look V2"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

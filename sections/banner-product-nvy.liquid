@@ -1,0 +1,36 @@
+{{ 'styles-banner-product-nvy.css' | asset_url | stylesheet_tag }}
+
+<div class="banner-product-nvy__container">
+  <div class="banner-product-nvy__details">
+    {{ section.settings.details }}
+  </div>
+  <div class="banner-product-nvy__images">
+    <img src={{ section.settings.images | img_url: 'master' }}>
+  </div>  
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Product NVY",
+    "class": "banner-product-nvy",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "details",
+        "label": "Details"
+      },
+      {
+        "type": "image_picker",
+        "id": "images",
+        "label": "Imagen"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner Product NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

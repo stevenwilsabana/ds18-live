@@ -1,0 +1,54 @@
+.app-pdp {
+    width: 100%;
+  
+}
+
+.app-pdp__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.app-pdp__container h4 {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 ;
+    margin: 0;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #474141;
+}
+
+.app-pdp__icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.app-pdp__icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-pdp__icons a svg {
+    height: 45px;
+}
+
+@media only screen and (min-width: 750px) {
+    .app-pdp__container h4 {
+        font-size: 20px;
+    }
+    
+    .app-pdp__icons {
+        gap: 15px;
+    }
+    
+    .app-pdp__icons a svg {
+        height: 55px;
+    }
+}

@@ -1,0 +1,98 @@
+{%- assign is_b2b_customer = false -%}
+{%- if customer and customer.b2b -%}
+  {%- assign is_b2b_customer = true -%}
+{%- endif -%}
+
+{%- assign has_disabled_tag_product = false -%}
+{%- if product.tags contains 'DISABLED: PRODUCT OUT OF STOCK B2B' -%}
+  {%- assign has_disabled_tag_product = true -%}
+{%- endif -%}
+
+ {%- assign is_sold_out_product = false -%}
+  {%- if product.available == false -%}
+    {%- assign is_sold_out_product = true -%}
+  {%- elsif has_disabled_tag_product and is_b2b_customer == false -%}
+    {%- assign is_sold_out_product = true -%}
+  {%- endif -%}
+
+{%- if product.available and customer.b2b? -%}
+  {%- assign is_sold_out_product = false -%}
+{%- endif -%}
+
+
+
+
+
+
+{%- capture product_form_id -%}product-form-{{ section.id }}-{{ product.id }}{%- endcapture -%}
+
+<div class="product__info" data-device="mobile">
+  <div class="product__info_continer">
+    
+    <!-- PRODUCT META -->
+    <product-meta form-id="{{ product_form_id }}" price-class="price--large" class="product-meta">
+      {%- if section.settings.show_vendor -%}
+        <h2 class="product-meta__vendor heading heading--small">
+          {%- assign vendor_handle = product.vendor | handle -%}
+          {%- assign vendor_collection = collections[vendor_handle] -%}
+
+          {%- if vendor_collection != blank -%}
+            <a href="{{ vendor_collection.url }}">{{ product.vendor }}</a>
+          {%- else -%}
+            <a href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a>
+          {%- endif -%}
+        </h2>
+      {%- endif -%}
+
+      {% unless featured %}
+        {%- assign productTitle = product.title | split: ' ' -%}
+        <h1 class="product-meta__title heading h3">
+          <span class="red">{{ productTitle[0] }}</span>{{ product.title | remove_first: productTitle[0] }}          
+        </h1>
+      {% else %}
+        <h2 class="product-meta__title heading h3">
+          <a href="{{ product.url }}">
+            <span class="red">{{ productTitle[0] }}</span>{{ productTitle[1] -}}
+          </a>
+        </h2>
+      {% endunless %}
+
+      <div class="row">
+        <div class="col mr-5">
+          
+          <!--<span class="product-sku" style="margin-right:15px; color: #666;">{{ product.vendor }}</span>-->
+
+          {%- if section.settings.show_sku -%}
+            <span
+              class="product-meta__sku text--subdued text--xxsmall"
+              {% if product.selected_or_first_available_variant.sku == blank %}
+                style="display: none"
+              {% endif %}
+              data-product-sku-container
+            >
+              {{- 'product.general.sku' | t }}
+              <span class="product-meta__sku-number" data-product-sku-number style="margin-right:15px; color: #666;">
+                {{- product.selected_or_first_available_variant.sku -}}
+              </span>
+            </span>
+          {%- endif -%}
+
+          
+        </div>
+
+        
+        <div class="col">
+          {% comment %}Start automatically added Judge.me widget{% endcomment %}
+        {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
+        </div>
+
+
+      {% render 'labels-pdp', is_sold_out_product: is_sold_out_product %}
+          
+      </div>
+
+    </product-meta>
+
+  </div>
+
+</div>

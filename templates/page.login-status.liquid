@@ -1,0 +1,6 @@
+{% layout none %}
+{% if customer or customer.b2b? %}
+  { "isLoggedIn": true }
+{% else %}
+  { "isLoggedIn": false }
+{% endif %}

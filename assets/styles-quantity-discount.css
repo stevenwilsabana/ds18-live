@@ -1,0 +1,364 @@
+/* SE OCULTAN CANTIDADES EN LA SECCIÓN PRINCIPAL */
+
+.product-form__quantity {
+    display: none!important;
+}
+.quantity-buy-container.container-uniq-form-ds .product-form__buy-buttons {
+    width: 100%!important;
+}
+
+
+
+/* ESTILOS GLOBALES PARA NUEVA SECCIÓN DE CANTIDAD */
+
+section.quantity-discount {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+section.quantity-discount .quantity-discount__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: stretch;
+    height: auto;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item {
+    width: calc(50% - 7.5px);
+    height: auto;
+    display: flex;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item > input {
+    display: none;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label {
+    border: #dddddd solid 1px;
+    outline: transparent solid 1px;
+    display: flex;
+    height: auto;
+    align-items: stretch;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 175px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label p {
+    margin: 0;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__heading {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__heading .radio-select {
+    border: #000000 solid 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__heading p {
+    color: black;
+    font-size: 15px!important;
+    font-weight: 600!important;
+    
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__heading .radio-select .radio-select__checked {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    display: none;
+    background: #000000;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item input:checked + label {
+    border-color: black;
+    outline-color: black;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item input:checked + label .radio-select__checked {
+    display: flex!important;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details {
+    margin-top: auto;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > p.discount-global {
+    font-size: 13px!important;
+    font-weight: 400!important;
+    margin-top: 5px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    line-height: 18px!important;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > p.prices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px 8px;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > p.prices span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > p.prices span.regular {
+    opacity: 0.5;
+    position: relative;
+    font-weight: 300;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > p.prices span.offert {
+    color: #008000;
+    font-weight: 600;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > p.prices span.regular:after {
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    height: 1px;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > p.prices span.discount {
+    display: none;
+}
+
+/*
+section.quantity-discount .quantity-discount__container .quantity-discount__item input#quantity-discount-4 + label .quantity-discount__details > p.discount-global:after {
+    content: "Best Value";
+    background: black;
+    border-radius: 3px;
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+    padding: 3px 6px;
+    display: inline-flex;
+}*/
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > .quantity-control {
+    display: inline-flex;
+    width: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: #f7f7f7;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > .quantity-control button.quantity-btn {
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > .quantity-control button.quantity-btn[disabled]{
+    opacity: 0.1;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > .quantity-control input {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 45px;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px;
+    background: transparent;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > .quantity-control input::-webkit-outer-spin-button,
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > .quantity-control input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details > .quantity-control input {
+  -moz-appearance: textfield;
+}
+
+
+@media only screen and (min-width: 1200px){
+    section.quantity-discount .quantity-discount__container .quantity-discount__item {
+        flex: 1 1 calc(25% - 15px);
+    }
+
+    section.quantity-discount .quantity-discount__container .quantity-discount__item label:hover {
+        outline-color: #dddddd;
+    }
+}
+
+
+
+/* OCULTAR MENSAJE GLOBAL DE SHIPPING */
+
+
+.shipsFreeToday {
+    display: none!important;
+}
+
+
+
+
+
+
+
+
+/* ESTILOS PARA PAIR & THREE 
+
+.quantity-discount__item.quantity-discount__item--pair-three {
+    border: #dddddd solid 1px;
+    outline: transparent solid 1px;
+    display: flex;
+    height: auto;
+    align-items: stretch;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 175px;
+    cursor: pointer;
+    transition: all .3s;
+    flex-direction: column;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three.active{
+    border-color: black;
+    outline-color: black;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .radio-box-container {
+    width: 100%;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .radio-box-container input {
+    display: none;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .radio-box-container label {
+    min-height: 0!important;
+    padding: 0!important;
+    outline: 0!important;
+    border: 0!important;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .quantity-discount__details {
+    margin-top: auto;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .quantity-discount__details > p.discount-global {
+    font-size: 13px!important;
+    font-weight: 400!important;
+    margin-top: 5px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    line-height: 18px!important;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .quantity-discount__details > p.prices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px 8px;
+    margin: 0;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .quantity-discount__details > p.prices span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .quantity-discount__details > p.prices span.regular {
+    opacity: 0.5;
+    position: relative;
+    font-weight: 300;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .quantity-discount__details > p.prices span.offert {
+    color: #008000;
+    font-weight: 600;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .quantity-discount__details > p.prices span.discount {
+    display: none;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three .quantity-discount__details > p.prices span.regular:after {
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    height: 1px;
+}
+
+.quantity-discount__item.quantity-discount__item--pair-three label .quantity-discount__details > p.prices span.discount {
+    display: none;
+}
+
+.quantity-discount__item--pair-three__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media only screen and (min-width: 1200px){
+     .quantity-discount__item.quantity-discount__item--pair-three:hover {
+         outline-color: #dddddd;
+     }
+  
+    .quantity-discount__item.quantity-discount__item--pair-three.active:hover {
+         outline-color: #000000;
+     } 
+}*/
+
+
+
+/* ESTILOS CUANTITY TYPE  */
+
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details>p.prices span.offert i,
+section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details>p.prices i {
+    margin: 0;
+    font-style: normal;
+    font-size: 10px;
+}
+
+@media only screen and (min-width: 1200px){
+  section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details>p.prices span.offert i,
+  section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details>p.prices i {
+      font-size: 11px;
+  }
+}

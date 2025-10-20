@@ -1,0 +1,74 @@
+<style>
+    .header-nav-global {
+        background: #000000;
+    }
+
+    .header-nav-global__container {
+        display: flex;
+        padding: 10px 20px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .header-nav-global__container * {
+        color: white;
+        font-size: 13px;
+    }
+
+    .header-nav-global__button-active p {
+        font-weight: bold;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    p.header-nav-global__title {
+        margin: 0;
+        font-size: 11px;
+        font-weight: bold;
+        opacity: 0.8;
+    }
+
+    @media only screen and (min-width: 768px){
+        .header-nav-global {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .header-nav-global__container {
+            padding: 15px 30px;
+            max-width: 85%;
+            width: 100%;
+            gap: 35px;
+        }
+        
+        .header-nav-global__container * {
+            font-size: 14px;
+        }
+        
+        .header-nav-global__button-active {
+            cursor: default;
+        }
+
+        .header-nav-global__button:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        p.header-nav-global__title {
+            font-size: 12px;
+            cursor: default;
+        }
+    }
+</style>
+
+<div class="header-nav-global">
+    <div class="header-nav-global__container">
+    
+        <div class="header-nav-global__button-active">
+            <p>DS18</p>
+        </div>
+        <a class="header-nav-global__button" href="/pages/nvy-by-ds18-new-home">
+            <p>NVY</p>
+        </a>
+    </div>
+</div>

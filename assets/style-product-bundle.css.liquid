@@ -1,0 +1,523 @@
+body#product .product__info h1.product-meta__title.heading.h3 {
+    color: red;
+    font-size: 30px!important;
+}
+
+h1.product-meta__title.heading.h3 + .row,
+.sales-tax{
+    display: none;
+}
+
+
+.color-swatch-list {
+    display: flex;
+}
+
+.color-swatch__item {
+    width: 90px;
+    height: 100px;
+    background: transparent!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 5px 5px;
+    border: #d1d1d1 solid 1px;
+    border-radius: 6px;
+}
+
+.color-swatch__installation-kit .color-swatch__item {
+    width: 100px;
+    height: auto;
+}
+
+.color-swatch__item div.img-variant {
+    width: 60px;
+    height: 60px;
+}
+
+.color-swatch__item span {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.color-swatch__installation-kit .color-swatch__item div.img-variant {
+    display: none;
+}
+
+.color-swatch__installation-kit .color-swatch__item span {
+    font-size: 12px;
+}
+
+.color-swatch__radio[value="Black"] + .color-swatch__item .img-variant{
+    background-image: url(https://cdn.shopify.com/s/files/1/0018/0142/0861/files/amp-black-bundle_60x.png);
+}
+
+.color-swatch__radio[value="Red"] + .color-swatch__item .img-variant{
+    background-image: url(https://cdn.shopify.com/s/files/1/0018/0142/0861/files/amp-red-bundle_60x.png);
+}
+
+
+.color-swatch__radio[value="4 pro-x6.4bm"] + .color-swatch__item .img-variant{
+    background-image: url(https://cdn.shopify.com/s/files/1/0018/0142/0861/files/spaeaker-64_60x.png);
+}
+
+.color-swatch__radio[value="4 pro-x8.4bm"] + .color-swatch__item .img-variant{
+    background-image: url(https://cdn.shopify.com/s/files/1/0018/0142/0861/files/spaeaker-84_60x.png);
+}
+
+
+
+.product-form__option-info {
+    color: red;
+}
+
+.product-form__option-info .product-form__option-value {
+    display: none;
+}
+
+.total-variant-precios-total .total {
+    display: none;
+}
+
+.product-form__option-name {
+    font-weight: bold;
+}
+
+.color-swatch__item:before, .color-swatch__item:after {
+    display: none;
+}
+
+input.color-swatch__radio:checked + label {
+    background: rgb(255 0 0 / 20%)!important;
+    border-color: red;
+}
+
+.product-form__option-selector {
+    margin-bottom: 35px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product__info_continer .product-form__custom-liquid {
+    margin: 10px 0 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.product__info_continer .product-form__custom-liquid p {
+    text-align: center;
+}
+
+product-payment-terms {
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+}
+
+/* NEW STYLES PURCHADE */
+
+
+.purchase-summary {
+    border: red solid 2px;
+    background: rgb(255 210 214);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-top: 0px;
+}
+
+.purchase-summary__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase-summary__container > h3 {
+    text-align: center;
+    margin: 0 15px 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.purchase-summary__container > div {
+    padding: 10px;
+    display: flex;
+    
+}
+
+.purchase-summary__container > .summary-total {
+    justify-content: flex-end;
+    border-bottom: 0;
+}
+
+.purchase-summary__container > .summary-tub {
+    border-bottom: red solid 2px;
+}
+
+.purchase-summary__container > .summary-total-general {
+    border-top: 0;
+}
+
+.purchase-summary__container > .summary-tub,
+.purchase-summary__container > .summary-total-general{
+    justify-content: space-between;
+}
+
+.purchase-summary__container > .summary-additional {
+    flex-direction: column;
+    border-bottom: red solid 2px;
+}
+
+.purchase-summary__container > .summary-additional .summary-additional__row,
+.summary-total-general--continer-line__total-tub{
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchase-summary__container > div p {
+    margin: 5px 0!important;
+    padding: 2px;
+    font-size: 13px!important;
+    width: 100%;
+}
+
+.purchase-summary__container > div p:first-child {
+    padding-left: 10px;
+}
+
+.purchase-summary__container > div p b {
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 10px;
+}
+
+.purchase-summary__container > .summary-additional .summary-additional__row p:nth-child(2) {
+    text-align: center;
+    display: none;
+}
+
+.purchase-summary__container > .summary-tub p:last-child,
+.purchase-summary__container > .summary-total-general p:last-child,
+.purchase-summary__container > .summary-additional .summary-additional__row p:last-child,
+.purchase-summary__container > .summary-total-general p,
+.purchase-summary__container > .summary-total p {
+    text-align: center;
+    font-weight: bold!important;
+    width: 45%;
+}
+
+.purchase-summary__container > .summary-total-general,
+.purchase-summary__container > .summary-total {
+      background: white;
+      border-radius: 0px 0px 10px 10px;
+}
+
+.purchase-summary__container > .summary-total {
+    display: none;
+}
+
+.purchase-summary__container > .summary-total-general p,
+.purchase-summary__container > .summary-total p{
+    font-size: 13px!important;
+}
+
+p.tag-up-price,
+p.tag-up-title {
+    background: red;
+    color: white;
+    font-weight: bold;
+}
+
+p.tag-up-price {
+    border-radius: 0px 20px 20px 0px;
+}
+
+p.tag-up-title {
+    border-radius: 20px 0px 0px 20px;
+}
+
+p.tag-up-title b {
+    display: none;
+}
+
+.product-form__option-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.total-variant-precios-total {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.total-variant-precios-total .total {
+    font-size: 12px;
+    font-weight: bold;
+    background: red;
+    padding: 3px 15px;
+    border-radius: 50px;
+    color: white;
+}
+
+.total-variant-precios-total .variante {
+    font-weight: bold;
+    font-size: 14px;
+    color: #323232!important;
+}
+
+.total-variant-precios-total .variante.up-price {
+  visibility: visible;
+}
+
+.summary-total-general--continer-line__total-tub {
+    width: 100%;
+}
+
+.summary-total-general--continer-line__total-tub p:first-child {
+    width: 100%;
+    text-align: left;
+}
+
+
+
+@media only screen and (min-width: 1000px){
+    body#product .product__info h1.product-meta__title.heading.h3 {
+        font-size: 40px!important;
+    }
+
+    
+    .product-form__option-selector {
+        align-items: flex-start;
+    }
+
+    .color-swatch__item {
+        width: 110px;
+        height: 115px;
+    }
+    
+    .color-swatch__installation-kit .color-swatch__item {
+        width: 110px;
+        height: auto;
+    }
+    
+    .color-swatch__item div.img-variant {
+        width: 80px;
+        height: 80px;
+    }
+
+    .color-swatch__installation-kit .color-swatch__item span {
+        font-size: 12px;
+    }
+    
+    .color-swatch__radio[value="Black"] + .color-swatch__item .img-variant{
+        background-image: url(https://cdn.shopify.com/s/files/1/0018/0142/0861/files/amp-black-bundle_80x.png);
+    }
+    
+    .color-swatch__radio[value="Red"] + .color-swatch__item .img-variant{
+        background-image: url(https://cdn.shopify.com/s/files/1/0018/0142/0861/files/amp-red-bundle_80x.png);
+    }
+    
+    
+    .color-swatch__radio[value="4 pro-x6.4bm"] + .color-swatch__item .img-variant{
+        background-image: url(https://cdn.shopify.com/s/files/1/0018/0142/0861/files/spaeaker-64_80x.png);
+    }
+    
+    .color-swatch__radio[value="4 pro-x8.4bm"] + .color-swatch__item .img-variant{
+        background-image: url(https://cdn.shopify.com/s/files/1/0018/0142/0861/files/spaeaker-84_80x.png);
+    }
+
+    .product__media {
+        width: 53%;
+    }
+
+    .product__info {
+        width: 40%
+    }
+
+    .active-zoom_product-page span{
+        width: 100%;
+    }
+    
+    .active-zoom_product-page img.image-zoom-product-page {
+        width: 100%;
+    }
+
+     .product__info_continer .product-form__custom-liquid {
+        text-align: center;
+        width: 100%;
+    }
+
+    .purchase-summary__container > .summary-additional .summary-additional__row p:nth-child(2) {
+        display: block;
+    }
+
+    .purchase-summary__container > div p b {
+        display: none;
+    }
+
+    .purchase-summary__container > div p {
+        width: 33.33333%!important;
+    }
+
+    .purchase-summary__container > .summary-tub p:last-child,
+    .purchase-summary__container > .summary-total-general p:last-child,
+    .purchase-summary__container > .summary-additional .summary-additional__row p:last-child,
+    .purchase-summary__container > .summary-total-general p,
+    .purchase-summary__container > .summary-total p {
+        text-align: right;
+        padding-right: 20px;
+    }
+
+    .purchase-summary__container > div p:first-child {
+        padding-left: 20px;
+        font-weight: bold!important;
+    }
+
+    .tag-up-label {
+        background: red;
+        color: white;
+        font-weight: bold;
+    }
+
+    .summary-total-general--continer-line__total-tub {
+        justify-content: flex-end
+    }
+
+    .summary-total-general--continer-line__total-tub p:first-child {
+        text-align: center;
+    }
+
+    product-media.product__media.became-visible {
+        position: sticky;
+        top: 200px;
+    }
+}
+
+
+
+
+
+
+/* Estilos PPRL */
+
+
+.shopify-block.shopify-app-block .product-personalizer {
+    margin: 0!important;
+}
+
+.pplr-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.pplr-wrapper > label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-weight: bold;
+    color: red;
+}
+
+.pplr-wrapper > .container-variants-pprl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.pplr-wrapper > .container-variants-pprl .pplr-drop-item {
+    width: 90px;
+    height: 100px;
+    background: transparent!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 5px 5px;
+    border: #ededed solid 2px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 5px;
+    float: unset;
+}
+
+.pplr-wrapper > .container-variants-pprl .pplr-drop-item.active {
+    border-color: red;
+}
+
+.pplr-wrapper > .container-variants-pprl .pplr-drop-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 1000px){
+    .pplr-wrapper {
+      align-items: flex-start;
+        margin-bottom: 30px;
+    }
+
+    .pplr-wrapper > label {
+      justify-content: flex-start
+    }
+
+    .pplr-wrapper > .container-variants-pprl .pplr-drop-item {
+        width: 110px;
+        height: 115px;
+    }
+    
+    
+    .pplr-wrapper > .container-variants-pprl .pplr-drop-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .pplr-wrapper > .container-variants-pprl {
+        padding: 5px 0;
+    }
+
+    .pplr-wrapper > .container-variants-pprl .pplr-drop-item:first-child {
+        margin-left: 0;
+    }
+
+    .pplr-wrapper > .container-variants-pprl .pplr-drop-item:last-child {
+        margin-right: 0;
+    }
+}
+
+
+/* Mostrar precios sin A/B */
+
+.variant-a__precio-tachado {
+    display: none!important;
+}
+
+product-meta.product-meta .container-general-prices .container-general-prices__regular-prices {
+    display: block!important;
+}
+
+
+
+/* Mostrar Reviews en Package */
+
+h1.product-meta__title.heading.h3 + .row {
+    display: block;
+    margin-top: 15px;
+}

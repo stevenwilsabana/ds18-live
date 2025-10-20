@@ -1,0 +1,55 @@
+<style>
+  div#shopify-section-template--15828621393981__b21b587a-7e0e-4cb7-9727-9b4cf19abb38,
+  div#shopify-section-template--15828621393981__custom_liquid_FbmFpH,
+  div#shopify-section-template--15828621393981__16941002226a55cfa8,
+  section#shopify-section-template--15828621393981__36e3991a-3afb-4359-bd1b-8ce1be5c9032,
+  div#shopify-section-template--15828621393981__3fd803b8-92cc-4522-8c6b-d764ff511352 {
+      display: none!important;
+  }
+</style>
+
+
+<script>
+
+  const observer = new MutationObserver(() => {
+      const targetElement = document.querySelector('.gw-wl-page-placeholder');
+  
+      if (targetElement && targetElement.shadowRoot) {
+          console.log('✅ Elemento .gw-wl-page-placeholder encontrado con shadow-root.');
+  
+          const innerObserver = new MutationObserver(() => {
+              const style = document.createElement('style');
+              style.textContent = `
+                  .gw-wl-page__wrapper {
+                      margin: auto !important;
+                  }
+
+                  .gw-wl-social-share {
+                      flex-wrap: wrap!important;
+                  }
+                  
+                  .gw-wl-page-list__item-wrapper .gw-wl-page-item-header .gw-wl-page-item-content__price-block {
+                      display: none!important
+                  }
+              `;
+  
+              targetElement.shadowRoot.appendChild(style);
+              console.log('✅ Estilos aplicados dentro del shadow-root.');
+  
+              // Desconectar el observer del shadow-root una vez aplicados los estilos
+              innerObserver.disconnect();
+          });
+  
+          // Observar cambios dentro del shadow-root
+          innerObserver.observe(targetElement.shadowRoot, { childList: true, subtree: true });
+  
+          // Desconectar el observer principal, ya que encontramos el shadow-root
+          observer.disconnect();
+      }
+  });
+  
+  // Observar el `document.body` en busca de `.gw-wl-page-placeholder`
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  
+</script>

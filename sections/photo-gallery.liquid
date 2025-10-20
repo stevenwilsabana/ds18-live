@@ -1,0 +1,451 @@
+{%- if section.settings.background != settings.background and section.settings.background != 'rgba(0,0,0,0)' -%}
+  {%- assign blends_with_background = false -%}
+{%- else -%}
+  {%- assign blends_with_background = true -%}
+{%- endif -%}
+{%- comment -%}
+<link type="text/css" rel="stylesheet" href="{{ 'lightgallery.css' | asset_url }}" /> 
+<script src="{{ 'lightgallery.js' | asset_url }}"></script>
+{%- endcomment -%}
+
+<script src="
+  https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js
+  "></script>
+  <link href="
+  https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css
+  " rel="stylesheet">
+
+<style>
+  #shopify-section-{{ section.id }} {
+    {%- if section.settings.background == 'rgba(0,0,0,0)' -%}
+      {%- assign section_background = settings.background -%}
+    {%- else -%}
+      {%- assign section_background = section.settings.background -%}
+    {%- endif -%}
+
+    {%- if section.settings.text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign heading_color = settings.heading_color -%}
+      {%- assign text_color = settings.text_color -%}
+    {%- else -%}
+      {%- assign heading_color = section.settings.text_color -%}
+      {%- assign text_color = section.settings.text_color -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_background == 'rgba(0,0,0,0)' -%}
+      {%- assign button_background = settings.primary_button_background -%}
+    {%- else -%}
+      {%- assign button_background = section.settings.button_background -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign button_text_color = settings.primary_button_text_color -%}
+    {%- else -%}
+      {%- assign button_text_color = section.settings.button_text_color -%}
+    {%- endif -%}
+
+    --heading-color: {{ heading_color.red }}, {{ heading_color.green }}, {{ heading_color.blue }};
+    --text-color: {{ text_color.red }}, {{ text_color.green }}, {{ text_color.blue }};
+    --primary-button-background: {{ button_background.red }}, {{ button_background.green }}, {{ button_background.blue }};
+    --primary-button-text-color: {{ button_text_color.red }}, {{ button_text_color.green }}, {{ button_text_color.blue }};
+
+    --prev-next-button-background: {{ settings.background.red }}, {{ settings.background.green }}, {{ settings.background.blue }};
+    --prev-next-button-color: {{ settings.text_color.red }}, {{ settings.text_color.green }}, {{ settings.text_color.blue }};
+
+    --section-background: {{ section_background.red }}, {{ section_background.green }}, {{ section_background.blue }};
+    --section-logo-background: {{ section.settings.logo_background.red }} {{ section.settings.logo_background.green }} {{ section.settings.logo_background.blue }} / {{ section.settings.logo_background.alpha }};
+    --section-logo-count: {{ section.blocks.size | default: 6 }};
+  }
+</style>
+
+<section class="section no-spacing">
+  <div class="section__color-wrapper">
+    <div class="container">
+      <header class="section__header text-container">
+        {%- if section.settings.subheading != blank -%}
+          <h2 class="heading heading--small">{{ section.settings.subheading | escape }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          {%- assign productTitle = section.settings.title | split: ' ' -%}
+
+          <h3 class="heading h2"><span class="red">{{ productTitle[0] }}</span>{{ section.settings.title | remove_first: productTitle[0] }}</h3>
+        {%- endif -%}
+         {%- if section.settings.title != blank -%}
+            {{  section.settings.content  }}
+
+          {%- endif -%}
+        
+      </header>
+    </div>
+
+
+    {% if product.metafields["custom_fields"]["product_gallery"].value != blank %}
+      <div class="container">
+        <div class="logo-list__lists" id="lightgallery">
+          {% for item in product.metafields["custom_fields"]["product_gallery"].value %}
+            {% assign galleryLarge = item | img_url: '2000x', crop: crop %}
+            <div class="newDivimage">
+              <div class="logo-list__item" reveal="" style="opacity: 1;">
+                <div class="list-image-container" data-src="{{ galleryLarge }}">
+                  <img loading="lazy" class="logo-list__image" {% render 'image-attributes', image: item, sizes: logo_sizes %}>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+
+      {%- capture section_content -%}
+          <div class="container">
+        <div class="logo-list__lists" id="lightgallery">
+         
+          {%- for block in section.blocks -%}
+             {% if block.type == 'image' %}
+            {%- capture logo_content -%}
+                      {%- if block.settings.logo != blank -%}
+                        {%- assign logo_max_size = block.settings.logo.width | divided_by: 2 | at_most: 1000 -%}
+                        {%- capture logo_sizes -%}{{ logo_max_size }},{{ logo_max_size | times: 2 }}{%- endcapture -%}
+                        <div class="list-image-container" data-src="{{ block.settings.logo | img_url: '2000x' }}">
+                          <img loading="lazy" data-src="{{ block.settings.logo | img_url: '2000x' }}" sizes="{{ logo_max_size }}px"  class="logo-list__image" {% render 'image-attributes', image: block.settings.logo, sizes: logo_sizes %}>
+                        </div>
+                        
+                      {%- else -%}
+                        {{- 'image' | placeholder_svg_tag: 'logo-list__image logo-list__image--placeholder' -}}
+                      {%- endif -%}
+            {%- endcapture -%}
+
+                      {%- if block.settings.link -%}
+                         <div class="newDivimage"   data-src="{{ block.settings.logo | img_url: '2000x' }}"  >
+                        <a href="{{ block.settings.link }}" {% if section.settings.reveal_on_scroll %}reveal{% endif %} class="logo-list__item" {{ block.shopify_attributes }}>
+                          {{- logo_content -}}
+                        </a>
+                         </div>
+                      {%- else -%}
+                        <div class="newDivimage">
+                        <div class="logo-list__item" {% if section.settings.reveal_on_scroll %}reveal{% endif %} {{ block.shopify_attributes }} data-src="{{block.settings.link}}">
+                          {{- logo_content -}}
+                        </div>
+                        </div>
+                      {%- endif -%}
+       
+              {% elsif block.type == 'images' %}
+               <div class="newDivimage">
+                 {%- capture logo_content -%}
+                              {%- if block.settings.logo != blank -%}
+                                {%- assign logo_max_size = block.settings.logo.width | divided_by: 2 | at_most: 1000 -%}
+                                {%- capture logo_sizes -%}{{ logo_max_size }},{{ logo_max_size | times: 2 }}{%- endcapture -%}
+                                <img loading="lazy" sizes="{{ logo_max_size }}px"  class="logo-list__image" {% render 'image-attributes', image: block.settings.logo, sizes: logo_sizes %}>
+                              {%- else -%}
+                                {{- 'image' | placeholder_svg_tag: 'logo-list__image logo-list__image--placeholder' -}}
+                              {%- endif -%}
+                    {%- endcapture -%}
+                   {%- capture logo_content2 -%}
+                              {%- if block.settings.logo2 != blank -%}
+                                {%- assign logo_max_size2 = block.settings.logo2.width | divided_by: 2 | at_most: 1000 -%}
+                                {%- capture logo_sizes2 -%}{{ logo_max_size2 }},{{ logo_max_size2 | times: 2 }}{%- endcapture -%}
+                                <img loading="lazy" sizes="{{ logo_max_size2 }}px"  class="logo-list__image" {% render 'image-attributes', image: block.settings.logo2, sizes: logo_sizes2 %}>
+                              {%- else -%}
+                                {{- 'image' | placeholder_svg_tag: 'logo-list__image logo-list__image--placeholder' -}}
+                              {%- endif -%}
+                    {%- endcapture -%}
+                   {%- capture logo_content3 -%}
+                              {%- if block.settings.logo3 != blank -%}
+                                {%- assign logo_max_size3 = block.settings.logo3.width | divided_by: 2 | at_most: 1000 -%}
+                                {%- capture logo_sizes3 -%}{{ logo_max_size3 }},{{ logo_max_size3 | times: 2 }}{%- endcapture -%}
+                                <img loading="lazy" sizes="{{ logo_max_size3 }}px"  class="logo-list__image" {% render 'image-attributes', image: block.settings.logo3, sizes: logo_sizes3 %}>
+                              {%- else -%}
+                                {{- 'image' | placeholder_svg_tag: 'logo-list__image logo-list__image--placeholder' -}}
+                              {%- endif -%}
+                    {%- endcapture -%}
+                   {%- capture logo_content4 -%}
+                              {%- if block.settings.logo4 != blank -%}
+                                {%- assign logo_max_size4 = block.settings.logo4.width | divided_by: 2 | at_most: 1000 -%}
+                                {%- capture logo_sizes4 -%}{{ logo_max_size4 }},{{ logo_max_size4 | times: 2 }}{%- endcapture -%}
+                                <img loading="lazy" sizes="{{ logo_max_size4 }}px"  class="logo-list__image" {% render 'image-attributes', image: block.settings.logo4, sizes: logo_sizes4 %}>
+                              {%- else -%}
+                                {{- 'image' | placeholder_svg_tag: 'logo-list__image logo-list__image--placeholder' -}}
+                              {%- endif -%}
+                    {%- endcapture -%}
+               
+              
+               
+                 {%- if block.settings.link -%}
+                   <div class="inner-div">
+                        <a href="{{ block.settings.link }}" {% if section.settings.reveal_on_scrol %}reveal{% endif %} class="logo-list__item" {{ block.shopify_attributes }}>
+                          {{- logo_content -}}
+                        </a>
+                    </div>
+                      {%- else -%}
+                   <div class="inner-div">
+                        <div class="logo-list__item" {% if section.settings.reveal_on_scrol %}reveal{% endif %} {{ block.shopify_attributes }}>
+                          {{- logo_content -}}
+                        </div>
+                      </div>
+                      {%- endif -%}
+
+              
+                {%- if block.settings.link2 -%}
+                       <div class="inner-div">
+                        <a href="{{ block.settings.link2 }}" {% if section.settings.reveal_on_scroll %}reveal{% endif %} class="logo-list__item" {{ block.shopify_attributes }}>
+                          {{- logo_content2 -}}
+                        </a>
+                   </div>
+                      {%- else -%}
+                     <div class="inner-div">
+                        <div class="logo-list__item" {% if section.settings.reveal_on_scrol %}reveal{% endif %} {{ block.shopify_attributes }}>
+                          {{- logo_content2 -}}
+                        </div>
+                     </div>
+                      {%- endif -%}
+               {%- if block.settings.link3 -%}
+                  <div class="inner-div">
+                        <a href="{{ block.settings.link3 }}" {% if section.settings.reveal_on_scroll %}reveal{% endif %} class="logo-list__item" {{ block.shopify_attributes }}>
+                          {{- logo_content3 -}}
+                        </a>
+                   </div>
+                      {%- else -%}
+                  <div class="inner-div">
+                        <div class="logo-list__item" {% if section.settings.reveal_on_scrol %}reveal{% endif %} {{ block.shopify_attributes }}>
+                          {{- logo_content3 -}}
+                        </div>
+                     </div>
+                      {%- endif -%}
+                   {%- if block.settings.link4 -%}
+                       <div class="inner-div">
+                        <a href="{{ block.settings.link4 }}" {% if section.settings.reveal_on_scrol %}reveal{% endif %} class="logo-list__item" {{ block.shopify_attributes }}>
+                          {{- logo_content4 -}}
+                        </a>
+                      </div>
+                      {%- else -%}
+                        <div class="inner-div">
+                        <div class="logo-list__item" {% if section.settings.reveal_on_scrol %}reveal{% endif %} {{ block.shopify_attributes }}>
+                          {{- logo_content4 -}}
+                        </div>
+                      </div>
+                      {%- endif -%}
+                
+               </div>
+               {% endif %}
+               
+          {%- endfor -%}
+         </div>
+        </div>
+      {%- endcapture -%}
+    {% endif %}
+      {%- if section.settings.stack_logos -%}
+        <logo-list {% if section.settings.reveal_on_scroll %}reveal-on-scroll{% endif %} class="logo-list logo-list--grid">
+          {{- section_content -}}
+        </logo-list>
+      {%- else -%}
+        <div class="scroller">
+          <div class="scroller__inner">
+            <logo-list {% if section.settings.reveal_on_scroll %}reveal-on-scroll{% endif %} class="logo-list logo-list--carousel">
+              {%- if section.blocks.size > 6 -%}
+                <prev-next-buttons class="logo-list__prev-next hidden-pocket">
+                  <button class="logo-list__arrow prev-next-button prev-next-button--prev" disabled>
+                    <span class="visually-hidden">{{ 'general.accessibility.previous' | t }}</span>
+                    {%- include 'icon' with 'nav-arrow-left', block: true, direction_aware: true -%}
+                  </button>
+
+                  <button class="logo-list__arrow prev-next-button prev-next-button--next">
+                    <span class="visually-hidden">{{ 'general.accessibility.next' | t }}</span>
+                    {%- include 'icon' with 'nav-arrow-right', block: true, direction_aware: true -%}
+                  </button>
+                </prev-next-buttons>
+              {%- endif -%}
+
+              {{- section_content -}}
+            </logo-list>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank -%}
+        <div class="section__footer">
+          <a class="button button--primary" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+        <script>
+          lightGallery(document.getElementById('lightgallery'), {
+            selector: '.list-image-container',
+            thumbnail:true
+        });
+
+        
+            {% comment %} lightGallery(document.getElementById('lightgallery')); {% endcomment %}
+        </script>
+{% schema %}
+{
+  "name": "Photo Gallery",
+  "class": "shopify-section--photo-gallery",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "reveal_on_scroll",
+      "label": "Reveal on scroll",
+      "info": "Show animation when section becomes visible.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Brands"
+    },
+     {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Use block text to give your customers insight into your brand. Select impactful text that relates to your brand and story.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_logos",
+      "label": "Stack logos",
+      "default": true,
+      "info": "When stack, it is recommended to use a multiple of 6 logos."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "logo_background",
+      "label": "Logo background",
+      "default": "rgba(0,0,0,0)"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Image",
+          "info": "450 x 150px .png recommended"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "type": "images",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Image",
+          "info": "450 x 150px .png recommended"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+          {
+          "type": "image_picker",
+          "id": "logo2",
+          "label": "Image",
+          "info": "450 x 150px .png recommended"
+        },
+        {
+          "type": "url",
+          "id": "link2",
+          "label": "Link"
+        }
+        ,
+          {
+          "type": "image_picker",
+          "id": "logo3",
+          "label": "Image",
+          "info": "450 x 150px .png recommended"
+        },
+        {
+          "type": "url",
+          "id": "link3",
+          "label": "Link"
+        }
+        ,
+          {
+          "type": "image_picker",
+          "id": "logo4",
+          "label": "Image",
+          "info": "450 x 150px .png recommended"
+        },
+        {
+          "type": "url",
+          "id": "link4",
+          "label": "Link"
+        }
+     
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Photo Gallery",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "images"
+        }
+        
+      ]
+    }
+  ]
+}
+{% endschema %}

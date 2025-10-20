@@ -1,0 +1,82 @@
+.shopify-section.banner-product-nvy {
+    background-image: url(/cdn/shop/files/imagen-lateral-der-banner-secun.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 30px;
+}
+
+.shopify-section.banner-product-nvy .banner-product-nvy__container {
+    padding: 60px 30px 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopify-section.banner-product-nvy .banner-product-nvy__container .banner-product-nvy__details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopify-section.banner-product-nvy .banner-product-nvy__container .banner-product-nvy__details h4 {
+    margin: 0;
+    font-family: Montserrat, serif !important;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.shopify-section.banner-product-nvy .banner-product-nvy__container .banner-product-nvy__details p {
+    text-align: center;
+    font-family: Montserrat, serif !important;
+    font-size: 15px;
+    line-height: 25px;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.shopify-section.banner-product-nvy .banner-product-nvy__container .banner-product-nvy__images {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px){
+    .shopify-section.banner-product-nvy {
+        margin-top: 50px;
+    }
+    
+    .shopify-section.banner-product-nvy .banner-product-nvy__container {
+        max-width: 1300px;
+        margin: auto;
+        flex-direction: row;
+        padding: 0 50px;
+    }
+
+    .shopify-section.banner-product-nvy .banner-product-nvy__container .banner-product-nvy__details {
+        padding: 50px 50px 50px 0;
+    }
+
+    .shopify-section.banner-product-nvy .banner-product-nvy__container .banner-product-nvy__details h4 {
+        width: 100%;
+        text-align: left;
+        font-size: 35px;
+    }
+    
+    .shopify-section.banner-product-nvy .banner-product-nvy__container .banner-product-nvy__details p {
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+        line-height: 26px;
+        margin: 0;
+        margin-top: 20px;
+    }
+}

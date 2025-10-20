@@ -1,0 +1,40 @@
+{% assign results = '' %}
+{% for block in section.blocks %}
+  {% if forloop.last %}
+    {% assign results = results | append: '{"url": "' | append: block.settings.link | append: '", "text": "' | append: block.settings.title | append: '"}' %}
+  {% else %}
+    {% assign results = results | append: '{"url": "' | append: block.settings.link | append: '", "text": "' | append: block.settings.title | append: '"},' %}
+  {% endif %}
+{% endfor %}
+
+<script type="application/json" id="all-results">
+{
+  "files": [{{ results }}]
+}
+</script>
+
+{% schema %}
+{
+  "name": "Search Files",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Files",
+      "type": "files",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Title File"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Url File"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

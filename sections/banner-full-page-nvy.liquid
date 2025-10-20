@@ -1,0 +1,167 @@
+<style>
+  /* ESTILOS BANNER FINAL */
+
+.banner-full-page-nvy {
+    width: 100%;
+    position: relative;
+}
+
+.banner-full-page-nvy__container {
+    position: relative;   
+}
+
+.banner-full-page-nvy__images {
+    width: 100%;
+}
+
+.banner-full-page-nvy__images img {
+    width: 100%;
+}
+
+.banner-full-page-nvy__images img.banner-full-page-nvy__images--desktop {
+    display: none;
+}
+
+.banner-full-page-nvy__overlay {
+    position: absolute;
+    top: 0;
+    height: 50%;
+    padding: 30px 20px 0;
+    overflow: hidden;
+}
+
+.banner-full-page-nvy__overlay * {
+    color: white;
+    font-family: Montserrat, serif !important;
+    text-align: center;
+}
+
+.banner-full-page-nvy__overlay h1,
+.banner-full-page-nvy__overlay h2,
+.banner-full-page-nvy__overlay h3,
+.banner-full-page-nvy__overlay h4,
+.banner-full-page-nvy__overlay h5,
+.banner-full-page-nvy__overlay h6 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 35px;
+}
+
+.banner-full-page-nvy__overlay p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.banner-full-page-nvy__overlay .banner-full-page-nvy-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+@media only screen and (min-width: 768px){
+    .banner-full-page-nvy__images img.banner-full-page-nvy__images--mobile {
+        display: none;
+    }
+    
+    .banner-full-page-nvy__images img.banner-full-page-nvy__images--desktop {
+        display: block;
+    }
+
+
+    .banner-full-page-nvy__container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .banner-full-page-nvy__overlay {
+        width: 100%;
+        max-width: 1300px;
+        height: 100%;
+        top: 0%;
+        left: unset;
+        padding: 0;
+    }
+
+    .banner-full-page-nvy__overlay .banner-full-page-nvy-content {
+        width: 45%;
+        padding: 30px;
+        height: 100%;
+        justify-content: center;
+    }
+    
+    
+    .banner-full-page-nvy__overlay * {
+        text-align: left;
+    }
+    
+    .banner-full-page-nvy__overlay h1,
+    .banner-full-page-nvy__overlay h2,
+    .banner-full-page-nvy__overlay h3,
+    .banner-full-page-nvy__overlay h4,
+    .banner-full-page-nvy__overlay h5,
+    .banner-full-page-nvy__overlay h6 {
+        font-size: 30px;
+    }
+    
+    .banner-full-page-nvy__overlay p {
+        font-size: 14px;
+    }
+
+    
+}
+</style>
+
+
+
+<div class="banner-full-page-nvy__container">
+
+  <div class="banner-full-page-nvy__images">
+    <img class="banner-full-page-nvy__images--mobile" src={{ section.settings.imagen_mobile | image_url: width: 1500 }}>
+    <img class="banner-full-page-nvy__images--desktop" src={{ section.settings.imagen_desktop | image_url: width: 4000 }}>
+  </div>  
+
+  {% if section.settings.details %}
+    <div class="banner-full-page-nvy__overlay">
+      <div class="banner-full-page-nvy-content">
+        {{ section.settings.details }}
+      </div>
+    </div>
+  {% endif %}
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Full Page NVY",
+    "class": "banner-full-page-nvy",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "imagen_mobile",
+        "label": "Background Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagen_desktop",
+        "label": "Background Desktop"
+      },
+      {
+        "type": "richtext",
+        "id": "details",
+        "label": "Details"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner Full Page NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

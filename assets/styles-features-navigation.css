@@ -1,0 +1,99 @@
+div#shopify-section-header .container {
+    max-width: 1600px!important;
+}
+
+.features-items-navigation.features-items-navigation--desktop {
+    display: none;
+}
+
+.mobile-nav__footer {
+    flex-direction: column;
+    height: auto;
+}
+
+.features-items-navigation {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    align-items: stretch;
+    width: 100%;
+}
+
+.features-items-navigation .features-items__item {
+    border-bottom: 1px solid rgba(var(--text-color),.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.features-items-navigation .features-items__item .features-items__item--imagen {
+    width: 30px;
+    line-height: 0;
+}
+
+.features-items-navigation .features-items__item .features-items__item--imagen svg {
+    width: 100%;
+    fill: #282828;
+}
+
+.features-items-navigation .features-items__item .features-items__item--details {
+    width: calc(100% - 40px);
+}
+
+.features-items-navigation .features-items__item .features-items__item--details p {
+    margin: 0;
+    font-size: 15px!important;
+    line-height: 20px!important;
+    color: #282828;
+}
+
+.features-items-navigation .features-items__item .features-items__item--details p.alterno {
+    font-weight: 700!important;
+}
+
+.drawer__footer.drawer__footer--tight.drawer__footer--bordered {
+    background: #f7f7f7;
+}
+
+@media only screen and (min-width: 1200px){
+    .features-items-navigation.features-items-navigation--desktop {
+        display: flex;
+    }
+
+    .features-items-navigation .features-items__item .features-items__item--imagen svg {
+        fill: white;
+    }
+
+    .features-items-navigation .features-items__item .features-items__item--details p {
+        color: white;
+        font-size: 14px!important;
+        line-height: 18px!important;
+    }
+
+    .features-items-navigation {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .features-items-navigation .features-items__item {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        width: 190px;
+    }
+
+    .header__secondary-links {
+        margin-left: 0px
+    }
+
+}
+
+@media only screen and (min-width: 1350px){
+    div#shopify-section-header .header__logo {
+        padding-right: 100px!important;
+    }   
+}

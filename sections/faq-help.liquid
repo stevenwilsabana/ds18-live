@@ -1,0 +1,48 @@
+testing 
+{% schema %}
+{
+  "name": "FAQs Help",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "FAQ Contacts",
+      "type": "faq_contacts",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "contacts",
+          "label": "Contacts"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How can we help?",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

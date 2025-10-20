@@ -1,0 +1,9 @@
+{% if product.metafields["prod"]["each_pair_text"] != blank %}
+  <div class="custom-field custom-field__each-pair-text custom-field__type--single-line-text-field">
+    <h3 class="custom-field--title">Each / Pair</h3>
+    <div class="custom-field--value">
+      {{ product.metafields["prod"]["each_pair_text"] }}
+
+    </div>
+  </div>
+{% endif %}

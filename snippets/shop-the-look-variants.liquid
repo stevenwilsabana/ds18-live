@@ -1,0 +1,37 @@
+<div class="shop-the-look-variants">
+  <p class="label">{{ product.metafields.custom.shop_the_look_title.value }}:</p>
+  <div class="variants">
+
+    {% assign productId = product.id %}
+    {% assign sorted_variants = product.metafields.custom.shop_the_look_variants.value %}
+    
+    {% for product in sorted_variants %}  
+    
+      {% assign variantId = product.id %}
+      {% assign customVariant = product.metafields.custom.shop_the_look_text %}
+      {% assign productAvailable = product.available %}
+    
+      {% if productId == variantId %}
+        <div class="label-variant label-variant--select {% if productAvailable == false %}label-variant--sold-out{% endif %}">
+          <div class="label-variant__element">
+            <div class="label-variant__value">
+              <span>{{ customVariant }}</span>
+            </div>
+          </div>
+        </div>
+      {% else %}
+
+        <button data-href="{{ product.id }}-template-{{ forloop.index }}" class="label-variant {% if productAvailable == false %}label-variant--sold-out{% endif %}">
+          <div class="label-variant__element">
+            <div class="label-variant__value">
+              <span>{{ customVariant }}</span>
+            </div>
+          </div>
+        </button>
+    
+      {% endif %}
+    
+    {% endfor %}
+
+  </div>
+</div>

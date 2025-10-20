@@ -1,0 +1,79 @@
+{% comment %}
+
+OLD VERSION
+
+
+{{ 'styles-search-manuals.css' | asset_url | stylesheet_tag }}
+
+<div id="loader">
+  <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/DS18_WLIL_LOGO.png">
+  <p>Loading Manuals...</p>
+</div>
+<div id="search-container">
+  <input type="text" id="search-input" v-model="searchQuery" @input="performSearch" placeholder="Search manual by product name or SKU...">
+  <div id="search-results">
+    <div v-for="(file, index) in files" :key="index" class="items-search">
+      <a :href="file.productUrl" target="_blank" class="image"><img :src="file.imageUrl" alt="[[ file.text ]]" v-if="file.imageUrl" /></a>
+      <a :href="file.productUrl" target="_blank" class="title">
+        <span>[[ file.text ]]</span>
+        <b>SKU: [[ file.vendor ]]</b>
+      </a>
+      <a :href="file.url" target="_blank" download class="download"><i class="fa-solid fa-download"></i></a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+{{ 'script-generate-json.js' | asset_url | script_tag }}
+{{ 'script-search-manuals.js' | asset_url | script_tag }}
+
+{% endcomment %}
+
+
+
+{{ 'search-manual-global.css' | asset_url | stylesheet_tag }}
+
+{% section 'banners-manuals-page' %}
+
+<div id="search-container">
+
+  <div class="container-input-button">
+  <input type="text" id="search-input" v-model="searchQuery" placeholder="Search manual by SKU...">
+  <button @click="performSearch">SEARCH</button>
+  </div>
+
+  
+  <div id="loader" style="display: none;">
+    <div class="load-variants-general">
+      <div class="load-variants-general__container">
+        <div class="load-more__spinner-variants"></div>
+        <p>Loading search results....</p>
+      </div>
+    </div>
+  </div>
+  <div id="no-results" style="display: none;">
+    <p>No manuals were found with SKUs that have words starting with <b>'[[ searchQuery ]]'</b></p>
+  </div>
+  <div id="search-results" style="display: none;">
+    <div v-for="(file, index) in files" :key="index" class="items-search">
+      <div class="search-imagen"><img :src="file.imageUrl" alt="[[ file.text ]]" v-if="file.imageUrl" /></div>
+      <div class="search-details">
+        <!--<span>[[ file.text ]]</span>-->
+        <b>SKU: [[ file.vendor ]]</b>
+      </div>
+
+      <div class="search-icons">
+        <a :href="file.productUrl" target="_blank" class="visit"><i class="fa-solid fa-up-right-from-square"></i></a>
+        <a :href="file.url" target="_blank" download class="download"><i class="fa-solid fa-download"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+{{ 'search-manual-global-without-title.js' | asset_url | script_tag }}
+
+{% comment %}
+{{ 'search-manual-global.js' | asset_url | script_tag }}
+{% endcomment %}

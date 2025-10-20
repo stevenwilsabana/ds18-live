@@ -1,0 +1,136 @@
+{{ 'complete-your-set.css' | asset_url | stylesheet_tag }}
+
+<section class="complete-the-look">
+
+  <div class="complete-the-look__container">
+
+    <h4>Complete your System</h4>
+
+    <div class="complete-the-look__products">
+
+      {% assign sorted_variants = product.metafields.custom.complete_your_system.value %}
+
+      {% for product_object in sorted_variants  %}  
+
+        {% assign productId = product.id %}
+        {% assign productAvailable = product_object.available %}
+        {% assign urlProduct = product_object.url %}
+        {% assign imageProduct = product_object.featured_image %}
+        {% assign nameProduct = product_object.title %}
+        {% assign priceProduct = product_object.price %}
+        {% assign priceProductCompare = product_object.compare_at_price %}
+        {% assign variantId = product_object.id %}
+        {% assign continueSelling = product_object.selected_or_first_available_variant.inventory_policy %}
+
+        {% unless productId == variantId %}
+          {% if productAvailable == true and continueSelling == 'deny' %}
+            <div class="ctl-product">
+              <div class="ctl-product__container">
+  
+                <div class="ctl-product__image">
+                  <a href="{{ urlProduct }}" target="_blank">
+                    <img src="{{ imageProduct | img_url: '200x' }}">
+                  </a>
+                </div>
+                <div class="ctl-product__info">
+                  <div class="ctl-product__info-general">
+            
+                    <div class="ctl-product__info-title">
+                      <a href="{{ urlProduct }}" target="_blank">
+                        <p>{{ nameProduct }}</p>
+                      </a>
+                    </div>
+
+                    <div class="contianer-reviews-price">
+                      <div class='jdgm-widget--product-item jdgm-widget jdgm-preview-badge' data-id='{{ product_object.id }}'> 
+                        {{ product_object.metafields.judgeme.badge }} 
+                      </div> 
+
+                      <div class="ctl-product__info-price">
+                        <p>{{ priceProduct | money }}</p>
+                        {% if priceProductCompare %}
+                          <p class="compate-at-price">{{ priceProductCompare | money }}</p>
+                        {% endif %}
+                      </div>
+                    </div>
+  
+                    <div class="ctl-product__info-variant">
+  
+                      {% unless product_object.has_only_default_variant %}
+                        <div class="ctl-product__variants ctl-product__variants--multiple-variants">
+                          <select id="variant-label-{{ productId }}">
+                              {% for variant in product_object.variants %}
+                                {% if variant.available %}
+                                  <option class="class-{{ variant.id }}" value="{{ variant.id }}" data-total="{{ variant.price }}" data-price="{{ variant.price | money }}" {% if variant.image %}data-imagen="{{ variant.image | img_url: '200x' }}"{% endif %}>
+                                      {{ variant.title }}
+                                  </option>
+                                 {% else %}
+                                  <option disabled="disabled" class="class-{{ variant.id }}" value="{{ variant.id }}" data-total="{{ variant.price }}" data-price="{{ variant.price | money }}">
+                                      {{ variant.title }} (Sold Out)
+                                  </option>
+                                 {% endif %}
+                              {% endfor %}
+                            </select>
+                        </div>
+                      {% else %}
+                        <div class="ctl-product__variants ctl-product__variants--uniq-variant">
+                          <select id="variant-label-{{ productId }}">
+                              {% for variant in product_object.variants %}
+                                {% if variant.available %}
+                                  <option class="class-{{ variant.id }}" value="{{ variant.id }}" data-total="{{ variant.price }}" data-price="{{ variant.price | money }}" {% if variant.image %}data-imagen="{{ variant.image | img_url: '200x' }}"{% endif %}>
+                                    Default Variant
+                                  </option>
+                                 {% else %}
+                                  <option disabled="disabled" class="class-{{ variant.id }}" value="{{ variant.id }}" data-total="{{ variant.price }}" data-price="{{ variant.price | money }}">
+                                    Default Variant (Sold Out)
+                                  </option>
+                                 {% endif %}
+                              {% endfor %}
+                            </select>
+                        </div>
+                      {% endunless %}
+                      
+                    </div>
+                    <div class="ctl-product__info-button">
+
+                      {% assign total_inventory = 0 %}
+                      {% for variant in product_object.variants %}
+                        {% if variant.inventory_policy == "continue" %}
+                          {% assign total_inventory = total_inventory | plus: 10000 %}
+                        {% else %}
+                          {% assign total_inventory = total_inventory | plus: variant.inventory_quantity %}
+                        {% endif %}
+                      {% endfor %}
+                      {% if total_inventory == 0 %}
+                        {% assign total_inventory = 1 %}
+                      {% endif %}
+                      <div class="number-input">
+                        <button class="decrease" type="button">-</button>
+                        <input class="number-input-field" type="number" min="1" max="{{ total_inventory }}" value="1" {% unless product.available %}readonly{% endunless %} />
+                        <button class="increase" type="button">+</button>
+                      </div>
+
+                      
+                      <button class="ctl-product__addToCart" onclick="addToCartCollectionCompleteYourSystem()">Add To Cart</button>
+                    </div>
+  
+                  </div>
+                  
+                </div>
+              
+              </div>
+            </div>
+          {% endif %}
+        {% endunless %}
+
+      
+      {% endfor %}
+
+      
+    </div>
+
+  </div>
+
+</section>
+
+{{ 'complete-your-set.js' | asset_url | script_tag }}

@@ -1,0 +1,29 @@
+{% if settings.label_campaign != '' %}
+
+  <style>
+    .boost-sd__product-info:before {
+        content: "{{ settings.label_campaign }}";
+        text-transform: uppercase;
+        display: flex;
+        font-size: 10px;
+        background: #de2a2a;
+        padding: 5px 10px;
+        font-weight: bold;
+        color: white;
+        border-radius: 50px;
+    }
+    
+    .boost-sd__product-info{
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @media only screen and (min-width: 768px){
+        .boost-sd__product-info:before {
+            font-size: 12px;
+            padding: 5px 15px;
+        }
+    }
+  </style>
+
+{% endif %}

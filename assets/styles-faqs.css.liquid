@@ -1,0 +1,157 @@
+section.shopify-section.page-faqs {
+  padding: 30px 20px 0;
+}
+
+
+h2.section-faqs__title {
+    margin: 0 auto 10px;
+    text-transform: unset;
+    text-align: center;
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: 400;
+    font-family: var(--font-heading), sans-serif;
+    letter-spacing: 0;
+}
+
+.accordion-faqs {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.accordion-faqs__item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 20px 10px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e3e3e3;
+  cursor: pointer;
+}
+
+.accordion-faqs__item:last-child {
+  border-bottom: 0;
+}
+
+.accordion-faqs li.active h3:after {
+  transform: rotate(45deg);
+}
+
+
+.accordion-faqs__item h3 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  line-height: 28px;
+  /* letter-spacing: 0.01em; */
+  cursor: pointer;
+  font-weight: 500;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-faqs__item h3:after {
+  content: "+";
+  font-family: "material-design-iconic-font";
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 30px;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.accordion-faqs__answer {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 15px 0 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 300;
+  max-width: 90%;
+}
+
+.accordion-faqs__answer strong {
+  font-weight: 500;
+}
+
+.accordion-faqs__answer p {
+  margin: 0;
+}
+
+.accordion-faqs__answer > ul {
+  padding: 0 0 0 10px;
+  list-style-type: disc;
+}
+
+.accordion-faqs__answer > ul > li ul {
+  padding: 0 0 0 20px;
+  list-style-type: circle;
+}
+
+.accordion-faqs__answer > ul li {
+  padding: 5px 0;
+}
+
+@media only screen and (min-width: 800px){
+
+  section.shopify-section.page-faqs {
+    padding: 50px 20px 0;
+  }
+
+  section.section-faqs {
+    max-width: 1400px;
+    margin: auto;
+  }
+  
+
+  h2.section-faqs__title {
+    text-align: center;
+    font-size: 50px;
+    line-height: 55px;
+    margin-bottom: 20px;
+  }
+
+  .accordion-faqs__item {
+    padding: 30px 10px;
+  }
+
+  .accordion-faqs__answer > ul > li ul {
+    padding: 0 0 0 30px;
+  }
+
+  .accordion-faqs__item h3 {
+    font-size: 25px;
+  }
+
+  .accordion-faqs__item h3:after {
+    font-size: 30px;
+  }
+
+  .accordion-faqs__answer {
+    font-size: 20px;
+    line-height: 30px;
+    padding-top: 20px;
+    max-width: 80%;
+  }
+  
+}

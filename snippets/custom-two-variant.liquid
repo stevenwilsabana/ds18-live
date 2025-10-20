@@ -1,0 +1,83 @@
+{% if product.metafields.custom.custom_field_2_image != Blank %}
+  
+  <section class="container-variant container-variant--color">
+
+    <p class="container-variant__label">{{ product.metafields.custom.custom_field_2 }}: <span>{{ product.metafields.custom.custom_field_2_text }}</span></p>
+  
+    <div class="container-variant__content">
+  
+      {% assign productId = product.id %}
+      {% assign sorted_variants = product.metafields.custom.custom_field_2_variants.value %}
+      
+      {% for product_object in sorted_variants %}  
+      
+        {% assign variantId = product_object.id %}
+        {% assign url = product_object.url %}
+        {% assign colorImage = product_object.metafields.custom.custom_field_2_image %}
+        {% assign productAvailable = product_object.available %}
+  
+      
+        {% if productId == variantId %}
+          <div class="label-variant label-variant--select {% if productAvailable == false %}label-variant--sold-out{% endif %}">
+            <div class="label-variant__element">
+              <div class="label-variant__value" style="background: url('{{ colorImage | img_url: '100x' }}')"></div>
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ url }}" class="label-variant {% if productAvailable == false %}label-variant--sold-out{% endif %}">
+            <div class="label-variant__element">
+              <div class="label-variant__value" style="background: url('{{ colorImage | img_url: '100x' }}')"></div>
+            </div>
+          </a>
+        {% endif %}
+      
+      {% endfor %}
+      
+    </div>
+    
+  </section>
+  
+{% else %}
+  
+  <section class="container-variant container-variant--custom-one">
+
+    <p class="container-variant__label">{{ product.metafields.custom.custom_field_2 }}: <span>{{ product.metafields.custom.custom_field_2_text }}</span></p>
+  
+    <div class="container-variant__content">
+  
+      {% assign productId = product.id %}
+      {% assign sorted_variants = product.metafields.custom.custom_field_2_variants.value %}
+      
+      {% for product_object in sorted_variants %}  
+      
+        {% assign variantId = product_object.id %}
+        {% assign url = product_object.url %}
+        {% assign customVariant = product_object.metafields.custom.custom_field_2_text %}
+        {% assign productAvailable = product_object.available %}
+      
+        {% if productId == variantId %}
+          <div class="label-variant label-variant--select {% if productAvailable == false %}label-variant--sold-out{% endif %}">
+            <div class="label-variant__element">
+              <div class="label-variant__value">
+                <span>{{ customVariant }}</span>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ url }}" class="label-variant {% if productAvailable == false %}label-variant--sold-out{% endif %}">
+            <div class="label-variant__element">
+              <div class="label-variant__value">
+                <span>{{ customVariant }}</span>
+              </div>
+            </div>
+          </a>
+      
+        {% endif %}
+      
+      {% endfor %}
+      
+    </div>
+    
+  </section>
+  
+{% endif %}

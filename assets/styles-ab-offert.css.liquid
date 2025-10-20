@@ -1,0 +1,98 @@
+.boost-sd__product-price--ofert {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.boost-sd__product-price--ofert .variant-a__with-prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.boost-sd__product-price--ofert .variant-a__with-prices span {
+    font-size: 15px;
+    font-family: Zurich;
+}
+
+.boost-sd__product-price--ofert .variant-a__with-prices span.offer {
+    margin-right: 5px;
+    color: rgb(222, 42, 42);
+}
+
+.boost-sd__product-price--ofert .variant-a__with-prices span.regular {
+    color: rgba(40, 40, 40, 0.7);
+    text-decoration: line-through;
+    text-decoration-color: black;
+}
+
+.boost-sd__product-price--ofert .variant-a__with-prices span.label {
+    border: rgb(222, 42, 42) solid 1px;
+    font-size: 10px;
+    margin-right: 5px;
+    padding: 3px 5px;
+    background: rgb(222, 42, 42);
+    color: white;
+}
+
+@media only screen and (min-width: 768px){
+    .boost-sd__product-price--ofert .variant-a__with-prices span.offer,
+    .boost-sd__product-price--ofert .variant-a__with-prices span.label {
+        margin-right: 8px;
+    };
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.boost-sd__product-price--ofert .variant-b__without-prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boost-sd__product-price--ofert .variant-b__without-prices span,
+.boost-sd__product-price--ofert .variant-b__without-prices p {
+    font-size: 15px;
+    font-family: Zurich;
+    margin: 0;
+}
+
+.boost-sd__product-price--ofert .variant-b__without-prices p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.boost-sd__product-price--ofert .variant-b__without-prices p > span.label {
+    border: rgb(222, 42, 42) solid 1px;
+    font-size: 10px;
+    margin-right: 5px;
+    padding: 3px 5px;
+    background: rgb(222, 42, 42);
+    color: white;
+}
+
+.boost-sd__product-price--ofert .variant-b__without-prices p.text-offer {
+    font-size: 11px!important;
+    margin-top: 5px;
+    color: rgb(222, 42, 42);
+}
+
+.boost-sd__product-price--ofert .variant-b__without-prices span.text-offer {
+    font-size: 10px;
+    color: rgb(222, 42, 42);
+}
+
+@media only screen and (min-width: 768px){
+    .boost-sd__product-price--ofert .variant-b__without-prices p > span.label {
+        margin-right: 8px;
+    };
+}

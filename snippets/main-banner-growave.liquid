@@ -1,0 +1,41 @@
+<section id="shopify-section-main-banner-growave">
+
+  <img class="main-banner-rewards__background" src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/DSC09965.jpg">
+  <div class="main-banner-rewards">
+    <div class="main-banner-rewards__container">
+      <img class="main-banner-rewards__imagen" src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/logo-white-growave.png">
+      
+        {% if customer %}
+          <div class="main-banner-rewards__text">
+            <h3 class="main-banner-rewards__text-title">Hi {{ customer.name }}</h3>
+            <p class="main-banner-rewards__text-parrafo">
+              Welcome to your account! <br>
+              From here you can manage your points and referrals program.           
+            </p>
+            <div class="main-banner-rewards__container-buttons">
+              <button class="main-banner-rewards__button-join" onclick="location.href='https://www.ds18.com/account/logout';">Log Out</button>
+            </div>  
+          </div>
+        {% else %}
+          <div class="main-banner-rewards__text">
+            <h3 class="main-banner-rewards__text-title">Rewards Program</h3>
+            <p class="main-banner-rewards__text-parrafo">
+              Earn Points for every dollar spent! <br>
+              You'll also be the first to receive new products, <br>
+              exclusive promotions and giveaways!
+            </p>
+            <div class="main-banner-rewards__container-buttons">
+                {% comment %}
+                  <button class="main-banner-rewards__button-join" onclick="ssw('#login_modal').sswModal('hide'); ssw('#signup_modal').sswModal('show', this);">Join Now</button>
+                  <button class="main-banner-rewards__button-login" data-toggle="ssw-modal" data-target="#login_modal">Login</button>
+                {% endcomment %}
+                <button class="main-banner-rewards__button-join button-active-js__log-ing">Join Now</button>
+                <button class="main-banner-rewards__button-login button-active-js__log-ing">Login</button>
+            </div>
+          </div>
+        {% endif %}
+      
+    </div>
+  </div>
+
+</section>

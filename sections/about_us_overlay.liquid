@@ -1,0 +1,46 @@
+<div class="about_us_overlay__container">
+
+  <div class="about_us_overlay__content">
+    <div class="about_us_overlay__banner">
+      <img src="{{ section.settings.banner | image_url: width: '2500px' }}">
+    </div>
+    
+    <div class="about_us_overlay__details">
+      <div class="about_us_overlay__details-content">
+        <h4>{{ section.settings.heading }}</h4>
+        <div>{{ section.settings.details }}</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "About Us Overlay NVY",
+    "tag": "section",
+    "class": "about_us_overlay",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner",
+        "label": "Banner"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "details",
+        "label": "Details"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Us - Overlay"
+      }
+    ]
+  }
+{% endschema %}

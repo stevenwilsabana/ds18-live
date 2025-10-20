@@ -1,0 +1,147 @@
+<script>
+
+  async function fetchProductPrices(handle, cursor = null) {
+      // console.log(`🔍 Fetching product with handle: ${handle}`);
+      
+      const query = `
+      {
+        product(handle: "${handle}") {
+          id
+          title
+          handle
+          publishedAt
+          availableForSale
+          variants(first: 250, after: ${cursor ? `"${cursor}"` : null}) {
+            edges {
+              node {
+                id
+                price {
+                  amount
+                  currencyCode
+                }
+              }
+              cursor
+            }
+            pageInfo {
+              hasNextPage
+            }
+          }
+        }
+      }`;
+  
+      const response = await fetch(graphqlEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Shopify-Storefront-Access-Token': storefrontAccessToken,
+        },
+        body: JSON.stringify({ query: query })
+      });
+  
+      if (!response.ok) {
+        console.error('❌ Fetch error:', response.status, response.statusText);
+        return null;
+      }
+  
+      const jsonResponse = await response.json();
+  
+      // console.log("✅ Full GraphQL Response for:", handle, jsonResponse);
+  
+      if (jsonResponse.errors) {
+        console.error('⚠️ GraphQL errors:', jsonResponse.errors);
+        return null;
+      }
+  
+      if (!jsonResponse.data.product) {
+        console.warn(`❌ Product with handle "${handle}" not found in GraphQL response`);
+        return null;
+      }
+  
+      return jsonResponse.data.product;
+  }
+
+
+  async function fetchAllProductPrices(handle) {
+    let allVariants = [];
+    let cursor = null;
+    let hasNextPage = true;
+
+    while (hasNextPage) {
+      const product = await fetchProductPrices(handle, cursor);
+      if (product && product.variants && product.variants.edges) {
+        allVariants = allVariants.concat(product.variants.edges);
+        hasNextPage = product.variants.pageInfo.hasNextPage;
+        if (hasNextPage) {
+          cursor = product.variants.edges[product.variants.edges.length - 1].cursor;
+        }
+      } else {
+        hasNextPage = false;
+      }
+    }
+
+    return allVariants;
+
+  }
+
+  async function updateProductItems() {
+    const productItems = document.querySelectorAll('.container-prices-b2b[data-url]');
+    const promises = [];
+
+    productItems.forEach(item => {
+      const productHandle = item.getAttribute('data-url');
+      const promise = fetchAllProductPrices(productHandle).then(variants => {
+        if (variants && variants.length > 0) {
+          const variant = variants[0].node; 
+          const wholesalePrice = Math.round(parseFloat(variant.price.amount) * 100); 
+          item.querySelector('.retail span').textContent = (wholesalePrice / 100).toLocaleString("en-US", {style: "currency", currency: variant.price.currencyCode});
+        }
+      }).catch(error => {
+        console.error('Error fetching product prices:', error);
+      });
+
+      promises.push(promise);
+    });
+
+    await Promise.all(promises);
+  }
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    await updateProductItems();
+    initializeLoadingBarObserver();
+  });
+
+  function initializeLoadingBarObserver() {
+    const loadingBar = document.querySelector(".loading-bar");
+
+    if (loadingBar) {
+      const observer = new MutationObserver((mutationsList) => {
+        for (let mutation of mutationsList) {
+          if (
+            mutation.type === "attributes" &&
+            (mutation.attributeName === "class" || mutation.attributeName === "style")
+          ) {
+            const computedStyle = window.getComputedStyle(loadingBar);
+            const scaleX = computedStyle.transform;
+
+            // Verifica si el loading bar se ha activado o ha terminado su animación
+            if (scaleX !== "matrix(1, 0, 0, 1, 0, 0)") { 
+              console.log("Loading bar detected a change, updating prices...");
+              updateProductItems();
+            }
+          }
+        }
+      });
+
+      // Observar cambios en los atributos `class` y `style`
+      observer.observe(loadingBar, {
+        attributes: true,
+        attributeFilter: ["class", "style"],
+      });
+
+      console.log("Observer initialized for loading bar...");
+    } else {
+      console.error("Loading bar not found.");
+    }
+  }
+
+</script>

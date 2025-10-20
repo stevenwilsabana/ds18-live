@@ -1,0 +1,83 @@
+<style>
+  #main h1.title-global-page {
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  #main {
+    padding-top: 15px;
+  }
+  
+  .shopify-section.shopify-section--apps .container.vertical-breather {
+    padding-top: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  
+  
+  input#address {
+    padding-left: 10px;
+  }
+  
+  @media only screen and (min-width: 768px){
+    #main h1.title-global-page {
+        font-size: 40px;
+    }
+    
+    #main {
+        margin-top: 40px;
+        padding-top: 5px;
+    }
+    
+    input#address {
+      padding-left: 15px;
+    }
+
+    .shopify-section.shopify-section--apps .container.vertical-breather {
+        padding-top: 30px;
+    }
+  }
+
+
+  /* ESTILOS MAPA */
+
+  h1 {
+      font-family: Montserrat, serif !important;
+      font-weight: 400!important;
+  }
+  
+  p,
+  input,
+  label,
+  button,
+  span,
+  h2, h3, h4, h5, h6,
+  a,
+  div {
+      font-family: Montserrat, serif !important;
+      font-size: 14px!important;
+  }
+  
+  .search-address-box {
+      padding: 0!important;
+  }
+
+  .inner-item.inner-item-active {
+      background: #dcecf5!important;
+  }
+
+  .bootstrap-storeifyapps .section-header.text-center {
+    display: none!important;
+  }
+  
+</style>
+
+
+<h1 class="title-global-page">{{ page.title }}</h1>
+
+{% schema %}
+  {
+    "name": "Store Locator",
+    "settings": []
+  }
+{% endschema %}

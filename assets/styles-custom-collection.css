@@ -1,0 +1,150 @@
+.boost-sd__quick-view-btn .boost-sd__btn-add-to-cart {
+    background: black!important;
+    border-color: black!important;
+    color: white!important;
+    border-radius: 10px!important;
+}
+
+.boost-sd__quick-view-btn .boost-sd__btn-buy-now {
+    background: white!important;
+    border-color: black!important;
+    border-radius: 10px!important;
+    color: black!important;
+}
+
+
+/* ESTILOS BANNER INTERMEDIO ACTIVADO */
+
+/*
+
+.product-item.imagen-collection-page__middle {
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 500px){
+    .product-item.imagen-collection-page__middle {
+        border: 1px solid #f5f5f5;
+        border-radius: 0;
+        overflow: hidden;
+    }
+    
+    .product-item.imagen-collection-page__middle .container-imagen {
+        height: 100%;
+    }
+    
+    .product-item.imagen-collection-page__middle .container-imagen img {
+        object-fit: cover;
+        height: 100%;
+    }   
+
+    .shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle {
+        max-height: 350px;
+        border-radius: 5px;
+    }
+    
+    .shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle .container-imagen {
+        height: 100%;
+        width: 100%;
+    }
+    
+    .shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle .container-imagen img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    } 
+}*/
+
+
+/* 👆 Estilos que ocultan los banners en algunas vistas */
+
+/*.product-item.imagen-collection-page__middle {
+    display: none;
+}
+
+@media only screen and (min-width: 500px){
+    .shopify-section--main-collection.grid-4 .product-item.imagen-collection-page__middle {
+        display: flex;
+    }   
+}*/
+
+
+/* 👆 Estilos para mostrar los banners solo en mobile */
+
+/*@media only screen and (max-width: 500px){
+    .product-item.imagen-collection-page__middle {
+        display: flex;
+    }
+    
+    .product-item.imagen-collection-page__middle .container-imagen a {
+        width: 100%;
+        display: flex;
+        
+    }
+    
+    .product-item.imagen-collection-page__middle .container-imagen a img {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        object-position: top;
+    }   
+}*/
+
+
+/* NUEVOS ESTILOS BANNER INTERMEDIO ACTIVADO */
+
+.product-item.imagen-collection-page__middle {
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle img.banner-dg,
+.shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle img.banner-dl,
+.shopify-section--main-collection.grid-4 .product-item.imagen-collection-page__middle img.banner-dg,
+.shopify-section--main-collection.grid-4 .product-item.imagen-collection-page__middle img.banner-dl {
+    display: none;
+}
+
+.shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle img.banner-mobile,
+.shopify-section--main-collection.grid-4 .product-item.imagen-collection-page__middle img.banner-mobile {
+    width: 100%;
+}
+
+@media only screen and (min-width: 500px){
+    .shopify-section--main-collection.grid-4 .product-item.imagen-collection-page__middle {
+        border: 0;
+        border-radius: 0;
+    }
+    
+    .shopify-section--main-collection.grid-4 .product-item.imagen-collection-page__middle img.banner-mobile {
+        display: none;
+    }
+
+    .shopify-section--main-collection.grid-4 .product-item.imagen-collection-page__middle .container-imagen {
+        height: 100%;
+    }
+    
+    .shopify-section--main-collection.grid-4 .product-item.imagen-collection-page__middle img.banner-dg {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle {
+        border: 0;
+    }
+    
+    .shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle img.banner-mobile {
+        display: none;
+    }
+    
+    .shopify-section--main-collection.grid-1 .product-item.imagen-collection-page__middle img.banner-dl {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+    }
+}

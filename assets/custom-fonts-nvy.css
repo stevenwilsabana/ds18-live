@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'BebasKai';
+    src: url('https://cdn.shopify.com/s/files/1/0018/0142/0861/files/BebasKai.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0018/0142/0861/files/BebasKai.eot') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0018/0142/0861/files/BebasKai.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0018/0142/0861/files/BebasKai.woff') format('woff'),
+        url('https://cdn.shopify.com/s/files/1/0018/0142/0861/files/BebasKai.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,15 @@
+{{ 'styles-search-files.css' | asset_url | stylesheet_tag }}
+
+<div id="search-container">
+  <input type="text" id="search-input" v-model="searchQuery" @input="performSearch" placeholder="Search file...">
+  <div id="search-results">
+    <div v-for="file in files" :key="file.url">
+      <a :href="file.url" target="_blank"><span>[[ file.text ]]</span><i class="fa-solid fa-download"></i></a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+{{ 'script-search-files.js' | asset_url | script_tag }}
+
+{% section 'search-files' %}

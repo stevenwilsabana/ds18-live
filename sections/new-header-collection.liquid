@@ -1,0 +1,102 @@
+{{ 'styles-collection-header.css' | asset_url | stylesheet_tag }}
+
+<div class="new-header-collection__container"
+  {% if collection.metafields.custom.banner_collection_no_1 != blank %}data-banner-1="{{ collection.metafields.custom.banner_collection_no_1 | img_url: 'master' }}"{% endif %}
+  {% if collection.metafields.custom.banner_collection_no_1_desktop_grid != blank %}data-banner-dg-1="{{ collection.metafields.custom.banner_collection_no_1_desktop_grid | img_url: 'master' }}"{% endif %}
+  {% if collection.metafields.custom.banner_collection_no_1_desktop_list != blank %}data-banner-dl-1="{{ collection.metafields.custom.banner_collection_no_1_desktop_list | img_url: 'master' }}"{% endif %}
+
+  {% if collection.metafields.custom.banner_collection_no_2 != blank %}data-banner-2="{{ collection.metafields.custom.banner_collection_no_2 | img_url: 'master' }}"{% endif %}
+  {% if collection.metafields.custom.banner_collection_no_2_desktop_grid != blank %}data-banner-dg-2="{{ collection.metafields.custom.banner_collection_no_2_desktop_grid | img_url: 'master' }}"{% endif %}
+  {% if collection.metafields.custom.banner_collection_no_2_desktop_list != blank %}data-banner-dl-2="{{ collection.metafields.custom.banner_collection_no_2_desktop_list | img_url: 'master' }}"{% endif %}
+
+  {% if collection.metafields.custom.link_banner_no_1 != blank %}data-link-1="{{ collection.metafields.custom.link_banner_no_1.value }}"{% endif %}
+  {% if collection.metafields.custom.link_banner_no_2 != blank %}data-link-2="{{ collection.metafields.custom.link_banner_no_2.value }}"{% endif %}
+>
+  {% if collection.metafields.custom.main_banner %}
+    <div class="new-header-collection__banner">
+      <div class="new-header-collection__imagen">
+        <img src="{{ collection.metafields.custom.main_banner | img_url: 'master' }}">
+      </div>
+      <div class="new-header-collection__text">
+        {% if collection.metafields.custom.heading %}
+          <h1>{{ collection.metafields.custom.heading }}</h1>
+        {% else %}
+          <h1>{{ collection.title }}</h1>
+        {% endif %}
+        {% if collection.metafields.custom.description %}
+          <div class="container-description">
+            <div class="content">{{ collection.metafields.custom.description | metafield_tag }}</div>
+          </div>
+        {% else %}
+          <div class="container-description">
+            <div class="content">{{ collection.description }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% else %}
+    <div class="new-header-collection__with-out-banner">
+      <div class="new-header-collection__text">
+        {% if collection.metafields.custom.heading %}
+          <h1>{{ collection.metafields.custom.heading }}</h1>
+        {% else %}
+          <h1>{{ collection.title }}</h1>
+        {% endif %}
+        {% if collection.metafields.custom.description %}
+          <div class="container-description">
+            <div class="content">{{ collection.metafields.custom.description | metafield_tag }}</div>
+          </div>
+        {% else %}
+          <div class="container-description">
+            <div class="content">{{ collection.description }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% if customer.b2b? %}
+  {% if collection.id == 287525830717 %}
+
+    <style>
+      form.main-search__form.main-search__form--shop-all {
+          width: 80%;
+          margin-bottom: 50px;
+      }
+      
+      .new-header-collection__with-out-banner {
+          padding-bottom: 20px;
+      }
+    </style>
+
+    {{ 'styles-search-shop-all.css' | asset_url | stylesheet_tag }}
+    
+      <div id="collection-search-container">
+        <input 
+          type="text" 
+          id="collection-search-input" 
+          placeholder="Search by SKU (Type at least 3 letters...)" 
+          autocomplete="off"
+        >
+      </div>
+
+
+    
+  {% endif %}
+{% endif %}
+
+
+
+{% schema %}
+  {
+    "name": "New Header Collection",
+    "class": "new-header-collection",
+    "presets": [
+      {
+        "name": "New Header Collection",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

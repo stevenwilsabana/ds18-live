@@ -1,0 +1,73 @@
+{{ 'styles-app-pdp.css' | asset_url | stylesheet_tag }}
+
+<div class="app-pdp">
+  <div class="app-pdp__container">
+    <h4>Download App</h4>
+
+    {% for tag in product.tags %}
+      
+      {% if tag contains 'APP: DS18 LC' %}
+        <div class="app-pdp__icons">
+          <a href="https://apps.apple.com/uy/app/ds18-lc/id6467008676" target="_blank">
+            {% render 'assets-icons-apps', icon: 'apple' %}
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.ds18lc.flutter_light" target="_blank">
+            {% render 'assets-icons-apps', icon: 'google' %}
+          </a>
+        </div>
+      {% endif %}
+
+
+      {% if tag contains 'APP: DS18 LED BTC' %}
+        <div class="app-pdp__icons">
+          <a href="https://apps.apple.com/us/app/ds18-led-btc/id1327651110" target="_blank">
+            {% render 'assets-icons-apps', icon: 'apple' %}
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.qh.ds.ledbtcx" target="_blank">
+            {% render 'assets-icons-apps', icon: 'google' %}
+          </a>
+        </div>
+      {% endif %}
+
+
+      {% if tag contains 'APP: BT8.8DSP' %}
+        <div class="app-pdp__icons">
+          <a href="https://apps.apple.com/ua/app/dsp8-8bt-v2/id6738157434" target="_blank">
+            {% render 'assets-icons-apps', icon: 'apple' %}
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.dsp18" target="_blank">
+            {% render 'assets-icons-apps', icon: 'google' %}
+          </a>
+        </div>
+      {% endif %}
+
+
+      {% if tag contains 'APP: DS18 DSP' %}
+        <div class="app-pdp__icons">
+          <a href="https://apps.apple.com/us/app/ds18-dsp/id1625944939" target="_blank">
+            {% render 'assets-icons-apps', icon: 'apple' %}
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.expertelectronics.newdsp18" target="_blank">
+            {% render 'assets-icons-apps', icon: 'google' %}
+          </a>
+        </div>
+      {% endif %}
+
+
+      {% if tag contains 'APP: DS18 SDX REMOTE CONTROL' %}
+        <div class="app-pdp__icons">
+          <a href="https://apps.apple.com/cl/app/ds18-sdx-remote-control/id6450036796" target="_blank">
+            {% render 'assets-icons-apps', icon: 'apple' %}
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.sharp.ds18" target="_blank">
+            {% render 'assets-icons-apps', icon: 'google' %}
+          </a>
+        </div>
+      {% endif %}
+
+      
+      
+    {% endfor %}
+
+  </div>
+</div>

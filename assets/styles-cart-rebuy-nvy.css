@@ -1,0 +1,57 @@
+.container-progress-bar {
+    display: none!important;
+}
+
+.rebuy-cart__flyout-header *,
+.rebuy-cart__flyout-item-discount-message,
+[data-rebuy-component="discount-input"] .rebuy-cart__flyout-item-discount-message{
+    color: #059bd9!important;
+}
+
+.insurance-personalized__container {
+    background: rgb(5 155 217 / 5%)!important;
+}
+
+div#stars-rebuy-show i {
+    color: #059bd9!important;
+}
+
+.rebuy-cart__flyout-body {
+    background: rgb(233 245 252)!important;
+}
+
+.rebuy-cart__flyout-footer button.rebuy-button.rebuy-cart__checkout-button.block {
+    background: #059bd9!important;
+    border-color: #059bd9!important;
+}
+
+.rebuy-cart__flyout-recommendations h3.super-title, .rebuy-new-cart [data-rebuy-id="232743"] h3.super-title {
+    color: #059bd9!important;
+}
+
+.rebuy-cart__flyout-recommendations [data-rebuy-id="94780"] {
+    display: none!important;
+}
+
+
+@media only screen and (min-width: 900px) {
+    .rebuy-cart__flyout-body {
+        background: #fff !important;
+    }
+
+    .rebuy-new-cart [data-rebuy-id="232743"] {
+        background: rgb(233 245 252)!important;
+    }
+}
+
+
+/* QUITAR ESTRELLAS DEL CARRITO */
+
+div#stars-rebuy-show .stars,
+div#stars-rebuy-show .message {
+    display: none!important;
+}
+
+div#stars-rebuy-show {
+    padding-bottom: 20px!important;
+}

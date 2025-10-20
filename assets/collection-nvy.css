@@ -1,0 +1,20 @@
+div#main *:not(.jdgm-preview-badge):not(.jdgm-star):not(.jdgm-preview-badge .jdgm-star.jdgm-star) {
+  font-family: Montserrat, serif !important;
+}
+
+
+product-item.product-item .cta-buttons-eject button.btn {
+    background:#007fc1!important
+}
+
+
+.jdgm-preview-badge .jdgm-star.jdgm-star {
+    color:#007fc1!important   
+}
+
+
+@media only screen and (min-width: 768px) {
+    product-item.product-item .cta-buttons-eject button.btn:hover {
+        background:#007fc1!important
+    }
+}

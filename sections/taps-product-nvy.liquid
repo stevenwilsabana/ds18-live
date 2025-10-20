@@ -1,0 +1,145 @@
+{{ 'styles-tap-nvy.css' | asset_url | stylesheet_tag }}
+
+<div class="main-taps__container main-taps__container--{{ section.id }}">
+
+  <div class="main-taps__container-buttons">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'tap' %}
+          <button {{ block.shopify_attributes }} class="button-tap button-tap--{{ block.settings.button | handleize }}" data-button="{{ forloop.index }}">
+            {{ block.settings.button }}
+          </button>
+      {% endcase %}
+    {% endfor %}
+  </div>
+
+  <div class="main-taps__container-taps">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'tap' %}
+
+        {% if block.settings.button == 'OVERVIEW' %}
+
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="main-taps__container--overview main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+
+            <div class="product-nvy__details-features">
+              <h3>KEY FEATURES</h3>
+              <ul>
+                
+                  <li>
+                    <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/icono-diameter.png?v=1738970633">
+                    <p>8” Diameter</p>
+                  </li>
+                
+                  <li>
+                    <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/icono-4-ohm.png?v=1738970633">
+                    <p>4 OHM</p>
+                  </li>
+                
+                  <li>
+                    <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/icono-hybrid-coaxial.png?v=1738970633">
+                    <p>Hybrid Coaxial</p>
+                  </li>
+                
+                  <li>
+                    <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/icono-magnet.png?v=1738970633">
+                    <p>Neodymiun Magnet</p>
+                  </li>
+                
+                  <li>
+                    <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/icono-digital-led.png?v=1738970633">
+                    <p>Digital LED Lights</p>
+                  </li>
+                
+                  <li>
+                    <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/icono-waterproof.png?v=1738970633">
+                    <p>IP65 Waterproof Rating</p>
+                  </li>
+                
+              </ul>
+            </div>
+
+            
+            <div class="main-taps__container">
+              <div class="main-taps__container-information">
+                {{ block.settings.content }}
+              </div>
+              <div class="main-taps__container-imagen">
+                <img src="{{ block.settings.imagen | img_url: 'master' }}">
+              </div>
+            </div>
+          </div>
+
+        {% else %}
+
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+            <div class="main-taps__container-information">
+              {{ block.settings.content }}
+            </div>
+            <div class="main-taps__container-imagen">
+              <img src="{{ block.settings.imagen | img_url: 'master' }}">
+            </div>
+          </div>
+          
+        {% endif %}
+        
+      {% endcase %}
+    {% endfor %}
+  </div>
+  
+</div>
+
+<script>
+
+  $(document).ready(function(){
+    $('.main-taps__container--{{ section.id }} .main-taps__container-buttons button.button-tap').first().addClass('active-button');
+    $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global').hide();
+    $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global').first().show();
+  });
+
+  $('.main-taps__container--{{ section.id }} .main-taps__container-buttons button.button-tap').click(function(){
+    var number = $(this).attr('data-button');
+    $('.main-taps__container--{{ section.id }} .main-taps__container-buttons button.button-tap').removeClass('active-button');
+    $(this).addClass('active-button');
+    $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global').hide();
+    $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global#tabs-' + number).show();
+  });
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Taps Products",
+    "class": "main-taps",
+    "tag": "section",
+    "blocks": [
+      {
+        "name": "Tap",
+        "type": "tap",
+        "settings": [
+          {
+              "type": "text",
+              "id": "button",
+              "label": "Button"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          },
+          {
+            "type": "image_picker",
+            "id": "imagen",
+            "label": "Imagen"
+          }
+        ]
+      }
+	],
+  	"presets": [
+      {
+        "name": "Taps NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

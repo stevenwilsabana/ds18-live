@@ -1,0 +1,82 @@
+function imagesCollectionPage(){
+  
+    var $lista = $(".shopify-section--main-collection .product-list__inner");
+    var $elementosLi = $lista.find(".product-item");
+    var $bannerOne = $('div.new-header-collection__container').attr('data-banner-1');
+    var $bannerTwo = $('div.new-header-collection__container').attr('data-banner-2');
+    var $linkOne = $('div.new-header-collection__container').attr('data-link-1');
+    var $linkTwo = $('div.new-header-collection__container').attr('data-link-2');
+  
+    var $divNuevoOne = $('<div class="product-item imagen-collection-page__middle imagen-collection-page__middle--1">' +
+          '<div class="container-imagen">' +
+            ($linkOne == undefined ? 
+              '<img src="' + $bannerOne + '">' :
+              '<a target="_blank" href="' + $linkOne + '">' +
+                '<img src="' + $bannerOne + '">' +
+              '</a>'
+            ) +
+          '</div>' +
+        '</div>');
+
+    var $divNuevoTwo = $('<div class="product-item imagen-collection-page__middle imagen-collection-page__middle--2">' +
+          '<div class="container-imagen">' +
+            ($linkTwo == undefined ? 
+              '<img src="' + $bannerTwo + '">' :
+              '<a target="_blank" href="' + $linkTwo + '">' +
+                '<img src="' + $bannerTwo + '">' +
+              '</a>'
+            ) +
+          '</div>' +
+        '</div>');
+  
+
+
+    if($elementosLi.length <= 6) {
+      $('.imagen-collection-page__middle').remove();
+    } else if ($elementosLi.length >= 7 && $elementosLi.length <= 12) {
+       if ($('.imagen-collection-page__middle img[src="' + $bannerOne + '"]').length === 0) {
+         $elementosLi.eq(5).after($divNuevoOne);
+       } else {
+         $('.imagen-collection-page__middle--2').remove();
+       }
+    } else if ($elementosLi.length >= 13) {
+      if ($('.imagen-collection-page__middle img[src="' + $bannerOne + '"]').length === 0) {
+        $elementosLi.eq(5).after($divNuevoOne);
+      }
+
+      if ($('.imagen-collection-page__middle img[src="' + $bannerTwo + '"]').length === 0) {
+        $elementosLi.eq(11).after($divNuevoTwo);  
+      }
+      
+    };
+
+};
+
+
+$( document ).ready(function() {
+  // console.log( "ready!" );
+  imagesCollectionPage();
+});
+
+
+
+// Seleccionar el elemento loading-bar
+const loadingBar = document.querySelector('.loading-bar');
+
+// Crear una instancia de MutationObserver
+const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+        if (mutation.attributeName === 'class') {
+            // Obtener la lista de clases actual
+            const currentClasses = loadingBar.classList;
+            
+            // Si la clase "is-visible" se ha eliminado, significa que la carga ha finalizado
+            if (!currentClasses.contains('is-visible')) {
+                imagesCollectionPage();
+            }
+        }
+    });
+});
+
+// Configurar el observer para observar cambios en los atributos (clases)
+observer.observe(loadingBar, { attributes: true });

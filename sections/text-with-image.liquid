@@ -1,0 +1,260 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    {%- if section.settings.text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign heading_color = settings.heading_color -%}
+      {%- assign text_color = settings.text_color -%}
+    {%- else -%}
+      {%- assign heading_color = section.settings.text_color -%}
+      {%- assign text_color = section.settings.text_color -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_background == 'rgba(0,0,0,0)' -%}
+      {%- assign button_background = settings.primary_button_background -%}
+    {%- else -%}
+      {%- assign button_background = section.settings.button_background -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign button_text_color = settings.primary_button_text_color -%}
+    {%- else -%}
+      {%- assign button_text_color = section.settings.button_text_color -%}
+    {%- endif -%}
+    
+    {%- if section.settings.bgbackground == 'rgba(0,0,0,0)' -%}
+      {%- assign bgbackground = settings.bgbackground -%}
+    {%- else -%}
+      {%- assign bgbackground = section.settings.bgbackground -%}
+    {%- endif -%}
+ 
+    --heading-color: {{ heading_color.red }}, {{ heading_color.green }}, {{ heading_color.blue }};
+    --text-color: {{ text_color.red }}, {{ text_color.green }}, {{ text_color.blue }};
+    --primary-button-background: {{ button_background.red }}, {{ button_background.green }}, {{ button_background.blue }};
+    --primary-button-text-color: {{ button_text_color.red }}, {{ button_text_color.green }}, {{ button_text_color.blue }};
+
+    --section-accent-background: {{ section.settings.accent_background.red }} {{ section.settings.accent_background.green }} {{ section.settings.accent_background.blue }} / {{ section.settings.accent_background.alpha }};
+    --section-autoplay-duration: {{ section.settings.cycle_speed }}s;
+    --section-animation-play-state: paused;
+      background:{{bgbackground}}};
+  }
+  
+
+ 
+  </style>
+
+    
+<section {% if section.settings.customId %} id="{{ section.settings.customId }}" {% endif %} class="section mysection"   {% if section.settings.spacing %} style="margin: 0px;" {% endif %}>
+  {% if section.settings.fullwidth %}
+  <div class="container">
+    {% endif %}
+ {%- for block in section.blocks -%} 
+   
+    {% if block.settings.image_position == 'left' %}
+      <div class="imageDiv divalign" style="background:url('{{ block.settings.image.src | img_url: 'master' }}');">
+                 {%- if block.settings.image != blank -%}
+                          <img id="block-{{ block.id }}-{{ block.settings.image.id }}" class="image-with-text__image" sizes="(max-width: 740px) calc(100vw - 96px), (max-width: 999px) calc(100vw - 160px), 600px" loading="lazy" {% render 'image-attributes', image: block.settings.image, sizes: '600,700,800,1000,1200,1400' %}>
+                          {%- assign image_count = image_count | plus: 1 -%}
+                        {%- endif -%}
+              </div>
+         <div class="textDiv divalign left">
+                     {%- if block.settings.subheading != blank -%}
+                          <h2 class="heading heading--small">
+                          {{ block.settings.subheading | escape }}
+                          </h2>
+                        {%- endif -%}
+      
+                        {%- if block.settings.title != blank -%}
+                          <h3 class="heading h3">
+                           {{ block.settings.title | escape }}
+                          </h3>
+                        {%- endif -%}
+      
+                        <div class="image-with-text__text-wrapper">
+                          {%- if block.settings.content != blank -%}
+                            {{- block.settings.content -}}
+                          {%- endif -%}
+      
+                          {%- if block.settings.button_text != blank -%}
+                            <div class="button-wrapper">
+                              <a href="{{ block.settings.button_link }}" class="button button--primary" style=" color: {{ section.settings.button-text-color }};">{{ block.settings.button_text }}</a>
+                            </div>
+                          {%- endif -%}
+                        </div>
+        </div>
+                
+     {% endif %}
+       {% if block.settings.image_position == 'right' %}
+          <div class="imageDiv mobile-only divalign" style="display:none;background:url('{{ block.settings.image.src | img_url: 'master' }}');">
+                 {%- if block.settings.image != blank -%}
+                          <img id="block-{{ block.id }}-{{ block.settings.image.id }}" class="image-with-text__image" sizes="(max-width: 740px) calc(100vw - 96px), (max-width: 999px) calc(100vw - 160px), 600px" loading="lazy" {% render 'image-attributes', image: block.settings.image, sizes: '600,700,800,1000,1200,1400' %}>
+                          {%- assign image_count = image_count | plus: 1 -%}
+                        {%- endif -%}
+              </div>
+         <div class="textDiv divalign right">
+                     {%- if block.settings.subheading != blank -%}
+                          <h2 class="heading heading--small">
+                          {{ block.settings.subheading | escape }}
+                          </h2>
+                        {%- endif -%}
+      
+                        {%- if block.settings.title != blank -%}
+                          <h3 class="heading h3">
+                              {%- assign productTitle = block.settings.title  | split: ' ' -%}
+<span class="red">{{ productTitle[0] }}</span>{{ block.settings.title | remove_first: productTitle[0] }}
+
+                          </h3>
+                        {%- endif -%}
+    
+      
+                        <div class="image-with-text__text-wrapper">
+                          {%- if block.settings.content != blank -%}
+                            {{- block.settings.content -}}
+                          {%- endif -%}
+      
+                          {%- if block.settings.button_text != blank -%}
+                            <div class="button-wrapper">
+                              <a href="{{ block.settings.button_link }}" class="button button--primary" style=" color: {{ section.settings.button-text-color }};">{{ block.settings.button_text }}</a>
+                            </div>
+                          {%- endif -%}
+                        </div>
+        </div>
+                <div class="imageDiv divalign desktop-only" style="background:url('{{ block.settings.image.src | img_url: 'master' }}');">
+                 {%- if block.settings.image != blank -%}
+                          <img id="block-{{ block.id }}-{{ block.settings.image.id }}" class="image-with-text__image" sizes="(max-width: 740px) calc(100vw - 96px), (max-width: 999px) calc(100vw - 160px), 600px" loading="lazy" {% render 'image-attributes', image: block.settings.image, sizes: '600,700,800,1000,1200,1400' %}>
+                          {%- assign image_count = image_count | plus: 1 -%}
+                        {%- endif -%}
+              </div>
+     {% endif %}
+
+  
+   {%- endfor -%}
+   {% if section.settings.fullwidth %}
+  </div>
+     {% endif %}
+</section>
+{% schema %}
+{
+  "name": "Text with image",
+  "class": "shopify-section--text-with-image TEXT-WITH-IMAGE",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "reveal_on_scroll",
+      "label": "Reveal on scroll",
+      "info": "Show animation when section becomes visible.",
+      "default": true
+    },
+    {
+          "type": "text",
+          "id": "customId",
+          "label": "custom ID"
+   },
+  {
+      "type": "checkbox",
+      "id": "fullwidth",
+      "label": "No full width",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "rgba(0,0,0,0)"
+    },
+     {
+      "type": "color",
+      "id": "button-text-color",
+      "label": "Button Text color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "rgba(0,0,0,0)"
+    },
+     {
+      "type": "color",
+      "id": "bgbackground",
+      "label": "Background Color",
+      "default": "rgba(0,0,0,0)"
+    },
+      {
+      "type": "checkbox",
+      "id": "spacing",
+      "label": "No spacing Default",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1400 x 1400px .jpg recommended"
+        },
+       {
+      "type": "select",
+      "id": "image_position",
+      "label": "Desktop image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Subheading"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Image with text"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Use image with text to give your customers insight into your brand. Select imagery and text that relates to your style and story.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+         
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with image",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

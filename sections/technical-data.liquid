@@ -1,0 +1,324 @@
+<style>
+
+
+  .tecnical-data__container .tecnical-data__variants .container-variants,
+  .tecnical-data__container .tecnical-data__header .container-manual,
+  .tecnical-data__container .tecnical-data__header .container-software{
+      display: none;
+  }
+
+  .shopify-section.tecnical-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+.tecnical-data__container {
+    width: 100%;
+    margin-bottom: 30px;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 15px!important;
+    border-top: red solid 1px;
+    
+}
+
+.shopify-section.tecnical-data h3.heading.h3 {
+    padding: 20px 0 20px;
+}
+
+.tecnical-data__variants {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 340px;
+    overflow: hidden;
+}
+
+.shopify-section.tecnical-data button.dropdown-technical {
+  border: red solid 1px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  color: red;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+.tecnical-data__variants .container-variants .metafield-rich_text_field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.tecnical-data__variants .container-variants .metafield-rich_text_field ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    list-style-type: none;
+    width: 100%;
+}
+
+.tecnical-data__variants .container-variants .metafield-rich_text_field ul:last-child {
+    margin-bottom: 0;
+}
+
+.tecnical-data__variants .container-variants .metafield-rich_text_field ul > p {
+    color: red;
+}
+
+.tecnical-data__variants .container-variants .metafield-rich_text_field ul li {
+    margin-bottom: 5px;
+  text-align: center;
+}
+
+
+@media only screen and (min-width: 1000px){
+    .shopify-section.tecnical-data h3.heading.h3 {
+        padding: 50px 0 0px;
+    }
+    
+    .tecnical-data__variants .container-variants .metafield-rich_text_field {
+        display: grid;
+        grid-gap: 20px;
+        gap: 17px;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(200px,400px);
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+        align-items: flex-start;
+    }
+
+    .shopify-section.tecnical-data button.dropdown-technical {
+      margin-bottom: 50px;
+    }
+
+}
+
+/* Estilos User Manual */
+
+.tecnical-data__header {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.tecnical-data__header h4.heading.h2.resto {
+  float: none;
+}
+
+.tecnical-data__header .container-downloads {
+    margin-bottom: 30px;
+}
+
+
+.tecnical-data__header .container-downloads .container-manual,
+.tecnical-data__header .container-downloads .container-software {
+   margin: 10px 0;
+}
+
+.tecnical-data__header a {
+  display: flex;
+}
+
+@media only screen and (min-width: 1000px){
+  .tecnical-data__header{
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .tecnical-data__header .container-downloads {
+    margin: 0;
+    padding: 50px 0 30px;
+  }
+
+
+    .tecnical-data__header .container-downloads .container-manual,
+    .tecnical-data__header .container-downloads .container-software {
+       margin: 10px 0;
+    }
+
+    
+}
+  
+</style>
+
+
+{% assign TechnicalData = false %}
+{% for variant in product.variants %}
+  {% if variant.metafields.custom.technical_data %}
+    {% assign TechnicalData = true %}
+  {% endif %}
+{% endfor %}
+
+
+{% assign UserManual = false %}
+{% for variant in product.variants %}
+  {% if variant.metafields.custom.user_manual %}
+    {% assign UserManual = true %}
+  {% endif %}
+{% endfor %}
+
+
+{% assign SoftwareUpdates = false %}
+{% for variant in product.variants %}
+  {% if variant.metafields.custom.software_updates %}
+    {% assign SoftwareUpdates = true %}
+  {% endif %}
+{% endfor %}
+
+
+
+
+{% if TechnicalData == true %}
+
+  <div class="tecnical-data__container">
+
+    <div class="tecnical-data__header">
+      <h3 class="heading h3"><span class="red">TECHNICAL</span> DATA</h3>
+
+      <div class="container-downloads">
+
+      {% if SoftwareUpdates == true %}
+
+        {% for variant in product.variants %}
+  
+          {% if variant.metafields.custom.software_updates %}
+  
+            <div class="container-downloads-global container-software" data-selector-variant="{{ variant.id }}">
+              <a href="{{ variant.metafields.custom.software_updates.value.url }}" target="_blank">
+                <h4 class="heading h2 resto">
+                  <i class="fa-solid fa-download"></i>
+                  SOFTWARE UPDATES
+                </h4>
+              </a>
+            </div>
+
+          {% endif %}
+        
+        {% endfor %}
+
+      {% endif %}
+
+
+
+
+        
+      {% if UserManual == true %}
+
+        {% for variant in product.variants %}
+  
+          {% if variant.metafields.custom.user_manual %}
+  
+            <div class="container-downloads-global container-manual" data-selector-variant="{{ variant.id }}">
+              <a href="{{ variant.metafields.custom.user_manual.value.url }}" target="_blank">
+                <h4 class="heading h2 resto">
+                  <i class="fa-solid fa-download"></i>
+                  DOWNLOAD THE USER MANUAL
+                </h4>
+              </a>
+            </div>
+
+          {% endif %}
+        
+        {% endfor %}
+
+      {% endif %}
+      </div>
+
+    </div>
+
+    <div class="tecnical-data__variants">
+
+      {% for variant in product.variants %}
+  
+        {% if variant.metafields.custom.technical_data %}
+
+          <div class="container-variants" data-selector-variant="{{ variant.id }}">
+            {{ variant.metafields.custom.technical_data | metafield_tag }}
+          </div>
+      
+        {% endif %}
+      
+      {% endfor %}
+      
+    </div>
+    
+  </div>
+
+  <button class="dropdown-technical dropdown-technical--active">Load More</button>
+  
+{% endif %}
+
+<script>
+
+  function $changeTechdata(id){
+    var selectorTechData = '.tecnical-data__container .tecnical-data__variants .container-variants[data-selector-variant="' + id + '"]';
+    var selectorManual = '.tecnical-data__container .tecnical-data__header .container-manual[data-selector-variant="' + id + '"]';
+    var selectorSoftware = '.tecnical-data__container .tecnical-data__header .container-software[data-selector-variant="' + id + '"]';
+    $('.tecnical-data__container .tecnical-data__variants .container-variants').hide();
+    $('.tecnical-data__container .tecnical-data__header .container-manual').hide();
+    $('.tecnical-data__container .tecnical-data__header .container-software').hide();
+    $(selectorTechData).css('display','flex');
+    $(selectorManual).css('display','flex');
+    $(selectorSoftware).css('display','flex');
+  };
+
+  $( document ).ready(function() {
+    $('.tecnical-data__variants .container-variants .metafield-rich_text_field > p').each(function(){
+      var list = $(this).next( "ul" );
+      $(list).prepend( $(this) );
+    });
+    
+    var id = $('.product-form__buy-buttons > form > input[name="id"]').val();
+    $changeTechdata(id);
+
+    $(document).on('click','button.dropdown-technical--active',function(){
+      $(".tecnical-data__container .tecnical-data__variants").css('height','auto');
+      $(this).text('Show Less');
+      $(this).removeClass('dropdown-technical--active');
+      $(this).addClass('dropdown-technical--desactive');
+    });
+
+    $(document).on('click','button.dropdown-technical--desactive',function(){
+      $(this).text('Load More');
+      $(this).removeClass('dropdown-technical--desactive');
+      $(this).addClass('dropdown-technical--active');
+      $(".tecnical-data__container .tecnical-data__variants").css('height','340px');
+    });
+    
+  });
+
+  $('.product-form__buy-buttons > form > input[name="id"]').on('change', function() {
+    var id = $(this).val();
+    $changeTechdata(id);
+  });
+
+  
+</script>
+
+
+{% schema %}
+  {
+    "name": "Technical Data",
+    "tag": "section",
+    "class": "tecnical-data",
+	"presets": [
+      {
+        "name": "Technical Data"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

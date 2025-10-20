@@ -1,0 +1,134 @@
+{% if product.metafields.custom.nvy_overview_parallax_imagen %}
+  {% assign images = product.metafields.custom.nvy_overview_parallax_imagen.value %}
+  {% assign images_count = 0 %}
+  {% for image in images %}
+    {% assign images_count = forloop.length %}
+  {% endfor %}
+{% endif %}
+
+
+<div class="section-parallax {% if images_count > 1 %}section-parallax--parallax--multi{% else %}section-parallax--parallax--single{% endif %}">
+  <div class="section-parallax__container">
+    {% if product.metafields.custom.nvy_overview_parallax_heading %}
+      <h3>{{ product.metafields.custom.nvy_overview_parallax_heading }}</h3>
+    {% endif %}
+    {% if product.metafields.custom.nvy_overview_parallax_content %}
+      <p>{{ product.metafields.custom.nvy_overview_parallax_content }}</p>
+    {% endif %}
+
+
+    <!-- Scroll controlado -->
+    <section class="parallax-wrapper {% if product.metafields.custom.nvy_image_for_banner_2_static_mobile %}parallax-wrapper-desktop{% endif %}">
+      <div class="parallax-sticky">
+        <div class="parallax-media">
+          {% if product.metafields.custom.nvy_overview_parallax_imagen %}
+            {% for image in product.metafields.custom.nvy_overview_parallax_imagen.value %}
+              <img 
+                class="parallax-frame" 
+                data-index="{{ forloop.index0 }}" 
+                src="{{ image | image_url: width: 1500 }}" 
+                alt="Imagen {{ forloop.index }}" 
+                style="display: none;"
+              >
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+
+    {% if product.metafields.custom.nvy_image_for_banner_2_static_mobile %}
+      <img class="parallax-wrapper-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_2_static_mobile | image_url: width: 1500 }}" >
+    {% endif %}
+
+   
+    
+  </div>  
+</div>
+
+
+{% if images_count > 1 %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const frames = document.querySelectorAll(".parallax-frame");
+      const section = document.querySelector(".parallax-wrapper");
+      const totalFrames = frames.length;
+  
+      if (!section || totalFrames === 0) return;
+  
+      window.addEventListener("scroll", () => {
+        const isMobile = window.innerWidth <= 768;
+  
+        const scrollY = window.scrollY || window.pageYOffset;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+  
+        const progress = Math.min(
+          1,
+          Math.max(0, (scrollY - sectionTop) / (sectionHeight - window.innerHeight))
+        );
+  
+        // Índice normal
+        let frameIndex = Math.min(
+          totalFrames - 1,
+          Math.floor(progress * totalFrames)
+        );
+  
+        // Si es mobile, invertir el índice
+        if (isMobile) {
+          frameIndex = totalFrames - 1 - frameIndex;
+        }
+  
+        // Mostrar solo el frame correspondiente
+        frames.forEach((img, index) => {
+          img.style.display = index === frameIndex ? "block" : "none";
+        });
+      });
+    });
+  </script>
+
+{% else %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const frames = document.querySelectorAll(".parallax-frame");
+      const section = document.querySelector(".parallax-wrapper");
+      const totalFrames = frames.length;
+  
+      if (!section || totalFrames === 0) return;
+  
+      window.addEventListener("scroll", () => {
+        // Detectar si estamos en mobile (actualizado dinámicamente)
+        const isMobile = window.innerWidth <= 10000000;
+  
+        const scrollY = window.scrollY || window.pageYOffset;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+  
+        // Rango de scroll interno (0 a 1)
+        const progress = Math.min(
+          1,
+          Math.max(0, (scrollY - sectionTop) / (sectionHeight - window.innerHeight))
+        );
+  
+        // Índice normal
+        let frameIndex = Math.min(
+          totalFrames - 1,
+          Math.floor(progress * totalFrames)
+        );
+  
+        // Si es mobile, invertir el índice
+        if (isMobile) {
+          frameIndex = totalFrames - 1 - frameIndex;
+        }
+  
+        // Mostrar solo el frame correspondiente
+        frames.forEach((img, index) => {
+          img.style.display = index === frameIndex ? "block" : "none";
+        });
+      });
+    });
+  </script>
+
+{% endif %}

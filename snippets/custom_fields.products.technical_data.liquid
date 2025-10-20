@@ -1,0 +1,46 @@
+{% if product.metafields["custom_fields"]["technical_data"] != blank %}
+  <div class="custom-field custom-field__technical-data custom-field__type--field-collection-json">
+    <h3 class="custom-field--title">Technical Data</h3>
+    <div class="custom-field--value">
+      {% for item in product.metafields["custom_fields"]["technical_data"] %}
+        <div class="fc-item fc-index--{{ forloop.index0 }}">
+           {% if item["heading"] != blank %}
+             <div class="fc-field field__heading field-type--text">
+               <h4 class="custom-field--title">Heading</h4>
+               <div class="custom-field--value">
+                 {{ item["heading"] }}
+               </div>
+             </div>
+           {% endif %}
+           {% if item["data"] != blank %}
+             <div class="fc-field field__data field-type--field-collection-json">
+               <h4 class="custom-field--title">Data</h4>
+               <div class="custom-field--value">
+                 {% for data_item in item["data"] %}
+                   <div class="child-fc-item">
+                     {% if data_item["label"] != blank %}
+                       <div class="fc-field field__label field-type--text">
+                         <h4 class="custom-field--title">Label</h4>
+                         <div class="custom-field--value">
+                           {{ data_item["label"] }}
+                         </div>
+                       </div>
+                     {% endif %}
+                     {% if data_item["value"] != blank %}
+                       <div class="fc-field field__value field-type--text">
+                         <h4 class="custom-field--title">Value</h4>
+                         <div class="custom-field--value">
+                           {{ data_item["value"] }}
+                         </div>
+                       </div>
+                     {% endif %}
+                   </div>
+                 {% endfor %}
+               </div>
+             </div>
+           {% endif %}
+         </div>
+       {% endfor %}
+    </div>
+  </div>
+{% endif %}

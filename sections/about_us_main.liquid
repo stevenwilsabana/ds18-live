@@ -1,0 +1,47 @@
+<div class="about_us_main__container">
+
+  <div class="about_us_main__details">
+    <h2>{{ section.settings.sub-heading }}</h2>
+    <h4>{{ section.settings.heading }}</h4>
+    <div>{{ section.settings.details }}</div>
+  </div>
+  <div class="about_us_main__banner">
+    <img src="{{ section.settings.banner | image_url: width: '2000px' }}">
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "About Us NVY",
+    "tag": "section",
+    "class": "about_us_main",
+    "settings": [
+      {
+        "type": "text",
+        "id": "sub-heading",
+        "label": "Sub-Heading"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "details",
+        "label": "Details"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner",
+        "label": "Banner"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Us - Main"
+      }
+    ]
+  }
+{% endschema %}

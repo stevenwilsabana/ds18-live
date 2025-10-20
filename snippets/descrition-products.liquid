@@ -1,0 +1,236 @@
+{{ 'styles-description-product.css' | asset_url | stylesheet_tag }}
+
+<section class="description-product">
+    <ul class="description-product__accordion-list">
+
+      {% if product.metafields["custom_fields"]["product_description"] != blank %}
+        <li class="description-container">
+            <h3>Key Features</h3>
+            <div class="description-product__answer">
+                <div class="description-product__answer-container details">
+                    {{ product.metafields["custom_fields"]["product_description"] }}
+                </div>
+            </div>
+        </li>
+      {% endif %}
+
+      {% comment %}
+        {% if product.metafields.custom_fields.key_features != blank %}
+          <li class="features-container">
+              <h3>Key Features</h3>
+              <div class="description-product__answer">
+                  <div class="description-product__answer-container features">
+                      <div class="panel" id="panel">
+                        <div class="container">
+                          <div class="text-with-icons">
+                            <div class="text-with-icons__list hide-scrollbar">
+                                {% for item in product.metafields["custom_fields"]["key_features"] %}
+                              <div class="text-with-icons__item">
+                                <div class="text-with-icons__icon-wrapper">
+                                    {% if item["icon"] != blank %}
+                                  <img
+                                    class="text-with-icons__custom-icon"
+                                    style="max-width: 95%;"
+                                    width="150"
+                                    height="150"
+                                    src="{{ item["icon"] | file_url }}"
+                                    alt="{{ item["label"] }}"
+                                  >
+                                  {% endif %}
+                                </div>
+                                <div class="text-with-icons__content-wrapper" style="text-align:center">
+                                  <p><strong>{{ item["label"]}}</strong></p>
+                                </div>
+                              </div>
+                            {% endfor %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </li>
+        {% endif %}
+      {% endcomment %}
+
+      {% if product.metafields.custom_fields.technical_data != blank %}
+        <li class="details-container">
+            <h3>Technical Data - Manual</h3>
+            <div class="description-product__answer">
+                <div class="description-product__answer-container description-product__answer-container--technical-data">
+                  <div class="panel">
+                    {% if product.metafields.custom_fields.user_manual != blank %}
+                      {% assign file_url = product.metafields.custom_fields.user_manual.value.url %}
+                      <a
+                        href="{{ file_url }}"
+                        class="resto mobile-only"
+                        target="_blank"
+                      >
+                        <h4 class="heading h2 resto">
+                          <i class="fa-solid fa-download"></i>
+                          DOWNLOAD THE USER MANUAL
+                          <span class="red"></span>
+                        </h4>
+                      </a>
+                    {% endif %}
+                    
+                    <div class="container load-more" id="load-more">
+                      {% if product.metafields.custom_fields.technical_data != blank %}
+                        <div class="text-with-icons">
+                          <div class="text-with-icons__list hide-scrollbar">
+                            {% for item in product.metafields.custom_fields.technical_data %}
+                              <div class="text-with-icons__item technicalDataLoop">
+                                <div class="text-with-icons__icon-wrapper"></div>
+                                <div class="text-with-icons__content-wrapper" style="text-align:center">
+                                  <p class="heading heading--small red">{{ item.heading }}</p>
+                                  {% if item.data != blank %}
+                                    <p>
+                                      {% for data_item in item.data %}
+                                        <strong>
+                                          {{- data_item.label }}
+                                          <br>
+                                        </strong>
+                                        {{- data_item.value -}}
+                                        <br>
+                                      {% endfor %}
+                                    </p>
+                                  {% endif %}
+                                </div>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    </div>
+              
+                    <span
+                      class="loadmore"
+                      style="width: 100%;text-align: center;display: block;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
+                      onclick="loadmore();"
+                      >Load More</span
+                    >
+                    <span
+                      class="show-less"
+                      style="width: 100%;text-align: center;display: none;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
+                      onclick="loadless();"
+                      >Show Less</span
+                    >
+              
+                    <script>
+                      function loadmore() {
+                        $('#load-more').removeAttr('id');
+                        $('.loadmore').css({ display: 'none' });
+                        $('.show-less').css({ display: 'block' });
+                      }
+              
+                      function loadless() {
+                        $('.load-more').attr('id', 'load-more');
+                        $('.loadmore').css({ display: 'block' });
+                        $('.show-less').css({ display: 'none' });
+                      }
+                    </script>
+                    <script>
+                      var width = screen.width;
+                      var acc = document.getElementsByClassName('description-product__answer-container--technical-data');
+                      var i;
+                      if (width < 800) {
+                        for (i = 0; i < acc.length; i++) {
+                          acc[i].addEventListener('click', function () {
+                            this.classList.toggle('active');
+                            var panel = this.nextElementSibling;
+                            if (panel.style.display === 'block') {
+                              panel.style.display = 'none';
+                            } else {
+                              panel.style.display = 'block';
+                            }
+                          });
+                        }
+                      }
+                    </script>
+                  </div>
+                </div>
+            </div>
+        </li>
+      {% endif %}
+
+
+      {% if product.metafields["custom_fields"]["image_with_text"] != blank %}
+        <li class="how-to-care-container">
+            <h3>Product Overview</h3>
+            <div class="description-product__answer">
+                <div class="description-product__answer-container how_to_care">
+                  {% for item in product.metafields["custom_fields"]["image_with_text"] %}
+                    <image-with-text
+                      reveal-on-scroll=""
+                      class="image-with-text image-with-text--overlap-image became-visible
+                      {% if forloop.first != true %}
+                        image-with-text-not-first
+                      {% endif %}
+                      "
+                      style="--image-aspect-ratio: 1; --image-max-height: px; opacity: 1; --section-animation-play-state:running;"
+                    >
+                      <div class="container">
+                        {% if forloop.first == true %}
+                        <h3 class="heading h3"><span class="red">Product</span> Overview</h3>
+                        {% endif %}
+                        
+                        <div class="image-with-text__wrapper image-with-text-{% cycle 'odd', 'even' %}">
+                          
+                          <div class="image-with-text__image-wrapper">
+                            {% if item.image != blank %}
+                                {{ item.image | img_tag: item.title }}
+                            {% endif %}
+                          </div>
+                
+                          <div class="image-with-text__content-wrapper">
+                            <div class="image-with-text__content-list">
+                              <image-with-text-item class="image-with-text__content text-container text--center">
+                                <h2 class="heading heading--small">
+                                  <split-lines reveal="" style="opacity: 1;"
+                                    ><span reveal="" style="display: block; opacity: 1;">{{ item.small_title }}</span></split-lines
+                                  >
+                                </h2>
+                                <h3 class="heading h3">
+                                  <split-lines reveal="" style="opacity: 1;">
+                                    <span reveal="" style="display: block; opacity: 1;">{{ item.title }}</span>
+                                    </split-lines>
+                                </h3>
+                                <div class="image-with-text__text-wrapper" reveal="" style="opacity: 1;">
+                                    {{ item.body }}
+                                </div>
+                              </image-with-text-item>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </image-with-text>
+                {% endfor %}
+                </div>
+            </div>
+        </li>
+      {% endif %}
+
+    </ul>
+</section>
+
+<script>
+  $(document).ready(function(){
+  
+    //$('.description-product__accordion-list > li').first().addClass('active_description');
+    $('.description-product__accordion-list > li > .description-product__answer').hide();
+    $('.description-product__accordion-list > li.active_description > .description-product__answer').show();
+    
+    $('.description-product__accordion-list > li > h3').click(function() {
+      var $open_description = $(this).parents('li');
+      if ($($open_description).hasClass("active_description")) {
+        $($open_description).removeClass("active_description").find(".description-product__answer").slideUp();
+      } else {
+        $(".description-product__accordion-list > li.active_description .description-product__answer").slideUp();
+        $(".description-product__accordion-list > li.active_description").removeClass("active_description");
+        $($open_description).addClass("active_description").find(".description-product__answer").slideDown();
+      }
+      return false;
+    });
+    
+  });
+</script>

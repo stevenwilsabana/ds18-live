@@ -1,0 +1,137 @@
+<style type="text/css">
+  .technical-data-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 600px) {
+    .technicalDataLoop {
+      width: 50%;
+    }
+    .container.load-more {
+      left: 0;
+      padding-left: 0;
+    }
+  }
+</style>
+<section class="section no-spacing">
+  <div class="section__color-wrapper">
+    <div class="container accordion">
+      <header class="section__header container text-container technical-data-header">
+        <h3 class="heading h3 keyFeature-title"><span class="red">TECHNICAL</span> DATA</h3>
+        {% if product.metafields.custom_fields.user_manual != blank %}
+          {% assign file_url = product.metafields.custom_fields.user_manual.value.url %}
+          <a
+            href="{{ file_url }}"
+            class="resto desktop-only"
+            target="_blank"
+          >
+            <h4 class="heading h2 resto">
+              <i class="fa-solid fa-download"></i>
+              DOWNLOAD THE USER MANUAL
+              <span class="red"></span>
+            </h4>
+          </a>
+        {% endif %}
+      </header>
+    </div>
+    <div class="panel">
+      {% if product.metafields.custom_fields.user_manual != blank %}
+        {% assign file_url = product.metafields.custom_fields.user_manual.value.url %}
+        <a
+          href="{{ file_url }}"
+          class="resto mobile-only"
+          target="_blank"
+        >
+          <h4 class="heading h2 resto">
+            <i class="fa-solid fa-download"></i>
+            DOWNLOAD THE USER MANUAL
+            <span class="red"></span>
+          </h4>
+        </a>
+      {% endif %}
+      
+      <div class="container load-more" id="load-more">
+        {% if product.metafields.custom_fields.technical_data != blank %}
+          <div class="text-with-icons">
+            <div class="text-with-icons__list hide-scrollbar">
+              {% for item in product.metafields.custom_fields.technical_data %}
+                <div class="text-with-icons__item technicalDataLoop">
+                  <div class="text-with-icons__icon-wrapper"></div>
+                  <div class="text-with-icons__content-wrapper" style="text-align:center">
+                    <p class="heading heading--small red">{{ item.heading }}</p>
+                    {% if item.data != blank %}
+                      <p>
+                        {% for data_item in item.data %}
+                          <strong>
+                            {{- data_item.label }}
+                            <br>
+                          </strong>
+                          {{- data_item.value -}}
+                          <br>
+                        {% endfor %}
+                      </p>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <span
+        class="loadmore"
+        style="width: 100%;text-align: center;display: block;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
+        onclick="loadmore();"
+        >Load More</span
+      >
+      <span
+        class="show-less"
+        style="width: 100%;text-align: center;display: none;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
+        onclick="loadless();"
+        >Show Less</span
+      >
+
+      <script>
+        function loadmore() {
+          $('#load-more').removeAttr('id');
+          $('.loadmore').css({ display: 'none' });
+          $('.show-less').css({ display: 'block' });
+        }
+
+        function loadless() {
+          $('.load-more').attr('id', 'load-more');
+          $('.loadmore').css({ display: 'block' });
+          $('.show-less').css({ display: 'none' });
+        }
+      </script>
+      <script>
+        var width = screen.width;
+        var acc = document.getElementsByClassName('accordion');
+        var i;
+        if (width < 800) {
+          for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener('click', function () {
+              this.classList.toggle('active');
+              var panel = this.nextElementSibling;
+              if (panel.style.display === 'block') {
+                panel.style.display = 'none';
+              } else {
+                panel.style.display = 'block';
+              }
+            });
+          }
+        }
+      </script>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "DS18 - Technical Data",
+  "tag": "section",
+  "class": "yth-technical-data",
+  "settings": []
+}
+{% endschema %}

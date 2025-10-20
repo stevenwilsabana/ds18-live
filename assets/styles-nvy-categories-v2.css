@@ -1,0 +1,130 @@
+.shopify-section.categories-nvy-v2 {
+    padding: 30px 0;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container h3 {
+    color: #345d61;
+    text-align: center;
+    font-family: Montserrat, serif !important;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 30px;
+    gap: 15px;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: #bfbfbf solid 1px;
+    background: black;
+    color: white;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-imagen {
+    width: 50%;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-imagen img {
+    width: 100%;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-details {
+    width: 50%;
+    text-align: center;
+    font-family: Montserrat, serif !important;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-details p {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-details span {
+    font-size: 12px;
+    font-weight: 500;
+    border: white solid 1px;
+    padding: 5px 15px;
+}
+
+
+
+@media only screen and (min-width: 1000px){
+    .shopify-section.categories-nvy-v2 {
+        padding: 50px 0;
+    }
+
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container h3 {
+        font-size: 40px;
+        line-height: 45px;
+        margin-bottom: 30px;
+    }
+
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content {
+        gap: 40px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie {
+        width: calc(50% - 20px);
+    }
+
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-details {
+        padding: 0 30px;
+        gap: 20px;
+    }
+
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-details p {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-details span {
+        font-size: 15px;
+        padding: 10px 30px;
+        transition: all 0.3s;
+    }
+
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a .categorie-imagen img {
+        filter: grayscale(100%) contrast(1.2) brightness(0.9);
+        transition: all 0.3s;
+    }
+
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a:hover img {
+        filter: none;
+    }
+
+    .shopify-section.categories-nvy-v2 .categories-nvy-v2__container .categories-nvy-v2__content .categorie a:hover .categorie-details span {
+        background: white;
+        color: black;
+    }
+    
+}

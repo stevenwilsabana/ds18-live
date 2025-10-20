@@ -1,0 +1,156 @@
+/* Estilos con Banner */
+
+.new-header-collection__banner {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.new-header-collection__banner .new-header-collection__imagen {
+    width: 100%;
+    line-height: 0;
+}
+
+.new-header-collection__banner .new-header-collection__imagen img {
+    width: 100%;
+}
+
+.new-header-collection__banner .new-header-collection__text {
+    width: 100%;
+    padding: 25px 20px 30px;
+    background: #8f8f8f;
+}
+
+.new-header-collection__banner .new-header-collection__text p {
+    margin:0;
+}
+
+.new-header-collection__banner .new-header-collection__text h1 {
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 30px;
+    text-align: center;
+    color: white
+}
+
+.new-header-collection__banner .new-header-collection__text .container-description {
+    margin-top: 15px;
+}
+
+.new-header-collection__banner .new-header-collection__text .container-description * {
+    font-weight: 300!important;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: white
+}
+
+@media only screen and (min-width: 1200px) {
+    .new-header-collection__banner {
+        flex-direction: row;
+        margin-bottom: 40px;
+    }
+
+    .new-header-collection__banner .new-header-collection__imagen {
+        width: 50%;
+    }
+
+    .new-header-collection__banner .new-header-collection__imagen img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .new-header-collection__banner .new-header-collection__text {
+        width: 50%;
+        padding: 30px 50px;   
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .new-header-collection__banner .new-header-collection__text h1{
+        font-size: 40px;
+        text-align: left;
+    }
+
+    .new-header-collection__banner .new-header-collection__text .container-description {
+        margin-top: 20px;
+    }
+    
+    .new-header-collection__banner .new-header-collection__text .container-description * {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: left;
+    }
+
+}
+
+
+
+/* Estilos Header Collection solo con Description */
+
+.new-header-collection__with-out-banner {
+    padding: 40px 20px;
+}
+
+.new-header-collection__with-out-banner .new-header-collection__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-header-collection__with-out-banner .new-header-collection__text h1{
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 30px;
+}
+
+.new-header-collection__with-out-banner .new-header-collection__text {
+    flex-direction: column;
+}
+
+.new-header-collection__with-out-banner .new-header-collection__text .container-description {
+    margin-top: 15px;
+    max-width: 800px;
+}
+
+.new-header-collection__with-out-banner .new-header-collection__text .container-description * {
+    font-weight: 300!important;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1200px) {
+
+     .new-header-collection__with-out-banner {
+        padding: 50px 20px;
+    }
+
+    .new-header-collection__with-out-banner .new-header-collection__text h1{
+        font-size: 40px;
+    }
+
+    .new-header-collection__with-out-banner .new-header-collection__text .container-description {
+        margin-top: 20px;
+    }
+    
+    .new-header-collection__with-out-banner .new-header-collection__text .container-description * {
+        font-size: 16px;
+        line-height: 26px
+    }
+
+}
+
+
+
+/* Estilos Generales Collection Page */
+
+.boost-sd__filter-block .boost-sd-right {
+    margin-top: 0;
+}

@@ -1,0 +1,335 @@
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="slideshow-section"
+  data-align-top="true"
+  style="background-color:#white;padding-top:20px;">
+
+  
+     
+  
+  <div class="faqfin">
+<h2 style="vertical-align:center">can i pay off my purchase early?</h2>
+<p style="line-height:20px;">Yes! There’s no penalty for paying early.</p>
+</div>
+<div class="faqfin">
+<h2 style="vertical-align:center">how do i make my payments?</h2>
+<p style="line-height:20px;">Yes! You can make or schedule payments at affirm.com or in the Affirm app for iOS or Android.
+Affirm will send you email and text reminders before payments are due.</p>
+</div>
+<div class="faqfin">
+<h2 style="vertical-align:center">does checking my eligibility affect my credit score?</h2>
+<p style="line-height:20px;">No—checking your eligibility won't affect your credit score.</p>
+</div>
+<div class="faqfin">
+<h2 style="vertical-align:center">can i return an item i bought with affirm?</h2>
+<p style="line-height:20px;">Yes—You can return an item you bought with Affirm by initiating the return
+process with the store.</p>
+</div>
+<div class="faqfin">
+<h2 style="vertical-align:center">do i need a mobile number to use affirm?</h2>
+<p style="line-height:20px;">Yes, you’ll need a mobile phone number from the U.S. or U.S. territories. This helps
+Affirm verify it’s really you who is creating your account and signing in.</p>
+</div>
+<div class="faqfin">
+<h2 style="vertical-align:center">where can i learn more about affirm?</h2>
+<p style="line-height: 20px;">You can visit their website at affirm.com.</p>
+</div>
+
+
+  
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Financing FAQs",
+    "class": "index-section--hero",
+    "max_blocks": 5,
+    "settings": [
+      {
+        "type": "select",
+        "id": "section_height",
+        "label": "Desktop height",
+        "default": "650px",
+        "options": [
+          {
+            "label": "Natural",
+            "value": "natural"
+          },
+          {
+            "label": "450px",
+            "value": "450px"
+          },
+          {
+            "label": "550px",
+            "value": "550px"
+          },
+          {
+            "label": "650px",
+            "value": "650px"
+          },
+          {
+            "label": "750px",
+            "value": "750px"
+          },
+          {
+            "label": "Full screen",
+            "value": "100vh"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "mobile_height",
+        "label": "Mobile height",
+        "default": "auto",
+        "info": "Not used if desktop height is set to natural",
+        "options": [
+          {
+            "label": "Auto",
+            "value": "auto"
+          },
+          {
+            "label": "250px",
+            "value": "250px"
+          },
+          {
+            "label": "300px",
+            "value": "300px"
+          },
+          {
+            "label": "400px",
+            "value": "400px"
+          },
+          {
+            "label": "500px",
+            "value": "500px"
+          },
+          {
+            "label": "Full screen",
+            "value": "100vh"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "parallax",
+        "label": "Enable parallax",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "style",
+        "label": "Slide navigation style",
+        "default": "minimal",
+        "options": [
+          {
+            "value": "minimal",
+            "label": "Minimal"
+          },
+          {
+            "value": "arrows",
+            "label": "Arrows"
+          },
+          {
+            "value": "bars",
+            "label": "Bars"
+          },
+          {
+            "value": "dots",
+            "label": "Dots"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Auto-change slides",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "autoplay_speed",
+        "label": "Change images every",
+        "default": 7,
+        "min": 5,
+        "max": 10,
+        "step": 1,
+        "unit": "s"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "text",
+            "id": "top_subheading",
+            "label": "Subheading"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Heading",
+            "default": "Two line\ntitle slide."
+          },
+          {
+            "type": "range",
+            "id": "title_size",
+            "label": "Heading text size",
+            "default": 80,
+            "min": 40,
+            "max": 100,
+            "unit": "px"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Text",
+            "default": "And optional subtext"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Slide link"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Slide link text",
+            "default": "Optional button"
+          },
+          {
+            "type": "url",
+            "id": "link_2",
+            "label": "Slide link 2"
+          },
+          {
+            "type": "text",
+            "id": "link_text_2",
+            "label": "Slide link text 2"
+          },
+          {
+            "type": "color",
+            "id": "color_accent",
+            "label": "Buttons",
+            "default": "rgba(0,0,0,0)"
+          },
+          {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text alignment",
+            "default": "vertical-center horizontal-center",
+            "options": [
+              {
+                "value": "vertical-center horizontal-left",
+                "label": "Center left"
+              },
+              {
+                "value": "vertical-center horizontal-center",
+                "label": "Center"
+              },
+              {
+                "value": "vertical-center horizontal-right",
+                "label": "Center right"
+              },
+              {
+                "value": "vertical-bottom horizontal-left",
+                "label": "Bottom left"
+              },
+              {
+                "value": "vertical-bottom horizontal-center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "vertical-bottom horizontal-right",
+                "label": "Bottom right"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+	      {
+            "type": "image_picker",
+            "id": "imagemobile",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "select",
+            "id": "focal_point",
+            "label": "Image focal point",
+            "info": "Used to keep the subject of your photo in view.",
+            "default": "center center",
+            "options": [
+              {
+                "value": "20% 0",
+                "label": "Top left"
+              },
+              {
+                "value": "top center",
+                "label": "Top center"
+              },
+              {
+                "value": "80% 0",
+                "label": "Top right"
+              },
+              {
+                "value": "20% 50%",
+                "label": "Left"
+              },
+              {
+                "value": "center center",
+                "label": "Center"
+              },
+              {
+                "value": "80% 50%",
+                "label": "Right"
+              },
+              {
+                "value": "20% 100%",
+                "label": "Bottom left"
+              },
+              {
+                "value": "bottom center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "80% 100%",
+                "label": "Bottom right"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Slideshow",
+      "category": "Image",
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 5
+      },
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "title": "Endless\npossibilities.",
+            "subheading": "Bring your brand to life"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "title": "Two line\ntitle slide.",
+            "subheading": "And big, beautiful imagery"
+          }
+        }
+      ]
+    }]
+  }
+{% endschema %}

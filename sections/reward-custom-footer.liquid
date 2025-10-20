@@ -1,0 +1,40 @@
+{% unless customer.b2b? %}
+
+<section class="container-information-global__growave">
+
+  {% unless customer %}
+
+    <style>
+      div#shopify-section-template--16135145750589__reward_page_content {
+          display: none;
+      }
+    </style>
+    
+    <div class="container-points-log-off">
+      <p>The Rewards program is currently unavailable. Please log in and try again.</p>
+      <div>
+        <button class="main-banner-rewards__button-join button-active-js__log-ing">Join Now</button>
+        <button class="main-banner-rewards__button-login button-active-js__log-ing">Login</button>
+      </div>
+    </div>
+  {% endunless %}
+  
+  {% render 'redeem-for-discounts-growave' %}
+  {% render 'term-condition-growave' %}
+</section>
+
+{{ 'login-customer-redirect-v2.js' | asset_url | script_tag }}
+
+{% endunless %}
+
+
+{% schema %}
+  {
+    "name": "Reward Custom Footer",
+    "presets": [
+      {
+        "name": "Reward Custom Footer"
+      }
+    ]
+  }
+{% endschema %}

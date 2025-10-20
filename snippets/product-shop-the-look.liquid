@@ -1,0 +1,146 @@
+<div class="container-product-item remove-add-to-cart">
+
+  <div class="label-product-collection">
+
+    {% assign product_quantity = 0 %}
+    {% for variant in product.variants %}
+      {% assign product_quantity = product_quantity | plus: variant.inventory_quantity %}
+    {% endfor %}
+    {% assign productTags = product.tags | join: ', ' %}
+    
+    {% unless product.available %}
+      <div class="label-product__tag product--out-of-stock">
+        <p>Out of Stock</p>
+      </div>
+    {% endunless %}
+
+    {% if product.available and product.compare_at_price > 0 %}
+
+      {% if productTags contains 'FINAL SALE' %}
+
+        <div class="label-product__tag product--final-sale" >
+          <p>FINAL SALE</p>
+        </div>
+  
+      {% else %}
+
+        <div class="label-product__tag product--sale" >
+          <p>SALE</p>
+        </div>
+      
+      {% endif %}
+
+    {% elsif product.available and productTags contains 'NEW' %}
+
+      <div class="label-product__tag product--new">
+        <p>NEW</p>
+      </div>
+
+    {% endif %}
+
+    {% if product.available and product_quantity < 20 %}
+
+      <div class="label-product__tag product--low-stock">
+        <p>LOW STOCK</p>
+      </div>
+
+    {% endif %}
+    
+  </div>
+
+  <a href="{{ product.url }}">
+
+    {% if template contains 'collection' %}
+      <img src="{{ product.featured_image | img_url: 'master' }}">
+    {% else %}
+      <img src="{{ product.featured_image | img_url: '300x' }}">
+    {% endif %}
+
+  </a>
+    
+    
+      
+    <div class="container-text-product">
+
+      <div class="prices-product">
+       
+          {% if product.compare_at_price > 0 %}
+            <span class="price-compare">
+              {{ product.compare_at_price_min | money_with_currency }}
+            </span>
+            <span class="price-original">
+              {{ product.price_min | money_with_currency }}
+            </span>
+          {% else %}
+            {% if product.price_varies %}
+              <span class="price-from">
+                From
+              </span>
+            {% endif %}
+            <span class="price-original">
+              {{ product.price_min | money_with_currency }}
+            </span>
+          {% endif %}
+
+      </div>
+
+      <p class="title-product">{{ product.title }}</p>
+
+      <div class="variants-product-stl">
+        {% unless product.has_only_default_variant %}
+          <div class="variants-product-stl__content-variant">
+            {% for option in product.options_with_values %}
+              <div data-option="option-{{ option }}">
+              
+                <label for="variant-label-{{ option }}-{{ forloop.index0 }}-{{product.id}}">{{ option.name }}</label>
+                
+                <select id="variant-label-{{ option }}-{{ forloop.index0 }}-{{product.id}}">
+                  {% for variant in product.variants %}
+                    {% if variant.available %}
+                      <option class="class-{{ variant.id }}" value="{{ variant.id }}" data-total="{{ variant.price }}" data-price="{{ variant.price | money }}">
+                          {{ variant.title }}
+                      </option>
+                     {% else %}
+                      <option disabled="disabled" class="class-{{ variant.id }}" value="{{ variant.id }}" data-total="{{ variant.price }}" data-price="{{ variant.price | money }}">
+                          {{ variant.title }} (SOLD OUT)
+                      </option>
+                     {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="variants-product-stl__content-variant only-one-variant">
+            {% for option in product.options_with_values %}
+              <div data-option="option-{{ option }}">
+              
+                <label for="variant-label-{{ option }}-{{ forloop.index0 }}-{{product.id}}">{{ option.name }}</label>
+                
+                <select id="variant-label-{{ option }}-{{ forloop.index0 }}-{{product.id}}">
+                  {% for variant in product.variants %}
+                    {% if variant.available %}
+                      <option class="class-{{ variant.id }}" value="{{ variant.id }}" data-total="{{ variant.price }}" data-price="{{ variant.price | money }}">
+                          {{ variant.title }}
+                      </option>
+                     {% else %}
+                      <option disabled="disabled" class="class-{{ variant.id }}" value="{{ variant.id }}" data-total="{{ variant.price }}" data-price="{{ variant.price | money }}">
+                          {{ variant.title }} (SOLD OUT)
+                      </option>
+                     {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
+            {% endfor %}
+          </div>
+        {% endunless %}
+        <div class="variants-product-stl__content-button">
+          <button class="add-elements-variant add-elements-variant__add">Add</button>
+        </div>
+      </div>
+      
+    </div>
+    
+  
+  
+</div>

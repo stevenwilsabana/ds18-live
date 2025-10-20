@@ -1,0 +1,226 @@
+div#main {
+    padding-bottom: 50px;
+}
+
+.shopify-section.faqs-landing-page{
+    padding: 20px 20px 40px;
+}
+
+.shopify-section.faqs-landing-page h1 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.shopify-section.faqs-landing-page h3 {
+    display: none;
+}
+
+.shopify-section.faqs-landing-page .searchFaqCont {
+    margin: 0;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.shopify-section.faqs-landing-page .searchFaq {
+    padding: 10px;
+    border-radius: 5px;
+    border-color: black;
+    background: #e9e9e8;
+    font-size: 15px!important;
+    text-align: left;
+}
+
+.shopify-section.faqs-landing-page .searchFaq::placeholder {
+    font-size: 15px!important;
+}
+
+.shopify-section.faqs-landing-page .searchFaqCont svg {
+    position: absolute;
+    right: 10px;
+    top: unset;
+    width: 20px;
+}
+
+.shopify-section.faqs-landing-page h2 {
+    display: none!important;
+}
+
+.shopify-section.faqs-landing-page ul.tabs {
+    padding: 0;
+    margin: 40px 0 0;
+    background: transparent;
+    border: 0;
+    gap: 15px;
+}
+
+.shopify-section.faqs-landing-page ul.tabs:before,
+.shopify-section.faqs-landing-page ul.tabs:after {
+    display: none;
+}
+
+.shopify-section.faqs-landing-page ul.tabs li {
+    margin: 0;
+    display: flex;
+    width: calc((100% - 15px) / 2);
+}
+
+.shopify-section.faqs-landing-page ul.tabs li a {
+    padding: 0;
+    height: auto;
+    border: 0;
+    line-height: normal;
+    width: 100%;
+    padding: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 15px;
+    background: transparent;
+    border: black solid 2px!important;
+}
+
+.shopify-section.faqs-landing-page ul.tabs li a.active {
+    background: black;
+}
+
+.shopify-section.faqs-block {
+    padding: 0 20px;
+}
+
+.shopify-section.faqs-block .heading {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Montserrat, serif !important;
+}
+
+
+.shopify-section.faqs-block .page-blocks.page-blocks--flush {
+    margin-top: 10px;
+}
+
+.shopify-section.faqs-block .page-blocks.page-blocks--flush > div {
+    border-top: #bfbfbf solid 1px;
+    padding: 15px 0;
+    margin: 0px 0
+}
+
+.shopify-section.faqs-block .page-blocks.page-blocks--flush > div button {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+}
+
+.shopify-section.faqs-block .page-blocks.page-blocks--flush > div button span.collapsible-trigger__icon {
+    background: black;
+    position: relative;
+    top: unset;
+    right: unset;
+    left: unset;
+    transform: unset;
+}
+
+.shopify-section.faqs-block .page-blocks.page-blocks--flush > div button span[itemprop="name"] {
+    width: calc(100% - 38px);
+    font-size: 15px;
+}
+
+.shopify-section.faqs-block .page-blocks.page-blocks--flush .collapsible-content__inner--faq,
+.shopify-section.faqs-block .grid__item .page-blocks > div .collapsible-content{
+    padding: 0;
+}
+
+.shopify-section.faqs-block .page-blocks.page-blocks--flush .collapsible-content__inner--faq {
+    margin-top: 10px;
+}
+
+.shopify-section.faqs-block .page-blocks.page-blocks--flush .collapsible-content__inner--faq * {
+    font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+     div#main {
+        padding: 50px 20px 100px;
+        max-width: 1200px;
+        margin: auto;
+         
+    }
+
+    .shopify-section.faqs-landing-page {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px 0;
+        align-items: center;
+    }
+
+    .shopify-section.faqs-landing-page .searchFaqCont {
+        width: calc(100% - 268px);
+        
+    }
+
+    .shopify-section.faqs-landing-page .searchFaq {
+        max-width: 100%;
+    }
+
+    .shopify-section.faqs-landing-page h1 {
+        margin: 0;
+        font-size: 25px;
+        margin-right: 50px;
+    }
+
+    .shopify-section.faqs-landing-page .searchFaq {
+        padding: 10px 15px;
+        font-size: 20px!important;
+    }
+    
+    .shopify-section.faqs-landing-page .searchFaq::placeholder {
+        font-size: 20px!important;
+    }
+
+    .shopify-section.faqs-landing-page .searchFaqCont svg {
+        right: 15px;
+    }
+
+    .shopify-section.faqs-landing-page ul.tabs {
+        width: 100%;
+        margin: 50px 0 0;
+        gap: 20px;
+    }
+
+    .shopify-section.faqs-landing-page ul.tabs li {
+        width: calc((100% - 60px) / 4);
+    }
+
+    .shopify-section.faqs-landing-page ul.tabs li a {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .shopify-section.faqs-block {
+        padding: 0;
+    }
+
+    .shopify-section.faqs-block .heading {
+        font-size: 35px;
+    }
+
+    .shopify-section.faqs-block .page-blocks.page-blocks--flush > div button span[itemprop="name"] {
+        font-size: 20px;
+    }
+
+    .shopify-section.faqs-block .page-blocks.page-blocks--flush .collapsible-content__inner--faq {
+        margin-top: 20px;
+    }
+
+    .shopify-section.faqs-block .page-blocks.page-blocks--flush > div {
+        padding: 20px 0;
+    }
+}

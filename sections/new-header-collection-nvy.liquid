@@ -1,0 +1,421 @@
+{{ 'styles-collection-header.css' | asset_url | stylesheet_tag }}
+{{ 'styles-collection-nvy.css' | asset_url | stylesheet_tag }}
+
+
+<div class="new-header-collection__container"
+  {% if collection.metafields.custom.banner_collection_no_1 != blank %}data-banner-1="{{ collection.metafields.custom.banner_collection_no_1 | img_url: 'master' }}"{% endif %}
+  {% if collection.metafields.custom.banner_collection_no_1_desktop_grid != blank %}data-banner-dg-1="{{ collection.metafields.custom.banner_collection_no_1_desktop_grid | img_url: 'master' }}"{% endif %}
+  {% if collection.metafields.custom.banner_collection_no_1_desktop_list != blank %}data-banner-dl-1="{{ collection.metafields.custom.banner_collection_no_1_desktop_list | img_url: 'master' }}"{% endif %}
+
+  {% if collection.metafields.custom.banner_collection_no_2 != blank %}data-banner-2="{{ collection.metafields.custom.banner_collection_no_2 | img_url: 'master' }}"{% endif %}
+  {% if collection.metafields.custom.banner_collection_no_2_desktop_grid != blank %}data-banner-dg-2="{{ collection.metafields.custom.banner_collection_no_2_desktop_grid | img_url: 'master' }}"{% endif %}
+  {% if collection.metafields.custom.banner_collection_no_2_desktop_list != blank %}data-banner-dl-2="{{ collection.metafields.custom.banner_collection_no_2_desktop_list | img_url: 'master' }}"{% endif %}
+
+  {% if collection.metafields.custom.link_banner_no_1 != blank %}data-link-1="{{ collection.metafields.custom.link_banner_no_1.value }}"{% endif %}
+  {% if collection.metafields.custom.link_banner_no_2 != blank %}data-link-2="{{ collection.metafields.custom.link_banner_no_2.value }}"{% endif %}
+>
+  {% if collection.metafields.custom.main_banner %}
+    <div class="new-header-collection__banner">
+      <div class="new-header-collection__imagen">
+        <img src="{{ collection.metafields.custom.main_banner | img_url: 'master' }}">
+      </div>
+      <div class="new-header-collection__text">
+        {% if collection.metafields.custom.heading %}
+          <h1>{{ collection.metafields.custom.heading }}</h1>
+        {% else %}
+          <h1>{{ collection.title }}</h1>
+        {% endif %}
+        {% if collection.metafields.custom.description %}
+          <div class="container-description">
+            <div class="content">{{ collection.metafields.custom.description | metafield_tag }}</div>
+          </div>
+        {% else %}
+          <div class="container-description">
+            <div class="content">{{ collection.description }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% else %}
+    <div class="new-header-collection__with-out-banner">
+      <div class="new-header-collection__text">
+        {% if collection.metafields.custom.heading %}
+          <h1>{{ collection.metafields.custom.heading }}</h1>
+        {% else %}
+          <h1>{{ collection.title }}</h1>
+        {% endif %}
+        {% if collection.metafields.custom.description %}
+          <div class="container-description">
+            <div class="content">{{ collection.metafields.custom.description | metafield_tag }}</div>
+          </div>
+        {% else %}
+          <div class="container-description">
+            <div class="content">{{ collection.description }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% if customer.b2b? %}
+  {% if collection.id == 287525830717 %}
+
+    <style>
+      form.main-search__form.main-search__form--shop-all {
+          width: 80%;
+          margin-bottom: 50px;
+      }
+      
+      .new-header-collection__with-out-banner {
+          padding-bottom: 20px;
+      }
+    </style>
+
+    {{ 'styles-search-shop-all.css' | asset_url | stylesheet_tag }}
+    
+      <div id="collection-search-container">
+        <input 
+          type="text" 
+          id="collection-search-input" 
+          placeholder="Search by SKU (Type at least 3 letters...)" 
+          autocomplete="off"
+        >
+      </div>
+
+
+    
+  {% endif %}
+{% endif %}
+
+
+
+{% comment %}
+  Sección de Tabs dinámicos (cada bloque es un tab con sus íconos, etiquetas y links)
+{% endcomment %}
+
+<div class="custom-tabs-section" data-tabs>
+  <!-- Tabs -->
+  <ul class="tab-buttons">
+    {% for block in section.blocks %}
+      <li class="tab {% if forloop.first %}active{% endif %}" data-tab="tab-{{ block.id }}">
+        {{ block.settings.tab_title }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- Tab Content -->
+  {% for block in section.blocks %}
+    <div class="tab-content {% if forloop.first %}active{% endif %}" id="tab-{{ block.id }}">
+      <div class="tab-icons">
+        {% for i in (1..15) %}
+          {% assign key_icon = 'icon_' | append: i %}
+          {% assign key_label = 'label_' | append: i %}
+          {% assign key_link = 'link_' | append: i %}
+
+          {% assign icon = block.settings[key_icon] %}
+          {% assign label = block.settings[key_label] %}
+          {% assign link = block.settings[key_link] %}
+
+          {% if icon != blank and label != blank %}
+            <div class="icon-item">
+              <a href="{{ link }}" class="tab-icon-link">
+                <img src="{{ icon | image_url: width: 80 }}" alt="{{ label }}">
+                <p>{{ label }}</p>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Tabs interactividad
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(tab.getAttribute("data-tab")).classList.add("active");
+      });
+    });
+
+    // Link activo
+    const currentUrl = window.location.href.split('#')[0];
+    document.querySelectorAll('.tab-icon-link').forEach(link => {
+      const linkUrl = link.href.split('#')[0];
+      if (linkUrl === currentUrl) {
+        link.classList.add('is-active');
+        link.addEventListener('click', e => e.preventDefault());
+      }
+    });
+  });
+</script>
+
+
+
+{% schema %}
+{
+  "name": "New Header Collection NVY",
+  "class": "new-header-collection",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab de íconos",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Título del tab"
+        },
+        {
+          "type": "header",
+          "content": "Íconos, etiquetas y links (máximo 15)"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Ícono 1"
+        },
+        {
+          "type": "text",
+          "id": "label_1",
+          "label": "Etiqueta 1"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Ícono 2"
+        },
+        {
+          "type": "text",
+          "id": "label_2",
+          "label": "Etiqueta 2"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Link 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Ícono 3"
+        },
+        {
+          "type": "text",
+          "id": "label_3",
+          "label": "Etiqueta 3"
+        },
+        {
+          "type": "url",
+          "id": "link_3",
+          "label": "Link 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_4",
+          "label": "Ícono 4"
+        },
+        {
+          "type": "text",
+          "id": "label_4",
+          "label": "Etiqueta 4"
+        },
+        {
+          "type": "url",
+          "id": "link_4",
+          "label": "Link 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_5",
+          "label": "Ícono 5"
+        },
+        {
+          "type": "text",
+          "id": "label_5",
+          "label": "Etiqueta 5"
+        },
+        {
+          "type": "url",
+          "id": "link_5",
+          "label": "Link 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_6",
+          "label": "Ícono 6"
+        },
+        {
+          "type": "text",
+          "id": "label_6",
+          "label": "Etiqueta 6"
+        },
+        {
+          "type": "url",
+          "id": "link_6",
+          "label": "Link 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_7",
+          "label": "Ícono 7"
+        },
+        {
+          "type": "text",
+          "id": "label_7",
+          "label": "Etiqueta 7"
+        },
+        {
+          "type": "url",
+          "id": "link_7",
+          "label": "Link 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_8",
+          "label": "Ícono 8"
+        },
+        {
+          "type": "text",
+          "id": "label_8",
+          "label": "Etiqueta 8"
+        },
+        {
+          "type": "url",
+          "id": "link_8",
+          "label": "Link 8"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_9",
+          "label": "Ícono 9"
+        },
+        {
+          "type": "text",
+          "id": "label_9",
+          "label": "Etiqueta 9"
+        },
+        {
+          "type": "url",
+          "id": "link_9",
+          "label": "Link 9"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_10",
+          "label": "Ícono 10"
+        },
+        {
+          "type": "text",
+          "id": "label_10",
+          "label": "Etiqueta 10"
+        },
+        {
+          "type": "url",
+          "id": "link_10",
+          "label": "Link 10"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_11",
+          "label": "Ícono 11"
+        },
+        {
+          "type": "text",
+          "id": "label_11",
+          "label": "Etiqueta 11"
+        },
+        {
+          "type": "url",
+          "id": "link_11",
+          "label": "Link 11"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_12",
+          "label": "Ícono 12"
+        },
+        {
+          "type": "text",
+          "id": "label_12",
+          "label": "Etiqueta 12"
+        },
+        {
+          "type": "url",
+          "id": "link_12",
+          "label": "Link 12"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_13",
+          "label": "Ícono 13"
+        },
+        {
+          "type": "text",
+          "id": "label_13",
+          "label": "Etiqueta 13"
+        },
+        {
+          "type": "url",
+          "id": "link_13",
+          "label": "Link 13"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_14",
+          "label": "Ícono 14"
+        },
+        {
+          "type": "text",
+          "id": "label_14",
+          "label": "Etiqueta 14"
+        },
+        {
+          "type": "url",
+          "id": "link_14",
+          "label": "Link 14"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_15",
+          "label": "Ícono 15"
+        },
+        {
+          "type": "text",
+          "id": "label_15",
+          "label": "Etiqueta 15"
+        },
+        {
+          "type": "url",
+          "id": "link_15",
+          "label": "Link 15"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "New Header Collection NVY + Tabs",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

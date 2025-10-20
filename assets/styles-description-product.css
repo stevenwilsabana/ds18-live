@@ -1,0 +1,338 @@
+/* ESTILOS DROPDONW */
+
+.container-description {
+    margin: 0;
+    margin-top: 20px;
+}
+
+
+body ul.description-product__accordion-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  border-top: #474141 solid 1px;
+}
+
+ul.description-product__accordion-list > li {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 0;
+  border-bottom: 1px solid #474141;
+}
+
+ul.description-product__accordion-list > li.active_description h3:after {
+  transform: rotate(45deg);
+}
+
+ul.description-product__accordion-list > li h3 {
+  font-weight: 700;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 15px 50px 15px 10px;
+  margin: 0;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  color: #474141;
+}
+
+ul.description-product__accordion-list > li h3:after {
+  content: "+";
+  font-family: "material-design-iconic-font";
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: black;
+  transition: all 0.3s ease-in-out;
+  font-size: 18px;
+  padding: 15px 20px;
+}
+
+
+
+ul.description-product__accordion-list > li div.description-product__answer {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  cursor: default;
+  padding: 0px 10px 20px;
+}
+
+
+ul.description-product__accordion-list > li div.description-product__answer p,
+ul.description-product__accordion-list > li div.description-product__answer div{
+  position: relative;
+  display: block;
+  padding: 0;
+  cursor: default;
+  line-height: 20px;
+  font-size: 13px;
+  margin: 0;
+  color: #474141;
+  font-weight: 300;
+}
+
+ul.description-product__accordion-list > li div.description-product__answer b {
+    font-weight: 600;
+}
+
+ul.description-product__accordion-list > li div.description-product__answer ul {
+    padding: 0 20px;
+}
+
+ul.description-product__accordion-list > li div.description-product__answer ul li {
+  list-style-position: outside;
+  margin-bottom: 5px;
+  list-style-type: disc;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+ul.description-product__accordion-list > li div.description-product__answer ul li:last-child {
+    margin-bottom: 0;
+}
+
+
+@media only screen and (min-width: 750px){
+    ul.description-product__accordion-list > li h3 {
+      font-size: 20px;
+      padding: 15px 50px 15px 10px;
+  }
+
+  ul.description-product__accordion-list > li div.description-product__answer {
+      padding: 0px 10px 30px;
+  }
+
+  ul.description-product__accordion-list > li div.description-product__answer p,
+  ul.description-product__accordion-list > li div.description-product__answer div, 
+  ul.description-product__accordion-list > li div.description-product__answer ul li {
+    line-height: 26px;
+    font-size: 16px;
+  }
+
+  ul.description-product__accordion-list > li h3:after {
+      font-size: 20px;
+      padding: 15px 20px;
+  }
+
+}
+
+
+
+
+/* KEY FEATURES */
+
+.description-product__answer .text-with-icons__list {
+  display: flex!important;
+  flex-wrap: wrap!important;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.description-product__answer .text-with-icons__list .text-with-icons__icon-wrapper > * {
+  margin: 0;
+  max-width: 100%!important;!importan;!importa;!import;!impor;!impo;!imp;!im;!i;!;
+} 
+
+.description-product__answer .text-with-icons__list .text-with-icons__item {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(33.333333% - 13.3333333333px);
+}
+
+.description-product__answer .text-with-icons__list .text-with-icons__item .text-with-icons__content-wrapper {
+  max-width: 100px;
+}
+
+.description-product__answer .text-with-icons__list .text-with-icons__item .text-with-icons__content-wrapper p {
+  font-size: 14px!important;
+  line-height: 18px!important;
+  margin-top: 5px!important;
+  font-weight: 300!important;
+} 
+
+.description-product__answer-container.features .text-with-icons__list .text-with-icons__item .text-with-icons__content-wrapper p strong {
+  font-weight: 600!important;
+}
+
+
+
+/* TECHNICAL DATA */
+
+.description-product__answer-container--technical-data .panel {
+
+  display: flex!important;
+  flex-direction: column;
+}
+
+.description-product__answer-container--technical-data a.resto.mobile-only {
+  margin-top: 5px!important;
+  padding: 0;
+  display: flex!important;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.description-product__answer-container--technical-data a h4 {
+  font-size: 15px!important;
+}
+
+.description-product__answer-container--technical-data a h4 i {
+  font-size: 20px!important;
+}
+
+
+.description-product__answer-container--technical-data .container.load-more {
+  left: 0;
+}
+
+.description-product__answer-container--technical-data .container.load-more .text-with-icons__item.technicalDataLoop {
+  padding: 0!important;
+  width: calc(50% - 10px)!important;
+}
+
+.description-product__answer-container--technical-data .text-with-icons__content-wrapper {
+  max-width: 85%!important;
+}
+
+.description-product__answer-container--technical-data div#load-more {
+  max-height: 290px;
+}
+
+
+.description-product__answer-container--technical-data span.loadmore,
+.description-product__answer-container--technical-data span.show-less {
+  border: black solid 1px;
+  width: auto!important;
+  padding: 8px 20px;
+  margin-bottom: 10px!important;
+  margin-top: 30px!important;
+  font-size: 15px!important;
+}
+
+
+.description-product__answer-container--technical-data .text-with-icons__list .text-with-icons__item .text-with-icons__content-wrapper p {
+    font-size: 15px !important;
+    line-height: 25px !important;
+    margin-top: 5px !important;
+}
+
+.description-product__answer-container--technical-data .text-with-icons__list .text-with-icons__item .text-with-icons__content-wrapper > p.heading {
+  font-weight: bold!important;
+  text-decoration: underline!important;
+  text-underline-offset: 4px;
+}
+
+.description-product__answer-container--technical-data .text-with-icons__list .text-with-icons__item .text-with-icons__content-wrapper > p.red {
+    color: #de2a2a;
+}
+
+@media only screen and (min-width: 768px){
+  .description-product__answer-container--technical-data .container.load-more .text-with-icons__item.technicalDataLoop {
+    width: calc(33.333333% - 13.3333333333px)!important;
+  }
+}
+
+
+
+
+/* PRODUCT OVERVIEW */
+
+.how-to-care-container .description-product__answer .container h3 {
+  display: none
+}
+
+.how-to-care-container .description-product__answer .image-with-text__image-wrapper {
+  display: none;
+}
+
+.how-to-care-container .description-product__answer .image-with-text__content-wrapper {
+  width: 100%!important;
+  margin-top: 10px!important;
+}
+
+.how-to-care-container .description-product__answer .image-with-text__content-wrapper span,
+.how-to-care-container .description-product__answer .image-with-text__content-wrapper p {
+  text-align: left!important;
+}
+
+.how-to-care-container .description-product__answer .image-with-text__content-wrapper span {
+  font-family: Titillium Web, sans-serif !important;
+  font-size: 15px!important;
+}
+
+
+
+
+/* ESTILOS GLOBALES PRODUCTO GENERAL */
+
+.product-form {
+  margin-top: 15px;
+}
+
+.cbb-frequently-bought-container {
+  display: none!important;
+}
+
+section#shopify-section-template--15828622245949__9e473855-68ae-4331-aa8a-3ea8e6c0838f,
+section#shopify-section-template--15828622245949__yth-promotional {
+  display: none;
+}
+
+section#shopify-section-template--15828622245949__yth-related-products .container {
+  border-top: red solid 1px;
+  padding-top: 50px;
+}
+
+section#shopify-section-template--15828622245949__yth-related-products  product-recommendations.section {
+  padding-top: 0;
+}
+
+.product-item__general-product .product-item__label-list.label-list {
+  display: none;
+}
+
+button.shopify-payment-button__button.shopify-payment-button__button--unbranded {
+    letter-spacing: 0!important;
+    min-height: 48px!important;
+    font-weight: 600!important;
+    font-size: 16px!important;
+    max-height: 49px!important;
+    font-family: Titillium Web, sans-serif !important;
+    font-weight: 700!important;
+}
+
+
+
+
+/* OTROS ESTILOS GLOBALES */
+
+.tolstoy-stories-title {
+    text-align: center!important;
+}
+
+product-payment-terms {
+    display: none!important;
+}
+
+@media only screen and (min-width: 750px){
+    .tolstoy-stories-container {
+         justify-content: center!important;   
+    }
+}

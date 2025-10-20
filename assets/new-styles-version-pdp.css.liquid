@@ -1,0 +1,44 @@
+body#product div#main .shopify-section.shopify-section--main-product {
+    padding-top: 0
+}
+
+body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="mobile"] {
+    margin-top: 0;
+}
+
+body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="mobile"] h1.product-meta__title.heading.h3 {
+    font-size: 20px!important;
+    font-weight: 600;
+    text-align: left;
+}
+
+body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="mobile"] .jdgm-widget.jdgm-preview-badge,
+body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="mobile"] .product-meta {
+    text-align: left;
+}
+
+body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="desktop"] h1.product-meta__title.heading.h3,
+body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="desktop"] h1.product-meta__title.heading.h3 + .row,
+body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="desktop"] h1.product-meta__title.heading.h3 + .row + .container-general-prices .units-sold-text {
+    display: none;
+}
+
+@media only screen and (min-width: 1000px){
+    body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="mobile"] {
+        display: none;
+    }
+
+    
+    body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="desktop"] h1.product-meta__title.heading.h3,
+    body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="desktop"] h1.product-meta__title.heading.h3 + .row,
+    body#product div#main .shopify-section.shopify-section--main-product .product__info[data-device="desktop"] h1.product-meta__title.heading.h3 + .row + .container-general-prices .units-sold-text {
+        display: block;
+    }
+}
+
+
+/* SE ELIMINA DROP A HINT*/
+
+.buttons-container-drop-a-hint {
+    display: none!important;
+}

@@ -1,0 +1,84 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    {%- if section.settings.text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign heading_color = settings.heading_color -%}
+      {%- assign text_color = settings.text_color -%}
+    {%- else -%}
+      {%- assign heading_color = section.settings.text_color -%}
+      {%- assign text_color = section.settings.text_color -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_background == 'rgba(0,0,0,0)' -%}
+      {%- assign button_background = settings.primary_button_background -%}
+    {%- else -%}
+      {%- assign button_background = section.settings.button_background -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign button_text_color = settings.primary_button_text_color -%}
+    {%- else -%}
+      {%- assign button_text_color = section.settings.button_text_color -%}
+    {%- endif -%}
+    
+    {%- if section.settings.bgbackground == 'rgba(0,0,0,0)' -%}
+      {%- assign bgbackground = settings.bgbackground -%}
+    {%- else -%}
+      {%- assign bgbackground = section.settings.bgbackground -%}
+    {%- endif -%}
+ 
+    --heading-color: {{ heading_color.red }}, {{ heading_color.green }}, {{ heading_color.blue }};
+    --text-color: {{ text_color.red }}, {{ text_color.green }}, {{ text_color.blue }};
+    --primary-button-background: {{ button_background.red }}, {{ button_background.green }}, {{ button_background.blue }};
+    --primary-button-text-color: {{ button_text_color.red }}, {{ button_text_color.green }}, {{ button_text_color.blue }};
+
+    --section-accent-background: {{ section.settings.accent_background.red }} {{ section.settings.accent_background.green }} {{ section.settings.accent_background.blue }} / {{ section.settings.accent_background.alpha }};
+    --section-autoplay-duration: {{ section.settings.cycle_speed }}s;
+    --section-animation-play-state: paused;
+      background:{{bgbackground}}};
+  }
+  
+
+ 
+  </style>
+<section id="static-section-5" class="section mysection" style="margin: 0px;">
+
+<div class="container">
+   
+      <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/WhatsApp_Image_2022-12-29_at_1.44.33_PM.jpg?v=1672341690" width="100%" height="auto" class="static-desktop-only">
+      
+          <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/new_years_banner_web_2022_2.jpg?v=1672344369" width="100%" height="auto" class="static-mobile-only" style="display:none">
+     
+
+</div>
+
+<style>
+@media only screen and (max-width: 800px) {
+    img.static-desktop-only
+    {
+    display:none;
+    }
+    img.static-mobile-only
+    {
+    display:block !important;
+    }
+
+}
+
+</style></section>
+    
+{% schema %}
+{
+  "name": "Static Section 5",
+  "class": "shopify-section--text-with-image TEXT-WITH-IMAGE static5",
+  "settings": [
+ 
+ ],
+  "presets": [
+    {
+      "name": "Static Section 5",
+      "settings": {}
+    
+    }
+  ]
+}
+{% endschema %}

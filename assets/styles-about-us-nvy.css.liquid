@@ -1,0 +1,592 @@
+/* ===================================
+   🖼️ SECCIÓN PRINCIPAL – MAIN BANNER
+   Contiene el banner principal con imagen destacada y texto llamativo.
+=================================== */
+
+.shopify-section.about_us_main * {
+   font-family: Montserrat, serif !important;
+}
+
+.about_us_main__container {
+   display: flex;
+   flex-direction: column;
+   padding: 50px 20px;
+}
+
+.about_us_main__details {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   padding: 0px 0px 30px;
+}
+
+.about_us_main__details h2,
+.about_us_main__details h4,
+.about_us_main__details p {
+   width: 100%;
+   margin: 0;
+}
+
+.about_us_main__details h2 {
+   text-align: center;
+   font-weight: 300;
+   font-size: 20px;
+   line-height: 20px;
+}
+
+.about_us_main__details h4 {
+   font-weight: bold;
+   text-align: center;
+   font-size: 30px;
+   letter-spacing: 0;
+   line-height: 35px;
+}
+
+.about_us_main__details p {
+   font-weight: 300;
+   text-align: center;
+   font-size: 13px;
+}
+
+.about_us_main__banner {
+   width: 100%;
+   line-height: 0;
+}
+
+
+.about_us_main__banner img {
+   width: 100%;
+}
+
+@media only screen and (min-width: 1300px) {
+   .shopify-section.about_us_main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .about_us_main__container {
+      flex-direction: row;
+      max-width: 1300px;
+      align-items: flex-start;
+      padding: 100px 30px;
+   }
+
+   .about_us_main__banner {
+      width: 65%;
+   }
+
+   .about_us_main__details {
+      width: 35%;
+      gap: 40px;
+      padding: 10px 40px 0px 0px;
+   }
+
+   .about_us_main__details h2 {
+      text-align: left;
+      font-size: 30px;
+      line-height: 30px;
+   }
+   
+   .about_us_main__details h4 {
+      text-align: left;
+      font-size: 50px;
+      line-height: 55px;
+   }
+   
+   .about_us_main__details p {
+      text-align: left;
+      font-size: 15px;
+   }
+
+}
+
+
+
+
+
+
+
+
+/* ===================================
+   🎯 SECCIÓN SECUNDARIA – BANNER COMPLEMENTARIO
+   Similar al banner principal, pero con contenido de apoyo o promociones adicionales.
+=================================== */
+
+.shopify-section.about_us_secondary {
+   background: black;
+}
+
+.shopify-section.about_us_secondary * {
+   font-family: Montserrat, serif !important;
+}
+
+.about_us_secondary__container {
+   display: flex;
+   flex-direction: column-reverse;
+   padding: 50px 0px 0;
+}
+
+.about_us_secondary__details {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   padding: 0px 20px 30px;
+}
+
+.about_us_secondary__details h2,
+.about_us_secondary__details h4,
+.about_us_secondary__details p,
+.about_us_secondary__details a {
+   width: 100%;
+   margin: 0;
+   color: white;
+}
+
+.about_us_secondary__details h2 {
+   text-align: center;
+   font-weight: 300;
+   font-size: 20px;
+   line-height: 20px;
+}
+
+.about_us_secondary__details h4 {
+   font-weight: bold;
+   text-align: center;
+   font-size: 30px;
+   letter-spacing: 0;
+   line-height: 35px;
+}
+
+.about_us_secondary__details div {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.about_us_secondary__details p {
+   font-weight: 300;
+   text-align: center;
+   font-size: 13px;
+}
+
+
+.about_us_secondary__details a {
+   font-weight: 500;
+   text-align: center;
+   font-size: 14px;
+   border: white solid 1px;
+   width: auto;
+   padding: 10px 30px
+}
+
+
+.about_us_secondary__banner {
+   width: 100%;
+   line-height: 0;
+}
+
+
+.about_us_secondary__banner img {
+   width: 100%;
+}
+
+
+@media only screen and (min-width: 1300px) {
+   
+   .about_us_secondary__container {
+      flex-direction: row;
+      padding: 0;
+      height: 730px;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .about_us_secondary__banner {
+      width: 60%;
+      line-height: 0;
+      height: 100%;
+      display: flex;
+   }
+   
+   
+   .about_us_secondary__banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   .about_us_secondary__details {
+      width: 40%;
+      gap: 40px;
+      padding: 0px 15% 0px 50px;
+      align-items: flex-start;
+   }
+   
+   .about_us_secondary__details h4 {
+      text-align: left;
+      font-size: 50px;
+      line-height: 55px;
+   }
+
+   .about_us_secondary__details div {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+   }
+   
+   .about_us_secondary__details p {
+      text-align: left;
+      font-size: 15px;
+   }
+   
+   .about_us_secondary__details a {
+      font-size: 18px;
+      padding: 10px 40px
+   }
+   
+}
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   🧊 OVERLAY – IMAGEN CON TEXTO SUPERPUESTO
+   Estructura para mostrar una imagen con texto encima, ideal para destacar mensajes.
+=================================== */
+
+.shopify-section.about_us_overlay {
+   /*border: red solid 1px;*/
+}
+
+.about_us_overlay__container {
+   padding: 50px 20px;
+}
+
+.about_us_overlay__content {
+   display: flex;
+   flex-direction: column-reverse;
+}
+
+.about_us_overlay__content * {
+   font-family: Montserrat, serif !important;
+}
+
+.about_us_overlay__details-content {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   padding: 0px 0px 30px;
+}
+
+.about_us_overlay__details-content h4,
+.about_us_overlay__details-content p {
+   width: 100%;
+   margin: 0;
+}
+
+.about_us_overlay__details-content h4 {
+   font-weight: bold;
+   text-align: center;
+   font-size: 30px;
+   letter-spacing: 0;
+   line-height: 35px;
+}
+
+.about_us_overlay__details-content div {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.about_us_overlay__details-content p {
+   font-weight: 300;
+   text-align: center;
+   font-size: 13px;
+}
+
+.about_us_overlay__banner {
+   width: 100%;
+   line-height: 0;
+}
+
+.about_us_overlay__banner img {
+   width: 100%;
+}
+
+
+@media only screen and (min-width: 1300px) {
+   
+   .shopify-section.about_us_overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   
+   .about_us_overlay__container {
+      flex-direction: row;
+      max-width: 1300px;
+      align-items: flex-start;
+      padding: 100px 30px;
+   }
+   
+   .about_us_overlay__content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+   }
+
+   .about_us_overlay__details {
+      position: absolute;
+      background: transparent;
+      width: 40%;
+      height: auto;
+      top: 5%;
+   }
+   
+   .about_us_overlay__details-content {
+      gap: 40px;
+      padding: 60px;
+   }
+
+   .about_us_overlay__details-content h4,
+   .about_us_overlay__details-content p {
+      color: white;
+   }
+   
+   .about_us_overlay__details-content h4 {
+      text-align: left;
+      font-size: 50px;
+      line-height: 55px;
+   }
+   
+   .about_us_overlay__details-content div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+   
+   .about_us_overlay__details-content p {
+      text-align: left;
+      font-size: 15px;
+      font-weight: 500;
+   }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   🗂️ SECCIÓN DE CATEGORÍAS – BLOQUES DESTACADOS
+   Muestra varias categorías en formato de bloques o tarjetas visuales.
+=================================== */
+
+.shopify-section.about_us_banners {
+   /*border: red solid 1px;*/
+}
+
+.shopify-section.about_us_banners * {
+   font-family: Montserrat, serif !important;
+}
+
+.about_us_banners__container {
+   display: flex;
+   flex-direction: column;
+   padding: 0px 20px 50px;
+}
+
+.about_us_banners__container > h2 {
+   font-weight: bold;
+   text-align: center;
+   font-size: 30px;
+   letter-spacing: 0;
+   line-height: 35px;
+   width: 100%;
+   margin: 0;
+   padding: 0px 0px 30px;
+}
+
+.about_us_banners__content {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 30px;
+}
+
+.about_us_banners__banner {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.about_us_banners__banner-imagen {
+   width: 100%;
+   
+}
+
+.about_us_banners__banner-imagen img {
+   width: 100%;
+}
+
+.about_us_banners__banner-imagen img.imagen.imagen--desktop {
+   display: none;
+}
+
+.about_us_banners__banner-imagen img.imagen.imagen--mobile {
+   width: 100%;
+}
+
+.about_us_banners__banner-details {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   padding: 15px 0;
+   justify-content: flex-start;
+   align-items: flex-start
+}
+
+
+.about_us_banners__banner-details h5,
+.about_us_banners__banner-details p,
+.about_us_banners__banner-details a {
+   margin: 0;
+   width: 100%;
+}
+
+.about_us_banners__banner-details h5 {
+   font-size: 25px;
+   line-height: 30px;
+   font-weight: 500
+}
+
+.about_us_banners__banner-details div {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.about_us_banners__banner-details p {
+   font-weight: 300;
+   text-align: left;
+   font-size: 13px;
+}
+
+.about_us_banners__banner-details a {
+   font-weight: 500;
+   text-align: center;
+   font-size: 14px;
+   border: black solid 1px;
+   width: auto;
+   padding: 10px 30px;
+   margin-top: 10px;
+}
+
+@media only screen and (min-width: 1300px) {
+   
+   .shopify-section.about_us_banners {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   
+   .about_us_banners__container {
+      max-width: 1300px;
+      padding: 0px 30px 100px;
+   }
+
+   .about_us_banners__container > h2 {
+      font-size: 50px;
+      line-height: 55px;
+      padding: 0px 0px 50px;
+   }
+
+   .about_us_banners__content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+   }
+   
+   .about_us_banners__banner-imagen img.imagen.imagen--mobile {
+      display: none;
+   }
+
+   .about_us_banners__banner-imagen img.imagen.imagen--desktop {
+      width: 100%;
+      display: block;
+      filter: grayscale(100%) contrast(1.2) brightness(0.9);
+      transition: all .3s;
+   }
+   
+   .about_us_banners__banner--middle_width {
+      width: calc((100% - 30px) / 2);
+   }
+
+   .about_us_banners__banner--full_width {
+      width: 100%;
+   }
+
+   .about_us_banners__banner {
+      height: auto;
+      justify-content: stretch;
+   }
+
+   .about_us_banners__banner:hover img.imagen.imagen--desktop {
+      filter: none;
+   }
+
+   .about_us_banners__banner-details {
+      height: 100%;
+      padding: 20px 0;
+      gap: 20px;
+   }
+
+   .about_us_banners__banner-details h5 {
+       font-size: 35px;
+       line-height: 40px;
+   }
+
+   .about_us_banners__banner-details p {
+      font-size: 15px;
+   }
+
+   .about_us_banners__banner-details a {
+      margin-top: auto;
+      transition: all .3s;
+   }
+
+   .about_us_banners__banner-details a:hover {
+      background: black;
+      color: white;
+   }
+  
+}

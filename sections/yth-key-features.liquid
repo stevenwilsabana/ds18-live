@@ -1,0 +1,81 @@
+<style type="text/css">
+#keyFeature-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:10px;
+  }
+#keyFeature-wrap h3{
+    margin-bottom:0;
+}
+@media screen and (max-width: 600px){
+  .text-with-icons__list {
+    flex-wrap: wrap;
+  }
+  .text-with-icons__item{
+    padding: 20px 20px 0;
+    width: 33.333%;
+  }
+  .text-with-icons__item .text-with-icons__icon-wrapper{
+    margin-bottom:0;
+  }
+  .text-with-icons__item p{
+    font-size:12px !important;
+  }
+  #keyFeature-wrap{
+    margin-bottom:0;
+  }
+  #shopify-section-template--15123963412541__yth-frequently-bought .container.padding-extra.accordion{
+    border:0;
+  }
+}
+
+</style>
+
+<section class="section no-spacing">
+  <div class="section__color-wrapper">
+    <div class="container accordion">
+      <header id="keyFeature-wrap" class="section__header text-container">
+        <h3 class="heading h3 keyFeature-title"><span class="red">KEY</span> FEATURES</h3> 
+      </header>
+    </div>
+    {% if product.metafields.custom_fields.key_features != blank %}
+      <div class="panel" id="panel">
+        <div class="container">
+          <div class="text-with-icons">
+            <div class="text-with-icons__list hide-scrollbar">
+                {% for item in product.metafields["custom_fields"]["key_features"] %}
+              <div class="text-with-icons__item">
+                <div class="text-with-icons__icon-wrapper">
+                    {% if item["icon"] != blank %}
+                  <img
+                    class="text-with-icons__custom-icon"
+                    style="max-width: 95%;"
+                    width="150"
+                    height="150"
+                    src="{{ item["icon"] | file_url }}"
+                    alt="{{ item["label"] }}"
+                  >
+                  {% endif %}
+                </div>
+                <div class="text-with-icons__content-wrapper" style="text-align:center">
+                  <p><strong>{{ item["label"]}}</strong></p>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "DS18 Key Features",
+  "tag": "section",
+  "class": "yth-key-features",
+  "settings": []
+}
+{% endschema %}

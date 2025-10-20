@@ -1,0 +1,136 @@
+<script>
+
+  function enrichProductJSON(products) {
+    for (var i = 0; i < products.length; i++) {
+      updateProductJSON(products, products[i]);
+    }
+  }
+
+  function updateProductJSON(products, product) {
+    fetch(Shopify.routes.root + "products/" + product.handle + ".js")
+      .then((res) => res.json())
+      .then(async (data) => {
+        var b2bProduct = data;
+        for (var i = 0; i < products.length; i++) {
+          if (products[i].id === b2bProduct.id) {
+            for (var j = 0, b2b_variant; j < b2bProduct.variants.length; j++) {
+              b2b_variant = b2bProduct.variants[j];
+              for (var x = 0, widget_variant; x < product.variants.length; x++) {
+                widget_variant = product.variants[x];
+                if (b2b_variant.id === widget_variant.id) {
+                  // Save the original retail price in a new field in the DOM
+                  var productElements = document.querySelectorAll(
+                    `#rebuy-widget-133714 .rebuy-product-grid .rebuy-product-block .rebuy-product-title[href*="${product.handle}"], 
+                     #rebuy-widget-94780 .rebuy-product-grid .rebuy-product-block .rebuy-product-title[href*="${product.handle}"]`
+                  );
+
+                  productElements.forEach(async productElement => {
+                    productElement = productElement.closest('.rebuy-product-block');
+                    if (productElement) {
+                      console.log('🟢 Este elemento es de Rebuy.');
+                      var retailPriceElement = productElement.querySelector('.retail-price');
+                      if (!retailPriceElement) {
+                        retailPriceElement = document.createElement('span');
+                        retailPriceElement.className = 'retail-price';
+                        const priceElement = productElement.querySelector('.rebuy-product-price');
+                        priceElement.insertAdjacentElement('afterend', retailPriceElement);
+                      }
+
+                      // Fetch and set the retail price
+                      const productData = await fetchProductPrices(product.handle);
+                      const retailPrice = productData ? parseFloat(productData.variants.edges[0].node.price.amount) : parseFloat(widget_variant.price);
+                      retailPriceElement.textContent = retailPrice.toLocaleString("en-US", { style: "currency", currency: "USD" });
+                      retailPriceElement.dataset.retailPrice = retailPrice;
+                      
+                      // Set the retail price in the visible price element
+                      const priceElementSpan = productElement.querySelector('.rebuy-product-price span');
+                      if (priceElementSpan) {
+                        priceElementSpan.textContent = retailPrice.toLocaleString("en-US", { style: "currency", currency: "USD" });
+                      }
+
+                      // Update the variant price with the wholesale price
+                      widget_variant.price = b2b_variant.price;
+                      priceElementSpan.textContent = (b2b_variant.price / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
+                    }
+                  });
+                  break;
+                }
+              }
+            }
+            break;
+          }
+        }
+      });
+  }
+
+  // Función para obtener precios retail usando la API de Storefront
+  async function fetchProductPrices(handle) {
+    const query = `
+      {
+        productByHandle(handle: "${handle}") {
+          id
+          title
+          variants(first: 250) {
+            edges {
+              node {
+                id
+                price {
+                  amount
+                  currencyCode
+                }
+              }
+            }
+          }
+        }
+      }`;
+
+    const response = await fetch(graphqlEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': storefrontAccessToken
+      },
+      body: JSON.stringify({ query: query })
+    });
+
+    if (!response.ok) {
+      console.error('Fetch error:', response.status, response.statusText);
+      return null;
+    }
+
+    const jsonResponse = await response.json();
+    if (jsonResponse.errors) {
+      console.error('GraphQL errors:', jsonResponse.errors);
+      return null;
+    }
+
+    return jsonResponse.data.productByHandle;
+  }
+
+  // Custom event to reset prices when adding product from PDP
+  document.addEventListener("rebuy.afterProductAdd", async (event) => {
+    const addedProduct = event.detail.product;
+    const productElement = document.querySelector(
+      `.rebuy-product-block .rebuy-product-title[href*="${addedProduct.handle}"]`
+    )?.closest('.rebuy-product-block');
+
+    if (productElement) {
+      const retailPriceElement = productElement.querySelector('.retail-price');
+      if (retailPriceElement) {
+        const retailPrice = parseFloat(retailPriceElement.dataset.retailPrice);
+        const priceElement = productElement.querySelector('.rebuy-product-price span');
+        if (priceElement) {
+          priceElement.textContent = retailPrice.toLocaleString("en-US", {style: "currency", currency: "USD"});
+        }
+      }
+    }
+  });
+
+  // beforeProductsChange runs on every widget and handles both the ready and change states
+  document.addEventListener("rebuy.beforeProductsChange", (event) => {
+    setTimeout(() => {
+      enrichProductJSON(event.detail.widget.data.products);
+    }, 500);
+  });
+
+</script>

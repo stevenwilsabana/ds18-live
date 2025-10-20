@@ -1,0 +1,84 @@
+.rebuy-cart__flyout-recommendations .rebuy-product-info .rebuy-product-price span.rebuy-money,
+#rebuy-widget-133714 .rebuy-product-info .rebuy-product-price span.rebuy-money {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: bold;
+    display: flex;
+}
+
+.rebuy-cart__flyout-recommendations .rebuy-product-info .rebuy-product-price span.rebuy-money:before,
+#rebuy-widget-133714 .rebuy-product-info .rebuy-product-price span.rebuy-money:before{
+    content: "Your Price: ";
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.rebuy-cart__flyout-recommendations .rebuy-product-info span.retail-price,
+#rebuy-widget-133714 .rebuy-product-info span.retail-price{
+    font-size: 14px;
+    line-height: 14px;
+    opacity: 0.5;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    margin-top: 8px;
+}
+
+.rebuy-cart__flyout-recommendations .rebuy-product-info span.retail-price:before,
+#rebuy-widget-133714 .rebuy-product-info span.retail-price:before{
+    content: "Retail: ";
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.container-rebuy-cart-new ul.rebuy-cart__flyout-items{
+    padding-bottom: 30px;
+}
+
+.rebuy-widget .rebuy-product-block .rebuy-product-info .rebuy-product-price {
+    margin-top: 10px!important;
+}
+
+@media only screen and (min-width: 768px){
+    .rebuy-cart__flyout-recommendations .rebuy-product-info .rebuy-product-price span.rebuy-money,
+    #rebuy-widget-133714 .rebuy-product-info .rebuy-product-price span.rebuy-money {
+        justify-content: center;
+    }
+
+    .rebuy-cart__flyout-recommendations .rebuy-product-info span.retail-price,
+    #rebuy-widget-133714 .rebuy-product-info span.retail-price {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .rebuy-widget .rebuy-product-block .rebuy-product-info .rebuy-product-price {
+        margin-top: 15px!important;
+    }
+}
+
+.rebuy-cart__flyout-footer {
+  min-height: 0!important;
+}
+
+
+
+
+/* NOTAS EN CHECKOUT */
+
+.rebuy-cart__flyout-item-properties {
+    margin: 10px 0 0!important;
+}
+
+
+
+
+/* ESTILOS PRE-ORDER*/
+
+.rebuy-cart__flyout-item-property.property-key-preorder.property-value-product-is-currently-in-backorder-and-it-will-ship-out-as-soon-as-it-becomes-available {
+    color: #de2a2a;
+}
+
+.rebuy-cart__flyout-item-property.property-key-preorder.property-value-product-is-currently-in-backorder-and-it-will-ship-out-as-soon-as-it-becomes-available span.rebuy-cart__flyout-item-property-name,
+.rebuy-cart__flyout-item-property.property-key-preorder.property-value-product-is-currently-in-backorder-and-it-will-ship-out-as-soon-as-it-becomes-available span.rebuy-cart__flyout-item-property-separator {
+    font-weight: bold;
+}

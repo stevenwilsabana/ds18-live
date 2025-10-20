@@ -1,0 +1,57 @@
+<div class="about_us_secondary__container">
+
+  <div class="about_us_secondary__banner">
+    <img src="{{ section.settings.banner | image_url: width: '2000px' }}">
+  </div>
+  
+  <div class="about_us_secondary__details">
+    <h4>{{ section.settings.heading }}</h4>
+    <div>{{ section.settings.details }}</div>
+    {% if section.settings.link and section.settings.button %}
+      <a href="{{ section.settings.link }}">
+        {{ section.settings.button }}
+      </a>
+    {% endif %}
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "About Us Secondary NVY",
+    "tag": "section",
+    "class": "about_us_secondary",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner",
+        "label": "Banner"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "details",
+        "label": "Details"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Us - Secondary"
+      }
+    ]
+  }
+{% endschema %}

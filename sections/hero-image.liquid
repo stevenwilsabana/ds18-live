@@ -1,0 +1,61 @@
+<div
+  data-section-id="{{ section.id }}"
+  class=""
+>
+  <div class="">
+    {% if section.settings.image != blank %}
+      {%- assign img_url = section.settings.image | img_url: 'small' | replace: '_small', '' -%}
+      {%- assign img_url_mob = section.settings.image_mob | img_url: 'small' | replace: '_small', '' -%}
+
+      <img
+        class="hero-media showOnDesk"
+        src="{{ img_url }}"
+        height="{{ section.settings.image.height }}"
+        alt="{{ section.settings.image.alt | escape }}"
+      >
+
+      <img
+        class="hero-media showOnMob"
+        src="{{ img_url_mob }}"
+        height="{{ section.settings.image_mob.height }}"
+        alt="{{ section.settings.image_mob.alt | escape }}"
+      >
+
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  img.hero-media {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero image",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Mobile Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero image",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

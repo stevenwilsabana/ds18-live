@@ -1,0 +1,306 @@
+<div class="product-stl {% unless product.available %}product-stl--sold-out{% endunless %}">
+
+  <div class="product-stl__slider" data-selector="{{ identificator }}">
+      <button class="back-arrow">{% render 'svg-icon-back' %}</button>
+      <div class="container-images">
+      {% for image in product.images %}
+        <div class="product-stl__image" data-image-id="{{ image.id }}" data-selector="{{ forloop.index }}">
+          <img src="{{ image | img_url: '500x' }}" alt="{{ product.title }}">
+        </div>
+      {% endfor %}
+      </div>
+      <button class="next-arrow">{% render 'svg-icon-next' %}</button>
+  </div>
+
+  
+  <div class="product-stl__details">
+    <div class="product-stl__information">
+
+      {% unless customer.b2b? %}
+        {% if settings.active_campaign == true %}
+          {% if product.tags contains settings.tag_campaign %}
+            {% if settings.label_campaign != '' %}
+              <p class="label-campaign-stl">{{ settings.label_campaign }}</p>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endunless %}
+      
+      {% if product.available %}
+        <a class="vendor" href="{{ product.url }}" target="_blank">
+          {{ product.vendor }}
+        </a>
+      {% else %}
+        <span class="vendor">
+          {{ product.vendor }}
+        </span>
+      {% endif %}
+      
+      {% if product.available %}
+        <a class="title" href="{{ product.url }}" target="_blank">
+          {{ product.title }}
+        </a>
+      {% else %}
+        <span class="title">
+          {{ product.title }}
+        </span>
+      {% endif %}
+
+      {% if product.available %}
+
+        {% if customer.b2b? %}
+
+          <div class="prices">
+              {% if product.compare_at_price %}
+                <p><span class="regular">{{ product.price | money }}</span><i> / {{ product.metafields.prod.each_pair_text }}</i></p>
+                <p class="container-offert"><span class="offert">{{ product.compare_at_price | money }}</span></p>
+              {% else %}
+                <p><span class="regular">{{ product.price | money }}</span><i> / {{ product.metafields.prod.each_pair_text }}</i></p>
+              {% endif %}
+            </div>
+
+        {% else %}
+
+          {% if settings.active_campaign == true %}
+  
+            {% if product.tags contains settings.tag_campaign %}
+  
+              {% assign discountSTL = 100 | minus: settings.campaign_discount_crossline %}
+              {% assign FinalDiscountSTL = discountSTL | divided_by: 100.0 %}
+              {% assign crosslineSTL = product.price | times: FinalDiscountSTL %}
+              {% assign labelSTL = settings.campaign_discount_crossline | append: "% OFF"  %}
+              <div class="prices prices--campaign">
+                  <p class="discount-campaign-stl">{{ labelSTL }}</p>
+                  <p><span class="regular">{{ crosslineSTL | money }}</span><i> / {{ product.metafields.prod.each_pair_text }}</i></p>
+                  <p class="container-offert"><span class="offert">{{ product.price | money }}</span></p>
+              </div>
+  
+            {% else %}
+  
+              <div class="prices">
+                {% if product.compare_at_price %}
+                  <p><span class="regular">{{ product.price | money }}</span><i> / {{ product.metafields.prod.each_pair_text }}</i></p>
+                  <p class="container-offert"><span class="offert">{{ product.compare_at_price | money }}</span></p>
+                {% else %}
+                  <p><span class="regular">{{ product.price | money }}</span><i> / {{ product.metafields.prod.each_pair_text }}</i></p>
+                {% endif %}
+              </div>
+  
+            {% endif %}
+  
+          {% else %}
+  
+            <div class="prices">
+              {% if product.compare_at_price %}
+                <p><span class="regular">{{ product.price | money }}</span><i> / {{ product.metafields.prod.each_pair_text }}</i></p>
+                <p class="container-offert"><span class="offert">{{ product.compare_at_price | money }}</span></p>
+              {% else %}
+                <p><span class="regular">{{ product.price | money }}</span><i> / {{ product.metafields.prod.each_pair_text }}</i></p>
+              {% endif %}
+            </div>
+  
+          {% endif %}
+  
+        {% endif %}
+
+      {% endif %}
+        
+    </div>
+    <div class="product-stl__form">
+      {% if product.available %}
+        {% if product.variants.size > 1 %}
+          <select id="variant-select-{{ product.id }}">
+            {% for variant in product.variants %}
+              {% assign variant_image_id = '' %}
+              {% if variant.featured_media %}
+                {% assign variant_image_id = variant.featured_media.id %}
+              {% endif %}
+              {% if variant.available %}
+                <option value="{{ variant.id }}"
+                        data-image="{{ variant | variant_image_url }}"
+                        data-image-id="{{ variant_image_id }}"
+
+                        {% if customer.b2b? %}
+
+                          data-price="{{ variant.price | money }}"
+                          data-compare-price="{{ variant.compare_at_price | money }}"
+
+                        {% else %}
+
+                          {% if settings.active_campaign == true %}
+  
+                            {% if product.tags contains settings.tag_campaign %}
+  
+                              {% assign discountSTL = 100 | minus: settings.campaign_discount_crossline %}
+                              {% assign FinalDiscountSTL = discountSTL | divided_by: 100.0 %}
+                              {% assign crosslineSTL = variant.price | times: FinalDiscountSTL %}
+                              {% assign labelSTL = settings.campaign_discount_crossline | append: "% OFF"  %}
+      
+                              data-price="{{ crosslineSTL | money }}"
+                              data-compare-price="{{ variant.price | money }}"
+  
+                            {% else %}
+  
+                              data-price="{{ variant.price | money }}"
+                              data-compare-price="{{ variant.compare_at_price | money }}"
+  
+                            {% endif %}
+  
+                          {% else %}
+  
+                            data-price="{{ variant.price | money }}"
+                            data-compare-price="{{ variant.compare_at_price | money }}"
+  
+                          {% endif %}
+
+                        {% endif %}
+
+                        data-inventory="{{ variant.inventory_quantity }}"
+                        data-continue-selling="{% if variant.inventory_policy == 'continue' %}true{% else %}false{% endif %}"
+                        {% if forloop.first %}selected{% endif %}>
+                  {{ variant.title }}
+                </option>
+              {% else %}
+                <option value="{{ variant.id }}"
+                        data-image="{{ variant | variant_image_url }}"
+                        data-image-id="{{ variant_image_id }}"
+                        data-price="{{ variant.price | money }}"
+                        data-compare-price="{{ variant.compare_at_price | money }}"
+                        data-inventory="{{ variant.inventory_quantity }}"
+                        data-continue-selling="{% if variant.inventory_policy == 'continue' %}true{% else %}false{% endif %}"
+                        disabled>
+                  {{ variant.title }} (SOLD OUT)
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        {% else %}
+          {% assign single_variant = product.variants.first %}
+          {% assign variant_image_id = '' %}
+          {% if single_variant.featured_media %}
+            {% assign variant_image_id = single_variant.featured_media.id %}
+          {% endif %}
+           <input type="hidden" id="variant-select-{{ product.id }}" value="{{ single_variant.id }}"
+             data-image="{% if single_variant.image %}{{ single_variant.image | img_url: '500x' }}{% else %}{{ product.featured_image | img_url: '500x' }}{% endif %}"
+             data-image-id="{{ variant_image_id }}"
+
+             {% if customer.b2b? %}
+
+               data-price="{{ single_variant.price | money }}"
+               data-compare-price="{{ single_variant.compare_at_price | money }}"
+
+             {% else %}
+
+               {% if settings.active_campaign == true %}
+  
+                 {% if product.tags contains settings.tag_campaign %}
+  
+                    {% assign discountSTL = 100 | minus: settings.campaign_discount_crossline %}
+                    {% assign FinalDiscountSTL = discountSTL | divided_by: 100.0 %}
+                    {% assign crosslineSTL = single_variant.price | times: FinalDiscountSTL %}
+                    {% assign labelSTL = settings.campaign_discount_crossline | append: "% OFF"  %}
+      
+                    data-price="{{ crosslineSTL | money }}"
+                    data-compare-price="{{ single_variant.price | money }}"
+                   
+                 {% else %}
+  
+                   data-price="{{ single_variant.price | money }}"
+                   data-compare-price="{{ single_variant.compare_at_price | money }}"
+                   
+                 {% endif %}
+                 
+               {% else %}
+  
+                 data-price="{{ single_variant.price | money }}"
+                 data-compare-price="{{ single_variant.compare_at_price | money }}"
+                 
+               {% endif %}
+
+              {% endif %}
+
+
+             data-inventory="{{ single_variant.inventory_quantity }}"
+             data-continue-selling="{% if single_variant.inventory_policy == 'continue' %}true{% else %}false{% endif %}">
+        {% endif %}
+
+
+        {% if product.metafields.custom.shop_the_look_variants %}
+          {% render 'shop-the-look-variants', product: product %}
+        {% endif %}
+
+        <div class="container-cta">
+          <div class="quantity-selector">
+            <button type="button" class="quantity-decrease">-</button>
+            <input type="number" class="quantity-input" value="1" min="1" max="" readonly>
+            <button type="button" class="quantity-increase">+</button>
+          </div>
+          <button class="add-product-stl">ADD TO LIST</button>
+        </div>
+
+
+        {% if product.id == 7521673379901 %}
+
+          <p class="disclaimer">For all products with Digital LED Lights, you will need ONLY ONE LC-DRM for your system.</p>
+            
+        {% elsif product.id == 7531374903357 %}
+
+          <p class="disclaimer">If you buy two products with RGB LED Lights, you will need ONLY ONE LC-RGB for your system.</p>
+
+        {% else %}
+
+          {% if product.title contains 'Digital LED' %}
+            <p class="disclaimer"><a href="/products/lc-drm" target="_blank">LC-DRM Bluetooth Control</a> Required to Use Digital LED Lights.</p>
+          {% elsif product.title contains 'RGB LED' %}
+            <p class="disclaimer"><a href="/products/lc-rgb" target="_blank">LC-RGB Bluetooth Control</a> Required to Use RGB LED Lights.</p>
+          {% endif %}
+
+        {% endif %}
+
+        
+      {% else %}
+        
+
+        {% if product.metafields.custom.shop_the_look_variants %}
+          {% render 'shop-the-look-variants', product: product %}
+        {% endif %}
+
+
+        <a href="#modal-notify-me" class="open-modal-notify-me" rel="modal:open">NOTIFY ME</a>
+
+
+
+        {% if product.id == 7521673379901 %}
+
+          <p class="disclaimer">For all products with Digital LED Lights, you will need ONLY ONE LC-DRM for your system.</p>
+            
+        {% elsif product.id == 7531374903357 %}
+
+          <p class="disclaimer">If you buy two products with RGB LED Lights, you will need ONLY ONE LC-RGB for your system.</p>
+
+        {% else %}
+
+          {% if product.title contains 'Digital LED' %}
+            <p class="disclaimer"><a href="/products/lc-drm" target="_blank">LC-DRM Bluetooth Control</a> Required to Use Digital LED Lights.</p>
+          {% elsif product.title contains 'RGB LED' %}
+            <p class="disclaimer"><a href="/products/lc-rgb" target="_blank">LC-RGB Bluetooth Control</a> Required to Use RGB LED Lights.</p>
+          {% endif %}
+
+        {% endif %}
+
+
+
+        
+        
+        {% comment %}
+          {% if product.id == 7546127220797 or product.id == 7546123943997 or product.id == 7546095239229 or product.id == 7546093240381 %}
+            <a href="#modal-notify-me" class="open-modal-notify-me" rel="modal:open">NOTIFY ME</a>
+          {% else %}
+            <button class="soldout-product-stl">SOLD OUT</button>
+          {% endif %}
+        {% endcomment %}
+
+      {% endif %}
+    </div>
+  </div>
+</div>

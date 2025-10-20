@@ -1,0 +1,156 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    {%- if section.settings.text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign heading_color = settings.heading_color -%}
+      {%- assign text_color = settings.text_color -%}
+    {%- else -%}
+      {%- assign heading_color = section.settings.text_color -%}
+      {%- assign text_color = section.settings.text_color -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_background == 'rgba(0,0,0,0)' -%}
+      {%- assign button_background = settings.primary_button_background -%}
+    {%- else -%}
+      {%- assign button_background = section.settings.button_background -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign button_text_color = settings.primary_button_text_color -%}
+    {%- else -%}
+      {%- assign button_text_color = section.settings.button_text_color -%}
+    {%- endif -%}
+
+    {%- if section.settings.bgbackground == 'rgba(0,0,0,0)' -%}
+      {%- assign bgbackground = settings.bgbackground -%}
+    {%- else -%}
+      {%- assign bgbackground = section.settings.bgbackground -%}
+    {%- endif -%}
+
+    --heading-color: {{ heading_color.red }}, {{ heading_color.green }}, {{ heading_color.blue }};
+    --text-color: {{ text_color.red }}, {{ text_color.green }}, {{ text_color.blue }};
+    --primary-button-background: {{ button_background.red }}, {{ button_background.green }}, {{ button_background.blue }};
+    --primary-button-text-color: {{ button_text_color.red }}, {{ button_text_color.green }}, {{ button_text_color.blue }};
+
+    --section-accent-background: {{ section.settings.accent_background.red }} {{ section.settings.accent_background.green }} {{ section.settings.accent_background.blue }} / {{ section.settings.accent_background.alpha }};
+    --section-autoplay-duration: {{ section.settings.cycle_speed }}s;
+    --section-animation-play-state: paused;
+      background:{{bgbackground}}};
+  }
+</style>
+
+<div class="maindata">
+  <div class="container padding-extra" style="padding-bottom: 0px;">
+    <header class="section__header container text-container">
+      <h3 class="heading h2 static"><span class="red">WARRANTY</span></h3>
+    </header>
+  </div>
+  <div class="container">
+    <div class="content-wrapper px-15">
+      <div class="content-warranty pb-15 pt-15">
+        <div class="row">
+          <div class="col-lg-4 col-xs-12">
+            <div class="intro">
+              <p class="mt-0 text-left">
+                Whether it's a chronograph or Breitling watch, we've got you covered on all your needs. Find all the
+                details under our terms and conditions – Breitling International Warranty and Warranty Period.
+                <span class="d-block font-weight-bold mt-10">Warranty Duration (Years): 2</span>
+                <span class="d-block mb-10 mt-10">
+                  Visit Breitling's
+                  <a class="text-underline" href="/zz-zz/terms-and-conditions/">Terms &amp; Conditions</a> for warranty
+                  details.
+                </span>
+              </p>
+              <div class="image mb-20 mt-15 text-center">
+                <picture
+                  ><img
+                    alt="Warranty"
+                    class="vertical-align-top"
+                    height="112"
+                    loading="lazy"
+                    src="https://cdn.shopify.com/s/files/1/0670/1508/2300/t/4/assets/warranty.png"
+                    type="image/svg+xml"
+                    width="112"
+                  >
+                </picture>
+              </div>
+            </div>
+            <div class="bg-light-grey info mb-0 mt-auto px-10 py-15">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <span class="d-block font-heading text-primary-blue text-uppercase title">
+                    <span>+2</span> <span>years</span></span
+                  >
+                  <span class="d-block font-heading font-weight-normal mt-5 subtitle text-uppercase">
+                    Other Breitling Movements
+                  </span>
+                </div>
+              </div>
+              <p class="text-left">
+                Extend the warranty on your Breitling watch by an additional 3 years for Breitling mechanical
+                manufacture movements or 2 years for other Breitling movements. Give your watch the best care possible.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-8 col-xs-12">
+            <div class="col-right mt-15">
+              <div class="align-items-center col-right-wrapper d-flex">
+                <div class="image position-relative">
+                  <picture>
+                    <img
+                      alt="Warranty"
+                      class="h-100 position-absolute vertical-align-top w-100"
+                      loading="lazy"
+                      src="https://www.breitling.com/assets/images/br-11-20/be-3365-temp/asset-version-e304bf56ec/warranty-care.jpg"
+                      type="image/jpg"
+                    >
+                  </picture>
+                </div>
+                <div class="text">
+                  <h3 class="font-heading font-weight-normal title title-size-3">CARING FOR YOUR BREITLING WATCH</h3>
+                  <p class="text-left">
+                    A Breitling watch lasts a lifetime. It adapts to any lifestyle. It also needs a bit of care from
+                    time to time. Ensure your Breitling performs at its peak performance by treating it to our
+                    #BreitlingCare services. Explore our comprehensive set of services and assistance designed for you
+                    and your Breitling.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Static Section 6",
+  "class": "shopify-section--text-with-image TEXT-WITH-IMAGE",
+  "max_blocks": 2,
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Static Section 6",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

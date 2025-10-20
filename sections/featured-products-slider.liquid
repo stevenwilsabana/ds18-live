@@ -1,0 +1,293 @@
+{%- if section.settings.background != settings.background and section.settings.background != 'rgba(0,0,0,0)' -%}
+  {%- assign blends_with_background = false -%}
+{%- else -%}
+  {%- assign blends_with_background = true -%}
+{%- endif -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    {%- if section.settings.background == 'rgba(0,0,0,0)' -%}
+      {%- assign section_background = settings.background -%}
+    {%- else -%}
+      {%- assign section_background = section.settings.background -%}
+    {%- endif -%}
+
+    {%- if section.settings.text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign heading_color = settings.heading_color -%}
+      {%- assign text_color = settings.text_color -%}
+    {%- else -%}
+      {%- assign heading_color = section.settings.text_color -%}
+      {%- assign text_color = section.settings.text_color -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_background == 'rgba(0,0,0,0)' -%}
+      {%- assign button_background = settings.primary_button_background -%}
+    {%- else -%}
+      {%- assign button_background = section.settings.button_background -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign button_text_color = settings.primary_button_text_color -%}
+    {%- else -%}
+      {%- assign button_text_color = section.settings.button_text_color -%}
+    {%- endif -%}
+
+    --heading-color: {{ heading_color.red }}, {{ heading_color.green }}, {{ heading_color.blue }};
+    --text-color: {{ text_color.red }}, {{ text_color.green }}, {{ text_color.blue }};
+    --primary-button-background: {{ button_background.red }}, {{ button_background.green }}, {{ button_background.blue }};
+    --primary-button-text-color: {{ button_text_color.red }}, {{ button_text_color.green }}, {{ button_text_color.blue }};
+
+    --prev-next-button-background: {{ settings.background.red }}, {{ settings.background.green }}, {{ settings.background.blue }};
+    --prev-next-button-color: {{ settings.text_color.red }}, {{ settings.text_color.green }}, {{ settings.text_color.blue }};
+
+    --section-background: {{ section_background.red }}, {{ section_background.green }}, {{ section_background.blue }};
+    --section-products-per-row: 2;
+  }
+
+  @media screen and (min-width: 741px) {
+    #shopify-section-{{ section.id }} {
+      --section-products-per-row: {{ section.settings.products_per_row | at_most: 3 }};
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} {
+      --section-products-per-row: {{ section.settings.products_per_row | at_most: 4 }};
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    #shopify-section-{{ section.id }} {
+      --section-products-per-row: {{ section.settings.products_per_row }};
+    }
+  }
+</style>
+
+<section class="section no-spacing">
+  <div class="section__color-wrapper">
+    <div class="container padding-extra">
+      {%- if section.blocks.size > 1
+        or section.settings.title != blank
+        or section.settings.subheading != blank
+        or section.settings.content != blank
+      -%}
+        <header class="section__header {% if section.settings.content != blank %}section__header--left{% endif %}">
+          {%- if section.settings.title != blank
+            or section.settings.subheading != blank
+            or section.settings.content != blank
+          -%}
+            <div class="text-container">
+              {%- if section.settings.subheading != blank -%}
+                <h2 class="heading heading--small">{{ section.settings.subheading }}</h2>
+              {%- endif -%}
+
+              {%- if section.settings.title != blank -%}
+                <h3 class="heading h3" style="margin-bottom: 15px !important;">
+                  {%- assign productTitle = section.settings.title | split: ' ' -%}
+                  <span class="red">{{ productTitle[0] }}</span>
+                  {{- section.settings.title | remove_first: productTitle[0] }}
+                </h3>
+              {%- endif -%}
+
+              {%- if section.settings.content != blank -%}
+                {{- section.settings.content -}}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </header>
+      {%- endif -%}
+    </div>
+
+    <div
+      class="bg-image"
+       {%- if section.settings.bsimage -%}
+      style="background:url('{{ section.settings.bsimage | img_url: '2000x' }}');background-repeat: no-repeat;background-position: 0px 40%;"
+   {%- endif -%} >
+      <div class="container">
+        <div class="featured-collections  responsives">
+          {%- for block in section.blocks -%}
+
+              {%- assign product = all_products[block.settings.product] -%}
+              {%- assign current_variant = product.selected_or_first_available_variant -%}
+            
+              {%- assign customImage = block.settings.image  -%}
+           {%- if block.settings.image -%}
+         {%- assign featured_image = block.settings.image -%}
+           {% else %}
+           {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+             {% endif %}
+            <gallery-item
+              class="gallery__item"
+              {{ block.shopify_attributes }}
+              style="background:{{ section.settings.innerbg_color }}" >
+        <a href="{{ product.url }}">
+              <figure class="gallery__figure">
+                  {%- assign mobile_size = 370 | times: featured_image.aspect_ratio | ceil -%}
+                  {%- assign tablet_size = 520 | times: featured_image.aspect_ratio | ceil -%}
+                  {%- assign desktop_size = 600 | times: featured_image.aspect_ratio | ceil -%}
+                  <img
+                    loading="lazy"
+                    sizes="(max-width: 740px) {{ mobile_size }}px, (max-width: 999px) {{ tablet_size }}px, {{ desktop_size }}px"
+                    class="gallery__image"
+                    {% render 'image-attributes',
+                      image:featured_image,
+                      sizes: '300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000'
+                    %}
+                  >
+                  <div class="rte">
+                    <span class="sku">{{- product.sku -}}</span>
+                  </div>
+                  <div class="rte">
+                    <span class="title">{{ product.title | default: onboarding_title }}</span>
+                  </div>
+                  <div class="rte"> 
+                    <span class="price"> {{ current_variant.price | money }}</span>
+                    {% if product.compare_at_price_max > product.price %}
+                  <s data-compare-price>
+                    {% if current_variant.compare_at_price > current_variant.price %}
+                      {{ current_variant.compare_at_price | money }}
+                    {% endif %}
+                  </s>
+                    {% endif %}
+                  </div>
+                  <div class="button-wrapper">
+                    <a
+                      href=""
+                      class="button button--primary"
+                      style=" background:{{ section.settings.button_background }};color: {{ section.settings.button-text-color }};"
+                    >
+                    </a>
+                  </div>
+              </figure>
+            </a>
+            </gallery-item>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Products Slider",
+  "class": "shopify-section--featured-products",
+  "max_blocks":12,
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Product",
+      "settings": [
+         {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1500 x 1800 px .jpg recommended"
+        },
+       {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Your title"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Collection"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "range",
+      "id": "products_count",
+      "label": "Products to show",
+      "min": 4,
+      "max": 50,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products per row (desktop)",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_products",
+      "label": "Stack products",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show add to cart below info",
+      "info": "If enabled, we recommend using 4 products per row at maximum.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+
+     {
+          "type": "image_picker",
+          "id": "bsimage",
+          "label": "Image",
+          "info": "200x .jpg recommended"
+        },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "rgba(0,0,0,0)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products Slider",
+      "blocks": [
+        {
+          "type": "collection"
+        }
+      ],
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,140 @@
+/* Precios Principales */
+
+.prices-b2b-pdp {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 25px;
+}
+
+.prices-b2b-pdp p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prices-b2b-pdp p.wholesale {
+    margin-bottom: 5px;
+}
+
+.prices-b2b-pdp p.wholesale span {
+    margin-left: 5px;
+    font-size: 28px;
+    line-height: 28px;
+}
+
+.prices-b2b-pdp p.wholesale b {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.prices-b2b-pdp p.retail {
+    opacity: 0.5;
+}
+
+.prices-b2b-pdp p.retail span {
+    margin-left: 5px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+
+.build-set-container {
+    margin-top: 25px
+}
+
+.build-set__item {
+    margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+    .prices-b2b-pdp {
+        align-items: flex-start;
+        margin: 20px 0 35px;
+    }
+
+    .prices-b2b-pdp p.wholesale {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+/* Precios en Linea de Variantes */
+
+.build-set__item .container-variants__heading .item-tooltip {
+    position: relative;
+    bottom: 3px;
+}
+
+.container-variant__label .heading {
+    max-width: 170px;
+    font-weight: 600!important;
+}
+
+.container-variant__label p{
+    margin: 0;
+}
+
+.container-variant__label .container-prices {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.container-variant__label .container-prices p.retail {
+    color: black;
+    opacity: 0.4;
+    font-size: 13px;
+    line-height: 13px;
+    position: relative;
+    left: 5px;
+}
+
+.container-variant__label .container-prices p.retail span {
+    font-size: 13px;
+    margin-left: 0;
+    line-height: 13px;
+}
+
+.container-variant__label .container-prices p.retail span.plus {
+    margin: 0 2px 0 5px;
+}
+
+
+.container-variant__label .container-prices p.wholesale span,
+.container-variant__label .container-prices p.wholesale {
+    font-size: 15px!important;
+    line-height: 15px!important;
+}
+
+@media only screen and (min-width: 768px) {
+    .container-variant__label .heading {
+        max-width: 100%;
+        font-weight: 600!important;
+    }
+}
+
+
+/* Precios Summary */
+
+.item-summary p.price {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-summary p.price .retail,
+.item-summary p.sku .retail{
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+    .item-summary p.sku {
+        display: flex;
+        flex-direction: column;
+    }
+}

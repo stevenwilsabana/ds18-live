@@ -1,0 +1,75 @@
+/*********************** Custom CSS for Boost AI Search & Discovery  ************************/
+
+/* Start Boost 190155 */
+.boost-sd__search-widget-init-enabled .predictive-search:not(.boost-sd_disable-instant-search) {
+  display: block !important;
+}
+
+/* .drawer__content {
+  display: none !important
+} */
+
+/* End Boost 190155 */
+
+@media only screen and (min-width: 768px) {
+  .boost-sd__search-widget-init-enabled .predictive-search:not(.boost-sd_disable-instant-search) {
+    display: block !important;
+  }
+  .boost-sd__search-widget-init-enabled .predictive-search .drawer__content {
+    height: 100%;
+  }
+  .boost-sd__search-widget-init-enabled .predictive-search .boost-sd__instant-search-results {
+    box-shadow: none;
+    max-height: max-content !important;
+  }
+  .boost-sd__search-widget-init-enabled .predictive-search .boost-sd__instant-search-results--two-column .boost-sd__instant-search-autocomplete,
+  .boost-sd__instant-search-results--two-column.boost-sd__instant-search-results--product-type-list.boost-sd__instant-search-results--product-per-row-2 .boost-sd__instant-search-product-list-items {
+    flex-direction: column;
+  }
+  .boost-sd__search-widget-init-enabled .predictive-search .boost-sd__instant-search-results--two-column .boost-sd__instant-search-column--others {
+    width: 100%;
+    background: transparent;
+  }
+  .boost-sd__search-widget-init-enabled .boost-sd__header-item {
+    font-size: 15px;
+    color: #282828
+  }
+  .boost-sd__search-widget-init-enabled .predictive-search .boost-sd__instant-search-results .boost-sd__instant-search-column {
+    overflow: unset;
+  }
+  .boost-sd__search-widget-init-enabled .predictive-search .boost-sd__instant-search-results--two-column .boost-sd__instant-search-column--products {
+    width: 100%;
+  }
+  .boost-sd__search-widget-init-enabled .predictive-search .boost-sd__instant-search-results--two-column .boost-sd__instant-search-column--products .boost-sd__instant-search-group {
+    max-height: 600px;
+  }
+  .boost-sd__instant-search-results--two-column.boost-sd__instant-search-results--product-type-list.boost-sd__instant-search-results--product-per-row-2 .boost-sd__suggestion-queries-item--product {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+}
+
+predictive-search-drawer#search-drawer {
+    display: none!important;
+}
+
+@media(max-width: 767px){
+  .header__search-bar .predictive-search__form{
+    display: none;
+  }
+}
+
+@media(min-width: 768px){
+  a.header__icon-wrapper.tap-area.hidden-lap.hidden-desk{
+  	display: none;
+  }
+  .header__search-bar .predictive-search__form{
+  	margin-left: 5px;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1000px){
+  .header__search-bar .predictive-search__form{
+  	margin-left: 5px;
+  }
+}

@@ -1,0 +1,5 @@
+<ul>
+{% for item in product.metafields["custom_fields"]["you_may_also_like"].value %}
+<li><a href="{{ item.url }}" class="metafield-product_reference">{{ item.title }}</a></li>
+{% endfor %}
+</ul>

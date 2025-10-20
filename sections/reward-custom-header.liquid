@@ -1,0 +1,37 @@
+{{ 'style-rewards-program-v2.css' | asset_url | stylesheet_tag }}
+  
+<a href="https://www.ds18.com/account/login" target="_blank" style="display: none;" id="link-button-href-account-mobile"></a>
+
+<div id="loader-account-login-growave" style="display: none;">
+  <div>
+    <div class="icon-loader"></div>
+    <p class="title">Loading, please wait...</p>
+    <p class="message">We’re redirecting you to a new window to log in or sign up. Come back here once you're done.</p>
+  </div>
+</div>
+
+
+<section class="container-information-global__growave">
+  {% if customer.b2b? %}
+    <div class="page-wholesale-rewards">
+      <p>Oops, it seems like the Loyalty & Rewards program is not available for this account.</p>
+      <button class="button-log-out-wholesale" onclick="location.href='https://www.ds18.com/account/logout';">Log Out</button>
+    </div>
+  {% else %}
+    {% render 'main-banner-growave' %}
+    {% render 'how-work-growave' %}
+    <div class="how_work_div title-redeem-and-earn-points"><div class="reward_max"><h3>Redeem and Earn Points</h3></div></div>
+  {% endif %}
+</section>
+
+
+{% schema %}
+  {
+    "name": "Reward Custom Header",
+    "presets": [
+      {
+        "name": "Reward Custom Header"
+      }
+    ]
+  }
+{% endschema %}

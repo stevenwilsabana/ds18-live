@@ -1,0 +1,65 @@
+{% if product.metafields.custom.dyno_results_v2 %}
+
+  {{ 'style-dyno-v2.css' | asset_url | stylesheet_tag }}
+
+  <div class="dyno-results-v2__container dyno-results-v2__container--{{ section.id }}">
+
+    <div class="dyno-results-v2__heading">
+      <h3 class="heading h3"><span class="red">Dyno</span> Results</h3>
+    </div>
+    <div class="dyno-results-v2__items"></div>
+
+    <div class="dyno-results-v2__items--block-hidden">{{ product.metafields.custom.dyno_results_v2 | metafield_tag }}</div>
+      
+  </div>
+
+  <script>
+
+    $(document).ready(function () {
+      $('.dyno-results-v2__container--{{ section.id }} .dyno-results-v2__items--block-hidden .metafield-rich_text_field > ul').each(function () {
+        var $container = $('<div class="dyno-results-v2__item"></div>');
+        var $bodyContent = $('<div class="dyno-results-v2__item--content"></div>');
+        $(this).find('> li').each(function () {
+          var $heading = $(this).find('h5').text();
+          var $imagenUrl = $(this).text().trim();
+          var $texts = $(this).clone().children().remove().end().text().trim();
+    
+          if ($heading) {
+            $container.append('<h5>' + $heading + '</h5>');
+          }
+    
+          if ($imagenUrl.includes("https://cdn.shopify.com/s/files/")) {
+            $container.append('<img src="' + $imagenUrl + '">');
+          }
+    
+          if (!$heading && !$imagenUrl.includes("https://cdn.shopify.com/s/files/")) {
+            $bodyContent.append('<p>' + $texts + '</p>');
+          }
+        });
+        $($container).append($bodyContent);
+        $('.dyno-results-v2__items').append($container);
+      });
+    });
+ 
+  </script>
+  
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Dyno Results V2",
+    "tag": "section",
+    "class": "dyno-results-v2",
+	"presets": [
+      {
+        "name": "Dyno Results V2"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

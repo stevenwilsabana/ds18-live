@@ -1,0 +1,21 @@
+<div class="rewards-modulo__container">
+
+  {% if customer %}
+    <p class="message">HI <b>{{ customer.name }}</b>!</p>
+    <a href="https://ds18.com/pages/reward" class="button">VIEW YOUR REWARDS</a>
+  {%  else %}
+    <p class="message">GET REWARDS WITH <b>DS18</b></p>
+    <a href="https://ds18.com/pages/reward" class="button">SIGN UP</a>
+  {% endif %}
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Rewards Mobile",
+    "class": "rewards-modulo",
+    "tag": "section",
+    "settings": []
+  }
+{% endschema %}

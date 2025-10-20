@@ -1,0 +1,89 @@
+{{ 'styles-banner-slider-nvy.css' | asset_url | stylesheet_tag }}
+
+<div class="banner-slider-nvy__container banner-slider-nvy__container--{{ section.id }}">
+  <button class="btn-slider-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">{% render 'icon-preview-arrow' %}</button>
+  <div class="slider-banner--{{ section.id }}">
+    {% for block in section.blocks %}
+      <div class="banner banner--{{ forloop.index }}">
+        <a href="{{ block.settings.link }}">
+          <div class="text-background">
+            <p>{{ block.settings.text_background }}</p>
+          </div>
+          <div class="main-banner">
+            <div class="main-banner--imagen">
+              <img src="{{ block.settings.imagen | img_url: 'master' }}">
+            </div>
+            <div class="main-banner--details">
+              <h2>{{ block.settings.heading }}</h2>
+              <p>{{ block.settings.message }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <button class="btn-slider-next--{{ section.id }} slick-button-custom slick-button-custom--next">{% render 'icon-next-arrow' %}</button>
+</div>
+
+<script>
+  $(document).ready(function() {
+    var container = $('.banner-slider-nvy__container--{{ section.id }}');
+    container.find('.slider-banner--{{ section.id }}').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 6000,
+      prevArrow: container.find('.btn-slider-prev--{{ section.id }}'),
+      nextArrow: container.find('.btn-slider-next--{{ section.id }}'),
+      dots: true
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Banner Slider NVY",
+    "class": "banner-slider-nvy",
+    "tag": "section",
+    "blocks": [
+      {
+        "name": "Banner",
+        "type": "banner",
+        "settings": [
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "text_background",
+            "label": "Text Background"
+          },
+          {
+            "type": "image_picker",
+            "id": "imagen",
+            "label": "Imagen"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "textarea",
+            "id": "message",
+            "label": "Message"
+          }
+        ]
+      }
+	],
+	"presets": [
+      {
+        "name": "Slider Banner NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

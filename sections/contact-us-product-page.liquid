@@ -1,0 +1,58 @@
+<section id="section-contact-product_ittd" class="contact-product">
+  <div class="main-content">
+    <i class="fas fa-users"></i>
+    <div class="text-main">
+        <h3>Got Questions?</h3>
+        <p>Our Wall-Art experts are here to answer any questions you may have.</p>
+    </div>
+  </div>
+  <div class="button-content">
+    <div class="button-phone">
+      <span class="tag-manager-product-write" onclick="window.open('tel:305-928-8734');">
+        <i class="fas fa-phone"></i>
+        <h3 class="tag-manager-product-write">Contact Us <br> <span>305-928-8734</span></h3>
+      </span>
+    </div>
+
+    <div class="button-chat">
+      <span class="tag-manager-product-chat" onclick="GorgiasChat.open();">
+        <i class="fas fa-comment-dots"></i>
+        <h3 class="tag-manager-product-chat">Live Chat</h3>
+      </span>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  $(document).on("click", "#section-contact-product_ittd .tag-manager-product-write", function() {
+    gtag('event', 'button_contact_us', {
+      event_category: {{ product.title }},
+      send_to: 'G-S5TTBXRYSN'
+    });
+  });
+
+
+  $(document).on("click", "#section-contact-product_ittd .tag-manager-product-chat", function() {
+    gtag('event', 'button_live_chat', {
+      event_category: {{ product.title }},
+      send_to: 'G-S5TTBXRYSN'
+    });
+  });
+
+</script>
+
+
+{% schema %}
+  {
+    "name": "Contact Us Product Page",
+    "tag": "section",
+    "class": "contact-product",
+    "presets": [
+      {
+        "name": "Contact Us Product Page",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

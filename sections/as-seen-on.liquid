@@ -1,0 +1,306 @@
+{% style %}
+.as-seen-on__item p {
+  color: {{ section.settings.dots }};
+}
+
+section.as-seen-on {
+  background: {{ section.settings.background }};
+}
+
+ul.slick-dots li button {
+  border: 2px solid {{ section.settings.dots }};
+}
+
+ul.slick-dots li.slick-active button {
+    background: {{ section.settings.dots }};
+}
+  
+.as-seen-on__item img {
+    width: 100%;
+}
+
+.as-seen-on__item p {
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+
+section.as-seen-on {
+    padding: 50px 10px;
+}
+
+section.as-seen-on h2.title.inline-richtext.h1 {
+    margin: 0 0 20px;
+    padding: 0 15px;
+    text-align: center;
+    display: block;
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+    color: rgb(var(--heading-color));
+    text-transform: var(--heading-text-transform);
+    font-size: var(--heading-h2-font-size);
+    line-height: 1.13333333;
+    letter-spacing: -.6px;
+}
+
+.as-seen-on__container {
+    max-width: 160rem;
+    margin: auto;
+}
+
+
+.as-seen-on__slider {
+    display: flex;
+    flex-direction: column;
+}
+
+.as-seen-on__item {
+    display: flex!important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.as-seen-on__item .as-seen-on-item__imagen {
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+.as-seen-on__content .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.as-seen-on-item__imagen--new-herald {
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.slick-dots {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+ul.slick-dots li {
+    margin: 0 5px;
+}
+
+
+ul.slick-dots li button{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: transparent;
+    padding: 0;
+    color: transparent;
+}
+
+@media only screen and (min-width: 600px){
+    section.as-seen-on h2.title.inline-richtext.h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .as-seen-on__item {
+        margin: 0 10px;
+    }
+
+    section.as-seen-on {
+        padding: 64px 10px;
+    }
+
+    ul.slick-dots {
+        margin-top: 40px;
+    }
+
+    .as-seen-on__content .slick-track {
+        align-items: flex-start
+    }
+}
+
+
+@media only screen and (min-width: 990px){
+    section.as-seen-on {
+        padding: 80px 10px;
+    }
+    
+    ul.slick-dots {
+        display: flex!important;
+    }
+
+    .as-seen-on-item__imagen--new-herald {
+        min-height: 0; 
+    }
+
+    .as-seen-on__item {
+        margin: 0 20px;
+    }
+
+    .as-seen-on__item .as-seen-on-item__imagen {
+        width: 100%;
+    }
+
+    .as-seen-on__item p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .as-seen-on__container {
+        padding: 0 75px;
+        max-width: 1800px;
+        margin: auto;
+    }
+}
+{% endstyle %}
+
+
+<div class="as-seen-on__container as-seen-on__container--{{ section.id }}">
+
+  <div class="as-seen-on__content">
+
+    <h2 class="title inline-richtext h1">{{ section.settings.title }}</h2>
+    <div class="as-seen-on__slider">
+      
+      {% for block in section.blocks %}
+  
+          {% case block.type %}
+  
+              {% when 'logo' %}
+  
+                <div {{ block.shopify_attributes }} class="as-seen-on__item">
+
+                  <div class="as-seen-on-item__imagen as-seen-on-item__imagen--{{ block.settings.brand | handleize }}">
+                    <img src="{{ block.settings.image | img_url: 'master' }}">
+                  </div>
+
+                  {% if block.settings.message != blank %}
+                    <div class="as-seen-on-item__text">
+                      <p>
+                        "{{ block.settings.message }}"
+                      </p>
+                    </div>
+                  {% endif %}
+  
+                </div>
+  
+          {% endcase %}
+  
+      {% endfor %}
+      
+    </div>
+
+  </div>
+  
+</div>
+
+
+<script>
+  $('.as-seen-on__container--{{ section.id }} .as-seen-on__slider').slick({
+    autoplay: true,
+    autoplaySpeed: 5000,
+    infinite: true,
+    dots: false,
+    arrows: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 990,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true
+        }
+      }
+    ]
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "As Seen On",
+    "tag": "section",
+    "class": "as-seen-on",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "color",
+            "id": "background",
+            "label": "Background",
+            "default": "#B4A398"
+		},
+        {
+            "type": "color",
+            "id": "dots",
+            "label": "Dots Color",
+            "default": "#FFFFFF"
+		}
+    ],
+    "blocks": [
+		{
+			"name": "Logo",
+			"type": "logo",
+			"settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Logo" 
+        		},
+                {
+        			"type": "textarea",
+        			"id": "message",
+        			"label": "Message"
+        		}
+			]
+		}
+	],
+    "presets": [
+      {
+        "name": "As Seen On",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

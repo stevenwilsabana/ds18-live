@@ -1,0 +1,9 @@
+{% if product.metafields["custom"]["name_base_for_bundle"] != blank %}
+  <div class="custom-field custom-field__name-base-for-bundle custom-field__type--single-line-text-field">
+    <h3 class="custom-field--title">Name Base For Bundle</h3>
+    <div class="custom-field--value">
+      {{ product.metafields["custom"]["name_base_for_bundle"] }}
+
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,61 @@
+/* ESTILOS COMPELTE THE LOOK */
+
+section.complete-the-look {
+    margin-top: 30px;
+    width: 100%;
+}
+
+section.complete-the-look h4,
+section.complete-the-look p,
+section.complete-the-look button {
+    font-family: Montserrat, serif !important;
+}
+
+span.jdgm-prev-badge__text {
+    font-family: Montserrat, serif !important;
+    font-size: 12px!important;
+}
+
+.jdgm-preview-badge .jdgm-star.jdgm-star {
+    color: #007fc1!important;
+}
+
+section.complete-the-look button {
+    font-size: 11px!important;
+}
+
+body .complete-the-look__container .complete-the-look__products .ctl-product .ctl-product__container .ctl-product__info .ctl-product__info-general .ctl-product__info-title a p {
+    font-size: 13px!important;
+}
+
+body .complete-the-look__container .complete-the-look__products .ctl-product .ctl-product__container .ctl-product__info .ctl-product__addToCart {
+    background: black;
+    border-radius: 0;
+}
+
+body .complete-the-look__container .complete-the-look__products .ctl-product .ctl-product__info-button .number-input {
+    border-radius: 0;
+}
+
+
+body .complete-the-look__container .complete-the-look__products .ctl-product .ctl-product__container .ctl-product__image {
+    border-radius: 0;
+}
+
+@media only screen and (min-width: 750px) {
+    body .complete-the-look__container {
+        max-width: 100%!important;
+        margin: auto;
+    }
+
+    section.complete-the-look {
+        margin-top: 50px;
+    }
+
+    body .complete-the-look__container h4 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    
+}

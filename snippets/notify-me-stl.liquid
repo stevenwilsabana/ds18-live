@@ -1,0 +1,32 @@
+<div id="modal-notify-me" class="modal modal-notify-me">
+  <div class="container__modal-notify-me">
+    <div class="information">
+      <img src="">
+      <h5>SKU</h5>
+      <h3>TITLE</h3>
+      <p>Register to receive a notification when this item comes back in stock.</p>
+    </div>
+    <div class="form-container">
+      <div class="klaviyo-form-S4z7vu"></div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  window.addEventListener("klaviyoForms", function(e) {
+    if (e.detail.type == 'submit' && e.detail.formId == 'S4z7vu') {
+      var $ProductName = $('#modal-notify-me .information h3').text();
+      var $ProductSku = $('#modal-notify-me .information h5').text();
+      var $ProductImagen = "https:" + $('#modal-notify-me .information img').attr('src');
+
+      _learnq.push(['track', 'ITTD: SLINGSHOT', {
+        'email': e.detail.metaData.$email,
+        'SkuProduct':  $ProductSku,
+        'TitleProduct': $ProductName,
+        'ImgProduct': $ProductImagen
+      }]);
+
+    }
+  });
+</script>

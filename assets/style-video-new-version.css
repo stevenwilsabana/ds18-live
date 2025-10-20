@@ -1,0 +1,418 @@
+.section-video-new-version__container {
+  overflow: hidden;
+}
+
+.section-video-new-version__container .container-video-general{
+  position: relative;
+  overflow: hidden;
+}
+
+.videoContainer-sections {
+  width: 100%;
+  height: 0;
+  padding-bottom: 120%;
+  position: relative;
+  overflow: hidden;
+}
+
+.videoContainer-sections video {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    max-width: unset;
+    object-fit: cover;
+}
+
+
+.videoContainer-buttons {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    background: rgb(0 0 0 / 30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.videoContainer-buttons .buttons-sections {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.videoContainer-buttons .videoContainer-buttons__container {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.videoContainer-buttons .videoContainer-buttons__container a,
+.videoContainer-buttons .videoContainer-buttons__container button {
+  background: transparent;
+    padding: 15px 15px;
+    font-size: 13px;
+    line-height: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    color: white;
+    border: 0;
+}
+
+.videoContainer-buttons .videoContainer-buttons__container button {
+    /* margin-left: 8px; */
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    border-radius: 100%;
+}
+
+.videoContainer-buttons .videoContainer-buttons__container button.button-active-sound--off {
+    color: white;
+    background: transparent;
+}
+
+
+.videoContainer-sections video.video-device__desktop,
+.videoContainer-buttons .videoContainer-buttons__container--desktop{
+    display: none;
+}
+
+
+.videoContainer-buttons .overlay-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.videoContainer-buttons .overlay-section * {
+    font-family: Montserrat, serif !important;
+    color: white;
+}
+
+.videoContainer-buttons .overlay-section h2 {
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 0 1px #00000045;
+    letter-spacing: 0;
+    font-size: 25px;
+    line-height: 35px;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+
+.videoContainer-buttons .overlay-section p {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+    line-height: 20px;
+    text-shadow: 0 0 10px #00000045;
+    font-weight: 350;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+}
+
+.videoContainer-buttons .overlay-section a {
+    padding: 15px 20px;
+    background: white;
+    color: black;
+    font-size: 15px;
+    line-height: 15px;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 769px){
+    .videoContainer-sections video.video-device__mobile,
+    .videoContainer-buttons .videoContainer-buttons__container--mobile{
+        display: none;
+    }
+
+    .videoContainer-sections video.video-device__desktop,
+    .videoContainer-buttons .videoContainer-buttons__container--desktop {
+        display: flex;
+    }
+
+    .videoContainer-sections {
+      display: flex;
+      padding-bottom: 45%;
+    
+    }
+
+    .videoContainer-sections video {
+       height: 100%;
+    }
+
+
+    .videoContainer-buttons .videoContainer-buttons__container button {
+        width: 45px;
+        height: 45px;
+        opacity: 0.8;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    
+    .videoContainer-buttons .overlay-section h2 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    
+    
+    .videoContainer-buttons .overlay-section p {
+        font-size: 18px;
+        line-height: 30px;
+        
+        max-width: 700px;
+    }
+    
+    .videoContainer-buttons .overlay-section a {
+        padding: 20px 30px;
+        font-size: 18px;
+        line-height: 18px;
+        transition: all .3s;
+    }
+
+    .videoContainer-buttons .overlay-section a:hover {
+        opacity: 0.8;
+    }
+    
+}.section-video-new-version__container {
+  overflow: hidden;
+}
+
+.section-video-new-version__container .container-video-general{
+  position: relative;
+  overflow: hidden;
+}
+
+.videoContainer-sections {
+  width: 100%;
+  height: 0;
+  padding-bottom: 120%;
+  position: relative;
+  overflow: hidden;
+}
+
+.videoContainer-sections video {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    max-width: unset;
+    object-fit: cover;
+}
+
+
+.videoContainer-buttons {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    background: rgb(0 0 0 / 30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.videoContainer-buttons .buttons-sections {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.videoContainer-buttons .videoContainer-buttons__container {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.videoContainer-buttons .videoContainer-buttons__container a,
+.videoContainer-buttons .videoContainer-buttons__container button {
+  background: transparent;
+    padding: 15px 15px;
+    font-size: 13px;
+    line-height: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    color: white;
+    border: 0;
+}
+
+.videoContainer-buttons .videoContainer-buttons__container button {
+    /* margin-left: 8px; */
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    border-radius: 100%;
+}
+
+.videoContainer-buttons .videoContainer-buttons__container button.button-active-sound--off {
+    color: white;
+    background: transparent;
+}
+
+
+.videoContainer-sections video.video-device__desktop,
+.videoContainer-buttons .videoContainer-buttons__container--desktop{
+    display: none;
+}
+
+
+.videoContainer-buttons .overlay-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.videoContainer-buttons .overlay-section * {
+    font-family: Montserrat, serif !important;
+    color: white;
+}
+
+.videoContainer-buttons .overlay-section h2 {
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 0 1px #00000045;
+    letter-spacing: 0;
+    font-size: 25px;
+    line-height: 35px;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+
+.videoContainer-buttons .overlay-section p {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+    line-height: 20px;
+    text-shadow: 0 0 10px #00000045;
+    font-weight: 350;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+}
+
+.videoContainer-buttons .overlay-section a {
+    padding: 15px 20px;
+    background: white;
+    color: black;
+    font-size: 15px;
+    line-height: 15px;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 769px){
+    .videoContainer-sections video.video-device__mobile,
+    .videoContainer-buttons .videoContainer-buttons__container--mobile{
+        display: none;
+    }
+
+    .videoContainer-sections video.video-device__desktop,
+    .videoContainer-buttons .videoContainer-buttons__container--desktop {
+        display: flex;
+    }
+
+    .videoContainer-sections {
+      display: flex;
+      padding-bottom: 36.5%;
+    
+    }
+
+    .videoContainer-sections video {
+       height: 100%;
+    }
+
+
+    .videoContainer-buttons .videoContainer-buttons__container button {
+        width: 45px;
+        height: 45px;
+        opacity: 0.8;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    
+    .videoContainer-buttons .overlay-section h2 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    
+    
+    .videoContainer-buttons .overlay-section p {
+        font-size: 18px;
+        line-height: 30px;
+        
+        max-width: 700px;
+    }
+    
+    .videoContainer-buttons .overlay-section a {
+        padding: 20px 30px;
+        font-size: 18px;
+        line-height: 18px;
+        transition: all .3s;
+    }
+
+    .videoContainer-buttons .overlay-section a:hover {
+        opacity: 0.8;
+    }
+    
+}
+
+
+
+
+
+/* ESTILOS PARA BAJAR EL TEXTO DEL BANNER */
+
+.videoContainer-buttons {
+    justify-content: flex-end;
+    padding-bottom: 70px;
+}
+
+@media only screen and (min-width: 769px){
+    .videoContainer-buttons {
+        padding-bottom: 100px;
+    }   
+}

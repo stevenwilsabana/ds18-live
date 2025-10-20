@@ -1,0 +1,9 @@
+{% if product.metafields["custom"]["shop_the_look"] != blank %}
+  <div class="custom-field custom-field__shop-the-look custom-field__type--page-reference">
+    <h3 class="custom-field--title">Shop the Look</h3>
+    <div class="custom-field--value">
+{{ product.metafields["custom"]["shop_the_look"] | metafield_tag }}
+
+    </div>
+  </div>
+{% endif %}

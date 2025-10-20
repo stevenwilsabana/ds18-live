@@ -1,0 +1,40 @@
+<section class="container-variant container-variant--voltmeter" data-selector="{{ product.metafields.custom.voltmeter }}:">
+
+  <p class="container-variant__label">Power Rating:</p>
+
+  <div class="container-variant__content">
+
+    {% assign productId = product.id %}
+    {% assign sorted_variants = product.metafields.custom.voltmeter_variants.value %}
+    
+    {% for product_object in sorted_variants %}  
+    
+      {% assign variantId = product_object.id %}
+      {% assign url = product_object.url %}
+      {% assign voltmeter = product_object.metafields.custom.voltmeter %}
+      {% assign productAvailable = product_object.available %}
+    
+      {% if productId == variantId %}
+        <div data-id="{{ productId }}" data-details="{{ voltmeter }}" class="label-variant label-variant--select {% if productAvailable == false %}label-variant--sold-out{% endif %}">
+          <div class="label-variant__element">
+            <div class="label-variant__value">
+              <span>{{ voltmeter }}</span>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <button data-id="{{ variantId }}" data-details="{{ voltmeter }}" class="label-variant {% if productAvailable == false %}label-variant--sold-out{% endif %}">
+          <div class="label-variant__element">
+            <div class="label-variant__value">
+              <span>{{ voltmeter }}</span>
+            </div>
+          </div>
+        </button>
+    
+      {% endif %}
+    
+    {% endfor %}
+    
+  </div>
+  
+</section>

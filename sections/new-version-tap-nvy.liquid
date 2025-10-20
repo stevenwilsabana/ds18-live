@@ -1,0 +1,221 @@
+{{ 'styles-tap-nvy.css' | asset_url | stylesheet_tag }}
+
+{% if product.metafields.custom.nvy_hidden_field_3_in_mobile == true %}
+  <style>
+    @media only screen and (max-width: 768px){
+        .app-section-nvy {
+            display: none!important
+        }
+    }
+  </style>
+{% endif %}
+
+
+{% if product.metafields.custom.nvy_hidden_field_4_in_mobile == true %}
+  <style>
+    @media only screen and (max-width: 768px){
+        .imagen-with-text-nvy.imagen-with-text-nvy--4-0 {
+            display: none!important
+        }
+    }
+  </style>
+{% endif %}
+
+
+{% if product.metafields.custom.nvy_hidden_field_4_1_in_mobile == true %}
+  <style>
+    @media only screen and (max-width: 768px){
+        .imagen-with-text-nvy.imagen-with-text-nvy--4-1 {
+            display: none!important
+        }
+    }
+  </style>
+{% endif %}
+
+
+
+
+<h1>
+  {{ product.metafields.custom.nvy_hidden_field_3_in_mobile }}
+</h1>
+
+
+<div class="main-taps__container main-taps__container--{{ section.id }}">
+
+  <div class="main-taps__container-buttons">
+    {% for block in section.blocks %}
+        <button {{ block.shopify_attributes }} class="button-tap button-tap--{{ block.settings.button | handleize }}" data-button="{{ forloop.index }}">
+          {{ block.settings.button }}
+        </button>
+    {% endfor %}
+  </div>
+
+  <div class="main-taps__container-taps">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'overview' %}
+        
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+
+            <div class="main-taps__container--general">
+
+              {% if block.settings.background_imagen_mobile and block.settings.background_imagen_desktop  %}
+                {% render 'banner-overview-nvy',
+                   backgroundMobile: block.settings.background_imagen_mobile,
+                   backgroundDesktop: block.settings.background_imagen_desktop,
+                   content: block.settings.content,
+                   imagenProduct: block.settings.product_imagen,
+                   alignment: block.settings.imagen_alignment
+                %}
+              {% endif %}
+  
+              {% if product.metafields.custom.nvy_overview_parallax_heading or
+                    product.metafields.custom.nvy_overview_parallax_content or
+                    product.metafields.custom.nvy_overview_parallax_imagen %}
+                {% render 'parallax-section', product: product %}
+              {% endif %}
+  
+              {% render 'app-section-nvy', product: product %}
+              {% render 'imagen-with-text-nvy', product: product %}
+        
+            </div>
+            
+          </div>
+
+        {% when 'specifications' %}
+
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+
+            <div class="main-taps__container--general">
+
+              {% if product.metafields.custom.manual %}
+                <div class="main-taps__container--item main-taps__container-manual">
+                  <p>
+                    <a href="{{ product.metafields.custom.manual.value.url }}" target="_blank">
+                      {% render 'icon', icon: 'download' %}
+                      <span>DOWNLOAD THE USER MANUAL</span>
+                    </a>
+                  </p>
+                </div>
+              {% endif %}
+
+
+              
+              
+              {% if block.settings.specifications %}
+                <div class="main-taps__container--item main-taps__container-specifications">
+                  <div>{{ block.settings.specifications }}</div>
+                </div>
+              {% endif %}
+
+            </div>
+
+          </div>
+          
+      {% endcase %}
+    {% endfor %}
+  </div>
+  
+</div>
+
+<script>
+
+  $(document).ready(function(){
+    $('.main-taps__container--{{ section.id }} .main-taps__container-buttons button.button-tap').first().addClass('active-button');
+    $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global').hide();
+    $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global').first().show();
+  });
+
+  $('.main-taps__container--{{ section.id }} .main-taps__container-buttons button.button-tap').click(function(){
+    var number = $(this).attr('data-button');
+    $('.main-taps__container--{{ section.id }} .main-taps__container-buttons button.button-tap').removeClass('active-button');
+    $(this).addClass('active-button');
+    $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global').hide();
+    $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global#tabs-' + number).show();
+  });
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Taps NVY",
+    "class": "main-taps",
+    "tag": "section",
+    "blocks": [
+      {
+        "name": "Overview",
+        "type": "overview",
+        "settings": [
+          {
+            "type": "header",
+            "content": "TAPS"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          },
+          {
+            "type": "header",
+            "content": "BANNER OVERVIEW"
+          },
+          {
+            "type": "image_picker",
+            "id": "background_imagen_mobile",
+            "label": "Background Mobile"
+          },
+          {
+            "type": "image_picker",
+            "id": "background_imagen_desktop",
+            "label": "Background Desktop"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          },
+          {
+            "type": "image_picker",
+            "id": "product_imagen",
+            "label": "Product Imagen"
+          },
+          {
+            "type": "text",
+            "id": "imagen_alignment",
+            "label": "Imagen Alignment"
+          }
+        ]
+      },
+      {
+        "name": "Specifications & Manual",
+        "type": "specifications",
+        "settings": [
+          {
+            "type": "header",
+            "content": "TAPS"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          },
+          {
+            "type": "header",
+            "content": "SPECIFICATIONS"
+          },
+          {
+            "type": "richtext",
+            "id": "specifications",
+            "label": "Specifications"
+          }
+        ]
+      }
+	],
+  	"presets": [
+      {
+        "name": "Taps NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

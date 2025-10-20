@@ -1,0 +1,140 @@
+<style>
+.shopify-section.product-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0!important
+}
+
+.product-overview__container {
+    width: 100%;
+    margin-bottom: 30px;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 15px!important;
+    border-top: red solid 1px;
+    
+}
+
+.shopify-section.product-overview h3.heading.h3 {
+    padding: 20px 0 20px;
+}
+
+
+.shopify-section.product-overview .product-overview__information {
+    display: flex;
+    flex-direction: column;
+}
+
+.shopify-section.product-overview .product-overview__information .product-overview__imagen {
+    overflow: hidden;
+    border-radius: 10px;
+    line-height: 0;
+}
+
+.shopify-section.product-overview .product-overview__information .product-overview__imagen img {
+    width: 100%;
+}
+
+.shopify-section.product-overview .product-overview__information .product-overview__text {
+    margin: 20px auto;
+}
+
+.shopify-section.product-overview .product-overview__information .product-overview__text .metafield-rich_text_field p {
+    text-align: center;
+}
+
+
+
+@media only screen and (min-width: 1000px){
+    .shopify-section.product-overview h3.heading.h3 {
+        padding: 50px 0 0px;
+    }
+
+    .shopify-section.product-overview .product-overview__information {
+        flex-direction: row;
+        padding: 30px 50px 50px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .shopify-section.product-overview .product-overview__information .product-overview__imagen {
+         width: 45%;
+    }
+
+    .shopify-section.product-overview .product-overview__information .product-overview__text {
+        width: 50%;
+        padding: 0 50px;
+        margin: 0 auto;
+    }
+
+    .shopify-section.product-overview .product-overview__information .product-overview__text--full-width {
+        width: 100%;
+    }
+
+    .shopify-section.product-overview .product-overview__information .product-overview__text--full-width .metafield-rich_text_field p {
+        text-align: left;
+    }
+
+}
+
+
+</style>
+
+
+{% if product.metafields.custom.product_overview_image != blank or product.metafields.custom.product_overview_text != blank %}
+
+  <div class="product-overview__container">
+
+    <div class="product-overview__header">
+      <h3 class="heading h3"><span class="red">PRODUCT</span> OVERVIEW</h3>
+
+      <div class="product-overview__information">
+
+        {% if product.metafields.custom.product_overview_image != blank %}
+          <div class="product-overview__imagen">
+            <img src="{{ product.metafields.custom.product_overview_image | img_url: 'master' }}">
+          </div>
+        {% endif %}
+
+        {% if product.metafields.custom.product_overview_text != blank %}
+
+          {% if product.metafields.custom.product_overview_image != blank %}
+            <div class="product-overview__text">
+              {{ product.metafields.custom.product_overview_text | metafield_tag }}
+            </div>
+          {% else %}
+            <div class="product-overview__text product-overview__text--full-width">
+              {{ product.metafields.custom.product_overview_text | metafield_tag }}
+            </div>
+          {% endif %}
+        
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+  
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Product Overview",
+    "tag": "section",
+    "class": "product-overview",
+	"presets": [
+      {
+        "name": "Product Overview"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,791 @@
+/* New banner principal */
+
+section#shopify-section-main-banner-growave {
+    overflow: hidden;
+    position: relative;
+}
+
+img.main-banner-rewards__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main-banner-rewards {
+    background: hsl(0deg 0% 0% / 85%);
+    position: relative;
+}
+
+.main-banner-rewards__container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 30px 60px;
+}
+
+.main-banner-rewards__imagen {
+    width: 90%;
+    margin: 10px auto 25px;
+}
+
+.main-banner-rewards__text p, .main-banner-rewards__text h3  {
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.main-banner-rewards__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-banner-rewards__container-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-banner-rewards__container-buttons button {
+    border: 1px solid white;
+    padding: 15px 30px 10px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    transition: all .3s ease-out;
+}
+
+.main-banner-rewards__button-join {
+    margin-bottom: 20px;
+    background: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: black;
+}
+
+.main-banner-rewards__button-login {
+    color: white;
+}
+
+.main-banner-rewards__text-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.main-banner-rewards__text-parrafo {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 30px!important;
+}
+
+@media only screen and (min-width: 768px){
+
+    .main-banner-rewards__container {
+        grid-template-columns: 40% 50%;
+        justify-content: space-around;
+        padding: 130px 15px 145px;
+        max-width: 1330px;
+    }
+
+    .main-banner-rewards__imagen {
+        width: 100%;
+        margin: 0;
+    }
+
+    .main-banner-rewards__container-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .main-banner-rewards__container-buttons button {
+        width: 150px;
+    }
+
+    .main-banner-rewards__button-join {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .main-banner-rewards__text-parrafo {
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .main-banner-rewards__container {
+        grid-template-columns: 35% 40%;
+    }
+    
+    .main-banner-rewards__text-title {
+        font-size: 37px;
+    }
+
+    .main-banner-rewards__text p, .main-banner-rewards__text h3  {
+        color: white;
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .main-banner-rewards__text-parrafo {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 40px!important
+    }
+
+    .main-banner-rewards__container-buttons {
+        justify-content: flex-start
+    }
+    
+    .main-banner-rewards__container-buttons button.main-banner-rewards__button-login:hover {
+        border-color: white;
+        color: black;
+        background: white;
+    }
+
+    .main-banner-rewards__container-buttons button.main-banner-rewards__button-join:hover {
+        background: #282828;
+        color: #ffffff;
+    }
+}
+
+
+
+/* Estilos HOW WORK */
+
+.how_work_div {
+  margin: 30px auto 30px;
+  padding: 30px 0px 0;
+  max-width: 1350px;
+}
+
+.how_work_div h3 {
+  font-size: 25px;
+  margin: 0 0 30px;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.how_work_div_flex {
+  display: flex;
+  margin: 0 -15px;
+  flex-wrap: wrap;
+}
+
+.how_work_div_flex_inner {
+  width: 33.33%;
+  padding: 0 15px;
+}
+
+.how_work_div_flex_inner_img {
+  text-align: center;
+  position: relative;
+  padding: 0 0 25px;
+  margin-bottom: 15px;
+}
+
+.how_work_div_flex_inner_img img {
+  border-radius: 100%;
+    max-width: 100px;
+}
+
+.how_work_div_flex_inner_img span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.how_work_div_flex_inner_text {
+  text-align: center;
+}
+
+.how_work_div_flex_inner_text h4 {
+  font-size: 20px;
+  margin: 20px 0 5px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0a0803;
+}
+
+.how_work_div_flex_inner_text p {
+  font-size: 16px;
+  margin: 0;
+  line-height: 140%;
+  font-weight: 400;
+  color: #313131;
+}
+
+.table_title {
+  text-align: center;
+}
+
+.table_title h3 {
+  font-size: 20px;
+  margin: 0 0 31px;
+  padding: 0 15px;
+  line-height: normal;
+  z-index: 99;
+  text-align: center;
+  letter-spacing: .12em;
+  position: relative;
+  text-transform: uppercase;
+  color: #403f3f;
+  display: inline-block;
+}
+
+.table_title h3:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -9;
+  width: 100%;
+  height: 10px;
+  background: #e7f8f8;
+}
+
+.how_earn_div {
+  margin: 30px 0;
+}
+
+.how_earn_div_flex {
+  display: flex;
+  margin: 0 -10px;
+  flex-wrap: wrap;
+}
+
+.how_earn_div_flex_inner {
+  width: 20%;
+  padding: 0 10px;
+  margin: 0 0 20px;
+}
+
+.how_earn_div_flex_inner_box {
+  background: #e7f8f8;
+  padding: 40px 10px 10px;
+  min-height: 220px;
+}
+
+.how_earn_div_flex_inner_img {
+  text-align: center;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.how_earn_div_flex_inner_img img {
+  height: 100%;
+}
+
+.how_earn_div_flex_inner_text {
+  text-align: center;
+}
+
+.how_earn_div_flex_inner_text h4 {
+  font-size: 15px;
+  margin: 15px 0 15px !important;
+  text-align: center;
+  text-transform: uppercase;
+  color: #403f3f;
+}
+
+.how_earn_div_flex_inner_text p {
+  font-size: 14px;
+  margin: 0 0 0px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #313131;
+}
+
+.how_earn_div_flex_inner_last {
+  width: 40%;
+}
+
+.how_earn_div_flex_inner_last .how_earn_div_flex_inner_box {
+  padding: 0;
+  background: transparent;
+}
+
+.how_earn_div_flex_inner_last .how_earn_div_flex_inner_box .how_earn_div_flex_inner_img {
+  height: 100%;
+}
+
+.how_earn_div_title {
+  text-align: center;
+}
+
+.how_earn_div_title h3 {
+  font-size: 20px;
+  margin: 0 0 31px;
+  padding: 0 15px;
+  line-height: normal;
+  z-index: 99;
+  text-align: center;
+  letter-spacing: .12em;
+  position: relative;
+  text-transform: uppercase;
+  color: #403f3f;
+  display: inline-block;
+}
+
+.how_earn_div_title h3:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -9;
+  width: 100%;
+  height: 10px;
+  background: #e7f8f8;
+}
+
+.reward_max table tr:first-child td {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.how_earn_div_flex_inner_last .how_earn_div_flex_inner_img img {
+  height: 100%;
+  width: 100%;
+}
+
+.reward_max h2 {
+  font-size: 20px;
+  margin: 0 0 31px;
+  padding: 0 15px;
+  line-height: normal;
+  z-index: 99;
+  text-align: center;
+  letter-spacing: .12em;
+  position: relative;
+  text-transform: uppercase;
+  color: #403f3f;
+  display: inline-block;
+}
+
+.reward_max h2:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -9;
+  width: 100%;
+  height: 10px;
+  background: #e7f8f8;
+}
+
+.reward_max ul {
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+  .how_work_div_flex_inner {
+    width: 100%;
+    padding: 0 30px;
+    margin-bottom: 50px;
+  }
+
+  .how_earn_div_flex_inner {
+    width: 50%;
+    padding: 0 10px;
+    margin: 0 0 20px;
+  }
+
+  .how_earn_div_flex_inner_last {
+    width: 100%;
+  }
+
+  .how_earn_div_flex_inner_text h4 {
+    font-size: 13px;
+  }
+
+  .how_earn_div_flex_inner_text p {
+    font-size: 12px;
+  }
+
+  .how_earn_div_flex_inner_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+  .how_work_div_flex_inner {
+    width: 50%;
+    padding: 0 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .how_earn_div_flex_inner {
+    width: 33.33%;
+  }
+
+  .how_earn_div_flex_inner_last {
+    width: 66.66%;
+  }
+
+  .how_work_div_flex_inner_text {
+    min-height: 38px;
+  }
+
+  .reward_max tr td br {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .reward_max tr td br {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1000px){
+  .how_work_div h3 {
+    font-size: 37px;
+  }
+  
+  .how_work_div_flex_inner {
+    width: 33.33%;
+    padding: 0 30px;
+  } 
+
+  .how_work_div_flex_inner_text p {
+    font-size: 17px;
+  }
+
+  .how_work_div_flex_inner_text h4 {
+    margin-bottom: 10px;
+  }
+
+  .how_work_div {
+    padding: 40px 0 60px;
+  }
+
+  .how_work_div_flex_inner_img img {
+    max-width: 150px;
+  }
+}
+
+
+
+/* Title Redeem Points */
+
+.how_work_div.title-redeem-and-earn-points {
+    padding-top: 0;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.how_work_div.title-redeem-and-earn-points h3 {
+    line-height: 120%;
+}
+
+div#ssw-page {
+    margin-top: 20px;
+}
+
+.ssw-reward-page-header div[data-target="#ssw-reward-page-faq-wrapper"]{
+  display: none!important;
+}
+
+.ssw-block-warning-company {
+    background: #ffffffed!important;
+}
+
+.ssw-block-warning-company .ssw-warning {
+  font-weight: bold!important;
+}
+
+
+@media only screen and (min-width: 700px){
+  .ssw-block-warning-company .ssw-warning {
+    margin-top: 100px!important;
+  }
+}
+
+@media only screen and (min-width: 1000px){
+    .how_work_div.title-redeem-and-earn-points {
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
+
+  div#ssw-page  {
+    padding-bottom: 30px;
+  }
+}
+
+
+
+
+
+/* Style New Section Tags */
+
+.section-tags-redeem {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f1f2f2;
+    padding: 40px 0 35px;
+}
+
+.section-tags-redeem__title {
+    font-size: 25px;
+    margin: 0 0 20px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.section-tags-redeem__container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 95%;
+}
+
+.section-tags-redeem__container-items {
+    width: 45%;
+    padding: 2%;
+}
+
+@media only screen and (min-width:800px){
+    .section-tags-redeem__container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 95%;
+        max-width: 1300px;
+    }
+
+    .section-tags-redeem__container-items {
+        width: 30%;
+        padding: 2%;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    .section-tags-redeem {
+        padding: 60px 0 60px;
+    }
+
+    .section-tags-redeem__title {
+        font-size: 37px;
+    }
+    
+}
+
+
+
+/* Estilos TERM & CONDITION */
+
+.terms-conditions-rewards {
+    margin: 0px;
+    padding: 40px 0;
+}
+
+.terms-conditions-rewards h3 {
+    font-size: 25px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+    width: 90%;
+    margin: 0 auto 30px
+}
+
+.terms-conditions-rewards ul {
+    padding: 0 30px 0 50px;
+}
+
+.terms-conditions-rewards ul li {
+    list-style-type: disc;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+
+@media only screen and (min-width: 1000px){
+
+    .terms-conditions-rewards {
+        max-width: 1300px;
+        margin: auto;
+        width: 85%;
+        padding: 80px 0;
+    }
+
+    .terms-conditions-rewards h3 {
+        margin: 0 0 40px;
+        text-align: left;
+        font-size: 37px;
+    }
+
+    .terms-conditions-rewards ul li {
+        list-style-type: disc;
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+
+    .terms-conditions-rewards ul.list_two {
+        margin-top: 0;
+    }
+
+    .container-list {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+
+
+/* Estilos Page Wholesale */
+
+.page-wholesale-rewards {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    flex-direction: column;
+}
+
+.page-wholesale-rewards p {
+    text-align: center;
+}
+
+.page-wholesale-rewards button {
+    border: black solid 1px;
+    padding: 10px 15px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+
+
+
+/* Estilos Loader Global */
+
+
+section#container-information-global__growave.disable-section-rewards {
+    display: none;
+}
+
+div#loader-account-login-growave > div {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+
+div#loader-account-login-growave > div .icon-loader {
+    height: 40px;
+    width: 40px;
+    border: #e5e5e5 solid 5px;
+    border-top: #000000 solid 5px;
+    border-radius: 100%;
+    display: block;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+ 
+@keyframes spin {
+  0% {transform:rotate(0deg)}
+  100% {transform:rotate(360deg)}
+}
+
+
+div#loader-account-login-growave > div p {
+    text-align: center;
+    margin: 0;
+    color: black;
+}
+
+div#loader-account-login-growave > div p.title {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+div#loader-account-login-growave > div p.message {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+
+div#loader-account-login-growave > div p.disclaimer {
+    font-size: 13px;
+    margin-top: 20px;
+    font-style: italic;
+    color: #bebebe;
+}
+
+div#loader-account-login-growave > div p.message #counter {
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 768px){
+    div#loader-account-login-growave > div {
+        min-height: 650px;
+    }
+    
+    
+    div#loader-account-login-growave > div .icon-loader {
+        height: 60px;
+        width: 60px;
+        border: #e5e5e5 solid 8px;
+        border-top: #000000 solid 8px;
+    }
+
+    div#loader-account-login-growave > div p.title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    div#loader-account-login-growave > div p.message {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    div#loader-account-login-growave > div p.disclaimer {
+        font-size: 14px;
+    }
+}
+
+
+
+/* QUITAR SECCIÓN DE DE REWARDS HEADER */
+
+section#shopify-section-rewards {
+  display: none!important;
+}

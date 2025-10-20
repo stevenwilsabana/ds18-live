@@ -1,0 +1,82 @@
+div#collection-search-container {
+    --form-input-field-height: 60px;
+    position: relative;
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+input#collection-search-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: var(--form-input-field-height);
+    line-height: var(--form-input-field-height);
+    padding: 0 18px;
+    border-radius: var(--button-border-radius);
+    border: 1px solid rgba(var(--text-color), .15);
+    box-shadow: none;
+    background: transparent;
+    color: var(--form-input-color);
+    transition: border .2sease-in-out, box-shadow .2sease-in-out;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 741px) {
+    div#collection-search-container {
+        --form-input-field-height: 80px;
+    }
+
+    input#collection-search-input  {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+
+/* ESTILOS PARA BLOQUEAR LOS FILTROS */
+
+.shopify-section--main-collection .product-facet__aside {
+    position: relative;
+}
+
+.shopify-section--main-collection .product-facet__aside div#block-filters-desktop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    cursor: not-allowed;
+}
+
+div#mobile-facet-toolbar {
+    overflow: hidden;
+}
+
+div#mobile-facet-toolbar  div#block-filters-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+
+
+/* ESTILOS QUE BLOQUEAN EN BUSCADOR */
+
+input#collection-search-input.input-disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}

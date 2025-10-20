@@ -1,0 +1,496 @@
+{%- capture product_form_id -%}product-form-{{ section.id }}-{{ product.id }}{%- endcapture -%}
+
+<div class="product__info">
+  <div class="product__info_continer">
+    
+    <!-- PRODUCT META -->
+    <product-meta form-id="{{ product_form_id }}" price-class="price--large" class="product-meta">
+      {%- if section.settings.show_vendor -%}
+        <h2 class="product-meta__vendor heading heading--small">
+          {%- assign vendor_handle = product.vendor | handle -%}
+          {%- assign vendor_collection = collections[vendor_handle] -%}
+
+          {%- if vendor_collection != blank -%}
+            <a href="{{ vendor_collection.url }}">{{ product.vendor }}</a>
+          {%- else -%}
+            <a href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a>
+          {%- endif -%}
+        </h2>
+      {%- endif -%}
+
+      {% unless featured %}
+        {%- assign productTitle = product.title | split: ' ' -%}
+        <h1 class="product-meta__title heading h3">
+          <span class="red">{{ productTitle[0] }}</span>{{ product.title | remove_first: productTitle[0] }}          
+        </h1>
+      {% else %}
+        <h2 class="product-meta__title heading h3">
+          <a href="{{ product.url }}">
+            <span class="red">{{ productTitle[0] }}</span>{{ productTitle[1] -}}
+          </a>
+        </h2>
+      {% endunless %}
+
+      <div class="row">
+        <div class="col mr-5">
+          
+          <!--<span class="product-sku" style="margin-right:15px; color: #666;">{{ product.vendor }}</span>-->
+
+          {%- if section.settings.show_sku -%}
+            <span
+              class="product-meta__sku text--subdued text--xxsmall"
+              {% if product.selected_or_first_available_variant.sku == blank %}
+                style="display: none"
+              {% endif %}
+              data-product-sku-container
+            >
+              {{- 'product.general.sku' | t }}
+              <span class="product-meta__sku-number" data-product-sku-number style="margin-right:15px; color: #666;">
+                {{- product.selected_or_first_available_variant.sku -}}
+              </span>
+            </span>
+          {%- endif -%}
+
+          
+        </div>
+
+        
+        <div class="col">
+          {% comment %}Start automatically added Judge.me widget{% endcomment %}
+        {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
+        </div>
+
+
+      {% render 'labels-pdp' %}
+
+
+        
+      {% comment %}
+        {% if product.type == "SV Package" or product.type == "Car Audio : Packages" or product.type == "Marine And Off Road : Package" %}
+          <div class="col container-labels">
+            <p>BUNDLE SAVINGS + 20% OFF</p>
+          </div>
+        {% else %}
+          <div class="col container-labels">
+            <p>BLACK FRIDAY DEAL: Add to cart for discount</p>
+          </div>
+        {% endif %}
+      {% endcomment %}
+
+
+
+
+          
+      </div>
+      
+
+      <div class="container-general-prices">
+
+        <div class="container-general-prices__ab-test-prices" style="display: none;">
+          
+          <div class="variants-prices-script">
+            {% for variant in product.variants %}
+              {% assign crossedOutPrice = variant.price | times: 0.85 %}
+              <span data-available="{{ variant.available }}" data-variant-id="{{ variant.id }}" data-price-regular="{{ crossedOutPrice | money }}" data-price-crossed="{{ variant.price | money }}"></span>
+            {% endfor %}
+          </div>
+
+          
+          <div class="variant-a__precio-tachado">
+            <div class="container-prices">
+              <p class="price-regular"><span class="sale-word">Sale </span><span class="price"></span><span class="each"> / {{ product.metafields.prod.each_pair_text }}</span></p>
+              <p class="crossed-out-price">Reg.<span class="price"></span></p>
+            </div>
+            <p class="alert-discount">15% OFF FOR TAX SEASON!</p>
+          </div>
+
+          <div class="variant-b__info-offer">
+            <div class="container-prices">
+              <p class="crossed-out-price"><span class="price"></span><span class="each"> / {{ product.metafields.prod.each_pair_text }}</span></p>
+            </div>
+            <p class="alert-discount"><b>15% OFF</b> FINAL PRICE WILL BE REFLECTED IN THE CART.</p>
+          </div>
+
+        </div>
+
+        
+        <div class="container-general-prices__regular-prices">
+          <div class="units-sold-text">
+            <p>{{ product.metafields.prod.units_sold_text }}</p>
+          </div>
+          {% comment %}End automatically added Judge.me widget{% endcomment %}
+          <div class="product-meta__price-list-container " role="region" aria-live="polite">
+            <div class="price-list" data-product-price-list>
+              {%- if product.selected_or_first_available_variant.compare_at_price
+                  > product.selected_or_first_available_variant.price
+              -%}
+                <div class="price price--compare">
+                  <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
+                  {%- if settings.currency_code_enabled -%}
+                    {{- product.selected_or_first_available_variant.compare_at_price | money_with_currency -}}
+                  {%- else -%}
+                    {{- product.selected_or_first_available_variant.compare_at_price | money -}}
+                  {%- endif -%}
+                </div>
+    
+                <div class="product-meta__label-list label-list " data-product-label-list>
+                  {%- unless product.selected_or_first_available_variant.available -%}
+                    <span class="label label--subdued ">{{ 'collection.product.sold_out' | t }}</span>
+                  {%- elsif product.selected_or_first_available_variant.compare_at_price
+                      > product.selected_or_first_available_variant.price
+                  -%}
+                    {%- if settings.discount_mode == 'percentage' -%}
+                      {%- assign savings = product.selected_or_first_available_variant.compare_at_price
+                        | minus: product.selected_or_first_available_variant.price
+                        | times: 100.0
+                        | divided_by: product.selected_or_first_available_variant.compare_at_price
+                        | round
+                        | append: '%'
+                      -%}
+                    {%- else -%}
+                      {%- capture savings -%}{{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | money }}{%- endcapture -%}
+                    {%- endif -%}
+    
+                    <span class="label label--highlight saveprice">
+                      {{- 'collection.product.discount_html' | t: savings: savings -}}
+                    </span>
+                  {%- endunless -%}
+                </div>
+                <div class="price price--highlight price--large">
+                  <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+    
+                  {%- if settings.currency_code_enabled -%}
+                    {{- product.selected_or_first_available_variant.price | money_with_currency -}}
+                  {%- else -%}
+                    <span style="margin-left:5px;">{{- product.selected_or_first_available_variant.price | money -}}</span>
+                  
+                    <span style="margin-right:5px; font-size:15px; position: relative; top: -5px;">/{{ product.metafields.prod.each_pair_text }}</span>
+                    
+                  {%- endif -%}
+                </div>
+    
+              {%- else -%}
+                <span class="price price--large">
+                  <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+                  {%- if settings.currency_code_enabled -%}
+                    {{- product.selected_or_first_available_variant.price | money_with_currency -}}
+                  {%- else -%}
+                    {{- product.selected_or_first_available_variant.price | money -}}
+                  {%- endif -%}
+                </span>
+              {%- endif -%}
+    
+              {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
+                <div class="price text--subdued">
+                  <div class="unit-price-measurement">
+                    <span class="unit-price-measurement__price">
+                      {{- product.selected_or_first_available_variant.unit_price | money -}}
+                    </span>
+                    <span class="unit-price-measurement__separator">/</span>
+                    {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+                      <span class="unit-price-measurement__reference-value">
+                        {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+                      </span>
+                    {%- endif -%}
+    
+                    <span class="unit-price-measurement__reference-unit">
+                      {{- product.selected_or_first_available_variant.unit_price_measurement.reference_unit -}}
+                    </span>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+    
+            {% if product.compare_at_price == blank %}
+            <div class="sales-tax">
+              <div class="tootltip-wrap">
+                <span class="res"
+                  ><span
+                    class="each-pair-textt"
+                    style="    font-size: 15px;"
+                  >
+                    /
+                    {{- product.metafields.prod.each_pair_text -}}
+                  </span></span
+                >
+              </div>
+            </div>
+              {% endif %}
+            
+          </div>
+    
+          {%- if section.settings.show_taxes_included -%}
+            {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+              <p class="product-meta__taxes-included text--small">
+                {%- if cart.taxes_included -%}
+                  {{ 'product.general.include_taxes' | t }}
+                {%- endif -%}
+    
+                {%- if shop.shipping_policy.body != blank -%}
+                  {{ 'product.general.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                {%- endif -%}
+              </p>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+
+        {% if customer.b2b? %}
+          <div class="prices-b2b-pdp">
+            <p class="wholesale"><b>Your Price: </b><span></span></p>
+            <p class="retail"><b>Retail: </b><span></span></p>
+          </div>
+        {% endif %}
+
+      </div>
+
+      
+
+      {%- if section.settings.show_product_rating or section.settings.show_sku -%}
+        <div class="product-meta__reference">
+          {%- if section.settings.show_product_rating -%}
+            <a
+              href="{% if featured %}{{ product.url }}{% endif %}#product-{{ product.id }}-reviews-pocket"
+              is="review-link"
+              data-smooth-scroll
+              class="product-meta__reviews-badge hidden-lap-and-up"
+            >
+              {%- render 'product-rating', product: product -%}
+            </a>
+            <a
+              href="{% if featured %}{{ product.url }}{% endif %}#product-{{ product.id }}-tabs"
+              is="review-link"
+              data-smooth-scroll
+              class="product-meta__reviews-badge hidden-pocket"
+            >
+              {%- render 'product-rating', product: product -%}
+            </a>
+          {%- endif -%}
+
+        </div>
+      {%- endif -%}
+
+    
+      <!-- <div class="message-campaign-bf">
+        <p><b>Guaranteed Christmas delivery: Order by Dec 17th.</p>
+      </div> -->
+    
+
+
+          
+      <div class="shipsFreeToday">
+        <div>Ships Free Next Business Day From Miami, FL, USA</div> 
+
+        <div class="tootltip-wrap">
+            <i class="fa-solid fa-circle-info"></i>
+          <span class="tooltip">
+            <span class="tooltip__label">With some limitations - subject to verification and order volume</span>
+          </span>
+        </div>
+      </div>
+          
+    </product-meta>
+
+    {%- render 'product-form-build-set', product: product, update_url: update_url -%}
+
+    {%- assign help_page = section.settings.help_page -%}
+
+    {%- if section.settings.show_share_buttons or help_page != blank -%}
+      <div class="product-meta__aside">
+        {%- if section.settings.show_share_buttons -%}
+          <div class="product-meta__share text--subdued">
+            {%- assign share_url = shop.url | append: product.url -%}
+            {%- assign twitter_text = product.title | url_param_escape -%}
+            {%- assign pinterest_description = product.description
+              | strip_html
+              | truncatewords: 15
+              | url_param_escape
+            -%}
+            {%- assign pinterest_image = product.featured_image | img_url: '800x' | prepend: 'https:' -%}
+
+            <button
+              is="share-toggle-button"
+              share-url="{{ share_url | escape }}"
+              share-title="{{ product.title | escape }}"
+              class="product-meta__share-label link hidden-tablet-and-up"
+              aria-controls="mobile-share-buttons-{{ section.id }}"
+              aria-expanded="false"
+            >
+              {{ 'product.general.share' | t }}
+            </button>
+            <div class="product-meta__share-label hidden-phone">{{ 'product.general.share' | t }}</div>
+
+            <popover-content id="mobile-share-buttons-{{ section.id }}" class="popover hidden-tablet-and-up">
+              <span class="popover__overlay"></span>
+
+              <header class="popover__header">
+                <span class="popover__title heading h6">{{- 'article.general.share' | t -}}</span>
+
+                <button
+                  type="button"
+                  class="popover__close-button tap-area tap-area--large"
+                  data-action="close"
+                  title="{{ 'general.accessibility.close' | t | escape }}"
+                >
+                  {%- render 'icon' with 'close' -%}
+                </button>
+              </header>
+
+              <div class="mobile-share-buttons">
+                <a
+                  class="mobile-share-buttons__item mobile-share-buttons__item--facebook"
+                  href="https://www.facebook.com/sharer.php?u={{ share_url }}"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="{{ 'general.social.facebook_share' | t }}"
+                >
+                  {%- render 'icon' with 'facebook-share-mobile' -%}
+                  Facebook
+                </a>
+
+                <a
+                  class="mobile-share-buttons__item mobile-share-buttons__item--pinterest"
+                  href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="{{ 'general.social.pinterest_pin' | t }}"
+                >
+                  {%- render 'icon' with 'pinterest-share-mobile' -%}
+                  Pinterest
+                </a>
+
+                <a
+                  class="mobile-share-buttons__item mobile-share-buttons__item--twitter"
+                  href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="{{ 'general.social.twitter_tweet' | t }}"
+                >
+                  {%- render 'icon' with 'twitter-share-mobile' -%}
+                  Twitter
+                </a>
+
+                <a
+                  class="mobile-share-buttons__item mobile-share-buttons__item--mail"
+                  href="mailto:?&subject={{ article.title | escape }}&body={{ share_url }}"
+                  aria-label="{{ 'general.social.email_share' | t }}"
+                >
+                  {%- render 'icon' with 'email-share-mobile' -%}
+                  {{ 'general.social.email_label' | t }}
+                </a>
+              </div>
+            </popover-content>
+
+            <div class="product-meta__share-button-list hidden-phone">
+              <a
+                class="product-meta__share-button-item product-meta__share-button-item--facebook link tap-area"
+                href="https://www.facebook.com/sharer.php?u={{ share_url }}"
+                target="_blank"
+                rel="noopener"
+                aria-label="{{ 'general.social.facebook_share' | t }}"
+              >
+                {%- render 'icon' with 'facebook', width: 8, height: 14 -%}
+              </a>
+
+              <a
+                class="product-meta__share-button-item product-meta__share-button-item--pinterest link tap-area"
+                href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}"
+                target="_blank"
+                rel="noopener"
+                aria-label="{{ 'general.social.pinterest_pin' | t }}"
+              >
+                {%- render 'icon' with 'pinterest', width: 10, height: 14 -%}
+              </a>
+
+              <a
+                class="product-meta__share-button-item product-meta__share-button-item--twitter link tap-area"
+                href="https://twitter.com/share?{% if twitter_text != blank %}text={{ twitter_text }}&{% endif %}url={{ share_url }}"
+                target="_blank"
+                rel="noopener"
+                aria-label="{{ 'general.social.twitter_tweet' | t }}"
+              >
+                {%- render 'icon' with 'twitter', width: 17, height: 14 -%}
+              </a>
+
+              <a
+                class="product-meta__share-button-item product-meta__share-button-item--mail link tap-area"
+                href="mailto:?&subject={{ product.title | escape }}&body={{ share_url }}"
+                aria-label="{{ 'general.social.email_share' | t }}"
+              >
+                {%- render 'icon' with 'share', width: 13, height: 13 -%}
+              </a>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if help_page != blank -%}
+          <button
+            is="toggle-button"
+            class="product-meta__help link text--subdued hidden-tablet-and-up"
+            aria-controls="product-{{ section.id }}-help-popover"
+            aria-expanded="false"
+          >
+            {{ 'product.general.need_help' | t }}
+          </button>
+          <button
+            is="toggle-button"
+            class="product-meta__help link text--subdued hidden-phone"
+            aria-controls="product-{{ section.id }}-help-drawer"
+            aria-expanded="false"
+          >
+            {{ 'product.general.need_help' | t }}
+          </button>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if help_page != blank -%}
+      {%- comment -%}Drawer for tablet and higher{%- endcomment -%}
+      <drawer-content id="product-{{ section.id }}-help-drawer" class="drawer drawer--large hidden-phone">
+        <span class="drawer__overlay"></span>
+
+        <header class="drawer__header">
+          <p class="drawer__title heading h6">{{ help_page.title }}</p>
+
+          <button
+            type="button"
+            class="drawer__close-button tap-area"
+            data-action="close"
+            title="{{ 'general.accessibility.close' | t | escape }}"
+          >
+            {%- render 'icon' with 'close' -%}
+          </button>
+        </header>
+
+        <div class="drawer__content drawer__content--padded-start">
+          <div class="rte">
+            {{- help_page.content -}}
+          </div>
+        </div>
+      </drawer-content>
+
+      {%- comment -%}Popover for mobile{%- endcomment -%}
+      <popover-content hidden id="product-{{ section.id }}-help-popover" class="popover hidden-lap-and-up">
+        <span class="popover__overlay"></span>
+
+        <header class="popover__header">
+          <p class="popover__title heading h6">{{ help_page.title }}</p>
+
+          <button
+            type="button"
+            class="popover__close-button tap-area tap-area--large"
+            data-action="close"
+            title="{{ 'general.accessibility.close' | t | escape }}"
+          >
+            {%- render 'icon' with 'close' -%}
+          </button>
+        </header>
+
+        <div class="popover__content">
+          <div class="rte">
+            {{- help_page.content -}}
+          </div>
+        </div>
+      </popover-content>
+    {%- endif -%}
+  </div>
+</div>

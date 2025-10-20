@@ -1,0 +1,17 @@
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7201579270205"] .boost-sd__product-price--ofert,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7215294840893"] .boost-sd__product-price--ofert,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7215294939197"] .boost-sd__product-price--ofert,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7201579565117"] .boost-sd__product-price--ofert,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7215297495101"] .boost-sd__product-price--ofert,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7215294513213"] .boost-sd__product-price--ofert {
+    display: none!important
+}
+
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7201579270205"] .boost-sd__product-price,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7215294840893"] .boost-sd__product-price,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7215294939197"] .boost-sd__product-price,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7201579565117"] .boost-sd__product-price,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7215297495101"] .boost-sd__product-price,
+.boost-sd__product-list .boost-sd__product-item[data-product-id="7215294513213"] .boost-sd__product-price {
+    display: block!important
+}

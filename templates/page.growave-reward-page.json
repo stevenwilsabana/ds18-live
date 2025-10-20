@@ -1,0 +1,54 @@
+{
+    "wrapper": "div.gw-rd-page-wrapper",
+    "sections": {
+        "reward_custom_header_FywDna": {
+            "type": "reward-custom-header",
+            "settings": {}
+        },
+        "reward_page_content": {
+            "type": "apps",
+            "blocks": {
+                "rewards_ways_to_earn_page_widget": {
+                    "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/v2.rewards.waysToEarnPageWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+                    "settings": {}
+                },
+                "rewards_available_rewards_page_widget": {
+                    "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.rewards.availableRewardsPageWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+                    "settings": {}
+                },
+                "rewards_ways_to_spend_page_widget": {
+                    "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/v2.rewards.waysToSpendPageWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+                    "settings": {}
+                },
+                "rewards_vip_tiers_page_widget": {
+                    "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.rewards.vipTiersPageWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+                    "settings": {}
+                },
+                "rewards_referral_program_page_widget": {
+                    "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.rewards.referralProgramPageWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+                    "settings": {}
+                }
+            },
+            "block_order": [
+                "rewards_ways_to_earn_page_widget",
+                "rewards_available_rewards_page_widget",
+                "rewards_ways_to_spend_page_widget",
+                "rewards_vip_tiers_page_widget",
+                "rewards_referral_program_page_widget"
+            ],
+            "settings": {
+                "include_horizontal_margins": true,
+                "include_vertical_margins": true
+            }
+        },
+        "reward_custom_footer_gkrGhL": {
+            "type": "reward-custom-footer",
+            "settings": {}
+        }
+    },
+    "order": [
+        "reward_custom_header_FywDna",
+        "reward_page_content",
+        "reward_custom_footer_gkrGhL"
+    ]
+}

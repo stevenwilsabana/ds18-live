@@ -1,0 +1,263 @@
+:root {
+  --marine: #0f5182;
+}
+/*button#StickyAddToCart,
+button#AddToCart,*/
+.cbb-frequently-bought-add-button,
+a.jdgm-write-rev-link,
+.rating__star {
+  background: var( --marine ) !important;
+  border-color: var( --marine );
+}
+.red {
+  color: var( --marine ) !important;
+}
+.shopify-section.yth-key-features .container.accordion {
+  border-top: solid 1px var( --marine );
+}
+.shopify-section.shopify-section--apps .vertical-breather,
+.shopify-section.yth-key-features .container.accordion {
+  border-top: 1px solid var( --marine );
+}
+.shopify-section.yth-frequently-bought .container {
+  border-color: var( --marine ) !important;
+}
+span.jdgm-star.jdgm--off {
+  color: var( --marine );
+}
+.product-form__variants {
+  margin-bottom: 20px;
+}
+.shopify-section--photo-gallery .container:first-child{
+  padding-top:50px;
+  border-top:1px solid var( --marine );
+}
+.shopify-section.yth-key-features .panel .container{border-color: var( --marine ) !important;}
+.logo-list .container{border:0!important;}
+.shopify-section--image-with-text-overlay{padding:0;}
+product-recommendations{margin:0!important;padding:50px 0;}
+.shopify-section.yth-key-features .panel .container{}
+
+.shopify-section--product-recommendations:after,
+.shopify-section.yth-technical-data:after {
+  border-bottom: solid 1px var( --marine );
+}
+
+.shopify-section.yth-technical-data .red {
+  color: var( --marine );
+}
+.custService.showOnDesk{display:none;}
+  .footerIcons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    order: 2;
+    margin-top: 0!important;
+  }
+  .footerIcons .fiItem {
+    width: 25%;
+    text-align: center;
+      font-size: 11px;
+    margin-bottom: 0;
+  }
+  .footerIcons .fiItem img{
+     width: 125px; 
+  }
+@media screen and (max-width: 800px){
+.shopify-section.yth-technical-data .container.accordion,
+.shopify-section.yth-key-features .container.accordion,
+.shopify-section.shopify-section--image-with-text-block,
+.container.padding-extra.accordion,
+.shopify-section.yth-key-features{
+  border-color: var( --marine ) !important;
+}
+  .shopify-section.yth-technical-data{border-color:var( --marine ) !important;border-bottom:0 !important;}
+  
+}
+
+
+/* Estilos Shipping Blue */
+
+.shipsFreeToday .tootltip-wrap > i,
+h4.heading.h2.resto > i{
+    color: var( --marine );
+}
+
+
+product-variants.active-imagen-multiple-variants>.product-form__option-selector span.product-form__option-name {
+    color: var( --marine );
+}
+
+product-variants.active-imagen-multiple-variants>.product-form__option-selector .color-swatch__radio:checked+label {
+    border-color: var( --marine );
+}
+
+.ssw-wishlist-btn__wrapper button.ssw-fave-btn-content {
+    border-color: var( --marine );
+    color: var( --marine );
+    fill: var( --marine );
+}
+
+.ssw-wishlist-btn__wrapper button.ssw-fave-btn-content i {
+    color: var( --marine );
+}
+
+.load-more__spinner-variants {
+    border-top: var( --marine ) solid 5px;
+}
+
+.load-variants-general__container p {
+    color: var( --marine );
+}
+
+.jdgm-preview-badge .jdgm-star.jdgm-star {
+    /*color: var( --marine )!important;*/
+}
+
+.jdgm-rev-widg .jdgm-star, .jdgm-revs-tab .jdgm-star, .jdgm-all-reviews .jdgm-star, .jdgm-gallery-popup .jdgm-star {
+    color: var( --marine )!important;
+}
+
+.ssw-reward-tab-ico {
+   background: var( --marine )!important;
+}
+
+.jdgm-star {
+    /*color: var( --marine )!important;*/
+}
+
+
+.shopify-section.yth-image-with-text .image-with-text > .container,
+.shopify-section.yth-technical-data .section__color-wrapper > .container {
+    border-color: var( --marine )!important;
+}
+
+/* Label BF */
+
+.col.container-labels p.label-general-pdp--flash-sale {
+   background: #105182!important;
+}
+
+.saveprice {
+    color: #105182!important;
+}
+
+/* Linea Roja de Frequently Bought */
+
+.cbb-frequently-bought-container {
+  border-color: var(--marine);
+}
+
+
+
+/* Drop a Hint Marine 
+
+span.drop-a-hint__button {
+    border: var(--marine) solid 1px!important;
+    background: var(--marine)!important;
+    color: #fff!important;
+}
+
+span.drop-a-hint__button:hover {
+    background: var(--marine)!important;
+    color: #fff!important;
+}
+*/
+
+
+/* Estilos Variantes Sold Out */
+
+product-variants.active-imagen-multiple-variants > .product-form__option-selector .color-swatch__radio:checked + label {
+    border-color: #0f5182!important;
+}
+
+product-variants.active-imagen-multiple-variants > .product-form__option-selector span.product-form__option-name {
+    color: #0f5182!important;
+}
+
+product-variants.active-imagen-multiple-variants > .product-form__option-selector .color-swatch__radio:checked + label:after {
+    color: #0f5182!important;
+    border-color: #0f5182!important;
+}
+
+/* Botón BIS Klaviyo */
+
+.container-back-in-stock__klaviyo a {
+  color: #0f5182!important;
+    border-color: #0f5182!important;
+}
+
+/* Color Label A/B Test */
+
+.container-general-prices__ab-test-prices .variant-a__precio-tachado p.alert-discount,
+.container-general-prices__ab-test-prices .variant-b__info-offer p.alert-discount b{
+  background: #0f5182!important;
+}
+
+.container-general-prices__ab-test-prices .variant-b__info-offer p.alert-discount {
+  color: #0f5182!important;
+}
+
+
+/* Color Linea Dyno Results */
+
+.dyno-results-v2__container {
+    border-color: #0f5182!important;
+}
+
+/* Estilos precios Campaña */
+
+.container-labels-home > p {
+    background: #0f5182!important;
+}
+
+.product-item-meta__price-list-container--campaign .price-list > span.label {
+    border: #0f5182 solid 1px!important;
+    background: #0f5182!important;
+}
+
+.product-item-meta__price-list-container--campaign .price-list > span.price-real {
+    color: #0f5182!important;
+}
+
+
+
+/* Estilos Variantes y Labels en PDP */
+
+.boost-sd__product-item .boost-sd__product-label--new-arrival,
+.col.container-labels p.label-general-pdp--new {
+    color: var( --marine ) !important;
+    border: var( --marine ) 1px solid !important;
+}
+
+
+.container-variant__label {
+    color: var( --marine ) !important;
+}
+
+.container-variant__content .label-variant.label-variant--select {
+    border-color: var( --marine ) !important;
+}
+
+
+
+
+/* COLORS BUTTONS EXPERIMENTS */
+
+button#AddToCart,
+button#StickyAddToCart {
+  background: var( --marine ) !important;
+  color: white;
+}
+
+button#AddToCart .loader-button__text,
+button#StickyAddToCart .loader-button__text {
+  color: white;
+}
+
+
+/* COLORS LINE PAGE MARINE */
+
+section#shopify-section-template--15828622245949__yth-related-products .container {
+  border-top: #0f5182 solid 1px!important;
+}

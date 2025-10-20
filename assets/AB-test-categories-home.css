@@ -1,0 +1,5 @@
+@media only screen and (max-width: 599px){
+    .shopify-section--collection-list__test {
+        display: none!important
+    }   
+}

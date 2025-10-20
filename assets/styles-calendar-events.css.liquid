@@ -1,0 +1,156 @@
+/* LOAD EVENTS CALENDAR */
+
+section.load-events-calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+    margin-top: 30px;
+}
+
+section.load-events-calendar div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.load-events-calendar div img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 0px;
+    animation: loadCartRebuy 1s linear infinite alternate-reverse both;
+}
+
+@keyframes loadCartRebuy {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+section.load-events-calendar div p {
+    margin-top: 5px;
+    font-size: 15px!important;
+    color: red;
+}
+
+@media only screen and (min-width: 768px){
+    section.load-events-calendar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 130px;
+        margin-top: 50px;
+    }
+
+    
+    section.load-events-calendar div img {
+        max-width: 300px;
+    }
+}
+
+
+
+/* ESTILOS CALENDAR APP */
+
+.elfsight-sapp-5a90b4bd-cda0-45d3-974a-413df35a69a9 {
+    display: none;
+}
+
+.eapp-events-calendar-events-calendar-header {
+    display: none!important;
+}
+
+.eapp-events-calendar-list-item-name {
+    color: red!important;
+}
+
+.eapp-events-calendar-popup-item-mobile .eapp-events-calendar-popup-item-time {
+    display: none!important;
+}
+
+.eapp-events-calendar-date-element-month {
+    font-weight: bold;
+}
+
+.eapp-events-calendar-date-element-end .eapp-events-calendar-date-element-month {
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 448px){
+    .eapp-events-calendar-list-item-component {
+        border: red solid 2px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .eapp-events-calendar-list-item-imageContainer {
+        width: 100%;
+        height: auto;
+    }
+    
+    .eapp-events-calendar-date-element-component {
+        position: absolute;
+        z-index: 1;
+        border-radius: 0 0 8px;
+    }
+    
+    .eapp-events-calendar-popup-item-mobile .eapp-events-calendar-popup-item-location {
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    div#eapps-events-calendar-5a90b4bd-cda0-45d3-974a-413df35a69a9 {
+        margin-bottom: 50px;
+    }   
+}
+
+@media only screen and (min-width: 449px){
+    .eapp-events-calendar-list-item-date {
+        width: 100px;
+        margin-left: 0;
+    }
+
+    .eapp-events-calendar-list-item-component {
+        border: red solid 2px;
+        padding-left: 0;
+    }
+
+    div#eapps-events-calendar-5a90b4bd-cda0-45d3-974a-413df35a69a9 {
+        margin-bottom: 30px;
+    } 
+
+    .eapp-events-calendar-popup-time-component.eapp-events-calendar-popup-item-time {
+        display: none!important
+    }
+
+    .eapp-events-calendar-popup-item-location {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 800px){
+    .eapp-events-calendar-list-item-imageContainer {
+        width: 300px;
+        height: auto;
+    }
+
+    div#eapps-events-calendar-5a90b4bd-cda0-45d3-974a-413df35a69a9 {
+        max-width: 950px;
+        margin: 10px auto 80px;
+    } 
+
+    .eapp-events-calendar-list-item-component {
+        margin: 15px 0;
+    }
+
+    .eapp-events-calendar-popup-time-component.eapp-events-calendar-popup-item-time {
+        display: none!important
+    }
+
+}

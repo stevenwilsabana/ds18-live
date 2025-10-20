@@ -1,0 +1,38 @@
+{% comment %}
+  {{ 'stl-pdp-styles.css' | asset_url | stylesheet_tag }}
+{% endcomment %}
+
+<div class="container__shop-the-look">
+  <h1>{{ section.settings.header }}</h1>
+  <div>{{ section.settings.message }}</div>
+</div>
+
+<div class="shop-the-look__navigation"></div>
+
+{{ 'stl-pdp-script.js' | asset_url | script_tag }}
+
+{% schema %}
+  {
+    "name": "Main Page",
+    "tag": "section",
+    "class": "main-page-shop-the-look",
+    "settings": [
+      {
+          "type": "text",
+          "id": "header",
+          "label": "Header"
+      },
+      {
+          "type": "textarea",
+          "id": "message",
+          "label": "Message"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

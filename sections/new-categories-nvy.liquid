@@ -1,0 +1,76 @@
+{{ 'styles-categories-nyv-new.css' | asset_url | stylesheet_tag }}
+
+<div class="categories-nvy__container">
+
+  {% if section.settings.heading %}
+    <h3 class="heading">{{ section.settings.heading }}</h3>
+  {% endif %}
+
+  <div class="categories-nvy__content">
+    {% for block in section.blocks %}
+      <div class="categorie categorie--{{ forloop.index }} categorie--{{ block.settings.width_imagen }}">
+        <a href="{{ block.settings.link }}">
+          <div class="categorie-imagen">
+            <img src="{{ block.settings.imagen | img_url: 'master' }}">
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "New Categories NVY",
+    "class": "categories-nvy-new",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Categorie",
+        "type": "categorie",
+        "settings": [
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "imagen",
+            "label": "Imagen"
+          },
+          {
+            "type": "radio",
+            "id": "width_imagen",
+            "label": "Width Imagen",
+            "options": [
+              {
+                "value": "full_width",
+                "label": "Full Width"
+              },
+              {
+                "value": "middle_width",
+                "label": "Middle Width"
+              }
+            ],
+            "default": "full_width"
+          }
+        ]
+      }
+  	],
+  	"presets": [
+      {
+        "name": "New Categories NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,753 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16823160841bcda229": {
+      "type": "apps",
+      "blocks": {
+        "12b17124-00ad-48e0-9e28-5485584d1266": {
+          "type": "shopify://apps/breadcrumbs/blocks/category-breadcrumbs/dba51573-4328-452d-90db-1ad2dc5be363",
+          "settings": {
+            "override_linktext_colour": false,
+            "linktext_colour": "#0000ee",
+            "separator_colour": "#555555",
+            "producttitle_colour": "#555555",
+            "title_decoration": "",
+            "title_transform": "",
+            "spacing_above": 0,
+            "spacing_below": 0,
+            "sep_plus_class": "breadcrumb__sep_plus5",
+            "separator_char_code": "#47;",
+            "hide_old_breadcrumb": false,
+            "show_catroot": false,
+            "link_catroot": "/",
+            "text_catroot": "",
+            "show_tags": true,
+            "show_finalbread_as_textonly": false,
+            "insert_jsonld": true,
+            "insert_shortlinkfix": false,
+            "prod_multicat_sel": "last",
+            "link_catall": "/collections/all",
+            "text_catall": "All Products",
+            "show_product_title": true,
+            "truncate_limit": 0,
+            "prod_ignore_referrer": false,
+            "old_breadcrumb_class": "breadcrumb"
+          }
+        }
+      },
+      "block_order": [
+        "12b17124-00ad-48e0-9e28-5485584d1266"
+      ],
+      "custom_css": [],
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": false
+      }
+    },
+    "main": {
+      "type": "main-product-build-set",
+      "blocks": {
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_mode": "block",
+            "color_mode": "block",
+            "size_chart_page": ""
+          }
+        },
+        "d5963530-17dc-4104-9b1b-e5d86d13d2a2": {
+          "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_page/7411210d-7b32-4c09-9455-e129e3be4729",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "atc_button_background": "rgba(0,0,0,0)",
+            "atc_button_text_color": "#de2a2a",
+            "buy_now_button_background": "#000000",
+            "buy_now_button_text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "6532d8e6-7a94-40e0-8d61-dace36b00264": {
+          "type": "liquid",
+          "settings": {
+            "class_label": "section-custom-liquid",
+            "liquid": "<product-payment-terms form-id=\"{{ product_form_id }}\">\n        {%- assign product_installment_form_id = 'product-installment-form-'\n          | append: section.id\n          | append: '-'\n          | append: product.id\n        -%}\n\n        {%- form 'product', product, id: product_installment_form_id -%}\n          <input type=\"hidden\" name=\"id\" value=\"{{ product.selected_or_first_available_variant.id }}\">\n          {{- form | payment_terms -}}\n        {%- endform -%}\n      </product-payment-terms>"
+          }
+        },
+        "4018b0a0-8a8e-4bdb-af89-815a76a54be3": {
+          "type": "icons",
+          "settings": {
+            "text": "FREE SHIPING",
+            "text2": "FREE RETURN",
+            "text3": "EXCLUSIVE BENEFITS"
+          }
+        },
+        "b61df6a0-96bd-4f18-b316-79cad87c7af3": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "class_label": "section-custom-liquid",
+            "liquid": "<p class=\"ask\"><span style=\"margin-right: 10px;\">Have a Question? Ask a Specialist</span> <span style=\"white-space: nowrap;\"><span class=\"item\"> <a href=\"tel:+305-928-8734\" class=\"inline-block js-phone-h pl-2 phone-link\" target=\"_blank\" rel=\"noreferrer noopener\">305-928-8734</a></span> /<a href=\"#chatraChatExpanded\"> Live Chat</a></span></p>"
+          }
+        },
+        "82d2eb46-a809-4502-818f-6ac9ed010a33": {
+          "type": "liquid",
+          "settings": {
+            "class_label": "section-custom-liquid",
+            "liquid": "<div class=\"custService showOnDesk\">\n              \n\n<div class=\"footerIcons\">\n      <div class=\"fiItem fiItem--freeshipping\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/FREE-SHIPPING-RED.png\">\n        <span>FAST FREE SHIPPING</span>\n      </div>\n      \n      <div class=\"fiItem\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/30-DAY-RED.png\">\n        <span>30-DAY RETURNS</span>\n      </div>\n      \n      <div class=\"fiItem\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/WARRANTY-RED.png\">\n        <span>1 YEAR WARRANTY</span>\n      </div>\n <div class=\"fiItem\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/SECURE-PAYMENT-RED.png\">\n        <span>SECURE PAYMENT</span>\n      </div>\n      \n      \n   </div>\n\n            </div>"
+          }
+        },
+        "contact_us_MMLHYG": {
+          "type": "contact_us",
+          "settings": {}
+        },
+        "b9a34910-6fd1-4a99-be97-f969f35acb81": {
+          "type": "line_item_property",
+          "disabled": true,
+          "settings": {
+            "label": "Your label",
+            "type": "text",
+            "required": false,
+            "allow_long_text": false,
+            "checked_value": "Yes",
+            "unchecked_value": "No"
+          }
+        }
+      },
+      "block_order": [
+        "variant_picker",
+        "d5963530-17dc-4104-9b1b-e5d86d13d2a2",
+        "buy_buttons",
+        "6532d8e6-7a94-40e0-8d61-dace36b00264",
+        "4018b0a0-8a8e-4bdb-af89-815a76a54be3",
+        "b61df6a0-96bd-4f18-b316-79cad87c7af3",
+        "82d2eb46-a809-4502-818f-6ac9ed010a33",
+        "contact_us_MMLHYG",
+        "b9a34910-6fd1-4a99-be97-f969f35acb81"
+      ],
+      "settings": {
+        "show_vendor": false,
+        "show_sku": false,
+        "show_taxes_included": false,
+        "show_product_rating": false,
+        "show_sticky_add_to_cart": false,
+        "show_share_buttons": false,
+        "help_page": "",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": false,
+        "show_thumbnails_on_mobile": true,
+        "desktop_thumbnails_position": "bottom",
+        "transition_effect": "slide"
+      }
+    },
+    "16909022846395fdf5": {
+      "type": "apps",
+      "blocks": {
+        "0176d9dd-1b04-42f6-9ff9-f4e1e3ec44fa": {
+          "type": "shopify://apps/boost-ai-search-discovery/blocks/recommendation/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "disabled": true,
+          "settings": {
+            "widgetId": "productpage-864816",
+            "additional_classes": "",
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "0176d9dd-1b04-42f6-9ff9-f4e1e3ec44fa"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
+    },
+    "yth-key-features": {
+      "type": "yth-key-features",
+      "custom_css": [],
+      "settings": {}
+    },
+    "yth-technical-data": {
+      "type": "yth-technical-data",
+      "settings": {}
+    },
+    "yth-image-with-text": {
+      "type": "yth-image-with-text",
+      "settings": {}
+    },
+    "yth-promotional": {
+      "type": "yth-promotional",
+      "settings": {}
+    },
+    "88e1b313-5c19-47cb-9dfb-e8e99d846eb1": {
+      "type": "featured-collections-slider",
+      "blocks": {
+        "template--17043822412092__88e1b313-5c19-47cb-9dfb-e8e99d846eb1-167021688753a9ed70-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "test-collection",
+            "label": "",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17043822412092__88e1b313-5c19-47cb-9dfb-e8e99d846eb1-167021688753a9ed70-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "ADD A SPECIAL BULLET",
+        "products_count": 8,
+        "products_per_row": 4,
+        "stack_products": true,
+        "show_cta": false,
+        "background": "#ffffff",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "096690e2-06e6-454a-8593-92ab5dd23f9a": {
+      "type": "featured-products-slider",
+      "blocks": {
+        "template--17043822412092__096690e2-06e6-454a-8593-92ab5dd23f9a-1670591433a3b3b607-0": {
+          "type": "collection",
+          "settings": {
+            "product": "ds18-pro-twx1-1-pro-aluminum-super-bullet-tweeter-vc-240-watts-capacitor-crossover-pair"
+          }
+        },
+        "6f1e71af-e80a-4cef-a0e5-928d5580d942": {
+          "type": "collection",
+          "settings": {
+            "product": "ds18-sxe-3000-4d-class-d-4-channel-full-range-car-amplifier-200-x-4-rms-4-ohm-3000-watts"
+          }
+        },
+        "9913d174-c358-4aa9-9af4-0dc469708d77": {
+          "type": "collection",
+          "settings": {
+            "product": "ds18-eqx7-high-volt-7-band-equalizer-with-high-level-input-and-auto-turn-on"
+          }
+        },
+        "ac2d9dd6-0949-48b0-829f-ce5863fa5eb8": {
+          "type": "collection",
+          "settings": {
+            "product": "amplifier-installation-kit-4ga"
+          }
+        },
+        "86695570-5d0e-47d8-bddb-f906ef91b31e": {
+          "type": "collection",
+          "settings": {
+            "product": "universal-built-in-rgb-light-speaker-grill-cover-single-new-edition"
+          }
+        }
+      },
+      "block_order": [
+        "template--17043822412092__096690e2-06e6-454a-8593-92ab5dd23f9a-1670591433a3b3b607-0",
+        "6f1e71af-e80a-4cef-a0e5-928d5580d942",
+        "9913d174-c358-4aa9-9af4-0dc469708d77",
+        "ac2d9dd6-0949-48b0-829f-ce5863fa5eb8",
+        "86695570-5d0e-47d8-bddb-f906ef91b31e"
+      ],
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "Buy It With",
+        "content": "",
+        "products_count": 8,
+        "products_per_row": 4,
+        "stack_products": true,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "yth-frequently-bought": {
+      "type": "yth-frequently-bought",
+      "settings": {
+        "title": ""
+      }
+    },
+    "yth-related-products": {
+      "type": "yth-related-products",
+      "settings": {
+        "subheading": "",
+        "title": "Related products",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "c5fbf613-3f13-421e-b4da-13624bb96caa": {
+      "type": "text-with-image",
+      "blocks": {
+        "template--17043822412092__c5fbf613-3f13-421e-b4da-13624bb96caa-16692004403907cdf7-0": {
+          "type": "item",
+          "settings": {
+            "image_position": "left",
+            "subheading": "",
+            "title": "BLACK FRIDAY!",
+            "content": "<p>Your second strap's on us. Until November 29th, use code BF22 at checkout to claim a free strap (up to a $250) with your watch purchase. Choose from sophisticated leather, go-anywhere rubber or sustainable fabric. <a href=\"https://www.breitling.com/zz-zz/terms-and-conditions-blackfriday/\"><span style=\"text-decoration:underline\">T&Cs apply.</span></a></p>",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17043822412092__c5fbf613-3f13-421e-b4da-13624bb96caa-16692004403907cdf7-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "reveal_on_scroll": false,
+        "customId": "custom",
+        "fullwidth": false,
+        "text_color": "rgba(0,0,0,0)",
+        "button-text-color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "bgbackground": "#f6a429",
+        "spacing": true
+      }
+    },
+    "product-content": {
+      "type": "product-content",
+      "blocks": {
+        "20b6ae57-3817-4e4b-b550-bd54a6476002": {
+          "type": "trust",
+          "settings": {
+            "icon_1": "picto-fast-delivery",
+            "title_1": "Free Shipping",
+            "content_1": "<p></p>",
+            "icon_2": "picto-warranty",
+            "title_2": "2 Year Warranty",
+            "content_2": "<p>Add text about your product warranty</p>",
+            "icon_3": "picto-return-box",
+            "title_3": "30 Day Easy Returns",
+            "content_3": "<p>Add text about your payment</p>"
+          }
+        },
+        "a0af0354-6c8c-4fba-a6b0-a7eb89a75891": {
+          "type": "description",
+          "settings": {}
+        },
+        "98ea0cd6-db53-40a3-85b3-4178835e9e07": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "content": "<p></p>",
+            "page": ""
+          }
+        },
+        "7b302ad4-1a4a-4b7d-8e78-5afb4ae2d9be": {
+          "type": "content",
+          "settings": {
+            "title": "Specs",
+            "content": "<p><strong>Model </strong>; Pro-x6.4bm</p><p><strong>Size</strong> : 6.5\"</p><p></p><p>Manual <a href=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/PRO-_X6.4BM_WEB_MANUAL.pdf?v=1642516315%22\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/PRO-_X6.4BM_WEB_MANUAL.pdf?v=1642516315%22\">Click Here</a></p>",
+            "page": ""
+          }
+        },
+        "15371d4c-57ad-4151-8129-94b53ec8fcb0": {
+          "type": "reviews",
+          "settings": {}
+        },
+        "0d59dfb0-6d07-4b67-a959-f2e4a0603016": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "Buy it With"
+          }
+        },
+        "a56aefa8-92b1-4972-8645-9208e2afb38d": {
+          "type": "liquid",
+          "settings": {
+            "title": "",
+            "liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "20b6ae57-3817-4e4b-b550-bd54a6476002",
+        "a0af0354-6c8c-4fba-a6b0-a7eb89a75891",
+        "98ea0cd6-db53-40a3-85b3-4178835e9e07",
+        "7b302ad4-1a4a-4b7d-8e78-5afb4ae2d9be",
+        "15371d4c-57ad-4151-8129-94b53ec8fcb0",
+        "0d59dfb0-6d07-4b67-a959-f2e4a0603016",
+        "a56aefa8-92b1-4972-8645-9208e2afb38d"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "18f80877-980d-405b-a93f-9fe8ed762628": {
+      "type": "product-recommendations",
+      "settings": {
+        "subheading": "",
+        "title": "You may also like",
+        "recommendations_count": 10,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "78635833-e9bb-4ea7-81cd-33c8922a5f7e": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Hot_Deals_31-17_June_Banner_2024.jpg",
+            "mobile_image": "shopify://shop_images/Hot_Deals_31-17_June_Banner_Mobile_2024.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/ds18-hotdeals",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-2": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "text_position": "middle_center",
+            "subheading": "Tell your story",
+            "title": "Slide 2",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-1",
+        "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-2"
+      ],
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
+    "bf2f0a63-9ac1-4210-886f-94b0228e9727": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "reveal_on_scroll": true,
+        "section_height": "auto",
+        "image": "shopify://shop_images/WEB-BANNER-v4.jpg",
+        "image_mobile": "shopify://shop_images/MOBILE-BANNER-V3.3.jpg",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "button_text": "",
+        "button_link": "shopify://products/tlv-amplified-self-powered-6-5-party-speaker-with-led-light-bt-and-tws",
+        "link_style": "button",
+        "background_type": "full_width",
+        "text_width": "fill",
+        "text_position": "bottom_center",
+        "text_color": "#ffffff",
+        "button_background": "#ff008a",
+        "button_text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "6a4e0cab-6780-4d75-9f9f-a997456c8810": {
+      "type": "image-with-text-block",
+      "disabled": true,
+      "settings": {
+        "reveal_on_scroll": true,
+        "image": "shopify://shop_images/936141f9-56e7-496c-abdf-d60e8c520f0b.jpg",
+        "mobile_image": "shopify://shop_images/036e0bd6-37cd-4c32-af95-1ce36e09a7ee.jpg",
+        "subheading": "",
+        "title": "Warranty And Satisfaction",
+        "content": "<p>As a brand, DS18 is committed to providing high-quality and innovative audio solutions that exceed your expectations. When you choose DS18, you're investing in a trusted and reliable brand that stands behind its products.</p><p>In addition to their exceptional performance and durability, DS18 products also come with a comprehensive Manufacture Defect warranty, </p><p>With commitment to quality Control and customer satisfaction, DS18 offers manufacturer defect warranty protection for their products. This means that if you encounter any issues with your purchase during the warranty period, DS18 will work with you to address the problem and find a resolution.</p><p>So not only can you be confident in the quality of your DS18 purchase, but you can also feel assured that you have manufacturer defect warranty protection should you need it. Thank you again for choosing DS18, and we look forward to providing you with an exceptional audio experience.</p>",
+        "button_text": "",
+        "button_link": "",
+        "background_type": "boxed",
+        "text_position": "overlap_left",
+        "text_alignment": "left",
+        "text_background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "74fbcaa2-d483-4505-b527-d5cfe689e988": {
+      "type": "featured-products-slider",
+      "blocks": {
+        "template--17043822412092__74fbcaa2-d483-4505-b527-d5cfe689e988-1670337056a834cd3f-0": {
+          "type": "collection",
+          "settings": {
+            "product": "pro-x-6-5-mid-range-loudspeaker-with-rgb-light-bullet-500-watts-4-ohm"
+          }
+        },
+        "504e4eca-48ec-4875-b427-9678bfc9552d": {
+          "type": "collection",
+          "settings": {
+            "product": "ds18-pro-zxi6-4bm-mid-range-loudspeaker-with-bullet-500-watts-4-ohm"
+          }
+        },
+        "125a29e4-7c9b-43ee-9395-cc82f6300c6f": {
+          "type": "collection",
+          "settings": {
+            "product": "pro-6-neodymium-magnet-full-range-loudspeaker-500-watts"
+          }
+        },
+        "72729f30-27e7-4464-8135-d210d0f1a5a8": {
+          "type": "collection",
+          "settings": {
+            "product": "pro-6-neodymium-magnet-midrange-loudspeaker-500-watts"
+          }
+        },
+        "e82d3bd6-2654-4c2a-b301-f5c072319787": {
+          "type": "collection",
+          "settings": {
+            "product": ""
+          }
+        },
+        "36e8c91d-dd1b-4f6b-a7c4-52903b024cc2": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17043822412092__74fbcaa2-d483-4505-b527-d5cfe689e988-1670337056a834cd3f-0",
+        "504e4eca-48ec-4875-b427-9678bfc9552d",
+        "125a29e4-7c9b-43ee-9395-cc82f6300c6f",
+        "72729f30-27e7-4464-8135-d210d0f1a5a8",
+        "e82d3bd6-2654-4c2a-b301-f5c072319787",
+        "36e8c91d-dd1b-4f6b-a7c4-52903b024cc2"
+      ],
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "YOU MAY ALSO LIKE",
+        "content": "",
+        "products_count": 8,
+        "products_per_row": 4,
+        "stack_products": true,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "6bf37e14-5460-4c72-9d09-94efb3d8f993": {
+      "type": "photo-gallery",
+      "blocks": {
+        "template--17043822412092__6bf37e14-5460-4c72-9d09-94efb3d8f993-166929396635d9c4c9-0": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-17.jpg",
+            "link": ""
+          }
+        },
+        "04533037-48c7-4058-ac34-06e59a001164": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-19.jpg",
+            "link": ""
+          }
+        },
+        "c573184f-f80e-41cf-8e5f-2229a6e489c5": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-23.jpg",
+            "link": ""
+          }
+        },
+        "aa88c81d-333f-4fd5-82e0-71fc914d7817": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-8_449de2bf-2577-41ea-b223-2ab262a7781e.jpg",
+            "link": ""
+          }
+        },
+        "bd10d11a-7584-43b9-8ae0-874bced16e21": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-27.jpg",
+            "link": ""
+          }
+        },
+        "5ceb2310-635d-49da-9491-568d1af286b7": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-21.jpg",
+            "link": ""
+          }
+        },
+        "1f55c88e-1bed-4587-bd0f-8f0e9376f8e8": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-22.jpg",
+            "link": ""
+          }
+        },
+        "cf2d5a27-29ac-4937-9407-f2cddcf62bb3": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-6.jpg",
+            "link": ""
+          }
+        },
+        "7e759213-2bce-4073-a8d8-bbabbb68b509": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-12.jpg",
+            "link": "shopify://pages/jeep-bronco"
+          }
+        },
+        "6ad86b36-fa89-49c9-a25c-40c92bbae977": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-18.jpg",
+            "link": ""
+          }
+        },
+        "82714442-62d6-4523-a0b7-e97f4205c77c": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-11.jpg",
+            "link": ""
+          }
+        },
+        "49b54fb9-826c-43b0-8582-88dbe423e5c8": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-24.jpg",
+            "link": ""
+          }
+        },
+        "0a9b2625-0b4b-416f-b5d8-2623176d22bb": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-3-1600-px_de286c8f-262d-4438-b9d5-bedb5315871c.jpg",
+            "link": ""
+          }
+        },
+        "0ac92fc4-b93d-43d2-8af2-a4a8124c8207": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-4.jpg",
+            "link": ""
+          }
+        },
+        "afdfd212-2ca1-4952-b33a-c8ebefa1e862": {
+          "type": "image",
+          "settings": {
+            "logo": "shopify://shop_images/LIFESTYLE-28.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17043822412092__6bf37e14-5460-4c72-9d09-94efb3d8f993-166929396635d9c4c9-0",
+        "04533037-48c7-4058-ac34-06e59a001164",
+        "c573184f-f80e-41cf-8e5f-2229a6e489c5",
+        "aa88c81d-333f-4fd5-82e0-71fc914d7817",
+        "bd10d11a-7584-43b9-8ae0-874bced16e21",
+        "5ceb2310-635d-49da-9491-568d1af286b7",
+        "1f55c88e-1bed-4587-bd0f-8f0e9376f8e8",
+        "cf2d5a27-29ac-4937-9407-f2cddcf62bb3",
+        "7e759213-2bce-4073-a8d8-bbabbb68b509",
+        "6ad86b36-fa89-49c9-a25c-40c92bbae977",
+        "82714442-62d6-4523-a0b7-e97f4205c77c",
+        "49b54fb9-826c-43b0-8582-88dbe423e5c8",
+        "0a9b2625-0b4b-416f-b5d8-2623176d22bb",
+        "0ac92fc4-b93d-43d2-8af2-a4a8124c8207",
+        "afdfd212-2ca1-4952-b33a-c8ebefa1e862"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "subheading": "",
+        "title": "WE LIKE IT LOUD",
+        "content": "<p>The DS18 team is a staple in the car audio community and attends event & shows worldwide To support its teams mebers and the Audio Community.<br/>Share your install with us by posting on social media and tagging #DS18</p>",
+        "button_text": "",
+        "button_link": "",
+        "stack_logos": true,
+        "background": "#f5f5f5",
+        "text_color": "#282828",
+        "button_background": "#000000",
+        "button_text_color": "rgba(0,0,0,0)",
+        "logo_background": "#000000"
+      }
+    },
+    "judgeme_section_review_widget_09f4": {
+      "type": "apps",
+      "blocks": {
+        "judgeme_review_widget_b8514a2f": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judgeme_review_widget_b8514a2f"
+      ],
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
+    },
+    "9ac67d46-b3b1-4624-a50e-e72ca94c24d7": {
+      "type": "judgeme_carousel_section",
+      "settings": {
+        "maxwidth": 1920
+      }
+    }
+  },
+  "order": [
+    "16823160841bcda229",
+    "main",
+    "16909022846395fdf5",
+    "yth-key-features",
+    "yth-technical-data",
+    "yth-image-with-text",
+    "yth-promotional",
+    "88e1b313-5c19-47cb-9dfb-e8e99d846eb1",
+    "096690e2-06e6-454a-8593-92ab5dd23f9a",
+    "yth-frequently-bought",
+    "yth-related-products",
+    "c5fbf613-3f13-421e-b4da-13624bb96caa",
+    "product-content",
+    "18f80877-980d-405b-a93f-9fe8ed762628",
+    "78635833-e9bb-4ea7-81cd-33c8922a5f7e",
+    "bf2f0a63-9ac1-4210-886f-94b0228e9727",
+    "6a4e0cab-6780-4d75-9f9f-a997456c8810",
+    "74fbcaa2-d483-4505-b527-d5cfe689e988",
+    "6bf37e14-5460-4c72-9d09-94efb3d8f993",
+    "judgeme_section_review_widget_09f4",
+    "9ac67d46-b3b1-4624-a50e-e72ca94c24d7"
+  ]
+}

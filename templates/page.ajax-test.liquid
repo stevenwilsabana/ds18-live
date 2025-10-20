@@ -1,0 +1,135 @@
+<div style="min-height: 700px;">
+  <input type="text" id="input-search" placeholder="Buscar productos..." style="margin-bottom: 10px; padding: 5px; width: 300px;">
+
+  <div id="productos-container">
+    <p>Resultados de búsqueda:</p>
+    <div id="productos"></div>
+  </div>
+</div>
+
+<script>
+  const STOREFRONT_ACCESS_TOKEN = "7662b9fe391aa8637b49ce1cb4cf91df";
+  const SHOPIFY_STORE_DOMAIN = "ds18caraudio.myshopify.com";
+
+  document.addEventListener('DOMContentLoaded', function () {
+    let searchInput = document.getElementById('input-search');
+    
+    searchInput.addEventListener('input', function () {
+      let query = searchInput.value.trim();
+
+      // Solo buscar si hay al menos 3 caracteres
+      if (query.length >= 3) {
+        buscarTodosLosProductos(query);
+      } else {
+        document.getElementById('productos').innerHTML = ''; // Limpiar resultados si la búsqueda es menor a 3 caracteres
+      }
+    });
+  });
+
+  async function buscarTodosLosProductos(query) {
+    let productosContainer = document.getElementById('productos');
+    productosContainer.innerHTML = '<p>Buscando productos...</p>'; // Muestra mensaje de carga
+
+    let productos = [];
+    let cursor = null;
+    let hasNextPage = true;
+
+    while (hasNextPage) {
+      let data = await fetchProductos(query, cursor);
+      if (!data) break;
+
+      let edges = data.products.edges;
+      productos = productos.concat(edges.map(edge => edge.node));
+
+      hasNextPage = data.products.pageInfo.hasNextPage;
+      cursor = edges.length > 0 ? edges[edges.length - 1].cursor : null;
+    }
+
+    // Mostrar resultados
+    if (productos.length === 0) {
+      productosContainer.innerHTML = '<p>No se encontraron productos.</p>';
+      return;
+    }
+
+    productosContainer.innerHTML = ''; // Limpiar mensaje de carga
+
+    productos.forEach(product => {
+      let productHTML = renderizarProducto(product);
+      productosContainer.innerHTML += productHTML;
+    });
+  }
+
+  function fetchProductos(query, cursor) {
+    let cursorQuery = cursor ? `after: "${cursor}",` : "";
+    let graphqlQuery = `
+      {
+        products(first: 50, ${cursorQuery} query: "title:${query}*") {
+          edges {
+            cursor
+            node {
+              id
+              title
+              handle
+              onlineStoreUrl
+              featuredImage {
+                url
+                altText
+              }
+              variants(first: 250) {
+                edges {
+                  node {
+                    id
+                    title
+                    availableForSale
+                    priceV2 {
+                      amount
+                      currencyCode
+                    }
+                  }
+                }
+              }
+            }
+          }
+          pageInfo {
+            hasNextPage
+          }
+        }
+      }
+    `;
+
+    return fetch(`https://${SHOPIFY_STORE_DOMAIN}/api/2023-07/graphql.json`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Shopify-Storefront-Access-Token": STOREFRONT_ACCESS_TOKEN
+      },
+      body: JSON.stringify({ query: graphqlQuery })
+    })
+    .then(response => response.json())
+    .then(data => data.data)
+    .catch(error => {
+      console.error(`Error en la búsqueda:`, error);
+      return null;
+    });
+  }
+
+  function renderizarProducto(product) {
+    let imageUrl = product.featuredImage ? product.featuredImage.url : "https://via.placeholder.com/150";
+    let imageAlt = product.featuredImage ? product.featuredImage.altText : "Imagen no disponible";
+
+    let variantesHTML = product.variants.edges.map(variant => {
+      let variantPrice = `${variant.node.priceV2.amount} ${variant.node.priceV2.currencyCode}`;
+      let available = variant.node.availableForSale ? "Disponible" : "Agotado";
+      return `<li>${variant.node.title} - ${variantPrice} (${available})</li>`;
+    }).join("");
+
+    return `
+      <div class="product-card">
+        <img src="${imageUrl}" alt="${imageAlt}" style="width:100px; height:auto;">
+        <h2>${product.title}</h2>
+        <ul>${variantesHTML}</ul>
+        <a href="${product.onlineStoreUrl}" target="_blank">Ver más</a>
+      </div>
+    `;
+  }
+</script>

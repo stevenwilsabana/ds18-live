@@ -1,0 +1,144 @@
+<div class="container-variants__heading">
+
+  {% if tooltip != blank %}
+    <div class="item-tooltip">
+      <div class="item-tooltip__icon">
+        {% render 'icon-info' %}
+      </div>
+      <div class="item-tooltip__note">
+        <div class="item-tooltip__note-content">
+          {{ tooltip }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if customer.b2b? %}
+    <div class="container-variant__label">
+      <p class="heading">{{ heading }}:</p>
+      <div class="container-prices">
+        <p class="wholesale"><span>Your Price:</span><span class="plus">+</span><span class="price-value"></span></p>
+        <p class="retail">(<span>Retail:</span><span class="plus">+</span><span class="price-retail"></span>)</p>
+      </div>
+    </div>
+  {% else %}
+    <p class="container-variant__label">
+      <span class="heading">{{ heading }}</span>: <span class="plus">+</span>
+      <span class="price-value"></span>
+    </p>
+  {% endif %}
+</div>
+
+
+
+<div class="container-variant__variants">
+  {% for variants in variants_set %}
+    {% assign product_variant = variants.product %}
+    {% if variants.featured_image %}{% assign imagenVariant = variants.featured_image %}{% else %}{% assign imagenVariant = product_variant.featured_image %}{% endif %}
+    {% if variants.available %}
+      <div class="variants-items">
+        <input type="radio"
+          id="{{ input }}-{{ product_variant.id }}-{{ variants.id }}"
+          name="{{ input }}"
+          value="{{ variants.id }}"
+
+
+
+          {% comment %} Condicional Variantes Especiales {% endcomment %}
+
+            {% if heading contains 'Speakers' or heading contains 'SPEAKERS' %}
+
+              {% if product.id == 7430476791869 %}
+
+                {% if variants.id == 40586756259901 or variants.id == 39885901135933 or variants.id == 12335978872893 or variants.id == 40410860879933 %}
+                  data-price="{{ variants.price | times: 4 }}"
+                  data-qty="4"
+                  data-retail="0"
+                {% elsif variants.id == 7796460847165 or variants.id == 12463513272381 or variants.id == 31908836409405 or variants.id == 31906847621181 or variants.id == 29541672681533 %}
+                  data-price="{{ variants.price | times: 1 }}"
+                  data-qty="1"
+                  data-retail="0"
+                {% else %}
+                  data-price="{{ variants.price | times: 2 }}"
+                  data-qty="2"
+                  data-retail="0"
+                {% endif %}
+
+              {% else %}
+              
+                {% if variants.id == 40586756259901 or variants.id == 39885901135933 or variants.id == 12335978872893 or variants.id == 40410860879933 %}
+                  data-price="{{ variants.price | times: 4 }}"
+                  data-qty="4"
+                  data-retail="0"
+                {% else %}
+                  data-price="{{ variants.price | times: 2 }}"
+                  data-qty="2"
+                  data-retail="0"
+                {% endif %}
+                
+              {% endif %}
+  
+            {% elsif heading contains 'Subwoofer' or heading contains 'SUBWOOFER' %}
+  
+              {% if variants.id == 40434772705341 %}
+                data-price="{{ variants.price | times: 2 }}"
+                data-qty="2"
+                data-retail="0"
+              {% else %}
+                data-price="{{ variants.price }}"
+                data-qty="1"
+                data-retail="0"
+              {% endif %}
+            
+            {% else %}
+              
+              data-price="{{ variants.price }}"
+              data-qty="1"
+              data-retail="0"
+              
+            {% endif %}
+
+
+
+          
+          
+          data-sku="{{ variants.sku }}"
+        >
+        <label for="{{ input }}-{{ product_variant.id }}-{{ variants.id }}">
+          <img src="{{ imagenVariant | img_url: '100x' }}">
+          <div class="details">
+            {% if variants.metafields.custom.title_build_set != blank %}
+               <p class="title">{{ variants.metafields.custom.title_build_set.value }}</p>
+            {% else %}
+              {% if variants.title != 'Default Title' %}
+                <p class="title">{{ variants.title }}</p>
+              {% else %}
+                <p class="title">{{ variants.sku }}</p>
+              {% endif %}
+            {% endif %}
+          </div>
+        </label>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  {% if offer_not_include == true %}
+    <div class="variants-items variants-items--not-include">
+        <input type="radio"
+          id="{{ input }}-offer_not_include"
+          name="{{ input }}"
+          value="offer_not_include"
+          data-price="000"
+          data-sku="Not Include"
+        >
+        <label for="{{ input }}-offer_not_include">
+          <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/Untitled-1_5b473fc2-c680-4df2-843f-a7a53faff683_100x.png">
+          <div class="details">
+              <p class="title">Do Not Include</p>
+          </div>
+        </label>
+      </div>
+  {% endif %}
+
+  
+</div>

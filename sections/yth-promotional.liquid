@@ -1,0 +1,41 @@
+<section class="section no-spacing">
+  <div class="section__color-wrapper">
+    <div class="container padding-extra accordion">
+      {% if product.metafields.custom_fields.promotion != blank %}
+        {% for item in product.metafields.custom_fields.promotion %}
+          {% if item.promotional_banner != blank %}
+            {% if item.banner_link != blank %}
+              <a href="{{ item.banner_link }}">
+              <picture>
+                <source media="(orientation: portrait)" srcset="{{ item["promotional_banner_mobile"] }}">
+                {{ item["promotional_banner"] }}
+              </picture>
+              </a>
+            {% else %}
+              <picture>
+                <source media="(orientation: portrait)" srcset="{{ item["promotional_banner_mobile"] }}">
+                {{ item["promotional_banner"] }}
+              </picture>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "DS18 Promotional Banner",
+  "tag": "section",
+  "class": "yth-promotional-banner",
+  "settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+.yth-promotional-banner img {
+  width: 100%;
+  height: auto; 
+}
+{% endstylesheet %}

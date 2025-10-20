@@ -1,0 +1,142 @@
+<style>
+  #tscListCalendar .tscCalendarContainer {
+      padding: 0;
+  }
+  
+  #tscListCalendar .tscCalendarContainer .tscListCard.condensed {
+      margin-bottom: 30px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: white;
+      border: #282828 solid 1px;
+  }
+  
+  #tscListCalendar .tscCalendarContainer .tscListCard .tscListCardImage .tscListCardDate {
+      border-radius: 0 0 5px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: rgb(255 0 3 / 90%);
+  }
+  
+  .section-calendar-custom-events {
+      padding-bottom: 30px;
+  }
+  
+  #tscListCalendar .tscCalendarContainer .tscListCard .tscListCardImage img {
+      height: auto;
+  }
+  
+  #tscListCalendar .tscCalendarContainer .tscListCard .tscListCardImage.condensed {
+      height: auto;
+  }
+  
+  @media only screen and (min-width: 768px){
+      .section-calendar-custom-events {
+          max-width: 950px;
+          margin: auto;
+          padding-bottom: 50px;
+      }
+  
+      #tscListCalendar .tscCalendarContainer .tscListCard .tscListCardImage.condensed {
+          flex-basis: 45%;
+      }
+  
+      #tscListCalendar .tscCalendarContainer .tscListCard .tscListCardEventDetails {
+          flex-basis: 55%;
+      }
+  }
+  
+  
+  @media only screen and (min-width: 950px){
+      #tscListCalendar .tscCalendarContainer .tscListCard .tscListCardImage.condensed {
+          flex-basis: 36%;
+      }
+  
+      #tscListCalendar .tscCalendarContainer .tscListCard .tscListCardEventDetails {
+          flex-basis: 64%;
+      }
+  
+      [src="https://theshopcalendar.s3.amazonaws.com/missing-image.png"]{
+          height: 100%!important;
+      }
+  }
+</style>
+
+<section>
+  <div class="container">
+    <div class="page-header">
+      {%- if section.settings.show_breadcrumb -%}
+      <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb breadcrumb--floating text--xsmall hidden-phone">
+        <ol class="breadcrumb__list" role="list">
+          <li class="breadcrumb__item">
+            <a class="breadcrumb__link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
+          </li>
+
+          <li class="breadcrumb__item">
+            <span class="breadcrumb__link" aria-current="page">{{ page.title }}</span>
+          </li>
+        </ol>
+      </nav>
+        {%- endif -%}
+
+      <div class="page-header__text-wrapper text-container">
+        {%- if section.settings.show_title -%}
+          <h1 class="heading h2">{{ page.title }}</h1>
+        {%- endif -%}
+
+        {%- if template.suffix contains 'contact' or template.suffix contains 'faq' -%}
+          {{- page.content -}}
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- unless template.suffix contains 'contact' or template.suffix contains 'faq' -%}
+      <div class="page-content page-content--{{ section.settings.page_width }} rte">
+        {{- page.content -}}
+      </div>
+    {%- endunless -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page",
+  "class": "shopify-section--main-page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show page title",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumb",
+      "label": "Show Breadcrumbs",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "page_width",
+      "label": "Page width",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium"
+    }
+  ]
+}
+{% endschema %}

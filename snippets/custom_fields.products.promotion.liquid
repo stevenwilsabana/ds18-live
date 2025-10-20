@@ -1,0 +1,35 @@
+{% if product.metafields["custom_fields"]["promotion"] != blank %}
+  <div class="custom-field custom-field__promotion custom-field__type--field-collection-json">
+    <h3 class="custom-field--title">Promotion</h3>
+    <div class="custom-field--value">
+      {% for item in product.metafields["custom_fields"]["promotion"] %}
+        <div class="fc-item fc-index--{{ forloop.index0 }}">
+           {% if item["promotional_banner"] != blank %}
+             <div class="fc-field field__promotional-banner field-type--image">
+               <h4 class="custom-field--title">Promotional Banner</h4>
+               <div class="custom-field--value">
+                 {{ item["promotional_banner"] }}
+               </div>
+             </div>
+           {% endif %}
+           {% if item["banner_link"] != blank %}
+             <div class="fc-field field__banner-link field-type--url">
+               <h4 class="custom-field--title">Banner Link</h4>
+               <div class="custom-field--value">
+                 {{ item["banner_link"] }}
+               </div>
+             </div>
+           {% endif %}
+           {% if item["promotional_banner_mobile"] != blank %}
+             <div class="fc-field field__promotional-banner-mobile field-type--image">
+               <h4 class="custom-field--title">Promotional Banner - Mobile</h4>
+               <div class="custom-field--value">
+                 {{ item["promotional_banner_mobile"] }}
+               </div>
+             </div>
+           {% endif %}
+         </div>
+       {% endfor %}
+    </div>
+  </div>
+{% endif %}

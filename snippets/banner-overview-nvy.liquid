@@ -1,0 +1,13 @@
+<div class="banner-overview-nvy">
+  <div class="banner-overview-nvy__container banner-overview-nvy__container--{{ alignment }} banner-overview-nvy__container--{{ section.id }}">
+    <div class="banner-overview-nvy__imagenes">
+      <img class="banner-mobile" src="{{ backgroundMobile | image_url: width: 1000 }}">
+      <img class="banner-desktop" src="{{ backgroundDesktop | image_url: width: 4000 }}">
+    </div>
+    <div class="banner-overview-nvy__details">
+      <div class="banner-overview-nvy-content">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>

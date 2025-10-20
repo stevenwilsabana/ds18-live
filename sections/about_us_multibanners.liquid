@@ -1,0 +1,105 @@
+<div class="about_us_banners__container">
+
+  <h2>{{ section.settings.heading }}</h2>
+
+  <div class="about_us_banners__content">
+
+    {% for block in section.blocks %}
+      <div class="about_us_banners__banner about_us_banners__banner--{{ forloop.index }} about_us_banners__banner--{{ block.settings.width_imagen }}">
+        <div class="about_us_banners__banner-imagen">
+          {% if block.settings.imagen_mobile %}
+            <img class="imagen imagen--mobile" src="{{ block.settings.imagen_mobile | image_url: width: '1200px'  }}">
+          {% else %}
+            <img class="imagen imagen--mobile" src="{{ block.settings.imagen | image_url: width: '1200px' }}">
+          {% endif %}
+          <img class="imagen imagen--desktop" src="{{ block.settings.imagen | image_url: width: '1200px' }}">
+        </div>
+        <div class="about_us_banners__banner-details">
+          <h5>{{ block.settings.heading }}</h5>
+          <p>{{ block.settings.details }}</p>
+          {% if block.settings.link and block.settings.button %}
+            <a href="{{ block.settings.link }}">
+              {{ block.settings.button }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "About Us Banners NVY",
+    "tag": "section",
+    "class": "about_us_banners",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Categorie",
+        "type": "categorie",
+        "settings": [
+          {
+            "type": "radio",
+            "id": "width_imagen",
+            "label": "Width Imagen",
+            "options": [
+              {
+                "value": "full_width",
+                "label": "Full Width"
+              },
+              {
+                "value": "middle_width",
+                "label": "Middle Width"
+              }
+            ],
+            "default": "full_width"
+          },
+          {
+            "type": "image_picker",
+            "id": "imagen",
+            "label": "Imagen Default"
+          },
+          {
+            "type": "image_picker",
+            "id": "imagen_mobile",
+            "label": "Imagen Mobile (Optional)"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "textarea",
+            "id": "details",
+            "label": "Details"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          }
+        ]
+      }
+  	],
+    "presets": [
+      {
+        "name": "About Us - Banners"
+      }
+    ]
+  }
+{% endschema %}

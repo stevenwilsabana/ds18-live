@@ -1,0 +1,44 @@
+{{ 'styles-final-banner-nvy.css' | asset_url | stylesheet_tag }}
+
+<div class="final-banner-nvy__container">
+  <div class="final-banner-nvy__content-banner">
+    <div class="final-banner-nvy__imagen">
+      <img class="mobile" src="{{ section.settings.imagen_mobile | img_url: 'master' }}">
+      <img class="desktop" src="{{ section.settings.imagen | img_url: 'master' }}">
+    </div>
+    <div class="final-banner-nvy__overlay">
+      <p>{{ section.settings.message }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Final Banner NVY",
+    "tag": "section",
+    "class": "final-banner-nvy",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "imagen_mobile",
+        "label": "Imagen Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagen",
+        "label": "Imagen Desktop"
+      },
+      {
+        "type": "textarea",
+        "id": "message",
+        "label": "Message"
+      }
+    ],
+  	"presets": [
+      {
+        "name": "Final Banner NVY",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

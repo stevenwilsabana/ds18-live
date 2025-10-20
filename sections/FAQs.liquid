@@ -1,0 +1,91 @@
+{{ 'styles-faqs.css' | asset_url | stylesheet_tag }}
+
+<section class="section-faqs">
+
+  <h2 class="section-faqs__title">{{ section.settings.title }}</h2>
+  
+  <ul class="accordion-list accordion-faqs">
+    
+    {% for block in section.blocks %}
+    	
+    	{% case block.type %}
+
+            {% when 'faqs' %}
+    
+              <li {{ block.shopify_attributes }} class="accordion-faqs__item">
+                <h3>{{ block.settings.title_faqs }}</h3>
+                <div class="answer accordion-faqs__answer">
+                  {{ block.settings.answere }}
+                </div>
+              </li>
+    
+    	{% endcase %}
+    
+    {% endfor %}
+    
+  </ul>
+
+</section>
+
+
+
+<script>
+  
+  $(document).ready(function(){
+    $('.accordion-faqs > .accordion-faqs__item > .accordion-faqs__answer').hide();
+      
+    $('.accordion-faqs > .accordion-faqs__item').click(function() {
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active").find(".accordion-faqs__answer").slideUp();
+      } else {
+        $(".accordion-faqs > .accordion-faqs__item.active .accordion-faqs__answer").slideUp();
+        $(".accordion-faqs > .accordion-faqs__item.active").removeClass("active");
+        $(this).addClass("active").find(".accordion-faqs__answer").slideDown();
+      }
+      return false;
+    });
+    
+  });
+  
+</script>
+
+
+{% schema %}
+  {
+    "name": "Faq's",
+	"tag": "section",
+  	"class": "page-faqs",
+    "settings": [
+	  {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      }
+	],
+	"blocks": [
+		{
+			"name": "Question",
+			"type": "faqs",
+			"settings": [
+				{
+					"type": "text",
+                    "id": "title_faqs",
+                    "label": "Question",
+                    "default": "Question"
+				},
+				{
+                    "type": "richtext",
+                    "id": "answere",
+                    "label": "Answere"
+                }
+			]
+		}
+	],
+	"presets": [
+      {
+        "name": "FAQ's",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

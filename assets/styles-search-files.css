@@ -1,0 +1,43 @@
+#search-container {
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 15px 30px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px #333 solid;
+}
+
+#search-results a {
+  display: flex;
+  padding: 10px 15px;
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: all .3s;
+  justify-content: space-between;
+  align-items: center;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 768px){
+  #search-results a:hover {
+      background: black;
+      color: white;
+  } 
+}
+
+
+
+/* Estilos Manuals */
+
+
+div#search-results > div img {
+    width: 100px;
+}

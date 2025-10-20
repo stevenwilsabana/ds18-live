@@ -1,0 +1,19 @@
+{% if collection.metafields["app"]["image"] != blank %}
+  <div class="custom-field custom-field__image custom-field__type--file-reference">
+    <h3 class="custom-field--title">App Image</h3>
+    <div class="custom-field--value">
+      {% assign type = collection.metafields["app"]["image"].value.media_type %}
+      {% case type %}
+        {% when "image" %}
+          {{ collection.metafields["app"]["image"].value | image_url: width: 500 | image_tag }}
+        {% when "video" %}
+          {{ collection.metafields["app"]["image"].value | video_tag: image_size: "500x", width: 500, autoplay: false, controls: true }}
+        {% else %}
+          {% assign file_url = collection.metafields["app"]["image"].value.url %}
+          <a target="_blank" href="{{ file_url }}">{{ collection.metafields["app"]["image"] | media_tag: image_size: "200x" }}</a>
+          <div>{{ file_url | split: '/' | last | split: '?v=' | first }}</div>
+      {% endcase %}
+
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,68 @@
+{{ 'contact-us-nvy.css' | asset_url | stylesheet_tag }}
+
+<div class="multi-blocks-section__container">
+
+  <h3 class="heading">{{ section.settings.heading }}</h3>
+
+  <div class="multi-blocks-section__content">
+    {% for block in section.blocks %}
+      <div class="item item--{{ forloop.index }}">
+        <div class="item-imagen">
+          <img src="{{ block.settings.imagen | img_url: 'master' }}">
+        </div>
+        <div class="item-details">
+          <p class="item-name">{{ block.settings.heading }}</p>
+          <div class="item-description">
+            {{ block.settings.details }}
+          </div>
+        </div>
+        
+      </div>
+    {% endfor %}
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Multi-Blocks Contact-Us",
+    "class": "multi-blocks-section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Item",
+        "type": "item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "imagen",
+            "label": "Imagen"
+          },
+          {
+            "type": "html",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "details",
+            "label": "Details"
+          }
+        ]
+      }
+  	],
+  	"presets": [
+      {
+        "name": "Multi-Blocks Contact-Us",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,91 @@
+<script>
+  
+  const storefrontAccessTokenB2B = 'e1a753d0ddb19e87e5c9fcc76f98c9ed';
+  const graphqlEndpointB2B = 'https://ds18caraudio.myshopify.com/api/2024-04/graphql.json';
+
+  async function fetchAllProductsInCollectionB2B(handle, lastCursor = null) {
+    const query = `
+    {
+      collectionByHandle(handle: "${handle}") {
+        products(first: 250, after: ${lastCursor ? `"${lastCursor}"` : null}) {
+          edges {
+            node {
+              id
+              title
+              handle
+              variants(first: 10) {
+                edges {
+                  node {
+                    id
+                    price {
+                      amount
+                      currencyCode
+                    }
+                    compareAtPrice {
+                      amount
+                      currencyCode
+                    }
+                  }
+                }
+              }
+            }
+            cursor
+          }
+          pageInfo {
+            hasNextPage
+          }
+        }
+      }
+    }`;
+  
+    // console.log('Sending request with query:', query);
+  
+    const response = await fetch(graphqlEndpointB2B, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': storefrontAccessTokenB2B
+      },
+      body: JSON.stringify({ query: query })
+    });
+  
+    if (!response.ok) {
+      console.error('Fetch error:', response.status, response.statusText);
+      return [];
+    }
+  
+    const jsonResponse = await response.json();
+    console.log('Response received:', jsonResponse);
+  
+    if (jsonResponse.errors) {
+      console.error('GraphQL errors:', jsonResponse.errors);
+      return [];
+    }
+  
+    const products = jsonResponse.data.collectionByHandle.products.edges.map(edge => edge.node);
+    const pageInfo = jsonResponse.data.collectionByHandle.products.pageInfo;
+  
+    if (pageInfo.hasNextPage) {
+      const lastCursor = jsonResponse.data.collectionByHandle.products.edges.slice(-1)[0].cursor;
+      return products.concat(await fetchAllProductsInCollectionB2B(handle, lastCursor));
+    } else {
+      return products;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    const collectionHandle = '{{ collection.handle }}'; // Asegúrate de que este handle esté correctamente definido en tu Liquid template.
+    if (!collectionHandle) {
+      console.error('Collection handle is not defined');
+      return;
+    }
+
+    try {
+      const products = await fetchAllProductsInCollectionB2B(collectionHandle);
+      console.log('Products in Collection - api/2024-04:', products);
+    } catch (error) {
+      console.error('Error fetching collection products:', error);
+    }
+  });
+  
+</script>

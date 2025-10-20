@@ -1,0 +1,160 @@
+<style>
+    .header-nav-global {
+        background: #000000;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-nav-global__container {
+        display: flex;
+        padding: 10px 20px;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header-slider-global {
+        width: 100%;
+        border-top: #ffffff70 solid 1px;
+    }
+
+    .header-slider-global__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .header-slider-global__container > button {
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        font-size: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .header-slider-global__container > button.slick-prev {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTE0LjMsMjYuNWwxOC40LDE4LjRjMC44LDAuOCwyLjIsMC44LDMuMSwwYzAuOC0wLjgsMC44LTIuMiwwLTMuMUwxOC45LDI1TDM1LjcsOC4yYzAuOC0wLjgsMC44LTIuMiwwLTMuMSBjLTAuNC0wLjQtMS0wLjYtMS41LTAuNnMtMS4xLDAuMi0xLjUsMC42TDE0LjMsMjMuNUMxMy40LDI0LjMsMTMuNCwyNS43LDE0LjMsMjYuNXoiPjwvcGF0aD48L3N2Zz4=);
+    }
+
+    .header-slider-global__container > button.slick-next {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTM1LjcsMjMuNUwxNy40LDUuMWMtMC44LTAuOC0yLjItMC44LTMuMSwwYy0wLjgsMC44LTAuOCwyLjIsMCwzLjFMMzEuMSwyNUwxNC4zLDQxLjhjLTAuOCwwLjgtMC44LDIuMiwwLDMuMSBjMC40LDAuNCwxLDAuNiwxLjUsMC42YzAuNiwwLDEuMS0wLjIsMS41LTAuNmwxOC40LTE4LjRDMzYuNiwyNS43LDM2LjYsMjQuMywzNS43LDIzLjV6Ij48L3BhdGg+PC9zdmc+);
+    }
+
+    .header-slider-global__container > .slick-list {
+        width: calc(100% - 50px);
+    }
+
+    .header-slider-global__container * {
+        text-align: center;
+    }
+
+    .header-nav-global__container *,
+    .header-slider-global__container * {
+        color: white;
+        font-size: 13px;
+    }
+
+    .header-nav-global__button-active p {
+        font-weight: bold;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    p.header-nav-global__title {
+        margin: 0;
+        font-size: 11px;
+        font-weight: bold;
+        opacity: 0.8;
+    }
+
+    @media only screen and (min-width: 768px){
+        .header-nav-global {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .header-nav-global__container {
+            padding: 15px 30px;
+            width: 200px;
+            gap: 35px;
+        }
+
+        .header-slider-global {
+            width: calc(100% - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 0px;
+        }
+
+        .header-slider-global__container {
+            width: 80%;
+            max-width: 800px;
+            position: relative;
+            right: 100px;
+        }
+        
+        .header-nav-global__container *,
+        .header-slider-global__container * {
+            font-size: 14px;
+        }
+        
+        .header-nav-global__button-active {
+            cursor: default;
+        }
+
+        .header-nav-global__button:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        p.header-nav-global__title {
+            font-size: 12px;
+            cursor: default;
+        }
+    }
+</style>
+
+<div class="header-nav-global">
+    <div class="header-nav-global__container">
+        <a class="header-nav-global__button" href="/">
+            <p>DS18</p>
+        </a>
+        <div class="header-nav-global__button-active">
+            <p>NVY</p>
+        </div>
+    </div>
+
+    <div class="header-slider-global">
+        <div class="header-slider-global__container">
+            <div class="header-slider-global__item">
+                <p>Free Shipping on All U.S. Orders</p>
+            </div>
+            <div class="header-slider-global__item">
+                <a href="https://ds18.attn.tv/p/k59/landing-page">Sign Up For News and Exclusive Promotions</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+    $('.header-slider-global__container').slick({
+        autoplay: true,
+        autoplaySpeed: 5000, // tiempo entre slides
+        arrows: true,       // sin flechas
+        dots: false,         // sin puntos
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: false,         // puedes poner true si quieres un efecto de desvanecido
+        speed: 1000
+    });
+});
+</script>

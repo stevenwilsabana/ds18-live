@@ -1,0 +1,29 @@
+<div class="col container-labels">
+
+  {% unless is_sold_out_product %}
+
+    {% if product.tags contains 'pfs:label-new arrival' %}
+      <p class="label-general-pdp label-general-pdp--new">NEW ARRIVAL</p>
+    {% endif %}
+
+    {% if product.tags contains 'pfs:label-flash sale' %}
+      <p class="label-general-pdp label-general-pdp--flash-sale">FLASH SALE</p>
+    {% endif %}
+
+    {% if product.tags contains 'pfs:label-best sellers' %}
+      <p class="label-general-pdp label-general-pdp--best-sellers">BEST SELLER</p>
+    {% endif %}
+
+    {% if product.tags contains 'pfs:label-trending' %}
+      <p class="label-general-pdp label-general-pdp--trending">TRENDING</p>
+    {% endif %}
+
+    {% if product.tags contains 'pfs:label-pre-sale' or product.tags contains 'pfs:label-pre-order' %}
+      <p class="label-general-pdp label-general-pdp--pre-sale">PRE-ORDER</p>
+    {% endif %}
+
+  {% else %}
+    <p class="label-general-pdp label-general-pdp--sold-out">SOLD OUT</p>
+  {% endunless %}
+
+</div>
