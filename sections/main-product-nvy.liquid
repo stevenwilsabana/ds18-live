@@ -24,25 +24,82 @@
   <div class="product-nvy__imagen product-nvy__imagen--{{ section.id }}">
     <div class="product-nvy__imagen-slider">
       <div class="product-nvy__imagen-slider-main">
-        <button class="btn-slider-main-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">{% render 'icon-preview-arrow' %}</button>
+        <button class="btn-slider-main-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">
+          {% render 'icon-preview-arrow' %}
+        </button>
+
         <div class="product-nvy-main--{{ section.id }}">
-          {% for image in product.images %}
-            <img src="{{ image | img_url: 'master' }}" alt="{{ product.title }}-{{ forloop.index }}">
+          {% for media in product.media %}
+            {% case media.media_type %}
+              {% when 'image' %}
+                <div class="product-nvy__slide product-nvy__slide--image">
+                  <img
+                    src="{{ media | img_url: 'master' }}"
+                    alt="{{ media.alt | escape }}"
+                    loading="lazy"
+                  >
+                </div>
+
+              {% when 'video' %}
+                <div class="product-nvy__slide product-nvy__slide--video">
+                  {{ media | video_tag: controls: true, autoplay: true, loop: false, muted: true }}
+                </div>
+
+              {% when 'external_video' %}
+                <div class="product-nvy__slide product-nvy__slide--video">
+                  {{ media | external_video_tag }}
+                </div>
+
+              {% when 'model' %}
+                <div class="product-nvy__slide product-nvy__slide--model">
+                  {{ media | model_viewer_tag }}
+                </div>
+            {% endcase %}
           {% endfor %}
         </div>
-        <button class="btn-slider-main-next--{{ section.id }} slick-button-custom slick-button-custom--next">{% render 'icon-next-arrow' %}</button>
+
+        <button class="btn-slider-main-next--{{ section.id }} slick-button-custom slick-button-custom--next">
+          {% render 'icon-next-arrow' %}
+        </button>
       </div>
+
       <div class="product-nvy__imagen-slider-thumbnail">
-        <button class="btn-slider-thumbnail-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">{% render 'icon-preview-arrow' %}</button>
+        <button class="btn-slider-thumbnail-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">
+          {% render 'icon-preview-arrow' %}
+        </button>
+
         <div class="product-nvy-thumbnail--{{ section.id }}">
-          {% for image in product.images %}
-            <img src="{{ image | img_url: 'master' }}" alt="{{ product.title }}-{{ forloop.index }}">
+          {% for media in product.media %}
+            {% case media.media_type %}
+              {% when 'image' %}
+                {% comment %} <div class="product-nvy__thumbnail"> {% endcomment %}
+                  <img
+                    src="{{ media | img_url: '150x150' }}"
+                    alt="{{ media.alt | escape }}"
+                    loading="lazy"
+                  >
+                {% comment %} </div> {% endcomment %}
+
+              {% when 'video' or 'external_video' %}
+                <div class="product-nvy__thumbnail product-nvy__thumbnail--video">
+                  <img
+                    src="{{ media.preview_image | img_url: '150x150' }}"
+                    alt="Video thumbnail - {{ media.alt | escape }}"
+                    loading="lazy"
+                  >
+                  <span class="product__thumbnail-badge">{% render 'icon', icon: 'media-video-badge', width: 18, height: 18 %}</span>
+                </div>
+            {% endcase %}
           {% endfor %}
         </div>
-        <button class="btn-slider-thumbnail-next--{{ section.id }} slick-button-custom slick-button-custom--next">{% render 'icon-next-arrow' %}</button>
+
+        <button class="btn-slider-thumbnail-next--{{ section.id }} slick-button-custom slick-button-custom--next">
+          {% render 'icon-next-arrow' %}
+        </button>
       </div>
     </div>
   </div>
+
 
   <div class="product-nvy__details">
     <div class="product-nvy__details-main">
@@ -127,10 +184,6 @@
       </div>
     {% endif %}
 
-    
-
-
-
      <script>
         $(document).ready(function() {
           var $sectionsCompleteSystem = $('.product-nvy__details .complete-the-look');
@@ -160,12 +213,13 @@
       dots: false,
       infinite: false,
       autoplay: false,
-      asNavFor: container.find('.product-nvy-thumbnail--{{ section.id }}')
+      asNavFor: container.find('.product-nvy-thumbnail--{{ section.id }}'),
     });
 
     container.find('.product-nvy-thumbnail--{{ section.id }}').slick({
       slidesToShow: 5,
       slidesToScroll: 1,
+      speed: 0,
       infinite: false,
       autoplay: false,
       prevArrow: container.find('.btn-slider-thumbnail-prev--{{ section.id }}'),
@@ -182,6 +236,32 @@
           }
         }
       ]
+    });
+
+    container.find('.product-nvy-thumbnail--{{ section.id }}').on('afterChange', function(event, slick, currentSlide){
+      const slideCount = slick.slideCount;
+      const slidesToShow = slick.options.slidesToShow;
+
+      if (currentSlide < slideCount - 1) {
+        slick.$nextArrow.removeClass('slick-disabled');
+      }
+
+      const $currentSlide = $(slick.$slides[currentSlide]);
+      const $video = $currentSlide.hasClass('product-nvy__thumbnail--video');
+
+      if ($video) {
+        var $slide = $('.product-nvy__slide.product-nvy__slide--video');
+        var $videos = $slide.find('video');
+        var videoHeight = $videos.height();
+        // If it's a video
+        $('.product-nvy__imagen-slider-main').css({
+          'height': `${videoHeight + 10}px`
+        });
+      } else {
+        $('.product-nvy__imagen-slider-main').css({
+          'height': ''
+        });
+      }
     });
 
   });
