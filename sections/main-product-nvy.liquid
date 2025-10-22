@@ -47,7 +47,7 @@
 
               {% when 'external_video' %}
                 <div class="product-nvy__slide product-nvy__slide--video">
-                  {{ media | external_video_tag }}
+                {{- media | external_video_url: enablejsapi: true, controls: true, loop: false, mute: true, autoplay: true, playlist: media.external_id | external_video_tag -}}
                 </div>
 
               {% when 'model' %}
@@ -204,9 +204,10 @@
 
 <script>
   $(document).ready(function() {
-    var container = $('.product-nvy__imagen--{{ section.id }}');
+    const container = $('.product-nvy__imagen--{{ section.id }}');
+    const mainSlider = $('.product-nvy-main--{{ section.id }}');
     
-    container.find('.product-nvy-main--{{ section.id }}').slick({
+    mainSlider.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       speed: 100,
@@ -237,6 +238,33 @@
           }
         }
       ]
+    });
+
+
+    // When a slide becomes active
+    mainSlider.on('afterChange', function(event, slick, currentSlide) {
+      // Pause all iframes
+      mainSlider.find('iframe[src*="youtube.com"]').each(function() {
+        this.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      });
+
+      // Play only the active one
+      const $activeSlide = $(slick.$slides[currentSlide]);
+      const $iframe = $activeSlide.find('iframe[src*="youtube.com"]');
+      if ($iframe.length) {
+        $iframe[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }
+
+      // Pause uploaded <video> elements
+      mainSlider.find('video').each(function() {
+        this.pause();
+      });
+
+      // Play only the active uploaded <video>
+      const $video = $activeSlide.find('video');
+      if ($video.length) {
+        $video[0].play();
+      }
     });
 
     container.find('.product-nvy-thumbnail--{{ section.id }}').on('afterChange', function(event, slick, currentSlide){
