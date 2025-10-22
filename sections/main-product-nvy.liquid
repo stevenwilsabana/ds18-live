@@ -209,6 +209,7 @@
     container.find('.product-nvy-main--{{ section.id }}').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
+      speed: 100,
       arrows: false,
       dots: false,
       infinite: false,
@@ -251,8 +252,8 @@
 
       if ($video) {
         var $slide = $('.product-nvy__slide.product-nvy__slide--video');
-        var $videos = $slide.find('video');
-        var videoHeight = $videos.height();
+        // var $videos = $slide.find('video');
+        var videoHeight = $slide.height();
         // If it's a video
         $('.product-nvy__imagen-slider-main').css({
           'height': `${videoHeight + 10}px`
