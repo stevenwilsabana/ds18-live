@@ -7,124 +7,133 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
-    "sections": {
-      "custom_liquid_rQCJ9R": {
-        "type": "custom-liquid",
-        "settings": {
-          "subheading": "",
-          "title": "",
-          "liquid": "{{ 'custom-styles-nvy.css' | asset_url | stylesheet_tag }}",
-          "add_vertical_spacing": false,
-          "background_type": "full_width",
-          "background": "rgba(0,0,0,0)",
-          "text_color": "rgba(0,0,0,0)"
-        }
-      },
-      "product_nvy_wg3RVK": {
-        "type": "main-product-nvy",
-        "settings": {
-          "icons_key_feature": "main_product"
-        }
-      },
-      "new_version_tap_nvy_6rUCAz": {
-        "type": "new-version-tap-nvy",
-        "blocks": {
-          "overview_mBKJXA": {
-            "type": "overview",
-            "settings": {
-              "button": "OVERVIEW",
-              "background_imagen_mobile": "{{ product.metafields.custom.nvy_overview_main_banner_background_mobile.value }}",
-              "background_imagen_desktop": "{{ product.metafields.custom.nvy_overview_main_banner_background_desktop.value }}",
-              "content": "{{ product.metafields.custom.nvy_overview_main_banner_content | metafield_tag }}",
-            }
-          },
-          "specifications_qKXXLq": {
-            "type": "specifications",
-            "settings": {
-              "button": "SPECIFICATIONS & MANUAL",
-              "specifications": "{{ product.metafields.custom.nvy_s_m_specifications | metafield_tag }}",
-              "manual": ""
-            }
-          }
-        },
-        "block_order": [
-          "overview_mBKJXA",
-          "specifications_qKXXLq"
-        ],
-        "name": "Taps NVY",
-        "settings": {}
-      },
-      "banner_full_page_nvy_hkwhgX": {
-        "type": "banner-full-page-nvy",
-        "name": "Banner Full Page NVY",
-        "settings": {
-          "imagen_mobile": "{{ product.metafields.custom.nvy_banner_full_page_background_mobile.value }}",
-          "imagen_desktop": "{{ product.metafields.custom.nvy_banner_full_page_background_desktop.value }}"
-        }
-      },
-      "main_taps_product_nvy_neWFng": {
-        "type": "main-taps-product-nvy",
-        "blocks": {
-          "tap_BfFkDU": {
-            "type": "tap",
-            "settings": {
-              "button": "OVERVIEW"
-            }
-          },
-          "tap_rtqRrq": {
-            "type": "tap",
-            "settings": {
-              "button": "SPECIFICATIONS"
-            }
-          },
-          "tap_QyTCeN": {
-            "type": "tap",
-            "settings": {
-              "button": "MANUAL"
-            }
-          }
-        },
-        "block_order": [
-          "tap_BfFkDU",
-          "tap_rtqRrq",
-          "tap_QyTCeN"
-        ],
-        "disabled": true,
-        "settings": {}
-      },
-      "banner_product_nvy_gKbUwq": {
-        "type": "banner-product-nvy",
-        "disabled": true,
-        "settings": {
-        }
-      },
-      "17429231893b0ce66c": {
-        "type": "apps",
-        "blocks": {
-          "judge_me_reviews_review_widget_eExUhg": {
-            "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "judge_me_reviews_review_widget_eExUhg"
-        ],
-        "disabled": true,
-        "settings": {
-          "include_horizontal_margins": true,
-          "include_vertical_margins": true
-        }
+{
+  "sections": {
+    "custom_liquid_rQCJ9R": {
+      "type": "custom-liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "{{ 'custom-styles-nvy.css' | asset_url | stylesheet_tag }}",
+        "add_vertical_spacing": false,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
       }
     },
-    "order": [
-      "custom_liquid_rQCJ9R",
-      "product_nvy_wg3RVK",
-      "new_version_tap_nvy_6rUCAz",
-      "banner_full_page_nvy_hkwhgX",
-      "main_taps_product_nvy_neWFng",
-      "banner_product_nvy_gKbUwq",
-      "17429231893b0ce66c"
-    ]
-  }
-  
+    "product_nvy_wg3RVK": {
+      "type": "main-product-nvy",
+      "settings": {
+        "icons_key_feature": "main_product"
+      }
+    },
+    "new_version_tap_nvy_6rUCAz": {
+      "type": "new-version-tap-nvy",
+      "blocks": {
+        "overview_mBKJXA": {
+          "type": "overview",
+          "settings": {
+            "button": "OVERVIEW",
+            "background_imagen_mobile": "{{ product.metafields.custom.nvy_overview_main_banner_background_mobile.value }}",
+            "background_imagen_desktop": "{{ product.metafields.custom.nvy_overview_main_banner_background_desktop.value }}",
+            "content": "{{ product.metafields.custom.nvy_overview_main_banner_content | metafield_tag }}",
+            "imagen_alignment": ""
+          }
+        },
+        "specifications_qKXXLq": {
+          "type": "specifications",
+          "settings": {
+            "button": "SPECIFICATIONS & MANUAL",
+            "specifications": "{{ product.metafields.custom.nvy_s_m_specifications | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "overview_mBKJXA",
+        "specifications_qKXXLq"
+      ],
+      "name": "Taps NVY",
+      "settings": {}
+    },
+    "banner_full_page_nvy_hkwhgX": {
+      "type": "banner-full-page-nvy",
+      "name": "Banner Full Page NVY",
+      "settings": {
+        "imagen_mobile": "{{ product.metafields.custom.nvy_banner_full_page_background_mobile.value }}",
+        "imagen_desktop": "{{ product.metafields.custom.nvy_banner_full_page_background_desktop.value }}",
+        "details": "{{ product.metafields.custom.nvy_banner_full_page_content | metafield_tag }}"
+      }
+    },
+    "main_taps_product_nvy_neWFng": {
+      "type": "main-taps-product-nvy",
+      "blocks": {
+        "tap_BfFkDU": {
+          "type": "tap",
+          "settings": {
+            "button": "OVERVIEW",
+            "content": ""
+          }
+        },
+        "tap_rtqRrq": {
+          "type": "tap",
+          "settings": {
+            "button": "SPECIFICATIONS",
+            "content": ""
+          }
+        },
+        "tap_QyTCeN": {
+          "type": "tap",
+          "settings": {
+            "button": "MANUAL",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "tap_BfFkDU",
+        "tap_rtqRrq",
+        "tap_QyTCeN"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "banner_product_nvy_gKbUwq": {
+      "type": "banner-product-nvy",
+      "disabled": true,
+      "settings": {
+        "details": ""
+      }
+    },
+    "17429231893b0ce66c": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_eExUhg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_eExUhg"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_rQCJ9R",
+    "product_nvy_wg3RVK",
+    "new_version_tap_nvy_6rUCAz",
+    "banner_full_page_nvy_hkwhgX",
+    "main_taps_product_nvy_neWFng",
+    "banner_product_nvy_gKbUwq",
+    "17429231893b0ce66c"
+  ]
+}
