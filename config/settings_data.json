@@ -437,7 +437,7 @@
       "header-nvy": {
         "type": "header-nvy",
         "settings": {
-          "enable_sticky_header": false,
+          "enable_sticky_header": true,
           "logo": "shopify://shop_images/DS18NVY-LOGO-WEB.png",
           "logo_max_width": 140,
           "mobile_logo_max_width": 100,
