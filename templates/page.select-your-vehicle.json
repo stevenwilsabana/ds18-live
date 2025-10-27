@@ -1,1 +1,236 @@
-{"sections":{"main":{"type":"main-page","settings":{"show_title":false,"show_breadcrumb":false,"page_width":"medium"}},"50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1":{"type":"collection-list","blocks":{"e044a43c-d668-46d3-9129-4108d0d4594e":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/ACURA-V1_3d7a089f-5497-4fd8-838b-05942c4203b6.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/acura-syv","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"9691c74a-3776-49c0-ba42-17cdc66cb2a6":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/BRONCO-V1.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/bronco-syv","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"066c9095-223a-425b-b526-d7cceeec6bf3":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/CANAM-V1.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/n-can-am-syv","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"d59b7160-a714-4dfb-b518-9bafb41c545b":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/CHEVROLET-V2.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/chevy-syv","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"a7790dca-9355-4e51-9def-4f9c47c83028":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/FORD-V2.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/ford-speaker-upgrade","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"b4d12a2b-74df-4f85-8b85-a35079d73469":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/GMC.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/gmc","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"76b79408-f81b-4f60-8118-a5612d3e128b":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/HARLEY-DAVIDSON-V1.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/harley-davidson-1","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"f50d6043-ec64-4ada-b65d-bfd5372ccbd9":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/HONDA-V2_f6791ad3-63b2-4997-8200-a50a4b4d2feb.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/honda","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"42700090-04ef-4758-8c7b-b532d7e2d9b1":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/JEEP-V3_8c3682d3-210c-4183-b067-1d87b98c3f59.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/pages\/jeep","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"0d31d8e8-d74f-4f12-a222-e9e0acf8b4d4":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/POLARIS-V3.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/polaris-syv","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"136c51af-7b2b-4a3a-b4c8-dd066979c7c1":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/RAM-V1.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/ram","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"499b315a-9464-4f69-8bb6-3baf6da434bd":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/TOYOTA-V3.jpg","subheading":"","title":"","link_text":"","link_url":"https:\/\/ds18.com\/collections\/toyota","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"f07ddee5-ec2d-4b5d-90a5-9a98d4870843":{"type":"collection","disabled":true,"settings":{"collection":"","image":"shopify:\/\/shop_images\/YAMAHA-V1.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}}},"block_order":["e044a43c-d668-46d3-9129-4108d0d4594e","9691c74a-3776-49c0-ba42-17cdc66cb2a6","066c9095-223a-425b-b526-d7cceeec6bf3","d59b7160-a714-4dfb-b518-9bafb41c545b","a7790dca-9355-4e51-9def-4f9c47c83028","b4d12a2b-74df-4f85-8b85-a35079d73469","76b79408-f81b-4f60-8118-a5612d3e128b","f50d6043-ec64-4ada-b65d-bfd5372ccbd9","42700090-04ef-4758-8c7b-b532d7e2d9b1","0d31d8e8-d74f-4f12-a222-e9e0acf8b4d4","136c51af-7b2b-4a3a-b4c8-dd066979c7c1","499b315a-9464-4f69-8bb6-3baf6da434bd","f07ddee5-ec2d-4b5d-90a5-9a98d4870843"],"settings":{"reveal_on_scroll":false,"layout":"grid","subheading":"","title":"","background":"rgba(0,0,0,0)","text_color":"rgba(0,0,0,0)"}}},"order":["main","50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": false,
+        "show_breadcrumb": false,
+        "page_width": "medium"
+      }
+    },
+    "50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1": {
+      "type": "collection-list",
+      "blocks": {
+        "e044a43c-d668-46d3-9129-4108d0d4594e": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/ACURA.jpg",
+            "subheading": "",
+            "title": "Acura",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/acura-syv",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "9691c74a-3776-49c0-ba42-17cdc66cb2a6": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/BRONCO.jpg",
+            "subheading": "",
+            "title": "Bronco",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/bronco-syv",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "066c9095-223a-425b-b526-d7cceeec6bf3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CANAM.jpg",
+            "subheading": "",
+            "title": "Can-am",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/n-can-am-syv",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "d59b7160-a714-4dfb-b518-9bafb41c545b": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CHEVROLET.jpg",
+            "subheading": "",
+            "title": "Chevrolet",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/chevy-syv",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "a7790dca-9355-4e51-9def-4f9c47c83028": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/FORD.jpg",
+            "subheading": "",
+            "title": "Ford",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/ford-speaker-upgrade",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "b4d12a2b-74df-4f85-8b85-a35079d73469": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/GMC_3de8c095-0a93-4a46-a347-4386aa6b10ef.jpg",
+            "subheading": "",
+            "title": "Gmc",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/gmc",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "76b79408-f81b-4f60-8118-a5612d3e128b": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HARLEY-DAVIDSON.jpg",
+            "subheading": "",
+            "title": "Harley Davidson",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/harley-davidson-1",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "f50d6043-ec64-4ada-b65d-bfd5372ccbd9": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HONDA.jpg",
+            "subheading": "",
+            "title": "Honda",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/honda",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "42700090-04ef-4758-8c7b-b532d7e2d9b1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/JEEP_e2a96d94-e43e-4909-bc24-04e0e93a28bc.jpg",
+            "subheading": "",
+            "title": "Jeep",
+            "link_text": "",
+            "link_url": "https://ds18.com/pages/jeep",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "0d31d8e8-d74f-4f12-a222-e9e0acf8b4d4": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/POLARIS.jpg",
+            "subheading": "",
+            "title": "Polaris",
+            "link_text": "",
+            "link_url": "shopify://collections/polaris-syv",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "136c51af-7b2b-4a3a-b4c8-dd066979c7c1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/RAM.jpg",
+            "subheading": "",
+            "title": "Ram",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/ram",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "499b315a-9464-4f69-8bb6-3baf6da434bd": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/TOYOTA.jpg",
+            "subheading": "",
+            "title": "Toyota",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/toyota",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "f07ddee5-ec2d-4b5d-90a5-9a98d4870843": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/YAMAHA-V1.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "e044a43c-d668-46d3-9129-4108d0d4594e",
+        "9691c74a-3776-49c0-ba42-17cdc66cb2a6",
+        "066c9095-223a-425b-b526-d7cceeec6bf3",
+        "d59b7160-a714-4dfb-b518-9bafb41c545b",
+        "a7790dca-9355-4e51-9def-4f9c47c83028",
+        "b4d12a2b-74df-4f85-8b85-a35079d73469",
+        "76b79408-f81b-4f60-8118-a5612d3e128b",
+        "f50d6043-ec64-4ada-b65d-bfd5372ccbd9",
+        "42700090-04ef-4758-8c7b-b532d7e2d9b1",
+        "0d31d8e8-d74f-4f12-a222-e9e0acf8b4d4",
+        "136c51af-7b2b-4a3a-b4c8-dd066979c7c1",
+        "499b315a-9464-4f69-8bb6-3baf6da434bd",
+        "f07ddee5-ec2d-4b5d-90a5-9a98d4870843"
+      ],
+      "settings": {
+        "reveal_on_scroll": false,
+        "layout": "grid",
+        "subheading": "",
+        "title": "",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1"
+  ]
+}
