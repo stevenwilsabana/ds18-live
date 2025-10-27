@@ -25,7 +25,11 @@
 
 {%- capture product_form_id -%}product-form-{{ section.id }}-{{ product.id }}{%- endcapture -%}
 
-<div class="product__info" data-device="desktop">
+{% assign templateName = template.suffix %}
+{% if templateName == blank %}
+  {% assign templateName = 'default' %}
+{% endif %}
+<div class="product__info product__info--template-{{ templateName }}" data-device="desktop">
   <div class="product__info_continer">
     
     <!-- PRODUCT META -->
@@ -326,8 +330,9 @@
       </div> -->
     
 
-
-          
+      {% if template.suffix == 'bundles' %}
+        <p class="affirm-as-low-as" data-page-type="product" data-amount="{{ product.price }}"></p>
+      {% endif %}
       <div class="shipsFreeToday">
         <!--<div>Ships Free Next Business Day From Miami, FL, USA</div>-->
 
