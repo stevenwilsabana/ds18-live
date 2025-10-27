@@ -665,6 +665,7 @@
         "type": "shopify://apps/password-page-lock-page/blocks/password_protection/4dc6a6fa-3301-49ba-95e6-03c694327386",
         "disabled": false,
         "settings": {}
+<<<<<<< HEAD
       },
       "5057006142565981955": {
         "type": "shopify://apps/affirm-pay-over-time-messaging/blocks/cart-drawer-embed-block/6dce54be-130d-4d13-9636-1e8f611b3071",
@@ -680,6 +681,8 @@
           "add_to_cart_selector": "",
           "adjacent_element_selector": ""
         }
+=======
+>>>>>>> origin/main
       }
     }
   },
