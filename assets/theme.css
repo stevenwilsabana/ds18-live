@@ -16624,3 +16624,19 @@ mobile-navigation#mobile-menu-drawer li.mobile-nav__item.mobile-nav__item--custo
     width: auto;
     flex: 1;
 }
+
+body[id="page"] .list-collections__item {
+  background-color: #fff;
+}
+
+body[id="page"] .list-collections__item h3 {
+  margin-top: 0;
+  font-size: 23px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+}
