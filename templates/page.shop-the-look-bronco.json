@@ -1,0 +1,458 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_image_F6kqKd": {
+      "type": "hero-image",
+      "settings": {
+        "image": "shopify://shop_images/BANNER-SLINGSHOT-BUILT_b620af83-9b1c-4052-9633-17f880de2be2.jpg",
+        "image_mob": "shopify://shop_images/BANNER-SLINGSHOT-BUILT-MOBILE_3870fd49-f1e5-41d5-9331-771236f8a463.jpg"
+      }
+    },
+    "3b0e221f-4bd9-49d1-8136-8800b1d81417": {
+      "type": "custom-liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "<!-- NEW ESTILES EDITS ESTILOS PRODUCT GRID -->\n{{ 'styles-grid-products-recommendation.css' | asset_url | stylesheet_tag }}",
+        "add_vertical_spacing": false,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "main": {
+      "type": "main-shop-the-look",
+      "disabled": true,
+      "settings": {
+        "header": "SHOP THE LINE",
+        "message": "<p>The more you buy, the more you'll save on the line of your choice.\nWe love creating audio sets, so we offer more discounts when you buy more items in the same line.</p>\n\n<ul>\n<li>One item: <b>regular price</b>\n</li>\n<li>Two items: <b>10%</b>\n</li>\n<li>Three or more items: <b>15%</b>\n</li>\n</ul>\n\n<h6>Get the ideal set!</h6>"
+      }
+    },
+    "a47743cf-58fa-44b6-8be8-bf3a09557c4f": {
+      "type": "shop-the-look-new",
+      "disabled": true,
+      "settings": {
+        "header": "Slingshot",
+        "message": "Create the ideal set and complement the audio of your car with these sensational items.",
+        "background_image": "shopify://shop_images/Screenshot_2023-08-04_at_11.58.38_AM.png",
+        "collection": "shop-the-look-slingshot"
+      }
+    },
+    "rich_text_JaDiLf": {
+      "type": "rich-text",
+      "settings": {
+        "subheading": "",
+        "title": "Upgrade Your Slingshot Audio With DS18",
+        "content": "<p>Choose your components below</p>",
+        "button_text": "",
+        "button_link": "",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "center",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "shop_the_look_FbhAGe": {
+      "type": "shop-the-look-custom",
+      "blocks": {
+        "look_8YWXkt": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/NEW-SLINGSHOT_PRODUCTS_desktop.png",
+            "mobile_image": "shopify://shop_images/NEW-SLINGSHOT_PRODUCTS__mobile.png",
+            "dot_type": "normal",
+            "product_1": "front-kick-panel-loaded-enclosure-2-x-nxl-iq6-bk-2-x-pro-tw1ld-included-2015-up-digital-led-ligths",
+            "product_1_horizontal_position": 52,
+            "product_1_vertical_position": 25,
+            "product_1_horizontal_position_mobile": 75,
+            "product_1_vertical_position_mobile": 51,
+            "product_2": "arm-rest-enclosure-loaded-2-x-6-5-speakers-included-2015-up-digital-led-ligths",
+            "product_2_horizontal_position": 34,
+            "product_2_vertical_position": 24,
+            "product_2_horizontal_position_mobile": 75,
+            "product_2_vertical_position_mobile": 30,
+            "product_3": "polaris-slg-sp6ld",
+            "product_3_horizontal_position": 39,
+            "product_3_vertical_position": 26,
+            "product_3_horizontal_position_mobile": 70,
+            "product_3_vertical_position_mobile": 38,
+            "product_4": "headrest-enclosure-loaded-4-x-nxl-iq6-bk-included-2015-up-digital-led-ligths",
+            "product_4_horizontal_position": 26,
+            "product_4_vertical_position": 34,
+            "product_4_horizontal_position_mobile": 64,
+            "product_4_vertical_position_mobile": 21,
+            "product_5": "ds18-slg-rsub10ld-polaris-slingshot-rear-10-subwoofer-enclosure-with-nxl-10sub-bk",
+            "product_5_horizontal_position": 31,
+            "product_5_vertical_position": 35,
+            "product_5_horizontal_position_mobile": 61,
+            "product_5_vertical_position_mobile": 28,
+            "product_6": "waterfall-center-console-loaded-enclosure-2-x-6-nxliq6-bk-pro-tw7ld-included-2015-up",
+            "product_6_horizontal_position": 35,
+            "product_6_vertical_position": 49,
+            "product_6_horizontal_position_mobile": 50,
+            "product_6_vertical_position_mobile": 34,
+            "product_7": "headrest-enclosure-loaded-4-x-nxl-iq6-bk-included-2015-up-digital-led-ligths",
+            "product_7_horizontal_position": 26,
+            "product_7_vertical_position": 62,
+            "product_7_horizontal_position_mobile": 36,
+            "product_7_vertical_position_mobile": 21,
+            "product_8": "ds18-slg-rsub10ld-polaris-slingshot-rear-10-subwoofer-enclosure-with-nxl-10sub-bk",
+            "product_8_horizontal_position": 31,
+            "product_8_vertical_position": 64,
+            "product_8_horizontal_position_mobile": 37,
+            "product_8_vertical_position_mobile": 28,
+            "product_9": "arm-rest-enclosure-loaded-2-x-6-5-speakers-included-2015-up-digital-led-ligths",
+            "product_9_horizontal_position": 34,
+            "product_9_vertical_position": 74,
+            "product_9_horizontal_position_mobile": 25,
+            "product_9_vertical_position_mobile": 30,
+            "product_10": "polaris-slg-sp6ld",
+            "product_10_horizontal_position": 39,
+            "product_10_vertical_position": 72,
+            "product_10_horizontal_position_mobile": 29,
+            "product_10_vertical_position_mobile": 38,
+            "product_11": "front-kick-panel-loaded-enclosure-2-x-nxl-iq6-bk-2-x-pro-tw1ld-included-2015-up-digital-led-ligths",
+            "product_11_horizontal_position": 51,
+            "product_11_vertical_position": 74,
+            "product_11_horizontal_position_mobile": 25,
+            "product_11_vertical_position_mobile": 51,
+            "product_12": "polaris-slingshot-under-dash-2-x-6-subwoofer-enclosure-with-2-x-zr6-4d",
+            "product_12_horizontal_position": 53,
+            "product_12_vertical_position": 63,
+            "product_12_horizontal_position_mobile": 37,
+            "product_12_vertical_position_mobile": 54,
+            "product_13": "slg-f82ld",
+            "product_13_horizontal_position": 56,
+            "product_13_vertical_position": 81,
+            "product_13_horizontal_position_mobile": 16,
+            "product_13_vertical_position_mobile": 60,
+            "product_14": "slg-f82ld",
+            "product_14_horizontal_position": 56,
+            "product_14_vertical_position": 17,
+            "product_14_horizontal_position_mobile": 84,
+            "product_14_vertical_position_mobile": 60
+          }
+        }
+      },
+      "block_order": [
+        "look_8YWXkt"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "label": "Shop the looks"
+      }
+    },
+    "featured_collections_yyPKWL": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_CMQF3p": {
+          "type": "collection",
+          "settings": {
+            "collection": "polaris-main-menu",
+            "label": "",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_CMQF3p"
+      ],
+      "settings": {
+        "subheading": "SLG SERIES",
+        "title": "FEATURED PRODUCTS",
+        "content": "",
+        "products_count": 8,
+        "products_per_row": 4,
+        "stack_products": false,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "gallery_ChT9T6": {
+      "type": "gallery",
+      "blocks": {
+        "image_zekFrC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC06514_1_a816e65b-3763-4ef3-a05a-428b3c9ee48f.jpg",
+            "caption": ""
+          }
+        },
+        "image_9pmgKn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSCF2708.jpg",
+            "caption": ""
+          }
+        },
+        "image_7YNhjm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC07342_13fbd086-1ff7-4440-bec5-dbd9023b973c.jpg",
+            "caption": ""
+          }
+        },
+        "image_aD9TcG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC06608_e9ecb79c-1b32-4e05-b1b8-81f177afef0e.jpg",
+            "caption": ""
+          }
+        },
+        "image_Fx7pMM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSF7680_1_ed1a902a-74bf-4e8d-805c-219965a1cecf.jpg",
+            "caption": ""
+          }
+        },
+        "image_nwLeX8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC09946_1.jpg",
+            "caption": ""
+          }
+        },
+        "image_hqxVDN": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "caption": ""
+          }
+        },
+        "image_GjeLW6": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/imagen-slignshot-3.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_zekFrC",
+        "image_9pmgKn",
+        "image_7YNhjm",
+        "image_aD9TcG",
+        "image_Fx7pMM",
+        "image_nwLeX8",
+        "image_hqxVDN",
+        "image_GjeLW6"
+      ],
+      "custom_css": [
+        "h3.heading.h2 {text-align: center;}",
+        "prev-next-buttons.gallery__prev-next-buttons.prev-next-buttons {display: none;}",
+        "@media screen and (min-width: 1000px) {prev-next-buttons.gallery__prev-next-buttons.prev-next-buttons {top: -95px; display: flex; } prev-next-buttons.gallery__prev-next-buttons.prev-next-buttons button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Gallery",
+        "show_arrows": true,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "image_with_text_block_i9pbX4": {
+      "type": "image-with-text-block",
+      "disabled": true,
+      "custom_css": [
+        ".container.container--flush .image-with-text-block__content,.container.container--flush .image-with-text-block__content h3 {background: #282828; color: white;}"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "image": "shopify://shop_images/desktop-slg-photo.jpg",
+        "mobile_image": "shopify://shop_images/mobile-slg-photo-v2.jpg",
+        "subheading": "",
+        "title": "Elevating Your Slingshot's Audio",
+        "content": "<p>The SLG Series was born out of the desire to elevate the driving experience for Slingshot owners worldwide. Our team of experts understood that the typical Slingshot audio setup often fell short in delivering the immersive sound quality that true audiophiles crave. Our team set out to create something that would seamlessly blend aesthetics, engineering, and cutting-edge technology to achieve an unparalleled audio experience in the Slingshot.</p>",
+        "button_text": "",
+        "button_link": "",
+        "background_type": "full_width",
+        "text_position": "left",
+        "text_alignment": "center",
+        "text_background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "custom_liquid_JFfnFM": {
+      "type": "custom-liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "{{ 'style-shop-the-look-slignshot.css' | asset_url | stylesheet_tag }}",
+        "add_vertical_spacing": false,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "reviews_custom_BTNMWh": {
+      "type": "reviews-custom",
+      "blocks": {
+        "reviews_home_gWE8Gg": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "front-kick-panel-loaded-enclosure-2-x-nxl-iq6-bk-2-x-pro-tw1ld-included-2015-up-digital-led-ligths",
+            "title_review": "Perfect",
+            "review": "WOW—what a difference! Paired with the NXL-IQ6’s and PRO-TW1L tweeters the clarity is unreal!",
+            "buyer": "Mike T.",
+            "date": "July 18, 2024"
+          }
+        },
+        "reviews_home_zw84Jr": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "headrest-enclosure-loaded-4-x-nxl-iq6-bk-included-2015-up-digital-led-ligths",
+            "title_review": "Nice job",
+            "review": "I just installed the DS18 SLG-HD6V2 headrest pods on my Polaris Slingshot, and they’re a total game-changer. First off, the installation was super easy. As for the sound? INSANE. The open baffle design really makes a difference—you can hear every detail.",
+            "buyer": "Terrence P.",
+            "date": "December 9, 2024"
+          }
+        },
+        "reviews_home_k6b78x": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "polaris-slg-sp6ld",
+            "title_review": "Powerful Bass",
+            "review": "The clarity from the midrange speakers and tweeters is unreal—powerful bass and crisp highs, even at highway speeds.",
+            "buyer": "Jason M.",
+            "date": "January 3, 2025"
+          }
+        },
+        "reviews_home_dbQNGe": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "arm-rest-enclosure-loaded-2-x-6-5-speakers-included-2015-up-digital-led-ligths",
+            "title_review": "Great",
+            "review": "The installation was super simple with the OEM bolts, and the fit looks factory-made. I paired them with the NXL-IQ, and the quality is next-level.",
+            "buyer": "Alex M.",
+            "date": "Feberuary 8, 2025"
+          }
+        },
+        "reviews_home_PcLr8e": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "ds18-slg-rsub10ld-polaris-slingshot-rear-10-subwoofer-enclosure-with-nxl-10sub-bk",
+            "title_review": "YEAH!",
+            "review": "I can finally FEEL the music in my Slingshot!",
+            "buyer": "L.M.",
+            "date": "November 6, 2024"
+          }
+        },
+        "reviews_home_BQqCnn": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "polaris-slingshot-under-dash-2-x-6-subwoofer-enclosure-with-2-x-zr6-4d",
+            "title_review": "Loving it",
+            "review": "Installation was a breeze, and the durable, weatherproof design holds up perfectly in any conditions. My Slingshot has never sounded better!",
+            "buyer": "Tyler S.",
+            "date": "July 23, 2024"
+          }
+        },
+        "reviews_home_EErNwG": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "slg-udsd6ld-20up",
+            "title_review": "Absolutely worth it!",
+            "review": "This enclosure brought my Slingshot’s audio to life! Absolutely worth it!",
+            "buyer": "Chris J.",
+            "date": "March 15, 2024"
+          }
+        },
+        "reviews_home_gzeNm7": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "polaris-slingshot-waterfall-center-console-8-enclosure-with-nxl-8-bk-and-pro-tw1l",
+            "title_review": "This is a must have if u r adding aftermarket sound system to your slingshot",
+            "review": "Love the sound quality, cant beat the prices and it looks amazing with led lights at night, i added bluetooth led light module control kit, i love it",
+            "buyer": "K.W.",
+            "date": "March 15, 2024"
+          }
+        },
+        "reviews_home_k6zxWb": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "polaris-slingshot-arm-rest-6-5-enclosure-with-nxl-6-bk-and-pro-tw1l",
+            "title_review": "It fits R seats too",
+            "review": "I have R seats in my slingshot and the professional installer said it will fit so i trusted him and it sounds amazing along with some other some DS18 speakers and amp",
+            "buyer": "K.W.",
+            "date": "March 15, 2024"
+          }
+        },
+        "reviews_home_wgVVc8": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "polaris-slingshot-arm-rest-6-5-enclosure-with-nxl-6-bk-and-pro-tw1l",
+            "title_review": "Easy installer",
+            "review": "Haven’t installed them yet",
+            "buyer": "Frederick Ridge",
+            "date": "December 20, 2023"
+          }
+        },
+        "reviews_home_eMpqaw": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "polaris-slingshot-headrest-4-x-6-5-enclosure-with-4-x-nxl-6-bk",
+            "title_review": "4x6.5",
+            "review": "I like my setup and the lights works great.",
+            "buyer": "EDDIE GAMBLE",
+            "date": "October 27, 2023"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_home_gWE8Gg",
+        "reviews_home_zw84Jr",
+        "reviews_home_k6b78x",
+        "reviews_home_dbQNGe",
+        "reviews_home_PcLr8e",
+        "reviews_home_BQqCnn",
+        "reviews_home_EErNwG",
+        "reviews_home_gzeNm7",
+        "reviews_home_k6zxWb",
+        "reviews_home_wgVVc8",
+        "reviews_home_eMpqaw"
+      ],
+      "settings": {
+        "heading": "SLINGSHOT PRODUCT REVIEWS",
+        "link_button": "shopify://pages/reviews-1",
+        "button": "Show More"
+      }
+    }
+  },
+  "order": [
+    "hero_image_F6kqKd",
+    "3b0e221f-4bd9-49d1-8136-8800b1d81417",
+    "main",
+    "a47743cf-58fa-44b6-8be8-bf3a09557c4f",
+    "rich_text_JaDiLf",
+    "shop_the_look_FbhAGe",
+    "featured_collections_yyPKWL",
+    "gallery_ChT9T6",
+    "image_with_text_block_i9pbX4",
+    "custom_liquid_JFfnFM",
+    "reviews_custom_BTNMWh"
+  ]
+}
