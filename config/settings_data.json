@@ -599,11 +599,6 @@
         "disabled": false,
         "settings": {}
       },
-      "11724500921838622758": {
-        "type": "shopify://apps/frequently-bought-together/blocks/app-embed-block/b1a8cbea-c844-4842-9529-7c62dbab1b1f",
-        "disabled": false,
-        "settings": {}
-      },
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
@@ -665,24 +660,11 @@
         "type": "shopify://apps/password-page-lock-page/blocks/password_protection/4dc6a6fa-3301-49ba-95e6-03c694327386",
         "disabled": false,
         "settings": {}
-<<<<<<< HEAD
       },
-      "5057006142565981955": {
-        "type": "shopify://apps/affirm-pay-over-time-messaging/blocks/cart-drawer-embed-block/6dce54be-130d-4d13-9636-1e8f611b3071",
-        "disabled": false,
-        "settings": {
-          "logo_align_drawer": "left",
-          "font_size_drawer": 16,
-          "logo_color_drawer": "blue",
-          "logo_type_drawer": "logo",
-          "public_api_key_drawer": "",
-          "cart_drawer_selector": "",
-          "cart_drawer_total_selector": "",
-          "add_to_cart_selector": "",
-          "adjacent_element_selector": ""
-        }
-=======
->>>>>>> origin/main
+      "11724500921838622758": {
+        "type": "shopify://apps/frequently-bought/blocks/app-embed-block/b1a8cbea-c844-4842-9529-7c62dbab1b1f",
+        "disabled": true,
+        "settings": {}
       }
     }
   },

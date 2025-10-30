@@ -16167,7 +16167,6 @@ h2.jdgm-rev-widg__title{text-align:left;}
       font-size: 20px !important;
       text-align:left;
   }
-
   .footer__item-list {
     gap: 0;
     width: 100%;
@@ -16660,11 +16659,4 @@ mobile-navigation#mobile-menu-drawer li.mobile-nav__item.mobile-nav__item--custo
 }
 .newsletterDS button[type="submit"] > svg {
   color: #000;
-}
-.product__info--template-default .product-meta {
-  padding-bottom: 0;
-}
-
-.product__info--template-default .product-form {
-  margin-top: 0;
 }

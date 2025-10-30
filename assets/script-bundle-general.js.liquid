@@ -95,27 +95,9 @@ function $constructor(){
   
 
   $trigger();
-  const total_prices = $TotalPrices();
-  updateAffirmPrice(total_prices);
+  $TotalPrices();
+  
 };
-
-function updateAffirmPrice(total) {
-  // const affirmEl = document.querySelector('.affirm-as-low-as');
-  const affirmEls = document.querySelectorAll('.affirm-as-low-as');
-  if (affirmEls.length == 0) return;
-  const amount = Math.round(parseFloat(total.replace(/[^0-9.]/g, '')) * 100); // must be cents
-
-  // refresh after DOM update
-  setTimeout(() => {
-    affirmEls.forEach(element => {
-      element.setAttribute('data-amount', amount);
-      if (window.affirm && affirm.ui && affirm.ui.refresh) {
-        affirm.ui.refresh();
-      }
-    });
-  }, 1000);
-}
-
 
 function $trigger(){
 
@@ -160,7 +142,6 @@ function $TotalPrices(){
   var TotalPriceGeneral = TotalPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
   $('.purchase-summary .summary-total-general--total__tub').replaceWith('<p class="summary-total-general--total__tub">'+ TotalPriceGeneral +'</p>');
 
-  return TotalPriceGeneral;
 };
 
 window.addEventListener('pplrAppInitiated' , function(e) {
@@ -169,6 +150,5 @@ window.addEventListener('pplrAppInitiated' , function(e) {
 
 $(document).on("click",".product-personalizer > .pplr-wrapper .pplr-drop-item",function() {
     $trigger();
-    const total_prices = $TotalPrices();
-    updateAffirmPrice(total_prices);
+    $TotalPrices();
 });
