@@ -1,1 +1,295 @@
-{"sections":{"main":{"type":"main-page","settings":{"show_title":false,"show_breadcrumb":false,"page_width":"medium"}},"71caa016-5006-4bc1-aa0e-20d104a8edb8":{"type":"collection-list","blocks":{"template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-0":{"type":"collection","settings":{"collection":"mobile-multimedia","image":"shopify:\/\/shop_images\/CATEGORIES-HEADUNITS-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/mobile-multimedia","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-1":{"type":"collection","settings":{"collection":"car-audio-amplifiers","image":"shopify:\/\/shop_images\/CATEGORIES-AMPLIFIERS-V3.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/car-audio-amplifiers","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-2":{"type":"collection","settings":{"collection":"mobile-subwoofers","image":"shopify:\/\/shop_images\/CATEGORIES-SUBWOOFERS-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/mobile-subwoofers","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-3":{"type":"collection","settings":{"collection":"coaxials-and-components","image":"shopify:\/\/shop_images\/CATEGORIES-COAXIAL_AND_COMPONENTS.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/coaxials-and-components","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"3dc14f56-9e2c-47dc-84e7-958cefd46824":{"type":"collection","settings":{"collection":"loudspeakers","image":"shopify:\/\/shop_images\/CATEGORIES-LOUDSPEAKERS-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/loudspeakers","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-4":{"type":"collection","settings":{"collection":"car-audio-tweeters","image":"shopify:\/\/shop_images\/CATEGORIES-TWEETERS-V3.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/car-audio-tweeters","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-5":{"type":"collection","settings":{"collection":"car-audio-drivers","image":"shopify:\/\/shop_images\/CATEGORIES-DRIVERS-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/car-audio-drivers","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"acf90b6a-54f4-4381-9f88-eb631bf1b748":{"type":"collection","settings":{"collection":"car-audio-enclosures","image":"shopify:\/\/shop_images\/CATEGORIES-ENCLOSURES-V3.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/enclosures-all","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"efed9008-c899-4310-9256-e3e025979221":{"type":"collection","settings":{"collection":"car-audio-processors","image":"shopify:\/\/shop_images\/CATEGORIES-AUDIO-PROCESSORS-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/car-audio-processors","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"a68d99f7-aba7-4d1b-b961-986ee7f97e28":{"type":"collection","settings":{"collection":"car-audio-accessories","image":"shopify:\/\/shop_images\/CATEGORIES-ACCESSORIES-_-WIRES-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/car-audio-accessories","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"edd40322-39cb-49ec-b207-c1b3ae09d1e5":{"type":"collection","settings":{"collection":"horns","image":"shopify:\/\/shop_images\/CATEGORIES-HORNS-V2.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"fa69f3c4-e66b-4e88-8e24-62268b6e603b":{"type":"collection","settings":{"collection":"n-grills","image":"shopify:\/\/shop_images\/CATEGORIES-GRILLS-V1.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"c0baf055-0d50-4198-81b1-25380b60656b":{"type":"collection","settings":{"collection":"car-audio-batteries","image":"shopify:\/\/shop_images\/CATEGORIES-BATTERIES-_-CHARGES_1.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"e990521d-7897-4a01-a936-e1b13e64ddf1":{"type":"collection","settings":{"collection":"type_rearviewcamera","image":"shopify:\/\/shop_images\/CATEGORIES-BACKUP-CAMERAS-V1.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/driver-assist","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"2f48edb4-e84c-4cb8-b7e1-91334db278af":{"type":"collection","settings":{"collection":"car-audio-lighting","image":"shopify:\/\/shop_images\/CATEGORIES-LIGHTING-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/n-car-audio-lighting-search-bar","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"8368eb08-7b9f-4365-a781-ea8ce392be0d":{"type":"collection","settings":{"collection":"car-audio-recone-kits","image":"shopify:\/\/shop_images\/CATEGORIES-RECONE-KITS-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/mobile-recone-kits","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"81844aba-35a8-4a84-bbff-d839a913e9de":{"type":"collection","settings":{"collection":"car-audio-packages-and-bundles","image":"shopify:\/\/shop_images\/CATEGORIES--PACKAGES-AND-BUNDLES-T4_e8d3d44d-3381-4d95-a7ca-3c924cf6880d.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/car-audio-packages-and-bundles","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}}},"block_order":["template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-0","template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-1","template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-2","template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-3","3dc14f56-9e2c-47dc-84e7-958cefd46824","template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-4","template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-5","acf90b6a-54f4-4381-9f88-eb631bf1b748","efed9008-c899-4310-9256-e3e025979221","a68d99f7-aba7-4d1b-b961-986ee7f97e28","edd40322-39cb-49ec-b207-c1b3ae09d1e5","fa69f3c4-e66b-4e88-8e24-62268b6e603b","c0baf055-0d50-4198-81b1-25380b60656b","e990521d-7897-4a01-a936-e1b13e64ddf1","2f48edb4-e84c-4cb8-b7e1-91334db278af","8368eb08-7b9f-4365-a781-ea8ce392be0d","81844aba-35a8-4a84-bbff-d839a913e9de"],"settings":{"reveal_on_scroll":true,"layout":"grid","subheading":"","title":"","background":"rgba(0,0,0,0)","text_color":"rgba(0,0,0,0)"}}},"order":["main","71caa016-5006-4bc1-aa0e-20d104a8edb8"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": false,
+        "show_breadcrumb": false,
+        "page_width": "medium"
+      }
+    },
+    "71caa016-5006-4bc1-aa0e-20d104a8edb8": {
+      "type": "collection-list",
+      "blocks": {
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobile-multimedia",
+            "image": "shopify://shop_images/CATEGORIES-HEADUNITS.jpg",
+            "subheading": "",
+            "title": "Head Units",
+            "link_text": "",
+            "link_url": "shopify://collections/mobile-multimedia",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-amplifiers",
+            "image": "shopify://shop_images/CATEGORIES-AMPLIFIERS_0936a67b-8957-41ca-bc3c-e6e04221e15b.jpg",
+            "subheading": "",
+            "title": "Ampliers",
+            "link_text": "",
+            "link_url": "shopify://collections/car-audio-amplifiers",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobile-subwoofers",
+            "image": "shopify://shop_images/CATEGORIES-SUBWOOFERS.jpg",
+            "subheading": "",
+            "title": "Subwoofers",
+            "link_text": "",
+            "link_url": "shopify://collections/mobile-subwoofers",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "coaxials-and-components",
+            "image": "shopify://shop_images/CATEGORIES-COAXIAL_AND_COMPONENTS_792d0ae9-8bb1-49ab-9234-8afa0c9524f7.jpg",
+            "subheading": "",
+            "title": "Coaxial & components",
+            "link_text": "",
+            "link_url": "shopify://collections/coaxials-and-components",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "3dc14f56-9e2c-47dc-84e7-958cefd46824": {
+          "type": "collection",
+          "settings": {
+            "collection": "loudspeakers",
+            "image": "shopify://shop_images/CATEGORIES-LOUDSPEAKERS.jpg",
+            "subheading": "",
+            "title": "Loudspeakers",
+            "link_text": "",
+            "link_url": "shopify://collections/loudspeakers",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-tweeters",
+            "image": "shopify://shop_images/CATEGORIES-TWEETERS.jpg",
+            "subheading": "",
+            "title": "Tweeters",
+            "link_text": "",
+            "link_url": "shopify://collections/car-audio-tweeters",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-5": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-drivers",
+            "image": "shopify://shop_images/CATEGORIES-DRIVERS.jpg",
+            "subheading": "",
+            "title": "Drivers",
+            "link_text": "",
+            "link_url": "shopify://collections/car-audio-drivers",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "acf90b6a-54f4-4381-9f88-eb631bf1b748": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-enclosures",
+            "image": "shopify://shop_images/CATEGORIES-ENCLOSURES.jpg",
+            "subheading": "",
+            "title": "Enclosures",
+            "link_text": "",
+            "link_url": "shopify://collections/enclosures-all",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "efed9008-c899-4310-9256-e3e025979221": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-processors",
+            "image": "shopify://shop_images/CATEGORIES-AUDIO-PROCESSORS.jpg",
+            "subheading": "",
+            "title": "Audio Processors",
+            "link_text": "",
+            "link_url": "shopify://collections/car-audio-processors",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "a68d99f7-aba7-4d1b-b961-986ee7f97e28": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-accessories",
+            "image": "shopify://shop_images/CATEGORIES-ACCESSORIES-_-WIRES.jpg",
+            "subheading": "",
+            "title": "Accessories & Wires",
+            "link_text": "",
+            "link_url": "shopify://collections/car-audio-accessories",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "edd40322-39cb-49ec-b207-c1b3ae09d1e5": {
+          "type": "collection",
+          "settings": {
+            "collection": "horns",
+            "image": "shopify://shop_images/CATEGORIES-HORNS.jpg",
+            "subheading": "",
+            "title": "Horns",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "fa69f3c4-e66b-4e88-8e24-62268b6e603b": {
+          "type": "collection",
+          "settings": {
+            "collection": "n-grills",
+            "image": "shopify://shop_images/CATEGORIES-GRILLS.jpg",
+            "subheading": "",
+            "title": "Grills",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "c0baf055-0d50-4198-81b1-25380b60656b": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-batteries",
+            "image": "shopify://shop_images/CATEGORIES-BATTERIES.jpg",
+            "subheading": "",
+            "title": "Batteries & Charges",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "e990521d-7897-4a01-a936-e1b13e64ddf1": {
+          "type": "collection",
+          "settings": {
+            "collection": "type_rearviewcamera",
+            "image": "shopify://shop_images/CATEGORIES-BACKUP-CAMERAS.jpg",
+            "subheading": "",
+            "title": "Backup Cameras",
+            "link_text": "",
+            "link_url": "shopify://collections/driver-assist",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "2f48edb4-e84c-4cb8-b7e1-91334db278af": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-lighting",
+            "image": "shopify://shop_images/CATEGORIES-LIGHTING.jpg",
+            "subheading": "",
+            "title": "Lighting",
+            "link_text": "",
+            "link_url": "shopify://collections/n-car-audio-lighting-search-bar",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "8368eb08-7b9f-4365-a781-ea8ce392be0d": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-recone-kits",
+            "image": "shopify://shop_images/CATEGORIES-RECONE-KITS.jpg",
+            "subheading": "",
+            "title": "Recone Kits",
+            "link_text": "",
+            "link_url": "shopify://collections/mobile-recone-kits",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "81844aba-35a8-4a84-bbff-d839a913e9de": {
+          "type": "collection",
+          "settings": {
+            "collection": "car-audio-packages-and-bundles",
+            "image": "shopify://shop_images/CATEGORIES-PACKAGES-AND-BUNDLES.jpg",
+            "subheading": "",
+            "title": "Package & Bundles",
+            "link_text": "",
+            "link_url": "shopify://collections/car-audio-packages-and-bundles",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-0",
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-1",
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-2",
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-3",
+        "3dc14f56-9e2c-47dc-84e7-958cefd46824",
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-4",
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-5",
+        "acf90b6a-54f4-4381-9f88-eb631bf1b748",
+        "efed9008-c899-4310-9256-e3e025979221",
+        "a68d99f7-aba7-4d1b-b961-986ee7f97e28",
+        "edd40322-39cb-49ec-b207-c1b3ae09d1e5",
+        "fa69f3c4-e66b-4e88-8e24-62268b6e603b",
+        "c0baf055-0d50-4198-81b1-25380b60656b",
+        "e990521d-7897-4a01-a936-e1b13e64ddf1",
+        "2f48edb4-e84c-4cb8-b7e1-91334db278af",
+        "8368eb08-7b9f-4365-a781-ea8ce392be0d",
+        "81844aba-35a8-4a84-bbff-d839a913e9de"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "layout": "grid",
+        "subheading": "",
+        "title": "",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "71caa016-5006-4bc1-aa0e-20d104a8edb8"
+  ]
+}
