@@ -1,4 +1,5 @@
 // Evento cuando carga la tienda.
+
 $(document).ready(function() {
   $('.product-form .build-set-container .build-set__item').each(function(){
 
@@ -43,7 +44,9 @@ $(document).ready(function() {
   imagenesChanges();
   $renderSummary();
   $summary();
-  $totalPrice();
+  const total_price = $totalPrice();
+  console.log("total_pricetotal_price", total_price)
+  updateAffirmPrice(total_price)
 
   $('.container-general-prices__regular-prices .price-list .price').show();
 });
@@ -53,9 +56,51 @@ $('.product-form .build-set-container .build-set__item .container-variant__varia
     imagenesChanges();
     $pricesLine($(this).closest('.build-set__item'));
     $summary();
-    $totalPrice();
+
+    const total_price = $totalPrice();
+    updateAffirmPrice(total_price)
 });
 
+
+// function updateAffirmPrice(total) {
+//   const affirmEls = document.querySelectorAll('.affirm-as-low-as');
+//   if (!affirmEls.length) return;
+
+//   // Convert price string (like "$1199.95") into cents
+//   const amount = Math.round(parseFloat(total.replace(/[^0-9.]/g, '')) * 100);
+
+//   // Update each Affirm element
+//   affirmEls.forEach(el => {
+//     setTimeout(() => {
+//       el.setAttribute('data-amount', amount);
+//     }, 0);
+//   });
+
+//   // Reinitialize Affirm widgets after updating
+//   setTimeout(() => {
+//     if (window.affirm && affirm.ui && affirm.ui.refresh) {
+//       affirm.ui.refresh();
+//     }
+//   }, 1000);
+// }
+
+
+function updateAffirmPrice(total) {
+  // const affirmEl = document.querySelector('.affirm-as-low-as');
+  const affirmEls = document.querySelectorAll('.affirm-as-low-as');
+  if (affirmEls.length == 0) return;
+  const amount = Math.round(parseFloat(total.replace(/[^0-9.]/g, '')) * 100); // must be cents
+
+  // refresh after DOM update
+  setTimeout(() => {
+    affirmEls.forEach(element => {
+      element.setAttribute('data-amount', amount);
+      if (window.affirm && affirm.ui && affirm.ui.refresh) {
+        affirm.ui.refresh();
+      }
+    });
+  }, 1000);
+}
 
 
 // Evento cuando agrega productos en el carrito.
@@ -236,4 +281,6 @@ function $totalPrice() {
   const TotalPriceGlobal = (TotalPrice / 100).toLocaleString("en-US", {style: "currency", currency: "USD"});
   $('.container-general-prices__regular-prices .price-list .price').text(TotalPriceGlobal);
   $('.product-form .summary .summary-content .item-summary--total .price--total').text(TotalPriceGlobal);
+
+  return TotalPriceGlobal;
 }

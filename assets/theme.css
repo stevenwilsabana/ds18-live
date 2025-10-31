@@ -16622,7 +16622,13 @@ a#storeify-sl-btn-trigger-popup {
 section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details>p.discount-global {
     display: none!important;
 }*/
+.product__info--template-default .product-meta {
+  padding-bottom: 0;
+}
 
+.product__info--template-default .product-form {
+  margin-top: 0;
+}
 
 
 
