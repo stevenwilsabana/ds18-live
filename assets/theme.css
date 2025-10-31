@@ -16688,3 +16688,6 @@ body[id="page"] .store-nvy .list-collections__item h3 {
 .newsletterDS button[type="submit"] > svg {
   color: #000;
 }
+.header__secondary-links form#header-localization-form {
+  display: none;
+}
