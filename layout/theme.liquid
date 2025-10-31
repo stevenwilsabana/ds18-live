@@ -287,6 +287,14 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
     {% comment %} COLOR LABEL 'NEW ARRIVAL' {% endcomment %}
     <style>
+      @font-face {
+        font-family: 'EurostileExtendedBlack';
+        src: url('{{ "Eurostile.woff2" | asset_url }}') format('woff2'),
+              url('{{ "Eurostile.woff"  | asset_url }}') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
       .boost-sd__product-item .boost-sd__product-label--new-arrival,
       .col.container-labels p.label-general-pdp--new {
         background: {{ settings.background_new_arrival_label }}!important;
@@ -350,7 +358,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 {% if request.host == 'nvyusa.com' and request.path == '/' %}
   <script>location.replace('https://ds18.com/pages/nvy-by-ds18');</script>
 {% endif %}
-
+<script async src="https://cdn1.affirm.com/js/v2/affirm.js"></script>
 
     
   </head>
@@ -360,6 +368,8 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
   {%- if settings.show_image_zoom -%}
     {% assign feature_classes = feature_classes | append: ' features--image-zoom' %}
   {%- endif -%}
+
+  {%- assign store = 'test' -%}
 
   <body
     class="no-focus-outline {{ feature_classes }}"
@@ -417,7 +427,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
         {% comment %}
           {% render 'header-nvy' %}
         {% endcomment %}
-      
+        {%- assign store = 'store-nvy' -%}
         <style>
           body *,
           body h1,
@@ -468,7 +478,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       
 
 
-    <div id="main" role="main" class="anchor {% if request.page_type == 'product' and product.tags contains 'NVY: GATED' %}pp-locked{% endif %}">
+    <div id="main" role="main" class="anchor {{ store }} {% if request.page_type == 'product' and product.tags contains 'NVY: GATED' %}pp-locked{% endif %}">
     
       {%- comment -%}
         IMPLEMENTATION NOTE: on collection and search page, the theme was designed to show on mobile the filter bar and/or sort

@@ -67,13 +67,13 @@
         <div class="list-collections__item-list">
           {%- for block in section.blocks -%}
             {%- capture collection_content -%}
-              {%- if block.settings.subheading != blank -%}
+              {% comment %} {%- if block.settings.subheading != blank -%}
                 <p class="heading heading--small" {% if section.settings.reveal_on_scroll %}reveal{% endif %}>{{ block.settings.subheading | escape }}</p>
-              {%- endif -%}
+              {%- endif -%} {% endcomment %}
 
-              {%- if block.settings.title != blank -%}
+              {% comment %} {%- if block.settings.title != blank -%}
                 <p class="heading {% if settings.heading_text_transform == 'uppercase' %}h4{% else %}h3{% endif %}" {% if section.settings.reveal_on_scroll %}reveal{% endif %}>{{ block.settings.title | escape }}</p>
-              {%- endif -%}
+              {%- endif -%} {% endcomment %}
 
               {%- if block.settings.link_text != blank -%}
                 <span class="heading heading--small link" {% if section.settings.reveal_on_scroll %}reveal{% endif %}>{{ block.settings.link_text | escape }}</span>
@@ -151,8 +151,12 @@
                   {%- if section.settings.layout == 'grid' and collection_image.aspect_ratio > 2.5 -%}
                     {%- assign height_constraint = 800 | at_most: collection_image.height -%}
                     <img class="list-collections__item-image" {% if section.settings.reveal_on_scroll %}reveal{% endif %} loading="lazy" sizes="{{ image_sizes }}" {% render 'image-attributes', image: collection_image, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400', height_constraint: height_constraint, crop: 'center' %}>
+                    <h3>{{ block.settings.title }}</h3>
+                      
                   {%- else -%}
                     <img class="list-collections__item-image" {% if section.settings.reveal_on_scroll %}reveal{% endif %} loading="lazy" sizes="{{ image_sizes }}" {% render 'image-attributes', image: collection_image, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800' %}>
+                    <h3>{{ block.settings.title }}</h3>
+
                   {%- endif -%}
                 {%- else -%}
                   {%- capture collection_image -%}collection-{% cycle '1', '2', '3', '4', '5', '6' %}{%- endcapture -%}

@@ -165,7 +165,9 @@
         "zero": "{{ count }} productos",
         "one": "{{ count }} producto",
         "other": "{{ count }} productos"
-      }
+      },
+      "all_of_collection": "Ver todo",
+      "view_all_products_html": "Ver todo<br> {{ count }} productos"
     },
     "product": {
       "sold_out": "Agotado",

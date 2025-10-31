@@ -1,1 +1,256 @@
-{"sections":{"main":{"type":"main-page","settings":{"show_title":false,"show_breadcrumb":false,"page_width":"medium"}},"50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1":{"type":"collection-list","blocks":{"template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-0":{"type":"collection","disabled":true,"settings":{"collection":"motorcycle-multimedia","image":"shopify:\/\/shop_images\/CATEGORIES-MULTIMEDIA-V3_8eda5acb-087a-404f-a237-edb3ba3331ac.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-1":{"type":"collection","settings":{"collection":"motorcycle-amplifiers","image":"shopify:\/\/shop_images\/CATEGORIES-AMPLIFIERS.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/motorcycle-amplifiers","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-2":{"type":"collection","settings":{"collection":"motorcycle-loudspeakers","image":"shopify:\/\/shop_images\/CATEGORIES-LOUDSPEAKER-V2.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/motorcycle-loudspeakers","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-3":{"type":"collection","settings":{"collection":"motorcycle-woofer-and-subwoofers","image":"shopify:\/\/shop_images\/CATEGORIES-SUBWOOFERS-V2_b1feab60-a4c9-42ea-8c2a-1124c00d7048.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/n-motorcycle-woofer-and-subwoofers","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"3832bda5-ac81-421f-b2b6-4ac94f11e31b":{"type":"collection","disabled":true,"settings":{"collection":"motorcycle-towers","image":"shopify:\/\/shop_images\/CATEGORIES-TOWERS-V2_7e98d64d-7b87-4ece-b62e-f3ca9685a28b.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-4":{"type":"collection","settings":{"collection":"motorcycle-tweeters","image":"shopify:\/\/shop_images\/CATEGORIES-TWEETERS-V3_184171fd-6594-468c-ac12-1f408458673b.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"4fa49063-f5d3-4c40-b6df-3d47990dea18":{"type":"collection","disabled":true,"settings":{"collection":"","image":"shopify:\/\/shop_images\/CATEGORIES-DRIVERS-V2_1e424baa-3ec1-4da3-9461-69a5da8a1fe8.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"3b561fdf-62db-48c2-8509-344929384c1c":{"type":"collection","disabled":true,"settings":{"collection":"motorcycle-enclosures","image":"shopify:\/\/shop_images\/CATEGORIES-ENCLOSURES-V4.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"c5a494df-f46e-46c5-bffe-84e8c393e8eb":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/CATEGORIES-AUDIO-PROCESSORS-V2_beaf29ae-3540-4f0d-9da9-38877254ad6d.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/motorcycle-audio-processors","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-5":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/CATEGORIES-ACCESSORIES-_-WIRES-V1.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/motorcycle-accessories-wires","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"8dfb6f1a-ff94-4507-9a67-16ec47c4c789":{"type":"collection","disabled":true,"settings":{"collection":"","image":"shopify:\/\/shop_images\/CATEGORIES-HORNS-_-GRILLS-V1.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"f7d606c1-a832-41c3-b95c-498ce49858c5":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/CATEGORIES-BATTERIES-_-CHARGES-V1.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/motorcycle-batteries","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"df3c866a-749b-46fa-ac42-fc90ccb57574":{"type":"collection","disabled":true,"settings":{"collection":"","image":"shopify:\/\/shop_images\/CATEGORIES-LIGHTING-V3_31fa823a-73b5-4eb7-b2a2-f86284da5b3b.jpg","subheading":"","title":"","link_text":"","link_url":"","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}},"218c8200-fa43-4d70-9ebd-d40d09454342":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/CATEGORIES-PACKAGES-AND-BUNDLES-V1_74880699-99f4-4932-95f2-50c40ea04018.jpg","subheading":"","title":"","link_text":"","link_url":"shopify:\/\/collections\/motorcycle-packages-and-bundles","text_color":"rgba(0,0,0,0)","overlay_color":"#000000","overlay_opacity":30}}},"block_order":["template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-0","template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-1","template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-2","template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-3","3832bda5-ac81-421f-b2b6-4ac94f11e31b","template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-4","4fa49063-f5d3-4c40-b6df-3d47990dea18","3b561fdf-62db-48c2-8509-344929384c1c","c5a494df-f46e-46c5-bffe-84e8c393e8eb","template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-5","8dfb6f1a-ff94-4507-9a67-16ec47c4c789","f7d606c1-a832-41c3-b95c-498ce49858c5","df3c866a-749b-46fa-ac42-fc90ccb57574","218c8200-fa43-4d70-9ebd-d40d09454342"],"settings":{"reveal_on_scroll":false,"layout":"grid","subheading":"","title":"","background":"rgba(0,0,0,0)","text_color":"rgba(0,0,0,0)"}}},"order":["main","50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": false,
+        "show_breadcrumb": false,
+        "page_width": "medium"
+      }
+    },
+    "50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1": {
+      "type": "collection-list",
+      "blocks": {
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-0": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "motorcycle-multimedia",
+            "image": "shopify://shop_images/CATEGORIES-MULTIMEDIA-V3_8eda5acb-087a-404f-a237-edb3ba3331ac.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "motorcycle-amplifiers",
+            "image": "shopify://shop_images/CATEGORIES-AMPLIFIERS_6d1d561a-008b-48d6-b168-818215123799.jpg",
+            "subheading": "",
+            "title": "Amplifiers",
+            "link_text": "",
+            "link_url": "shopify://collections/motorcycle-amplifiers",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "motorcycle-loudspeakers",
+            "image": "shopify://shop_images/CATEGORIES-CLOUDSPEAKER.jpg",
+            "subheading": "",
+            "title": "Loudspeakers",
+            "link_text": "",
+            "link_url": "shopify://collections/motorcycle-loudspeakers",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "motorcycle-woofer-and-subwoofers",
+            "image": "shopify://shop_images/CATEGORIES-SUBWOOFERS_6eeee87b-6da0-4511-8e16-6e9727face22.jpg",
+            "subheading": "",
+            "title": "Subwoofers",
+            "link_text": "",
+            "link_url": "shopify://collections/n-motorcycle-woofer-and-subwoofers",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "3832bda5-ac81-421f-b2b6-4ac94f11e31b": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "motorcycle-towers",
+            "image": "shopify://shop_images/CATEGORIES-TOWERS-V2_7e98d64d-7b87-4ece-b62e-f3ca9685a28b.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "motorcycle-tweeters",
+            "image": "shopify://shop_images/CATEGORIES-TWEETERS_e3cd0200-769a-44f1-8fa8-f2442ad1d309.jpg",
+            "subheading": "",
+            "title": "Tweeters",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "4fa49063-f5d3-4c40-b6df-3d47990dea18": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CATEGORIES-DRIVERS-V2_1e424baa-3ec1-4da3-9461-69a5da8a1fe8.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "3b561fdf-62db-48c2-8509-344929384c1c": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "motorcycle-enclosures",
+            "image": "shopify://shop_images/CATEGORIES-ENCLOSURES-V4.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "c5a494df-f46e-46c5-bffe-84e8c393e8eb": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CATEGORIES-AUDIO-PROCESSORS_968ee756-7ca8-449d-ba6a-81c76ee32512.jpg",
+            "subheading": "",
+            "title": "Audio Processors",
+            "link_text": "",
+            "link_url": "shopify://collections/motorcycle-audio-processors",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-5": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CATEGORIES-ACCESSORIES-_-WIRES_234c45e6-1289-4f7c-a79e-9262b2eea5d9.jpg",
+            "subheading": "",
+            "title": "Accessories & Wires",
+            "link_text": "",
+            "link_url": "shopify://collections/motorcycle-accessories-wires",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "8dfb6f1a-ff94-4507-9a67-16ec47c4c789": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CATEGORIES-HORNS-_-GRILLS-V1.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "f7d606c1-a832-41c3-b95c-498ce49858c5": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CATEGORIES-BATTERIES_645b32ff-58d0-42fb-b0a7-fc676e5660ae.jpg",
+            "subheading": "",
+            "title": "Batteries & Chargers",
+            "link_text": "",
+            "link_url": "shopify://collections/motorcycle-batteries",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "df3c866a-749b-46fa-ac42-fc90ccb57574": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CATEGORIES-LIGHTING-V3_31fa823a-73b5-4eb7-b2a2-f86284da5b3b.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "218c8200-fa43-4d70-9ebd-d40d09454342": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CATEGORIES-PACKAGES-AND-BUNDLES_fa501a42-4a65-4e52-9be9-8c9285bf47c0.jpg",
+            "subheading": "",
+            "title": "Package & Bundles",
+            "link_text": "",
+            "link_url": "shopify://collections/motorcycle-packages-and-bundles",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-0",
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-1",
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-2",
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-3",
+        "3832bda5-ac81-421f-b2b6-4ac94f11e31b",
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-4",
+        "4fa49063-f5d3-4c40-b6df-3d47990dea18",
+        "3b561fdf-62db-48c2-8509-344929384c1c",
+        "c5a494df-f46e-46c5-bffe-84e8c393e8eb",
+        "template--15121639276605__50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1-16794215021b88931a-5",
+        "8dfb6f1a-ff94-4507-9a67-16ec47c4c789",
+        "f7d606c1-a832-41c3-b95c-498ce49858c5",
+        "df3c866a-749b-46fa-ac42-fc90ccb57574",
+        "218c8200-fa43-4d70-9ebd-d40d09454342"
+      ],
+      "settings": {
+        "reveal_on_scroll": false,
+        "layout": "grid",
+        "subheading": "",
+        "title": "",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "50e301d3-a2fc-4b6b-bb0a-375ab3eb6fb1"
+  ]
+}

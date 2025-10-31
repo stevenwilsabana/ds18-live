@@ -16622,7 +16622,13 @@ a#storeify-sl-btn-trigger-popup {
 section.quantity-discount .quantity-discount__container .quantity-discount__item label .quantity-discount__details>p.discount-global {
     display: none!important;
 }*/
+.product__info--template-default .product-meta {
+  padding-bottom: 0;
+}
 
+.product__info--template-default .product-form {
+  margin-top: 0;
+}
 
 
 
@@ -16646,6 +16652,28 @@ mobile-navigation#mobile-menu-drawer li.mobile-nav__item.mobile-nav__item--custo
     flex: 1;
 }
 
+body[id="page"] .list-collections__item {
+  background-color: #fff;
+}
+
+body[id="page"] .list-collections__item h3 {
+  margin-top: 0;
+  font-size: 23px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+}
+
+body[id="page"] .store-nvy .list-collections__item h3 {
+  font-weight: 800;
+  color: #fff;
+  font-size: 28px;
+  font-family: 'EurostileExtendedBlack' !important;
+}
 .newsletterDS .input__field.input__field--text {
   background-color: #fff;
   color: #000;
@@ -16659,4 +16687,7 @@ mobile-navigation#mobile-menu-drawer li.mobile-nav__item.mobile-nav__item--custo
 }
 .newsletterDS button[type="submit"] > svg {
   color: #000;
+}
+.header__secondary-links form#header-localization-form {
+  display: none;
 }
