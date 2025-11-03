@@ -120,17 +120,19 @@
 
 <div class="banner-full-page-nvy__container">
 
-  <div class="banner-full-page-nvy__images">
-    <img class="banner-full-page-nvy__images--mobile" src={{ section.settings.imagen_mobile | image_url: width: 1500 }}>
-    <img class="banner-full-page-nvy__images--desktop" src={{ section.settings.imagen_desktop | image_url: width: 4000 }}>
-  </div>  
-
-  {% if section.settings.details %}
-    <div class="banner-full-page-nvy__overlay">
-      <div class="banner-full-page-nvy-content">
-        {{ section.settings.details }}
+  {% if section.settings.imagen_desktop != blank %}
+    <div class="banner-full-page-nvy__images">
+      <img class="banner-full-page-nvy__images--mobile" src={{ section.settings.imagen_mobile | image_url: width: 1500 }}>
+      <img class="banner-full-page-nvy__images--desktop" src={{ section.settings.imagen_desktop | image_url: width: 4000 }}>
+    </div>  
+  
+    {% if section.settings.details %}
+      <div class="banner-full-page-nvy__overlay">
+        <div class="banner-full-page-nvy-content">
+          {{ section.settings.details }}
+        </div>
       </div>
-    </div>
+    {% endif %}
   {% endif %}
   
 </div>
