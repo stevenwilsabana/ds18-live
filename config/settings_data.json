@@ -209,7 +209,7 @@
         "settings": {
           "show_payment_icons": false,
           "show_country_selector": false,
-          "show_locale_selector": false,
+          "show_locale_selector": true,
           "show_cookie_bar": false,
           "cookie_bar_title": "Cookie policy",
           "cookie_bar_content": "<p>I agree to the processing of my data in accordance with the conditions set out in the policy of Privacy.</p>"
