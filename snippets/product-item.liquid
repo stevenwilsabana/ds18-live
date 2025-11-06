@@ -596,7 +596,7 @@
           {% endunless %}
 
           {% if is_sold_out_button %}
-            <button disabled class="btn btn--sold-out">SOLD OUT</button>
+            <button disabled class="btn btn--sold-out btn--sold-out-uppercase">{{ 'collection.product.sold_out' | t }}</button>
           {% else %}
 
             {% if product.tags contains 'PACKAGES MADE FOR YOU' %}
