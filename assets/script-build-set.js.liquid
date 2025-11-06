@@ -251,8 +251,16 @@ function $summary(){
       var $sku = $(this).find('.container-variant__variants input:checked').attr('data-sku');
       var $price = (parseFloat($(this).find('.container-variant__variants input:checked').attr('data-price')) / 100).toLocaleString("en-US", {style: "currency", currency: "USD"});
     };
+
+    let summarySpeakers = ''
+    if ($heading.includes('Speakers')) {
+      summarySpeakers = 'item-summary--speakers';
+      if (document.querySelector('.year--2024-2025.active')) {
+        summarySpeakers = 'item-summary--speakers hidden';
+      }
+    }
     
-    var $html = '<div class="item-summary"><p class="heading">'+ $heading +'</p><p class="sku">'+ $sku +'</p><p class="price">'+ $price +'</p></div>';
+    var $html = '<div class="item-summary '+ summarySpeakers +'"><p class="heading">'+ $heading +'</p><p class="sku">'+ $sku +'</p><p class="price">'+ $price +'</p></div>';
     $('.product-form .summary .summary-content .summary-global').append($html);
   });
 };

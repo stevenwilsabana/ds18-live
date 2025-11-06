@@ -36,7 +36,16 @@
     {% assign product_variant = variants.product %}
     {% if variants.featured_image %}{% assign imagenVariant = variants.featured_image %}{% else %}{% assign imagenVariant = product_variant.featured_image %}{% endif %}
     {% if variants.available %}
-      <div class="variants-items">
+      
+
+      {% if heading contains 'Soundbar' or heading contains 'SOUNDBAR' %}
+        {% assign yearModel = 'year--2018-2023 active' %}
+        {% if product_variant.id == 7536592453693 or product_variant.id == 7456277233725 %}
+          {% assign yearModel = 'year--2024-2025' %}
+        {% endif %}
+      {% endif %}
+
+      <div class="variants-items {{ yearModel }}">
         <input type="radio"
           id="{{ input }}-{{ product_variant.id }}-{{ variants.id }}"
           name="{{ input }}"

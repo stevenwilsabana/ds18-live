@@ -8,12 +8,27 @@
 <div class="product-form">
 
   <div class="build-set-container">
-    
+    <div class="build-set__model-year-selector">
+      <span class="build-set__label">Model Year:</span>
+      <div class="build-set__custom-dropdown" id="build-set__model-year-selector">
+        <div class="build-set__dropdown-btn">Select a year</div>
+        <div class="build-set__dropdown-options">
+          <div class="build-set__dropdown-option" data-value="2018">2018</div>
+          <div class="build-set__dropdown-option" data-value="2019">2019</div>
+          <div class="build-set__dropdown-option" data-value="2020">2020</div>
+          <div class="build-set__dropdown-option" data-value="2021">2021</div>
+          <div class="build-set__dropdown-option" data-value="2022">2022</div>
+          <div class="build-set__dropdown-option" data-value="2023">2023</div>
+          <div class="build-set__dropdown-option" data-value="2024">2024</div>
+          <div class="build-set__dropdown-option" data-value="2025">2025</div>
+        </div>
+      </div>
+    </div>
     {% if product.metafields.custom.build_set_1_variants != Blank %}
       <div class="build-set__item">
         {% render 'build-set',
            heading: product.metafields.custom.build_set_1.value,
-           variants_set: product.metafields.custom.build_set_1_variants.value,
+           variants_set: product.metafields.custom.sample_variants.value,
            offer_not_include: product.metafields.custom.build_set_1_offer_not_include_.value,
            tooltip: product.metafields.custom.build_set_1_tooltip.value,
            input: 'field-one'
@@ -22,7 +37,7 @@
     {% endif %}
 
     {% if product.metafields.custom.build_set_2_variants != Blank %}
-      <div class="build-set__item">
+      <div class="build-set__item build-set__item--speakers">
         {% render 'build-set',
            heading: product.metafields.custom.build_set_2.value,
            variants_set: product.metafields.custom.build_set_2_variants.value,
@@ -886,3 +901,64 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
     </div>
   </popover-content>
 {%- endif -%}
+
+<script>
+    const modelYearSelector = document.getElementById('build-set__model-year-selector');
+    const modelYearSelectorBtn = modelYearSelector.querySelector('.build-set__model-year-selector .build-set__dropdown-btn');
+    const modelYearSelectorOptions = modelYearSelector.querySelectorAll('.build-set__model-year-selector .build-set__dropdown-option');
+
+    // Toggle dropdown open/close
+    modelYearSelectorBtn.addEventListener('click', () => {
+      modelYearSelector.classList.toggle('open');
+    });
+
+    // Handle option selection
+    modelYearSelectorOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const yearGroupOne = ['2018', '2019', '2020', '2021', '2022', '2023'];
+        const yearGroupTwo = ['2024', '2025'];
+        const yearGroupOneElements = document.querySelectorAll('.year--2018-2023');
+        const yearGroupTwoElements = document.querySelectorAll('.year--2024-2025');
+        const buildSetSpeakers = document.querySelector('.build-set__item--speakers');
+        const optionValue = option.getAttribute('data-value');
+        modelYearSelectorBtn.textContent = option.textContent;
+        modelYearSelector.classList.remove('open');
+
+
+        if (yearGroupOne.includes(optionValue)) {
+          yearGroupOneElements[0].querySelector('input[type="radio"]').click()
+          buildSetSpeakers.classList.remove('hidden');
+          buildSetSpeakers.querySelector('.variants-items--not-include input[type="radio"]').click()
+          const summaryRowSpeakers = document.querySelector('.item-summary--speakers');
+          summaryRowSpeakers.classList.remove('hidden');
+
+          yearGroupOneElements.forEach(element => {
+            element.classList.add('active');
+          });
+          yearGroupTwoElements.forEach(element => {
+            element.classList.remove('active');
+          });
+        } else {
+          yearGroupTwoElements[0].querySelector('input[type="radio"]').click();
+          buildSetSpeakers.classList.add('hidden');
+          buildSetSpeakers.querySelector('.variants-items--not-include input[type="radio"]').click()
+          const summaryRowSpeakers = document.querySelector('.item-summary--speakers');
+          summaryRowSpeakers.classList.add('hidden');
+
+          yearGroupTwoElements.forEach(element => {
+            element.classList.add('active');
+          });
+          yearGroupOneElements.forEach(element => {
+            element.classList.remove('active');
+          });
+        }
+      });
+    });
+
+    // Close dropdown if clicking outside
+    document.addEventListener('click', (e) => {
+      if (!modelYearSelector.contains(e.target)) {
+        modelYearSelector.classList.remove('open');
+      }
+    });
+  </script>
