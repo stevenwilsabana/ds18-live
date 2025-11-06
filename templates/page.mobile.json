@@ -20,20 +20,6 @@
     "71caa016-5006-4bc1-aa0e-20d104a8edb8": {
       "type": "collection-list",
       "blocks": {
-        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "mobile-multimedia",
-            "image": "shopify://shop_images/CATEGORIES-HEADUNITS.jpg",
-            "subheading": "",
-            "title": "Head Units",
-            "link_text": "",
-            "link_url": "shopify://collections/mobile-multimedia",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-1": {
           "type": "collection",
           "settings": {
@@ -160,6 +146,20 @@
             "overlay_opacity": 30
           }
         },
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobile-multimedia",
+            "image": "shopify://shop_images/CATEGORIES-HEADUNITS.jpg",
+            "subheading": "",
+            "title": "Head Units",
+            "link_text": "",
+            "link_url": "shopify://collections/mobile-multimedia",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "edd40322-39cb-49ec-b207-c1b3ae09d1e5": {
           "type": "collection",
           "settings": {
@@ -260,7 +260,6 @@
         }
       },
       "block_order": [
-        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-0",
         "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-1",
         "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-2",
         "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-3",
@@ -270,6 +269,7 @@
         "acf90b6a-54f4-4381-9f88-eb631bf1b748",
         "efed9008-c899-4310-9256-e3e025979221",
         "a68d99f7-aba7-4d1b-b961-986ee7f97e28",
+        "template--15121639178301__71caa016-5006-4bc1-aa0e-20d104a8edb8-16794215021b88931a-0",
         "edd40322-39cb-49ec-b207-c1b3ae09d1e5",
         "fa69f3c4-e66b-4e88-8e24-62268b6e603b",
         "c0baf055-0d50-4198-81b1-25380b60656b",
