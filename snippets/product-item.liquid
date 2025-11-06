@@ -602,7 +602,7 @@
             {% if product.tags contains 'PACKAGES MADE FOR YOU' %}
               <button class="btn btn--add-to-cart btn--add-to-cart--redirect-product" onclick="window.location.href='{{ product.url }}'">BUILD YOUR SYSTEM</button>
             {% else %}  
-              <button class="btn btn--add-to-cart" onclick="addToCartCollection({{ product.selected_or_first_available_variant.id }})">ADD TO CART</button>
+              <button class="btn btn--add-to-cart" onclick="addToCartCollection({{ product.selected_or_first_available_variant.id }})">{{ 'collection.product.add_to_cart_main' | t }}</button>
             {% endif %}
 
           
