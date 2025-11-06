@@ -103,95 +103,104 @@
             <div class="footer__item footer__item--{{ block.type | replace: '_', '-' }} {% if forloop.first %}is-first{% endif %}" {{ block.shopify_attributes }}>
               {{- block_content -}}
             </div>
+
+            {% if forloop.last %}
+              <div class="footer__item footer__item--{{ block.type | replace: '_', '-' }} {% if forloop.first %}is-first{% endif %}" {{ block.shopify_attributes }}>
+                <p class="footer__item-title heading heading--small">Language</p>
+                <div class="footer__item-content">
+                  {%- assign country_selector = false -%}
+                  {%- if section.settings.show_country_selector and localization.available_countries.size > 1 -%}
+                    {%- assign country_selector = true -%}
+                  {%- endif -%}
+
+                  {%- assign locale_selector = false -%}
+                  {%- if section.settings.show_locale_selector and localization.available_languages.size > 1 -%}
+                    {%- assign locale_selector = true -%}
+                  {%- endif -%}
+                  {%- if country_selector or locale_selector -%}
+                    {%- form 'localization', id: 'header-localization-form', class: 'header__cross-border' -%}
+
+                      {%- if country_selector -%}
+                        <div class="popover-container">
+                          <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+                          <span class="visually-hidden">{{ 'footer.general.country' | t }}</span>
+          
+                          <button type="button" is="toggle-button" class="select select--small {% if locale_selector and settings.button_border_radius > 0 %}select--collapse-end{% endif %} text--xsmall" aria-expanded="false" aria-controls="footer-currency-selector">
+                            {{- localization.country.name }} ({{ localization.country.currency.iso_code }} {% if localization.country.currency.symbol %}{{ localization.country.currency.symbol }}{%- endif -%})
+                            {%- render 'icon' with 'chevron', width: 9, height: 6, inline: true -%}
+                          </button>
+          
+                          <popover-content id="footer-currency-selector" class="popover popover--top popover--left popover--small">
+                            <span class="popover__overlay"></span>
+          
+                            <header class="popover__header">
+                              <span class="popover__title heading h6">{{- 'footer.general.country' | t -}}</span>
+          
+                              <button type="button" class="popover__close-button tap-area tap-area--large" data-action="close" title="{{ 'general.accessibility.close' | t | escape }}">
+                                {%- render 'icon' with 'close' -%}
+                              </button>
+                            </header>
+          
+                            <div class="popover__content popover__content--restrict">
+                              <div class="popover__choice-list">
+                                {%- for country in localization.available_countries -%}
+                                  <button type="submit" name="country_code" value="{{ country.iso_code }}" class="popover__choice-item">
+                                    <span class="popover__choice-label" {% if country.iso_code == localization.country.iso_code %}aria-current="true"{% endif %}>
+                                      {{- country.name }} ({{ country.currency.iso_code }} {% if country.currency.symbol %}{{ country.currency.symbol }}{%- endif -%})
+                                    </span>
+                                  </button>
+                                {%- endfor -%}
+                              </div>
+                            </div>
+                          </popover-content>
+                        </div>
+                      {%- endif -%}
+
+                      {%- if locale_selector -%}
+                        <div class="popover-container">
+                          <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+                          <span class="visually-hidden">{{ 'header.general.language' | t }}</span>
+
+                          <button type="button" is="toggle-button" class="popover-button text--small select select--small" aria-expanded="false" aria-controls="header-localization-form-locale">
+                            {{- localization.language.endonym_name | capitalize -}}
+                            {%- render 'icon' with 'chevron', width: 9, height: 6, inline: true -%}
+                          </button>
+          
+                          <popover-content id="header-localization-form-locale" class="popover">
+                            <span class="popover__overlay"></span>
+          
+                            <header class="popover__header">
+                              <span class="popover__title heading h6">{{- 'header.general.language' | t -}}</span>
+          
+                              <button type="button" class="popover__close-button tap-area tap-area--large" data-action="close" title="{{ 'general.accessibility.close' | t | escape }}">
+                                {%- render 'icon' with 'close' -%}
+                              </button>
+                            </header>
+          
+                            <div class="popover__content">
+                              <div class="popover__choice-list">
+                                {%- for language in localization.available_languages -%}
+                                  <button type="submit" name="locale_code" value="{{ language.iso_code }}" class="popover__choice-item">
+                                    <span class="popover__choice-label" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %}>
+                                      {{- language.endonym_name | capitalize -}}
+                                    </span>
+                                  </button>
+                                {%- endfor -%}
+                              </div>
+                            </div>
+                          </popover-content>
+                        </div>
+                      {%- endif -%}
+                    {%- endform -%}
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
           {%- endif -%}
         {%- endfor -%}
       </div>
 
       <div class="footer__aside">
-        {%- if section.settings.show_country_selector and localization.available_countries.size > 1 -%}
-          {%- assign country_selector = true -%}
-        {%- endif -%}
-
-        {%- if section.settings.show_locale_selector and localization.available_languages.size > 1 -%}
-          {%- assign locale_selector = true -%}
-        {%- endif -%}
-
-        {%- if country_selector or locale_selector -%}
-          {%- form 'localization', id: 'localization_form_footer', class: 'footer__cross-border' -%}
-            {%- if country_selector -%}
-              <div class="popover-container">
-                <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
-                <span class="visually-hidden">{{ 'footer.general.country' | t }}</span>
-
-                <button type="button" is="toggle-button" class="select select--small {% if locale_selector and settings.button_border_radius > 0 %}select--collapse-end{% endif %} text--xsmall" aria-expanded="false" aria-controls="footer-currency-selector">
-                  {{- localization.country.name }} ({{ localization.country.currency.iso_code }} {% if localization.country.currency.symbol %}{{ localization.country.currency.symbol }}{%- endif -%})
-                  {%- render 'icon' with 'chevron', width: 9, height: 6, inline: true -%}
-                </button>
-
-                <popover-content id="footer-currency-selector" class="popover popover--top popover--left popover--small">
-                  <span class="popover__overlay"></span>
-
-                  <header class="popover__header">
-                    <span class="popover__title heading h6">{{- 'footer.general.country' | t -}}</span>
-
-                    <button type="button" class="popover__close-button tap-area tap-area--large" data-action="close" title="{{ 'general.accessibility.close' | t | escape }}">
-                      {%- render 'icon' with 'close' -%}
-                    </button>
-                  </header>
-
-                  <div class="popover__content popover__content--restrict">
-                    <div class="popover__choice-list">
-                      {%- for country in localization.available_countries -%}
-                        <button type="submit" name="country_code" value="{{ country.iso_code }}" class="popover__choice-item">
-                          <span class="popover__choice-label" {% if country.iso_code == localization.country.iso_code %}aria-current="true"{% endif %}>
-                            {{- country.name }} ({{ country.currency.iso_code }} {% if country.currency.symbol %}{{ country.currency.symbol }}{%- endif -%})
-                          </span>
-                        </button>
-                      {%- endfor -%}
-                    </div>
-                  </div>
-                </popover-content>
-              </div>
-            {%- endif -%}
-
-            {%- if locale_selector -%}
-              <div class="popover-container">
-                <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
-                <span class="visually-hidden">{{ 'footer.general.language' | t }}</span>
-
-                <button type="button" is="toggle-button" class="select select--small {% if country_selector and settings.button_border_radius > 0 %}select--collapse-start{% endif %} text--xsmall" aria-expanded="false" aria-controls="footer-locale-selector">
-                  {{- localization.language.endonym_name | capitalize -}}
-                  {%- render 'icon' with 'chevron', width: 9, height: 6, inline: true -%}
-                </button>
-
-                <popover-content id="footer-locale-selector" class="popover popover--top popover--small">
-                  <span class="popover__overlay"></span>
-
-                  <header class="popover__header">
-                    <span class="popover__title heading h6">{{- 'footer.general.language' | t -}}</span>
-
-                    <button type="button" class="popover__close-button tap-area tap-area--large" data-action="close" title="{{ 'general.accessibility.close' | t | escape }}">
-                      {%- render 'icon' with 'close' -%}
-                    </button>
-                  </header>
-
-                  <div class="popover__content">
-                    <div class="popover__choice-list">
-                      {%- for language in localization.available_languages -%}
-                        <button type="submit" name="locale_code" value="{{ language.iso_code }}" class="popover__choice-item">
-                          <span class="popover__choice-label" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %}>
-                            {{- language.endonym_name | capitalize -}}
-                          </span>
-                        </button>
-                      {%- endfor -%}
-                    </div>
-                  </div>
-                </popover-content>
-              </div>
-            {%- endif -%}
-          {%- endform -%}
-        {%- endif -%}
-
         <span class="footer__copyright text--xsmall text--subdued">{{ shop.name }} <span class="square-separator square-separator--block square-separator--subdued"></span> {{ powered_by_link | replace: '<a', '<a class="link--faded"' }}</span>
 
         {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
