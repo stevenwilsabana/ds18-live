@@ -16749,6 +16749,7 @@ body.page-template--black-friday .banner-full-page-nvy-content {
   align-items: flex-start;
   padding-left: 76px;
   padding-top: 88px;
+  width: 100%;
 }
 body.page-template--black-friday .banner-full-page-nvy__overlay h2 {
   font-size: 50px;
