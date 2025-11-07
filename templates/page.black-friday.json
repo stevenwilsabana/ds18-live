@@ -143,7 +143,7 @@
       "type": "hero-image",
       "name": "Hero image",
       "settings": {
-        "image": "shopify://shop_images/20_-BANNER.jpg"
+        "image": "shopify://shop_images/40_-BANNER.jpg"
       }
     },
     "featured_collections_fhPA9y": {
@@ -152,10 +152,10 @@
         "collection_thCG8D": {
           "type": "collection",
           "settings": {
-            "collection": "best-sellers",
+            "collection": "ds18-specials",
             "label": "",
             "button_text": "FIND MORE",
-            "button_url": "shopify://collections/best-sellers"
+            "button_url": "shopify://collections/ds18-specials"
           }
         }
       },
