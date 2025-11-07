@@ -93,36 +93,6 @@
         "spacing": true
       }
     },
-    "text_with_image_eptKMW": {
-      "type": "text-with-image",
-      "blocks": {
-        "item_bEVMHi": {
-          "type": "item",
-          "settings": {
-            "image_position": "left",
-            "subheading": "FAST & FREE SHIPPING",
-            "title": "CHECK OUT THE BEST SELLERS",
-            "content": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_bEVMHi"
-      ],
-      "name": "Text with image",
-      "settings": {
-        "reveal_on_scroll": true,
-        "customId": "",
-        "fullwidth": false,
-        "text_color": "#ffffff",
-        "button-text-color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "bgbackground": "rgba(0,0,0,0)",
-        "spacing": true
-      }
-    },
     "hero_image_WWkAEP": {
       "type": "hero-image",
       "custom_css": [
@@ -174,6 +144,36 @@
       "name": "Hero image",
       "settings": {
         "image": "shopify://shop_images/40_-BANNER.jpg"
+      }
+    },
+    "text_with_image_eptKMW": {
+      "type": "text-with-image",
+      "blocks": {
+        "item_bEVMHi": {
+          "type": "item",
+          "settings": {
+            "image_position": "left",
+            "subheading": "ON EXCLUSIVE DEALS",
+            "title": "",
+            "content": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_bEVMHi"
+      ],
+      "name": "Text with image",
+      "settings": {
+        "reveal_on_scroll": true,
+        "customId": "",
+        "fullwidth": false,
+        "text_color": "#ffffff",
+        "button-text-color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "bgbackground": "rgba(0,0,0,0)",
+        "spacing": true
       }
     },
     "featured_collections_fhPA9y": {
