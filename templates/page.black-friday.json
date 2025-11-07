@@ -11,14 +11,50 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "show_title": false,
         "show_breadcrumb": false,
         "page_width": "large"
       }
+    },
+    "slideshow_eb8piT": {
+      "type": "slideshow",
+      "blocks": {
+        "image_6473mL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PRE-SEMA-Banner-Web-2025_1.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "image_6473mL"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": false,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "slideshow_eb8piT"
   ]
 }
