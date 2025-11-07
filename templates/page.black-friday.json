@@ -315,6 +315,30 @@
         "imagen_desktop": "shopify://shop_images/SLINGSHOT-CAT-BF.jpg",
         "details": "<h2>Click, Select, Upgrade</h2><p>Use DS18's Built your Slingshot Page<br/>to design you dream audio upgrade</p><p><a href=\"/collections/2024-jl-jlu-jt-jeep-wrangler\" title=\"2024 JL/JLU/JT Jeep Wrangler\">START BUILDING NOW</a></p>"
       }
+    },
+    "reviews_custom_N9mj4E": {
+      "type": "reviews-custom",
+      "blocks": {
+        "reviews_home_wBUDEX": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
+            "title_review": "One of the best cheap upgrades for a vehicle",
+            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
+            "buyer": "Andrew A.",
+            "date": "1 day ago"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_home_wBUDEX"
+      ],
+      "name": "Reviews Custom",
+      "settings": {
+        "heading": "LET CUSTOMERS SPEAK FOR US",
+        "link_button": "",
+        "button": "Show More"
+      }
     }
   },
   "order": [
@@ -328,6 +352,7 @@
     "text_with_image_eptKMW",
     "featured_collections_fhPA9y",
     "multi_column_GCxbmp",
-    "banner_full_page_nvy_PUGNQi"
+    "banner_full_page_nvy_PUGNQi",
+    "reviews_custom_N9mj4E"
   ]
 }
