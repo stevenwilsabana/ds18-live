@@ -16730,7 +16730,7 @@ body.page-template--black-friday .multi-column__item .multi-column__text-contain
   text-decoration: none;
   border: 1px solid #9b00ec;
 }
-body.page-template--black-friday h3.heading {
+body.page-template--black-friday .shopify-section--multi-column h3.heading {
   text-align: center;
   font-family: Montserrat, serif !important;
   font-weight: 500;
