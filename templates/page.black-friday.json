@@ -36,7 +36,7 @@
             "button_background": "#ffffff",
             "button_text_color": "#000000",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         }
       },
@@ -51,10 +51,18 @@
         "cycle_speed": 5,
         "background": "rgba(0,0,0,0)"
       }
+    },
+    "countdown_timer_new_CHgzMc": {
+      "type": "countdown-timer-new",
+      "name": "Countdown Timer",
+      "settings": {
+        "deadline": "November 18, 2025 23:59:59"
+      }
     }
   },
   "order": [
     "main",
-    "slideshow_eb8piT"
+    "slideshow_eb8piT",
+    "countdown_timer_new_CHgzMc"
   ]
 }
