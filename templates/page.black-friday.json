@@ -96,7 +96,7 @@
     "hero_image_WWkAEP": {
       "type": "hero-image",
       "custom_css": [
-        ".hero-image__container {max-width: 1600px; margin: 0 auto;}"
+        ".hero-image__container {max-width: 1520px; margin: 0 auto; padding: 0 28px;}"
       ],
       "name": "Hero image",
       "settings": {
@@ -142,7 +142,7 @@
     "hero_image_DMGC86": {
       "type": "hero-image",
       "custom_css": [
-        ".hero-image__container {max-width: 1600px; margin: 80px auto 0;}"
+        ".hero-image__container {max-width: 1520px; margin: 80px auto 0; padding: 0 28px;}"
       ],
       "name": "Hero image",
       "settings": {
