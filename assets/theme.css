@@ -16700,3 +16700,73 @@ body[id="page"] .store-nvy .list-collections__item h3 {
 body.page-template--black-friday {
   background-color: #000000;
 }
+body.page-template--black-friday .multi-column--medium {
+  --section-items-per-row: 4;
+}
+body.page-template--black-friday .multi-column__item {
+  position: relative;
+}
+body.page-template--black-friday .vertical-breather {
+  padding-top: 50px;
+}
+body.page-template--black-friday .multi-column__item .multi-column__text-container {
+  position: absolute;
+    bottom: 66px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body.page-template--black-friday .multi-column__item .multi-column__text-container a {
+  font-family: Montserrat, serif !important;
+  background: #000;
+  width: 75%;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 6px;
+  letter-spacing: 0;
+  text-decoration: none;
+  border: 1px solid #9b00ec;
+}
+body.page-template--black-friday h3.heading {
+  text-align: center;
+  font-family: Montserrat, serif !important;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+body.page-template--black-friday .banner-full-page-nvy__container {
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+body.page-template--black-friday .banner-full-page-nvy__overlay {
+  max-width: 100%;
+}
+body.page-template--black-friday .banner-full-page-nvy-content {
+  align-items: flex-start;
+  padding-left: 76px;
+  padding-top: 88px;
+}
+body.page-template--black-friday .banner-full-page-nvy__overlay h2 {
+  font-size: 50px;
+}
+body.page-template--black-friday .banner-full-page-nvy__overlay p {
+  font-size: 20px;
+}
+body.page-template--black-friday .banner-full-page-nvy__overlay a {
+  font-family: Montserrat, serif !important;
+    background: #000;
+    width: 75%;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 6px;
+    letter-spacing: 0;
+    text-decoration: none;
+    border: 1px solid #9b00ec;
+    position: relative;
+    padding: 10px 60px;
+    top: 35px;
+}
