@@ -306,6 +306,15 @@
         "background": "#000000",
         "text_color": "#ffffff"
       }
+    },
+    "banner_full_page_nvy_PUGNQi": {
+      "type": "banner-full-page-nvy",
+      "name": "Banner Full Page NVY",
+      "settings": {
+        "imagen_mobile": "shopify://shop_images/SLINGSHOT-CAT-BF.jpg",
+        "imagen_desktop": "shopify://shop_images/SLINGSHOT-CAT-BF.jpg",
+        "details": "<h2>Click, Select, Upgrade</h2><p>Use DS18's Built your Slingshot Page to design you dream audio upgrade</p>"
+      }
     }
   },
   "order": [
@@ -318,6 +327,7 @@
     "hero_image_DMGC86",
     "text_with_image_eptKMW",
     "featured_collections_fhPA9y",
-    "multi_column_GCxbmp"
+    "multi_column_GCxbmp",
+    "banner_full_page_nvy_PUGNQi"
   ]
 }
