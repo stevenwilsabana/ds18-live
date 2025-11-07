@@ -164,6 +164,9 @@
       "block_order": [
         "item_bEVMHi"
       ],
+      "custom_css": [
+        "h2 {font-family: Montserrat, serif !important; font-size: 27px; font-weight: 500; letter-spacing: 2px; text-align: center; padding: 25px 0 0;}"
+      ],
       "name": "Text with image",
       "settings": {
         "reveal_on_scroll": true,
