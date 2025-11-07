@@ -301,7 +301,7 @@
         "content": "",
         "column_alignment": "center",
         "mobile_item_size": "medium",
-        "desktop_item_size": "large",
+        "desktop_item_size": "medium",
         "spacing": "tight",
         "background": "#000000",
         "text_color": "#ffffff"
