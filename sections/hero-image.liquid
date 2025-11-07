@@ -2,7 +2,7 @@
   data-section-id="{{ section.id }}"
   class=""
 >
-  <div class="">
+  <div class="hero-image__container">
     {% if section.settings.image != blank %}
       {%- assign img_url = section.settings.image | img_url: 'small' | replace: '_small', '' -%}
       {%- assign img_url_mob = section.settings.image_mob | img_url: 'small' | replace: '_small', '' -%}
