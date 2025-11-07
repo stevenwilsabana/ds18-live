@@ -236,10 +236,61 @@
             "text_alignment": "center",
             "vertical_alignment": "start"
           }
+        },
+        "item_RxB3RD": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/MARINE-CAT-BF.jpg",
+            "image_width": 100,
+            "image_border": "rgba(0,0,0,0)",
+            "title": "",
+            "content": "",
+            "link_text": "SHOP NOW",
+            "link_url": "shopify://collections/car-audio-1",
+            "enable_open_link": true,
+            "link_style": "link",
+            "text_alignment": "center",
+            "vertical_alignment": "start"
+          }
+        },
+        "item_qb64iF": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/JEEP-CAT-BF.jpg",
+            "image_width": 100,
+            "image_border": "rgba(0,0,0,0)",
+            "title": "",
+            "content": "",
+            "link_text": "SHOP NOW",
+            "link_url": "shopify://collections/car-audio-1",
+            "enable_open_link": true,
+            "link_style": "link",
+            "text_alignment": "center",
+            "vertical_alignment": "start"
+          }
+        },
+        "item_ENYV7J": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/POWERSPORT-CAT-BF.jpg",
+            "image_width": 100,
+            "image_border": "rgba(0,0,0,0)",
+            "title": "",
+            "content": "",
+            "link_text": "SHOP NOW",
+            "link_url": "shopify://collections/car-audio-1",
+            "enable_open_link": true,
+            "link_style": "link",
+            "text_alignment": "center",
+            "vertical_alignment": "start"
+          }
         }
       },
       "block_order": [
-        "item_eiF4EG"
+        "item_eiF4EG",
+        "item_RxB3RD",
+        "item_qb64iF",
+        "item_ENYV7J"
       ],
       "name": "Multi-column",
       "settings": {
