@@ -217,6 +217,44 @@
         "button_background": "#099eec",
         "button_text_color": "rgba(0,0,0,0)"
       }
+    },
+    "multi_column_GCxbmp": {
+      "type": "multi-column",
+      "blocks": {
+        "item_eiF4EG": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/CAR-CAT-BF.jpg",
+            "image_width": 100,
+            "image_border": "rgba(0,0,0,0)",
+            "title": "",
+            "content": "",
+            "link_text": "SHOP NOW",
+            "link_url": "shopify://collections/car-audio-1",
+            "enable_open_link": true,
+            "link_style": "link",
+            "text_alignment": "center",
+            "vertical_alignment": "start"
+          }
+        }
+      },
+      "block_order": [
+        "item_eiF4EG"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "reveal_on_scroll": false,
+        "stack_items": false,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "column_alignment": "center",
+        "mobile_item_size": "medium",
+        "desktop_item_size": "medium",
+        "spacing": "normal",
+        "background": "#000000",
+        "text_color": "#ffffff"
+      }
     }
   },
   "order": [
@@ -228,6 +266,7 @@
     "featured_collections_zwKVfy",
     "hero_image_DMGC86",
     "text_with_image_eptKMW",
-    "featured_collections_fhPA9y"
+    "featured_collections_fhPA9y",
+    "multi_column_GCxbmp"
   ]
 }
