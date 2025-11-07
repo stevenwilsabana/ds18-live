@@ -295,7 +295,7 @@
       "name": "Multi-column",
       "settings": {
         "reveal_on_scroll": false,
-        "stack_items": false,
+        "stack_items": true,
         "subheading": "",
         "title": "SHOP BY CATEGORIES",
         "content": "",
