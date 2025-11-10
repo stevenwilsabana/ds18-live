@@ -270,7 +270,7 @@
           "type": "faq_block",
           "settings": {
             "question": "I purchased an item on backorder, when should I expect to receive it?",
-            "answer": "<p>DS18 does everything we can to keep products from going out of stock; but, unexpected trends in sales may lead to product shortages. When this happens, we always post an expected return date of the product on it’s detail page. Once the item is back in stock, we ship all backorders immediately.</p>"
+            "answer": "<p>DS18 does everything we can to keep products from going out of stock; but, unexpected trends in sales may lead to product shortages. Once the item is back in stock, we ship all backorders immediately.</p>"
           }
         }
       },
