@@ -16629,6 +16629,9 @@ body.page-template--black-friday .banner-full-page-nvy__overlay a {
   padding: 10px 60px;
   top: 35px;
 }
+.multi-column__image--mobile {
+  display: none;
+}
 
 @media only screen and (max-width: 767px) {
   .hero-media.showOnDesk {
@@ -16636,5 +16639,38 @@ body.page-template--black-friday .banner-full-page-nvy__overlay a {
   }
   .hero-media.showOnMob {
     display: block;
+  }
+  .multi-column__image--desktop {
+    display: none;
+  }
+  .multi-column__image--mobile {
+    display: block;
+  }
+  body.page-template--black-friday .multi-column--pocket-large .multi-column__inner--scroller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    min-width: auto;
+    gap: 0;
+  }
+  body.page-template--black-friday .multi-column__item {
+    width: 100%;
+  }
+  body.page-template--black-friday .multi-column__image-wrapper {
+    width: auto;
+    border-radius: 0;
+    margin-bottom: 10px;
+  }
+  body.page-template--black-friday .multi-column__item .multi-column__text-container {
+    bottom: 30px;
+  }
+  body.page-template--black-friday .multi-column__item .multi-column__text-container a {
+    width: 55%;
+    padding: 3px;
+  }
+  body.page-template--black-friday .shopify-section--multi-column h3.heading {
+    font-size: 27px;
   }
 }
