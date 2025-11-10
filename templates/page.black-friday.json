@@ -313,95 +313,6 @@
         "text_color": "#ffffff"
       }
     },
-    "multi_column_YqtgfM": {
-      "type": "multi-column",
-      "blocks": {
-        "item_XzVd6A": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/CAR-CAT-BF.jpg",
-            "image_width": 100,
-            "image_border": "rgba(0,0,0,0)",
-            "title": "",
-            "content": "",
-            "link_text": "SHOP NOW",
-            "link_url": "shopify://collections/car-audio-1",
-            "enable_open_link": true,
-            "link_style": "link",
-            "text_alignment": "center",
-            "vertical_alignment": "start"
-          }
-        },
-        "item_CHqg8P": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/MARINE-CAT-BF.jpg",
-            "image_width": 100,
-            "image_border": "rgba(0,0,0,0)",
-            "title": "",
-            "content": "",
-            "link_text": "SHOP NOW",
-            "link_url": "shopify://collections/car-audio-1",
-            "enable_open_link": true,
-            "link_style": "link",
-            "text_alignment": "center",
-            "vertical_alignment": "start"
-          }
-        },
-        "item_JWWzA8": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/JEEP-CAT-BF.jpg",
-            "image_width": 100,
-            "image_border": "rgba(0,0,0,0)",
-            "title": "",
-            "content": "",
-            "link_text": "SHOP NOW",
-            "link_url": "shopify://collections/car-audio-1",
-            "enable_open_link": true,
-            "link_style": "link",
-            "text_alignment": "center",
-            "vertical_alignment": "start"
-          }
-        },
-        "item_nGqtGD": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/POWERSPORT-CAT-BF.jpg",
-            "image_width": 100,
-            "image_border": "rgba(0,0,0,0)",
-            "title": "",
-            "content": "",
-            "link_text": "SHOP NOW",
-            "link_url": "shopify://collections/car-audio-1",
-            "enable_open_link": true,
-            "link_style": "link",
-            "text_alignment": "center",
-            "vertical_alignment": "start"
-          }
-        }
-      },
-      "block_order": [
-        "item_XzVd6A",
-        "item_CHqg8P",
-        "item_JWWzA8",
-        "item_nGqtGD"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "reveal_on_scroll": true,
-        "stack_items": false,
-        "subheading": "",
-        "title": "SHOP BY CATEGORIES",
-        "content": "",
-        "column_alignment": "center",
-        "mobile_item_size": "large",
-        "desktop_item_size": "medium",
-        "spacing": "tight",
-        "background": "#000000",
-        "text_color": "#ffffff"
-      }
-    },
     "banner_full_page_nvy_PUGNQi": {
       "type": "banner-full-page-nvy",
       "name": "Banner Full Page NVY",
@@ -491,7 +402,6 @@
     "text_with_image_eptKMW",
     "featured_collections_fhPA9y",
     "multi_column_GCxbmp",
-    "multi_column_YqtgfM",
     "banner_full_page_nvy_PUGNQi",
     "reviews_custom_N9mj4E"
   ]
