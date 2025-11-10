@@ -1,60 +1,7 @@
-{% comment %} {{ 'style-countdown-timer.css' | asset_url | stylesheet_tag }} {% endcomment %}
-{{ 'styles-grid-products-recommendation.css' | asset_url | stylesheet_tag }}
+{{ 'style-countdown-timer.css' | asset_url | stylesheet_tag }}
+{{ 'script-countdown-timer.js' | asset_url | script_tag }}
 
-
-<style>
-    .countdown-timer {
-      text-align: center;
-      background-color: #5d0def;
-    }
-
-    .countdown-timer__value {
-        background: transparent;
-        color: #fff;
-        font-size: 3rem;
-        padding: 0;
-        font-family: Montserrat, serif;
-        font-weight: bold;
-        line-height: normal;
-    }
-
-    .countdown-timer__text {
-        text-transform: uppercase;
-        font-size: 15px;
-        font-weight: 500;
-        color: #fff;
-        font-family: Montserrat, serif;
-    }
-
-    .countdown-timer__container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 5px 0 10px;
-      align-items: flex-start;
-    }
-    .countdown-timer__item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 80px;
-    }
-    .countdown-timer__item--separator {
-        padding-top: 15px;
-    }
-    .countdown-timer__item--separator .countdown-timer__value {
-        font-size: 27px;
-    }
-
-    @media(max-width: 500px){
-      #countdown span {
-        font-size: 1.5rem;
-        margin: 5px;
-      }
-    }
-  </style>
-
-<div class="countdown-timer">
+<div id="custom-countdown-timer" class="countdown-timer" data-deadline="{{ section.settings.deadline | escape }}">
     <div id="countdown" class="countdown-timer__container">
         <div class="countdown-timer__item countdown-timer__item--days">
             <span class="countdown-timer__value" id="countdown-timer__value--days">00</span> 
@@ -86,32 +33,6 @@
         </div>
     </div>
   </div>
-
-  <script>
-    // Set your sale end date
-    // November 29, 2025 23:59:59
-    const customDate = "{{ section.settings.deadline }}"
-    const saleEndDate = new Date(customDate).getTime();
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = saleEndDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown-timer__value--days").innerText = days.toString().padStart(2,"0");
-      document.getElementById("countdown-timer__value--hours").innerText = hours.toString().padStart(2,"0");
-      document.getElementById("countdown-timer__value--minutes").innerText = minutes.toString().padStart(2,"0");
-      document.getElementById("countdown-timer__value--seconds").innerText = seconds.toString().padStart(2,"0");
-
-      if(distance < 0){
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "SALE ENDED";
-      }
-    }, 1000);
-  </script>
 
 {% schema %}
   {
