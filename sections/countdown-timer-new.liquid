@@ -1,5 +1,7 @@
 {{ 'style-countdown-timer.css' | asset_url | stylesheet_tag }}
+{{ 'styles-grid-products-recommendation.css' | asset_url | stylesheet_tag }}
 {{ 'script-countdown-timer.js' | asset_url | script_tag }}
+
 
 <div id="custom-countdown-timer" class="countdown-timer" data-deadline="{{ section.settings.deadline | escape }}">
     <div id="countdown" class="countdown-timer__container">
