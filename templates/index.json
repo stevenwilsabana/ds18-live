@@ -62,6 +62,7 @@
       "blocks": {
         "image_BWpRi7": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/PRE-SEMA-Banner-Web-2025_2.jpg",
             "mobile_image": "shopify://shop_images/PRE-SEMA_Mobile_Banner_2025_2.jpg",
