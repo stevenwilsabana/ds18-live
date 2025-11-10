@@ -312,42 +312,42 @@
         "faqs_dnxxEi": {
           "type": "faqs",
           "settings": {
-            "title_faqs": "can i pay off my purchase early?",
+            "title_faqs": "Can I pay off my purchase early?",
             "answere": "<p>Yes! There’s no penalty for paying early.</p>"
           }
         },
         "faqs_KFfiKQ": {
           "type": "faqs",
           "settings": {
-            "title_faqs": "how do i make my payments?",
-            "answere": "<p>Yes! You can make or schedule payments at affirm.com or in the Affirm app for iOS or Android. Affirm will send you email and text reminders before payments are due.</p>"
+            "title_faqs": "How do I make my payments?",
+            "answere": "<p>You can make or schedule payments at affirm.com or in the Affirm app for iOS or Android. Affirm will send you email and text reminders before payments are due.</p>"
           }
         },
         "faqs_3dEnJc": {
           "type": "faqs",
           "settings": {
-            "title_faqs": "does checking my eligibility affect my credit score?",
+            "title_faqs": "Does checking my eligibility affect my credit score?",
             "answere": "<p>No—checking your eligibility won't affect your credit score.</p>"
           }
         },
         "faqs_dxiaiP": {
           "type": "faqs",
           "settings": {
-            "title_faqs": "can i return an item i bought with affirm?",
+            "title_faqs": "Can I return an item I bought with affirm?",
             "answere": "<p>Yes—You can return an item you bought with Affirm by initiating the return process with the store.</p>"
           }
         },
         "faqs_iVDihH": {
           "type": "faqs",
           "settings": {
-            "title_faqs": "do i need a mobile number to use affirm?",
+            "title_faqs": "Do I need a mobile phone number to use affirm?",
             "answere": "<p>Yes, you’ll need a mobile phone number from the U.S. or U.S. territories. This helps Affirm verify it’s really you who is creating your account and signing in.</p>"
           }
         },
         "faqs_YR33Ei": {
           "type": "faqs",
           "settings": {
-            "title_faqs": "where can i learn more about affirm?",
+            "title_faqs": "Where can I learn more about affirm?",
             "answere": "<p>You can visit their website at affirm.com.</p>"
           }
         }
