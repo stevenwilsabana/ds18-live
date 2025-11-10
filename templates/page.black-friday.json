@@ -146,7 +146,8 @@
     "hero_image_DMGC86": {
       "type": "hero-image",
       "custom_css": [
-        ".hero-image__container {max-width: 1520px; margin: 80px auto 0; padding: 0 28px;}"
+        ".hero-image__container {max-width: 1520px; margin: 80px auto 0; padding: 0 28px;}",
+        "@media (max-width: 767px) {.hero-image__container {margin: 20px auto 0; padding: 0; }}"
       ],
       "name": "Hero image",
       "settings": {
