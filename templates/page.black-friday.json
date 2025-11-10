@@ -98,7 +98,8 @@
     "hero_image_WWkAEP": {
       "type": "hero-image",
       "custom_css": [
-        ".hero-image__container {max-width: 1520px; margin: 0 auto; padding: 0 28px;}"
+        ".hero-image__container {max-width: 1520px; margin: 0 auto; padding: 0 28px;}",
+        "@media (max-width: 767px) {.hero-image__container {padding: 0; }}"
       ],
       "name": "Hero image",
       "settings": {
