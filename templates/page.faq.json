@@ -399,6 +399,7 @@
         },
         "f7d06de3-3b23-483d-9fd3-56b2a13f140b": {
           "type": "faq_block",
+          "disabled": true,
           "settings": {
             "question": "How do I ship my order back to you?",
             "answer": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
