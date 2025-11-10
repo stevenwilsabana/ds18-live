@@ -191,7 +191,7 @@
           "type": "faq_block",
           "settings": {
             "question": "What is DS18’s return policy?",
-            "answer": "<p>Once your order ships, we’ll email you a tracking number to the address you provided at checkout. You can use that number [here] to check your delivery status.We do accept returns, but keep the following in mind:</p><ul><li>All items returned in brand new condition will have a 10% restocking fee.</li><li>Used or open-box items may have higher fees since they can’t be resold as new.</li><li>Shipping fees are non-refundable and will be taken out of your refund.</li></ul>"
+            "answer": "<p>Once your order ships, we’ll email you a tracking number to the address you provided at checkout. You can use that number <a href=\"https://ds18.com/apps/tracktor/track\" target=\"_blank\" title=\"Track your order\">[here]</a> to check your delivery status.We do accept returns, but keep the following in mind:</p><ul><li>All items returned in brand new condition will have a 10% restocking fee.</li><li>Used or open-box items may have higher fees since they can’t be resold as new.</li><li>Shipping fees are non-refundable and will be taken out of your refund.</li></ul>"
           }
         },
         "9c2fa96d-df9f-4868-af93-c9803b09d320": {
