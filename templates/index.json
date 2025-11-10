@@ -80,25 +80,6 @@
             "overlay_opacity": 0
           }
         },
-        "image_N7KCcH": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DLRING_Web_Banner_2025.jpg",
-            "mobile_image": "shopify://shop_images/DLRING_Mobile_Banner_2025.jpg",
-            "text_position": "middle_left",
-            "subheading": "",
-            "title": "",
-            "button_1_text": "",
-            "button_1_link": "https://ds18.com/collections/digital-led-ring",
-            "button_2_text": "",
-            "button_2_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#282828",
-            "button_text_color": "#de2a2a",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
         "image_XwygYh": {
           "type": "image",
           "settings": {
@@ -114,6 +95,25 @@
             "text_color": "#ffffff",
             "button_background": "#ffffff",
             "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_N7KCcH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DLRING_Web_Banner_2025.jpg",
+            "mobile_image": "shopify://shop_images/DLRING_Mobile_Banner_2025.jpg",
+            "text_position": "middle_left",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/digital-led-ring",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#282828",
+            "button_text_color": "#de2a2a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -161,8 +161,8 @@
       },
       "block_order": [
         "image_BWpRi7",
-        "image_N7KCcH",
         "image_XwygYh",
+        "image_N7KCcH",
         "image_MfTPby",
         "image_TixApw"
       ],
