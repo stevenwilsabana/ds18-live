@@ -25,6 +25,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/TOP-BANNER-BF.jpg",
+            "mobile_image": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_01.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
