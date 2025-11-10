@@ -231,6 +231,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/CAR-CAT-BF.jpg",
+            "image_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_07.jpg",
             "image_width": 100,
             "image_border": "rgba(0,0,0,0)",
             "title": "",
@@ -247,6 +248,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/MARINE-CAT-BF.jpg",
+            "image_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_09.jpg",
             "image_width": 100,
             "image_border": "rgba(0,0,0,0)",
             "title": "",
@@ -263,6 +265,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/JEEP-CAT-BF.jpg",
+            "image_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_11.jpg",
             "image_width": 100,
             "image_border": "rgba(0,0,0,0)",
             "title": "",
@@ -279,6 +282,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/POWERSPORT-CAT-BF.jpg",
+            "image_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_13.jpg",
             "image_width": 100,
             "image_border": "rgba(0,0,0,0)",
             "title": "",
