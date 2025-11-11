@@ -238,7 +238,7 @@
             "content": "",
             "link_text": "SHOP NOW",
             "link_url": "shopify://collections/car-audio-1",
-            "enable_open_link": true,
+            "enable_open_link": false,
             "link_style": "link",
             "text_alignment": "center",
             "vertical_alignment": "start"
@@ -255,7 +255,7 @@
             "content": "",
             "link_text": "SHOP NOW",
             "link_url": "shopify://collections/car-audio-1",
-            "enable_open_link": true,
+            "enable_open_link": false,
             "link_style": "link",
             "text_alignment": "center",
             "vertical_alignment": "start"
@@ -272,7 +272,7 @@
             "content": "",
             "link_text": "SHOP NOW",
             "link_url": "shopify://collections/car-audio-1",
-            "enable_open_link": true,
+            "enable_open_link": false,
             "link_style": "link",
             "text_alignment": "center",
             "vertical_alignment": "start"
@@ -289,7 +289,7 @@
             "content": "",
             "link_text": "SHOP NOW",
             "link_url": "shopify://collections/car-audio-1",
-            "enable_open_link": true,
+            "enable_open_link": false,
             "link_style": "link",
             "text_alignment": "center",
             "vertical_alignment": "start"
