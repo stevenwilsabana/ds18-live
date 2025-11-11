@@ -194,10 +194,10 @@
         "collection_thCG8D": {
           "type": "collection",
           "settings": {
-            "collection": "ds18-specials",
+            "collection": "specials",
             "label": "",
             "button_text": "FIND MORE",
-            "button_url": "shopify://collections/ds18-specials"
+            "button_url": "shopify://collections/specials"
           }
         }
       },
