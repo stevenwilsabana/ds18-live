@@ -16683,8 +16683,12 @@ body.page-template--black-friday .shopify-section--featured-collections .section
     margin: 0 auto 20px;
   }
   body.page-template--black-friday .banner-full-page-nvy__overlay {
-    bottom: 0;
     top: initial;
+    width: 100%;
+    height: max-content;
+    overflow: visible;
+    bottom: 20px;
+    padding: 10px;
   }
   body.page-template--black-friday .banner-full-page-nvy-content {
     padding: 0;
@@ -16692,11 +16696,32 @@ body.page-template--black-friday .shopify-section--featured-collections .section
     align-items: center;
   }
   body.page-template--black-friday .banner-full-page-nvy__overlay h2 {
-    line-height: 46px;
-    font-size: 32px;
+    font-size: 30px;
+    line-height: normal;
     text-align: center;
   }
   body.page-template--black-friday .banner-full-page-nvy__overlay p {
     font-size: 18px;
+    width: 100%;
+  }
+  body.page-template--black-friday .banner-full-page-nvy__overlay a {
+    font-size: 16px;
+    padding: 10px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    top: 0;
+    margin-top: 24px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  body.page-template--black-friday .banner-full-page-nvy__overlay {
+    bottom: 0;
+  }
+  body.page-template--black-friday .banner-full-page-nvy__overlay h2 {
+    font-size: 25px;
+  }
+  body.page-template--black-friday .banner-full-page-nvy__overlay p {
+    font-size: 14px;
   }
 }
