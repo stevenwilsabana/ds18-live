@@ -9,9 +9,9 @@
  */
 {
   "current": {
-    "active_campaign": false,
-    "campaign_discount_crossline": 15,
-    "label_campaign": "Labor Day Sale",
+    "active_campaign": true,
+    "campaign_discount_crossline": 20,
+    "label_campaign": "BLACK FRIDAY SALE",
     "tag_campaign": "CAMPAIGN: ACTIVE",
     "background_new_arrival_label": "#ffffff",
     "color_new_arrival_label": "#ff0000",
