@@ -16635,6 +16635,19 @@ body.page-template--black-friday .banner-full-page-nvy__overlay a {
 body.page-template--black-friday .shopify-section--featured-collections .section__color-wrapper {
   background: #000 !important;
 }
+body.page-template--black-friday
+  .product-list__inner.product-list__inner--scroller
+  product-item.product-item
+  .product-item__info
+  .color-swatch-list--mini {
+  display: none;
+}
+body.page-template--black-friday
+  product-item.product-item
+  .product-item__general-product
+  .variants-metafiels {
+  display: none;
+}
 
 @media only screen and (max-width: 767px) {
   .hero-media.showOnDesk {
@@ -16678,16 +16691,17 @@ body.page-template--black-friday .shopify-section--featured-collections .section
   }
   body.page-template--black-friday .vertical-breather {
     padding-bottom: 0;
+    padding-top: 22px;
   }
   body.page-template--black-friday .banner-full-page-nvy__container {
     margin: 0 auto 20px;
   }
   body.page-template--black-friday .banner-full-page-nvy__overlay {
-    top: initial;
+    top: auto;
     width: 100%;
-    height: max-content;
+    height: auto;
     overflow: visible;
-    bottom: 20px;
+    bottom: 0;
     padding: 10px;
   }
   body.page-template--black-friday .banner-full-page-nvy-content {
