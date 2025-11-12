@@ -308,7 +308,7 @@
       "countdown-timer": {
         "type": "countdown-timer",
         "settings": {
-          "active_countdown": true,
+          "active_countdown": false,
           "background": "#000000",
           "color": "#ffffff",
           "deadline": "July 07, 2025 3:59:00",
