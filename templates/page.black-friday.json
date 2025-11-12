@@ -237,7 +237,7 @@
             "title": "",
             "content": "",
             "link_text": "SHOP NOW",
-            "link_url": "shopify://collections/car-audio-1",
+            "link_url": "shopify://pages/car-audio",
             "enable_open_link": false,
             "link_style": "link",
             "text_alignment": "center",
