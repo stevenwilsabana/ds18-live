@@ -1,0 +1,413 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": false,
+        "show_breadcrumb": false,
+        "page_width": "large"
+      }
+    },
+    "slideshow_eb8piT": {
+      "type": "slideshow",
+      "blocks": {
+        "image_6473mL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TOP-BANNER-BF.jpg",
+            "mobile_image": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_01.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "shopify://collections/specials",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_6473mL"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": false,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
+    "countdown_timer_new_CHgzMc": {
+      "type": "countdown-timer-new",
+      "name": "Countdown Timer",
+      "settings": {
+        "deadline": "November 18, 2025 23:59:59"
+      }
+    },
+    "text_with_image_8Bq8GM": {
+      "type": "text-with-image",
+      "blocks": {
+        "item_ciEPEP": {
+          "type": "item",
+          "settings": {
+            "image_position": "left",
+            "subheading": "FAST & FREE SHIPPING",
+            "title": "CHECK OUT THE BEST SELLERS",
+            "content": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_ciEPEP"
+      ],
+      "custom_css": [
+        "h2 {font-family: Montserrat, serif !important; font-size: 23px; font-weight: 500; letter-spacing: 2px; color: #a67af7; text-align: center; padding: 25px 0 0;}",
+        "h3 {font-family: Montserrat, serif !important; font-size: 40px; font-weight: 700; text-align: center; padding: 40px 0 20px; margin: 0;}",
+        "@media (max-width: 767px) {h2 {font-size: 14px; padding: 10px 0 0; font-weight: 600; } h3 {font-size: 20px; font-weight: 600; padding: 20px 10px; }}"
+      ],
+      "name": "Text with image",
+      "settings": {
+        "reveal_on_scroll": true,
+        "customId": "",
+        "fullwidth": false,
+        "text_color": "#ffffff",
+        "button-text-color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "bgbackground": "rgba(0,0,0,0)",
+        "spacing": true
+      }
+    },
+    "hero_image_WWkAEP": {
+      "type": "hero-image",
+      "custom_css": [
+        ".hero-image__container {max-width: 1520px; margin: 0 auto; padding: 0 28px;}",
+        "@media (max-width: 767px) {.hero-image__container {padding: 0; }}"
+      ],
+      "name": "Hero image",
+      "settings": {
+        "image": "shopify://shop_images/20_-BANNER.jpg",
+        "image_mob": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_03.jpg"
+      }
+    },
+    "featured_collections_zwKVfy": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_9Gkp4b": {
+          "type": "collection",
+          "settings": {
+            "collection": "best-sellers",
+            "label": "",
+            "button_text": "FIND MORE",
+            "button_url": "shopify://collections/best-sellers"
+          }
+        }
+      },
+      "block_order": [
+        "collection_9Gkp4b"
+      ],
+      "custom_css": [
+        ".product-item {background-color: #fff; border-radius: 24px;}",
+        ".product-item__general-product {border: none;}",
+        "a.button {font-family: Montserrat, serif !important; letter-spacing: 0; font-weight: 700; font-size: 20px; width: 300px;}"
+      ],
+      "name": "Featured collections",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "products_count": 18,
+        "products_per_row": 4,
+        "stack_products": false,
+        "show_cta": true,
+        "background": "#000000",
+        "text_color": "#000000",
+        "button_background": "#099eec",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "hero_image_DMGC86": {
+      "type": "hero-image",
+      "custom_css": [
+        ".hero-image__container {max-width: 1520px; margin: 80px auto 0; padding: 0 28px;}",
+        "@media (max-width: 767px) {.hero-image__container {margin: 60px auto 0; padding: 0; }}"
+      ],
+      "name": "Hero image",
+      "settings": {
+        "image": "shopify://shop_images/40_-BANNER.jpg",
+        "image_mob": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_05.jpg"
+      }
+    },
+    "text_with_image_eptKMW": {
+      "type": "text-with-image",
+      "blocks": {
+        "item_bEVMHi": {
+          "type": "item",
+          "settings": {
+            "image_position": "left",
+            "subheading": "ON EXCLUSIVE DEALS",
+            "title": "",
+            "content": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_bEVMHi"
+      ],
+      "custom_css": [
+        "h2 {font-family: Montserrat, serif !important; font-size: 29px; font-weight: 500; letter-spacing: -2px; text-align: center; padding: 12px 0 0; margin: 0;}"
+      ],
+      "name": "Text with image",
+      "settings": {
+        "reveal_on_scroll": true,
+        "customId": "",
+        "fullwidth": false,
+        "text_color": "#ffffff",
+        "button-text-color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "bgbackground": "rgba(0,0,0,0)",
+        "spacing": true
+      }
+    },
+    "featured_collections_fhPA9y": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_thCG8D": {
+          "type": "collection",
+          "settings": {
+            "collection": "specials",
+            "label": "",
+            "button_text": "FIND MORE",
+            "button_url": "shopify://collections/specials"
+          }
+        }
+      },
+      "block_order": [
+        "collection_thCG8D"
+      ],
+      "custom_css": [
+        ".product-item {background-color: #fff; border-radius: 24px;}",
+        ".product-item__general-product {border: none;}",
+        "a.button {font-family: Montserrat, serif !important; letter-spacing: 0; font-weight: 700; font-size: 20px; width: 300px;}"
+      ],
+      "name": "Featured collections",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "products_count": 18,
+        "products_per_row": 4,
+        "stack_products": false,
+        "show_cta": true,
+        "background": "#000000",
+        "text_color": "#000000",
+        "button_background": "#099eec",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "multi_column_GCxbmp": {
+      "type": "multi-column",
+      "blocks": {
+        "item_eiF4EG": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/CAR-CAT-BF.jpg",
+            "image_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_07.jpg",
+            "image_width": 100,
+            "image_border": "rgba(0,0,0,0)",
+            "title": "",
+            "content": "",
+            "link_text": "SHOP NOW",
+            "link_url": "shopify://pages/car-audio",
+            "enable_open_link": false,
+            "link_style": "link",
+            "text_alignment": "center",
+            "vertical_alignment": "start"
+          }
+        },
+        "item_RxB3RD": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/MARINE-CAT-BF.jpg",
+            "image_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_09.jpg",
+            "image_width": 100,
+            "image_border": "rgba(0,0,0,0)",
+            "title": "",
+            "content": "",
+            "link_text": "SHOP NOW",
+            "link_url": "shopify://pages/marine",
+            "enable_open_link": false,
+            "link_style": "link",
+            "text_alignment": "center",
+            "vertical_alignment": "start"
+          }
+        },
+        "item_qb64iF": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/JEEP-CAT-BF.jpg",
+            "image_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_11.jpg",
+            "image_width": 100,
+            "image_border": "rgba(0,0,0,0)",
+            "title": "",
+            "content": "",
+            "link_text": "SHOP NOW",
+            "link_url": "shopify://pages/jeep",
+            "enable_open_link": false,
+            "link_style": "link",
+            "text_alignment": "center",
+            "vertical_alignment": "start"
+          }
+        },
+        "item_ENYV7J": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/POWERSPORT-CAT-BF.jpg",
+            "image_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_13.jpg",
+            "image_width": 100,
+            "image_border": "rgba(0,0,0,0)",
+            "title": "",
+            "content": "",
+            "link_text": "SHOP NOW",
+            "link_url": "shopify://pages/powersports",
+            "enable_open_link": false,
+            "link_style": "link",
+            "text_alignment": "center",
+            "vertical_alignment": "start"
+          }
+        }
+      },
+      "block_order": [
+        "item_eiF4EG",
+        "item_RxB3RD",
+        "item_qb64iF",
+        "item_ENYV7J"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "reveal_on_scroll": false,
+        "stack_items": false,
+        "subheading": "",
+        "title": "SHOP BY CATEGORIES",
+        "content": "",
+        "column_alignment": "center",
+        "mobile_item_size": "large",
+        "desktop_item_size": "medium",
+        "spacing": "tight",
+        "background": "#000000",
+        "text_color": "#ffffff"
+      }
+    },
+    "banner_full_page_nvy_PUGNQi": {
+      "type": "banner-full-page-nvy",
+      "name": "Banner Full Page NVY",
+      "settings": {
+        "imagen_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_15.jpg",
+        "imagen_desktop": "shopify://shop_images/SLINGSHOT-CAT-BF.jpg",
+        "banner_url": "shopify://pages/shop-slingshot",
+        "details": "<h2>Click, Select, Upgrade</h2><p>Use DS18's Built your Slingshot Page<br/>to design you dream audio upgrade</p><p><a href=\"/pages/shop-slingshot\" title=\"Shop Slingshot Sets\">START BUILDING NOW</a></p>"
+      }
+    },
+    "reviews_custom_N9mj4E": {
+      "type": "reviews-custom",
+      "blocks": {
+        "reviews_home_wBUDEX": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
+            "title_review": "One of the best cheap upgrades for a vehicle",
+            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
+            "buyer": "Andrew A.",
+            "date": "1 day ago"
+          }
+        },
+        "reviews_home_emtnHk": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
+            "title_review": "One of the best cheap upgrades for a vehicle",
+            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
+            "buyer": "Andrew A.",
+            "date": "1 day ago"
+          }
+        },
+        "reviews_home_nCPhKF": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
+            "title_review": "One of the best cheap upgrades for a vehicle",
+            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
+            "buyer": "Andrew A.",
+            "date": "1 day ago"
+          }
+        },
+        "reviews_home_EQAy6p": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
+            "title_review": "One of the best cheap upgrades for a vehicle",
+            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
+            "buyer": "Andrew A.",
+            "date": "1 day ago"
+          }
+        },
+        "reviews_home_gyKHM8": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
+            "title_review": "One of the best cheap upgrades for a vehicle",
+            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
+            "buyer": "Andrew A.",
+            "date": "1 day ago"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_home_wBUDEX",
+        "reviews_home_emtnHk",
+        "reviews_home_nCPhKF",
+        "reviews_home_EQAy6p",
+        "reviews_home_gyKHM8"
+      ],
+      "name": "Reviews Custom",
+      "settings": {
+        "heading": "LET CUSTOMERS SPEAK FOR US",
+        "link_button": "",
+        "button": "Show More"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_eb8piT",
+    "countdown_timer_new_CHgzMc",
+    "text_with_image_8Bq8GM",
+    "hero_image_WWkAEP",
+    "featured_collections_zwKVfy",
+    "hero_image_DMGC86",
+    "text_with_image_eptKMW",
+    "featured_collections_fhPA9y",
+    "multi_column_GCxbmp",
+    "banner_full_page_nvy_PUGNQi",
+    "reviews_custom_N9mj4E"
+  ]
+}

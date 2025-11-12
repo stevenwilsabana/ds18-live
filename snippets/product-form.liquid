@@ -700,11 +700,11 @@
       {%- when 'buy_buttons' -%}
 
 
-      {% unless customer.b2b? %}
+      {% comment %} {% unless customer.b2b? %}
         {% if product.tags contains 'ACTIVATE: QUANTITY DISCOUNT' %}
           {% render 'quantity-discount', product: product %}
         {% endif %}
-      {% endunless %}
+      {% endunless %} {% endcomment %}
 
         
       {% comment %} Codigo para Productos Sold Out {% endcomment %}

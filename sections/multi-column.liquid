@@ -145,11 +145,15 @@
 
                     {%- if block.settings.link_url != blank -%}
                       <a href="{{ block.settings.link_url }}" {% if block.settings.enable_open_link == true %}target="_blank"{% endif %} class="multi-column__image-wrapper" style="max-width: {{ block.settings.image_width }}%; width: {{ block.settings.image.width }}px">
-                        <img loading="lazy" sizes="(max-width: 740px) {{ mobile_calculated_size }}, (max-width: 999px) {{ tablet_calculated_size }}, {{ 1520.0 | divided_by: desktop_items_per_row | minus: gap_width | ceil }}px" class="multi-column__image" {% render 'image-attributes', image: block.settings.image, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %}>
+                        <img loading="lazy" sizes="(max-width: 740px) {{ mobile_calculated_size }}, (max-width: 999px) {{ tablet_calculated_size }}, {{ 1520.0 | divided_by: desktop_items_per_row | minus: gap_width | ceil }}px" class="multi-column__image multi-column__image--desktop" {% render 'image-attributes', image: block.settings.image, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %}>
+
+                        <img loading="lazy" sizes="(max-width: 740px) {{ mobile_calculated_size }}, (max-width: 999px) {{ tablet_calculated_size }}, {{ 1520.0 | divided_by: desktop_items_per_row | minus: gap_width | ceil }}px" class="multi-column__image multi-column__image--mobile" {% render 'image-attributes', image: block.settings.image_mobile, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %}>
                       </a>
                     {%- else -%}
                       <div class="multi-column__image-wrapper" style="max-width: {{ block.settings.image_width }}%; width: {{ block.settings.image.width }}px">
-                        <img loading="lazy" sizes="(max-width: 740px) {{ mobile_calculated_size }}, (max-width: 999px) {{ tablet_calculated_size }}, {{ 1520.0 | divided_by: desktop_items_per_row | minus: gap_width | ceil }}px" class="multi-column__image" {% render 'image-attributes', image: block.settings.image, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %}>
+                        <img loading="lazy" sizes="(max-width: 740px) {{ mobile_calculated_size }}, (max-width: 999px) {{ tablet_calculated_size }}, {{ 1520.0 | divided_by: desktop_items_per_row | minus: gap_width | ceil }}px" class="multi-column__image multi-column__image--desktop" {% render 'image-attributes', image: block.settings.image, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %}>
+
+                        <img loading="lazy" sizes="(max-width: 740px) {{ mobile_calculated_size }}, (max-width: 999px) {{ tablet_calculated_size }}, {{ 1520.0 | divided_by: desktop_items_per_row | minus: gap_width | ceil }}px" class="multi-column__image multi-column__image--mobile" {% render 'image-attributes', image: block.settings.image_mobile, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %}>
                       </div>
                     {%- endif -%}
                   {%- else -%}
@@ -221,6 +225,11 @@
           "id": "image",
           "label": "Image",
           "info": "1200 x 1200px .jpg recommended"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image"
         },
         {
           "type": "range",
