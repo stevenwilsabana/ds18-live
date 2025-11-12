@@ -1,0 +1,59 @@
+{{ 'style-countdown-timer.css' | asset_url | stylesheet_tag }}
+{{ 'styles-grid-products-recommendation.css' | asset_url | stylesheet_tag }}
+{{ 'script-countdown-timer.js' | asset_url | script_tag }}
+
+
+<div id="custom-countdown-timer" class="countdown-timer" data-deadline="{{ section.settings.deadline | escape }}">
+    <div id="countdown" class="countdown-timer__container">
+        <div class="countdown-timer__item countdown-timer__item--days">
+            <span class="countdown-timer__value" id="countdown-timer__value--days">00</span> 
+            <span class="countdown-timer__text">Days</span>
+        </div>
+        <div class="countdown-timer__item countdown-timer__item--separator">
+            <span class="countdown-timer__value">:</span> 
+            <span class="countdown-timer__text"></span>
+        </div>
+        <div class="countdown-timer__item countdown-timer__item--hours">
+            <span class="countdown-timer__value" id="countdown-timer__value--hours">00</span> 
+            <span class="countdown-timer__text">Hours</span>
+        </div>
+        <div class="countdown-timer__item countdown-timer__item--separator">
+            <span class="countdown-timer__value">:</span> 
+            <span class="countdown-timer__text"></span>
+        </div>
+        <div class="countdown-timer__item countdown-timer__item--minutes">
+            <span class="countdown-timer__value" id="countdown-timer__value--minutes">00</span> 
+            <span class="countdown-timer__text">Minutes</span>
+        </div>
+        <div class="countdown-timer__item countdown-timer__item--separator">
+            <span class="countdown-timer__value">:</span> 
+            <span class="countdown-timer__text"></span>
+        </div>
+        <div class="countdown-timer__item countdown-timer__item--seconds">
+            <span class="countdown-timer__value" id="countdown-timer__value--seconds">00</span> 
+            <span class="countdown-timer__text">Seconds</span>
+        </div>
+    </div>
+  </div>
+
+{% schema %}
+  {
+    "name": "Countdown Timer",
+    "tag": "section",
+    "class": "countdown-timers",
+    "settings": [
+      {
+        "type": "text",
+        "id": "deadline",
+        "label": "Deadline",
+        "info": "Month DD, YYYY HH:MM:SS",
+        "default": "December 31, 2030 23:59:59"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Countdown Timer"
+      }
+    ]
+  }
+{% endschema %}

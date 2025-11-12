@@ -80,3 +80,70 @@
         font-size: 14px;
     } 
 }
+.countdown-timer {
+    text-align: center;
+    background-color: #5d0def;
+}
+
+.countdown-timer__value {
+    background: transparent;
+    color: #fff;
+    font-size: 3rem;
+    padding: 0;
+    font-family: Montserrat, serif;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.countdown-timer__text {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    font-family: Montserrat, serif;
+}
+
+.countdown-timer__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px 0 10px;
+    align-items: flex-start;
+}
+.countdown-timer__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+.countdown-timer__item--separator {
+    padding-top: 15px;
+}
+.countdown-timer__item--separator .countdown-timer__value {
+      font-size: 27px;
+}
+
+@media(max-width: 767px) {
+    .countdown-timer__container {
+        flex-direction: row;
+        gap: 18px;
+        padding: 10px;
+    }
+    .countdown-timer__item {
+        min-width: auto;
+    }
+    .countdown-timer__value {
+        font-size: 30px;
+        margin: 0;
+    }
+    .countdown-timer__text {
+        font-size: 11px;
+        font-weight: 600;
+    }
+    .countdown-timer__item--separator {
+        padding-top: 8px;
+    }
+    .countdown-timer__item--separator .countdown-timer__value {
+        font-size: 16px;
+    }
+}

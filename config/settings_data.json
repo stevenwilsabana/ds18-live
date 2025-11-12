@@ -9,9 +9,9 @@
  */
 {
   "current": {
-    "active_campaign": false,
-    "campaign_discount_crossline": 15,
-    "label_campaign": "Labor Day Sale",
+    "active_campaign": true,
+    "campaign_discount_crossline": 20,
+    "label_campaign": "BLACK FRIDAY SALE",
     "tag_campaign": "CAMPAIGN: ACTIVE",
     "background_new_arrival_label": "#ffffff",
     "color_new_arrival_label": "#ff0000",
@@ -308,7 +308,7 @@
       "countdown-timer": {
         "type": "countdown-timer",
         "settings": {
-          "active_countdown": false,
+          "active_countdown": true,
           "background": "#000000",
           "color": "#ffffff",
           "deadline": "July 07, 2025 3:59:00",
