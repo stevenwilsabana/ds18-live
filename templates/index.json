@@ -63,8 +63,8 @@
         "image_BWpRi7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/PRE-SEMA-Banner-Web-2025_2.jpg",
-            "mobile_image": "shopify://shop_images/PRE-SEMA_Mobile_Banner_2025_2.jpg",
+            "image": "shopify://shop_images/Metstrade_Web_Banner_2025_1.jpg",
+            "mobile_image": "shopify://shop_images/Metstrade_Mobile_Banner_2025_1.jpg",
             "text_position": "top_left",
             "subheading": "",
             "title": "",
@@ -75,25 +75,6 @@
             "text_color": "#ffffff",
             "button_background": "#ffffff",
             "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_N7KCcH": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DLRING_Web_Banner_2025.jpg",
-            "mobile_image": "shopify://shop_images/DLRING_Mobile_Banner_2025.jpg",
-            "text_position": "middle_left",
-            "subheading": "",
-            "title": "",
-            "button_1_text": "",
-            "button_1_link": "https://ds18.com/collections/digital-led-ring",
-            "button_2_text": "",
-            "button_2_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#282828",
-            "button_text_color": "#de2a2a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -113,6 +94,25 @@
             "text_color": "#ffffff",
             "button_background": "#ffffff",
             "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_N7KCcH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DLRING_Web_Banner_2025_1.jpg",
+            "mobile_image": "shopify://shop_images/DLRING_Mobile_Banner_2025.jpg",
+            "text_position": "middle_left",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/digital-led-ring",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#282828",
+            "button_text_color": "#de2a2a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -160,8 +160,8 @@
       },
       "block_order": [
         "image_BWpRi7",
-        "image_N7KCcH",
         "image_XwygYh",
+        "image_N7KCcH",
         "image_MfTPby",
         "image_TixApw"
       ],
@@ -887,7 +887,7 @@
       "settings": {
         "subheading": "DS18 Car Audio",
         "title": "WHY WE LIKE IT LOUD",
-        "link": "https://ds18.com/pages/car-audio",
+        "link": "shopify://pages/car-audio",
         "button": "DISCOVER DS18",
         "video_url": "https://youtu.be/S1ozIsNZWsQ",
         "image": "shopify://shop_images/VIDEO-DS18-THUMBNAILV1_1.jpg",

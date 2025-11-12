@@ -179,7 +179,8 @@
       "available_colors_count": {
         "one": "{{ count }} color disponible",
         "other": "{{ count }} colores disponibles"
-      }
+      },
+      "add_to_cart_main": "AGREGAR AL CARRITO"
     }
   },
   "product": {
