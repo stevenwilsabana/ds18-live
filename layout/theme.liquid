@@ -360,7 +360,49 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 {% endif %}
 <script async src="https://cdn1.affirm.com/js/v2/affirm.js"></script>
 
+<script id='coframe-installation-script'>
+  (function () {
+        // Early exit for performance testing
+        if (/cf_disable/.test(location.search)) return console.warn('[Coframe] Disabled via URL parameter');
+        
+        // Coframe config
+        const config = {
+          projectId: '690e617f337183e81a9d352c',
+          startTime: Date.now(),
+          timeoutMs: 1000,
+          currentUrl: window.location.href,
+        };
     
+        // Prevent duplicate installation
+        const script_id = 'coframe-sdk-js';
+        if (document.getElementById(script_id)) return console.warn('[Coframe] SDK already installed');
+        
+        // Coframe queue setup
+        (window.CFQ = window.CFQ || []).push({ config });
+    
+        // Coframe antiflicker CSS
+        var edgeUrl = new URL('https://edge.cofra.me/cf.css');
+        edgeUrl.searchParams.set('config', encodeURIComponent(JSON.stringify(config)));
+        
+        const style = document.createElement('link');
+        style.rel = 'stylesheet';
+        style.href = edgeUrl.toString();
+        function hide() { document.head.appendChild(style); }
+        function show() { style.remove(); }
+        hide(); setTimeout(show, config.timeoutMs);
+        
+        // Coframe SDK JS
+        var edgeUrl = new URL('https://edge.cofra.me/cf.js');
+        edgeUrl.searchParams.set('config', encodeURIComponent(JSON.stringify(config)));
+    
+        const script = document.createElement('script');
+        script.id = script_id;
+        script.async = true;
+        script.src = edgeUrl.toString();
+        script.onerror = () => { show(); console.error('[Coframe] SDK failed to load'); };
+        document.head.appendChild(script);
+    })();
+</script>
   </head>
 
   {%- assign feature_classes = '' -%}
