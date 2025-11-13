@@ -197,7 +197,7 @@
             "collection": "ds18-specials",
             "label": "",
             "button_text": "FIND MORE",
-            "button_url": "shopify://collections/specials"
+            "button_url": "shopify://collections/ds18-specials"
           }
         }
       },
