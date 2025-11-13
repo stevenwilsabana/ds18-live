@@ -391,7 +391,7 @@
       "name": "Reviews Custom",
       "settings": {
         "heading": "LET CUSTOMERS SPEAK FOR US",
-        "link_button": "",
+        "link_button": "shopify://pages/reviews-1",
         "button": "Show More"
       }
     }
