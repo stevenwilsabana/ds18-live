@@ -361,7 +361,10 @@ SEARCH DRAWER
     const headerSearchIcon = document.querySelector('#nvy-header-search-icon')
     const headerSearchContent = document.querySelector('#nvy-open-search')
     const headerSearchContentClose = document.querySelector('.nvy-open-search svg.icon--close')
-    console.log("headerSearchIcon")
+    const headerSearchContentForm = document.querySelector('form.boost-pfs-search-form')
+    const headerSearchContentIcon = document.querySelector('.nvy-open-search__icon')
+
+
     headerSearchIcon.addEventListener('click', () => {
       headerSearchContent.classList.remove('hidden')
     })
@@ -373,6 +376,10 @@ SEARCH DRAWER
       if (e.key === "Escape") {
         headerSearchContent.classList.add('hidden');
       }
+    });
+
+    headerSearchContentIcon.addEventListener('click', () => {
+      headerSearchContentForm.submit();
     });
   });
 </script>
