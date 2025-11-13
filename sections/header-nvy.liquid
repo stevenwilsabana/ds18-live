@@ -250,8 +250,17 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
           {%- endif -%}
 
 
-          <span id="open-search-rebuy">
+          <span id="open-search-rebuysss">
             {%- render 'icon' with 'header-search' -%}
+            <form action="/search" method="get" class="boost-pfs-search-form">
+  <input
+    type="search"
+    name="q"
+    id="boost-pfs-search-box"
+    class="boost-pfs-search-box"
+    placeholder="Search products..."
+  >
+</form>
           </span>
 
 
