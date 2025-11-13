@@ -41,7 +41,63 @@ ul.mobile-nav.list--unstyled a {
     font-family: Montserrat, serif !important;   
 }
 
-
+.nvy-open-search {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+.nvy-open-search.hidden {
+    display: none;
+}
+.nvy-open-search form {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+.nvy-open-search input {
+    width: 100%;
+    padding: 13px 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+}
+.nvy-open-search form svg {
+    color: #fff;
+}
+.nvy-open-search svg.icon--close  {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+.nvy-header-search-icon {
+    cursor: pointer;
+}
+.nvy-open-search__icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #000;
+    border: 1px solid #000;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+  
 
 @media only screen and (min-width: 768px) {
     div#shopify-section-header-nvy store-header.header .container {
