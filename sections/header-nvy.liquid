@@ -381,6 +381,9 @@ SEARCH DRAWER
     headerSearchContentIcon.addEventListener('click', () => {
       headerSearchContentForm.submit();
     });
+
+    localStorage.setItem('store-name', 'nvy');
+
   });
 </script>
 
@@ -394,6 +397,7 @@ SEARCH DRAWER
     document.documentElement.style.setProperty('--header-height-without-bottom-nav', headerHeightWithoutBottomNav + 'px');
   })();
 </script>
+
 
 <script type="application/ld+json">
 {

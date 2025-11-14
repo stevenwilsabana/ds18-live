@@ -323,6 +323,12 @@ SEARCH DRAWER
 {%- render 'predictive-search' -%}
 
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    localStorage.setItem('store-name', 'ds18');
+  });
+</script>
+
+<script>
   (() => {
     const headerElement = document.getElementById('shopify-section-{{ section.id }}'),
       headerHeight = headerElement.clientHeight,
