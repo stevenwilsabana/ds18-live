@@ -122,8 +122,8 @@
         "image_MfTPby": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Black_Friday_Web_Banner_2025_Pre.jpg",
-            "mobile_image": "shopify://shop_images/Black_Friday_Mobile_Banner_2025_Pre.jpg",
+            "image": "shopify://shop_images/Black_Friday_Web_Banner_2025_Pre_CTA.jpg",
+            "mobile_image": "shopify://shop_images/Black_Friday_Mobile_Banner_2025_CTA.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
