@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "active_campaign": false,
+    "active_campaign": true,
     "campaign_discount_crossline": 20,
     "label_campaign": "BLACK FRIDAY SALE",
     "tag_campaign": "CAMPAIGN: ACTIVE",
