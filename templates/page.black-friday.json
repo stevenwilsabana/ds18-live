@@ -30,7 +30,7 @@
             "subheading": "",
             "title": "",
             "button_1_text": "",
-            "button_1_link": "shopify://collections/specials",
+            "button_1_link": "shopify://collections/ds18-specials",
             "button_2_text": "",
             "button_2_link": "",
             "text_color": "#ffffff",
@@ -194,10 +194,10 @@
         "collection_thCG8D": {
           "type": "collection",
           "settings": {
-            "collection": "specials",
+            "collection": "ds18-specials",
             "label": "",
             "button_text": "FIND MORE",
-            "button_url": "shopify://collections/specials"
+            "button_url": "shopify://collections/ds18-specials"
           }
         }
       },
@@ -324,7 +324,7 @@
         "imagen_mobile": "shopify://shop_images/LANDING-PAGE-BF-MOBILE_15.jpg",
         "imagen_desktop": "shopify://shop_images/SLINGSHOT-CAT-BF.jpg",
         "banner_url": "shopify://pages/shop-slingshot",
-        "details": "<h2>Click, Select, Upgrade</h2><p>Use DS18's Built your Slingshot Page<br/>to design you dream audio upgrade</p><p><a href=\"/pages/shop-slingshot\" title=\"Shop Slingshot Sets\">START BUILDING NOW</a></p>"
+        "details": "<h2>Click, Select, Upgrade</h2><p>Use DS18's Build Your Slingshot page<br/>to design your dream audio upgrade</p><p><a href=\"/pages/shop-slingshot\" title=\"Shop Slingshot Sets\">START BUILDING NOW</a></p>"
       }
     },
     "reviews_custom_N9mj4E": {
@@ -333,51 +333,51 @@
         "reviews_home_wBUDEX": {
           "type": "reviews-home",
           "settings": {
-            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
-            "title_review": "One of the best cheap upgrades for a vehicle",
-            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
-            "buyer": "Andrew A.",
-            "date": "1 day ago"
+            "product_review": "ds18-ixs12-4d-12-shallow-subwoofer-1600-watts-4-ohm-dvc-new-edition",
+            "title_review": "Top-Tier Speakers for Tight Spaces",
+            "review": "Great Quality, highest price of shallow mount I could find and definitely worth the price. Only thing is I would suggest getting set up in a ported box if your goal is to have the most sound they will offer . I currently have in sealed box and want more out of them. So next step is to have custom box build for these speakers under my back seats in 2017 Silverado crew cab.",
+            "buyer": "Nicholas Seijo",
+            "date": "4 days ago"
           }
         },
         "reviews_home_emtnHk": {
           "type": "reviews-home",
           "settings": {
-            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
-            "title_review": "One of the best cheap upgrades for a vehicle",
-            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
-            "buyer": "Andrew A.",
-            "date": "1 day ago"
+            "product_review": "12xl1500mb-8",
+            "title_review": "DS18 XL 12s Midbass Loudspeakers",
+            "review": "I have (4 )of these DS18 XL 12s midbass loudspeakers on my stuntwall with a GFX 5K powering them @1 ohm, and they sound absolutely amazing paired with the (6) Ds18 DKH1 horns that is also on the stuntwall. I couldn't be any more pleased on the sound that it produces.",
+            "buyer": "Calvin Coleman",
+            "date": "13 days ago"
           }
         },
         "reviews_home_nCPhKF": {
           "type": "reviews-home",
           "settings": {
-            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
-            "title_review": "One of the best cheap upgrades for a vehicle",
-            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
-            "buyer": "Andrew A.",
-            "date": "1 day ago"
+            "product_review": "ion1000-4d",
+            "title_review": "Sounds great has plenty of power really like the front and rear clip lights",
+            "review": "Definitely one of my favorite micro 4 channels I'm running this amp in my truck do to lack of space this amp is small but powerfull I have used other brands micro amps and they don't even compare the ds18 ion is more powerful and cleaner sounding and I love the build in clip lights for front and rear makes tuning the gains nice and easy.",
+            "buyer": "Steve R",
+            "date": "27 days ago"
           }
         },
         "reviews_home_EQAy6p": {
           "type": "reviews-home",
           "settings": {
-            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
-            "title_review": "One of the best cheap upgrades for a vehicle",
-            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
-            "buyer": "Andrew A.",
-            "date": "1 day ago"
+            "product_review": "hydro-8-2-way-marine-speakers-with-integrated-rgb-led-lights-300-watts-matte-black-pair",
+            "title_review": "Fast Delivery, Loud Results",
+            "review": "Was very happy with the easy fast turn around in receiving my new speakers. DS18 is a great choice for me and all my speaker needs why is that ….. we like it loud!",
+            "buyer": "Tammy O’neal",
+            "date": "29 days ago"
           }
         },
         "reviews_home_gyKHM8": {
           "type": "reviews-home",
           "settings": {
-            "product_review": "pro-series-midrange-bullet-loudspeaker-1",
-            "title_review": "One of the best cheap upgrades for a vehicle",
-            "review": "Perfect upgrade from installation to sound quality, everything was perfect. Installation was as simple as taking your door panel off, splicing 2 wires, and putting the panel back on.",
-            "buyer": "Andrew A.",
-            "date": "1 day ago"
+            "product_review": "ds18-jl-sb6-sound-bar-enclosure-upgrade-with-6-neo-mid-range-and-tweeter-for-jeep-wrangler-jl-jlu-gladiator-jt-left-and-right",
+            "title_review": "Nice upgrade",
+            "review": "I have an 20 Gladiator with aftermarket head unit. No amp or sub. The upgraded speakers in the soundbar and knee kick were a great investment. Sound is much clearer and louder. The installation instructions are very detailed and helpful to install in a timely manner.",
+            "buyer": "Doug D.",
+            "date": "31 days ago"
           }
         }
       },
@@ -391,7 +391,7 @@
       "name": "Reviews Custom",
       "settings": {
         "heading": "LET CUSTOMERS SPEAK FOR US",
-        "link_button": "",
+        "link_button": "shopify://pages/reviews-1",
         "button": "Show More"
       }
     }

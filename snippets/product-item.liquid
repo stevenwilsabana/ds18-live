@@ -72,11 +72,14 @@
 
     
     <div class="product-item__image-wrapper {% if settings.show_secondary_image and product.media.size > 1 and hide_secondary_image != true %}product-item__image-wrapper--multiple{% endif %}">
-      {%- if product_labels != blank and reduced_content != true -%}
-        <div class="product-item__label-list label-list">
-          {{- product_labels -}}
-        </div>
-      {%- endif -%}
+      {% if collection.title != "BLACK FRIDAY DEALS" %}
+        {%- if product_labels != blank and reduced_content != true -%}
+          <div class="product-item__label-list label-list">
+            {{- product_labels -}}
+          </div>
+        {%- endif -%}
+      {% endif %}
+      
   
       <a href="{{ product.url | within: collection }}" class="product-item__aspect-ratio aspect-ratio {% if settings.product_image_size != 'natural' %}aspect-ratio--{{ settings.product_image_size }}{% endif %}" style="padding-bottom: {{ 100.0 | divided_by: product.featured_media.preview_image.aspect_ratio }}%; --aspect-ratio: {{ product.featured_media.preview_image.aspect_ratio }}">
         <img class="product-item__primary-image" loading="lazy" data-media-id="{{ product.featured_media.id | escape }}" sizes="{{ sizes_attribute }}" {% render 'image-attributes', image: product.featured_media, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %}>
@@ -311,14 +314,24 @@
         {% assign FinalDiscount = discount | divided_by: 100.0 %}
         {% assign crossline = product.price | times: FinalDiscount %}
         {% assign label = settings.campaign_discount_crossline | append: "% OFF"  %}
+
+        {% if collection.title == "BLACK FRIDAY DEALS" %}
+            {% assign doubled_value = settings.campaign_discount_crossline | times: 2 %}
+            {% assign label = doubled_value | append: "% OFF" %}
+        {% endif %}
   
         {% if product.tags contains settings.tag_campaign %}
           <div class="product-item-meta__price-list-container product-item-meta__price-list-container--campaign">
             <div class="price-list price-list--centered">
               <span class="label">{{ label }}</span>
               <span class="price-real">{{ crossline | money }}</span>
-              <span class="price-crossline">{{ product.price | money }}</span>
-            </div>  
+
+              {% if product.compare_at_price > product.price %}
+                <span class="price-crossline">{{ product.compare_at_price | money }}</span>
+              {% else %}
+                <span class="price-crossline">{{ product.price | money }}</span>
+              {% endif %}
+            </div>
           </div>
         {% else %}
           <div class="product-item-meta__price-list-container">

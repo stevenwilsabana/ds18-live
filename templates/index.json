@@ -48,7 +48,6 @@
       "block_order": [
         "f6708712-6f92-4e6b-8703-c5d8c6596a53"
       ],
-      "disabled": true,
       "settings": {
         "section_height": "auto",
         "transition_type": "sweep",
@@ -62,6 +61,7 @@
       "blocks": {
         "image_BWpRi7": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Metstrade_Web_Banner_2025_1.jpg",
             "mobile_image": "shopify://shop_images/Metstrade_Mobile_Banner_2025_1.jpg",
@@ -81,6 +81,7 @@
         },
         "image_XwygYh": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/NVY-LAUNCH-WEB-BANNER_2.jpg",
             "mobile_image": "shopify://shop_images/NVY-LAUNCH-MOBILE-BANNER_1.jpg",
@@ -100,6 +101,7 @@
         },
         "image_N7KCcH": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/DLRING_Web_Banner_2025_1.jpg",
             "mobile_image": "shopify://shop_images/DLRING_Mobile_Banner_2025.jpg",
@@ -119,15 +121,14 @@
         },
         "image_MfTPby": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/DXQ_Web_Banner_2025_d5a38be9-4965-4637-a0cb-bbf52087fae5.jpg",
-            "mobile_image": "shopify://shop_images/DXQ_Mobile_Banner_2025_1_cf1bfc5a-1bdf-48e6-ae08-d77a14a08bed.jpg",
+            "image": "shopify://shop_images/Black_Friday_Web_Banner_2025_Pre.jpg",
+            "mobile_image": "shopify://shop_images/Black_Friday_Mobile_Banner_2025_Pre.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
             "button_1_text": "",
-            "button_1_link": "https://ds18.com/collections/new-arrivalsauto/products/dxq6c3n",
+            "button_1_link": "https://ds18.com/collections/ds18-specials",
             "button_2_text": "",
             "button_2_link": "",
             "text_color": "#ffffff",
@@ -227,6 +228,7 @@
         "861514ca-e7ad-41bd-9f46-0003ae4486fa",
         "e35b0122-236d-4fdd-a882-60f9c7a19cf6"
       ],
+      "disabled": true,
       "settings": {}
     },
     "as_seen_on_4MiKg3": {

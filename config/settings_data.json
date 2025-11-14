@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "active_campaign": false,
+    "active_campaign": true,
     "campaign_discount_crossline": 20,
     "label_campaign": "BLACK FRIDAY SALE",
     "tag_campaign": "CAMPAIGN: ACTIVE",
@@ -547,7 +547,7 @@
           "slide_GWHctc": {
             "type": "slide",
             "settings": {
-              "text": "Free Shipping on U.S. Orders",
+              "text": "BLACK FRIDAY SALE • Automatic Discount at Checkout — No Coupon Needed!",
               "link_url": "",
               "open_new": false
             }
