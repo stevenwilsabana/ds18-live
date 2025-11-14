@@ -124,12 +124,31 @@
               {% assign FinalDiscountProduct = discountProduct | divided_by: 100.0 %}
               {% assign crosslineProduct = variant.price | times: FinalDiscountProduct %}
               {% assign labelProduct = settings.campaign_discount_crossline | append: "% OFF"  %}
+              
+              {% assign has_black_friday = false %}
 
+              {% for col in product.collections %}
+                {% if col.title == "BLACK FRIDAY DEALS" %}
+                  {% assign has_black_friday = true %}
+                {% endif %}
+              {% endfor %}
+
+              {% if has_black_friday %}
+                {% assign doubled_value = settings.campaign_discount_crossline | times: 2 %}
+                {% assign labelProduct = doubled_value | append: "% OFF" %}
+              {% endif %}
+
+              {% assign defaultPrice = variant.price | money %}
+              {% if variant.compare_at_price > variant.price %}
+                {% assign defaultPrice = variant.compare_at_price | money %}
+              {% else %}
+                <span class="price-crossline">{{ product.price | money }}</span>
+              {% endif %}
               <span 
                 data-available="{{ variant.available }}" 
                 data-variant-id="{{ variant.id }}"
                 data-price-regular="{{ crosslineProduct | money }}"
-                data-price-crossed="{{ variant.price | money }}"
+                data-price-crossed="{{ defaultPrice }}"
                 data-price-wholesale="0"
 
                 {% if variant.compare_at_price or variant.metafields.custom.b2b_dealer_price %}
