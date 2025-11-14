@@ -26,7 +26,7 @@
             "sep_plus_class": "breadcrumb__sep_plus5",
             "separator_char_code": "#47;",
             "hide_old_breadcrumb": false,
-            "show_catroot": true,
+            "show_catroot": false,
             "link_catroot": "/",
             "text_catroot": "",
             "show_tags": true,
