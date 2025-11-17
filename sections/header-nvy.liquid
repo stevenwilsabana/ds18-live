@@ -255,7 +255,6 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
           <span id="nvy-open-search" class="nvy-open-search hidden">
             {%- render 'icon' with 'close' -%}
             <form action="/search" method="get" class="boost-pfs-search-form">
-              <input type="submit" style="display:none" id="header-search-submit">
               <input type="hidden" name="view" value="nvy">
               <input
                 type="search"
@@ -384,12 +383,11 @@ SEARCH DRAWER
       headerSearchContentForm.submit();
     });
 
-    const submitButton = document.querySelector('#header-search-submit');
-
+    // Listen for Enter key on the search input
     headerSearchContentInput.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
-        event.preventDefault();
-        // headerSearchContentIcon.click(); // triggers normal form submission
+        event.preventDefault(); // prevent default form submission
+        // headerSearchContentForm.submit();
       }
     });
 
