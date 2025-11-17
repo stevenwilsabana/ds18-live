@@ -255,6 +255,7 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
           <span id="nvy-open-search" class="nvy-open-search hidden">
             {%- render 'icon' with 'close' -%}
             <form action="/search" method="get" class="boost-pfs-search-form">
+              <input type="hidden" name="view" value="nvy">
               <input
                 type="search"
                 name="q"
