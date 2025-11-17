@@ -122,8 +122,8 @@
         "image_MfTPby": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Black_Friday_Web_Banner_2025_Pre.jpg",
-            "mobile_image": "shopify://shop_images/Black_Friday_Mobile_Banner_2025_Pre.jpg",
+            "image": "shopify://shop_images/Black_Friday_Web_Banner_2025_Pre_CTA.jpg",
+            "mobile_image": "shopify://shop_images/Black_Friday_Mobile_Banner_2025_CTA.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
@@ -180,7 +180,7 @@
         "6c252460-5ddb-476f-aafa-509dd284a1fe": {
           "type": "category",
           "settings": {
-            "category": "Mobile Audio",
+            "category": "Car Audio",
             "link": "https://ds18.com/pages/car-audio"
           }
         },
@@ -228,7 +228,6 @@
         "861514ca-e7ad-41bd-9f46-0003ae4486fa",
         "e35b0122-236d-4fdd-a882-60f9c7a19cf6"
       ],
-      "disabled": true,
       "settings": {}
     },
     "as_seen_on_4MiKg3": {
