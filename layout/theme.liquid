@@ -224,29 +224,34 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
         }
     </style>
 
+    {% assign is_nvy_page = false %}
     {% if request.path contains 'nvy-by-ds18' or
-      request.path contains 'about-us-nvy' or
-      request.path contains 'nvy-store-locator' or
-      request.path contains '/pages/contact-nvy' or
-      request.path contains '/pages/tech-support-nvy' or
-      request.path contains '/pages/faq-nvy' or
-      request.path contains '/pages/warranty-nvy' or
-      request.path contains '/pages/affirm-financing-nvy' or
-      request.path contains '/pages/warranty-form-nvy' or
-      request.path contains '/pages/catalogs-nvy' or
-      request.path contains '/pages/search-manuals-nvy' or
-      request.path contains '/pages/marketing-material-nvy' or
-      request.path contains '/pages/tuning-frequency-calculator-nvy' or
-      request.path contains '/pages/amp-wire-calculator-nvy' or
-      request.path contains '/pages/recommended-enclosure-spaces-nvy' or
-      request.path contains '/pages/california-prop65-warning-nvy' or
-      request.path contains '/pages/privacy-policy-nvy' or
-      request.path contains '/pages/data-sale-opt-out-nvy' or
-      request.path contains 'nvy' or
-      collection.template_suffix == 'nvy' or
-      (product and product.template_suffix == 'nvy')
+          request.path contains 'about-us-nvy' or
+          request.path contains 'nvy-store-locator' or
+          request.path contains '/pages/contact-nvy' or
+          request.path contains '/pages/tech-support-nvy' or
+          request.path contains '/pages/faq-nvy' or
+          request.path contains '/pages/warranty-nvy' or
+          request.path contains '/pages/affirm-financing-nvy' or
+          request.path contains '/pages/warranty-form-nvy' or
+          request.path contains '/pages/catalogs-nvy' or
+          request.path contains '/pages/search-manuals-nvy' or
+          request.path contains '/pages/marketing-material-nvy' or
+          request.path contains '/pages/tuning-frequency-calculator-nvy' or
+          request.path contains '/pages/amp-wire-calculator-nvy' or
+          request.path contains '/pages/recommended-enclosure-spaces-nvy' or
+          request.path contains '/pages/california-prop65-warning-nvy' or
+          request.path contains '/pages/privacy-policy-nvy' or
+          request.path contains '/pages/data-sale-opt-out-nvy' or
+          request.path contains 'nvy' or
+          collection.template_suffix == 'nvy' or
+          product.template_suffix == 'nvy' or
+          template.suffix == 'nvy'
     %}
+      {% assign is_nvy_page = true %}
+    {% endif %}
 
+    {% if is_nvy_page %}
       {% comment %}
         {{ 'styles-cart-rebuy-nvy-global.css' | asset_url | stylesheet_tag }}
         {{ 'styles-search-rebuy.css' | asset_url | stylesheet_tag }}  
@@ -257,7 +262,6 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     {% else %} 
 
       {{ 'styles-cart-rebuy.css' | asset_url | stylesheet_tag }}
-
     {% endif %}
 
     
@@ -436,31 +440,9 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
     {% unless request.path contains '/apps/tracktor/track' %}
 
-      {% unless request.path contains 'nvy-by-ds18' or
-        request.path contains 'about-us-nvy' or
-        request.path contains 'nvy-store-locator' or
-        request.path contains '/pages/contact-nvy' or
-        request.path contains '/pages/tech-support-nvy' or
-        request.path contains '/pages/faq-nvy' or
-        request.path contains '/pages/warranty-nvy' or
-        request.path contains '/pages/affirm-financing-nvy' or
-        request.path contains '/pages/warranty-form-nvy' or
-        request.path contains '/pages/catalogs-nvy' or
-        request.path contains '/pages/search-manuals-nvy' or
-        request.path contains '/pages/marketing-material-nvy' or
-        request.path contains '/pages/tuning-frequency-calculator-nvy' or
-        request.path contains '/pages/amp-wire-calculator-nvy' or
-        request.path contains '/pages/recommended-enclosure-spaces-nvy' or
-        request.path contains '/pages/california-prop65-warning-nvy' or
-        request.path contains '/pages/privacy-policy-nvy' or
-        request.path contains '/pages/data-sale-opt-out-nvy' or
-        request.path contains 'nvy' or
-        collection.template_suffix == 'nvy' or
-        (product and product.template_suffix == 'nvy')
-      %}
+      {% unless is_nvy_page %}
         
         {% section 'countdown-timer' %}
-
         {%- section 'nav-global-ds' -%}
         {%- section 'announcement-bar' -%}
         {%- section 'popup' -%}
@@ -521,7 +503,6 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
 
     <div id="main" role="main" class="anchor {{ store }} {% if request.page_type == 'product' and product.tags contains 'NVY: GATED' %}pp-locked{% endif %}">
-    
       {%- comment -%}
         IMPLEMENTATION NOTE: on collection and search page, the theme was designed to show on mobile the filter bar and/or sort
           by at the very top of the page. However, due to the fact that sections are isolated, I had to move the code
@@ -733,28 +714,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
     {% unless request.path contains '/apps/tracktor/track' %}
 
-      {% if request.path contains 'nvy-by-ds18' or
-        request.path contains 'about-us-nvy' or
-        request.path contains 'nvy-store-locator' or
-        request.path contains '/pages/contact-nvy' or
-        request.path contains '/pages/tech-support-nvy' or
-        request.path contains '/pages/faq-nvy' or
-        request.path contains '/pages/warranty-nvy' or
-        request.path contains '/pages/affirm-financing-nvy' or
-        request.path contains '/pages/warranty-form-nvy' or
-        request.path contains '/pages/catalogs-nvy' or
-        request.path contains '/pages/search-manuals-nvy' or
-        request.path contains '/pages/marketing-material-nvy' or
-        request.path contains '/pages/tuning-frequency-calculator-nvy' or
-        request.path contains '/pages/amp-wire-calculator-nvy' or
-        request.path contains '/pages/recommended-enclosure-spaces-nvy' or
-        request.path contains '/pages/california-prop65-warning-nvy' or
-        request.path contains '/pages/privacy-policy-nvy' or
-        request.path contains '/pages/data-sale-opt-out-nvy' or
-        request.path contains 'nvy' or
-        collection.template_suffix == 'nvy' or
-        (product and product.template_suffix == 'nvy')
-      %}
+      {% if is_nvy_page %}
           
         {% comment %}
           {%- section 'footer-nvy' -%}  
@@ -784,28 +744,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
   
 
 
-    {% if request.path contains 'nvy-by-ds18' or
-      request.path contains 'about-us-nvy' or
-      request.path contains 'nvy-store-locator' or
-      request.path contains '/pages/contact-nvy' or
-      request.path contains '/pages/tech-support-nvy' or
-      request.path contains '/pages/faq-nvy' or
-      request.path contains '/pages/warranty-nvy' or
-      request.path contains '/pages/affirm-financing-nvy' or
-      request.path contains '/pages/warranty-form-nvy' or
-      request.path contains '/pages/catalogs-nvy' or
-      request.path contains '/pages/search-manuals-nvy' or
-      request.path contains '/pages/marketing-material-nvy' or
-      request.path contains '/pages/tuning-frequency-calculator-nvy' or
-      request.path contains '/pages/amp-wire-calculator-nvy' or
-      request.path contains '/pages/recommended-enclosure-spaces-nvy' or
-      request.path contains '/pages/california-prop65-warning-nvy' or
-      request.path contains '/pages/privacy-policy-nvy' or
-      request.path contains '/pages/data-sale-opt-out-nvy' or
-      request.path contains 'nvy' or
-      collection.template_suffix == 'nvy' or
-      (product and product.template_suffix == 'nvy')
-    %}
+    {% if is_nvy_page %}
 
       <section class="load-cart-rebuy">
         <div class="load-cart-rebuy__container">
