@@ -144,11 +144,17 @@
               {% else %}
                 <span class="price-crossline">{{ product.price | money }}</span>
               {% endif %}
+              
+              {% assign crossedPrice = defaultPrice %}
+              {% if customer.b2b? %}
+                {% assign crossedPrice = variant.price | money %}
+              {% endif %}
+
               <span 
                 data-available="{{ variant.available }}" 
                 data-variant-id="{{ variant.id }}"
                 data-price-regular="{{ crosslineProduct | money }}"
-                data-price-crossed="{{ defaultPrice }}"
+                data-price-crossed="{{ crossedPrice }}"
                 data-price-wholesale="0"
 
                 {% if variant.compare_at_price or variant.metafields.custom.b2b_dealer_price %}
