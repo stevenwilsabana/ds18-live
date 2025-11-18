@@ -73,6 +73,12 @@
       opacity: 0.8;
   }
 
+  .header-slider-global__container--b2b {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
   @media only screen and (min-width: 768px){
       #{{ dom_id }} { display: flex; }
       #{{ dom_id }} .header-nav-global {
@@ -142,18 +148,24 @@
   </div>
 
   <div class="header-slider-global">
-    <div class="header-slider-global__container">
-      {% for block in section.blocks %}
-        {% assign text = block.settings.text %}
-        {% assign link = block.settings.link_url %}
-        <div class="header-slider-global__item" {{ block.shopify_attributes }}>
-          {% if link != blank %}
-            <a href="{{ link }}" {% if block.settings.open_new %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ text }}</a>
-          {% else %}
-            <p>{{ text }}</p>
-          {% endif %}
+    <div class="header-slider-global__container {% if customer.b2b? %} header-slider-global__container--b2b {% endif %}">
+      {% if customer.b2b? %}
+        <div class="header-slider-global__item">
+          <a href="/pages/nvy" tabindex="0">Introducing NVY by DS18</a>
         </div>
-      {% endfor %}
+      {% else %}
+        {% for block in section.blocks %}
+          {% assign text = block.settings.text %}
+          {% assign link = block.settings.link_url %}
+          <div class="header-slider-global__item" {{ block.shopify_attributes }}>
+            {% if link != blank %}
+              <a href="{{ link }}" {% if block.settings.open_new %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ text }}</a>
+            {% else %}
+              <p>{{ text }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>
