@@ -196,9 +196,11 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       if (store_value == "nvy") {
         // Current URL
         const currentUrl = window.location.href;
-        // Redirect to a specific URL
-        window.location.href = `${currentUrl}&view=nvy`;
-        localStorage.setItem('store-name', '');
+        if (currentUrl.includes("search") && !currentUrl.includes("view")) {
+          // Redirect to a specific URL
+          window.location.href = `${currentUrl}&view=nvy`;
+          localStorage.setItem('store-name', '');
+        }
       }
       
     </script>
