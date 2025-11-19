@@ -249,9 +249,24 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
             </a>
           {%- endif -%}
 
-
-          <span id="open-search-rebuy">
+          <span id="nvy-header-search-icon" class="nvy-header-search-icon">
             {%- render 'icon' with 'header-search' -%}
+          </span>
+          <span id="nvy-open-search" class="nvy-open-search hidden">
+            {%- render 'icon' with 'close' -%}
+            <form action="/search" method="get" class="boost-pfs-search-form">
+              <input type="hidden" name="view" value="nvy">
+              <input
+                type="search"
+                name="q"
+                id="boost-pfs-search-box"
+                class="boost-pfs-search-box"
+                placeholder="Search products..."
+              >
+              <div class="nvy-open-search__icon">
+                {%- render 'icon' with 'header-search' -%}
+              </div>
+            </form>
           </span>
 
 
@@ -343,6 +358,45 @@ SEARCH DRAWER
 {%- render 'predictive-search' -%}
 
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const headerSearchIcon = document.querySelector('#nvy-header-search-icon')
+    const headerSearchContent = document.querySelector('#nvy-open-search')
+    const headerSearchContentClose = document.querySelector('.nvy-open-search svg.icon--close')
+    const headerSearchContentForm = document.querySelector('form.boost-pfs-search-form')
+    const headerSearchContentIcon = document.querySelector('.nvy-open-search__icon')
+    const headerSearchContentInput = document.querySelector('.nvy-open-search input[type="search"]')
+
+    headerSearchIcon.addEventListener('click', () => {
+      headerSearchContent.classList.remove('hidden')
+    })
+
+    headerSearchContentClose.addEventListener('click', () => {
+      headerSearchContent.classList.add('hidden')
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") {
+        headerSearchContent.classList.add('hidden');
+      }
+    });
+
+    headerSearchContentIcon.addEventListener('click', () => {
+      headerSearchContentForm.submit();
+    });
+
+    // // Listen for Enter key on the search input
+    // headerSearchContentInput.addEventListener('keydown', (event) => {
+    //   if (event.key === 'Enter') {
+    //     event.preventDefault(); // prevent default form submission
+    //     // headerSearchContentForm.submit();
+    //   }
+    // });
+
+    localStorage.setItem('store-name', 'nvy');
+
+  });
+</script>
+
+<script>
   (() => {
     const headerElement = document.getElementById('shopify-section-{{ section.id }}'),
       headerHeight = headerElement.clientHeight,
@@ -352,6 +406,7 @@ SEARCH DRAWER
     document.documentElement.style.setProperty('--header-height-without-bottom-nav', headerHeightWithoutBottomNav + 'px');
   })();
 </script>
+
 
 <script type="application/ld+json">
 {
