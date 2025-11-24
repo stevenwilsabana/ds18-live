@@ -459,6 +459,93 @@
         "text_color": "#ffffff"
       }
     },
+    "collection_list_kA3UUy": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_LghFmt": {
+          "type": "collection",
+          "settings": {
+            "collection": "amplifiers-under-150",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 28
+          }
+        },
+        "collection_XcEfGB": {
+          "type": "collection",
+          "settings": {
+            "collection": "speakers-under-50",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_AYnwWw": {
+          "type": "collection",
+          "settings": {
+            "collection": "packages-under-300",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_NJYfJW": {
+          "type": "collection",
+          "settings": {
+            "collection": "subwoofers-under-100",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_NYcdAX": {
+          "type": "collection",
+          "settings": {
+            "collection": "tweeters-under-50",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_LghFmt",
+        "collection_XcEfGB",
+        "collection_AYnwWw",
+        "collection_NJYfJW",
+        "collection_NYcdAX"
+      ],
+      "disabled": true,
+      "name": "Black Friday",
+      "settings": {
+        "reveal_on_scroll": true,
+        "layout": "carousel",
+        "subheading": "",
+        "title": "SHOP BY Categories",
+        "background": "#282828",
+        "text_color": "#ffffff"
+      }
+    },
     "1728055881f0e8ce96": {
       "type": "apps",
       "blocks": {
@@ -1394,6 +1481,7 @@
     "as_seen_on_4MiKg3",
     "featured-collections",
     "eef515a4-b2be-4d44-afec-99bcc5700923",
+    "collection_list_kA3UUy",
     "1728055881f0e8ce96",
     "image-with-text",
     "2994570f-24c3-498e-933f-9fa6d70c8e08",
