@@ -535,6 +535,9 @@
         "collection_NJYfJW",
         "collection_NYcdAX"
       ],
+      "custom_css": [
+        "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
+      ],
       "name": "Black Friday",
       "settings": {
         "reveal_on_scroll": true,
