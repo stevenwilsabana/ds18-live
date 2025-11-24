@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
   // get from the editor field
-  // const countdownTimer = document.querySelector('#custom-countdown-timer');
-  // const customDate = countdownTimer.dataset.deadline;
+  const countdownTimer = document.querySelector('#custom-countdown-timer');
+  const customDate = countdownTimer.dataset.deadline;
 
-  const now = new Date();
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-  const month = months[now.getMonth()];
-  const day = now.getDate();
-  const year = now.getFullYear();
-  const customDate = `${month} ${day}, ${year} 23:59:59`;
+  // const now = new Date();
+  // const months = [
+  //   'January',
+  //   'February',
+  //   'March',
+  //   'April',
+  //   'May',
+  //   'June',
+  //   'July',
+  //   'August',
+  //   'September',
+  //   'October',
+  //   'November',
+  //   'December',
+  // ];
+  // const month = months[now.getMonth()];
+  // const day = now.getDate();
+  // const year = now.getFullYear();
+  // const customDate = `${month} ${day}, ${year} 23:59:59`;
 
   const saleEndDate = new Date(customDate).getTime();
   const countdownFunction = setInterval(() => {
