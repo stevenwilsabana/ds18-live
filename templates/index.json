@@ -535,13 +535,12 @@
         "collection_NJYfJW",
         "collection_NYcdAX"
       ],
-      "disabled": true,
       "name": "Black Friday",
       "settings": {
         "reveal_on_scroll": true,
         "layout": "carousel",
         "subheading": "",
-        "title": "SHOP BY Categories",
+        "title": "Top Picks Just for You",
         "background": "#282828",
         "text_color": "#ffffff"
       }
