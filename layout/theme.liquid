@@ -432,7 +432,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
   {%- assign store = 'test' -%}
 
   <body
-    class="no-focus-outline {{ feature_classes }} page-template--{{ template.suffix }}"
+    class="no-focus-outline {{ feature_classes }} page-template--{{ template.suffix }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
     data-instant-allow-query-string
     id="{{template.name }}"
   >
@@ -984,6 +984,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const activeCampaign = document.querySelector('body.active-campaign');
     function checkRebuyElement() {
         const el = document.querySelector('#rebuy-widget-133714 .rebuy-money .sr-only');
         if (el) {
@@ -1041,8 +1042,9 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
         }
         setTimeout(checkRebuyElement, 200);
     }
-  
-    checkRebuyElement();
+    if(activeCampaign) {
+      checkRebuyElement();
+    }
   });
 
 </script>

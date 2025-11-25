@@ -293,63 +293,66 @@ function $cartInsuranceOnly(arrayProducts) {
     } else if ($protectPackage !== undefined) {
         console.log("****El paquete de protección está en el carrito, pero hay más ítems.");
     } else {
-      setTimeout(() => {
-        const selectors = [
-          '#rebuy-widget-133714 .rebuy-product-price > div > span:first-child > span:last-child',
-          '#rebuy-widget-94780 .rebuy-product-price > div > span:first-child > span:last-child'
-        ];
-
-        const applyDiscount = (el) => {
-          let original = el.innerText;
-          let price = parseFloat(original.replace(/[^0-9.]/g, ''));
-          let discountedPrice = price * 0.8;
-
-          const wrapper = el.closest('.rebuy-product-price');
-          const compareAt = wrapper.querySelector('.rebuy-money.compare-at');
-
-          // Create discount tag element
-          const discountTag = document.createElement("p");
-          discountTag.className = "alert-discount";
-          discountTag.style.cssText =
-            "text-transform: uppercase;font-size: 10px !important;background: red;color: #fff;font-weight: bold !important;";
-
-          if (!compareAt) {
-            // Normal price → 20% off
-            el.innerHTML = `
-              <span>$${discountedPrice.toFixed(2)}</span>
-              <span style="color:red;text-decoration:line-through;">
-                $${price.toFixed(2)}
-              </span>
-            `;
-            discountTag.textContent = "20% OFF FOR BLACK FRIDAY SALE!";
-          } else {
-            // Compare-at price exists → 40% off
-            let compareText = compareAt.querySelector('span:last-child').innerText;
-
-            el.innerHTML = `
-              <span>$${discountedPrice.toFixed(2)}</span>
-              <span style="color:red;text-decoration:line-through;">
-                ${compareText}
-              </span>
-            `;
-            discountTag.textContent = "40% OFF FOR BLACK FRIDAY SALE!";
-            compareAt.style.display = "none";
-          }
-
-          // Remove old tag if exists
-          const existing = wrapper.querySelector('.alert-discount');
-          if (existing) existing.remove();
-
-          // Insert updated one
-          wrapper.prepend(discountTag);
-        };
-
-        // Apply logic for both selectors
-        selectors.forEach(selector => {
-          document.querySelectorAll(selector).forEach(applyDiscount);
-        });
-
-      }, 1500);
+      const activeCampaign = document.querySelector('body.active-campaign');
+      if(activeCampaign) {
+        setTimeout(() => {
+          const selectors = [
+            '#rebuy-widget-133714 .rebuy-product-price > div > span:first-child > span:last-child',
+            '#rebuy-widget-94780 .rebuy-product-price > div > span:first-child > span:last-child'
+          ];
+  
+          const applyDiscount = (el) => {
+            let original = el.innerText;
+            let price = parseFloat(original.replace(/[^0-9.]/g, ''));
+            let discountedPrice = price * 0.8;
+  
+            const wrapper = el.closest('.rebuy-product-price');
+            const compareAt = wrapper.querySelector('.rebuy-money.compare-at');
+  
+            // Create discount tag element
+            const discountTag = document.createElement("p");
+            discountTag.className = "alert-discount";
+            discountTag.style.cssText =
+              "text-transform: uppercase;font-size: 10px !important;background: red;color: #fff;font-weight: bold !important;";
+  
+            if (!compareAt) {
+              // Normal price → 20% off
+              el.innerHTML = `
+                <span>$${discountedPrice.toFixed(2)}</span>
+                <span style="color:red;text-decoration:line-through;">
+                  $${price.toFixed(2)}
+                </span>
+              `;
+              discountTag.textContent = "20% OFF FOR BLACK FRIDAY SALE!";
+            } else {
+              // Compare-at price exists → 40% off
+              let compareText = compareAt.querySelector('span:last-child').innerText;
+  
+              el.innerHTML = `
+                <span>$${discountedPrice.toFixed(2)}</span>
+                <span style="color:red;text-decoration:line-through;">
+                  ${compareText}
+                </span>
+              `;
+              discountTag.textContent = "40% OFF FOR BLACK FRIDAY SALE!";
+              compareAt.style.display = "none";
+            }
+  
+            // Remove old tag if exists
+            const existing = wrapper.querySelector('.alert-discount');
+            if (existing) existing.remove();
+  
+            // Insert updated one
+            wrapper.prepend(discountTag);
+          };
+  
+          // Apply logic for both selectors
+          selectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(applyDiscount);
+          });
+  
+        }, 1500);
+      }
       console.log("****El paquete de protección no está en el carrito. xxxxx");
     }
 };
