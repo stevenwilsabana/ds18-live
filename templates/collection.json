@@ -14,7 +14,6 @@
       "blocks": {
         "bcfab2c5-6541-478b-bbf7-9f12997568a9": {
           "type": "shopify://apps/boost-ai-search-filter/blocks/product-filter/7fc998ae-a150-4367-bab8-505d8a4503f7",
-          "disabled": true,
           "settings": {}
         }
       },
