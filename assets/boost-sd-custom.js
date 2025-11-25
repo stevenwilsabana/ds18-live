@@ -95,7 +95,7 @@ window.addEventListener('load', ()=> {
 
 window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
     (componentRegistry) => {
-        componentRegistry.useComponentPlugin('ProductTitle', {
+        componentRegistry.useComponentPlugin('ProductPrice', {
             name: 'Modify Product Label',
             enabled: true,
             apply: () => ({
