@@ -93,3 +93,27 @@ window.addEventListener('load', ()=> {
 
 });
 
+window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
+    (componentRegistry) => {
+        componentRegistry.useComponentPlugin('ProductLabel', {
+            name: 'Modify Product Label',
+            enabled: true,
+            apply: () => ({
+                className: 'extra-class',
+                props: (props) => {
+                    props.label += ' Boost'; // Modify props
+                    return props;
+                },
+                style: {
+                    color: 'red', // Modify styles
+                },
+                render(elementModel, currentRenderElement) {
+                    return currentRenderElement;
+                },
+                beforeRender(element) {},
+                afterRender(element) {},
+                // Commonly used for customization
+            }),
+        });
+    }
+]);
