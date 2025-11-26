@@ -38,7 +38,37 @@
   {%- endfor -%}
 
   <product-media form-id="product-form-{{ section.id }}-{{ product.id }}" {% if section.settings.enable_video_autoplay %}autoplay-video{% endif %} thumbnails-position="{{ section.settings.desktop_thumbnails_position }}" {% if settings.reveal_product_media %}reveal-on-scroll{% endif %} product-handle="{{ product.handle }}" class="product__media product-media--sticky" style="--largest-image-aspect-ratio: {{ largest_image_aspect_ratio }}">
+    <div class="pdp-share">
+      <div class="pdp-share__icon">
+        {% render 'icon-share' %}
+      </div>
+      <div class="pdp-share__share-buttons">
+        <!-- Facebook -->
+        <a
+          href="#"
+          class="share-btn fb"
+          data-url="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ product.url }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 224 432"><path fill="#000000" d="M145 429H66V235H0v-76h66v-56q0-48 27-74t72-26q36 0 59 3v67l-41 1q-22 0-30 9t-8 27v49h76l-10 76h-66v194z"/></svg>
+          <span>Facebook</span>
+        </a>
 
+        <!-- X / Twitter -->
+        <a
+          href="#"
+          class="share-btn tw"
+          data-url="https://x.com/intent/post?text={{ product.title }}&url={{ shop.url }}{{ product.url }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000000" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+          <span>X</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:?subject={{ product.title }}&body={{ shop.url }}{{ product.url }}"
+          class="share-btn email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000000" d="M1 3h22v18H1V3Zm2 2v1.83l9 4.55l9-4.55V5H3Zm18 4.07l-9 4.55l-9-4.55V19h18V9.07Z"/></svg>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
     <div class="product__media-list-wrapper" style="max-width: {{ max_width }}px">
 
 
@@ -350,6 +380,35 @@
           send_to: 'G-S5TTBXRYSN'
         });
         
+      });
+
+      // PDP share buttons
+      const pdpShareIcon = document.querySelector('.pdp-share__icon');
+      const pdpShareContent = document.querySelector('.pdp-share__share-buttons');
+
+      document.addEventListener('click', (e) => {
+        const isClickIcon = pdpShareIcon.contains(e.target);
+        const isClickInside = pdpShareContent.contains(e.target);
+
+        if(isClickIcon && !pdpShareContent.classList.contains('active')) {
+          pdpShareContent.classList.add('active');
+        } else {
+          pdpShareContent.classList.remove('active');
+        } 
+      });
+
+      document.querySelectorAll('.share-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const url = this.dataset.url;
+
+          window.open(
+            url,
+            "share-popup",
+            "width=600,height=500,left=100,top=100,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes"
+          );
+        });
       });
   });
 </script>
