@@ -941,10 +941,6 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     {% else %}
       {{ 'script-product-item-global.js' | asset_url | script_tag }}
     {% endif %}
-
-
-
-
 <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
 <script>
     var klaviyo = klaviyo || [];
@@ -1045,17 +1041,18 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     if(activeCampaign) {
       checkRebuyElement();
     }
+
+    const pageTitle = "{{ page.title }}"
+    if(pageTitle == "Your privacy choices") {
+      const pageContent = document.querySelector('.page-content > meta');
+
+      pageContent.nextElementSibling.insertAdjacentHTML(
+        "afterend",
+        `<p>We may also request access to your mobile device’s Bluetooth location permissions. This access is used solely to identify and connect with your device’s Bluetooth for operational purposes. We do not use this access to track your location.<p/>`
+      );
+    }
   });
 
 </script>
-
-
-
-
-
-
-
-          
-          
   </body>
 </html>
