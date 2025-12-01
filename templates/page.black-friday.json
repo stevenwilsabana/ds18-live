@@ -57,7 +57,7 @@
       "type": "countdown-timer-new",
       "name": "Countdown Timer",
       "settings": {
-        "deadline": "December 2, 2025 23:59:59"
+        "deadline": "December 2, 2025 00:00:00"
       }
     },
     "text_with_image_8Bq8GM": {
