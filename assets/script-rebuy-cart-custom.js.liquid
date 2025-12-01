@@ -350,7 +350,44 @@ function $cartInsuranceOnly(arrayProducts) {
           selectors.forEach(selector => {
             document.querySelectorAll(selector).forEach(applyDiscount);
           });
-  
+
+
+          function waitForElement(selector, callback) {
+            const observer = new MutationObserver(() => {
+                const el = document.querySelector(selector);
+                if (el) {
+                    observer.disconnect(); // Stop observing once found
+                    callback(el);          // Run your code
+                }
+            });
+
+            // Start watching the whole document for changes
+            observer.observe(document.body, { 
+                childList: true, 
+                subtree: true 
+            });
+
+            // In case element is already there
+            const el = document.querySelector(selector);
+            if (el) {
+                observer.disconnect();
+                callback(el);
+            }
+          }
+          waitForElement('.rebuy-cart__flyout-content.has-items', function(el) {
+              const listItems = document.querySelectorAll('.rebuy-cart__flyout-content.has-items .rebuy-cart__flyout-items > li');
+
+              listItems.forEach(item => {
+                if(item.classList.contains('tag-specials')) {
+                  item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "Black Friday: 40% Off Sitewide"
+                }
+              });
+              console.log("Element exists:", el);
+              
+              // Do something to the element
+              el.style.color = 'red';
+          });
+        
         }, 1500);
       }
       console.log("****El paquete de protección no está en el carrito. xxxxx");

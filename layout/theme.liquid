@@ -1038,9 +1038,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
         }
         setTimeout(checkRebuyElement, 200);
     }
-    if(activeCampaign) {
-      checkRebuyElement();
-    }
+    
 
     const pageTitle = "{{ page.title }}"
     if(pageTitle == "Your privacy choices") {
@@ -1050,6 +1048,47 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
         "afterend",
         `<p>We may also request access to your mobile device’s Bluetooth location permissions. This access is used solely to identify and connect with your device’s Bluetooth for operational purposes. We do not use this access to track your location.<p/>`
       );
+    }
+
+    function waitForElement(selector, callback) {
+      const observer = new MutationObserver(() => {
+          const el = document.querySelector(selector);
+          if (el) {
+              observer.disconnect(); // Stop observing once found
+              callback(el);          // Run your code
+          }
+      });
+
+      // Start watching the whole document for changes
+      observer.observe(document.body, { 
+          childList: true, 
+          subtree: true 
+      });
+
+      // In case element is already there
+      const el = document.querySelector(selector);
+      if (el) {
+          observer.disconnect();
+          callback(el);
+      }
+    }
+
+    if(activeCampaign) {
+      checkRebuyElement();
+      
+      waitForElement('.rebuy-cart__flyout-content.has-items', function(el) {
+          const listItems = document.querySelectorAll('.rebuy-cart__flyout-content.has-items .rebuy-cart__flyout-items > li');
+  
+          listItems.forEach(item => {
+            if(item.classList.contains('tag-specials')) {
+              item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "Black Friday: 40% Off Sitewide"
+            }
+          });
+          console.log("Element exists:", el);
+          
+          // Do something to the element
+          el.style.color = 'red';
+      });
     }
   });
 
