@@ -323,7 +323,7 @@ function $cartInsuranceOnly(arrayProducts) {
                   $${price.toFixed(2)}
                 </span>
               `;
-              discountTag.textContent = "20% OFF FOR BLACK FRIDAY SALE!";
+              discountTag.textContent = "20% OFF FOR CYBER MONDAY SALE!";
             } else {
               // Compare-at price exists → 40% off
               let compareText = compareAt.querySelector('span:last-child').innerText;
@@ -334,7 +334,7 @@ function $cartInsuranceOnly(arrayProducts) {
                   ${compareText}
                 </span>
               `;
-              discountTag.textContent = "40% OFF FOR BLACK FRIDAY SALE!";
+              discountTag.textContent = "40% OFF FOR CYBER MONDAY SALE!";
               compareAt.style.display = "none";
             }
   
@@ -350,7 +350,45 @@ function $cartInsuranceOnly(arrayProducts) {
           selectors.forEach(selector => {
             document.querySelectorAll(selector).forEach(applyDiscount);
           });
-  
+
+
+          function waitForElement(selector, callback) {
+            const observer = new MutationObserver(() => {
+                const el = document.querySelector(selector);
+                if (el) {
+                    observer.disconnect(); // Stop observing once found
+                    callback(el);          // Run your code
+                }
+            });
+
+            // Start watching the whole document for changes
+            observer.observe(document.body, { 
+                childList: true, 
+                subtree: true 
+            });
+
+            // In case element is already there
+            const el = document.querySelector(selector);
+            if (el) {
+                observer.disconnect();
+                callback(el);
+            }
+          }
+          waitForElement('.rebuy-cart__flyout-content.has-items', function(el) {
+              const listItems = document.querySelectorAll('.rebuy-cart__flyout-content.has-items .rebuy-cart__flyout-items > li');
+
+              listItems.forEach(item => {
+                
+                if(item.classList.contains('tag-specials')) {
+                  item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "Cyber Monday: 40% Off Sitewide"
+                }
+              });
+              console.log("Element exists:", el);
+              
+              // Do something to the element
+              el.style.color = 'red';
+          });
+        
         }, 1500);
       }
       console.log("****El paquete de protección no está en el carrito. xxxxx");
