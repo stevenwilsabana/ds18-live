@@ -1010,7 +1010,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
                   $${price.toFixed(2)}
                 </span>
               `;
-              discountTag.textContent = "20% OFF FOR BLACK FRIDAY SALE!";
+              discountTag.textContent = "20% OFF FOR CYBER MONDAY SALE!";
             } else {
               // Compare-at price exists → 40% off logic
               let originalCompare = compareAt.querySelector('span:last-child').innerText;
@@ -1022,7 +1022,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
                 </span>
               `;
 
-              discountTag.textContent = "40% OFF FOR BLACK FRIDAY SALE!";
+              discountTag.textContent = "40% OFF FOR CYBER MONDAY SALE!";
               compareAt.style.display = "none";
             }
 
@@ -1081,7 +1081,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
   
           listItems.forEach(item => {
             if(item.classList.contains('tag-specials')) {
-              item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "Black Friday: 40% Off Sitewide"
+              item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "Cyber Monday: 40% Off Sitewide"
             }
           });
           console.log("Element exists:", el);
