@@ -308,13 +308,13 @@
       "countdown-timer": {
         "type": "countdown-timer",
         "settings": {
-          "active_countdown": false,
+          "active_countdown": true,
           "background": "#000000",
           "color": "#ffffff",
-          "deadline": "July 07, 2025 3:59:00",
-          "message": "Get 15% OFF Now - DS18's July 4th Sale ends soon.",
+          "deadline": "December 01, 2025 23:59:00",
+          "message": "Final Hours of Cyber Monday Sale —",
           "link": "shopify://collections/best-sellers-all",
-          "button": "Shop now",
+          "button": "",
           "text_counter": "Offer ends in"
         }
       },
@@ -547,7 +547,7 @@
           "slide_GWHctc": {
             "type": "slide",
             "settings": {
-              "text": "BLACK FRIDAY SALE • Automatic Discount at Checkout — No Coupon Needed!",
+              "text": "Automatic Discount at Checkout — No Coupon Needed!",
               "link_url": "",
               "open_new": false
             }
