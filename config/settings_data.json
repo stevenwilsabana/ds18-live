@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "active_campaign": true,
+    "active_campaign": false,
     "campaign_discount_crossline": 20,
     "label_campaign": "CYBER MONDAY SALE",
     "tag_campaign": "CAMPAIGN: ACTIVE",
@@ -308,7 +308,7 @@
       "countdown-timer": {
         "type": "countdown-timer",
         "settings": {
-          "active_countdown": true,
+          "active_countdown": false,
           "background": "#000000",
           "color": "#ffffff",
           "deadline": "December 01, 2025 23:59:00",
@@ -547,7 +547,7 @@
           "slide_GWHctc": {
             "type": "slide",
             "settings": {
-              "text": "Automatic Discount at Checkout — No Coupon Needed!",
+              "text": "Free Shipping on All US Orders",
               "link_url": "",
               "open_new": false
             }
