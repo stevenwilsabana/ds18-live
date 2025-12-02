@@ -16031,6 +16031,7 @@ h2.jdgm-rev-widg__title {
   .product__media {
     max-width: 95% !important;
     margin: auto !important;
+    position: relative;
   }
   .accordion header.section__header.container.text-container::before,
   .accordion header.section__header.container.text-container::after {
