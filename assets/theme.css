@@ -16739,3 +16739,6 @@ body.page-template--black-friday
     font-size: 14px;
   }
 }
+iframe#chat-button {
+  z-index: 9999999999999;
+}
