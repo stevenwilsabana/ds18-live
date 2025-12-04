@@ -2,7 +2,7 @@
 This snippet outputs all the necessary attributes to the image tag for creating lazyloading. You need to output it
 as part of an image tag, by passing to it the required sizes:
 
-<img {% render 'image-attributes', image: image, sizes: '200,300,400' %} />
+<img loading="lazy" {% render 'image-attributes', image: image, sizes: '200,300,400' %} />
 
 We can also pass the "native" attribute to true. This will actually generate attributes for the native lazyloading
 instead of lazysizes
