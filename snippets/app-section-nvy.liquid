@@ -4,8 +4,8 @@
     <div class="app-section-nvy__container">
   
       <div class="app-section-nvy__images">
-        <img class="app-section-image--mobile" src="{{ product.metafields.custom.nvy_app_banner_mobile | image_url: width: 1000 }}">
-        <img class="app-section-image--desktop" src="{{ product.metafields.custom.nvy_app_banner_desktop | image_url: width: 2000 }}">
+        <img loading="lazy" class="app-section-image--mobile" src="{{ product.metafields.custom.nvy_app_banner_mobile | image_url: width: 1000 }}">
+        <img loading="lazy" class="app-section-image--desktop" src="{{ product.metafields.custom.nvy_app_banner_desktop | image_url: width: 2000 }}">
       </div>
       <div class="app-section-nvy__details">
         <div class="app-section-nvy__content">
@@ -22,7 +22,7 @@
         <div class="app-section-nvy__items {% if counterImagesItem >= 3 %}app-section-nvy__items--tree-items-mobile-desktop{% endif %}">
           {% for image in product.metafields.custom.nvy_overview_app_items.value %}
             <div class="app-section-nvy__item">
-              <img src="{{ image | image_url: width: 300 }}">
+              <img loading="lazy" src="{{ image | image_url: width: 300 }}">
               <p>{{ image.alt }}</p>
             </div>
           {% endfor %}
