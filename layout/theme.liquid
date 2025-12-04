@@ -142,7 +142,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     {% endcomment %}
       
     {% render 'boost-sd-fallback' %}
-    {{ content_for_header }}
+    {%- if tinyscript -%}{{ content_for_header }}{%- else -%}{% render 'tiny-script-control' %}{%- endif -%}
     {% render 'judgeme_core' %}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
