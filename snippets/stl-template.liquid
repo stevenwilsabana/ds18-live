@@ -5,7 +5,7 @@
       <div class="container-images">
       {% for image in product.images %}
         <div class="product-stl__image" data-image-id="{{ image.id }}" data-selector="{{ forloop.index }}">
-          <img src="{{ image | img_url: '500x' }}" alt="{{ product.title }}">
+          <img loading="lazy" src="{{ image | img_url: '500x' }}" alt="{{ product.title }}">
         </div>
       {% endfor %}
       </div>
