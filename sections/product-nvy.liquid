@@ -30,7 +30,7 @@
         <button class="btn-slider-main-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">{% render 'icon-preview-arrow' %}</button>
         <div class="product-nvy-main--{{ section.id }}">
           {% for image in product.images %}
-            <img src="{{ image | img_url: 'master' }}" alt="{{ product.title }}-{{ forloop.index }}">
+            <img loading="lazy" src="{{ image | img_url: 'master' }}" alt="{{ product.title }}-{{ forloop.index }}">
           {% endfor %}
         </div>
         <button class="btn-slider-main-next--{{ section.id }} slick-button-custom slick-button-custom--next">{% render 'icon-next-arrow' %}</button>
@@ -39,7 +39,7 @@
         <button class="btn-slider-thumbnail-prev--{{ section.id }} slick-button-custom slick-button-custom--prev">{% render 'icon-preview-arrow' %}</button>
         <div class="product-nvy-thumbnail--{{ section.id }}">
           {% for image in product.images %}
-            <img src="{{ image | img_url: 'master' }}" alt="{{ product.title }}-{{ forloop.index }}">
+            <img loading="lazy" src="{{ image | img_url: 'master' }}" alt="{{ product.title }}-{{ forloop.index }}">
           {% endfor %}
         </div>
         <button class="btn-slider-thumbnail-next--{{ section.id }} slick-button-custom slick-button-custom--next">{% render 'icon-next-arrow' %}</button>
@@ -79,7 +79,7 @@
       <ul>
         {% for block in section.blocks %}
           <li>
-            <img src="{{ block.settings.imagen | img_url: 'master' }}">
+            <img loading="lazy" src="{{ block.settings.imagen | img_url: 'master' }}">
             <p>{{ block.settings.heading }}</p>
           </li>
         {% endfor %}

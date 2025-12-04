@@ -11,7 +11,7 @@
         <div class="product product--{{ forloop.index }}">
           <a href="{{ block.settings.link }}">
             <p class="product-name">{{ block.settings.product_name }}</p>
-            <div class="product-imagen"><img src="{{ block.settings.imagen | img_url: 'master' }}"></div>
+            <div class="product-imagen"><img loading="lazy" src="{{ block.settings.imagen | img_url: 'master' }}"></div>
             <span class="button btn">{{ block.settings.button }}</span>
           </a>
         </div>
