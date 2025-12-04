@@ -180,7 +180,7 @@
         <ul>
           {% for file in product.metafields.custom.nvy_key_features.value %}
             <li>
-              <img src="{{ file | img_url: 'master' }}" alt="{{ file.alt | escape }}">
+              <img loading="lazy" src="{{ file | img_url: 'master' }}" alt="{{ file.alt | escape }}">
               <p>{{ file.alt }}</p>
             </li>
           {% endfor %}

@@ -17,7 +17,7 @@
   {% if collection.metafields.custom.main_banner %}
     <div class="new-header-collection__banner">
       <div class="new-header-collection__imagen">
-        <img src="{{ collection.metafields.custom.main_banner | img_url: 'master' }}">
+        <img loading="lazy" src="{{ collection.metafields.custom.main_banner | img_url: 'master' }}">
       </div>
       <div class="new-header-collection__text">
         {% if collection.metafields.custom.heading %}
@@ -120,7 +120,7 @@
           {% if icon != blank and label != blank %}
             <div class="icon-item">
               <a href="{{ link }}" class="tab-icon-link">
-                <img src="{{ icon | image_url: width: 80 }}" alt="{{ label }}">
+                <img loading="lazy" src="{{ icon | image_url: width: 80 }}" alt="{{ label }}">
                 <p>{{ label }}</p>
               </a>
             </div>
