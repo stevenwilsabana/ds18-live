@@ -6,14 +6,14 @@ OLD VERSION
 {{ 'styles-search-manuals.css' | asset_url | stylesheet_tag }}
 
 <div id="loader">
-  <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/DS18_WLIL_LOGO.png">
+  <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/DS18_WLIL_LOGO.png">
   <p>Loading Manuals...</p>
 </div>
 <div id="search-container">
   <input type="text" id="search-input" v-model="searchQuery" @input="performSearch" placeholder="Search manual by product name or SKU...">
   <div id="search-results">
     <div v-for="(file, index) in files" :key="index" class="items-search">
-      <a :href="file.productUrl" target="_blank" class="image"><img :src="file.imageUrl" alt="[[ file.text ]]" v-if="file.imageUrl" /></a>
+      <a :href="file.productUrl" target="_blank" class="image"><img loading="lazy" :src="file.imageUrl" alt="[[ file.text ]]" v-if="file.imageUrl" /></a>
       <a :href="file.productUrl" target="_blank" class="title">
         <span>[[ file.text ]]</span>
         <b>SKU: [[ file.vendor ]]</b>
@@ -56,7 +56,7 @@ OLD VERSION
   </div>
   <div id="search-results" style="display: none;">
     <div v-for="(file, index) in files" :key="index" class="items-search">
-      <div class="search-imagen"><img :src="file.imageUrl" alt="[[ file.text ]]" v-if="file.imageUrl" /></div>
+      <div class="search-imagen"><img loading="lazy" :src="file.imageUrl" alt="[[ file.text ]]" v-if="file.imageUrl" /></div>
       <div class="search-details">
         <!--<span>[[ file.text ]]</span>-->
         <b>SKU: [[ file.vendor ]]</b>
