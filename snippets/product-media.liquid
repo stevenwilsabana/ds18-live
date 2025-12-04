@@ -100,14 +100,14 @@
               {%- when 'image' -%}
                 <div class="active-zoom_product-page product__media-image-wrapper aspect-ratio aspect-ratio--natural" 
                      style="padding-bottom: {{ 100.0 | divided_by: media.aspect_ratio }}%; --aspect-ratio: {{ media.aspect_ratio }}">
-                  <img class="image-zoom-product-page" data-zoom="{{ media | img_url: '2000x2000', scale: 100 }}" {% if selected_media.id == media.id and settings.reveal_product_media %}reveal{% endif %} {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media, alt: alt, sizes: '400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800' %}>
+                  <img loading="lazy" class="image-zoom-product-page" data-zoom="{{ media | img_url: '2000x2000', scale: 100 }}" {% if selected_media.id == media.id and settings.reveal_product_media %}reveal{% endif %} {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media, alt: alt, sizes: '400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800' %}>
                 </div>
 
               {%- when 'video' -%}
                 <native-video class="video-wrapper video-wrapper--native" style="--aspect-ratio: {{ media.aspect_ratio }}">
                   {%- unless section.settings.enable_video_autoplay -%}
                     <div class="video-wrapper__poster">
-                      <img class="video-wrapper__poster-image" {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media.preview_image, sizes: '400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200' %}>
+                      <img loading="lazy" class="video-wrapper__poster-image" {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media.preview_image, sizes: '400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200' %}>
 
                       <div class="video-wrapper__poster-content">
                         <button type="button" class="video-wrapper__play-button" title="{{ 'general.accessibility.play_video' | t | escape }}">
@@ -126,7 +126,7 @@
                 <external-video provider="{{ media.host | escape }}" class="video-wrapper">
                   {%- unless section.settings.enable_video_autoplay -%}
                     <div class="video-wrapper__poster">
-                      <img class="video-wrapper__poster-image" {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media.preview_image, sizes: '400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200' %}>
+                      <img loading="lazy" class="video-wrapper__poster-image" {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media.preview_image, sizes: '400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200' %}>
 
                       <div class="video-wrapper__poster-content">
                         <button type="button" class="video-wrapper__play-button" title="{{ 'general.accessibility.play_video' | t | escape }}">
