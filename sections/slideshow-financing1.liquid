@@ -151,7 +151,7 @@
 
                     {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
-                    <img class="image-fit hero__image hero__image--{{ block.id }} lazyload showOnDesk"
+                    <img loading="lazy" class="image-fit hero__image hero__image--{{ block.id }} lazyload showOnDesk"
                       src=""
                       data-src="{{ img_url }}"
                       data-aspectratio="{{ block.settings.image.aspect_ratio }}"
@@ -161,7 +161,7 @@
                   
                   
                   	{%- assign img_url = block.settings.imagemobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-                    <img class="image-fit hero__image hero__image--{{ block.id }} lazyload showOnMob"
+                    <img loading="lazy" class="image-fit hero__image hero__image--{{ block.id }} lazyload showOnMob"
                         src=""
                         data-src="{{ img_url }}"
                         data-aspectratio="{{ block.settings.image.aspect_ratio }}"
@@ -170,7 +170,7 @@
                         alt="{{ block.settings.image.alt | escape }}">
                   
                     <noscript>
-                      <img class="image-fit hero__image hero__image--{{ block.id }}"
+                      <img loading="lazy" class="image-fit hero__image hero__image--{{ block.id }}"
                         src="{{ block.settings.image | img_url: '1400x' }}"
                         alt="{{ block.settings.image.alt | escape }}">
                     </noscript>

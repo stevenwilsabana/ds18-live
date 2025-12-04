@@ -9,7 +9,7 @@
   <div class="shop-the-look__imagen">
     
     <div class="shop-the-look__imagen-container">
-      <img src="{{ section.settings.imagen | img_url: 'master' }}">
+      <img loading="lazy" src="{{ section.settings.imagen | img_url: 'master' }}">
       
       <div class="shop-the-look__points">
         {% for block in section.blocks %}
