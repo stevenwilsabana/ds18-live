@@ -7,7 +7,7 @@
     </div>
     <div class="multiple-image__images">
       {% for image in product.metafields.custom.dyno_results.value %}
-         <img src="{{ image | img_url: 'large' }}" alt="Imagen">
+         <img loading="lazy" src="{{ image | img_url: 'large' }}" alt="Imagen">
       {% endfor %}
     </div>
     
