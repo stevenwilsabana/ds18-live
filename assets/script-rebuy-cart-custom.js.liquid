@@ -443,6 +443,7 @@ function $reindexacionRebuy(){
 
   $('.container-progress-bar-move').before('<div class="cart-messaging"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000000" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m0-12.5a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m2 5.5h-1v-4.5h-3v2h1V15h-1v2h4z"/></svg><div><strong>Your items aren’t reserved</strong>, checkout quickly to make sure you don’t miss out.</div></div>');
 
+
 };
 
 
@@ -565,9 +566,14 @@ document.addEventListener('rebuy:smartcart.ready', function(event){
 
 
 document.addEventListener('rebuy:cart.change', function(event){
-  if (window.Shopify && Shopify.PaymentButton) {
-    Shopify.PaymentButton.init();
-  }
+  setTimeout(function(){
+    if (window.Shopify && Shopify.PaymentButton) {
+      Shopify.PaymentButton.init();
+    }
+  }, 500);
+  // if (window.Shopify && Shopify.PaymentButton) {
+  //   Shopify.PaymentButton.init();
+  // }
   // console.log('rebuy:cart.change event', event.detail);
 
   var $total_price = event.detail.cart.cart.total_price;
