@@ -142,7 +142,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     {% endcomment %}
       
     {% render 'boost-sd-fallback' %}
-    {{ content_for_header }}
+    {%- if tinyscript -%}{{ content_for_header }}{%- else -%}{% render 'tiny-script-control' %}{%- endif -%}
     {% render 'judgeme_core' %}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -762,7 +762,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
       <section class="load-cart-rebuy">
         <div class="load-cart-rebuy__container">
-          <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/LOGO-DS18-GREY-WEB.png">
+          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/LOGO-DS18-GREY-WEB.png">
           <p>We are loading your cart...</p>
         </div>
       </section>
@@ -783,7 +783,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
       <section class="load-cart-rebuy">
         <div class="load-cart-rebuy__container">
-          <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/LOGO-DS18-GREY-WEB.png">
+          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/LOGO-DS18-GREY-WEB.png">
           <p>We are loading your cart...</p>
         </div>
       </section>
@@ -1093,5 +1093,11 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
   });
 
 </script>
+{% if additional_checkout_buttons %}
+  <style>.additional-checkout-buttons {display: none; width: 100%;}</style>
+  <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
+    {{ content_for_additional_checkout_buttons }}
+  </div>
+{% endif %}
   </body>
 </html>

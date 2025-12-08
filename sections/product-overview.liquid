@@ -93,7 +93,7 @@
 
         {% if product.metafields.custom.product_overview_image != blank %}
           <div class="product-overview__imagen">
-            <img src="{{ product.metafields.custom.product_overview_image | img_url: 'master' }}">
+            <img loading="lazy" src="{{ product.metafields.custom.product_overview_image | img_url: 'master' }}">
           </div>
         {% endif %}
 

@@ -7,14 +7,14 @@
       {%- assign img_url = section.settings.image | img_url: 'small' | replace: '_small', '' -%}
       {%- assign img_url_mob = section.settings.image_mob | img_url: 'small' | replace: '_small', '' -%}
 
-      <img
+      <img loading="lazy"
         class="hero-media showOnDesk"
         src="{{ img_url }}"
         height="{{ section.settings.image.height }}"
         alt="{{ section.settings.image.alt | escape }}"
       >
 
-      <img
+      <img loading="lazy"
         class="hero-media showOnMob"
         src="{{ img_url_mob }}"
         height="{{ section.settings.image_mob.height }}"

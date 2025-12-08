@@ -51,9 +51,9 @@
   <a href="{{ product.url }}">
 
     {% if template contains 'collection' %}
-      <img src="{{ product.featured_image | img_url: 'master' }}">
+      <img loading="lazy" src="{{ product.featured_image | img_url: 'master' }}">
     {% else %}
-      <img src="{{ product.featured_image | img_url: '300x' }}">
+      <img loading="lazy" src="{{ product.featured_image | img_url: '300x' }}">
     {% endif %}
 
   </a>

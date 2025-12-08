@@ -185,7 +185,7 @@ ul.slick-dots li button{
                 <div {{ block.shopify_attributes }} class="as-seen-on__item">
 
                   <div class="as-seen-on-item__imagen as-seen-on-item__imagen--{{ block.settings.brand | handleize }}">
-                    <img src="{{ block.settings.image | img_url: 'master' }}">
+                    <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}">
                   </div>
 
                   {% if block.settings.message != blank %}

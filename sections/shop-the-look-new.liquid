@@ -44,7 +44,7 @@
       </div>
 
       <div class="stl-general__image stl-general__image--mobile">
-        <img src="{{ section.settings.image_mobile | img_url: 'master' }}">
+        <img loading="lazy" src="{{ section.settings.image_mobile | img_url: 'master' }}">
       </div>
       
     </div>
@@ -76,7 +76,7 @@
             </div>
           </div>
           <div class="stl-general__image stl-general__image--desktop">
-            <img src="{{ section.settings.image_desktop | img_url: 'master' }}">
+            <img loading="lazy" src="{{ section.settings.image_desktop | img_url: 'master' }}">
           </div>
           {% for product in collections[section.settings.collection].products %}
             {% if product.available %}

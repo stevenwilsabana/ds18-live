@@ -15,7 +15,7 @@
   {% if collection.metafields.custom.main_banner %}
     <div class="new-header-collection__banner">
       <div class="new-header-collection__imagen">
-        <img src="{{ collection.metafields.custom.main_banner | img_url: 'master' }}">
+        <img loading="lazy" src="{{ collection.metafields.custom.main_banner | img_url: 'master' }}">
       </div>
       <div class="new-header-collection__text">
         {% if collection.metafields.custom.heading %}

@@ -57,7 +57,7 @@
           {%- if section.settings.link != blank -%}
             <a href="{{ section.settings.link }}" class="resto desktop-only">
               <h4 class="heading h2 resto">
-                <img src="//cdn.shopify.com/s/files/1/0670/1508/2300/t/4/assets/download.png" alt="">
+                <img loading="lazy" src="//cdn.shopify.com/s/files/1/0670/1508/2300/t/4/assets/download.png" alt="">
                 {{ section.settings.downloadLink | escape }}
                 <span class="red"></span>
               </h4>
@@ -82,7 +82,7 @@
                 <div class="text-with-icons__icon-wrapper">
                   {%- if block.settings.custom_icon != blank -%}
                     {% capture custom_icon_width %}{{ block.settings.custom_icon_width | times: 2 }}x{% endcapture %}
-                    <img
+                    <img loading="lazy"
                       class="text-with-icons__custom-icon"
                       style="max-width: {{ block.settings.custom_icon_width }}px"
                       width="{{ block.settings.custom_icon.width }}"
@@ -115,7 +115,7 @@
         {%- if section.settings.link != blank -%}
           <a href="{{ section.settings.link }}" class="resto mobile-only" style="display:none">
             <h4 class="heading h2 resto links ">
-              <img src="//cdn.shopify.com/s/files/1/0670/1508/2300/t/4/assets/download.png" alt="">
+              <img loading="lazy" src="//cdn.shopify.com/s/files/1/0670/1508/2300/t/4/assets/download.png" alt="">
               {{ section.settings.downloadLink | escape }}
               <span class="red"></span>
             </h4>

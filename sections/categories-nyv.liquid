@@ -9,7 +9,7 @@
       <div class="categorie categorie--{{ forloop.index }}">
         <a href="{{ block.settings.link }}">
           <div class="categorie-imagen">
-            <img src="{{ block.settings.imagen | img_url: 'master' }}">
+            <img loading="lazy" src="{{ block.settings.imagen | img_url: 'master' }}">
           </div>
           <p class="categorie-name">{{ block.settings.categorie_name }}</p>
         </a>

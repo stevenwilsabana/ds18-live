@@ -3,15 +3,15 @@
   <div class="imagen-with-text-nvy imagen-with-text-nvy--reverse imagen-with-text-nvy--4-1">
     <div class="imagen-with-text-nvy__container">
       <div class="imagen-with-text-nvy__imagen">
-          <img class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_3_1_mobile | image_url: width: 1500 }}">
-          <img class="show-in-desktop" src="{{ product.metafields.custom.nvy_image_for_banner_4_1 | image_url: width: 1500 }}">
+          <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_3_1_mobile | image_url: width: 1500 }}">
+          <img loading="lazy" class="show-in-desktop" src="{{ product.metafields.custom.nvy_image_for_banner_4_1 | image_url: width: 1500 }}">
       </div>
       <div class="imagen-with-text-nvy__details">
 
         <div class="container-images">
           {% if product.metafields.custom.nvy_icons_for_banner_4_1 != blank %}
             {% for image in product.metafields.custom.nvy_icons_for_banner_4_1.value %}
-              <img src="{{ image | image_url: width: 150 }}">
+              <img loading="lazy" src="{{ image | image_url: width: 150 }}">
             {% endfor %}
           {% endif %}
         </div>
@@ -34,8 +34,8 @@
   <div class="imagen-with-text-nvy imagen-with-text-nvy--4-0 {% unless product.metafields.custom.nvy_app_banner_desktop %}imagen-with-text-nvy--not-padding{% endunless %}">
     <div class="imagen-with-text-nvy__container">
       <div class="imagen-with-text-nvy__imagen">
-        <img class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_4_mobile | image_url: width: 1500 }}">
-        <img class="show-in-desktop" src="{{ product.metafields.custom.nvy_overview_end_banner_imagen | image_url: width: 1500 }}">
+        <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_4_mobile | image_url: width: 1500 }}">
+        <img loading="lazy" class="show-in-desktop" src="{{ product.metafields.custom.nvy_overview_end_banner_imagen | image_url: width: 1500 }}">
       </div>
       <div class="imagen-with-text-nvy__details">
 
@@ -45,7 +45,7 @@
         <div class="container-images">
           {% if product.metafields.custom.nvy_icons_for_banner_4 != blank %}
             {% for image in product.metafields.custom.nvy_icons_for_banner_4.value %}
-              <img src="{{ image | image_url: width: 100 }}">
+              <img loading="lazy" src="{{ image | image_url: width: 100 }}">
             {% endfor %}
           {% endif %}
         </div>

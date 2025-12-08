@@ -310,7 +310,7 @@
 
                     <div class="review__product">
                       <a href="{{ block.settings.product_review.url }}" target="_blank">
-                        <img src="{{ block.settings.product_review.featured_image | img_url: 'master' }}">
+                        <img loading="lazy" src="{{ block.settings.product_review.featured_image | img_url: 'master' }}">
                         <span>{{ block.settings.product_review.title }}</span>
                       </a>
                     </div>

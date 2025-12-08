@@ -457,7 +457,8 @@
       },
       "order_summary": {
         "free_total_label": "-",
-        "free_shipping_total_label": "-"
+        "free_shipping_total_label": "-",
+        "shipping_default_value": "Enter shipping address"
       },
       "shipping": {
         "free_rate_label": "-"

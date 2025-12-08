@@ -61,10 +61,9 @@
       "blocks": {
         "image_BWpRi7": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Metstrade_Web_Banner_2025_1.jpg",
-            "mobile_image": "shopify://shop_images/Metstrade_Mobile_Banner_2025_1.jpg",
+            "image": "shopify://shop_images/Car_Audio_Web_Banner_2025.jpg",
+            "mobile_image": "shopify://shop_images/Car_Audio_Mobile_Banner_2025.jpg",
             "text_position": "top_left",
             "subheading": "",
             "title": "",
@@ -81,7 +80,6 @@
         },
         "image_XwygYh": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/NVY-LAUNCH-WEB-BANNER_2.jpg",
             "mobile_image": "shopify://shop_images/NVY-LAUNCH-MOBILE-BANNER_1.jpg",
@@ -101,7 +99,6 @@
         },
         "image_N7KCcH": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/DLRING_Web_Banner_2025_1.jpg",
             "mobile_image": "shopify://shop_images/DLRING_Mobile_Banner_2025.jpg",
@@ -121,6 +118,7 @@
         },
         "image_MfTPby": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Cyber_Monday_Web_Banner_2025.jpg",
             "mobile_image": "shopify://shop_images/Cyber_Moday_Mobile_Banner_2025.jpg",
@@ -447,7 +445,6 @@
         "f221c56b-b476-4ae3-8ec0-bf66652cf150",
         "a24fd63f-44f1-4ab3-be55-33b19173afa1"
       ],
-      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
       ],
@@ -536,6 +533,7 @@
         "collection_NJYfJW",
         "collection_NYcdAX"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
       ],

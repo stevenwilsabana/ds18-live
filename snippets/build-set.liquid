@@ -105,7 +105,7 @@
           data-sku="{{ variants.sku }}"
         >
         <label for="{{ input }}-{{ product_variant.id }}-{{ variants.id }}">
-          <img src="{{ imagenVariant | img_url: '100x' }}">
+          <img loading="lazy" src="{{ imagenVariant | img_url: '100x' }}">
           <div class="details">
             {% if variants.metafields.custom.title_build_set != blank %}
                <p class="title">{{ variants.metafields.custom.title_build_set.value }}</p>
@@ -132,7 +132,7 @@
           data-sku="Not Include"
         >
         <label for="{{ input }}-offer_not_include">
-          <img src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/Untitled-1_5b473fc2-c680-4df2-843f-a7a53faff683_100x.png">
+          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/Untitled-1_5b473fc2-c680-4df2-843f-a7a53faff683_100x.png">
           <div class="details">
               <p class="title">Do Not Include</p>
           </div>
