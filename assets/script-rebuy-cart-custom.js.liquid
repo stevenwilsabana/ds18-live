@@ -565,7 +565,9 @@ document.addEventListener('rebuy:smartcart.ready', function(event){
 
 
 document.addEventListener('rebuy:cart.change', function(event){
-
+  if (window.Shopify && Shopify.PaymentButton) {
+    Shopify.PaymentButton.init();
+  }
   // console.log('rebuy:cart.change event', event.detail);
 
   var $total_price = event.detail.cart.cart.total_price;
