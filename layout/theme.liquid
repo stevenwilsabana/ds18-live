@@ -1093,5 +1093,11 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
   });
 
 </script>
+{% if additional_checkout_buttons %}
+  <style>.additional-checkout-buttons {display: none; width: 100%;}</style>
+  <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
+    {{ content_for_additional_checkout_buttons }}
+  </div>
+{% endif %}
   </body>
 </html>
