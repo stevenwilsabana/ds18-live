@@ -85,6 +85,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     <link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
 
+
     {%- comment -%}
       IMPLEMENTATION NOTE: for improving performance, Focal tries to preload images on known pages (such as blog page,
       product or collection pages). In order to keep a main JS file size minimal, the theme also lazyloads non-essential
@@ -132,7 +133,19 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       <link rel="stylesheet" href="{{ 'new-page.css' | asset_url }}">
       {% endunless %}
     {% endif %}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    {% comment %} <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js" async></script> {% endcomment %}
+    {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script> {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    {% comment %} Slick Slide CDN {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+
+    
+    {% comment %} Modal JQUERY {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
     <script src="{{ 'vendor.js' | asset_url }}" defer></script>
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
@@ -151,38 +164,34 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
     >
+    {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> {% endcomment %}
 
     {% comment %} JQuery CDN {% endcomment %}
-      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script> {% endcomment %}
       
 
-    {% comment %} Slick Slide CDN {% endcomment %}
-      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
     
-    {% comment %} Modal JQUERY {% endcomment %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
     
     {% if template contains 'product' %}
-      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}">
+      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }} " defer></script>
     {% endif %}
 
 
 
     {% comment %} Tooltip OPENTIP {% endcomment %}
       {{ 'opentip-jquery.css' | asset_url | stylesheet_tag }}
-      {{ 'opentip-jquery.min.js' | asset_url | script_tag }}
+      <script type="text/javascript" src="{{ 'opentip-jquery.min.js' | asset_url }} " async></script>
+
+      {% comment %} {{ 'opentip-jquery.min.js' | asset_url | script_tag }} {% endcomment %}
 
 
     {% comment %} GSAP {% endcomment %}
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
     <script>
         gsap.registerPlugin(MotionPathPlugin);
-    </script>
+    </script> {% endcomment %}
 
 
     {% comment %} FONT AWESOME {% endcomment %}
@@ -204,7 +213,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       
     </script>
 
-    <script src="https://kit.fontawesome.com/f92ebc08f9.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f92ebc08f9.js" crossorigin="anonymous" defer></script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -850,13 +859,15 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
 
     <script>
-      $(window).on('load', function () {
-          $('.the-shop-calendar').parents('.shopify-section.shopify-section--apps').addClass('section-calendar-custom-events');
-      });
+      jQuery(function($) {
+        jQuery(window).on('load', function () {
+          jQuery('.the-shop-calendar').parents('.shopify-section.shopify-section--apps').addClass('section-calendar-custom-events');
+        });
 
-      $('a.test-test-test.header__icon-wrapper.tap-area.hidden-lap.hidden-desk').click(function(){
-          $('.predictive-search__input').click();
-        console.log('Open Search');
+        jQuery('a.test-test-test.header__icon-wrapper.tap-area.hidden-lap.hidden-desk').click(function(){
+            jQuery('.predictive-search__input').click();
+          console.log('Open Search');
+        });
       });
     </script>
 
