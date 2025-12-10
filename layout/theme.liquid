@@ -966,7 +966,8 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       </script>
           
     {% else %}
-      {{ 'script-product-item-global.js' | asset_url | script_tag }}
+      {% comment %} {{ 'script-product-item-global.js' | asset_url | script_tag }} {% endcomment %}
+      <script src="{{ 'script-product-item-global.js' | asset_url }}" defer></script>
     {% endif %}
 <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
 <script>
