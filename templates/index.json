@@ -63,7 +63,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Car_Audio_Web_Banner_2025.jpg",
-            "mobile_image": "shopify://shop_images/Car_Audio_Mobile_Banner_2025.jpg",
+            "mobile_image": "shopify://shop_images/1.webp",
             "text_position": "top_left",
             "subheading": "",
             "title": "",
@@ -82,7 +82,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/NVY-LAUNCH-WEB-BANNER_2.jpg",
-            "mobile_image": "shopify://shop_images/NVY-LAUNCH-MOBILE-BANNER_1.jpg",
+            "mobile_image": "shopify://shop_images/2.webp",
             "text_position": "middle_left",
             "subheading": "",
             "title": "",
@@ -101,7 +101,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/DLRING_Web_Banner_2025_1.jpg",
-            "mobile_image": "shopify://shop_images/DLRING_Mobile_Banner_2025.jpg",
+            "mobile_image": "shopify://shop_images/3.webp",
             "text_position": "middle_left",
             "subheading": "",
             "title": "",
