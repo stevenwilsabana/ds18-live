@@ -104,7 +104,7 @@ $('product-item.product-item .number-input').each(function() {
 
 /* AGREGAR AL CARRITO */
 
-function addToCartCollection(id) {
+window.addToCartCollection = function(id) {
   
   const $button = $(event.target);
   const $container = $button.closest('.cta-buttons-eject');
