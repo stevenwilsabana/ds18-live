@@ -44,6 +44,7 @@
 </div>
 
 <script>
+  (function($) {
   // Set the date we're counting down to
   var countDownDate = new Date("{{ section.settings.deadline }}").getTime();
   
@@ -87,14 +88,11 @@
     
     	// Expired
     	document.getElementById("countdownTimer").innerHTML = "Expired";
-      // Hide the section with class "countdown-timer"
-      let section = document.querySelector("section.countdown-timer");
-      if (section) {
-          section.style.display = "none";
-      }
+      jQuery('section.countdown-timer').hide();
     };
   
   }, 1000);
+  })(jQuery);
 </script>
 
 {% schema %}
