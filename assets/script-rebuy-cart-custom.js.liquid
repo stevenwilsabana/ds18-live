@@ -1,3 +1,4 @@
+(function($) {
 if (window.location.href.indexOf("gift-with-purchase-5-3-bluetooth-receiver-wireless-audio-adapter") > -1){
     window.location.replace("https://ds18.com/products/br1");
 };
@@ -213,19 +214,19 @@ function $insurance(totalPrice,arrayProducts){
         if (document.cookie.indexOf(cookieName) === -1) {
 
           if($totalCart >= 0 && $totalCart <= 5000){
-            var data = {"id": 40776860926013,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
+            var data = {"id": 40776860926013,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
           } else if ($totalCart > 5000 && $totalCart <= 15000){
-            var data = {"id": 40750606188605,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
+            var data = {"id": 40750606188605,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
           } else if ($totalCart > 15000 && $totalCart <= 35000){
-            var data = {"id": 40750606221373,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
+            var data = {"id": 40750606221373,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
           } else if ($totalCart > 35000 && $totalCart <= 50000){
-            var data = {"id": 40750606254141,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
+            var data = {"id": 40750606254141,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
           } else if ($totalCart > 50000 && $totalCart <= 100000){
-            var data = {"id": 40750606286909,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
+            var data = {"id": 40750606286909,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
           } else if ($totalCart > 100000 && $totalCart <= 200000){
-            var data = {"id": 40750606319677,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
+            var data = {"id": 40750606319677,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
           } else if ($totalCart > 200000){
-            var data = {"id": 40750606352445,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
+            var data = {"id": 40750606352445,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() { $('#insurange-rebuy').prop('checked', true); }});
           };
           
           var expireDate = new Date();
@@ -245,29 +246,29 @@ function $insurance(totalPrice,arrayProducts){
 
       if (!isInsuranceUpdated) {
         if($totalCart <= 250){
-          jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
+          $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
           $('#insurange-rebuy').prop('checked', false);
           isInsuranceUpdated = true;
         } else if ($totalCart > 250 && $totalCart <= 5000){
-          jQuery.post('/cart/update.js', { updates: { 40776860926013: 1, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
+          $.post('/cart/update.js', { updates: { 40776860926013: 1, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
           isInsuranceUpdated = true;
         } else if ($totalCart > 5000 && $totalCart <= 15000){
-          jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 1, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
+          $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 1, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
           isInsuranceUpdated = true;
         } else if ($totalCart > 15000 && $totalCart <= 35000){
-          jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 1, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
+          $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 1, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
           isInsuranceUpdated = true;
         } else if ($totalCart > 35000 && $totalCart <= 50000){
-          jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 1, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
+          $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 1, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
           isInsuranceUpdated = true;
         } else if ($totalCart > 50000 && $totalCart <= 100000){
-          jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 1, 40750606319677: 0, 40750606352445: 0 }});
+          $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 1, 40750606319677: 0, 40750606352445: 0 }});
           isInsuranceUpdated = true;
         } else if ($totalCart > 100000 && $totalCart <= 200000){
-          jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 1, 40750606352445: 0 }});
+          $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 1, 40750606352445: 0 }});
           isInsuranceUpdated = true;
         } else if ($totalCart > 200000){
-          jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 1 }});
+          $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 1 }});
           isInsuranceUpdated = true;
         };  
       };
@@ -289,7 +290,7 @@ function $cartInsuranceOnly(arrayProducts) {
     var $protectPackage = $array_products.find($findInsurange);
 
     if ($protectPackage !== undefined && $array_products.length === 1) {
-        jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
+        $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
     } else if ($protectPackage !== undefined) {
         console.log("****El paquete de protección está en el carrito, pero hay más ítems.");
     } else {
@@ -590,21 +591,22 @@ $(document).on('change', '#insurange-rebuy', function() {
   var $totalCart = $('.rebuy-cart__flyout-subtotal').attr('data-subtotal-cart');
   if ($(this).is(':checked')){
     if($totalCart >= 0 && $totalCart <= 5000){
-      var data = {"id": 40776860926013,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
+      var data = {"id": 40776860926013,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
     } else if ($totalCart > 5000 && $totalCart <= 15000){
-      var data = {"id": 40750606188605,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
+      var data = {"id": 40750606188605,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
     } else if ($totalCart > 15000 && $totalCart <= 35000){
-      var data = {"id": 40750606221373,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
+      var data = {"id": 40750606221373,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
     } else if ($totalCart > 35000 && $totalCart <= 50000){
-      var data = {"id": 40750606254141,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
+      var data = {"id": 40750606254141,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
     } else if ($totalCart > 50000 && $totalCart <= 100000){
-      var data = {"id": 40750606286909,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
+      var data = {"id": 40750606286909,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
     } else if ($totalCart > 100000 && $totalCart <= 200000){
-      var data = {"id": 40750606319677,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
+      var data = {"id": 40750606319677,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
     } else if ($totalCart > 200000){
-      var data = {"id": 40750606352445,"quantity": 1}; jQuery.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
+      var data = {"id": 40750606352445,"quantity": 1}; $.ajax({ type: 'POST', url: '/cart/add.js', data: data, dataType: 'json', success: function() {console.log('Add Protect Package');}});
     };
   } else {
-    jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
+    $.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
   };
 });
+})($);
