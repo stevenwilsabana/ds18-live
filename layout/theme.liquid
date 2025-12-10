@@ -85,10 +85,6 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     <link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
 
-    <link rel="preload" as="image" href="https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2000" media="(min-width:768px)">
-    <link rel="preload" as="image" href="https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1000" media="(max-width:767px)">
-
-
 
     {%- comment -%}
       IMPLEMENTATION NOTE: for improving performance, Focal tries to preload images on known pages (such as blog page,
@@ -139,7 +135,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     {% endif %}
     {% comment %} <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js" async></script> {% endcomment %}
     {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script> {% endcomment %}
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     {% comment %} Slick Slide CDN {% endcomment %}
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -164,7 +160,6 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap">
     <link
       href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
@@ -186,7 +181,7 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
     {% comment %} Tooltip OPENTIP {% endcomment %}
       {{ 'opentip-jquery.css' | asset_url | stylesheet_tag }}
-      <script type="text/javascript" src="{{ 'opentip-jquery.min.js' | asset_url }} " defer></script>
+      <script type="text/javascript" src="{{ 'opentip-jquery.min.js' | asset_url }} " async></script>
 
       {% comment %} {{ 'opentip-jquery.min.js' | asset_url | script_tag }} {% endcomment %}
 
@@ -613,11 +608,14 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
     {% if template.name == 'product' %}
       <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-      {% comment %} <script src="{{ 'slick.min.js' | asset_url }}"></script> {% endcomment %}
-      <script src="{{ 'slick.min.js' | asset_url }}" defer></script>
+      <script src="{{ 'slick.min.js' | asset_url }}"></script>
 
-
-      
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;600&display=swap"
+        rel="stylesheet"
+      >
       <link rel="stylesheet" type="text/css" href="{{ 'slick-theme.css' | asset_url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'slick.css' | asset_url }}">
 
@@ -785,16 +783,12 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
         
       {% if customer.b2b? %}
-        {% comment %} {{ 'script-rebuy-b2b.js' | asset_url | script_tag }} {% endcomment %}
-        <script src="{{ 'script-rebuy-b2b.js' | asset_url }}" defer></script>
-        
+        {{ 'script-rebuy-b2b.js' | asset_url | script_tag }}
       {% else %}
         {% comment %}
           {{ 'script-rebuy-cart-custom-nvy.js' | asset_url | script_tag }}
         {% endcomment %}
-        {% comment %} {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }} {% endcomment %}
-        <script src="{{ 'script-rebuy-cart-custom.js' | asset_url }}" defer></script>
-
+        {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }}
       {% endif %}
       
 
@@ -810,13 +804,9 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
         
       {% if customer.b2b? %}
-        {% comment %} {{ 'script-rebuy-b2b.js' | asset_url | script_tag }} {% endcomment %}
-        <script src="{{ 'script-rebuy-b2b.js' | asset_url }}" defer></script>
-        
+        {{ 'script-rebuy-b2b.js' | asset_url | script_tag }}
       {% else %}
-        {% comment %} {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }} {% endcomment %}
-        <script src="{{ 'script-rebuy-cart-custom.js' | asset_url }}" defer></script>
-
+        {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }}
       {% endif %}
         
     {% endif %}
@@ -873,35 +863,35 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
 
     <script>
-      // jQuery(function($) {
-      //   jQuery(window).on('load', function () {
-      //     jQuery('.the-shop-calendar').parents('.shopify-section.shopify-section--apps').addClass('section-calendar-custom-events');
-      //   });
+      jQuery(function($) {
+        jQuery(window).on('load', function () {
+          jQuery('.the-shop-calendar').parents('.shopify-section.shopify-section--apps').addClass('section-calendar-custom-events');
+        });
 
-      //   jQuery('a.test-test-test.header__icon-wrapper.tap-area.hidden-lap.hidden-desk').click(function(){
-      //       jQuery('.predictive-search__input').click();
-      //     console.log('Open Search');
-      //   });
-      // });
+        jQuery('a.test-test-test.header__icon-wrapper.tap-area.hidden-lap.hidden-desk').click(function(){
+            jQuery('.predictive-search__input').click();
+          console.log('Open Search');
+        });
+      });
     </script>
 
     {% if customer.b2b? %}
 
 
       <script>
-        // $(document).ready(function() {
-        //   var newHref = '/collections/ds18-polaris-slingshot-audio-b2b';
+        $(document).ready(function() {
+          var newHref = '/collections/ds18-polaris-slingshot-audio-b2b';
         
-        //   $('mobile-navigation .drawer__content > ul.mobile-nav > li.mobile-nav__item > .mobile-nav__link').each(function() {
-        //     if ($(this).text().trim() === 'Slingshot') {
-        //       $(this).attr('href', newHref);
-        //     }
-        //   });
+          $('mobile-navigation .drawer__content > ul.mobile-nav > li.mobile-nav__item > .mobile-nav__link').each(function() {
+            if ($(this).text().trim() === 'Slingshot') {
+              $(this).attr('href', newHref);
+            }
+          });
         
-        //   $('desktop-navigation li.header__linklist-item[data-item-title="Slingshot"] a.header__linklist-link').each(function() {
-        //     $(this).attr('href', newHref);
-        //   });
-        // });
+          $('desktop-navigation li.header__linklist-item[data-item-title="Slingshot"] a.header__linklist-link').each(function() {
+            $(this).attr('href', newHref);
+          });
+        });
 
       </script>
 
@@ -923,8 +913,8 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
       {% endunless %}
 
 
-      {% comment %} {{ 'script-whishlist.js' | asset_url | script_tag }} {% endcomment %}
-      <script src="{{ 'script-whishlist.js' | asset_url }}" defer></script>
+      {{ 'script-whishlist.js' | asset_url | script_tag }}
+
       
     {% endif %}
 
@@ -939,10 +929,8 @@ window.TriplePixelData={TripleName:"ds18caraudio.myshopify.com",ver:"1.9.0"},fun
 
     {% comment %} Script Product Item Global 👇 {% endcomment %}
     {% if customer.b2b? %}
-      {% comment %} {{ 'script-product-item-b2b.js' | asset_url | script_tag }} {% endcomment %}
-      {% comment %} {{ 'get-products-collection-page.js' | asset_url | script_tag }} {% endcomment %}
-      <script src="{{ 'script-product-item-b2b.js' | asset_url }}" defer></script>
-      <script src="{{ 'get-products-collection-page.js' | asset_url }}" async></script>
+      {{ 'script-product-item-b2b.js' | asset_url | script_tag }}
+      {{ 'get-products-collection-page.js' | asset_url | script_tag }}
 
 
       <script>
