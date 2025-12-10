@@ -1,5 +1,5 @@
 /* CAMBIOS DE VARIANTES */
-
+(function($) {
 $(document).on("click", "product-item.product-item .product-item__general-product .variants-metafiels button.label-variant", function () {
   let item = $(this).parents('.product-item__general-product');
   let templates = item.next('.templates-collection');
@@ -148,3 +148,4 @@ function addToCartCollection(id) {
     }
   });
 }
+})(jQuery);
