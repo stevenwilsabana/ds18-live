@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-var $basePriceShow = $basePrice.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+var $basePriceShow = window.basePrice.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 function $constructor(){
 
@@ -151,7 +151,7 @@ function $trigger(){
 
 function $TotalPrices(){
 
-  var TotalPrice = $basePrice;
+  var TotalPrice = window.basePrice;
 
   $( ".shopify-block.shopify-app-block .product-personalizer > .pplr-wrapper" ).each(function() {
     var $valuePrice = parseFloat($(this).find('input').attr('data-pplr_price'));
