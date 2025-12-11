@@ -23,7 +23,7 @@
         <div class="parallax-media">
           {% if product.metafields.custom.nvy_overview_parallax_imagen %}
             {% for image in product.metafields.custom.nvy_overview_parallax_imagen.value %}
-              <img
+              <img loading="lazy" 
                 class="parallax-frame" 
                 data-index="{{ forloop.index0 }}" 
                 src="{{ image | image_url: width: 1500 }}" 
