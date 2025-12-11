@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0018/0142/0861/files/IMG_5290.jpg?v=1745280387">
 
     {% comment %} Customs Fonts NVY {% endcomment %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    {{ 'custom-fonts-nvy.css' | asset_url | stylesheet_tag }}
+    {{ 'custom-fonts-nvy.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
     {%- comment -%}Few prefech to increase performance on commonly used third-parties{%- endcomment -%}
     <link rel="preconnect" href="https://cdn.shopify.com">
@@ -85,54 +85,6 @@
     <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
 
     {% comment %} <link rel="preload" as="image" href="https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2000" media="(min-width:768px)"> {% endcomment %}
-    <link 
-      rel="preload" 
-      as="image" 
-      href="https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=3000"
-      imagesrcset="
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=600 600w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=700 700w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=800 800w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1000 1000w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1200 1200w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1400 1400w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1600 1600w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1800 1800w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2000 2000w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2200 2200w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2400 2400w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2600 2600w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2800 2800w,
-        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=3000 3000w
-      "
-      imagesizes="100vw"
-      media="(min-width:768px)"
-    >
-    {% comment %} <link rel="preload" as="image" href="https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1000" media="(max-width:767px)"> {% endcomment %}
-     <link 
-      rel="preload" 
-      as="image" 
-      href="https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=3000"
-      imagesrcset="
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=600 600w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=700 700w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=800 800w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1000 1000w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1200 1200w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1400 1400w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1600 1600w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1800 1800w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2000 2000w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2200 2200w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2400 2400w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2600 2600w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2800 2800w,
-        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=3000 3000w
-      "
-      imagesizes="100vw"
-      media="(max-width: 767px)"
-    >
-
 
 
     {%- comment -%}
@@ -187,7 +139,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
 
     {% comment %} Slick Slide CDN {% endcomment %}
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    {% comment %} <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 
     
@@ -224,7 +178,9 @@
     {% endif %}
 
     {% comment %} Tooltip OPENTIP {% endcomment %}
-      {{ 'opentip-jquery.css' | asset_url | stylesheet_tag }}
+    <link rel="preload" href="{{ 'opentip-jquery.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'opentip-jquery.css' | asset_url }}"></noscript>
+    
       <script type="text/javascript" src="{{ 'opentip-jquery.min.js' | asset_url }} " defer></script>
 
       {% comment %} {{ 'opentip-jquery.min.js' | asset_url | script_tag }} {% endcomment %}
@@ -325,6 +281,11 @@
         {{ 'styles-search-rebuy.css' | asset_url | stylesheet_tag }}  
       {% endcomment %}
 
+       {% comment %} Customs Fonts NVY {% endcomment %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        {{ 'custom-fonts-nvy.css' | asset_url | stylesheet_tag }}
       {{ 'styles-cart-rebuy.css' | asset_url | stylesheet_tag }}
 
     {% else %} 
@@ -344,7 +305,8 @@
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
         
-    {{ 'custom-fields.css' | asset_url | stylesheet_tag }}
+    <link rel="preload" href="{{ 'custom-fields.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'custom-fields.css' | asset_url }}"></noscript>
     <script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
 
     {% if customer.b2b? %}
@@ -382,10 +344,15 @@
     {% endcomment %}
 
     {% comment %} Estilos Product Item Global 👇 {% endcomment %}
-    {{ 'styles-product-item-global.css' | asset_url | stylesheet_tag }}
+    {% comment %} {{ 'styles-product-item-global.css' | asset_url | stylesheet_tag }} {% endcomment %}
+    <link rel="preload" href="{{ 'styles-product-item-global.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'styles-product-item-global.css' | asset_url }}"></noscript>
+
     
     {% comment %} Estilos Navigation Items {% endcomment %}
-    {{ 'styles-features-navigation.css' | asset_url | stylesheet_tag }}
+    {% comment %} {{ 'styles-features-navigation.css' | asset_url | stylesheet_tag }} {% endcomment %}
+    <link rel="preload" href="{{ 'styles-features-navigation.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'styles-features-navigation.css' | asset_url }}"></noscript>
 
     {% if customer.b2b? %}
       <script>
@@ -1092,8 +1059,6 @@
         {{ content_for_additional_checkout_buttons }}
       </div>
     {% endif %}
-
-</script>
 <script src="https://kit.fontawesome.com/f92ebc08f9.js" crossorigin="anonymous" defer></script>
 
   </body>

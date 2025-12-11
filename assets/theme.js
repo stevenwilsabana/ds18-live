@@ -6474,3 +6474,8 @@ $(document).ready(function() {
     $(this).attr('href', newHref);
   });
 });
+
+window.addEventListener('load', () => {
+  const cookie_banner = document.getElementById('shopify-pc__banner');
+  if(cookie_banner) cookie_banner.style.opacity = 1;
+});
