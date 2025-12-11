@@ -6476,5 +6476,6 @@ $(document).ready(function() {
 });
 
 window.addEventListener('load', () => {
-  document.getElementById('shopify-pc__banner').style.opacity = 1;
+  const cookie_banner = document.getElementById('shopify-pc__banner');
+  if(cookie_banner) cookie_banner.style.opacity = 1;
 });
