@@ -433,7 +433,7 @@
 
 {% if customer.b2b? %}
   <script>
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         $('#notes-source-text textarea').on('input', function() {
             $('#notes-b2b-products').val($(this).val());
         });

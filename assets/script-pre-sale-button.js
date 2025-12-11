@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   const targetNodesPreOrder = document.querySelectorAll('product-payment-container[data-selector="product-main-form"] .loader-button__text');
 
   // Crea un setInterval para verificar y cambiar el texto cada cierto tiempo
