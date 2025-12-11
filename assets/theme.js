@@ -6414,7 +6414,7 @@ function checkFiltersOnLoad() {
   }
 }
 
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   console.log("DOM ready with jQuery");
   function reziseReview($review){
     var $height = $($review).map(function (){ return $(this).outerHeight(true); }).get();
@@ -6461,7 +6461,7 @@ jQuery(function($) {
   });
 });
 
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   var newHref = '/collections/ds18-polaris-slingshot-audio-b2b';
 
   $('mobile-navigation .drawer__content > ul.mobile-nav > li.mobile-nav__item > .mobile-nav__link').each(function() {

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
 
   $('.product-stl__slider .container-images').each(function(){
     $(this).slick({
