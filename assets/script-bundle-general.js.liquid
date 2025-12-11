@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 var $basePriceShow = $basePrice.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 function $constructor(){
@@ -171,4 +172,5 @@ $(document).on("click",".product-personalizer > .pplr-wrapper .pplr-drop-item",f
     $trigger();
     const total_prices = $TotalPrices();
     updateAffirmPrice(total_prices);
+});
 });
