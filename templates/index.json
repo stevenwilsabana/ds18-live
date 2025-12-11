@@ -334,6 +334,67 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
+    "collection_list_kA3UUy": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_LghFmt": {
+          "type": "collection",
+          "settings": {
+            "collection": "top-gift-picks",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 28
+          }
+        },
+        "collection_XcEfGB": {
+          "type": "collection",
+          "settings": {
+            "collection": "gifts-under-150",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_NYcdAX": {
+          "type": "collection",
+          "settings": {
+            "collection": "digital-gifts-cards",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "https://ds18.com/products/ds18-gift-card",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_LghFmt",
+        "collection_XcEfGB",
+        "collection_NYcdAX"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
+      ],
+      "name": "Black Friday",
+      "settings": {
+        "reveal_on_scroll": true,
+        "layout": "grid",
+        "subheading": "",
+        "title": "Top Picks Just for You",
+        "background": "#282828",
+        "text_color": "#ffffff"
+      }
+    },
     "1728055881f0e8ce96": {
       "type": "apps",
       "blocks": {
@@ -504,67 +565,6 @@
         "stack_on_mobile": false,
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
-      }
-    },
-    "collection_list_kA3UUy": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_LghFmt": {
-          "type": "collection",
-          "settings": {
-            "collection": "top-gift-picks",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 28
-          }
-        },
-        "collection_XcEfGB": {
-          "type": "collection",
-          "settings": {
-            "collection": "gifts-under-150",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_NYcdAX": {
-          "type": "collection",
-          "settings": {
-            "collection": "digital-gifts-cards",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "https://ds18.com/products/ds18-gift-card",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "collection_LghFmt",
-        "collection_XcEfGB",
-        "collection_NYcdAX"
-      ],
-      "custom_css": [
-        "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
-      ],
-      "name": "Black Friday",
-      "settings": {
-        "reveal_on_scroll": true,
-        "layout": "grid",
-        "subheading": "",
-        "title": "Top Picks Just for You",
-        "background": "#282828",
-        "text_color": "#ffffff"
       }
     },
     "eef515a4-b2be-4d44-afec-99bcc5700923": {
@@ -1453,10 +1453,10 @@
     "bd246d27-9954-49c8-8ec6-7ef2cf9bb690",
     "as_seen_on_4MiKg3",
     "featured-collections",
+    "collection_list_kA3UUy",
     "1728055881f0e8ce96",
     "image-with-text",
     "2994570f-24c3-498e-933f-9fa6d70c8e08",
-    "collection_list_kA3UUy",
     "eef515a4-b2be-4d44-afec-99bcc5700923",
     "e7b8509a-f07a-4f57-a420-cd1de956d1aa",
     "80c05e36-0022-45c1-a7be-7f34ec58d834",
