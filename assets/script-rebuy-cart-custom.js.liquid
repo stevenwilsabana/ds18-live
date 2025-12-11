@@ -111,6 +111,7 @@ function $progressBar(totalPrice,arrayProducts){
       $("#container-icon__free-shipping").css({"background-color": "white", "border-color": "transparent"});
       $("#icon__free-shipping").css("color", "#000000");
       $(".progress-bar__title").replaceWith('<h3 class="progress-bar__title">Free shipping on orders +$35</h3>');
+      $(".progress-bar__icon-text").css("color", "#fff");
     
     } else if ($total_price > 0 && $total_price <= 3499) {
     
@@ -121,6 +122,7 @@ function $progressBar(totalPrice,arrayProducts){
       $("#container-icon__free-shipping").css({"background-color": "white", "border-color": "transparent"});
 
       $("#icon__free-shipping").css("color", "#000000");
+      $(".progress-bar__icon-text").css("color", "#fff");
       
       $(".progress-bar__title").replaceWith(
         '<div class="progress-bar__title">'+
@@ -134,8 +136,9 @@ function $progressBar(totalPrice,arrayProducts){
       $("#progress-bar__free-shipping").animate({width: "100%",}, 500);
       $("#icon__free-shipping").replaceWith('<i id="icon__free-shipping" class="fas fa-truck"></i>');
       $("#container-icon__free-shipping").css({"background-color": "transparent", "border-color": "transparent"});
-      $("#icon__free-shipping").css("color", "white");
+      $("#icon__free-shipping").css("color", "#6f6");
       $(".progress-bar__title").replaceWith('<h3 class="progress-bar__title">You have Free Shipping</h3>');
+      $(".progress-bar__icon-text").css("color", "#6f6")
     
     };
    
@@ -435,9 +438,13 @@ function $reindexacionRebuy(){
   $('.rebuy-cart__flyout-footer .rebuy-cart__flyout-subtotal').before(
     '<div class="rebuy-cart__flyout-shipping">' + 
       '<div class="rebuy-cart__flyout-shipping__label"><p>Shipping</p></div>' +
-      '<div class="rebuy-cart__flyout-shipping__value"><p>FREE SHIPPING</p><span>$0.00</span></div>' +
+      '<div class="rebuy-cart__flyout-shipping__value"><p>FREE</p></div>' +
     '</div>'
   )
+
+  $('.container-progress-bar-move').before('<div class="cart-messaging"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000000" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m0-12.5a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m2 5.5h-1v-4.5h-3v2h1V15h-1v2h4z"/></svg><div><strong>Your items aren’t reserved</strong>, checkout quickly to make sure you don’t miss out.</div></div>');
+
+
 };
 
 
@@ -547,17 +554,39 @@ document.addEventListener('rebuy:smartcart.ready', function(event){
   $cartReady();
   $cartAddtoCart();
   $totalCart($total_price);
+
+  const rebuyFreeShipping = document.querySelector('.rebuy-cart__flyout-shipping')
+
+  if($total_price >= 3500) {
+    rebuyFreeShipping?.classList.add('active');
+  } else {
+    rebuyFreeShipping?.classList.remove('active');
+  }
 });
 
 
 
 document.addEventListener('rebuy:cart.change', function(event){
-
+  setTimeout(function(){
+    if (window.Shopify && Shopify.PaymentButton) {
+      Shopify.PaymentButton.init();
+    }
+  }, 500);
+  // if (window.Shopify && Shopify.PaymentButton) {
+  //   Shopify.PaymentButton.init();
+  // }
   // console.log('rebuy:cart.change event', event.detail);
 
   var $total_price = event.detail.cart.cart.total_price;
   var $array_products = event.detail.cart.cart.items;
+  const rebuyFreeShipping = document.querySelector('.rebuy-cart__flyout-shipping')
   
+  if($total_price >= 3500) {
+    rebuyFreeShipping?.classList.add('active');
+  } else {
+    rebuyFreeShipping?.classList.remove('active');
+  }
+
   $totalCart($total_price);
 
   var $qty_rebuy = event.detail.cart.cart.item_count;

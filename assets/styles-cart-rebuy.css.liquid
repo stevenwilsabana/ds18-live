@@ -33,7 +33,7 @@
  }
  
  .progress-bar-cart__bar {
-     background-color: white;
+     background-color: #66ff66;
      border-radius: 50px;
      color: white;
      height: 100%;
@@ -106,14 +106,14 @@
      align-items: center;
      justify-content: center;
      flex-direction: column;
-     padding: 20px 10px 15px;
+     padding: 20px 10px 0;
      background-color: black;
-     font-size: 13px;
+     font-size: 16px;
      line-height: 15px;
      margin: 0;
      text-align: center;
      letter-spacing: 1.3px;
-     color: white;
+     color: #6f6;
      text-transform: uppercase;
 }
  
@@ -221,21 +221,22 @@
 
 
 .progress-bar__title h5 {
-  color: white;
-  margin: 10px auto 15px;
-  border-top: 1px solid white;
-  padding-top: 20px;
-  font-size: 13px;
-  width: 90%;
-  text-align: center;
-  text-transform: unset;
-  font-weight: 400;
-  letter-spacing: 1px;
-    margin-bottom: 10px!important;
+    margin: 0 auto 15px;
+    border-top: 1px solid white;
+    width: 90%;
+    text-align: center;
+    text-transform: unset;
+    letter-spacing: 1px;
+    color: #fac439;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .progress-bar__title h5 b {
- font-size: 13px;
+ font-size: 16px;
  text-decoration: underline;
  text-underline-offset: 3px;
  text-decoration-thickness: 2px;
@@ -795,6 +796,7 @@ div#rebuy-cart .rebuy-cart__flyout {
 .rebuy-cart__flyout-content {
     padding: 0px!important;
     overflow-y: auto!important;
+    background: #fff !important;
 }
 
 button.rebuy-cart__flyout-close {
@@ -1001,12 +1003,14 @@ section.insurance-personalized {
 }
 
 .rebuy-cart__flyout-shipping {
-    display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px #e3e3e3 solid;
-    display: none!important;
+    display: none;
+}
+.rebuy-cart__flyout-shipping.active {
+    display: flex;
 }
 
 .rebuy-cart__flyout-shipping__label p {
@@ -1022,10 +1026,10 @@ section.insurance-personalized {
 
 .rebuy-cart__flyout-shipping__value p {
     margin-right: 10px;
-    font-weight: 300!important;
+    font-weight: bold !important;
     margin-bottom: 0;
     font-size: 15px!important;
-    color: black!important;
+    color: #368406 !important;
 }
 
 .rebuy-cart__flyout-footer button.rebuy-button.rebuy-cart__checkout-button.block {
@@ -1242,4 +1246,52 @@ div#rebuy-cart .rebuy-cart__flyout-counter {
 .rebuy-cart__flyout-subtotal-amount span.tdf_price_original {
     font-weight: 500;
     opacity: 0.5;
+}
+
+.rebuy-cart__flyout-actions div#rebuy-additional-checkout-buttons {
+    display: flex !important;
+}
+.rebuy-cart__flyout-actions #rebuy-additional-checkout-buttons shop-pay-wallet-button {
+    width: 33.3333%;
+}
+.rebuy-cart__flyout-actions #rebuy-additional-checkout-buttons shopify-paypal-button {
+    width: 33.3333%;
+    position: relative;
+    top: -43px;
+}
+.rebuy-cart__flyout-actions #rebuy-additional-checkout-buttons shopify-google-pay-button {
+    width: 33.3333%;
+}
+.rebuy-cart__flyout-actions #rebuy-additional-checkout-buttons shopify-paypal-button > div:last-child {
+	display: none !important;
+}
+.rebuy-cart__flyout-actions shopify-accelerated-checkout-cart {
+    height: 44px;
+    display: block;
+}
+.rebuy-cart__flyout-actions shopify-accelerated-checkout-cart shop-pay-wallet-button {
+    width: 49%;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    height: 44px;
+}
+.rebuy-cart__flyout-actions shopify-accelerated-checkout-cart shopify-paypal-button {
+    width: 49%;
+    position: absolute;
+    right: 0;
+    top: -52px;
+    height: 44px;
+}
+.cart-messaging {
+    background: #f5f5f5;
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
 }
