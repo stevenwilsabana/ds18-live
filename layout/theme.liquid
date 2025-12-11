@@ -84,6 +84,57 @@
     <link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
 
+    {% comment %} <link rel="preload" as="image" href="https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2000" media="(min-width:768px)"> {% endcomment %}
+    <link 
+      rel="preload" 
+      as="image" 
+      href="https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=3000"
+      imagesrcset="
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=600 600w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=700 700w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=800 800w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1000 1000w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1200 1200w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1400 1400w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1600 1600w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=1800 1800w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2000 2000w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2200 2200w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2400 2400w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2600 2600w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=2800 2800w,
+        https://ds18.com/cdn/shop/files/Car_Audio_Web_Banner_2025.jpg?v=1764882044&width=3000 3000w
+      "
+      imagesizes="100vw"
+      media="(min-width:768px)"
+    >
+    {% comment %} <link rel="preload" as="image" href="https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1000" media="(max-width:767px)"> {% endcomment %}
+     <link 
+      rel="preload" 
+      as="image" 
+      href="https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=3000"
+      imagesrcset="
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=600 600w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=700 700w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=800 800w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1000 1000w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1200 1200w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1400 1400w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1600 1600w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=1800 1800w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2000 2000w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2200 2200w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2400 2400w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2600 2600w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=2800 2800w,
+        https://ds18.com/cdn/shop/files/1.webp?v=1765379747&width=3000 3000w
+      "
+      imagesizes="100vw"
+      media="(max-width: 767px)"
+    >
+
+
+
     {%- comment -%}
       IMPLEMENTATION NOTE: for improving performance, Focal tries to preload images on known pages (such as blog page,
       product or collection pages). In order to keep a main JS file size minimal, the theme also lazyloads non-essential
@@ -131,8 +182,19 @@
       <link rel="stylesheet" href="{{ 'new-page.css' | asset_url }}">
       {% endunless %}
     {% endif %}
+    {% comment %} <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js" async></script> {% endcomment %}
+    {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script> {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    {% comment %} Slick Slide CDN {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+
+    
+    {% comment %} Modal JQUERY {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
     <script src="{{ 'vendor.js' | asset_url }}" defer></script>
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
@@ -143,36 +205,37 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap">
     <link
       href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
     >
+    {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> {% endcomment %}
 
     {% comment %} JQuery CDN {% endcomment %}
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script> {% endcomment %}
+      
 
-    {% comment %} Slick Slide CDN {% endcomment %}
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
-    {% comment %} Modal JQUERY {% endcomment %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
     
     {% if template contains 'product' %}
-      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}">
+      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }} " defer></script>
     {% endif %}
 
     {% comment %} Tooltip OPENTIP {% endcomment %}
-    {{ 'opentip-jquery.css' | asset_url | stylesheet_tag }}
-    {{ 'opentip-jquery.min.js' | asset_url | script_tag }}
+      {{ 'opentip-jquery.css' | asset_url | stylesheet_tag }}
+      <script type="text/javascript" src="{{ 'opentip-jquery.min.js' | asset_url }} " defer></script>
+
+      {% comment %} {{ 'opentip-jquery.min.js' | asset_url | script_tag }} {% endcomment %}
+
 
     {% comment %} GSAP {% endcomment %}
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
     <script>
         gsap.registerPlugin(MotionPathPlugin);
-    </script>
+    </script> {% endcomment %}
 
     {% comment %} FONT AWESOME {% endcomment %}
     {% comment %}
@@ -190,9 +253,14 @@
         }
       }
     </script>
-
-    <script src="https://kit.fontawesome.com/f92ebc08f9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preload" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 
     <style>
       /* Estilos SELLY UNITED */
@@ -568,14 +636,11 @@
     {% if template.name == 'product' %}
       <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-      <script src="{{ 'slick.min.js' | asset_url }}"></script>
+      {% comment %} <script src="{{ 'slick.min.js' | asset_url }}"></script> {% endcomment %}
+      <script src="{{ 'slick.min.js' | asset_url }}" defer></script>
 
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;600&display=swap"
-        rel="stylesheet"
-      >
+
+      
       <link rel="stylesheet" type="text/css" href="{{ 'slick-theme.css' | asset_url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'slick.css' | asset_url }}">
 
@@ -718,12 +783,16 @@
       <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
         
       {% if customer.b2b? %}
-        {{ 'script-rebuy-b2b.js' | asset_url | script_tag }}
+        {% comment %} {{ 'script-rebuy-b2b.js' | asset_url | script_tag }} {% endcomment %}
+        <script src="{{ 'script-rebuy-b2b.js' | asset_url }}" defer></script>
+        
       {% else %}
         {% comment %}
           {{ 'script-rebuy-cart-custom-nvy.js' | asset_url | script_tag }}
         {% endcomment %}
-        {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }}
+        {% comment %} {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }} {% endcomment %}
+        <script src="{{ 'script-rebuy-cart-custom.js' | asset_url }}" defer></script>
+
       {% endif %}
     {% else %}
       <section class="load-cart-rebuy">
@@ -734,9 +803,13 @@
       </section>
       <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
       {% if customer.b2b? %}
-        {{ 'script-rebuy-b2b.js' | asset_url | script_tag }}
+        {% comment %} {{ 'script-rebuy-b2b.js' | asset_url | script_tag }} {% endcomment %}
+        <script src="{{ 'script-rebuy-b2b.js' | asset_url }}" defer></script>
+        
       {% else %}
-        {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }}
+        {% comment %} {{ 'script-rebuy-cart-custom.js' | asset_url | script_tag }} {% endcomment %}
+        <script src="{{ 'script-rebuy-cart-custom.js' | asset_url }}" defer></script>
+
       {% endif %}
     {% endif %}
 
@@ -772,31 +845,34 @@
     <!--Gorgias Chat Widget End-->
 
     <script>
-      $(window).on('load', function () {
-          $('.the-shop-calendar').parents('.shopify-section.shopify-section--apps').addClass('section-calendar-custom-events');
-      });
+      // jQuery(function($) {
+      //   jQuery(window).on('load', function () {
+      //     jQuery('.the-shop-calendar').parents('.shopify-section.shopify-section--apps').addClass('section-calendar-custom-events');
+      //   });
 
-      $('a.test-test-test.header__icon-wrapper.tap-area.hidden-lap.hidden-desk').click(function(){
-          $('.predictive-search__input').click();
-        console.log('Open Search');
-      });
+      //   jQuery('a.test-test-test.header__icon-wrapper.tap-area.hidden-lap.hidden-desk').click(function(){
+      //       jQuery('.predictive-search__input').click();
+      //     console.log('Open Search');
+      //   });
+      // });
     </script>
 
     {% if customer.b2b? %}
       <script>
-        $(document).ready(function() {
-          var newHref = '/collections/ds18-polaris-slingshot-audio-b2b';
+        // $(document).ready(function() {
+        //   var newHref = '/collections/ds18-polaris-slingshot-audio-b2b';
         
-          $('mobile-navigation .drawer__content > ul.mobile-nav > li.mobile-nav__item > .mobile-nav__link').each(function() {
-            if ($(this).text().trim() === 'Slingshot') {
-              $(this).attr('href', newHref);
-            }
-          });
+        //   $('mobile-navigation .drawer__content > ul.mobile-nav > li.mobile-nav__item > .mobile-nav__link').each(function() {
+        //     if ($(this).text().trim() === 'Slingshot') {
+        //       $(this).attr('href', newHref);
+        //     }
+        //   });
         
-          $('desktop-navigation li.header__linklist-item[data-item-title="Slingshot"] a.header__linklist-link').each(function() {
-            $(this).attr('href', newHref);
-          });
-        });
+        //   $('desktop-navigation li.header__linklist-item[data-item-title="Slingshot"] a.header__linklist-link').each(function() {
+        //     $(this).attr('href', newHref);
+        //   });
+        // });
+
       </script>
 
       {% render "rebuy-b2b" %}
@@ -812,7 +888,11 @@
         </script>
         {% render 'prices-b2b' %}  
       {% endunless %}
-      {{ 'script-whishlist.js' | asset_url | script_tag }}
+
+
+      {% comment %} {{ 'script-whishlist.js' | asset_url | script_tag }} {% endcomment %}
+      <script src="{{ 'script-whishlist.js' | asset_url }}" defer></script>
+      
     {% endif %}
 
     {% if request.path contains 'wishlist' %}
@@ -821,8 +901,12 @@
 
     {% comment %} Script Product Item Global 👇 {% endcomment %}
     {% if customer.b2b? %}
-      {{ 'script-product-item-b2b.js' | asset_url | script_tag }}
-      {{ 'get-products-collection-page.js' | asset_url | script_tag }}
+      {% comment %} {{ 'script-product-item-b2b.js' | asset_url | script_tag }} {% endcomment %}
+      {% comment %} {{ 'get-products-collection-page.js' | asset_url | script_tag }} {% endcomment %}
+      <script src="{{ 'script-product-item-b2b.js' | asset_url }}" defer></script>
+      <script src="{{ 'get-products-collection-page.js' | asset_url }}" async></script>
+
+
       <script>
         var locationIdB2B = "{{ customer.current_location.id }}";
         console.log(`LOCATION ID: ${locationIdB2B}`);
@@ -843,7 +927,8 @@
         });
       </script>
     {% else %}
-      {{ 'script-product-item-global.js' | asset_url | script_tag }}
+      {% comment %} {{ 'script-product-item-global.js' | asset_url | script_tag }} {% endcomment %}
+      <script src="{{ 'script-product-item-global.js' | asset_url }}" defer></script>
     {% endif %}
     <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
     <script>
@@ -1007,6 +1092,9 @@
         {{ content_for_additional_checkout_buttons }}
       </div>
     {% endif %}
+
+</script>
+<script src="https://kit.fontawesome.com/f92ebc08f9.js" crossorigin="anonymous" defer></script>
 
   </body>
 </html>

@@ -1,5 +1,5 @@
+(function($) {
 /* CAMBIOS DE VARIANTES */
-
 $(document).on("click", "product-item.product-item .product-item__general-product .variants-metafiels button.label-variant", async function () {
   let item = $(this).closest('.product-item__general-product');
   let templates = item.next('.templates-collection');
@@ -146,7 +146,7 @@ $(document).on("click", "product-item.product-item .product-item__general-produc
 
 /* AGREGAR AL CARRITO */
 
-function addToCartCollection(id) {
+window.addToCartCollection = function(id) {
 
     const SmartCart = window.Rebuy.SmartCart;
     const $button = $(event.target);
@@ -203,24 +203,24 @@ function addToCartCollection(id) {
             let endX = cartRect.left + cartRect.width / 2 + window.scrollX;
             let endY = cartRect.top + cartRect.height / 2 + window.scrollY;
             
-            // 📌 Posicionar la bolita en el botón
-            gsap.set(flyer, {
-                position: 'absolute',
-                left: `${startX}px`,
-                top: `${startY}px`,
-                opacity: 1
-            });
+            // // 📌 Posicionar la bolita en el botón
+            // gsap.set(flyer, {
+            //     position: 'absolute',
+            //     left: `${startX}px`,
+            //     top: `${startY}px`,
+            //     opacity: 1
+            // });
             
-            // 📌 Animación de la bolita hasta el carrito
-            gsap.to(flyer, {
-                left: `${endX}px`,
-                top: `${endY}px`,
-                scale: 0.5,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power2.inOut",
-                onComplete: () => flyer.remove()
-            });
+            // // 📌 Animación de la bolita hasta el carrito
+            // gsap.to(flyer, {
+            //     left: `${endX}px`,
+            //     top: `${endY}px`,
+            //     scale: 0.5,
+            //     opacity: 0,
+            //     duration: 0.8,
+            //     ease: "power2.inOut",
+            //     onComplete: () => flyer.remove()
+            // });
             // 🚀 FIN DE LA ANIMACIÓN GSAP 🚀
 
 
@@ -250,3 +250,4 @@ function addToCartCollection(id) {
         }
     });
 }
+})(jQuery);
