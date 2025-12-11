@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   const $productContainer = $('.shopify-section--main-collection');
 
   const savedGridStyle = localStorage.getItem('gridStyle') || 'grid-4';

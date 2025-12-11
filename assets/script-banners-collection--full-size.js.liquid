@@ -79,7 +79,9 @@ function imagesCollectionPage() {
 }
 
 // Ejecutar al cargar
-$(document).ready(imagesCollectionPage);
+document.addEventListener("DOMContentLoaded", function() {
+  imagesCollectionPage()
+});
 
 // MutationObserver para carga dinámica
 const loadingBar = document.querySelector(".loading-bar");
