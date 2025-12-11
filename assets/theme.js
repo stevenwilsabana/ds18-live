@@ -6413,3 +6413,11 @@ function checkFiltersOnLoad() {
     }
   }
 }
+window.addEventListener("load", function () {
+  setTimeout(() => {
+  console.log("test")
+
+    const banner = document.getElementById("shopify-pc__banner");
+    if (banner) banner.style.setProperty("display", "block", "important");
+  }, 2000);
+});
