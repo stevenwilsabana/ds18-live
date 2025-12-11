@@ -1,4 +1,7 @@
-{{ 'style-countdown-timer.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'style-countdown-timer.css' | asset_url | stylesheet_tag }} {% endcomment %}
+<link rel="preload" href="{{ 'style-countdown-timer.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'style-countdown-timer.css' | asset_url }}"></noscript>
+
 
 
 <style>
