@@ -735,6 +735,7 @@
 
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
 
 
   $(document).on('click','.active-zoom_product-page',function(event){
@@ -766,6 +767,7 @@
 
   var $productBase = '{{ product.metafields.custom.name_base_for_bundle }}';
   var $basePrice = ({{ product.price }} / 100);
+  });
   
 </script>
 
