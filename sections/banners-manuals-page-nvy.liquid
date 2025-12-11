@@ -5,11 +5,15 @@
   </div>
 {% endcomment %}
 
-{% if section.settings.steps != blank %}
-  <div class="steps-manuals__container">
-    {{ section.settings.steps }}  
-  </div>
-{% endif %}
+<section class="manual-page-nvy">
+  <h1 class="manual-page-nvy__heading">{{ section.settings.heading }}</h1>
+  
+  {% if section.settings.steps != blank %}
+    <div class="steps-manuals__container">
+      {{ section.settings.steps }}  
+    </div>
+  {% endif %}
+</section>
 
 {% schema %}
   {
@@ -26,6 +30,11 @@
         "type": "image_picker",
         "id": "desktop",
         "label": "Desktop Image"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
       },
       {
         "type": "richtext",
