@@ -117,6 +117,7 @@
       <p class="price"><span>{{ product.price | money }}</span><b>/ {{ product.metafields.prod.each_pair_text }}</b></p>
 
 
+
       <script>
         $(document).ready(function() {
           var $sectionsVariants = $('.product-nvy__details .container-variant');
@@ -149,7 +150,6 @@
           <p class="affirm-as-low-as" data-page-type="product" data-amount="{{ product.price }}"></p>
         </div>
       </div>
-
       {% comment %} <div class="container-shoppay">
         <p id="shopify-installments" data-testid="shopify-installments" class="m-0 font-inter">
           <span id="shopify-installments-content" data-testid="shopify-installments-content" class="pr-1.5">Pay as low as <b>$45/mo</b> with
@@ -180,7 +180,7 @@
         <ul>
           {% for file in product.metafields.custom.nvy_key_features.value %}
             <li>
-              <img loading="lazy" src="{{ file | img_url: 'master' }}" alt="{{ file.alt | escape }}">
+              <img src="{{ file | img_url: 'master' }}" alt="{{ file.alt | escape }}">
               <p>{{ file.alt }}</p>
             </li>
           {% endfor %}
@@ -208,11 +208,13 @@
 
 <script>
   $(document).ready(function() {
-    var container = $('.product-nvy__imagen--{{ section.id }}');
+    const container = $('.product-nvy__imagen--{{ section.id }}');
+    const mainSlider = $('.product-nvy-main--{{ section.id }}');
     
-    container.find('.product-nvy-main--{{ section.id }}').slick({
+    mainSlider.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
+      speed: 100,
       arrows: false,
       dots: false,
       infinite: false,
@@ -242,6 +244,33 @@
       ]
     });
 
+
+    // When a slide becomes active
+    mainSlider.on('afterChange', function(event, slick, currentSlide) {
+      // Pause all iframes
+      mainSlider.find('iframe[src*="youtube.com"]').each(function() {
+        this.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      });
+
+      // Play only the active one
+      const $activeSlide = $(slick.$slides[currentSlide]);
+      const $iframe = $activeSlide.find('iframe[src*="youtube.com"]');
+      if ($iframe.length) {
+        $iframe[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }
+
+      // Pause uploaded <video> elements
+      mainSlider.find('video').each(function() {
+        this.pause();
+      });
+
+      // Play only the active uploaded <video>
+      const $video = $activeSlide.find('video');
+      if ($video.length) {
+        $video[0].play();
+      }
+    });
+
     container.find('.product-nvy-thumbnail--{{ section.id }}').on('afterChange', function(event, slick, currentSlide){
       const slideCount = slick.slideCount;
       const slidesToShow = slick.options.slidesToShow;
@@ -255,8 +284,8 @@
 
       if ($video) {
         var $slide = $('.product-nvy__slide.product-nvy__slide--video');
-        var $videos = $slide.find('video');
-        var videoHeight = $videos.height();
+        // var $videos = $slide.find('video');
+        var videoHeight = $slide.height();
         // If it's a video
         $('.product-nvy__imagen-slider-main').css({
           'height': `${videoHeight + 10}px`
