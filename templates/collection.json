@@ -51,15 +51,10 @@
         "boost_ai_search_filter_filter_product_list_ssr_NWmFBH": {
           "type": "shopify://apps/boost-ai-search-filter/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
           "settings": {}
-        },
-        "boost_ai_search_filter_product_filter_rfFawh": {
-          "type": "shopify://apps/boost-ai-search-filter/blocks/product-filter/7fc998ae-a150-4367-bab8-505d8a4503f7",
-          "settings": {}
         }
       },
       "block_order": [
-        "boost_ai_search_filter_filter_product_list_ssr_NWmFBH",
-        "boost_ai_search_filter_product_filter_rfFawh"
+        "boost_ai_search_filter_filter_product_list_ssr_NWmFBH"
       ],
       "settings": {
         "include_horizontal_margins": true,
