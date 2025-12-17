@@ -98,6 +98,7 @@
         },
         "ad812ac4-d419-4f67-893a-bf6a0958a6b7": {
           "type": "variant_customs",
+          "disabled": true,
           "settings": {}
         },
         "set_and_save_QgNXix": {
