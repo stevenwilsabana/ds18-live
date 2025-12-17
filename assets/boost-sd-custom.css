@@ -80,11 +80,21 @@ predictive-search-drawer#search-drawer {
   display: flex;
   justify-content: space-between;
 }
+.boost-sd__suggestion-queries-item-price > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.boost-sd__suggestion-queries-item-price > div > p {
+  font-size: 12px;
+  margin: 0;
+}
 .boost-sd__suggestion-queries-item-price .color-options {
   list-style-type: unset;
   display: flex;
   align-items: flex-start;
   gap: 5px;
+  padding: 0;
 }
 .boost-sd__suggestion-queries-item-price .color-options .color-option {
   width: 40px;
