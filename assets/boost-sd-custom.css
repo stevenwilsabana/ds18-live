@@ -73,3 +73,19 @@ predictive-search-drawer#search-drawer {
   	margin-left: 5px;
   }
 }
+
+
+
+.boost-sd__suggestion-queries-item-price {
+  display: flex;
+  justify-content: space-between;
+}
+.boost-sd__suggestion-queries-item-price .color-options {
+  list-style-type: unset;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+.boost-sd__suggestion-queries-item-price .color-options .color-option {
+  width: 40px;
+}

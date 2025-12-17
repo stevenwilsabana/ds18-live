@@ -5120,7 +5120,8 @@
         if ((_a = media["alt"]) == null ? void 0 : _a.includes("#")) {
           shouldReload = true;
           if (!matchMedia2) {
-            const altParts = media["alt"].split("#"), mediaGroupParts = altParts.pop().split("_");
+            const altParts = media["alt"].split("#"), mediaGroupParts = altParts[0].split("_");
+
             this.product["options"].forEach((option) => {
               if (option["name"].toLowerCase() === mediaGroupParts[0].toLowerCase()) {
                 if (variant["options"][option["position"] - 1].toLowerCase() !== mediaGroupParts[1].trim().toLowerCase()) {

@@ -16,44 +16,199 @@ const isMobile = () => {
 };
 
 
+// // Override Settings
+// var boostPFSInstantSearchConfig = {
+//     search: {
+//         // Settings list
+//         suggestionPosition: 'right' // Position the suggestion box to the left
+//     }
+// };
+
+// SearchInput.prototype.customizeInstantSearch = function() {
+//     // Access the suggestion popup element that is appended to the <body> tag
+//     var suggestionElement = this.$uiMenuElement;
+    
+//     // Access the search input element
+//     var searchElement = this.$element;
+    
+//     // Retrieve the ID of the search input box
+//     var searchBoxId = this.id;
+
+//     console.log("searchBoxId", searchBoxId)
+// };
 
 
-// window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([(componentRegistry) => {
-//   const AppendISW = {
-//     name: 'Custom ISW',
-//     apply() {
-//       return {
-//         afterRender(element) {
-//           let widgetSelector = element.getRootElm();
-//           const drawerSelector = document.querySelector('predictive-search-drawer');
-
-//           const widgetHtml = widgetSelector.innerHTML !== '' ? widgetSelector : '';
-//           console.log(widgetSelector.innerHTML != '')
-//           if (widgetHtml !== '') {
-//             if (drawerSelector) {
-//               const drawerContent = drawerSelector.querySelector('.drawer__content');
-//               if (drawerContent) {
-//                 drawerContent.innerHTML = '';
-//                 if (drawerSelector.querySelector('boost-sd__instant-search-results') == null) drawerContent.appendChild(widgetHtml);
-//               }
-//             }
+// window.__BoostCustomization__ = (window.__BoostCustomization__ || []).concat([
+//   function (componentRegistry) {
+//     componentRegistry.useComponentPlugin('SearchContentResult', {
+//       name: 'Test Hook',
+//       apply() {
+//         return {
+//           afterRender(element) {
+//             console.log('✅ Boost Instant Search rendered', element);
 //           }
+//         };
+//       }
+//     });
+//   }
+// ]);
+
+// document.addEventListener('boost-pfs-instant-search-render', function () {
+//   console.log("TESTTT")
+//   document
+//     .querySelectorAll('.boost-sd__suggestion-queries-item--product')
+//     .forEach(item => {
+
+//       const price = item.querySelector('.boost-sd__suggestion-queries-item-price');
+//       if (price) {
+//         price.insertAdjacentHTML(
+//           'beforeend',
+//           '<span class="my-badge">Hot</span>'
+//         );
+//       }
+
+//     });
+// });
+
+
+window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
+  (componentRegistry) => {
+    const AppendISW = {
+      name: "Custom ISW",
+      apply() {
+        return {
+          afterRender(element) {
+            async function fetchBoostSuggest(query) {
+              const params = new URLSearchParams({
+                q: query,
+                shop: Shopify.shop,          // required
+                locale: Shopify.locale || 'en',
+                currency: Shopify.currency?.active || 'USD',
+              });
+
+              const res = await fetch(`https://services.mybcapps.com/bc-sf-filter/search/suggest?${params.toString()}`, {
+                method: 'GET',
+                headers: {
+                  'Accept': 'application/json'
+                }
+              });
+
+              if (!res.ok) {
+                throw new Error('Boost suggest fetch failed');
+              }
+
+              return res.json();
+            }
+
+            fetchBoostSuggest('frp').then(data => {
+              console.log("data", data.products);
+              let colorOptions = [];
+
+              data.products.forEach(element => {
+                const imageList = element.images
+                element.options_with_values.forEach(option => {
+                  if(option.name == "color") {
+                    option.values = option.values.map(color => {
+                      if (!color.image) return color;
+
+                      const imageUrl = imageList[String(color.image)];
+                      if (!imageUrl) return color;
+
+                      return {
+                        ...color,
+                        imagePosition: color.image, // optional, keep original
+                        image: imageUrl
+                      };
+                    });
+                    colorOptions = option.values
+
+                    const colorOptionHtml = `
+                    <div>
+                      <p>Available Options:</p>
+                      <ul class="color-options">
+                        ${colorOptions.map(color => `
+                          <li class="color-option" title="${color.title}">
+                            <img src="${color.image}" alt="${color.title}">
+                          </li>
+                        `).join('')}
+                      </ul>
+                    </div>
+                    `;
+        
+                    const productRoot = document.querySelector(
+                      `.boost-sd__instant-search-results 
+                      .boost-sd__instant-search-product-list-items`
+                    )?.closest('.boost-sd__instant-search-results');
+        
+                    if (!productRoot) return;
+
+                    const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
+                    const targetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
+                    if (!targetElementColorOptions) {
+                      targetElement.insertAdjacentHTML(
+                        'afterend',
+                        colorOptionHtml
+                      );
+                    }
+        
+                    console.log('Found populated product group:', productRoot);
+  
+                    // productRoot
+                    //   .querySelectorAll('.boost-sd__suggestion-queries-item--product')
+                    //   .forEach(item => {
           
-//           const closeButton = document.querySelector("predictive-search-drawer .drawer__close-button");
-//           // if (closeButton) {
-//           //   closeButton.removeEventListener('click', true);
-//           //   closeButton.addEventListener('click', () => {
-//           //       console.log('1');
-//           //       drawerSelector.removeAttribute('open');
-//           //     console.log(drawerSelector)
-//           //   });
-//           // }
-//         },
-//       };
-//     },
-//   };
-//   componentRegistry.useComponentPlugin('SearchContentResult', AppendISW);
-// }]);
+                    //     // prevent duplicate injection
+                    //     if (item.dataset.customized) return;
+                    //     item.dataset.customized = 'true';
+          
+                    //     const title = item.querySelector(
+                    //       '.boost-sd__suggestion-queries-item-amount'
+                    //     );
+          
+                    //     if (title) {
+                    //       title.insertAdjacentHTML(
+                    //         'afterend',
+                    //         colorOptionHtml
+                    //       );
+                    //     }
+                    //   });
+                      return;
+                  }
+                });
+              });
+            });
+              
+
+
+
+            // const widgetElm = element.getRootElm();
+            // console.log("widgetElm", widgetElm);
+            // if (!widgetElm || !widgetElm.innerHTML.trim()) return;
+
+            // const drawerElm = document.querySelector("predictive-search-drawer");
+            // if (!drawerElm) return;
+
+            // const drawerRoot = drawerElm.shadowRoot || drawerElm;
+            // const drawerContent = drawerRoot.querySelector(".drawer__content");
+            // if (!drawerContent) return;
+
+            // // prevent re-appending on every render
+            // if (drawerContent.querySelector(".boost-sd__instant-search-results")) return;
+
+            // // don't move Boost's original root; clone it
+            // const clone = widgetElm.cloneNode(true);
+
+            // drawerContent.innerHTML = "";
+            // drawerContent.appendChild(clone);
+          },
+        };
+      },
+    };
+
+    componentRegistry.useComponentPlugin("SearchContentResult", AppendISW);
+  },
+]);
+
 
 
 window.addEventListener('load', ()=> {

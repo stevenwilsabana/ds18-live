@@ -15,7 +15,7 @@
     {%- if media.alt contains '#' -%}
       {%- assign alt_parts = media.alt | split: '#' -%}
 
-      {%- assign media_group_parts = alt_parts.last | split: '_' -%}
+      {%- assign media_group_parts = alt_parts.first | split: '_' -%}
       {%- assign option = product.options_by_name[media_group_parts.first] -%}
       {%- assign option_value = option.selected_value | downcase -%}
 
