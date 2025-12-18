@@ -5257,6 +5257,7 @@
       this._updateLabels(event.detail.variant);
       this._updatePrices(event.detail.variant);
       this._updateSku(event.detail.variant);
+      this._accordionData(event.detail.variant);
     }
     _updateLabels(variant) {
       let productLabelList = this.querySelector("[data-product-label-list]");
@@ -5327,6 +5328,29 @@
         productSku.style.display = "";
       }
     }
+    _accordionData(variant) {
+
+      // key features
+      let productKeyFeatures = document.querySelectorAll(".accordion--richtext .details");
+      productKeyFeatures.forEach(item => {
+        item.classList.remove('active')
+        const keyFeaturesVariantId = item.dataset.variantId
+        if(keyFeaturesVariantId == variant["id"]) {
+          item.classList.add('active');
+        }
+      });
+
+      let productTechData = document.querySelectorAll(".accordion--technical-data .description-product__answer-container--technical-data");
+      productTechData.forEach(item => {
+        item.classList.remove('active')
+        const keyFeaturesVariantId = item.dataset.variantId
+        if(keyFeaturesVariantId == variant["id"]) {
+          item.classList.add('active');
+        }
+      });
+      
+    }
+    
   };
   window.customElements.define("product-meta", ProductMeta);
 
