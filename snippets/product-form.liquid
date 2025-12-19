@@ -316,7 +316,7 @@
                               data-variant-imagen="variant-{{ namePhoto | handleize }}"
                             >
                               <input class="color-swatch__radio visually-hidden" type="radio" name="option{{ option.position }}" form="{{ product_form_id }}" id="{{ option_id }}-{{ forloop.index }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-bind-value="{{ option_id }}-value">
-                              <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}; background: url('{{ swatch_variant.featured_media | image_url: width: 72 }}') !important">
+                              <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %};">
                                 <span class="visually-hidden"></span>
                               </label>
                           </div>
