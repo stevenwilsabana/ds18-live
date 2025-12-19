@@ -99,3 +99,17 @@ predictive-search-drawer#search-drawer {
 .boost-sd__suggestion-queries-item-price .color-options .color-option {
   width: 40px;
 }
+.boost-sd__product-link {
+  flex: 1;
+}
+.boost-sd__product-item--border-no-padding-image .boost-sd__product-info{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.boost-sd__product-item--border-no-padding-image .boost-sd__product-info .boost-sd__product-price {
+  flex: 1;
+}
+.boost-sd__product-item .boost-sd__button {
+  font-weight: bold;
+}
