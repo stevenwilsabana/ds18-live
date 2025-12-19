@@ -112,4 +112,6 @@ predictive-search-drawer#search-drawer {
 }
 .boost-sd__product-item .boost-sd__button {
   font-weight: bold;
+  border-radius: 25px;
+  padding: 10px;
 }
