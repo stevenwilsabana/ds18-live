@@ -286,27 +286,42 @@
                     <div class="color-swatch-list">
                       {%- assign color_swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />' -%}
                       {%- for value in option.values -%}
-                        {%- assign option_index = option.position | minus: 1 -%}
-                        {% assign swatch_variant = nil %}
-                        {%- for variant in product.variants -%}
-                          {%- if variant.options[option_index] == value -%}
-                            {%- assign swatch_variant = variant -%}
-                            {%- break -%}
-                          {%- endif -%}
-                        {%- endfor -%}
 
-                        {%- assign color_value_downcase = value | downcase -%}
+                        {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
+                          {%- assign option_index = option.position | minus: 1 -%}
+                          {% assign swatch_variant = nil %}
+                          {%- for variant in product.variants -%}
+                            {%- if variant.options[option_index] == value -%}
+                              {%- assign swatch_variant = variant -%}
+                              {%- break -%}
+                            {%- endif -%}
+                          {%- endfor -%}
 
-                          {% assign namePhoto = option.name | append: " | " | append: value | escape %}
-                          <div class="color-variant color-swatch {% if color_white_label == color_value_downcase %}color-swatch--white{% endif %}"
-                            data-variant-imagen="variant-{{ namePhoto | handleize }}"
-                          >
-                            <input class="color-swatch__radio visually-hidden" type="radio" name="option{{ option.position }}" form="{{ product_form_id }}" id="{{ option_id }}-{{ forloop.index }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-bind-value="{{ option_id }}-value">
-                            <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}; background: url('{{ swatch_variant.featured_media | image_url: width: 72 }}') !important">
-                              <span class="visually-hidden"></span>
-                            </label>
+                          {%- assign color_value_downcase = value | downcase -%}
+
+                            {% assign namePhoto = option.name | append: " | " | append: value | escape %}
+                            <div class="color-variant color-swatch {% if color_white_label == color_value_downcase %}color-swatch--white{% endif %}"
+                              data-variant-imagen="variant-{{ namePhoto | handleize }}"
+                            >
+                              <input class="color-swatch__radio visually-hidden" type="radio" name="option{{ option.position }}" form="{{ product_form_id }}" id="{{ option_id }}-{{ forloop.index }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-bind-value="{{ option_id }}-value">
+                              <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}; background: url('{{ swatch_variant.featured_media | image_url: width: 72 }}') !important">
+                                <span class="visually-hidden"></span>
+                              </label>
                           </div>
+                        {% else %}
+                            {%- assign color_value_downcase = value | downcase -%}
 
+                            {% assign namePhoto = option.name | append: " | " | append: value | escape %}
+                            <div class="color-variant color-swatch {% if color_white_label == color_value_downcase %}color-swatch--white{% endif %}"
+                              data-variant-imagen="variant-{{ namePhoto | handleize }}"
+                            >
+                              <input class="color-swatch__radio visually-hidden" type="radio" name="option{{ option.position }}" form="{{ product_form_id }}" id="{{ option_id }}-{{ forloop.index }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-bind-value="{{ option_id }}-value">
+                              <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}; background: url('{{ swatch_variant.featured_media | image_url: width: 72 }}') !important">
+                                <span class="visually-hidden"></span>
+                              </label>
+                          </div>
+                            
+                        {% endif %}
                       {%- endfor -%}
                     </div>
 
