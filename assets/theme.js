@@ -5115,22 +5115,30 @@
       const filteredMediaIds = [];
       let shouldReload = false;
       this.product["media"].forEach((media) => {
-        var _a;
-        let matchMedia2 = variant["featured_media"] && media["id"] === variant["featured_media"]["id"];
-        if ((_a = media["alt"]) == null ? void 0 : _a.includes("#")) {
-          shouldReload = true;
-          if (!matchMedia2) {
-            const altParts = media["alt"].split("#"), mediaGroupParts = altParts[0].split("_");
+        console.log("XXX", media["alt"])
 
-            this.product["options"].forEach((option) => {
-              if (option["name"].toLowerCase() === mediaGroupParts[0].toLowerCase()) {
-                if (variant["options"][option["position"] - 1].toLowerCase() !== mediaGroupParts[1].trim().toLowerCase()) {
-                  filteredMediaIds.push(media["id"]);
-                }
-              }
-            });
-          }
-        }
+        // var _a;
+        // let matchMedia2 = variant["featured_media"] && media["id"] === variant["featured_media"]["id"];
+        // if ((_a = media["alt"]) == null ? void 0 : _a.includes("#")) {
+          shouldReload = true;
+          // if (!matchMedia2) {
+
+            // const altParts = media["alt"].split("#"), mediaGroupParts = altParts[0].split("_");
+            // this.product["options"].forEach((option) => {
+            //   if (option["name"].toLowerCase() === mediaGroupParts[0].toLowerCase()) {
+            //     if (variant["options"][option["position"] - 1].toLowerCase() !== mediaGroupParts[1].trim().toLowerCase()) {
+            //       filteredMediaIds.push(media["id"]);
+            //     }
+            //   }
+            // });
+
+            const altParts = media["alt"]
+            if(altParts !== variant['sku']) {
+              filteredMediaIds.push(media["id"]);
+            }
+
+          // }
+        // }
       });
       const currentlyFilteredIds = [...new Set(Array.from(this.querySelectorAll(".is-filtered[data-media-id]")).map((item) => parseInt(item.getAttribute("data-media-id"))))];
       if (currentlyFilteredIds.some((value) => !filteredMediaIds.includes(value))) {

@@ -11,7 +11,18 @@
 
   {% assign filtered_media_ids = '' %}
 
-  {%- for media in product.media -%}
+  {% assign selectedVariantSku = product.selected_or_first_available_variant.sku %}
+  {% for item in product.variants %}
+    {% if selectedVariantSku != item.sku  %}
+      {%- for media in product.media -%}
+        {% if media.alt != selectedVariantSku %}
+          {%- assign filtered_media_ids = filtered_media_ids | append: media.id | append: ',' -%}
+        {% endif %}
+       {%- endfor -%}
+    {% endif %}
+  {% endfor %} 
+
+  {% comment %} {%- for media in product.media -%}
     {%- if media.alt contains '#' -%}
       {%- assign alt_parts = media.alt | split: '#' -%}
 
@@ -25,7 +36,7 @@
         {%- assign filtered_media_ids = filtered_media_ids | append: media.id | append: ',' -%}
       {%- endif -%}
     {%- endif -%}
-  {%- endfor -%}
+  {%- endfor -%} {% endcomment %}
 
   {%- assign filtered_media_ids = filtered_media_ids | split: ',' | compact -%}
 
