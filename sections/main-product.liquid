@@ -270,7 +270,7 @@
 
     <div class="container">
       <!-- PRODUCT TOP PART -->
-      <div class="product product--thumbnails-{{ section.settings.desktop_thumbnails_position }}">
+      <div class="product product--thumbnails-{{ section.settings.desktop_thumbnails_position }} product-template--{{ product.template_suffix }}">
         {%- render 'product-info-mobile', product: product, update_url: true -%}
         {%- render 'product-media', product: product -%}
         {%- render 'product-info', product: product, update_url: true -%}
