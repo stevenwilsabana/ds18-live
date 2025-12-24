@@ -270,7 +270,7 @@
 
     <div class="container">
       <!-- PRODUCT TOP PART -->
-      <div class="product product--thumbnails-{{ section.settings.desktop_thumbnails_position }}">
+      <div class="product product--thumbnails-{{ section.settings.desktop_thumbnails_position }} product-template--{{ product.template_suffix }}">
         {%- render 'product-info-mobile', product: product, update_url: true -%}
         {%- render 'product-media', product: product -%}
         {%- render 'product-info', product: product, update_url: true -%}
@@ -1260,7 +1260,7 @@
 
 
   function $loadVariantsImage(){
-    if($('.shopify-section--main-product product-media .flickity-slider').length > 0){
+    if($('.shopify-section--main-product product-media .flickity-slider').length > 0 || $('.shopify-section--main-product product-media .swiper-slide').length > 0 ){
       
       var $validationAlts = $(".shopify-section--main-product product-media .flickity-slider > div[data-selector-media-alt*='VARIANT:']");
       if($validationVariants.length == 2){

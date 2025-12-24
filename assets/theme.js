@@ -2476,6 +2476,7 @@
         });
       });
     }
+    
   };
   window.customElements.define("flickity-controls", FlickityControls);
 
@@ -4855,7 +4856,7 @@
         arrowKeys: true,
         history: false,
         getThumbBoundsFn: () => {
-          const thumbnail = this.mediaElement.querySelector(".product__media-item.is-selected"), pageYScroll = window.pageYOffset || document.documentElement.scrollTop, rect = thumbnail.getBoundingClientRect();
+          const thumbnail = this.mediaElement.querySelector(".product__media-item.swiper-slide-active, .product__media-item.is-selected"), pageYScroll = window.pageYOffset || document.documentElement.scrollTop, rect = thumbnail.getBoundingClientRect();
           return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
         },
         getDoubleTapZoom: (isMouseClick, item) => {
@@ -4882,10 +4883,11 @@
     }
     async _buildItems() {
       const activeImages = Array.from(this.mediaElement.querySelectorAll('.product__media-item[data-media-type="image"]:not(.is-filtered)')), product = await ProductLoader.load(this.getAttribute("product-handle"));
+
       return Promise.resolve(activeImages.map((item) => {
         const matchedMedia = product["media"].find((media) => media.id === parseInt(item.getAttribute("data-media-id"))), supportedSizes = getSupportedSizes(matchedMedia, [200, 300, 400, 500, 600, 700, 800, 1e3, 1200, 1400, 1600, 1800, 2e3, 2200, 2400, 2600, 2800, 3e3]), desiredWidth = Math.min(supportedSizes[supportedSizes.length - 1], window.innerWidth);
         return {
-          selected: item.classList.contains("is-selected"),
+          selected: item.classList.contains("is-selected") || item.classList.contains("swiper-slide-active"),
           src: getSizedMediaUrl(matchedMedia, `${Math.ceil(Math.min(desiredWidth * window.devicePixelRatio * this.maxSpreadZoom, 3e3))}x`),
           msrc: item.firstElementChild.currentSrc,
           originalMedia: matchedMedia,
@@ -5068,17 +5070,19 @@
     async connectedCallback() {
       var _a;
       this.mainCarousel = this.querySelector("flickity-carousel");
+      (_a = document.getElementById(this.getAttribute("form-id"))) == null ? void 0 : _a.addEventListener("variant:changed", this._onVariantChanged.bind(this));
+      if (!this.mainCarousel || this.mainCarousel?.childElementCount === 1) {
+        return;
+      } 
       if (this.hasAttribute("reveal-on-scroll")) {
         this._setupVisibility();
       }
-      if (this.mainCarousel.childElementCount === 1) {
-        return;
-      }
+      
       this.selectedVariantMediaId = null;
       this.viewInSpaceElement = this.querySelector("[data-shopify-model3d-id]");
       this.zoomButton = this.querySelector(".product__zoom-button");
       this.product = await ProductLoader.load(this.getAttribute("product-handle"));
-      (_a = document.getElementById(this.getAttribute("form-id"))) == null ? void 0 : _a.addEventListener("variant:changed", this._onVariantChanged.bind(this));
+      // (_a = document.getElementById(this.getAttribute("form-id"))) == null ? void 0 : _a.addEventListener("variant:changed", this._onVariantChanged.bind(this));
       this.mainCarousel.addEventListener("model:played", () => this.mainCarousel.setDraggable(false));
       this.mainCarousel.addEventListener("model:paused", () => this.mainCarousel.setDraggable(true));
       this.mainCarousel.addEventListener("video:played", () => this.mainCarousel.setDraggable(false));
@@ -5091,6 +5095,7 @@
     get thumbnailsPosition() {
       return window.matchMedia(window.themeVariables.breakpoints.pocket).matches ? "bottom" : this.getAttribute("thumbnails-position");
     }
+
     async _setupVisibility() {
       await this.untilVisible();
       const flickityInstance = await this.mainCarousel.flickityInstance, image = flickityInstance ? flickityInstance.selectedElement.querySelector("img") : this.querySelector(".product__media-image-wrapper img"), prefersReducedMotion = MediaFeatures.prefersReducedMotion();
@@ -5110,52 +5115,125 @@
       ]));
       this._hasSectionReloaded ? animation.finish() : animation.play();
     }
+
+    
+
     async _onVariantChanged(event) {
+
+      function createShopifyExternalVideo({
+        videoId,
+        autoplay = false,
+        muted = false,
+        loop = false,
+        controls = false
+      }) {
+
+        const params = new URLSearchParams({
+          enablejsapi: '1',
+          autoplay: autoplay ? '1' : '0',
+          mute: muted ? '1' : '0',
+          loop: loop ? '1' : '0',
+          controls: controls ? '1' : '0',
+          playlist: loop ? videoId : undefined
+        });
+      
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+        iframe.allow = 'autoplay; encrypted-media';
+        iframe.allowFullscreen = true;
+        iframe.frameBorder = '0';
+        iframe.loading = 'lazy';
+      
+        return iframe;
+      }
+
       const variant = event.detail.variant;
       const filteredMediaIds = [];
       let shouldReload = false;
-      this.product["media"].forEach((media) => {
-        console.log("XXX", media["alt"])
+      const newTemplate = document.querySelector('.product-template--new-template') || document.querySelector('.product-template--product-with-variants')
 
-        // var _a;
-        // let matchMedia2 = variant["featured_media"] && media["id"] === variant["featured_media"]["id"];
-        // if ((_a = media["alt"]) == null ? void 0 : _a.includes("#")) {
-          shouldReload = true;
-          // if (!matchMedia2) {
-
-            // const altParts = media["alt"].split("#"), mediaGroupParts = altParts[0].split("_");
-            // this.product["options"].forEach((option) => {
-            //   if (option["name"].toLowerCase() === mediaGroupParts[0].toLowerCase()) {
-            //     if (variant["options"][option["position"] - 1].toLowerCase() !== mediaGroupParts[1].trim().toLowerCase()) {
-            //       filteredMediaIds.push(media["id"]);
-            //     }
-            //   }
-            // });
-
-            const altParts = media["alt"]
-            if(altParts !== variant['sku']) {
-              filteredMediaIds.push(media["id"]);
-            }
-
-          // }
-        // }
-      });
-      const currentlyFilteredIds = [...new Set(Array.from(this.querySelectorAll(".is-filtered[data-media-id]")).map((item) => parseInt(item.getAttribute("data-media-id"))))];
-      if (currentlyFilteredIds.some((value) => !filteredMediaIds.includes(value))) {
-        const selectedMediaId = variant["featured_media"] ? variant["featured_media"]["id"] : this.product["media"].map((item) => item.id).filter((item) => !filteredMediaIds.includes(item))[0];
-        Array.from(this.querySelectorAll("[data-media-id]")).forEach((item) => {
-          item.classList.toggle("is-filtered", filteredMediaIds.includes(parseInt(item.getAttribute("data-media-id"))));
-          item.classList.toggle("is-selected", selectedMediaId === parseInt(item.getAttribute("data-media-id")));
-          item.classList.toggle("is-initial-selected", selectedMediaId === parseInt(item.getAttribute("data-media-id")));
+      if(newTemplate) {
+        const mainSlides = [];
+        const thumbSlides = [];
+        const mediaData = JSON.parse(
+          document.getElementById('ProductMedia').textContent
+        );
+        
+        const variantMedia = mediaData.filter(m => {
+          return m.alt && m.alt.includes(variant['sku']); // OR media.id mapping
         });
-        this.mainCarousel.reload();
+
+        console.log("variantMedia", variantMedia)
+        window.swiperMain.removeAllSlides();
+        window.swiperThumbnail.removeAllSlides();
+
+        variantMedia.forEach((media, index) => {
+          if(media.media_type == "external_video") {
+            const iframe = createShopifyExternalVideo({
+              videoId: media.external_id,          // Shopify media.external_id
+              muted: true,                          // section.settings.enable_video_autoplay
+              loop: true,                           // section.settings.enable_video_looping
+              autoplay: false                       // IMPORTANT: do NOT autoplay in Swiper
+            })
+            const videoSlide = document.createElement('div');
+            videoSlide.className = 'swiper-slide product__media-item';
+            videoSlide.dataset.mediaType = media.media_type;
+            videoSlide.dataset.mediaId = media.id;
+            videoSlide.dataset.originalPosition = index;
+            videoSlide.dataset.selectorMediaAlt = media.alt;
+            videoSlide.dataset.selectorSource = media.preview_image.src;
+
+            videoSlide.appendChild(iframe);
+
+            window.swiperMain.appendSlide(videoSlide);
+            window.swiperThumbnail.appendSlide(`
+              <div class="swiper-slide pdp-thumb-slider__slide">
+                <img sizes="(max-width: 999px) calc(100vw - 48px), 640px" height="700" width="700" alt="${media.alt}" src="${media.preview_image.src}">
+              </div>
+              `)
+          } else {
+            window.swiperMain.appendSlide(`
+              <div class="swiper-slide product__media-item" data-media-type="${media.media_type}" data-media-id="${media.id}" data-original-position="${index}" data-selector-media-alt="${media.alt}" data-selector-source="${media.preview_image.src}">
+                <div class="active-zoom_product-page product__media-image-wrapper aspect-ratio aspect-ratio--natural">
+                  <img class="image-zoom-product-page" data-zoom="${media.preview_image.src}" sizes="(max-width: 999px) calc(100vw - 48px), 640px" height="2000" width="2000" alt="${media.alt}" src="${media.preview_image.src}">
+                </div>
+              </div>
+              `)
+  
+              window.swiperThumbnail.appendSlide(`
+              <div class="swiper-slide pdp-thumb-slider__slide">
+                <img sizes="(max-width: 999px) calc(100vw - 48px), 640px" height="700" width="700" alt="${media.alt}" src="${media.preview_image.src}">
+              </div>
+              `)
+          }
+        });
+        window.swiperThumbnail.update();
+        window.swiperMain.update();
       } else {
-        if (!event.detail.variant["featured_media"] || this.selectedVariantMediaId === event.detail.variant["featured_media"]["id"]) {
-          return;
+        this.product["media"].forEach((media) => {
+          shouldReload = true;
+          const altParts = media["alt"]
+          if(altParts !== variant['sku']) {
+            filteredMediaIds.push(media["id"]);
+          }
+        });
+        const currentlyFilteredIds = [...new Set(Array.from(this.querySelectorAll(".is-filtered[data-media-id]")).map((item) => parseInt(item.getAttribute("data-media-id"))))];
+        if (currentlyFilteredIds.some((value) => !filteredMediaIds.includes(value))) {
+          const selectedMediaId = variant["featured_media"] ? variant["featured_media"]["id"] : this.product["media"].map((item) => item.id).filter((item) => !filteredMediaIds.includes(item))[0];
+          Array.from(this.querySelectorAll("[data-media-id]")).forEach((item) => {
+            item.classList.toggle("is-filtered", filteredMediaIds.includes(parseInt(item.getAttribute("data-media-id"))));
+            item.classList.toggle("is-selected", selectedMediaId === parseInt(item.getAttribute("data-media-id")));
+            item.classList.toggle("is-initial-selected", selectedMediaId === parseInt(item.getAttribute("data-media-id")));
+          });
+          this.mainCarousel.reload();
+        } else {
+          if (!event.detail.variant["featured_media"] || this.selectedVariantMediaId === event.detail.variant["featured_media"]["id"]) {
+            return;
+          }
+          this.mainCarousel.select(`[data-media-id="${event.detail.variant["featured_media"]["id"]}"]`);
         }
-        this.mainCarousel.select(`[data-media-id="${event.detail.variant["featured_media"]["id"]}"]`);
+        this.selectedVariantMediaId = event.detail.variant["featured_media"] ? event.detail.variant["featured_media"]["id"] : null;
       }
-      this.selectedVariantMediaId = event.detail.variant["featured_media"] ? event.detail.variant["featured_media"]["id"] : null;
     }
     async _onFlickityReady() {
       const flickityInstance = await this.mainCarousel.flickityInstance;
