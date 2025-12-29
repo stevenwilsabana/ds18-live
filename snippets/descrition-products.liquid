@@ -136,28 +136,12 @@
                         <span
                         class="loadmore"
                         style="width: 100%;text-align: center;display: block;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
-                        onclick="loadmore();"
                         >Load More</span>
                           <span
                             class="show-less"
                             style="width: 100%;text-align: center;display: none;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
-                            onclick="loadless();"
                             >Show Less</span
                           >
-                    
-                          <script>
-                            function loadmore() {
-                              $('#load-more').removeAttr('id');
-                              $('.loadmore').css({ display: 'none' });
-                              $('.show-less').css({ display: 'block' });
-                            }
-                    
-                            function loadless() {
-                              $('.load-more').attr('id', 'load-more');
-                              $('.loadmore').css({ display: 'block' });
-                              $('.show-less').css({ display: 'none' });
-                            }
-                          </script>
                           <script>
                             var width = screen.width;
                             var acc = document.getElementsByClassName('description-product__answer-container--technical-data');
@@ -203,7 +187,7 @@
                         </a>
                       {% endif %}
                       
-                      <div class="container load-more" id="load-more">
+                      <div class="container load-more load-more--close" id="load-more">
                         {% if product.metafields.custom_fields.technical_data != blank %}
                           <div class="text-with-icons">
                             <div class="text-with-icons__list hide-scrollbar">
@@ -235,29 +219,14 @@
                       <span
                         class="loadmore"
                         style="width: 100%;text-align: center;display: block;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
-                        onclick="loadmore();"
                         >Load More</span
                       >
                       <span
                         class="show-less"
                         style="width: 100%;text-align: center;display: none;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
-                        onclick="loadless();"
                         >Show Less</span
                       >
-                
-                      <script>
-                        function loadmore() {
-                          $('#load-more').removeAttr('id');
-                          $('.loadmore').css({ display: 'none' });
-                          $('.show-less').css({ display: 'block' });
-                        }
-                
-                        function loadless() {
-                          $('.load-more').attr('id', 'load-more');
-                          $('.loadmore').css({ display: 'block' });
-                          $('.show-less').css({ display: 'none' });
-                        }
-                      </script>
+                     
                       <script>
                         var width = screen.width;
                         var acc = document.getElementsByClassName('description-product__answer-container--technical-data');
@@ -385,6 +354,26 @@
       }
       return false;
     });
+
+    // ***** load more for technical data ******
+    const techDataLoadMore = document.querySelectorAll('.load-more')
+    techDataLoadMore.forEach(item => {
+      const loadMoreBtn = item.closest('.description-product__answer-container--technical-data').querySelector('.loadmore')
+      const showLessBtn = item.closest('.description-product__answer-container--technical-data').querySelector('.show-less')
+
+      loadMoreBtn.addEventListener('click', () => {
+        item.removeAttribute('id');
+        showLessBtn.style.display = "block";
+        loadMoreBtn.style.display = "none";
+      })
+
+      showLessBtn.addEventListener('click', () => {
+        item.setAttribute('id', 'load-more');
+        showLessBtn.style.display = "none";
+        loadMoreBtn.style.display = "block";
+      })
+    });
+    // ***** load more for technical data ******
     
   });
 </script>
