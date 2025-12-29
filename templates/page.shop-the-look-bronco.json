@@ -201,17 +201,17 @@
             "caption": ""
           }
         },
-        "image_7YNhjm": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC5.jpg",
-            "caption": ""
-          }
-        },
         "image_aD9TcG": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC4.jpg",
+            "caption": ""
+          }
+        },
+        "image_7YNhjm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC5.jpg",
             "caption": ""
           }
         },
@@ -248,8 +248,8 @@
       "block_order": [
         "image_zekFrC",
         "image_9pmgKn",
-        "image_7YNhjm",
         "image_aD9TcG",
+        "image_7YNhjm",
         "image_Fx7pMM",
         "image_nwLeX8",
         "image_hqxVDN",
