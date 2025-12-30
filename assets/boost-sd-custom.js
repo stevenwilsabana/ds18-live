@@ -171,9 +171,9 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       const powerRatingOptions = option.values
   
                       const powerRatingOptionHtml = `
-                      <div>
+                      <div class="product-options product-options--power-rating">
                         <p>Available Power Rating:</p>
-                        <ul class="color-options">
+                        <ul>
                           ${powerRatingOptions.map(rating => `
                             <li class="color-option" title="${rating.title}">
                               <span>${rating.title}</span>
