@@ -119,3 +119,20 @@ predictive-search-drawer#search-drawer {
 .boost-sd__suggestion-queries-item-vendor {
   display: none !important;
 }
+.boost-sd__suggestion-queries-item-product--right .product-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.boost-sd__suggestion-queries-item-product--right .product-options > p {
+  margin: 0;
+  font-size: 12px !important;
+}
+.boost-sd__suggestion-queries-item-product--right .product-options > ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+.boost-sd__suggestion-queries-item-product--right .product-options > ul > li {
+  width: 40px;
+}
