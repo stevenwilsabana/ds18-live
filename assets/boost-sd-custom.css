@@ -128,14 +128,23 @@ predictive-search-drawer#search-drawer {
   margin: 0;
   font-size: 12px !important;
 }
-.boost-sd__suggestion-queries-item-product--right .product-options > ul {
+.boost-sd__suggestion-queries-item-product--right .product-options--color > ul {
   display: flex;
   list-style-type: none;
   padding: 0;
+}
+.boost-sd__suggestion-queries-item-product--right .product-options--power-rating > ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  gap: 3px;
+  flex-wrap: wrap;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options--color > ul > li {
   width: 40px;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options--power-rating > ul > li {
   font-size: 12px;
+  border: 1px solid gray;
+  padding: 2px;
 }
