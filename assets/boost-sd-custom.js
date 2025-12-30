@@ -102,7 +102,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
 
             fetchBoostSuggest('frp').then(data => {
               console.log("data", data.products);
-              let colorOptions = [];
+              // let colorOptions = [];
 
               data.products.forEach(element => {
                 const imageList = element.images
@@ -122,7 +122,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                           image: imageUrl
                         };
                       });
-                      colorOptions = option.values
+                      const colorOptions = option.values
   
                       const colorOptionHtml = `
                       <div>
@@ -188,13 +188,13 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       //     image: imageUrl
                       //   };
                       // });
-                      colorOptions = option.values
+                      const powerRatingOptions = option.values
   
                       const powerRatingOptionHtml = `
                       <div>
                         <p>Available Power Rating:</p>
                         <ul class="color-options">
-                          ${colorOptions.map(rating => `
+                          ${powerRatingOptions.map(rating => `
                             <li class="color-option" title="${rating.title}">
                               <span>${rating.title}</span>
                             </li>
