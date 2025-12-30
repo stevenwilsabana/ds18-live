@@ -310,15 +310,26 @@
         "reviews_home_gWE8Gg": {
           "type": "reviews-home",
           "settings": {
-            "product_review": "front-kick-panel-loaded-enclosure-2-x-nxl-iq6-bk-2-x-pro-tw1ld-included-2015-up-digital-led-ligths",
-            "title_review": "Perfect",
-            "review": "WOW—what a difference! Paired with the NXL-IQ6’s and PRO-TW1L tweeters the clarity is unreal!",
-            "buyer": "Mike T.",
-            "date": "July 18, 2024"
+            "product_review": "ds18-bro-da-bronco-dashboard-speaker-adapter-for-1-7-2-9-and-3-6-twetter-and-midrange-6th-gen",
+            "title_review": "Great",
+            "review": "These Adapters fit great. I was able to fit my Kicker 2.75 Dash component speakers in my dash without any problems. Great solution for my fitment issue...",
+            "buyer": "Luis F.",
+            "date": "5 months ago"
+          }
+        },
+        "reviews_home_L7rVjG": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "bro-bass-package",
+            "title_review": "Girlfriend's Bronco",
+            "review": "My girlfriend loves it and the subwoofer gets low and surprisingly loud. Much better quality than I had anticipated and looks almost factory mounted properly on the tail door.",
+            "buyer": "Jon E.",
+            "date": "1 year ago"
           }
         },
         "reviews_home_zw84Jr": {
           "type": "reviews-home",
+          "disabled": true,
           "settings": {
             "product_review": "headrest-enclosure-loaded-4-x-nxl-iq6-bk-included-2015-up-digital-led-ligths",
             "title_review": "Nice job",
@@ -329,6 +340,7 @@
         },
         "reviews_home_k6b78x": {
           "type": "reviews-home",
+          "disabled": true,
           "settings": {
             "product_review": "polaris-slg-sp6ld",
             "title_review": "Powerful Bass",
@@ -339,6 +351,7 @@
         },
         "reviews_home_dbQNGe": {
           "type": "reviews-home",
+          "disabled": true,
           "settings": {
             "product_review": "arm-rest-enclosure-loaded-2-x-6-5-speakers-included-2015-up-digital-led-ligths",
             "title_review": "Great",
@@ -349,6 +362,7 @@
         },
         "reviews_home_PcLr8e": {
           "type": "reviews-home",
+          "disabled": true,
           "settings": {
             "product_review": "ds18-slg-rsub10ld-polaris-slingshot-rear-10-subwoofer-enclosure-with-nxl-10sub-bk",
             "title_review": "YEAH!",
@@ -359,6 +373,7 @@
         },
         "reviews_home_BQqCnn": {
           "type": "reviews-home",
+          "disabled": true,
           "settings": {
             "product_review": "polaris-slingshot-under-dash-2-x-6-subwoofer-enclosure-with-2-x-zr6-4d",
             "title_review": "Loving it",
@@ -369,6 +384,7 @@
         },
         "reviews_home_EErNwG": {
           "type": "reviews-home",
+          "disabled": true,
           "settings": {
             "product_review": "slg-udsd6ld-20up",
             "title_review": "Absolutely worth it!",
@@ -424,6 +440,7 @@
       },
       "block_order": [
         "reviews_home_gWE8Gg",
+        "reviews_home_L7rVjG",
         "reviews_home_zw84Jr",
         "reviews_home_k6b78x",
         "reviews_home_dbQNGe",
