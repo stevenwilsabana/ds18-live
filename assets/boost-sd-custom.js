@@ -145,11 +145,20 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       if (!productRoot) return;
   
                       const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                      const TargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options product-options--color`)
+                      if (!TargetElementOptions) {
+                        targetElement.insertAdjacentHTML(
+                          'afterend',
+                          colorOptionHtml
+                        );
+                      }
+
+
                       // targetElement.append(colorOptionHtml)
-                      targetElement.insertAdjacentHTML(
-                        'afterend',
-                        colorOptionHtml
-                      );
+                      // targetElement.insertAdjacentHTML(
+                      //   'afterend',
+                      //   colorOptionHtml
+                      // );
           
                       console.log('Found populated product group:', productRoot);
                         return;
@@ -190,13 +199,14 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
           
                       if (!powerRatingProductRoot) return;
 
-                       const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                      // const powerRatingTargetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
-                      // if (!powerRatingTargetElementColorOptions) {
+                      const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                      const powerRatingTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options product-options--power-rating`)
+                      if (!powerRatingTargetElementOptions) {
                         powerRatingTargetElement.insertAdjacentHTML(
                           'afterend',
                           powerRatingOptionHtml
                         );
+                      }
   
                       // const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
                       // const powerRatingTargetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
