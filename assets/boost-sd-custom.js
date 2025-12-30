@@ -144,11 +144,12 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
           
                       if (!productRoot) return;
   
-                      const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-product`)
-                      targetElement.insertAdjacentHTML(
-                        'afterend',
-                        colorOptionHtml
-                      );
+                      const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-product--right`)
+                      targetElement.append(colorOptionHtml)
+                      // targetElement.insertAdjacentHTML(
+                      //   'afterend',
+                      //   colorOptionHtml
+                      // );
           
                       console.log('Found populated product group:', productRoot);
     
