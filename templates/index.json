@@ -727,6 +727,7 @@
         },
         "collection_Y9w93V": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "specials",
             "image": "shopify://shop_images/Website-Specials_957d8812-b97a-4b5f-a62a-21dee07d5611.jpg",
