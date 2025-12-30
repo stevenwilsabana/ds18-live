@@ -133,6 +133,6 @@ predictive-search-drawer#search-drawer {
   list-style-type: none;
   padding: 0;
 }
-.boost-sd__suggestion-queries-item-product--right .product-options > ul > li {
+.boost-sd__suggestion-queries-item-product--right .product-options > ul > li.product-options--color {
   width: 40px;
 }
