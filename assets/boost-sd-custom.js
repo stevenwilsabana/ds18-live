@@ -152,27 +152,6 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       );
           
                       console.log('Found populated product group:', productRoot);
-    
-                      // productRoot
-                      //   .querySelectorAll('.boost-sd__suggestion-queries-item--product')
-                      //   .forEach(item => {
-            
-                      //     // prevent duplicate injection
-                      //     if (item.dataset.customized) return;
-                      //     item.dataset.customized = 'true';
-            
-                      //     const title = item.querySelector(
-                      //       '.boost-sd__suggestion-queries-item-amount'
-                      //     );
-            
-                      //     if (title) {
-                      //       title.insertAdjacentHTML(
-                      //         'afterend',
-                      //         colorOptionHtml
-                      //       );
-                      //     }
-                      //   });
-                        return;
                       break;
 
                     case "power_rating":
@@ -226,7 +205,6 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       //     powerRatingOptionHtml
                       //   );
                       // }
-                      return;
                     break;
                   
                     default:
