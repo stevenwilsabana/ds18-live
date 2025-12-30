@@ -110,6 +110,8 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
 
                   switch (option.name) {
                     case "color":
+                      console.log("color", option.values)
+                      console.log("handle", element.handle)
                       option.values = option.values.map(color => {
                         if (!color.image) return color;
   
