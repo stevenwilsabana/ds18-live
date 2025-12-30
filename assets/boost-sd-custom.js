@@ -148,7 +148,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       targetElement.insertAdjacentHTML(
                         'afterend',
                         colorOptionHtml
-                      }
+                      );
           
                       console.log('Found populated product group:', productRoot);
     
