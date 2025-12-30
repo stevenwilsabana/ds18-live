@@ -172,7 +172,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       //       );
                       //     }
                       //   });
-                        // return;
+                        return;
                       break;
 
                     case "power_rating":
@@ -226,6 +226,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       //     powerRatingOptionHtml
                       //   );
                       // }
+                      return;
                     break;
                   
                     default:
