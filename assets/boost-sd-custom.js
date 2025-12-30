@@ -212,14 +212,14 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
           
                       if (!powerRatingProductRoot) return;
   
-                      const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
-                      const powerRatingTargetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
-                      if (!powerRatingTargetElementColorOptions) {
-                        powerRatingTargetElement.insertAdjacentHTML(
-                          'afterend',
-                          powerRatingOptionHtml
-                        );
-                      }
+                      // const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
+                      // const powerRatingTargetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
+                      // if (!powerRatingTargetElementColorOptions) {
+                      //   powerRatingTargetElement.insertAdjacentHTML(
+                      //     'afterend',
+                      //     powerRatingOptionHtml
+                      //   );
+                      // }
                     break;
                   
                     default:
