@@ -145,7 +145,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       if (!productRoot) return;
   
                       const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                      targetElement.append(colorOptionHtml)
+                      // targetElement.append(colorOptionHtml)
                       targetElement.insertAdjacentHTML(
                         'afterend',
                         colorOptionHtml
