@@ -125,9 +125,9 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       const colorOptions = option.values
   
                       const colorOptionHtml = `
-                      <div>
+                      <div class="product-options product-options--color">
                         <p>Available Options:</p>
-                        <ul class="color-options">
+                        <ul>
                           ${colorOptions.map(color => `
                             <li class="color-option" title="${color.title}">
                               <img src="${color.image}" alt="${color.title}">
