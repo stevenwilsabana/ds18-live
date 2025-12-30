@@ -81,9 +81,9 @@ predictive-search-drawer#search-drawer {
   justify-content: space-between;
 }
 .boost-sd__suggestion-queries-item-price > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .boost-sd__suggestion-queries-item-price > div > p {
   font-size: 12px !important;
