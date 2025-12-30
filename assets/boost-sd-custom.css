@@ -136,3 +136,6 @@ predictive-search-drawer#search-drawer {
 .boost-sd__suggestion-queries-item-product--right .product-options--color > ul > li {
   width: 40px;
 }
+.boost-sd__suggestion-queries-item-product--right .product-options--power-rating > ul > li {
+  font-size: 12px;
+}
