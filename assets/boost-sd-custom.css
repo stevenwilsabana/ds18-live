@@ -115,6 +115,7 @@ predictive-search-drawer#search-drawer {
   border-radius: 25px;
   padding: 10px;
 }
-.boost-sd__suggestion-queries-item-amount {
+.boost-sd__suggestion-queries-item-amount,
+.boost-sd__suggestion-queries-item-vendor {
   display: none !important;
 }
