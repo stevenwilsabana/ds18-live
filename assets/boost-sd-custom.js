@@ -107,72 +107,123 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
               data.products.forEach(element => {
                 const imageList = element.images
                 element.options_with_values.forEach(option => {
-                  if(option.name == "color") {
-                    option.values = option.values.map(color => {
-                      if (!color.image) return color;
 
-                      const imageUrl = imageList[String(color.image)];
-                      if (!imageUrl) return color;
-
-                      return {
-                        ...color,
-                        imagePosition: color.image, // optional, keep original
-                        image: imageUrl
-                      };
-                    });
-                    colorOptions = option.values
-
-                    const colorOptionHtml = `
-                    <div>
-                      <p>Available Options:</p>
-                      <ul class="color-options">
-                        ${colorOptions.map(color => `
-                          <li class="color-option" title="${color.title}">
-                            <img src="${color.image}" alt="${color.title}">
-                          </li>
-                        `).join('')}
-                      </ul>
-                    </div>
-                    `;
-        
-                    const productRoot = document.querySelector(
-                      `.boost-sd__instant-search-results 
-                      .boost-sd__instant-search-product-list-items`
-                    )?.closest('.boost-sd__instant-search-results');
-        
-                    if (!productRoot) return;
-
-                    const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
-                    const targetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
-                    if (!targetElementColorOptions) {
-                      targetElement.insertAdjacentHTML(
-                        'afterend',
-                        colorOptionHtml
-                      );
-                    }
-        
-                    console.log('Found populated product group:', productRoot);
+                  switch (option.name) {
+                    case "color":
+                      option.values = option.values.map(color => {
+                        if (!color.image) return color;
   
-                    // productRoot
-                    //   .querySelectorAll('.boost-sd__suggestion-queries-item--product')
-                    //   .forEach(item => {
+                        const imageUrl = imageList[String(color.image)];
+                        if (!imageUrl) return color;
+  
+                        return {
+                          ...color,
+                          imagePosition: color.image, // optional, keep original
+                          image: imageUrl
+                        };
+                      });
+                      colorOptions = option.values
+  
+                      const colorOptionHtml = `
+                      <div>
+                        <p>Available Options:</p>
+                        <ul class="color-options">
+                          ${colorOptions.map(color => `
+                            <li class="color-option" title="${color.title}">
+                              <img src="${color.image}" alt="${color.title}">
+                            </li>
+                          `).join('')}
+                        </ul>
+                      </div>
+                      `;
           
-                    //     // prevent duplicate injection
-                    //     if (item.dataset.customized) return;
-                    //     item.dataset.customized = 'true';
+                      const productRoot = document.querySelector(
+                        `.boost-sd__instant-search-results 
+                        .boost-sd__instant-search-product-list-items`
+                      )?.closest('.boost-sd__instant-search-results');
           
-                    //     const title = item.querySelector(
-                    //       '.boost-sd__suggestion-queries-item-amount'
-                    //     );
+                      if (!productRoot) return;
+  
+                      const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
+                      const targetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
+                      if (!targetElementColorOptions) {
+                        targetElement.insertAdjacentHTML(
+                          'afterend',
+                          colorOptionHtml
+                        );
+                      }
           
-                    //     if (title) {
-                    //       title.insertAdjacentHTML(
-                    //         'afterend',
-                    //         colorOptionHtml
-                    //       );
-                    //     }
-                    //   });
-                      return;
+                      console.log('Found populated product group:', productRoot);
+    
+                      // productRoot
+                      //   .querySelectorAll('.boost-sd__suggestion-queries-item--product')
+                      //   .forEach(item => {
+            
+                      //     // prevent duplicate injection
+                      //     if (item.dataset.customized) return;
+                      //     item.dataset.customized = 'true';
+            
+                      //     const title = item.querySelector(
+                      //       '.boost-sd__suggestion-queries-item-amount'
+                      //     );
+            
+                      //     if (title) {
+                      //       title.insertAdjacentHTML(
+                      //         'afterend',
+                      //         colorOptionHtml
+                      //       );
+                      //     }
+                      //   });
+                        // return;
+                      break;
+
+                    case "power_rating":
+                      // option.values = option.values.map(rating => {
+                      //   // if (!color.image) return color;
+  
+                      //   const imageUrl = imageList[String(color.image)];
+                      //   if (!imageUrl) return color;
+  
+                      //   return {
+                      //     ...color,
+                      //     imagePosition: color.image, // optional, keep original
+                      //     image: imageUrl
+                      //   };
+                      // });
+                      colorOptions = option.values
+  
+                      const powerRatingOptionHtml = `
+                      <div>
+                        <p>Available Power Rating:</p>
+                        <ul class="color-options">
+                          ${colorOptions.map(rating => `
+                            <li class="color-option" title="${rating.title}">
+                              <span>${rating.title}</span>
+                            </li>
+                          `).join('')}
+                        </ul>
+                      </div>
+                      `;
+          
+                      const powerRatingProductRoot = document.querySelector(
+                        `.boost-sd__instant-search-results 
+                        .boost-sd__instant-search-product-list-items`
+                      )?.closest('.boost-sd__instant-search-results');
+          
+                      if (!powerRatingProductRoot) return;
+  
+                      const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
+                      const powerRatingTargetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
+                      if (!powerRatingTargetElementColorOptions) {
+                        powerRatingTargetElement.insertAdjacentHTML(
+                          'afterend',
+                          powerRatingOptionHtml
+                        );
+                      }
+                    break;
+                  
+                    default:
+                      break;
                   }
                 });
               });
