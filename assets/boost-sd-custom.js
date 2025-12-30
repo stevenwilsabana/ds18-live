@@ -147,7 +147,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       if (!productRoot) return;
   
                       const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                      const TargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options product-options--color`)
+                      const TargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--color`)
                       if (!TargetElementOptions) {
                         targetElement?.insertAdjacentHTML(
                           'afterend',
@@ -202,7 +202,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       if (!powerRatingProductRoot) return;
 
                       const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                      const powerRatingTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options product-options--power-rating`)
+                      const powerRatingTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
                       if (!powerRatingTargetElementOptions) {
                         powerRatingTargetElement?.insertAdjacentHTML(
                           'afterend',
