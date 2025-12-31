@@ -126,7 +126,7 @@ predictive-search-drawer#search-drawer {
 }
 .boost-sd__suggestion-queries-item-product--right .product-options > p {
   margin: 0;
-  font-size: 10px !important;
+  font-size: 11px !important;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options--color > ul {
   display: flex;
@@ -144,7 +144,7 @@ predictive-search-drawer#search-drawer {
   width: 40px;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options--power-rating > ul > li {
-  font-size: 10px;
+  font-size: 11px;
   border: 1px solid gray;
   padding: 2px;
 }
