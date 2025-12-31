@@ -16151,20 +16151,6 @@ section.load-cart-rebuy div p {
   color: white;
 }
 
-
-
-@media only screen and (max-width: 1100px) {
-  body[id='page'] .list-collections__item {
-    width: calc(33.33333% - 10px)
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  body[id='page'] .list-collections__item {
-    width: calc(50% - 10px)
-  }
-}
-
 @media only screen and (min-width: 768px) {
   section.load-cart-rebuy div img {
     max-width: 500px;
@@ -16852,4 +16838,16 @@ product-media .swiper-slide img {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 1100px) {
+  body[id='page'] .list-collections__item {
+    width: calc(33.33333% - 10px)
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body[id='page'] .list-collections__item {
+    width: calc(50% - 10px)
+  }
 }
