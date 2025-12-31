@@ -16851,3 +16851,9 @@ product-media .swiper-slide img {
     width: calc(50% - 10px)
   }
 }
+
+@media only screen and (max-width: 767px) {
+  body[id='page'] .list-collections__item {
+    width: 100%;
+  }
+}
