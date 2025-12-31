@@ -106,12 +106,37 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
 
               data.products.forEach(element => {
                 const imageList = element.images
+
+                if(element.skus.length !== 0) {
+                    const skuListHtml = `
+                    <div class="product-options product-options--sku">
+                      <p>Available Options:</p>
+                      <span>${element.skus.join(', ')}</span>
+                    </div>
+                    `;
+        
+                    const productRoot = document.querySelector(
+                      `.boost-sd__instant-search-results 
+                      .boost-sd__instant-search-product-list-items`
+                    )?.closest('.boost-sd__instant-search-results');
+        
+                    if (!productRoot) return;
+  
+                    const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                    const TargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--sku`)
+                    if (!TargetElementOptions) {
+                      targetElement?.insertAdjacentHTML(
+                        'afterend',
+                        skuListHtml
+                      );
+                    }
+                }
+
+
                 element.options_with_values.forEach(option => {
 
                   switch (option.name) {
                     case "color":
-                      console.log("color", option.values)
-                      console.log("handle", element.handle)
                       option.values = option.values.map(color => {
                         if (!color.image) return color;
   
