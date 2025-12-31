@@ -16163,9 +16163,6 @@ section.load-cart-rebuy div p {
   section.load-cart-rebuy div img {
     max-width: 500px;
   }
-  body[id='page'] .list-collections__item {
-    width: calc(50% - 10px)
-  }
 }
 
 product-payment-container.disable-button-cart-new {
@@ -16354,6 +16351,9 @@ a.header__icon-wrapper--rewards span {
   div#shopify-section-header {
     padding: 15px 0;
     background: #282828;
+  }
+  body[id='page'] .list-collections__item {
+    width: calc(50% - 10px)
   }
 }
 
@@ -16744,7 +16744,7 @@ body.page-template--black-friday
     top: 0;
     margin-top: 24px;
   }
-   body[id='page'] .list-collections__item {
+  body[id='page'] .list-collections__item {
     width: 100%;
   }
 }
