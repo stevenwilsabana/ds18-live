@@ -11229,8 +11229,9 @@ input:checked + .popover__choice-label::after,
 .list-collections__item-list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  gap: 13px;
   /* display: grid;
   align-items: center;
   grid-gap: 24px;
