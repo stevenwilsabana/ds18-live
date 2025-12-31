@@ -16516,6 +16516,7 @@ mobile-navigation#mobile-menu-drawer
 
 body[id='page'] .list-collections__item {
   background-color: #fff;
+  width: calc(25% - 10px)
 }
 
 body[id='page'] .list-collections__item h3 {
