@@ -150,7 +150,7 @@ predictive-search-drawer#search-drawer {
   border-radius: 25px;
   background: #f4f4f4;
 }
-.boost-sd__suggestion-queries-item-product--right .product-options--sku > p {
+.boost-sd__suggestion-queries-item-product--right .product-options--sku > p:first-child {
   flex-shrink: 0;
   white-space: nowrap;
 }
