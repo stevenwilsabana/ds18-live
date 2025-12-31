@@ -122,7 +122,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
         
                     if (!productRoot) return;
   
-                    const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                    const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-sku`)
                     const TargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--sku`)
                     if (!TargetElementOptions) {
                       targetElement?.insertAdjacentHTML(
