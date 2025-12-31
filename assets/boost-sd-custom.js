@@ -153,7 +153,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
   
                       const colorOptionHtml = `
                       <div class="product-options product-options--color">
-                        <p>Available Options:</p>
+                        <p>Available Colors:</p>
                         <ul>
                           ${colorOptions.map(color => `
                             <li class="color-option" title="${color.title}">
@@ -196,7 +196,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
   
                       const powerRatingOptionHtml = `
                       <div class="product-options product-options--power-rating">
-                        <p>Available Power Rating:</p>
+                        <p>Available Power Ratings:</p>
                         <ul>
                           ${powerRatingOptions.map(rating => `
                             <li class="color-option" title="${rating.title}">
