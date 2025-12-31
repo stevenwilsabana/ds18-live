@@ -167,18 +167,6 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       break;
 
                     case "power_rating":
-                      // option.values = option.values.map(rating => {
-                      //   // if (!color.image) return color;
-  
-                      //   const imageUrl = imageList[String(color.image)];
-                      //   if (!imageUrl) return color;
-  
-                      //   return {
-                      //     ...color,
-                      //     imagePosition: color.image, // optional, keep original
-                      //     image: imageUrl
-                      //   };
-                      // });
                       const powerRatingOptions = option.values
   
                       const powerRatingOptionHtml = `
@@ -209,15 +197,6 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                           powerRatingOptionHtml
                         );
                       }
-  
-                      // const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
-                      // const powerRatingTargetElementColorOptions = document.querySelector(`li[data-id="${element.id}"] ul.color-options`)
-                      // if (!powerRatingTargetElementColorOptions) {
-                      //   powerRatingTargetElement.insertAdjacentHTML(
-                      //     'afterend',
-                      //     powerRatingOptionHtml
-                      //   );
-                      // }
                       return;
                     break;
                   
