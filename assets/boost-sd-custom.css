@@ -130,7 +130,7 @@ predictive-search-drawer#search-drawer {
   font-size: 11px !important;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options > p:first-child {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options--color > ul {
   display: flex;
