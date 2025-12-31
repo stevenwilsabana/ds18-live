@@ -145,8 +145,9 @@ predictive-search-drawer#search-drawer {
 }
 .boost-sd__suggestion-queries-item-product--right .product-options--power-rating > ul > li {
   font-size: 11px;
-  border: 1px solid gray;
-  padding: 2px;
+  padding: 2px 7px;
+  border-radius: 25px;
+  background: #f4f4f4;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options--sku > p {
   flex-shrink: 0;
