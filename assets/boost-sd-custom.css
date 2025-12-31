@@ -148,3 +148,7 @@ predictive-search-drawer#search-drawer {
   border: 1px solid gray;
   padding: 2px;
 }
+.boost-sd__suggestion-queries-item-product--right .product-options--sku > p {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
