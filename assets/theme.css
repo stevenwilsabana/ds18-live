@@ -11227,10 +11227,14 @@ input:checked + .popover__choice-label::after,
 }
 
 .list-collections__item-list {
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* display: grid;
   align-items: center;
   grid-gap: 24px;
-  gap: 24px;
+  gap: 24px; */
 }
 
 .list-collections__item {
