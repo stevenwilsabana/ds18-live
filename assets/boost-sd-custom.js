@@ -111,7 +111,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                     const skuListHtml = `
                     <div class="product-options product-options--sku">
                       <p>SKUs:</p>
-                      <span>${element.skus.join(', ')}</span>
+                      <p>${element.skus.join(', ')}</p>
                     </div>
                     `;
         
