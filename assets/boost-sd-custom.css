@@ -109,6 +109,9 @@ predictive-search-drawer#search-drawer {
 }
 .boost-sd__product-item--border-no-padding-image .boost-sd__product-info .boost-sd__product-price {
   flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 .boost-sd__product-item .boost-sd__button {
   font-weight: bold;
