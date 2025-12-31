@@ -11300,11 +11300,11 @@ input:checked + .popover__choice-label::after,
 }
 
 @media screen and (min-width: 741px) {
-  .list-collections__item-list {
+  /* .list-collections__item-list {
     grid-template-columns: repeat(auto-fit, calc(100% / 3 - var(--container-gutter) * 2 / 3));
     grid-gap: var(--container-gutter);
     justify-content: safe center;
-  }
+  } */
 }
 
 @media screen and (min-width: 1000px) {
