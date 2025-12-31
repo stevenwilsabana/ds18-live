@@ -129,6 +129,9 @@ predictive-search-drawer#search-drawer {
   margin: 0;
   font-size: 11px !important;
 }
+.boost-sd__suggestion-queries-item-product--right .product-options > p:first-child {
+  font-weight: bold;
+}
 .boost-sd__suggestion-queries-item-product--right .product-options--color > ul {
   display: flex;
   list-style-type: none;
