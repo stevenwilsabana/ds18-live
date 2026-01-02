@@ -5643,6 +5643,7 @@
     }
     _updateDisableSelectors() {
       const selectedVariant = this.selectedVariant;
+      console.log("selectedVariant", selectedVariant)
       if (!selectedVariant) {
         return;
       }
