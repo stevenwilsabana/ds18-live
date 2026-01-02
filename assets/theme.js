@@ -5608,6 +5608,8 @@
     }
     _getVariantFromOptions() {
       const options = this._getSelectedOptionValues();
+      console.log("options", options)
+      console.log("this.product", this.product["variants"])
       return this.product["variants"].find((variant) => {
         return variant["options"].every((value, index) => value === options[index]);
       });
