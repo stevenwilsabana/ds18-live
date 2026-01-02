@@ -5543,8 +5543,8 @@
         return;
       }
       this.product = await ProductLoader.load(this.productHandle);
-      this.delegate.on("change", '[name^="option"]', this._onOptionChanged.bind(this));
-      this.masterSelector.addEventListener("change", this._onMasterSelectorChanged.bind(this));
+      // this.delegate.on("change", '[name^="option"]', this._onOptionChanged.bind(this));
+      // this.masterSelector.addEventListener("change", this._onMasterSelectorChanged.bind(this));
       this._updateDisableSelectors();
       this.selectVariant(this.selectedVariant["id"]);
     }
