@@ -5647,6 +5647,8 @@
         return;
       }
       const applyClassToSelector = (selector, valueIndex, available, hasAtLeastOneCombination) => {
+        console.log("available", available)
+
         let selectorType = selector.getAttribute("data-selector-type"), cssSelector = "";
         switch (selectorType) {
           case "color":
