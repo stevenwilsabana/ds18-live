@@ -145,7 +145,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                         const skuContent = document.querySelector(`li[data-id="${element.id}"] .product-options__sku-content`)
                         const seeMoreElement = document.querySelector(`li[data-id="${element.id}"] .product-options--sku>div>span`)
                         skuContent.classList.add('product-options__sku-content--see-more-active')
-                        seeMoreElement.classList.add('.product-options__sku-seemore--active')
+                        seeMoreElement.classList.add('product-options__sku-seemore--active')
                       }
                       // const skuContent = document.querySelectorAll('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>p:first-child')
                       const seemoreBtn = document.querySelectorAll('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>span')

@@ -186,6 +186,6 @@ p.product-options__sku-content--see-more-active {
   display: none;
 }
 
-.boost-sd__suggestion-queries-item-product--right .product-options--sku .product-options__sku-seemore.product-options__sku-seemore--active {
+.boost-sd__suggestion-queries-item-product--right .product-options--sku .product-options__sku-seemore--active {
   display: block;
 }
