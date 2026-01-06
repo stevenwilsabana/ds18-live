@@ -149,8 +149,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                         e.preventDefault();     // stops <a href>
                         e.stopPropagation();    // stops bubbling
                         element.style.display = "none";
-                        console.log("aaa", element.closest('.product-options--sku'))
-                        element.closest('.product-options--sku').querySelector('p').height = "auto";
+                        element.closest('.product-options--sku').querySelector('.product-options__sku-content').height = "auto";
                       });
                     });
                 }
