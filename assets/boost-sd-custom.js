@@ -199,7 +199,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       const powerRatingOptions = option.values
   
                       const powerRatingOptionHtml = `
-                      <div class="product-options product-options--power-rating">
+                      <div class="product-options product-options--tiles product-options--power-rating">
                         <p>Available Power Ratings:</p>
                         <ul>
                           ${powerRatingOptions.map(rating => `
@@ -229,45 +229,45 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       return;
                     break;
 
-                    // case "size":
-                    //   const sizeOptions = option.values
+                    case "size":
+                      const sizeOptions = option.values
   
-                    //   const sizeOptionHtml = `
-                    //   <div class="product-options product-options--power-rating">
-                    //     <p>Available Sizes:</p>
-                    //     <ul>
-                    //       ${sizeOptions.map(size => `
-                    //         <li class="color-option" title="${size.title}">
-                    //           <span>${size.title}</span>
-                    //         </li>
-                    //       `).join('')}
-                    //     </ul>
-                    //   </div>
-                    //   `;
+                      const sizeOptionHtml = `
+                      <div class="product-options product-options--tiles product-options--size">
+                        <p>Available Sizes:</p>
+                        <ul>
+                          ${sizeOptions.map(size => `
+                            <li class="color-option" title="${size.title}">
+                              <span>${size.title}</span>
+                            </li>
+                          `).join('')}
+                        </ul>
+                      </div>
+                      `;
           
-                    //   const sizeProductRoot = document.querySelector(
-                    //     `.boost-sd__instant-search-results 
-                    //     .boost-sd__instant-search-product-list-items`
-                    //   )?.closest('.boost-sd__instant-search-results');
+                      const sizeProductRoot = document.querySelector(
+                        `.boost-sd__instant-search-results 
+                        .boost-sd__instant-search-product-list-items`
+                      )?.closest('.boost-sd__instant-search-results');
           
-                    //   if (!sizeProductRoot) return;
+                      if (!sizeProductRoot) return;
 
-                    //   const sizeTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                    //   const sizeTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
-                    //   if (!sizeTargetElementOptions) {
-                    //     sizeTargetElement?.insertAdjacentHTML(
-                    //       'afterend',
-                    //       sizeOptionHtml
-                    //     );
-                    //   }
-                    //   return;
-                    // break;
+                      const sizeTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                      const sizeTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
+                      if (!sizeTargetElementOptions) {
+                        sizeTargetElement?.insertAdjacentHTML(
+                          'afterend',
+                          sizeOptionHtml
+                        );
+                      }
+                      return;
+                    break;
 
                     case "impedance":
                       const impedanceOptions = option.values
                       console.log("impedanceOptions", impedanceOptions)
                       const impedanceOptionHtml = `
-                      <div class="product-options product-options--power-rating">
+                      <div class="product-options product-options--tiles product-options--impedance">
                         <p>Available Impedances:</p>
                         <ul>
                           ${impedanceOptions.map(impedance => `
