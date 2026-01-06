@@ -140,7 +140,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                           skuListHtml
                         );
                       }
-  
+                      console.log("slice", element.skus.join(', ').slice(0, 60))
                       if(element.skus.join(', ').length > 60) {
                         const skuContent = document.querySelector(`li[data-id="${element.id}"] .product-options__sku-content`)
                         const seeMoreElement = document.querySelector(`li[data-id="${element.id}"] .product-options--sku>div>span`)
