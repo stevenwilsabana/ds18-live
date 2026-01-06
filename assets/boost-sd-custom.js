@@ -79,6 +79,8 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
         return {
           afterRender(element) {
             async function fetchBoostSuggest(query) {
+              console.log("query", query);
+
               const params = new URLSearchParams({
                 q: query,
                 shop: Shopify.shop,          // required
