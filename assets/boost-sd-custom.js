@@ -120,7 +120,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                         <p>SKUs:</p>
                         <div>
                           <p class="product-options__sku-content">${element.skus.join(', ')}</p>
-                          <span style="display: none;">see more</span>
+                          <span class="product-options__sku-seemore">see more</span>
                         </div>
                       </div>
                       `;
