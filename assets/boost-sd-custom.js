@@ -141,18 +141,16 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                     }
 
 
-                    console.log("HHHHHHH")
+                    // const skuContent = document.querySelectorAll('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>p:first-child')
+                    const seemoreBtn = document.querySelectorAll('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>span')
 
-                    const skuContent = document.querySelector('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>p:first-child')
-                    const seemoreBtn = document.querySelector('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>span')
-
-                    seemoreBtn.addEventListener("mouseenter", (e) => {
-                      e.preventDefault();     // stops <a href>
-                      e.stopPropagation();    // stops bubbling
-                      seemoreBtn.style.display = "none";
-                      skuContent.style.height = "auto";
-                      console.log("yes")
-                      // your button logic here
+                    seemoreBtn.forEach(element => {
+                      element.addEventListener("mouseenter", (e) => {
+                        e.preventDefault();     // stops <a href>
+                        e.stopPropagation();    // stops bubbling
+                        element.style.display = "none";
+                        element.closest('.product-options--sku').querySelector('p').height = "auto";
+                      });
                     });
                 }
 
