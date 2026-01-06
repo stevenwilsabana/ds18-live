@@ -262,6 +262,40 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       }
                       return;
                     break;
+
+                    case "impedance":
+                      const impedanceOptions = option.values
+  
+                      const impedanceOptionHtml = `
+                      <div class="product-options product-options--power-rating">
+                        <p>Available Impedances:</p>
+                        <ul>
+                          ${impedanceOptions.map(impedance => `
+                            <li class="color-option" title="${impedance.title}">
+                              <span>${impedance.title}</span>
+                            </li>
+                          `).join('')}
+                        </ul>
+                      </div>
+                      `;
+          
+                      const impedanceProductRoot = document.querySelector(
+                        `.boost-sd__instant-search-results 
+                        .boost-sd__instant-search-product-list-items`
+                      )?.closest('.boost-sd__instant-search-results');
+          
+                      if (!impedanceProductRoot) return;
+
+                      const impedanceTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                      const impedanceTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
+                      if (!impedanceTargetElementOptions) {
+                        impedanceTargetElement?.insertAdjacentHTML(
+                          'afterend',
+                          impedanceOptionHtml
+                        );
+                      }
+                      return;
+                    break;
                   
                     default:
                       break;
