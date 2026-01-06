@@ -78,7 +78,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
       apply() {
         return {
           afterRender(element) {
-                      console.log("TEST", document.querySelector('input.predictive-search__input').value);
+            const searchInput = document.querySelector('input.predictive-search__input').value;
 
             async function fetchBoostSuggest(query) {
               console.log("query", query);
@@ -104,7 +104,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
               return res.json();
             }
 
-            fetchBoostSuggest(window.BoostPFS?.search?.getQuery()).then(data => {
+            fetchBoostSuggest(searchInput).then(data => {
               console.log("data", data.products);
               // let colorOptions = [];
 
