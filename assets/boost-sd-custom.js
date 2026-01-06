@@ -234,7 +234,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
   
                       const sizeOptionHtml = `
                       <div class="product-options product-options--power-rating">
-                        <p>Available Power Ratings:</p>
+                        <p>Available Sizes:</p>
                         <ul>
                           ${sizeOptions.map(size => `
                             <li class="color-option" title="${size.title}">
