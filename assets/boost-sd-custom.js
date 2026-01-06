@@ -119,8 +119,8 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       <div class="product-options product-options--sku">
                         <p>SKUs:</p>
                         <div>
-                          <p class="product-options__sku-content">${element.skus.join(', ')}</p>
-                          <span>see more</span>
+                          <p class="product-options__sku-content product-options__sku-content--see-more-active">${element.skus.join(', ')}</p>
+                          <span style="display: none;">see more</span>
                         </div>
                       </div>
                       `;
@@ -141,7 +141,9 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                         );
                       }
   
-  
+                      if(element.skus.join(', ').length > 60) {
+
+                      }
                       // const skuContent = document.querySelectorAll('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>p:first-child')
                       const seemoreBtn = document.querySelectorAll('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>span')
   
