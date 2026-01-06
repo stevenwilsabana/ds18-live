@@ -106,6 +106,8 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
 
             fetchBoostSuggest(searchInput).then(data => {
               console.log("data", data.products);
+
+              
               // let colorOptions = [];
 
               data.products.forEach(element => {
@@ -137,6 +139,17 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                         skuListHtml
                       );
                     }
+
+
+                    console.log("HHHHHHH")
+
+                    const seemoreBtn = document.querySelector('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>span')
+                      seemoreBtn.addEventListener("click", (e) => {
+                        e.preventDefault();     // stops <a href>
+                        e.stopPropagation();    // stops bubbling
+                        console.log("yes")
+                        // your button logic here
+                      });
                 }
 
 
