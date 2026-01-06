@@ -174,7 +174,7 @@ p.product-options__sku-content--see-more-active {
   overflow: hidden;
 }
 
-.boost-sd__suggestion-queries-item-product--right .product-options--sku > div > span {
+.boost-sd__suggestion-queries-item-product--right .product-options--sku .product-options__sku-seemore {
   margin: 0;
   font-size: 11px !important;
   position: absolute;
@@ -183,4 +183,9 @@ p.product-options__sku-content--see-more-active {
   background: #fff;
   cursor: pointer;
   padding-left: 8px;
+  display: none;
+}
+
+.boost-sd__suggestion-queries-item-product--right .product-options--sku .product-options__sku-seemore--active {
+  display: block;
 }
