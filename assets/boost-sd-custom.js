@@ -102,7 +102,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
               return res.json();
             }
 
-            fetchBoostSuggest('frp').then(data => {
+            fetchBoostSuggest(window.BoostPFS?.search?.getQuery()).then(data => {
               console.log("data", data.products);
               // let colorOptions = [];
 
