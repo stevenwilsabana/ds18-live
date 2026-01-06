@@ -140,7 +140,7 @@ predictive-search-drawer#search-drawer {
   list-style-type: none;
   padding: 0;
 }
-.boost-sd__suggestion-queries-item-product--right .product-options--power-rating > ul {
+.boost-sd__suggestion-queries-item-product--right .product-options--tiles > ul {
   display: flex;
   list-style-type: none;
   padding: 0;
@@ -150,7 +150,7 @@ predictive-search-drawer#search-drawer {
 .boost-sd__suggestion-queries-item-product--right .product-options--color > ul > li {
   width: 40px;
 }
-.boost-sd__suggestion-queries-item-product--right .product-options--power-rating > ul > li {
+.boost-sd__suggestion-queries-item-product--right .product-options--tiles > ul > li {
   font-size: 11px;
   padding: 2px 7px;
   border-radius: 25px;
