@@ -140,8 +140,8 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                           skuListHtml
                         );
                       }
-                      console.log("slice", element.skus.join(', ').slice(0, 70))
-                      if(element.skus.join(', ').length > 60) {
+                      console.log("slice", element.skus.join(', ').slice(0, 68))
+                      if(element.skus.join(', ').length > 68) {
                         const skuContent = document.querySelector(`li[data-id="${element.id}"] .product-options__sku-content`)
                         const seeMoreElement = document.querySelector(`li[data-id="${element.id}"] .product-options--sku>div>span`)
                         skuContent.classList.add('product-options__sku-content--see-more-active')
