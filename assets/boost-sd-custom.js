@@ -78,6 +78,8 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
       apply() {
         return {
           afterRender(element) {
+                      console.log("TEST", document.querySelector('input.predictive-search__input').value);
+
             async function fetchBoostSuggest(query) {
               console.log("query", query);
 
