@@ -113,7 +113,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
   
                 data.products.forEach(element => {
                   const imageList = element.images
-  
+                  console.log("count", element.skus.join(', ').length)
                   if(element.skus.length !== 0) {
                       const skuListHtml = `
                       <div class="product-options product-options--sku">
