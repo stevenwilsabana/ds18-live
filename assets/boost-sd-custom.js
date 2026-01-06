@@ -253,7 +253,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       if (!sizeProductRoot) return;
 
                       const sizeTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                      const sizeTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
+                      const sizeTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--size`)
                       if (!sizeTargetElementOptions) {
                         sizeTargetElement?.insertAdjacentHTML(
                           'afterend',
@@ -287,7 +287,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       if (!impedanceProductRoot) return;
 
                       const impedanceTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                      const impedanceTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
+                      const impedanceTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--impedance`)
                       if (!impedanceTargetElementOptions) {
                         impedanceTargetElement?.insertAdjacentHTML(
                           'afterend',
