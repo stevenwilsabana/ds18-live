@@ -167,9 +167,13 @@ predictive-search-drawer#search-drawer {
 .boost-sd__suggestion-queries-item-product--right .product-options--sku > div > p:first-child {
   margin: 0;
   font-size: 11px !important;
+}
+
+p.product-options__sku-content--see-more-active {
   height: 17px;
   overflow: hidden;
 }
+
 .boost-sd__suggestion-queries-item-product--right .product-options--sku > div > span {
   margin: 0;
   font-size: 11px !important;
