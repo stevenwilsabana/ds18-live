@@ -154,7 +154,7 @@ predictive-search-drawer#search-drawer {
 .boost-sd__suggestion-queries-item-product--right .product-options--tiles > ul > li {
   font-size: 11px;
   padding: 2px 7px;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   background: #f4f4f4;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options--sku > p:first-child {
