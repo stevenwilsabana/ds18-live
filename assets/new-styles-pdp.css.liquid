@@ -973,3 +973,18 @@ button#StickyAddToCart .loader-button__text {
         padding: 0 5px;
     }
 }
+
+.color-swatch__radio:disabled + .color-swatch__item {
+    pointer-events: none;
+}
+.color-swatch__radio:disabled + .color-swatch__item>span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -25%;
+    width: 150%;
+    height: 2px;
+    background: #dcdcdc;
+    transform: rotate(-24deg);
+    pointer-events: none;
+}

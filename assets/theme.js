@@ -5163,7 +5163,6 @@
           return m.alt && m.alt.includes(variant['sku']); // OR media.id mapping
         });
 
-        console.log("variantMedia", variantMedia)
         window.swiperMain.removeAllSlides();
         window.swiperThumbnail.removeAllSlides();
 
@@ -5542,6 +5541,28 @@
         console.warn(`The variant selector for product with handle ${this.productHandle} is not linked to any product form.`);
         return;
       }
+
+      const te = document.querySelector('form.shopify-product-form input[name="id"]').value;
+      console.log("te", te)
+
+      const mediaData = JSON.parse(
+        document.getElementById('ProductVariantss').textContent
+      );
+      const variantNextSelection = mediaData.filter(v => {
+        return v.id == te; // OR media.id mapping
+      });
+      const optionsTwo = document.querySelectorAll('input[name="option2"]')
+
+      optionsTwo.forEach(element => {
+        element.disabled = true;
+      });
+
+      variantNextSelection.forEach(element => {
+        document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
+      });
+      
+
+
       this.product = await ProductLoader.load(this.productHandle);
       this.delegate.on("change", '[name^="option"]', this._onOptionChanged.bind(this));
       this.masterSelector.addEventListener("change", this._onMasterSelectorChanged.bind(this));
@@ -5565,9 +5586,11 @@
       if (!this._isVariantSelectable(this._getVariantById(id))) {
         id = this._getFirstMatchingAvailableOrSelectableVariant()["id"];
       }
+
       if (((_a = this.selectedVariant) == null ? void 0 : _a.id) === id) {
         return;
       }
+
       this.masterSelector.value = id;
       this.masterSelector.dispatchEvent(new Event("change", { bubbles: true }));
       if (this.updateUrl && history.replaceState) {
@@ -5585,12 +5608,36 @@
     _onOptionChanged() {
       var _a;
       this.selectVariant((_a = this._getVariantFromOptions()) == null ? void 0 : _a.id);
+      
     }
     _onMasterSelectorChanged() {
       var _a;
       const options = ((_a = this.selectedVariant) == null ? void 0 : _a.options) || [];
+
+      const mediaData = JSON.parse(
+        document.getElementById('ProductVariantss').textContent
+      );
+      
       options.forEach((value, index) => {
         let input = this.querySelector(`input[name="option${index + 1}"][value="${CSS.escape(value)}"], select[name="option${index + 1}"]`), triggerChangeEvent = false;
+        
+        if(index == 0) {
+          const variantNextSelection = mediaData.filter(v => {
+            return v.option1 == value; // OR media.id mapping
+          });
+          const optionsTwo = document.querySelectorAll('input[name="option2"]')
+
+          optionsTwo.forEach(element => {
+            element.disabled = true;
+          });
+
+          variantNextSelection.forEach(element => {
+            document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
+          });
+          
+        }
+
+
         if (input.tagName === "SELECT") {
           triggerChangeEvent = input.value !== value;
           input.value = value;
@@ -5608,8 +5655,6 @@
     }
     _getVariantFromOptions() {
       const options = this._getSelectedOptionValues();
-      console.log("options", options)
-      console.log("this.product", this.product["variants"])
       return this.product["variants"].find((variant) => {
         return variant["options"].every((value, index) => value === options[index]);
       });
@@ -5643,13 +5688,10 @@
     }
     _updateDisableSelectors() {
       const selectedVariant = this.selectedVariant;
-      console.log("selectedVariant", selectedVariant)
       if (!selectedVariant) {
         return;
       }
       const applyClassToSelector = (selector, valueIndex, available, hasAtLeastOneCombination) => {
-        console.log("available", available)
-
         let selectorType = selector.getAttribute("data-selector-type"), cssSelector = "";
         switch (selectorType) {
           case "color":
@@ -5665,8 +5707,6 @@
             cssSelector = `.combo-box__option-item:nth-child(${valueIndex + 1})`;
             break;
         }
-
-        // console.log(selector, cssSelector, hasAtLeastOneCombination ); 
 
         
         if( selector.querySelector(cssSelector) != null ) {
@@ -5838,7 +5878,6 @@
       
       let searchInputB2B = document.getElementById("collection-search-input");
       if (searchInputB2B) {
-        // console.log("✅ V3: Los Filtros están limpios");
         searchInputB2B.disabled = false;
         searchInputB2B.classList.remove("input-disabled");
       }
@@ -6531,8 +6570,6 @@ function checkFiltersOnLoad() {
 }
 window.addEventListener("load", function () {
   setTimeout(() => {
-  console.log("test")
-
     const banner = document.getElementById("shopify-pc__banner");
     if (banner) banner.style.setProperty("display", "block", "important");
   }, 2000);
