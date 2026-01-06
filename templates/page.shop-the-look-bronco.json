@@ -313,8 +313,8 @@
             "product_review": "ds18-bro-da-bronco-dashboard-speaker-adapter-for-1-7-2-9-and-3-6-twetter-and-midrange-6th-gen",
             "title_review": "Great",
             "review": "These Adapters fit great. I was able to fit my Kicker 2.75 Dash component speakers in my dash without any problems. Great solution for my fitment issue...",
-            "buyer": "Luis F.",
-            "date": "5 months ago"
+            "buyer": "",
+            "date": ""
           }
         },
         "reviews_home_L7rVjG": {
@@ -323,63 +323,58 @@
             "product_review": "bro-bass-package",
             "title_review": "Girlfriend's Bronco",
             "review": "My girlfriend loves it and the subwoofer gets low and surprisingly loud. Much better quality than I had anticipated and looks almost factory mounted properly on the tail door.",
-            "buyer": "Jon E.",
-            "date": "1 year ago"
-          }
-        },
-        "reviews_home_zw84Jr": {
-          "type": "reviews-home",
-          "disabled": true,
-          "settings": {
-            "product_review": "headrest-enclosure-loaded-4-x-nxl-iq6-bk-included-2015-up-digital-led-ligths",
-            "title_review": "Nice job",
-            "review": "I just installed the DS18 SLG-HD6V2 headrest pods on my Polaris Slingshot, and they’re a total game-changer. First off, the installation was super easy. As for the sound? INSANE. The open baffle design really makes a difference—you can hear every detail.",
-            "buyer": "Terrence P.",
-            "date": "December 9, 2024"
-          }
-        },
-        "reviews_home_k6b78x": {
-          "type": "reviews-home",
-          "disabled": true,
-          "settings": {
-            "product_review": "polaris-slg-sp6ld",
-            "title_review": "Powerful Bass",
-            "review": "The clarity from the midrange speakers and tweeters is unreal—powerful bass and crisp highs, even at highway speeds.",
-            "buyer": "Jason M.",
-            "date": "January 3, 2025"
-          }
-        },
-        "reviews_home_dbQNGe": {
-          "type": "reviews-home",
-          "disabled": true,
-          "settings": {
-            "product_review": "arm-rest-enclosure-loaded-2-x-6-5-speakers-included-2015-up-digital-led-ligths",
-            "title_review": "Great",
-            "review": "The installation was super simple with the OEM bolts, and the fit looks factory-made. I paired them with the NXL-IQ, and the quality is next-level.",
-            "buyer": "Alex M.",
-            "date": "Feberuary 8, 2025"
-          }
-        },
-        "reviews_home_PcLr8e": {
-          "type": "reviews-home",
-          "disabled": true,
-          "settings": {
-            "product_review": "ds18-slg-rsub10ld-polaris-slingshot-rear-10-subwoofer-enclosure-with-nxl-10sub-bk",
-            "title_review": "YEAH!",
-            "review": "I can finally FEEL the music in my Slingshot!",
-            "buyer": "L.M.",
-            "date": "November 6, 2024"
+            "buyer": "",
+            "date": ""
           }
         },
         "reviews_home_BQqCnn": {
           "type": "reviews-home",
-          "disabled": true,
           "settings": {
-            "product_review": "polaris-slingshot-under-dash-2-x-6-subwoofer-enclosure-with-2-x-zr6-4d",
-            "title_review": "Loving it",
-            "review": "Installation was a breeze, and the durable, weatherproof design holds up perfectly in any conditions. My Slingshot has never sounded better!",
-            "buyer": "Tyler S.",
-            "date": "July 23, 2024"
+            "product_review": "bronco-tailgate-12-subwoofer-enclosure-with-ixs12-4d-6th-gen",
+            "title_review": "Louder Than I Thought!",
+            "review": "Wasn’t expecting a tailgate box to be this loud. I even tested it with the top off. Worth every penny.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_zw84Jr": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "bro-bd-lr",
+            "title_review": "Big Upgrade",
+            "review": "Installed these in under 30 minutes. Huge sound boost over stock doors.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_k6b78x": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "bro-clpx-bk",
+            "title_review": "Clamp and Go!",
+            "review": "Mounted two tower speakers on my roll bar and took these clamps through the wringer. Just wish they came in red.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_dbQNGe": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "ds18-bro-fd-lr-bronco-front-doors-6-5-and-3-78-tweeter-panels-6th-gen",
+            "title_review": "THEY ACTUALLY FIT!",
+            "review": "The FIT was PERFECT. I swapped out the factory mesh for these, and it changed the whole front stage.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_PcLr8e": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "ds18-bro-sbar-bk-bronco-6th-gen-4-door-overhead-sound-bar-system-4x8-2x6-speakers-and-2-x-3-8-tweeters",
+            "title_review": "Total Game Changer",
+            "review": "This is the loudest, cleanest soundbar I’ve ever owned. Fits four 8” DS18s in the back, two 6.5s, and two tweeters up front. Once it’s powered, the cabin becomes a concert. The built-in RGB lights look wild at night. Do yourself a favor and pair it with a 4-channel amp.",
+            "buyer": "",
+            "date": ""
           }
         },
         "reviews_home_EErNwG": {
@@ -441,11 +436,11 @@
       "block_order": [
         "reviews_home_gWE8Gg",
         "reviews_home_L7rVjG",
+        "reviews_home_BQqCnn",
         "reviews_home_zw84Jr",
         "reviews_home_k6b78x",
         "reviews_home_dbQNGe",
         "reviews_home_PcLr8e",
-        "reviews_home_BQqCnn",
         "reviews_home_EErNwG",
         "reviews_home_gzeNm7",
         "reviews_home_k6zxWb",
