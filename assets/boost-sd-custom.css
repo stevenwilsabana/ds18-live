@@ -127,6 +127,7 @@ predictive-search-drawer#search-drawer {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 4px;
 }
 .boost-sd__suggestion-queries-item-product--right .product-options > p {
   margin: 0;
