@@ -224,6 +224,40 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                       }
                       return;
                     break;
+
+                    case "size":
+                      const sizeOptions = option.values
+  
+                      const sizeOptionHtml = `
+                      <div class="product-options product-options--power-rating">
+                        <p>Available Power Ratings:</p>
+                        <ul>
+                          ${sizeOptions.map(size => `
+                            <li class="color-option" title="${size.title}">
+                              <span>${size.title}</span>
+                            </li>
+                          `).join('')}
+                        </ul>
+                      </div>
+                      `;
+          
+                      const sizeProductRoot = document.querySelector(
+                        `.boost-sd__instant-search-results 
+                        .boost-sd__instant-search-product-list-items`
+                      )?.closest('.boost-sd__instant-search-results');
+          
+                      if (!sizeProductRoot) return;
+
+                      const sizeTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                      const sizeTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
+                      if (!sizeTargetElementOptions) {
+                        sizeTargetElement?.insertAdjacentHTML(
+                          'afterend',
+                          sizeOptionHtml
+                        );
+                      }
+                      return;
+                    break;
                   
                     default:
                       break;
