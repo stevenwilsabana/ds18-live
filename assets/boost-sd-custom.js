@@ -265,7 +265,7 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
 
                     case "impedance":
                       const impedanceOptions = option.values
-  
+                      console.log("impedanceOptions", impedanceOptions)
                       const impedanceOptionHtml = `
                       <div class="product-options product-options--power-rating">
                         <p>Available Impedances:</p>
