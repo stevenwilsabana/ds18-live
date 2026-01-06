@@ -161,3 +161,22 @@ predictive-search-drawer#search-drawer {
   flex-shrink: 0;
   white-space: nowrap;
 }
+.boost-sd__suggestion-queries-item-product--right .product-options--sku > div {
+  position: relative;
+}
+.boost-sd__suggestion-queries-item-product--right .product-options--sku > div > p:first-child {
+  margin: 0;
+  font-size: 11px !important;
+  height: 17px;
+  overflow: hidden;
+}
+.boost-sd__suggestion-queries-item-product--right .product-options--sku > div > span {
+  margin: 0;
+  font-size: 11px !important;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fff;
+  cursor: pointer;
+  padding-left: 8px;
+}
