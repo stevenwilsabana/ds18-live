@@ -374,15 +374,6 @@ window.addEventListener('load', ()=> {
 
  
   });
-    console.log("HHHHHHH")
-
- const seemoreBtn = document.querySelector('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>span')
-  seemoreBtn.addEventListener("click", (e) => {
-    e.preventDefault();     // stops <a href>
-    e.stopPropagation();    // stops bubbling
-    console.log("yes")
-    // your button logic here
-  });
-
+  
 });
 
