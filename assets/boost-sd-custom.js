@@ -143,13 +143,17 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
 
                     console.log("HHHHHHH")
 
+                    const skuContent = document.querySelector('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>p:first-child')
                     const seemoreBtn = document.querySelector('.boost-sd__suggestion-queries-item-product--right .product-options--sku>div>span')
-                      seemoreBtn.addEventListener("mouseenter", (e) => {
-                        e.preventDefault();     // stops <a href>
-                        e.stopPropagation();    // stops bubbling
-                        console.log("yes")
-                        // your button logic here
-                      });
+
+                    seemoreBtn.addEventListener("mouseenter", (e) => {
+                      e.preventDefault();     // stops <a href>
+                      e.stopPropagation();    // stops bubbling
+                      seemoreBtn.style.display = "none";
+                      skuContent.style.height = "auto";
+                      console.log("yes")
+                      // your button logic here
+                    });
                 }
 
 
