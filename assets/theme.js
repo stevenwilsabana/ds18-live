@@ -5542,12 +5542,12 @@
         return;
       }
 
+      // start - disable not available variants
       const te = document.querySelector('form.shopify-product-form input[name="id"]').value;
-
-      const mediaData = JSON.parse(
+      const productVariantsData = JSON.parse(
         document.getElementById('ProductVariantss').textContent
       );
-      const variantNextSelection = mediaData.filter(v => {
+      const variantNextSelection = productVariantsData.filter(v => {
         return v.id == te; // OR media.id mapping
       });
       const optionsTwo = document.querySelectorAll('input[name="option2"]')
@@ -5559,9 +5559,8 @@
       variantNextSelection.forEach(element => {
         document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
       });
+      // end
       
-
-
       this.product = await ProductLoader.load(this.productHandle);
       this.delegate.on("change", '[name^="option"]', this._onOptionChanged.bind(this));
       this.masterSelector.addEventListener("change", this._onMasterSelectorChanged.bind(this));
@@ -5612,14 +5611,14 @@
     _onMasterSelectorChanged() {
       var _a;
       const options = ((_a = this.selectedVariant) == null ? void 0 : _a.options) || [];
+      console.log("this.selectedVariant", this.selectedVariant)
 
+      // start - disable not available variants
       const mediaData = JSON.parse(
         document.getElementById('ProductVariantss').textContent
       );
-      
       options.forEach((value, index) => {
         let input = this.querySelector(`input[name="option${index + 1}"][value="${CSS.escape(value)}"], select[name="option${index + 1}"]`), triggerChangeEvent = false;
-        
         if(index == 0) {
           const variantNextSelection = mediaData.filter(v => {
             return v.option1 == value; // OR media.id mapping
@@ -5633,8 +5632,8 @@
           variantNextSelection.forEach(element => {
             document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
           });
-          
         }
+        // end
 
 
         if (input.tagName === "SELECT") {
