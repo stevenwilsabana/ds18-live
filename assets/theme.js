@@ -5544,6 +5544,12 @@
 
       // start - disable not available variants
       const te = document.querySelector('form.shopify-product-form input[name="id"]').value;
+      this.selectVariant(te)
+      const options = ((_a = this.selectedVariant) == null ? void 0 : _a.options) || [];
+      console.log("this.selectedVariant", this.selectedVariant)
+      console.log("this.selectedVariantoptions", options)
+
+
       const productVariantsData = JSON.parse(
         document.getElementById('ProductVariantss').textContent
       );
