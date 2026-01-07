@@ -5343,6 +5343,7 @@
       this._updatePrices(event.detail.variant);
       this._updateSku(event.detail.variant);
       this._accordionData(event.detail.variant);
+      this._updateVariantH1Title(event.detail.variant);
     }
     _updateLabels(variant) {
       let productLabelList = this.querySelector("[data-product-label-list]");
@@ -5433,7 +5434,17 @@
           item.classList.add('active');
         }
       });
-      
+    }
+
+    _updateVariantH1Title(variant) {
+      let variantTitles = document.querySelectorAll(".product__info h1.product-meta__title");
+      variantTitles.forEach(item => {
+        item.classList.remove('active')
+        const variantId = item.dataset.variantId
+        if(variantId == variant["id"]) {
+          item.classList.add('active');
+        }
+      });
     }
     
   };
