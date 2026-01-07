@@ -5546,7 +5546,6 @@
       const te = document.querySelector('form.shopify-product-form input[name="id"]').value;
       // this.selectVariant(te)
       // const options = ((_a = this.selectedVariant) == null ? void 0 : _a.options) || [];
-      console.log("this.selectedVariant", this.selectedVariant["id"])
       // console.log("this.selectedVariantoptions", options)
 
 
@@ -5556,13 +5555,16 @@
       const variantNextSelection = productVariantsData.filter(v => {
         return v.id == te; // OR media.id mapping
       });
-      const optionsTwo = document.querySelectorAll('input[name="option2"]')
+      const _variantNextSelection = productVariantsData.filter(v => {
+        return v.option1 == variantNextSelection[0].option1; // OR media.id mapping
+      });
 
+      const optionsTwo = document.querySelectorAll('input[name="option2"]')
       optionsTwo.forEach(element => {
         element.disabled = true;
       });
 
-      variantNextSelection.forEach(element => {
+      _variantNextSelection.forEach(element => {
         document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
       });
       // end
