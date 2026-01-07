@@ -50,7 +50,7 @@
       {% unless featured %}
         {%- assign productTitle = product.title | split: ' ' -%}
         <h1 class="product-meta__title heading h3">
-          <span class="red">{{ productTitle[0] }}</span>{{ product.title | remove_first: productTitle[0] }}          
+          <span class="red">{{ productTitle[0] }}</span>{{ product.selected_or_first_available_variant.metafields.custom.title }}          
         </h1>
       {% else %}
         <h2 class="product-meta__title heading h3">
