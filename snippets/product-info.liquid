@@ -48,9 +48,10 @@
       {%- endif -%}
 
       {% unless featured %}
-        {%- assign productTitle = product.title | split: ' ' -%}
+        {%- assign productTitle = product.selected_or_first_available_variant.metafields.custom.title | split: ' ' -%}
         <h1 class="product-meta__title heading h3">
-          <span class="red">{{ productTitle[0] }}</span>{{ product.selected_or_first_available_variant.metafields.custom.title }}          
+          {% comment %} <span class="red">{{ productTitle[0] }}</span>{{ product.title | remove_first: productTitle[0] }}     {% endcomment %}
+          <span class="red">{{ productTitle[0] }}</span>{{ product.selected_or_first_available_variant.metafields.custom.title | remove_first: productTitle[0] }}
         </h1>
       {% else %}
         <h2 class="product-meta__title heading h3">
