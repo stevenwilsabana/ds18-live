@@ -5543,7 +5543,6 @@
       }
 
       const te = document.querySelector('form.shopify-product-form input[name="id"]').value;
-      console.log("te", te)
 
       const mediaData = JSON.parse(
         document.getElementById('ProductVariantss').textContent
