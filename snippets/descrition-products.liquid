@@ -4,22 +4,20 @@
     <ul class="description-product__accordion-list">
       {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
         {% assign variant = product.selected_or_first_available_variant %}
-        {% if variant.metafields.custom.technical_data != blank %}
-          <li class="description-container accordion--richtext accordion--key-features">
-              <h3>Key Features</h3>
-              <div class="description-product__answer">
-                {% for item in product.variants %}
-                  {% assign isActive = false %}
-                  {% if variant.id == item.id %}
-                    {% assign isActive = true %}
-                  {% endif %}
-                      <div class="description-product__answer-container details  {% if isActive %} active {% endif %}"  data-variant-id="{{ item.id }}">
-                        {{ item.metafields.custom.technical_data | metafield_tag }}
-                      </div>
-                {% endfor %}
-              </div>
-          </li>
-        {% endif %}
+        <li class="description-container accordion--richtext accordion--key-features">
+            <h3>Key Features</h3>
+            <div class="description-product__answer">
+              {% for item in product.variants %}
+                {% assign isActive = false %}
+                {% if variant.id == item.id %}
+                  {% assign isActive = true %}
+                {% endif %}
+                    <div class="description-product__answer-container details  {% if isActive %} active {% endif %}"  data-variant-id="{{ item.id }}">
+                      {{ item.metafields.custom.technical_data | metafield_tag }}
+                    </div>
+              {% endfor %}
+            </div>
+        </li>
       {% else %}
         {% if product.metafields["custom_fields"]["product_description"] != blank %}
           <li class="description-container">
@@ -76,95 +74,93 @@
 
       {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
         {% assign variant = product.selected_or_first_available_variant %}
-        {% if variant.metafields.custom.technical_data != blank %}
-          <li class="details-container accordion--json accordion--technical-data">
-              <h3>Technical Data - Manual</h3>
-              <div class="description-product__answer">
-                {% for item in product.variants %}
-                  {% assign isActive = false %}
-                  {% if variant.id == item.id %}
-                    {% assign isActive = true %}
-                  {% endif %}
-                      <div class="description-product__answer-container description-product__answer-container--technical-data  {% if isActive %} active {% endif %}"  data-variant-id="{{ item.id }}">
-                        <div class="panel">
-                          {% if item.metafields.custom.user_manual.value.url != blank %}
-                            {% assign file_url = item.metafields.custom.user_manual.value.url %}
-                            <a
-                              href="{{ file_url }}"
-                              class="resto mobile-only"
-                              target="_blank"
-                            >
-                              <h4 class="heading h2 resto">
-                                <i class="fa-solid fa-download"></i>
-                                DOWNLOAD THE USER MANUAL
-                                <span class="red"></span>
-                              </h4>
-                            </a>
-                          {% endif %}
-                        </div>
-
-                        <div class="container load-more" id="load-more">
-                          {% assign specs = item.metafields.custom.technical_data_final.value %}
-                          {% if specs %}
-                            <div class="text-with-icons">
-                              <div class="text-with-icons__list hide-scrollbar">
-                                {% for item in specs %}
-                                  <div class="text-with-icons__item technicalDataLoop">
-                                    <div class="text-with-icons__icon-wrapper"></div>
-                                    <div class="text-with-icons__content-wrapper" style="text-align:center">
-                                      <p class="heading heading--small red">{{ item.heading }}</p>
-                                      {% if item.data != blank %}
-                                        <p>
-                                          {% for data_item in item.data %}
-                                            <strong>
-                                              {{- data_item.label }}
-                                              <br>
-                                            </strong>
-                                            {{- data_item.value -}}
-                                            <br>
-                                          {% endfor %}
-                                        </p>
-                                      {% endif %}
-                                    </div>
-                                  </div>
-                                {% endfor %}
-                              </div>
-                            </div>
-                          {% endif %}
-                        </div>
-
-                        <span
-                        class="loadmore"
-                        style="width: 100%;text-align: center;display: block;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
-                        >Load More</span>
-                          <span
-                            class="show-less"
-                            style="width: 100%;text-align: center;display: none;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
-                            >Show Less</span
+        <li class="details-container accordion--json accordion--technical-data">
+            <h3>Technical Data - Manual</h3>
+            <div class="description-product__answer">
+              {% for item in product.variants %}
+                {% assign isActive = false %}
+                {% if variant.id == item.id %}
+                  {% assign isActive = true %}
+                {% endif %}
+                    <div class="description-product__answer-container description-product__answer-container--technical-data  {% if isActive %} active {% endif %}"  data-variant-id="{{ item.id }}">
+                      <div class="panel">
+                        {% if item.metafields.custom.user_manual.value.url != blank %}
+                          {% assign file_url = item.metafields.custom.user_manual.value.url %}
+                          <a
+                            href="{{ file_url }}"
+                            class="resto mobile-only"
+                            target="_blank"
                           >
-                          <script>
-                            var width = screen.width;
-                            var acc = document.getElementsByClassName('description-product__answer-container--technical-data');
-                            var i;
-                            if (width < 800) {
-                              for (i = 0; i < acc.length; i++) {
-                                acc[i].addEventListener('click', function () {
-                                  this.classList.toggle('active');
-                                  var panel = this.nextElementSibling;
-                                  if (panel.style.display === 'block') {
-                                    panel.style.display = 'none';
-                                  } else {
-                                    panel.style.display = 'block';
-                                  }
-                                });
-                              }
-                            }
-                          </script>
+                            <h4 class="heading h2 resto">
+                              <i class="fa-solid fa-download"></i>
+                              DOWNLOAD THE USER MANUAL
+                              <span class="red"></span>
+                            </h4>
+                          </a>
+                        {% endif %}
                       </div>
-                {% endfor %}
-              </div>
-          </li>
-        {% endif %}
+
+                      <div class="container load-more" id="load-more">
+                        {% assign specs = item.metafields.custom.technical_data_final.value %}
+                        {% if specs %}
+                          <div class="text-with-icons">
+                            <div class="text-with-icons__list hide-scrollbar">
+                              {% for item in specs %}
+                                <div class="text-with-icons__item technicalDataLoop">
+                                  <div class="text-with-icons__icon-wrapper"></div>
+                                  <div class="text-with-icons__content-wrapper" style="text-align:center">
+                                    <p class="heading heading--small red">{{ item.heading }}</p>
+                                    {% if item.data != blank %}
+                                      <p>
+                                        {% for data_item in item.data %}
+                                          <strong>
+                                            {{- data_item.label }}
+                                            <br>
+                                          </strong>
+                                          {{- data_item.value -}}
+                                          <br>
+                                        {% endfor %}
+                                      </p>
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              {% endfor %}
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+
+                      <span
+                      class="loadmore"
+                      style="width: 100%;text-align: center;display: block;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
+                      >Load More</span>
+                        <span
+                          class="show-less"
+                          style="width: 100%;text-align: center;display: none;margin-top: 20px;font-weight: bold;cursor: pointer;max-width: 200px;margin: 0px auto;margin-top: 20px;"
+                          >Show Less</span
+                        >
+                        <script>
+                          var width = screen.width;
+                          var acc = document.getElementsByClassName('description-product__answer-container--technical-data');
+                          var i;
+                          if (width < 800) {
+                            for (i = 0; i < acc.length; i++) {
+                              acc[i].addEventListener('click', function () {
+                                this.classList.toggle('active');
+                                var panel = this.nextElementSibling;
+                                if (panel.style.display === 'block') {
+                                  panel.style.display = 'none';
+                                } else {
+                                  panel.style.display = 'block';
+                                }
+                              });
+                            }
+                          }
+                        </script>
+                    </div>
+              {% endfor %}
+            </div>
+        </li>
       {% else %}
         {% if product.metafields.custom_fields.technical_data != blank %}
           <li class="details-container">
@@ -254,25 +250,23 @@
 
       {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
         {% assign variant = product.selected_or_first_available_variant %}
-          {% if variant.metafields.custom.product_overview != blank %}
-            <li class="description-container accordion--richtext accordion--product-overview">
-                <h3>Product Overview</h3>
-                <div class="description-product__answer">
-                    {% for item in product.variants %}
-                      {% assign isActive = false %}
-                      {% if variant.id == item.id %}
-                        {% assign isActive = true %}
-                      {% endif %}
-                          <div class="description-product__answer-container details  {% if isActive %} active {% endif %}"  data-variant-id="{{ item.id }}">
-                            {{ item.metafields.custom.product_overview | metafield_tag }}
-                          </div>
-                    {% endfor %}
-                    {% comment %} <div class="description-product__answer-container details">
-                      {{ variant.metafields.custom.product_overview | metafield_tag }}
-                    </div> {% endcomment %}
-                </div>
-            </li>
-        {% endif %}
+        <li class="description-container accordion--richtext accordion--product-overview">
+            <h3>Product Overview</h3>
+            <div class="description-product__answer">
+                {% for item in product.variants %}
+                  {% assign isActive = false %}
+                  {% if variant.id == item.id %}
+                    {% assign isActive = true %}
+                  {% endif %}
+                      <div class="description-product__answer-container details  {% if isActive %} active {% endif %}"  data-variant-id="{{ item.id }}">
+                        {{ item.metafields.custom.product_overview | metafield_tag }}
+                      </div>
+                {% endfor %}
+                {% comment %} <div class="description-product__answer-container details">
+                  {{ variant.metafields.custom.product_overview | metafield_tag }}
+                </div> {% endcomment %}
+            </div>
+        </li>
       {% else %}
         {% if product.metafields["custom_fields"]["image_with_text"] != blank %}
           <li class="how-to-care-container">
