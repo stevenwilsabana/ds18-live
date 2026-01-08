@@ -411,6 +411,95 @@
         {%- endunless -%}
 
       {%- comment -%}
+
+      ----------------------------------------------------------------------------------------------------------------
+      OPTIONAL PRODUCT ADD-ONS
+      ----------------------------------------------------------------------------------------------------------------
+      
+      {%- endcomment -%}
+      {%- when 'optional_product_addons' -%}
+        {%- if block.settings.product_list != blank -%}
+          <div id="product-options-one" class="optional-product-addons product-options-one"
+              role="radiogroup"
+              aria-label="Select a product">
+            <span class="product-form__option-name">Choose a Product:</span>
+
+            <div class="product-options-container product-options-container--product-options-one">
+              {% for item in block.settings.product_list %}
+                {% assign variant = item.selected_or_first_available_variant %}
+                {% assign image = variant.featured_image | default: item.featured_image %}
+  
+                <label class="optional-product-addons__product-card" data-product="{{ item.id }}">
+                  <input
+                    type="radio"
+                    name="product"
+                    value="{{ variant.id }}"
+                  >
+                  {% if image %}
+                    <img
+                      src="{{ image | image_url: width: 300 }}"
+                      alt="{{ product.title | escape }}"
+                      loading="lazy"
+                      width=""
+                      height=""
+                    >
+                  {% endif %}
+  
+                  <span class="optional-product-addons__product-title">
+                    {% for tag in item.tags %}
+                      {% assign parts = tag | split: '_' %}
+                      {% if parts.first == 'size' %}
+                        {{ tag | remove_first: 'size_' }}
+                      {% endif %}
+                    {% endfor %}
+                  </span>
+                </label>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div id="product-options-two" class="optional-product-addons product-options-two"
+              role="radiogroup"
+              aria-label="Select a product">
+              <span class="product-form__option-name">Color:</span>
+            {% for item in block.settings.product_list %}
+              {% assign variants = item.variants %}
+              {% assign showOptionClass = "" %}
+              {% if forloop.index == 1 %}
+                {% assign showOptionClass = "active" %}
+              {% endif %}
+
+              <div class="product-options-container product-options-container--product-options-two {{ showOptionClass }}" data-product="{{ item.id }}">
+                {% for variant in variants %}
+                  {% assign image = variant.featured_image | default: item.featured_image %}
+                  <label class="optional-product-addons__product-card">
+                    <input
+                      type="radio"
+                      name="product"
+                      value="{{ variant.id }}"
+                    >
+    
+                    {% if image %}
+                      <img
+                        src="{{ image | image_url: width: 300 }}"
+                        alt="{{ variant.title | escape }}"
+                        loading="lazy"
+                        width=""
+                        height=""
+                      >
+                    {% endif %}
+    
+                    {% comment %} <span class="optional-product-addons__product-title">
+                      {{ variant.title }}
+                    </span> {% endcomment %}
+                  </label>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </div>
+        {%- endif -%}
+      {%- comment -%}
+
       ----------------------------------------------------------------------------------------------------------------
       LINE ITEM PROPERTY
       ----------------------------------------------------------------------------------------------------------------

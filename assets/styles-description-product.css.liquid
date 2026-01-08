@@ -336,3 +336,54 @@ product-payment-terms {
          justify-content: center!important;   
     }
 }
+
+/* optional product add-ons */
+.optional-product-addons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.optional-product-addons__product-card {
+  display: block;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  text-align: center;
+  width: 100px;
+}
+
+.optional-product-addons__product-card input {
+  display: none;
+}
+
+.optional-product-addons__product-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.optional-product-addons__product-card:has(input:checked) {
+  border-color: #000;
+  background: #f7f7f7;
+}
+
+.optional-product-addons {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-options-container {
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.product-options-container--product-options-two {
+  display: none;
+}
+
+.product-options-container--product-options-two.active {
+  display: flex;
+}
