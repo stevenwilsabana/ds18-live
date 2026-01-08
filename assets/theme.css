@@ -16742,10 +16742,10 @@ body.page-template--black-friday
 iframe#chat-button {
   z-index: 9999999999999;
 }
-.list-collections__item {
+body[id="page"] .list-collections__item {
   width: calc(25% - 10px);
 }
-.list-collections__item-list {
+body[id="page"] .list-collections__item-list {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -16753,13 +16753,13 @@ iframe#chat-button {
   gap: 13px;
 }
 @media only screen and (max-width: 1100px) {
-  .list-collections__item {
+  body[id="page"] .list-collections__item {
     width: calc(33.33333% - 10px);
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .list-collections__item {
+  body[id="page"] .list-collections__item {
     width: calc(50% - 10px);
   }
 }
