@@ -16840,20 +16840,30 @@ product-media .swiper-slide img {
   object-fit: cover;
 }
 
+body[id="page"] .list-collections__item {
+  width: calc(25% - 10px);
+}
+body[id="page"] .list-collections__item-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 13px;
+}
 @media only screen and (max-width: 1100px) {
-  body[id='page'] .list-collections__item {
-    width: calc(33.33333% - 10px)
+  body[id="page"] .list-collections__item {
+    width: calc(33.33333% - 10px);
   }
 }
 
 @media only screen and (max-width: 800px) {
-  body[id='page'] .list-collections__item {
-    width: calc(50% - 10px)
+  body[id="page"] .list-collections__item {
+    width: calc(50% - 10px);
   }
 }
 
 @media only screen and (max-width: 767px) {
-  body[id='page'] .list-collections__item {
+  body[id="page"] .list-collections__item {
     width: 100%;
   }
 }
