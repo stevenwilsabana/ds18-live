@@ -579,41 +579,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "1692329972272007824": {
-        "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_main/7411210d-7b32-4c09-9455-e129e3be4729",
-        "disabled": false,
-        "settings": {}
-      },
-      "judgeme_core_cbd789d5": {
-        "type": "shopify://apps/judge-me-product-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
-      "15796953133730294439": {
-        "type": "shopify://apps/growave-loyalty-wishlist/blocks/block.embed.socialshopwave-helper/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
-        "disabled": false,
-        "settings": {}
-      },
-      "4526402582171286672": {
-        "type": "shopify://apps/selly-promotion-pricing/blocks/app-embed-block/351afe80-738d-4417-9b66-e345ff249052",
-        "disabled": false,
-        "settings": {}
-      },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "4677439793077996495": {
-        "type": "shopify://apps/pixee-multi-facebook-pixels/blocks/facebook-pixel/61bbb1d9-d4be-4d08-879a-ee3ccb59f558",
-        "disabled": false,
-        "settings": {}
-      },
-      "10641372206048101839": {
-        "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-global-embed/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
-        "disabled": false,
-        "settings": {}
-      },
       "3678330922655817062": {
         "type": "shopify://apps/boost-ai-search-discovery/blocks/boost-sd-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
         "disabled": true,
@@ -621,49 +586,24 @@
           "templateId": ""
         }
       },
-      "17428600031447253342": {
-        "type": "shopify://apps/attentive/blocks/attn-tag/8df62c72-8fe4-407e-a5b3-72132be30a0d",
-        "disabled": false,
-        "settings": {}
-      },
-      "17676059084223943535": {
-        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
-        "disabled": false,
-        "settings": {}
-      },
-      "4705145147225299685": {
-        "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/widget-block/06fa8282-42ff-403e-b67c-1936776aed11",
-        "disabled": false,
-        "settings": {}
-      },
       "16422382648059844097": {
         "type": "shopify://apps/boost-ai-search-discovery/blocks/instant-search-app-embedded/7fc998ae-a150-4367-bab8-505d8a4503f7",
         "disabled": true,
         "settings": {}
       },
-      "96115656-ec44-4765-81c0-72a14f9da70a": {
-        "type": "shopify://apps/boost-ai-search-discovery/blocks/boost-sd/7fc998ae-a150-4367-bab8-505d8a4503f7",
-        "disabled": false,
-        "settings": {}
-      },
-      "5784066569132941777": {
-        "type": "shopify://apps/s-store-locator/blocks/embed-app/e7003487-cc51-4321-9488-2c47c07a5b17",
-        "disabled": false,
-        "settings": {}
-      },
-      "3138269044488530766": {
-        "type": "shopify://apps/uppromote-affiliate/blocks/core-script/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
-        "disabled": false,
-        "settings": {}
-      },
-      "16556818989376849476": {
-        "type": "shopify://apps/password-page-lock-page/blocks/password_protection/4dc6a6fa-3301-49ba-95e6-03c694327386",
-        "disabled": false,
-        "settings": {}
-      },
       "11724500921838622758": {
         "type": "shopify://apps/frequently-bought/blocks/app-embed-block/b1a8cbea-c844-4842-9529-7c62dbab1b1f",
         "disabled": true,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "10641372206048101839": {
+        "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-global-embed/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+        "disabled": false,
         "settings": {}
       },
       "5057006142565981955": {
@@ -680,6 +620,68 @@
           "add_to_cart_selector": "",
           "adjacent_element_selector": ""
         }
+      },
+      "judgeme_core_cbd789d5": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "17676059084223943535": {
+        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
+        "disabled": false,
+        "settings": {}
+      },
+      "15796953133730294439": {
+        "type": "shopify://apps/growave-loyalty-wishlist/blocks/block.embed.socialshopwave-helper/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+        "disabled": false,
+        "settings": {
+          "disable_shadow_root_globally": false
+        }
+      },
+      "3138269044488530766": {
+        "type": "shopify://apps/uppromote-affiliate/blocks/core-script/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
+        "disabled": false,
+        "settings": {}
+      },
+      "4526402582171286672": {
+        "type": "shopify://apps/selly-promotion-pricing/blocks/app-embed-block/351afe80-738d-4417-9b66-e345ff249052",
+        "disabled": false,
+        "settings": {}
+      },
+      "96115656-ec44-4765-81c0-72a14f9da70a": {
+        "type": "shopify://apps/boost-ai-search-filter/blocks/boost-sd/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "disabled": false,
+        "settings": {}
+      },
+      "1692329972272007824": {
+        "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_main/7411210d-7b32-4c09-9455-e129e3be4729",
+        "disabled": false,
+        "settings": {}
+      },
+      "4677439793077996495": {
+        "type": "shopify://apps/pixee-facebook-pixel/blocks/facebook-pixel/61bbb1d9-d4be-4d08-879a-ee3ccb59f558",
+        "disabled": false,
+        "settings": {}
+      },
+      "17428600031447253342": {
+        "type": "shopify://apps/attentive/blocks/attn-tag/8df62c72-8fe4-407e-a5b3-72132be30a0d",
+        "disabled": false,
+        "settings": {}
+      },
+      "4705145147225299685": {
+        "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/widget-block/06fa8282-42ff-403e-b67c-1936776aed11",
+        "disabled": false,
+        "settings": {}
+      },
+      "5784066569132941777": {
+        "type": "shopify://apps/s-store-locator/blocks/embed-app/e7003487-cc51-4321-9488-2c47c07a5b17",
+        "disabled": false,
+        "settings": {}
+      },
+      "16556818989376849476": {
+        "type": "shopify://apps/password-page-lock-page/blocks/password_protection/4dc6a6fa-3301-49ba-95e6-03c694327386",
+        "disabled": false,
+        "settings": {}
       },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
