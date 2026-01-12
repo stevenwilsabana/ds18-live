@@ -154,16 +154,9 @@
       rel="stylesheet"
     >
 
-    {% comment %} JQuery CDN {% endcomment %}
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    {% comment %} Slick Slide CDN {% endcomment %}
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     
-    {% comment %} Modal JQUERY {% endcomment %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     
     {% if template contains 'product' %}
       <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}"></script>
@@ -182,7 +175,6 @@
       }
     </script>
 
-    <script src="https://kit.fontawesome.com/f92ebc08f9.js" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
@@ -268,7 +260,6 @@
     </script>
         
     {{ 'custom-fields.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
 
     {% if customer.b2b? %}
       {{ 'prices-product-item-b2b.css' | asset_url | stylesheet_tag }}
