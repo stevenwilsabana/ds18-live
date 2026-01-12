@@ -204,23 +204,23 @@ function addToCartCollection(id) {
             let endY = cartRect.top + cartRect.height / 2 + window.scrollY;
             
             // 📌 Posicionar la bolita en el botón
-            gsap.set(flyer, {
-                position: 'absolute',
-                left: `${startX}px`,
-                top: `${startY}px`,
-                opacity: 1
-            });
+            // gsap.set(flyer, {
+            //     position: 'absolute',
+            //     left: `${startX}px`,
+            //     top: `${startY}px`,
+            //     opacity: 1
+            // });
             
-            // 📌 Animación de la bolita hasta el carrito
-            gsap.to(flyer, {
-                left: `${endX}px`,
-                top: `${endY}px`,
-                scale: 0.5,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power2.inOut",
-                onComplete: () => flyer.remove()
-            });
+            // // 📌 Animación de la bolita hasta el carrito
+            // gsap.to(flyer, {
+            //     left: `${endX}px`,
+            //     top: `${endY}px`,
+            //     scale: 0.5,
+            //     opacity: 0,
+            //     duration: 0.8,
+            //     ease: "power2.inOut",
+            //     onComplete: () => flyer.remove()
+            // });
             // 🚀 FIN DE LA ANIMACIÓN GSAP 🚀
 
 
