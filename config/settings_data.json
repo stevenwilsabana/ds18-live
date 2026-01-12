@@ -503,7 +503,9 @@
       "banners-manuals-page-nvy": {
         "type": "banners-manuals-page-nvy",
         "settings": {
-          "steps": "<h1>MANUALS</h1><p>Find your product's manual and download it directly from here by following these steps:</p><ol><li>Identify your product's SKU, either on the box or on the website.</li><li>Enter your product's SKU in the field below and press the \"Search\" button.</li><li>To download the manual, simply click the download icon that appears on the far right of each product.</li></ol>"
+          "mobile": "shopify://shop_images/NVY-MANUAL-MOB-BANNER.jpg",
+          "desktop": "shopify://shop_images/NVY-MANUAL-WEB-BANNER.jpg",
+          "steps": "<p>Find your product's manual and download it directly from here by following these steps:</p><ol><li>Identify your product's SKU, either on the box or on the website.</li><li>Enter your product's SKU in the field below and press the \"Search\" button.</li><li>To download the manual, simply click the download icon that appears on the far right of each product.</li></ol>"
         }
       },
       "nav-global-nvy": {
