@@ -164,6 +164,7 @@
         "image_MfTPby",
         "image_TixApw"
       ],
+      "disabled": true,
       "settings": {
         "section_height": "auto",
         "transition_type": "sweep",
