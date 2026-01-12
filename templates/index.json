@@ -321,6 +321,7 @@
         "cfc6e7e7-ed5a-41de-8007-6d2b2691d450",
         "fd12c03d-999f-40b5-9c37-2360c9773bef"
       ],
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "FEATURED PRODUCTS",
@@ -446,6 +447,7 @@
         "f221c56b-b476-4ae3-8ec0-bf66652cf150",
         "a24fd63f-44f1-4ab3-be55-33b19173afa1"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
       ],
@@ -534,6 +536,7 @@
       "block_order": [
         "tolstoy_shoppable_video_ugc_carousel_block_GVhDmR"
       ],
+      "disabled": true,
       "settings": {
         "include_horizontal_margins": true,
         "include_vertical_margins": true
@@ -745,6 +748,7 @@
         "template--15121638981693__e7b8509a-f07a-4f57-a420-cd1de956d1aa-1673547904e29d0197-5",
         "collection_Y9w93V"
       ],
+      "disabled": true,
       "settings": {
         "reveal_on_scroll": false,
         "layout": "grid",
