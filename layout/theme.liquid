@@ -149,14 +149,6 @@
     {% comment %} JQuery CDN {% endcomment %}
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    {% comment %} Slick Slide CDN {% endcomment %}
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    
-    {% comment %} Modal JQUERY {% endcomment %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    
     {% if template contains 'product' %}
       <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}"></script>
     {% endif %}
@@ -231,18 +223,6 @@
       {% assign is_nvy_page = true %}
     {% endif %}
 
-    {% if is_nvy_page %}
-      {% comment %}
-        {{ 'styles-cart-rebuy-nvy-global.css' | asset_url | stylesheet_tag }}
-        {{ 'styles-search-rebuy.css' | asset_url | stylesheet_tag }}  
-      {% endcomment %}
-
-      {{ 'styles-cart-rebuy.css' | asset_url | stylesheet_tag }}
-
-    {% else %} 
-
-      {{ 'styles-cart-rebuy.css' | asset_url | stylesheet_tag }}
-    {% endif %}
 
     {% comment %} Hotjar Tracking Code {% endcomment %}
     <script>
@@ -256,8 +236,6 @@
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
         
-    {{ 'custom-fields.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
 
     {% if customer.b2b? %}
       {{ 'prices-product-item-b2b.css' | asset_url | stylesheet_tag }}
@@ -293,11 +271,6 @@
     {{ 'campaign-off.js' | asset_url | script_tag }}
     {% endcomment %}
 
-    {% comment %} Estilos Product Item Global 👇 {% endcomment %}
-    {{ 'styles-product-item-global.css' | asset_url | stylesheet_tag }}
-    
-    {% comment %} Estilos Navigation Items {% endcomment %}
-    {{ 'styles-features-navigation.css' | asset_url | stylesheet_tag }}
 
     {% if customer.b2b? %}
       <script>
@@ -328,7 +301,6 @@
     {% if request.host == 'nvyusa.com' and request.path == '/' %}
       <script>location.replace('https://ds18.com/pages/nvy-by-ds18');</script>
     {% endif %}
-    <script async src="https://cdn1.affirm.com/js/v2/affirm.js"></script>
 
     {% comment %} Coframe {% endcomment %}
     <script id='coframe-installation-script'>
