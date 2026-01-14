@@ -1498,3 +1498,8 @@ body#product div#main .shopify-section {
   }
 }
 /* end jitender css ----*/
+
+.affirm-as-low-as .affirm-modal-trigger {
+  text-decoration: underline;
+  color: #4242cf;
+}
