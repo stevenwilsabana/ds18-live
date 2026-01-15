@@ -355,6 +355,12 @@
 
   <button class="add-to-cart-global"><i class="fa-solid fa-lock"></i> <span>ADD ITEMS TO CART</span></button>
 
+  <br>
+
+  <div class="builder-questionaire">
+    <p>Not sure which amp to get? Message us for recommendations!</p>
+    <button>Ask an Expert</button>
+  </div>
 
   {% assign productHandles = 'lc-drm,lc-rgb' | split: ',' %}
   <div id="product-aditional-stl">
@@ -394,6 +400,14 @@
 
 <!-- SCRIPT VARIANTS CHANGES -->
 <script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // enable georgias chat
+    const btn = document.querySelector('.builder-questionaire > button')
+    btn.addEventListener('click', () => {
+      window.GorgiasChat.open();
+    })
+  });
 
   function initializeSlider(sliderContainer) {
     let newSlider = sliderContainer.find('.product-stl__slider .container-images');
