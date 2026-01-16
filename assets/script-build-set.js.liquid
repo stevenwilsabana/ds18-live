@@ -1,6 +1,6 @@
 // Evento cuando carga la tienda.
 
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   $('.product-form .build-set-container .build-set__item').each(function(){
 
     // Eliminar Divs que no tienen variantes disponibles.
@@ -49,7 +49,6 @@ $(document).ready(function() {
   updateAffirmPrice(total_price)
 
   $('.container-general-prices__regular-prices .price-list .price').show();
-});
 
 // Evento cuando cambia de variante.
 $('.product-form .build-set-container .build-set__item .container-variant__variants input[type="radio"]').change(function() {
@@ -284,3 +283,4 @@ function $totalPrice() {
 
   return TotalPriceGlobal;
 }
+});

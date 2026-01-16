@@ -63,7 +63,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Car_Audio_Web_Banner_2025.jpg",
-            "mobile_image": "shopify://shop_images/Car_Audio_Mobile_Banner_2025.jpg",
+            "mobile_image": "shopify://shop_images/1.webp",
             "text_position": "top_left",
             "subheading": "",
             "title": "",
@@ -81,8 +81,8 @@
         "image_XwygYh": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/NVY-LAUNCH-WEB-BANNER_2.jpg",
-            "mobile_image": "shopify://shop_images/NVY-LAUNCH-MOBILE-BANNER_1.jpg",
+            "image": "shopify://shop_images/VISIT-NVY-BANNER_1.jpg",
+            "mobile_image": "shopify://shop_images/VISIT-NVY-MOBILE-BANNER_-_Copy.jpg",
             "text_position": "middle_left",
             "subheading": "",
             "title": "",
@@ -100,13 +100,13 @@
         "image_N7KCcH": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/DLRING_Web_Banner_2025_1.jpg",
-            "mobile_image": "shopify://shop_images/DLRING_Mobile_Banner_2025.jpg",
+            "image": "shopify://shop_images/PRO-CUPOLA-WEB-BANNER_-_Copy.jpg",
+            "mobile_image": "shopify://shop_images/PRO-CUPOLA-MOBILE-BANNER_-_Copy.jpg",
             "text_position": "middle_left",
             "subheading": "",
             "title": "",
             "button_1_text": "",
-            "button_1_link": "https://ds18.com/collections/digital-led-ring",
+            "button_1_link": "https://ds18.com/collections/new-arrivalsauto/products/pro-cupola2",
             "button_2_text": "",
             "button_2_link": "",
             "text_color": "#ffffff",
@@ -334,136 +334,13 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
-    "eef515a4-b2be-4d44-afec-99bcc5700923": {
-      "type": "collection-list",
-      "blocks": {
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/MOBILE-AUDIO-CATEGORY.jpg",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "https://ds18.com/pages/car-audio",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 28
-          }
-        },
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/JEEP-AUDIO-CATEGORY.jpg",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "https://ds18.com/pages/jeep",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-4": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/MOTORCYCLE-AUDIO-CATEGORY.jpg",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "shopify://pages/motorcycle",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/MARINE-AUDIO-CATEGORY.jpg",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "shopify://pages/marine",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/POWERSPORTS-AUDIO-CATEGORY.jpg",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "shopify://pages/powersports",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "f221c56b-b476-4ae3-8ec0-bf66652cf150": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/BRONCO-AUDIO-CATEGORY.jpg",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "shopify://collections/bronco-syv",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "a24fd63f-44f1-4ab3-be55-33b19173afa1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/SLINGSHOT-AUDIO-CATEGORY.jpg",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "https://ds18.com/collections/polaris-main-menu",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-0",
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-1",
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-4",
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-3",
-        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-2",
-        "f221c56b-b476-4ae3-8ec0-bf66652cf150",
-        "a24fd63f-44f1-4ab3-be55-33b19173afa1"
-      ],
-      "custom_css": [
-        "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
-      ],
-      "settings": {
-        "reveal_on_scroll": true,
-        "layout": "carousel",
-        "subheading": "",
-        "title": "SHOP BY Categories",
-        "background": "#282828",
-        "text_color": "#ffffff"
-      }
-    },
     "collection_list_kA3UUy": {
       "type": "collection-list",
       "blocks": {
         "collection_LghFmt": {
           "type": "collection",
           "settings": {
-            "collection": "amplifiers-under-150",
+            "collection": "top-gift-picks",
             "subheading": "",
             "title": "",
             "link_text": "",
@@ -476,33 +353,7 @@
         "collection_XcEfGB": {
           "type": "collection",
           "settings": {
-            "collection": "speakers-under-50",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_AYnwWw": {
-          "type": "collection",
-          "settings": {
-            "collection": "packages-under-300",
-            "subheading": "",
-            "title": "",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_NJYfJW": {
-          "type": "collection",
-          "settings": {
-            "collection": "subwoofers-under-100",
+            "collection": "gifts-under-150",
             "subheading": "",
             "title": "",
             "link_text": "",
@@ -515,11 +366,11 @@
         "collection_NYcdAX": {
           "type": "collection",
           "settings": {
-            "collection": "tweeters-under-50",
+            "collection": "digital-gifts-cards",
             "subheading": "",
             "title": "",
             "link_text": "",
-            "link_url": "",
+            "link_url": "https://ds18.com/products/ds18-gift-card",
             "text_color": "rgba(0,0,0,0)",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -529,18 +380,15 @@
       "block_order": [
         "collection_LghFmt",
         "collection_XcEfGB",
-        "collection_AYnwWw",
-        "collection_NJYfJW",
         "collection_NYcdAX"
       ],
-      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
       ],
       "name": "Black Friday",
       "settings": {
         "reveal_on_scroll": true,
-        "layout": "carousel",
+        "layout": "grid",
         "subheading": "",
         "title": "Top Picks Just for You",
         "background": "#282828",
@@ -719,6 +567,129 @@
         "text_color": "rgba(0,0,0,0)"
       }
     },
+    "eef515a4-b2be-4d44-afec-99bcc5700923": {
+      "type": "collection-list",
+      "blocks": {
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/MOBILE-AUDIO-CATEGORY.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "https://ds18.com/pages/car-audio",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 28
+          }
+        },
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/JEEP-AUDIO-CATEGORY.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "https://ds18.com/pages/jeep",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/MOTORCYCLE-AUDIO-CATEGORY.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "shopify://pages/motorcycle",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/MARINE-AUDIO-CATEGORY.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "shopify://pages/marine",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/POWERSPORTS-AUDIO-CATEGORY.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "shopify://pages/powersports",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "f221c56b-b476-4ae3-8ec0-bf66652cf150": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/BRONCO-AUDIO-CATEGORY.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "shopify://collections/bronco-syv",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "a24fd63f-44f1-4ab3-be55-33b19173afa1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/SLINGSHOT-AUDIO-CATEGORY.jpg",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "https://ds18.com/collections/polaris-main-menu",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-0",
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-1",
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-4",
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-3",
+        "template--16745957425468__eef515a4-b2be-4d44-afec-99bcc5700923-1666970448c041da6c-2",
+        "f221c56b-b476-4ae3-8ec0-bf66652cf150",
+        "a24fd63f-44f1-4ab3-be55-33b19173afa1"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 1000px) {prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket {top: -80px; display: flex; } prev-next-buttons.list-collections__prev-next.prev-next-buttons.hidden-pocket button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "layout": "carousel",
+        "subheading": "",
+        "title": "SHOP BY Categories",
+        "background": "#282828",
+        "text_color": "#ffffff"
+      }
+    },
     "e7b8509a-f07a-4f57-a420-cd1de956d1aa": {
       "type": "collection-list",
       "blocks": {
@@ -770,6 +741,7 @@
         "template--15121638981693__e7b8509a-f07a-4f57-a420-cd1de956d1aa-1673547904e29d0197-5",
         "collection_Y9w93V"
       ],
+      "disabled": true,
       "settings": {
         "reveal_on_scroll": false,
         "layout": "grid",
@@ -1481,11 +1453,11 @@
     "bd246d27-9954-49c8-8ec6-7ef2cf9bb690",
     "as_seen_on_4MiKg3",
     "featured-collections",
-    "eef515a4-b2be-4d44-afec-99bcc5700923",
     "collection_list_kA3UUy",
     "1728055881f0e8ce96",
     "image-with-text",
     "2994570f-24c3-498e-933f-9fa6d70c8e08",
+    "eef515a4-b2be-4d44-afec-99bcc5700923",
     "e7b8509a-f07a-4f57-a420-cd1de956d1aa",
     "80c05e36-0022-45c1-a7be-7f34ec58d834",
     "shop-the-look",

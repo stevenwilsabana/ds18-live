@@ -239,20 +239,22 @@
           </div>
 
           <script>
-            $(document).on("click", "#section-contact-product_ittd #tag-manager-product-write", function() {
-              gtag('event', 'button_contact_us', {
-                event_category: '{{ product.title }}',
-                send_to: 'G-S5TTBXRYSN'
+            document.addEventListener("DOMContentLoaded", function() {
+              $(document).on("click", "#section-contact-product_ittd #tag-manager-product-write", function() {
+                gtag('event', 'button_contact_us', {
+                  event_category: '{{ product.title }}',
+                  send_to: 'G-S5TTBXRYSN'
+                });
+                window.open('tel:305-928-8734');
               });
-              window.open('tel:305-928-8734');
-            });
-        
-            $(document).on("click", "#section-contact-product_ittd #tag-manager-product-chat", function() {
-              gtag('event', 'button_live_chat', {
-                event_category: '{{ product.title }}',
-                send_to: 'G-S5TTBXRYSN'
+          
+              $(document).on("click", "#section-contact-product_ittd #tag-manager-product-chat", function() {
+                gtag('event', 'button_live_chat', {
+                  event_category: '{{ product.title }}',
+                  send_to: 'G-S5TTBXRYSN'
+                });
+                GorgiasChat.open();
               });
-              GorgiasChat.open();
             });
           </script>
           

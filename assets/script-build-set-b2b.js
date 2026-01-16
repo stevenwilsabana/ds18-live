@@ -1,5 +1,5 @@
 // Evento cuando carga la tienda.
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   $('.product-form .build-set-container .build-set__item').each(function(){
 
     // Eliminar Divs que no tienen variantes disponibles.

@@ -433,7 +433,7 @@
 
 {% if customer.b2b? %}
   <script>
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         $('#notes-source-text textarea').on('input', function() {
             $('#notes-b2b-products').val($(this).val());
         });
@@ -1067,40 +1067,39 @@
 <script>
 
   /* Evitar lineas en el slider */
-    $( document ).ready(function() {
-      $('.shopify-section.shopify-section--slideshow').prev('.shopify-section').addClass('section-not-arrow-bottom');
-      $('.shopify-section.shopify-section--slideshow').next('.shopify-section').addClass('section-not-arrow-top');
-      console.log( "ready! LINEAS ACTIVAS" );
-    });
-  
-    
-  
-  $(document).on('click','.active-zoom_product-page',function(event){
-      $('.product__zoom-button').click();
-  });
+  document.addEventListener("DOMContentLoaded", function() {
+    $('.shopify-section.shopify-section--slideshow').prev('.shopify-section').addClass('section-not-arrow-bottom');
+    $('.shopify-section.shopify-section--slideshow').next('.shopify-section').addClass('section-not-arrow-top');
+    console.log( "ready! LINEAS ACTIVAS" );
 
-  function zoomProduct(){
-    $('.image-zoom-product-page')
-    .wrap('<span style="display:inline-block"></span>')
-    .css('display', 'block')
-    .parent()
-    .zoom({
-      url: $(this).find('img').attr('data-zoom')
+    $(document).on('click','.active-zoom_product-page',function(event){
+        $('.product__zoom-button').click();
     });
-  };
 
-  function checkScreenWidth() {
-    if ($(window).width() > 1200) {
-      //zoomProduct();
-      console.log('ZOOM Inactive');
+    function zoomProduct(){
+      $('.image-zoom-product-page')
+      .wrap('<span style="display:inline-block"></span>')
+      .css('display', 'block')
+      .parent()
+      .zoom({
+        url: $(this).find('img').attr('data-zoom')
+      });
     };
-  };
 
-  checkScreenWidth();
+    function checkScreenWidth() {
+      if ($(window).width() > 1200) {
+        //zoomProduct();
+        console.log('ZOOM Inactive');
+      };
+    };
 
-  $(window).resize(function() {
     checkScreenWidth();
+
+    $(window).resize(function() {
+      checkScreenWidth();
+    });
   });
+
 </script>
 
 <script>
