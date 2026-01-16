@@ -518,6 +518,17 @@ function $countDown(tiempoContadorMinutos, tiempoOcultoMinutos){
 
 document.addEventListener('rebuy:smartcart.ready', function(event){
 
+  const removeBtn = document.querySelectorAll('.rebuy-cart__flyout-item-remove');
+  if(removeBtn.length > 0) {
+    removeBtn.forEach(element => {
+      element.style.display = "block";
+
+      element.addEventListener('click', () => {
+        element.style.display = "none";
+      });
+    })
+  }
+
   //console.log('rebuy:smartcart.ready event', event.detail);
   var $total_price = event.detail.smartcart.cart.total_price;
   var $array_products = event.detail.smartcart.cart.items;
@@ -563,9 +574,19 @@ document.addEventListener('rebuy:smartcart.ready', function(event){
   }
 });
 
-
-
 document.addEventListener('rebuy:cart.change', function(event){
+  const removeBtn = document.querySelectorAll('.rebuy-cart__flyout-item-remove');
+
+  if(removeBtn.length > 0) {
+    removeBtn.forEach(element => {
+      element.style.display = "block";
+
+      element.addEventListener('click', () => {
+        element.style.display = "none";
+      });
+    })
+  }
+
   setTimeout(function(){
     if (window.Shopify && Shopify.PaymentButton) {
       Shopify.PaymentButton.init();
