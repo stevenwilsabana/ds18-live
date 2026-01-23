@@ -685,6 +685,17 @@
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
         "settings": {}
+      },
+      "11874257281241916528": {
+        "type": "shopify://apps/fullstory/blocks/fullstory-embed/c341ffa4-99cc-4983-be03-3cb208467fae",
+        "disabled": true,
+        "settings": {
+          "fs_org_id": "o-24BN2X-na1",
+          "fs_host": "fullstory.com",
+          "fs_script": "edge.fullstory.com/s/fs.js",
+          "fs_namespace": "FS",
+          "fs_identify_users": true
+        }
       }
     }
   },
