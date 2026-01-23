@@ -688,7 +688,7 @@
       },
       "11874257281241916528": {
         "type": "shopify://apps/fullstory/blocks/fullstory-embed/c341ffa4-99cc-4983-be03-3cb208467fae",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "fs_org_id": "o-24BN2X-na1",
           "fs_host": "fullstory.com",
