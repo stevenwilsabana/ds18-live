@@ -696,6 +696,14 @@
           "fs_namespace": "FS",
           "fs_identify_users": true
         }
+      },
+      "10971383228169626963": {
+        "type": "shopify://apps/logrocket/blocks/script_initializer/be454576-0ff0-4177-8832-bfe9e6f402a8",
+        "disabled": false,
+        "settings": {
+          "app_id": "",
+          "options": "{}"
+        }
       }
     }
   },
