@@ -229,6 +229,7 @@ quick-buy-popover .popover__header {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .product-stl .product-stl__details .product-stl__form .shop-the-look-variants .variants .label-variant {
@@ -236,6 +237,8 @@ quick-buy-popover .popover__header {
     padding: 5px 10px;
     font-size: 13px;
     border-radius: 3px;
+    width: calc(50% - 5px);
+    text-align: center;
 }
 
 
@@ -980,5 +983,9 @@ div#product-aditional-stl > .container-add-ons .product-stl .product-stl__detail
 }
 
 openable-element .product-stl .product-stl__details .product-stl__information .vendor {
+    display: none;
+}
+
+body.page-template--shop-the-look-bronco .container-add-ons > div:first-child {
     display: none;
 }
