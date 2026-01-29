@@ -27,6 +27,16 @@
     /* << TriplePixel :: end*/
     </script>
 
+    <script>
+      /* Begin Polar Analytics Pixel */  
+      try {
+        window.shopifyShopURL = "ds18caraudio.myshopify.com";
+      } catch (e) {
+      }
+      !function(){function load(retry){var PA=new XMLHttpRequest;PA.open("GET","https://cdn-production.polaranalytics.com/pap.txt?"+(new Date).toISOString().slice(0,10).replace(/-/g,""),!0),PA.send(),PA.onreadystatechange=function(){4===PA.readyState&&200===PA.status?setTimeout(function(){return eval(PA.responseText)},40):(299<PA.status||PA.status<200)&&retry&&load(retry-1)}}load(10)}();  
+      /* End Polar Analytics Pixel */  
+    </script>
+
     {% render 'replo-head' %}
     <link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin />
 
