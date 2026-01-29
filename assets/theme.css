@@ -16769,3 +16769,16 @@ body[id="page"] .list-collections__item-list {
     width: 100%;
   }
 }
+
+/* product-media .flickity-viewport {
+  height: 480px !important;
+} */
+product-media .flickity-slider {
+  display: flex;
+  align-items: center;
+}
+
+product-media .product__thumbnail-list-inner {
+  display: flex;
+  align-items: center;
+}
