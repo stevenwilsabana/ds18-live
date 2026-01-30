@@ -277,6 +277,25 @@
 
     // When a slide becomes active
     mainSlider.on('afterChange', function(event, slick, currentSlide) {
+
+    const galleryImages = document.querySelectorAll('.product-nvy__slide.product-nvy__slide--image');
+    const galleryVideos = document.querySelectorAll('.product-nvy__slide.product-nvy__slide--video');
+    const maxHeight = Math.max(
+      ...Array.from(galleryImages, el => el.offsetHeight)
+    );
+
+    galleryImages.forEach(slide => {
+      slide.style.height = `${maxHeight}px`;
+    });
+
+    galleryVideos.forEach(slide => {
+      slide.style.height = `${maxHeight}px`;
+    });
+
+
+    console.log("maxHeight", maxHeight);
+
+
       // Pause all iframes
       mainSlider.find('iframe[src*="youtube.com"]').each(function() {
         this.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
@@ -312,19 +331,6 @@
       const $currentSlide = $(slick.$slides[currentSlide]);
       const $video = $currentSlide.hasClass('product-nvy__thumbnail--video');
 
-      if ($video) {
-        var $slide = $('.product-nvy__slide.product-nvy__slide--video');
-        // var $videos = $slide.find('video');
-        var videoHeight = $slide.height();
-        // If it's a video
-        $('.product-nvy__imagen-slider-main').css({
-          'height': `${videoHeight + 10}px`
-        });
-      } else {
-        $('.product-nvy__imagen-slider-main').css({
-          'height': ''
-        });
-      }
     });
 
   });
