@@ -278,13 +278,13 @@
     // When a slide becomes active
     mainSlider.on('afterChange', function(event, slick, currentSlide) {
 
-    const elements = document.querySelectorAll('.product-nvy__slide.product-nvy__slide--image');
+    const galleryImages = document.querySelectorAll('.product-nvy__slide.product-nvy__slide--image');
     const galleryVideos = document.querySelectorAll('.product-nvy__slide.product-nvy__slide--video');
     const maxHeight = Math.max(
-      ...Array.from(elements, el => el.offsetHeight)
+      ...Array.from(galleryImages, el => el.offsetHeight)
     );
 
-    elements.forEach(slide => {
+    galleryImages.forEach(slide => {
       slide.style.height = `${maxHeight}px`;
     });
 
