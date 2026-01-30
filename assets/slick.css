@@ -117,3 +117,8 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+.slick-initialized .product-nvy__slide.slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
