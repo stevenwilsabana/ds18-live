@@ -16512,6 +16512,7 @@ mobile-navigation#mobile-menu-drawer
 
 body[id='page'] .list-collections__item {
   background-color: #fff;
+  width: calc(25% - 10px)
 }
 
 body[id='page'] .list-collections__item h3 {
@@ -16727,6 +16728,9 @@ body.page-template--black-friday
     top: 0;
     margin-top: 24px;
   }
+  body[id='page'] .list-collections__item {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 350px) {
   body.page-template--black-friday .banner-full-page-nvy__overlay {
@@ -16742,6 +16746,95 @@ body.page-template--black-friday
 iframe#chat-button {
   z-index: 9999999999999;
 }
+
+product-media .swiperMain {
+  height: none;
+}
+
+product-media .product__media-item.swiper-slide {
+  background: #fff;
+  height: 480px;
+}
+
+product-media .product__media-item.swiper-slide > iframe{
+  height: 300px;
+  width: 100%;
+}
+product-media .pdp-thumb-slider__slide {
+  cursor: pointer;
+}
+
+product-media .swiper-button-prev {
+  position: absolute;
+  bottom: 54px !important;
+  top: auto !important;
+  color: #000;
+  left: -25px !important;
+  width: 30px;
+  height: 30px;
+}
+
+product-media .swiper-button-next {
+  position: absolute;
+  bottom: 54px !important;
+  top: auto !important;
+  color: #000;
+  right: -25px !important;
+  width: 30px;
+  height: 30px;
+}
+
+product-media .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+product-media .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+product-media .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+product-media .swiperMain {
+  height: 80%;
+  width: 100%;
+}
+
+product-media .pdp-swiper-thumbnail {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+product-media .pdp-swiper-thumbnail .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+  height: 112.5px;
+  background: transparent;
+}
+
+product-media .pdp-swiper-thumbnail .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+product-media .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 body[id="page"] .list-collections__item {
   width: calc(25% - 10px);
 }

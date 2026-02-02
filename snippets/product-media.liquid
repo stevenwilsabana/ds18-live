@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
 {%- if product.media.size > 0 -%}
   {%- assign selected_media = product.selected_variant.featured_media | default: product.featured_media -%}
 
@@ -11,22 +13,35 @@
 
   {% assign filtered_media_ids = '' %}
 
-  {%- for media in product.media -%}
-    {%- if media.alt contains '#' -%}
-      {%- assign alt_parts = media.alt | split: '#' -%}
-
-      {%- assign media_group_parts = alt_parts.last | split: '_' -%}
-      {%- assign option = product.options_by_name[media_group_parts.first] -%}
-      {%- assign option_value = option.selected_value | downcase -%}
-
-      {%- assign downcase_group_value = media_group_parts.last | strip | downcase -%}
-
-      {%- if option_value != downcase_group_value and media != selected_media -%}
-        {%- assign filtered_media_ids = filtered_media_ids | append: media.id | append: ',' -%}
+  {% if product.template_suffix != 'new-template' and product.template_suffix != 'product-with-variants' %}
+    {%- for media in product.media -%}
+      {%- if media.alt contains '#' -%}
+        {%- assign alt_parts = media.alt | split: '#' -%}
+  
+        {%- assign media_group_parts = alt_parts.first | split: '_' -%}
+        {%- assign option = product.options_by_name[media_group_parts.first] -%}
+        {%- assign option_value = option.selected_value | downcase -%}
+  
+        {%- assign downcase_group_value = media_group_parts.last | strip | downcase -%}
+  
+        {%- if option_value != downcase_group_value and media != selected_media -%}
+          {%- assign filtered_media_ids = filtered_media_ids | append: media.id | append: ',' -%}
+        {%- endif -%}
       {%- endif -%}
-    {%- endif -%}
-  {%- endfor -%}
-
+    {%- endfor -%}
+  {% else %}
+    {% assign selectedVariantSku = product.selected_or_first_available_variant.sku %}
+    {% for item in product.variants %}
+      {% if selectedVariantSku != item.sku  %}
+        {%- for media in product.media -%}
+          {% if media.alt != selectedVariantSku %}
+            {%- assign filtered_media_ids = filtered_media_ids | append: media.id | append: ',' -%}
+          {% endif %}
+        {%- endfor -%}
+      {% endif %}
+    {% endfor %} 
+  {% endif %}
+  
   {%- assign filtered_media_ids = filtered_media_ids | split: ',' | compact -%}
 
   {%- assign max_width = 0 -%}
@@ -39,10 +54,66 @@
 
   <product-media form-id="product-form-{{ section.id }}-{{ product.id }}" {% if section.settings.enable_video_autoplay %}autoplay-video{% endif %} thumbnails-position="{{ section.settings.desktop_thumbnails_position }}" {% if settings.reveal_product_media %}reveal-on-scroll{% endif %} product-handle="{{ product.handle }}" class="product__media product-media--sticky" style="--largest-image-aspect-ratio: {{ largest_image_aspect_ratio }}">
 
-    <div class="product__media-list-wrapper" style="max-width: {{ max_width }}px">
 
 
-    <nav id="mobile_brd" aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb text--xsmall text--subdued hidden-phone" style="display:none">
+
+      <div class="product__media-list-wrapper" style="max-width: {{ max_width }}px">
+        {% if product.template_suffix == 'new-template' or product.template_suffix == 'product-with-variants' %}
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper pdp-swiper-main">
+            <div class="swiper-wrapper">
+              {%- for media in product.media -%}
+                {% if media.alt == selectedVariantSku %}
+                  <div class="swiper-slide product__media-item " data-media-type="{{ media.media_type }}"
+                      data-media-id="{{ media.id }}"
+                      data-original-position="{{ forloop.index0 }}"
+                      data-selector-media-alt="{{ media.alt }}"
+                      data-selector-source="{{ media | img_url: 'x80'}}">
+                    
+                      {% case media.media_type %}
+                        {% when 'image' %}
+                          <div class="active-zoom_product-page product__media-image-wrapper aspect-ratio aspect-ratio--natural" 
+                                      style="padding-bottom: {{ 100.0 | divided_by: media.aspect_ratio }}%; --aspect-ratio: {{ media.aspect_ratio }}">
+                          <img loading="lazy" width="" height="" class="image-zoom-product-page" data-zoom="{{ media | img_url: '2000x2000', scale: 100 }}" sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media, alt: alt, sizes: '400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800' %}>
+                          </div>
+                        {%- when 'external_video' -%}
+                          {% comment %} {{ media | external_video_tag }} {% endcomment %}
+                          {%- if media.host == 'youtube' -%}
+                            {{- media | external_video_url: enablejsapi: true, loop: section.settings.enable_video_looping, mute: section.settings.enable_video_autoplay, playlist: media.external_id | external_video_tag -}}
+                          {%- elsif media.host == 'vimeo' -%}
+                            {{- media | external_video_url: autopause: true, loop: section.settings.enable_video_looping, muted: section.settings.enable_video_autoplay, autoplay: true | external_video_tag -}}
+                          {%- else -%}
+                            {{- media | external_video_tag: image_size: '1024x' -}}
+                          {%- endif -%}
+                      {% endcase %}
+  
+                  </div>
+                {% endif %}
+              {%- endfor -%}
+            </div>
+          </div>
+          <button class="swiper-button-prev" aria-label="Previous image"></button>
+          <div thumbsSlider="" class="swiper pdp-swiper-thumbnail pdp-thumb-slider">
+            <div class="swiper-wrapper">
+              {%- for media in product.media -%}
+                {% if media.alt == selectedVariantSku %}
+                  <div class="swiper-slide pdp-thumb-slider__slide {{ media.media_type }}">
+                    {% case media.media_type %}
+                      {% when 'image' %}
+                        <img loading="lazy" {% render 'image-attributes', image: media, alt: alt, sizes: '400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800' %}>
+  
+                      {%- when 'external_video' -%}
+                        {{ media.preview_image | image_url: width: 800 | image_tag }}
+                    {% endcase %}
+                  </div>
+                {% endif %}
+              {%- endfor -%}
+            </div>
+            </div>
+          <button class="swiper-button-next" aria-label="Next image"></button>
+        {% endif %}
+
+
+      <nav id="mobile_brd" aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb text--xsmall text--subdued hidden-phone" style="display:none">
         <ol class="breadcrumb__list" role="list">
           <li class="breadcrumb__item">
             <a class="breadcrumb__link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
@@ -59,6 +130,7 @@
           </li>
         </ol>
       </nav>
+
       {%- capture flickity_config -%}
       {
         "adaptiveHeight": true,
@@ -73,88 +145,91 @@
         "prevNextButtons": true
       }
       {%- endcapture -%}
+      {% if product.template_suffix != 'new-template' and product.template_suffix != 'product-with-variants' %}
+        <flickity-carousel {% comment %}click-nav{% endcomment %} flickity-config="{{ flickity_config | escape }}" id="product-{{ section.id }}-{{ product.id }}-media-list" class="product__media-list">
+          {% assign current_variant = product.selected_or_first_available_variant %}
+          {%- for media in product.media -%}
+              {%- assign alt = media.alt -%}
+              {%- assign is_media_filtered = false -%}
+              {%- assign media_id_as_string = media.id | append: '' -%}
 
-      <flickity-carousel {% comment %}click-nav{% endcomment %} flickity-config="{{ flickity_config | escape }}" id="product-{{ section.id }}-{{ product.id }}-media-list" class="product__media-list">
-        {%- for media in product.media -%}
-          {%- assign alt = media.alt -%}
-          {%- assign is_media_filtered = false -%}
-          {%- assign media_id_as_string = media.id | append: '' -%}
+              {% if media.alt contains '#' %}
+                {%- assign alt = product.title -%}
+              {%- endif -%}
 
-          {% if media.alt contains '#' %}
-            {%- assign alt = product.title -%}
-          {%- endif -%}
+              {%- if filtered_media_ids contains media_id_as_string and media.alt != product.title -%}
+                {%- assign is_media_filtered = true -%}
+              {%- endif -%}
 
-          {%- if filtered_media_ids contains media_id_as_string and media.alt != product.title -%}
-            {%- assign is_media_filtered = true -%}
-          {%- endif -%}
-
-          <div id="product-{{ section.id }}-{{ media.id }}" 
-               class="product__media-item {% if is_media_filtered %}is-filtered{% endif %} {% if selected_media.id == media.id %}is-initial-selected is-selected{% endif %}" 
-               data-media-type="{{ media.media_type }}"
-               data-media-id="{{ media.id }}"
-              data-original-position="{{ forloop.index0 }}"
-              data-selector-media-alt="{{ media.alt }}"
-              data-selector-source="{{ media | img_url: 'x80'}}"
-          >
-            {%- case media.media_type -%}
-              {%- when 'image' -%}
-                <div class="active-zoom_product-page product__media-image-wrapper aspect-ratio aspect-ratio--natural" 
-                     style="padding-bottom: {{ 100.0 | divided_by: media.aspect_ratio }}%; --aspect-ratio: {{ media.aspect_ratio }}">
-                  <img loading="lazy" class="image-zoom-product-page" data-zoom="{{ media | img_url: '2000x2000', scale: 100 }}" {% if selected_media.id == media.id and settings.reveal_product_media %}reveal{% endif %} {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media, alt: alt, sizes: '400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800' %}>
-                </div>
-
-              {%- when 'video' -%}
-                <native-video class="video-wrapper video-wrapper--native" style="--aspect-ratio: {{ media.aspect_ratio }}">
-                  {%- unless section.settings.enable_video_autoplay -%}
-                    <div class="video-wrapper__poster">
-                      <img loading="lazy" class="video-wrapper__poster-image" {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media.preview_image, sizes: '400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200' %}>
-
-                      <div class="video-wrapper__poster-content">
-                        <button type="button" class="video-wrapper__play-button" title="{{ 'general.accessibility.play_video' | t | escape }}">
-                          {%- render 'icon' with 'play', width: 72, height: 72 -%}
-                        </button>
-                      </div>
+              <div id="product-{{ section.id }}-{{ media.id }}" 
+                class="product__media-item {% if is_media_filtered %}is-filtered{% endif %} {% if selected_media.id == media.id %}is-initial-selected is-selected{% endif %}" 
+                data-media-type="{{ media.media_type }}"
+                data-media-id="{{ media.id }}"
+                data-original-position="{{ forloop.index0 }}"
+                data-selector-media-alt="{{ media.alt }}"
+                data-selector-source="{{ media | img_url: 'x80'}}"
+              >
+                {%- case media.media_type -%}
+                  {%- when 'image' -%}
+                    <div class="active-zoom_product-page product__media-image-wrapper aspect-ratio aspect-ratio--natural" 
+                        style="padding-bottom: {{ 100.0 | divided_by: media.aspect_ratio }}%; --aspect-ratio: {{ media.aspect_ratio }}">
+                      <img loading="lazy" class="image-zoom-product-page" data-zoom="{{ media | img_url: '2000x2000', scale: 100 }}" {% if selected_media.id == media.id and settings.reveal_product_media %}reveal{% endif %} {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media, alt: alt, sizes: '400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800' %}>
                     </div>
-                  {%- endunless -%}
+    
+                  {%- when 'video' -%}
+                    <native-video class="video-wrapper video-wrapper--native" style="--aspect-ratio: {{ media.aspect_ratio }}">
+                      {%- unless section.settings.enable_video_autoplay -%}
+                        <div class="video-wrapper__poster">
+                          <img loading="lazy" class="video-wrapper__poster-image" {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media.preview_image, sizes: '400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200' %}>
+    
+                          <div class="video-wrapper__poster-content">
+                            <button type="button" class="video-wrapper__play-button" title="{{ 'general.accessibility.play_video' | t | escape }}">
+                              {%- render 'icon' with 'play', width: 72, height: 72 -%}
+                            </button>
+                          </div>
+                        </div>
+                      {%- endunless -%}
+    
+                      <template>
+                        {{- media | video_tag: image_size: '1024x', controls: true, autoplay: true, muted: section.settings.enable_video_autoplay, loop: section.settings.enable_video_looping -}}
+                      </template>
+                    </native-video>
+    
+                  {%- when 'external_video' -%}
+                    <external-video provider="{{ media.host | escape }}" class="video-wrapper">
+                      {%- unless section.settings.enable_video_autoplay -%}
+                        <div class="video-wrapper__poster">
+                          <img loading="lazy" class="video-wrapper__poster-image" {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media.preview_image, sizes: '400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200' %}>
+    
+                          <div class="video-wrapper__poster-content">
+                            <button type="button" class="video-wrapper__play-button" title="{{ 'general.accessibility.play_video' | t | escape }}">
+                              {%- render 'icon' with 'play', width: 72, height: 72 -%}
+                            </button>
+                          </div>
+                        </div>
+                      {%- endunless -%}
+    
+                      <template>
+                        {%- if media.host == 'youtube' -%}
+                          {{- media | external_video_url: enablejsapi: true, loop: section.settings.enable_video_looping, mute: section.settings.enable_video_autoplay, autoplay: true, playlist: media.external_id | external_video_tag -}}
+                        {%- elsif media.host == 'vimeo' -%}
+                          {{- media | external_video_url: autopause: true, loop: section.settings.enable_video_looping, muted: section.settings.enable_video_autoplay, autoplay: true | external_video_tag -}}
+                        {%- else -%}
+                          {{- media | external_video_tag: image_size: '1024x' -}}
+                        {%- endif -%}
+                      </template>
+                    </external-video>
+    
+                  {%- when 'model' -%}
+                    <model-media product-handle="{{ product.handle }}" class="model-wrapper">
+                      {{- media | model_viewer_tag: image_size: '1024x', reveal: 'interaction', toggleable: true -}}
+                    </model-media>
+                {%- endcase -%}
+              </div>
+          {%- endfor -%}
+        </flickity-carousel>
+      {%- endif -%}
 
-                  <template>
-                    {{- media | video_tag: image_size: '1024x', controls: true, autoplay: true, muted: section.settings.enable_video_autoplay, loop: section.settings.enable_video_looping -}}
-                  </template>
-                </native-video>
-
-              {%- when 'external_video' -%}
-                <external-video provider="{{ media.host | escape }}" class="video-wrapper">
-                  {%- unless section.settings.enable_video_autoplay -%}
-                    <div class="video-wrapper__poster">
-                      <img loading="lazy" class="video-wrapper__poster-image" {% if selected_media.id != media.id or request.page_type != 'product' %}loading="lazy"{% endif %} sizes="(max-width: 999px) calc(100vw - 48px), 640px" {% render 'image-attributes', image: media.preview_image, sizes: '400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200' %}>
-
-                      <div class="video-wrapper__poster-content">
-                        <button type="button" class="video-wrapper__play-button" title="{{ 'general.accessibility.play_video' | t | escape }}">
-                          {%- render 'icon' with 'play', width: 72, height: 72 -%}
-                        </button>
-                      </div>
-                    </div>
-                  {%- endunless -%}
-
-                  <template>
-                    {%- if media.host == 'youtube' -%}
-                      {{- media | external_video_url: enablejsapi: true, loop: section.settings.enable_video_looping, mute: section.settings.enable_video_autoplay, autoplay: true, playlist: media.external_id | external_video_tag -}}
-                    {%- elsif media.host == 'vimeo' -%}
-                      {{- media | external_video_url: autopause: true, loop: section.settings.enable_video_looping, muted: section.settings.enable_video_autoplay, autoplay: true | external_video_tag -}}
-                    {%- else -%}
-                      {{- media | external_video_tag: image_size: '1024x' -}}
-                    {%- endif -%}
-                  </template>
-                </external-video>
-
-              {%- when 'model' -%}
-                <model-media product-handle="{{ product.handle }}" class="model-wrapper">
-                  {{- media | model_viewer_tag: image_size: '1024x', reveal: 'interaction', toggleable: true -}}
-                </model-media>
-            {%- endcase -%}
-          </div>
-        {%- endfor -%}
-      </flickity-carousel>
 
       {%- if section.settings.enable_image_zoom -%}
         <button {% if selected_media.media_type != 'image' %}hidden{% endif %} is="toggle-button" aria-controls="product-{{ section.id }}-{{ product.id }}-zoom" aria-expanded="false" class="tap-area product__zoom-button">
@@ -173,73 +248,76 @@
       </button>
     {%- endif -%}
 
-    {%- if product.media.size > 1 -%}
-      
-      <flickity-controls controls="product-{{ section.id }}-{{ product.id }}-media-list" class="product__media-nav">
-        <button class="product__media-prev-next {% if section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endif %} hidden-lap-and-up tap-area tap-area--large" aria-label="{{ 'general.accessibility.previous' | t }}" data-action="prev">
-          {%- render 'icon' with 'nav-arrow-left', direction_aware: true -%}
-        </button>
+    {% if product.template_suffix != 'new-template' and product.template_suffix != 'product-with-variants' %}
 
-        {%- unless section.settings.show_thumbnails_on_mobile -%}
-          <div class="dots-nav dots-nav--centered hidden-lap-and-up">
-            {%- for media in product.media -%}
-              {%- assign is_media_filtered = false -%}
-              {%- assign media_id_as_string = media.id | append: '' -%}
+      {%- if product.media.size > 1 -%}
+        
+        <flickity-controls controls="product-{{ section.id }}-{{ product.id }}-media-list" class="product__media-nav">
+          <button class="product__media-prev-next {% if section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endif %} hidden-lap-and-up tap-area tap-area--large" aria-label="{{ 'general.accessibility.previous' | t }}" data-action="prev">
+            {%- render 'icon' with 'nav-arrow-left', direction_aware: true -%}
+          </button>
 
-              {%- if filtered_media_ids contains media_id_as_string -%}
-                {%- assign is_media_filtered = true -%}
-              {%- endif -%}
-
-              <button type="button" tabindex="-1" class="dots-nav__item {% if is_media_filtered %}is-filtered{% endif %} tap-area" {% if selected_media.id == media.id %}aria-current="true"{% endif %} aria-controls="product-{{ section.id }}-{{ media.id }}" data-media-id="{{ media.id }}" data-action="select">
-                  <span class="visually-hidden">{{ 'general.accessibility.go_to_slide' | t: num: forloop.index }}</span>
-              </button>
-            {%- endfor -%}
-          </div>
-        {%- endunless -%}
-
-        <scroll-shadow class="product__thumbnail-scroll-shadow {% unless section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endunless %}">
-          <div class="product__thumbnail-list hide-scrollbar">
-            <div class="product__thumbnail-list-inner">
+          {%- unless section.settings.show_thumbnails_on_mobile -%}
+            <div class="dots-nav dots-nav--centered hidden-lap-and-up">
               {%- for media in product.media -%}
-                {%- assign alt = media.alt -%}
                 {%- assign is_media_filtered = false -%}
                 {%- assign media_id_as_string = media.id | append: '' -%}
 
-                {% if media.alt contains '#' %}
-                  {%- assign alt = product.title -%}
-                {%- endif -%}
-
-                {%- if filtered_media_ids contains media_id_as_string and media.alt != product.title -%}
+                {%- if filtered_media_ids contains media_id_as_string -%}
                   {%- assign is_media_filtered = true -%}
                 {%- endif -%}
 
-                <button type="button" tabindex="-1" {% if settings.reveal_product_media and is_media_filtered == false %}reveal{% endif %} 
-                  class="product__thumbnail-item {% if is_media_filtered %}is-filtered{% endif %} {% unless section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endunless %}" {% if selected_media.id == media.id %}aria-current="true"{% endif %} aria-controls="product-{{ section.id }}-{{ media.id }}" 
-                  data-media-id="{{ media.id }}" data-action="select"
-                  data-selector-thumbnail-alt="{{ media.alt }}"
-                >
-                  <div class="product__thumbnail">
-                    <img loading="lazy" sizes="(max-width: 999px) 72px, 60px" {% render 'image-attributes', image: media.preview_image, alt: alt, sizes: '150' %}>
-
-                    {%- case media.media_type -%}
-                      {%- when 'model' -%}
-                        <span class="product__thumbnail-badge">{% render 'icon', icon: 'media-model-badge', width: 18, height: 18 %}</span>
-
-                      {%- when 'video' or 'external_video' -%}
-                        <span class="product__thumbnail-badge">{% render 'icon', icon: 'media-video-badge', width: 18, height: 18 %}</span>
-                    {%- endcase -%}
-                  </div>
+                <button type="button" tabindex="-1" class="dots-nav__item {% if is_media_filtered %}is-filtered{% endif %} tap-area" {% if selected_media.id == media.id %}aria-current="true"{% endif %} aria-controls="product-{{ section.id }}-{{ media.id }}" data-media-id="{{ media.id }}" data-action="select">
+                    <span class="visually-hidden">{{ 'general.accessibility.go_to_slide' | t: num: forloop.index }}</span>
                 </button>
               {%- endfor -%}
             </div>
-          </div>
-        </scroll-shadow>
+          {%- endunless -%}
 
-        <button class="product__media-prev-next {% if section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endif %} hidden-lap-and-up tap-area tap-aera--large" aria-label="{{ 'general.accessibility.next' | t }}" data-action="next">
-          {%- render 'icon' with 'nav-arrow-right', direction_aware: true -%}
-        </button>
-      </flickity-controls>
-      
+          <scroll-shadow class="product__thumbnail-scroll-shadow {% unless section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endunless %}">
+            <div class="product__thumbnail-list hide-scrollbar">
+              <div class="product__thumbnail-list-inner">
+                {%- for media in product.media -%}
+                    {%- assign alt = media.alt -%}
+                    {%- assign is_media_filtered = false -%}
+                    {%- assign media_id_as_string = media.id | append: '' -%}
+
+                    {% if media.alt contains '#' %}
+                      {%- assign alt = product.title -%}
+                    {%- endif -%}
+
+                    {%- if filtered_media_ids contains media_id_as_string and media.alt != product.title -%}
+                      {%- assign is_media_filtered = true -%}
+                    {%- endif -%}
+
+                    <button type="button" tabindex="-1" {% if settings.reveal_product_media and is_media_filtered == false %}reveal{% endif %} 
+                      class="product__thumbnail-item {% if is_media_filtered %}is-filtered{% endif %} {% unless section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endunless %}" {% if selected_media.id == media.id %}aria-current="true"{% endif %} aria-controls="product-{{ section.id }}-{{ media.id }}" 
+                      data-media-id="{{ media.id }}" data-action="select"
+                      data-selector-thumbnail-alt="{{ media.alt }}"
+                    >
+                      <div class="product__thumbnail">
+                        <img loading="lazy" sizes="(max-width: 999px) 72px, 60px" {% render 'image-attributes', image: media.preview_image, alt: alt, sizes: '150' %}>
+
+                        {%- case media.media_type -%}
+                          {%- when 'model' -%}
+                            <span class="product__thumbnail-badge">{% render 'icon', icon: 'media-model-badge', width: 18, height: 18 %}</span>
+
+                          {%- when 'video' or 'external_video' -%}
+                            <span class="product__thumbnail-badge">{% render 'icon', icon: 'media-video-badge', width: 18, height: 18 %}</span>
+                        {%- endcase -%}
+                      </div>
+                    </button>
+                {%- endfor -%}
+              </div>
+            </div>
+          </scroll-shadow>
+
+          <button class="product__media-prev-next {% if section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endif %} hidden-lap-and-up tap-area tap-aera--large" aria-label="{{ 'general.accessibility.next' | t }}" data-action="next">
+            {%- render 'icon' with 'nav-arrow-right', direction_aware: true -%}
+          </button>
+        </flickity-controls>
+        
+      {%- endif -%}
     {%- endif -%}
 
     {%- if section.settings.enable_image_zoom -%}
@@ -351,5 +429,68 @@
         });
         
       });
+  });
+</script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  $(document).ready(function(){
+    window.swiperThumbnail = new Swiper(".pdp-swiper-thumbnail", {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    window.swiperMain = new Swiper(".pdp-swiper-main", {
+      spaceBetween: 10,
+      zoom: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: window.swiperThumbnail,
+      },
+    });
+
+
+    // ******* play youtube when slide active *********
+    function playActiveYoutube(swiper) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      if (!activeSlide) return;
+
+      const iframe = activeSlide.querySelector('iframe[src*="youtube"]');
+      if (!iframe) return;
+
+      iframe.contentWindow.postMessage(
+        '{"event":"command","func":"playVideo","args":""}',
+        '*'
+      );
+    }
+
+    function pauseAllYoutube(swiper) {
+      swiper.slides.forEach(slide => {
+        const iframe = slide.querySelector('iframe[src*="youtube"]');
+        if (!iframe) return;
+
+        iframe.contentWindow.postMessage(
+          '{"event":"command","func":"pauseVideo","args":""}',
+          '*'
+        );
+      });
+    }
+
+    window.swiperMain.on('init', () => {
+      playActiveYoutube(swiperMain);
+    });
+
+    window.swiperMain.on('slideChangeTransitionEnd', () => {
+      pauseAllYoutube(swiperMain);
+      playActiveYoutube(swiperMain);
+    });
+    // ******* play youtube when slide active *********
   });
 </script>
