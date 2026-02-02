@@ -711,6 +711,11 @@
         "type": "shopify://apps/littledata-the-data-layer/blocks/LittledataLayer/45a35ed8-a2b2-46c3-84fa-6f58497c5345",
         "disabled": false,
         "settings": {}
+      },
+      "7313114205116804392": {
+        "type": "shopify://apps/propel-replays-heatmaps/blocks/app-embed/64fbaaa3-2d4a-49f3-aba7-86e92e44999f",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
