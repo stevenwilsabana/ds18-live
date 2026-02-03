@@ -5554,30 +5554,28 @@
       }
 
       // start - disable not available variants
-      const te = document.querySelector('form.shopify-product-form input[name="id"]').value;
-      // this.selectVariant(te)
-      // const options = ((_a = this.selectedVariant) == null ? void 0 : _a.options) || [];
-      // console.log("this.selectedVariantoptions", options)
-
-
-      const productVariantsData = JSON.parse(
-        document.getElementById('ProductVariantss').textContent
-      );
-      const variantNextSelection = productVariantsData.filter(v => {
-        return v.id == te; // OR media.id mapping
-      });
-      const _variantNextSelection = productVariantsData.filter(v => {
-        return v.option1 == variantNextSelection[0].option1; // OR media.id mapping
-      });
-
-      const optionsTwo = document.querySelectorAll('input[name="option2"]')
-      optionsTwo.forEach(element => {
-        element.disabled = true;
-      });
-
-      _variantNextSelection.forEach(element => {
-        document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
-      });
+      const templateNewTemplate = document.querySelector('body.page-template--new-template');
+      if(templateNewTemplate) {
+        const te = document.querySelector('form.shopify-product-form input[name="id"]').value;
+        const productVariantsData = JSON.parse(
+          document.getElementById('ProductVariantss').textContent
+        );
+        const variantNextSelection = productVariantsData.filter(v => {
+          return v.id == te; // OR media.id mapping
+        });
+        const _variantNextSelection = productVariantsData.filter(v => {
+          return v.option1 == variantNextSelection[0].option1; // OR media.id mapping
+        });
+  
+        const optionsTwo = document.querySelectorAll('input[name="option2"]')
+        optionsTwo.forEach(element => {
+          element.disabled = true;
+        });
+  
+        _variantNextSelection.forEach(element => {
+          document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
+        });
+      }
       // end
       
       this.product = await ProductLoader.load(this.productHandle);
@@ -5633,25 +5631,30 @@
       console.log("this.selectedVariant", this.selectedVariant)
 
       // start - disable not available variants
+      const templateNewTemplate = document.querySelector('body.page-template--new-template');
+     
       const mediaData = JSON.parse(
         document.getElementById('ProductVariantss').textContent
       );
       options.forEach((value, index) => {
         let input = this.querySelector(`input[name="option${index + 1}"][value="${CSS.escape(value)}"], select[name="option${index + 1}"]`), triggerChangeEvent = false;
-        if(index == 0) {
-          const variantNextSelection = mediaData.filter(v => {
-            return v.option1 == value; // OR media.id mapping
-          });
-          const optionsTwo = document.querySelectorAll('input[name="option2"]')
-
-          optionsTwo.forEach(element => {
-            element.disabled = true;
-          });
-
-          variantNextSelection.forEach(element => {
-            document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
-          });
+        if(templateNewTemplate){
+          if(index == 0) {
+            const variantNextSelection = mediaData.filter(v => {
+              return v.option1 == value; // OR media.id mapping
+            });
+            const optionsTwo = document.querySelectorAll('input[name="option2"]')
+  
+            optionsTwo.forEach(element => {
+              element.disabled = true;
+            });
+  
+            variantNextSelection.forEach(element => {
+              document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
+            });
+          }
         }
+        
         // end
 
 
