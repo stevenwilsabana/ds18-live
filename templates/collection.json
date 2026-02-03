@@ -24,6 +24,7 @@
       "block_order": [
         "b4d484a1-0353-48a3-88dc-bd6343c95e36"
       ],
+      "disabled": true,
       "settings": {
         "include_horizontal_margins": true,
         "include_vertical_margins": true
@@ -31,7 +32,6 @@
     },
     "main": {
       "type": "main-collection",
-      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 52,
