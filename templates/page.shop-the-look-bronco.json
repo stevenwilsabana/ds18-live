@@ -1,0 +1,470 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_image_F6kqKd": {
+      "type": "hero-image",
+      "settings": {
+        "image": "shopify://shop_images/BANNER-BRONCO-BUILT.jpg",
+        "image_mob": "shopify://shop_images/BANNER-BRONCO-BUILT-mobile.jpg"
+      }
+    },
+    "3b0e221f-4bd9-49d1-8136-8800b1d81417": {
+      "type": "custom-liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "<!-- NEW ESTILES EDITS ESTILOS PRODUCT GRID -->\n{{ 'styles-grid-products-recommendation.css' | asset_url | stylesheet_tag }}",
+        "add_vertical_spacing": false,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "main": {
+      "type": "main-shop-the-look",
+      "disabled": true,
+      "settings": {
+        "header": "SHOP THE LINE",
+        "message": "<p>The more you buy, the more you'll save on the line of your choice.\nWe love creating audio sets, so we offer more discounts when you buy more items in the same line.</p>\n\n<ul>\n<li>One item: <b>regular price</b>\n</li>\n<li>Two items: <b>10%</b>\n</li>\n<li>Three or more items: <b>15%</b>\n</li>\n</ul>\n\n<h6>Get the ideal set!</h6>"
+      }
+    },
+    "a47743cf-58fa-44b6-8be8-bf3a09557c4f": {
+      "type": "shop-the-look-new",
+      "disabled": true,
+      "settings": {
+        "header": "Slingshot",
+        "message": "Create the ideal set and complement the audio of your car with these sensational items.",
+        "background_image": "shopify://shop_images/Screenshot_2023-08-04_at_11.58.38_AM.png",
+        "collection": "shop-the-look-slingshot"
+      }
+    },
+    "rich_text_JaDiLf": {
+      "type": "rich-text",
+      "settings": {
+        "subheading": "",
+        "title": "Upgrade Your Bronco Audio With DS18",
+        "content": "<p>Choose your components below</p>",
+        "button_text": "",
+        "button_link": "",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "center",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "shop_the_look_FbhAGe": {
+      "type": "shop-the-look-custom",
+      "blocks": {
+        "look_8YWXkt": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/New_Project_2.jpg",
+            "mobile_image": "shopify://shop_images/BRONCO-TOP-VIEW-3D-mobile.jpg",
+            "dot_type": "normal",
+            "product_1": "bro-da-dxq3-5",
+            "product_1_horizontal_position": 62,
+            "product_1_vertical_position": 37,
+            "product_1_horizontal_position_mobile": 64,
+            "product_1_vertical_position_mobile": 71,
+            "product_2": "bro-da-dxq3-5",
+            "product_2_horizontal_position": 62,
+            "product_2_vertical_position": 63,
+            "product_2_horizontal_position_mobile": 36,
+            "product_2_vertical_position_mobile": 71,
+            "product_3": "bro-fd-lr-pro-fr6neo-2pk-pro-twn5-2pk-ion700-2d",
+            "product_3_horizontal_position": 59,
+            "product_3_vertical_position": 20,
+            "product_3_horizontal_position_mobile": 78,
+            "product_3_vertical_position_mobile": 68,
+            "product_4": "bro-fd-lr-pro-fr6neo-2pk-pro-twn5-2pk-ion700-2d",
+            "product_4_horizontal_position": 59,
+            "product_4_vertical_position": 80,
+            "product_4_horizontal_position_mobile": 22,
+            "product_4_vertical_position_mobile": 68,
+            "product_5": "bro-bd-lr-2x-pro-hy6-4msl-ion700-2d-1",
+            "product_5_horizontal_position": 46,
+            "product_5_vertical_position": 22,
+            "product_5_horizontal_position_mobile": 78,
+            "product_5_vertical_position_mobile": 52,
+            "product_6": "bro-bd-lr-2x-pro-hy6-4msl-ion700-2d-1",
+            "product_6_horizontal_position": 46,
+            "product_6_vertical_position": 78,
+            "product_6_horizontal_position_mobile": 22,
+            "product_6_vertical_position_mobile": 52,
+            "product_7": "bro-sbar-bk-4x-pro-zt8-2x-pro-zt6-2x-pro-twn5-g3600-6",
+            "product_7_horizontal_position": 35,
+            "product_7_vertical_position": 49,
+            "product_7_horizontal_position_mobile": 50,
+            "product_7_vertical_position_mobile": 36,
+            "product_8": "bro-tube-bk-nxl-x8tpneo-bk-ion700-2d",
+            "product_8_horizontal_position": 32,
+            "product_8_vertical_position": 49,
+            "product_8_horizontal_position_mobile": 50,
+            "product_8_vertical_position_mobile": 31,
+            "product_9": "bro-clpx-bk-nxl-x8tpneo-bk-ion700-2d",
+            "product_9_horizontal_position": 29,
+            "product_9_vertical_position": 34,
+            "product_9_horizontal_position_mobile": 66,
+            "product_9_vertical_position_mobile": 31,
+            "product_10": "bro-clpx-bk-nxl-x8tpneo-bk-ion700-2d",
+            "product_10_horizontal_position": 29,
+            "product_10_vertical_position": 66,
+            "product_10_horizontal_position_mobile": 34,
+            "product_10_vertical_position_mobile": 31,
+            "product_11": "bro-bass-g3600-1",
+            "product_11_horizontal_position": 23,
+            "product_11_vertical_position": 52,
+            "product_11_horizontal_position_mobile": 30,
+            "product_11_vertical_position_mobile": 16,
+            "product_12": "",
+            "product_12_horizontal_position": 53,
+            "product_12_vertical_position": 63,
+            "product_12_horizontal_position_mobile": 37,
+            "product_12_vertical_position_mobile": 54,
+            "product_13": "",
+            "product_13_horizontal_position": 56,
+            "product_13_vertical_position": 81,
+            "product_13_horizontal_position_mobile": 16,
+            "product_13_vertical_position_mobile": 60,
+            "product_14": "",
+            "product_14_horizontal_position": 56,
+            "product_14_vertical_position": 17,
+            "product_14_horizontal_position_mobile": 84,
+            "product_14_vertical_position_mobile": 60
+          }
+        }
+      },
+      "block_order": [
+        "look_8YWXkt"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "label": "Shop the looks"
+      }
+    },
+    "featured_collections_yyPKWL": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_CMQF3p": {
+          "type": "collection",
+          "settings": {
+            "collection": "bronco-complete-packages",
+            "label": "",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_CMQF3p"
+      ],
+      "settings": {
+        "subheading": "BRO SERIES",
+        "title": "COMPLETE PACKAGES",
+        "content": "",
+        "products_count": 8,
+        "products_per_row": 4,
+        "stack_products": false,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "gallery_ChT9T6": {
+      "type": "gallery",
+      "blocks": {
+        "image_zekFrC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC6.jpg",
+            "caption": ""
+          }
+        },
+        "image_9pmgKn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC2.jpg",
+            "caption": ""
+          }
+        },
+        "image_aD9TcG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC4.jpg",
+            "caption": ""
+          }
+        },
+        "image_7YNhjm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC5.jpg",
+            "caption": ""
+          }
+        },
+        "image_Fx7pMM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC1.jpg",
+            "caption": ""
+          }
+        },
+        "image_nwLeX8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRONCO-SLIDESHOW-PIC3.jpg",
+            "caption": ""
+          }
+        },
+        "image_hqxVDN": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "caption": ""
+          }
+        },
+        "image_GjeLW6": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/imagen-slignshot-3.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_zekFrC",
+        "image_9pmgKn",
+        "image_aD9TcG",
+        "image_7YNhjm",
+        "image_Fx7pMM",
+        "image_nwLeX8",
+        "image_hqxVDN",
+        "image_GjeLW6"
+      ],
+      "custom_css": [
+        "h3.heading.h2 {text-align: center;}",
+        "prev-next-buttons.gallery__prev-next-buttons.prev-next-buttons {display: none;}",
+        "@media screen and (min-width: 1000px) {prev-next-buttons.gallery__prev-next-buttons.prev-next-buttons {top: -95px; display: flex; } prev-next-buttons.gallery__prev-next-buttons.prev-next-buttons button {border: 0; border-radius: 6px !important; margin: 5px; width: 40px; height: 40px; }}"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Gallery",
+        "show_arrows": true,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "image_with_text_block_i9pbX4": {
+      "type": "image-with-text-block",
+      "disabled": true,
+      "custom_css": [
+        ".container.container--flush .image-with-text-block__content,.container.container--flush .image-with-text-block__content h3 {background: #282828; color: white;}"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "image": "shopify://shop_images/desktop-slg-photo.jpg",
+        "mobile_image": "shopify://shop_images/mobile-slg-photo-v2.jpg",
+        "subheading": "",
+        "title": "Elevating Your Slingshot's Audio",
+        "content": "<p>The SLG Series was born out of the desire to elevate the driving experience for Slingshot owners worldwide. Our team of experts understood that the typical Slingshot audio setup often fell short in delivering the immersive sound quality that true audiophiles crave. Our team set out to create something that would seamlessly blend aesthetics, engineering, and cutting-edge technology to achieve an unparalleled audio experience in the Slingshot.</p>",
+        "button_text": "",
+        "button_link": "",
+        "background_type": "full_width",
+        "text_position": "left",
+        "text_alignment": "center",
+        "text_background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "custom_liquid_JFfnFM": {
+      "type": "custom-liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "{{ 'style-shop-the-look-slignshot.css' | asset_url | stylesheet_tag }}",
+        "add_vertical_spacing": false,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "reviews_custom_BTNMWh": {
+      "type": "reviews-custom",
+      "blocks": {
+        "reviews_home_gWE8Gg": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "ds18-bro-da-bronco-dashboard-speaker-adapter-for-1-7-2-9-and-3-6-twetter-and-midrange-6th-gen",
+            "title_review": "Great",
+            "review": "These Adapters fit great. I was able to fit my Kicker 2.75 Dash component speakers in my dash without any problems. Great solution for my fitment issue...",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_L7rVjG": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "bro-bass-package",
+            "title_review": "Girlfriend's Bronco",
+            "review": "My girlfriend loves it and the subwoofer gets low and surprisingly loud. Much better quality than I had anticipated and looks almost factory mounted properly on the tail door.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_BQqCnn": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "bronco-tailgate-12-subwoofer-enclosure-with-ixs12-4d-6th-gen",
+            "title_review": "Louder Than I Thought!",
+            "review": "Wasn’t expecting a tailgate box to be this loud. I even tested it with the top off. Worth every penny.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_zw84Jr": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "bro-bd-lr",
+            "title_review": "Big Upgrade",
+            "review": "Installed these in under 30 minutes. Huge sound boost over stock doors.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_k6b78x": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "bro-clpx-bk",
+            "title_review": "Clamp and Go!",
+            "review": "Mounted two tower speakers on my roll bar and took these clamps through the wringer. Just wish they came in red.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_dbQNGe": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "ds18-bro-fd-lr-bronco-front-doors-6-5-and-3-78-tweeter-panels-6th-gen",
+            "title_review": "THEY ACTUALLY FIT!",
+            "review": "The FIT was PERFECT. I swapped out the factory mesh for these, and it changed the whole front stage.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_PcLr8e": {
+          "type": "reviews-home",
+          "settings": {
+            "product_review": "ds18-bro-sbar-bk-bronco-6th-gen-4-door-overhead-sound-bar-system-4x8-2x6-speakers-and-2-x-3-8-tweeters",
+            "title_review": "Total Game Changer",
+            "review": "This is the loudest, cleanest soundbar I’ve ever owned. Fits four 8” DS18s in the back, two 6.5s, and two tweeters up front. Once it’s powered, the cabin becomes a concert. The built-in RGB lights look wild at night. Do yourself a favor and pair it with a 4-channel amp.",
+            "buyer": "",
+            "date": ""
+          }
+        },
+        "reviews_home_EErNwG": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "slg-udsd6ld-20up",
+            "title_review": "Absolutely worth it!",
+            "review": "This enclosure brought my Slingshot’s audio to life! Absolutely worth it!",
+            "buyer": "Chris J.",
+            "date": "March 15, 2024"
+          }
+        },
+        "reviews_home_gzeNm7": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "polaris-slingshot-waterfall-center-console-8-enclosure-with-nxl-8-bk-and-pro-tw1l",
+            "title_review": "This is a must have if u r adding aftermarket sound system to your slingshot",
+            "review": "Love the sound quality, cant beat the prices and it looks amazing with led lights at night, i added bluetooth led light module control kit, i love it",
+            "buyer": "K.W.",
+            "date": "March 15, 2024"
+          }
+        },
+        "reviews_home_k6zxWb": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "polaris-slingshot-arm-rest-6-5-enclosure-with-nxl-6-bk-and-pro-tw1l",
+            "title_review": "It fits R seats too",
+            "review": "I have R seats in my slingshot and the professional installer said it will fit so i trusted him and it sounds amazing along with some other some DS18 speakers and amp",
+            "buyer": "K.W.",
+            "date": "March 15, 2024"
+          }
+        },
+        "reviews_home_wgVVc8": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "polaris-slingshot-arm-rest-6-5-enclosure-with-nxl-6-bk-and-pro-tw1l",
+            "title_review": "Easy installer",
+            "review": "Haven’t installed them yet",
+            "buyer": "Frederick Ridge",
+            "date": "December 20, 2023"
+          }
+        },
+        "reviews_home_eMpqaw": {
+          "type": "reviews-home",
+          "disabled": true,
+          "settings": {
+            "product_review": "polaris-slingshot-headrest-4-x-6-5-enclosure-with-4-x-nxl-6-bk",
+            "title_review": "4x6.5",
+            "review": "I like my setup and the lights works great.",
+            "buyer": "EDDIE GAMBLE",
+            "date": "October 27, 2023"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_home_gWE8Gg",
+        "reviews_home_L7rVjG",
+        "reviews_home_BQqCnn",
+        "reviews_home_zw84Jr",
+        "reviews_home_k6b78x",
+        "reviews_home_dbQNGe",
+        "reviews_home_PcLr8e",
+        "reviews_home_EErNwG",
+        "reviews_home_gzeNm7",
+        "reviews_home_k6zxWb",
+        "reviews_home_wgVVc8",
+        "reviews_home_eMpqaw"
+      ],
+      "settings": {
+        "heading": "BRONCO PRODUCT REVIEWS",
+        "link_button": "shopify://pages/reviews-1",
+        "button": "Show More"
+      }
+    }
+  },
+  "order": [
+    "hero_image_F6kqKd",
+    "3b0e221f-4bd9-49d1-8136-8800b1d81417",
+    "main",
+    "a47743cf-58fa-44b6-8be8-bf3a09557c4f",
+    "rich_text_JaDiLf",
+    "shop_the_look_FbhAGe",
+    "featured_collections_yyPKWL",
+    "gallery_ChT9T6",
+    "image_with_text_block_i9pbX4",
+    "custom_liquid_JFfnFM",
+    "reviews_custom_BTNMWh"
+  ]
+}

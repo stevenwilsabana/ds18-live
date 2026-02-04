@@ -1,5 +1,26 @@
 {{ 'styles-main-product-nvy.css' | asset_url | stylesheet_tag }}
 
+{%- assign is_b2b_customer = false -%}
+{%- if customer and customer.b2b -%}
+  {%- assign is_b2b_customer = true -%}
+{%- endif -%}
+
+{%- assign has_disabled_tag_product = false -%}
+{%- if product.tags contains 'DISABLED: PRODUCT OUT OF STOCK B2B' -%}
+  {%- assign has_disabled_tag_product = true -%}
+{%- endif -%}
+
+ {%- assign is_sold_out_product = false -%}
+  {%- if product.available == false -%}
+    {%- assign is_sold_out_product = true -%}
+  {%- elsif has_disabled_tag_product and is_b2b_customer == false -%}
+    {%- assign is_sold_out_product = true -%}
+  {%- endif -%}
+
+{%- if product.available and customer.b2b? -%}
+  {%- assign is_sold_out_product = false -%}
+{%- endif -%}
+
 
 {% if section.settings.icons_key_feature == 'main_product' %}
   <style>
@@ -143,8 +164,17 @@
       
 
 
-      
-      <button id="add-to-cart-nvy" onclick="addToCartNVY({{ product.selected_or_first_available_variant.id }})">ADD TO CART</button>
+      {% if is_sold_out_product %}
+        <button id="add-to-cart-nvy" onclick="addToCartNVY({{ product.selected_or_first_available_variant.id }})" disabled>SOLD OUT</button>
+        {% unless customer.b2b? %}
+          {% if is_sold_out_product %}
+            <div class="container-back-in-stock__klaviyo"><a class="klaviyo-bis-trigger klaviyo-bis-trigger__custom button button--full button--primary" href="#">Notify Me When Available</a></div>
+          {% endif %}
+        {% endunless %}
+      {% else %}
+        <button id="add-to-cart-nvy" onclick="addToCartNVY({{ product.selected_or_first_available_variant.id }})">ADD TO CART</button>
+      {% endif %}
+
       <div class="container-shoppay">
         <div>
           <p class="affirm-as-low-as" data-page-type="product" data-amount="{{ product.price }}"></p>
@@ -247,6 +277,25 @@
 
     // When a slide becomes active
     mainSlider.on('afterChange', function(event, slick, currentSlide) {
+
+    const galleryImages = document.querySelectorAll('.product-nvy__slide.product-nvy__slide--image');
+    const galleryVideos = document.querySelectorAll('.product-nvy__slide.product-nvy__slide--video');
+    const maxHeight = Math.max(
+      ...Array.from(galleryImages, el => el.offsetHeight)
+    );
+
+    galleryImages.forEach(slide => {
+      slide.style.height = `${maxHeight}px`;
+    });
+
+    galleryVideos.forEach(slide => {
+      slide.style.height = `${maxHeight}px`;
+    });
+
+
+    console.log("maxHeight", maxHeight);
+
+
       // Pause all iframes
       mainSlider.find('iframe[src*="youtube.com"]').each(function() {
         this.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
@@ -282,19 +331,6 @@
       const $currentSlide = $(slick.$slides[currentSlide]);
       const $video = $currentSlide.hasClass('product-nvy__thumbnail--video');
 
-      if ($video) {
-        var $slide = $('.product-nvy__slide.product-nvy__slide--video');
-        // var $videos = $slide.find('video');
-        var videoHeight = $slide.height();
-        // If it's a video
-        $('.product-nvy__imagen-slider-main').css({
-          'height': `${videoHeight + 10}px`
-        });
-      } else {
-        $('.product-nvy__imagen-slider-main').css({
-          'height': ''
-        });
-      }
     });
 
   });

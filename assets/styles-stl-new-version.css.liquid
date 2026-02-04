@@ -210,7 +210,6 @@ quick-buy-popover .popover__header {
     justify-content: space-between;
 }
 
-
 .product-stl .product-stl__details .product-stl__form .shop-the-look-variants {
     display: flex;
     flex-direction: column;
@@ -229,6 +228,8 @@ quick-buy-popover .popover__header {
 .product-stl .product-stl__details .product-stl__form .shop-the-look-variants .variants {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .product-stl .product-stl__details .product-stl__form .shop-the-look-variants .variants .label-variant {
@@ -236,6 +237,8 @@ quick-buy-popover .popover__header {
     padding: 5px 10px;
     font-size: 13px;
     border-radius: 3px;
+    width: calc(50% - 5px);
+    text-align: center;
 }
 
 
@@ -798,7 +801,7 @@ div#modal-notify-me .container__modal-notify-me .form-container .klaviyo-form-S4
 /* ESTILOS ADD-ONS */
 
 div#product-aditional-stl {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 div#product-aditional-stl > h3 {
@@ -941,4 +944,48 @@ div#product-aditional-stl > .container-add-ons .product-stl .product-stl__detail
         font-size: 14px;
     }
 
+}
+
+.page-template--shop-the-look-bronco .builder-questionaire {
+    display: none !important;
+}
+
+.builder-questionaire {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    padding: 10px;
+}
+.builder-questionaire p {
+    width: 70%;
+    font-size: 15px;
+    margin: 0;
+}
+.builder-questionaire button {
+    border-radius: 5px;
+    background: #de2a2a;
+    width: max-content;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 767px){
+    .builder-questionaire p {
+        width: 50%;
+        font-size: 15px;
+    }
+}
+
+openable-element .product-stl .product-stl__details .product-stl__information .vendor {
+    display: none;
+}
+
+body.page-template--shop-the-look-bronco .container-add-ons > div:first-child {
+    display: none;
 }

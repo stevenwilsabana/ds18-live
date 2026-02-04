@@ -5087,13 +5087,41 @@
       this.mainCarousel.addEventListener("model:paused", () => this.mainCarousel.setDraggable(true));
       this.mainCarousel.addEventListener("video:played", () => this.mainCarousel.setDraggable(false));
       this.mainCarousel.addEventListener("video:paused", () => this.mainCarousel.setDraggable(true));
-      this.mainCarousel.addEventListener("flickity:ready", this._onFlickityReady.bind(this));
-      this.mainCarousel.addEventListener("flickity:slide-changed", this._onFlickityChanged.bind(this));
-      this.mainCarousel.addEventListener("flickity:slide-settled", this._onFlickitySettled.bind(this));
-      this._onFlickityReady();
+      await this.mainCarousel.addEventListener("flickity:ready", this._onFlickityReady.bind(this));
+      await this.mainCarousel.addEventListener("flickity:slide-changed", this._onFlickityChanged.bind(this));
+      await this.mainCarousel.addEventListener("flickity:slide-settled", this._onFlickitySettled.bind(this));
+      await this._onFlickityReady();
+      // this._updateGalleryHeights();
     }
     get thumbnailsPosition() {
       return window.matchMedia(window.themeVariables.breakpoints.pocket).matches ? "bottom" : this.getAttribute("thumbnails-position");
+    }
+
+    _updateGalleryHeights() {
+      const flickityViewport = this.querySelectorAll('.flickity-viewport');
+      const mediaImageWrapper = this.querySelectorAll('.product__media-image-wrapper');
+      const galleryImages = this.querySelectorAll('.image-zoom-product-page');
+      let maxHeight = 0;
+
+      galleryImages.forEach(item => {
+        const height = item.offsetHeight;
+        console.log("HEHE", height)
+        if (height > maxHeight) {
+          maxHeight = height;
+        }
+      });
+
+      this.querySelector('.flickity-viewport').style.height = `${maxHeight}px`;
+
+      mediaImageWrapper.forEach(item => {
+        item.style.overflow = "visible";
+      });
+
+      galleryImages.forEach(item => {
+
+        item.style.height = `${maxHeight}px`;
+        item.style.maxHeight = `${maxHeight}px`;
+      })
     }
 
     async _setupVisibility() {
@@ -5242,6 +5270,9 @@
     }
     async _onFlickityChanged() {
       const flickityInstance = await this.mainCarousel.flickityInstance;
+
+      this._updateGalleryHeights();
+      
       flickityInstance.cells.forEach((item) => {
         if (["external_video", "video", "model"].includes(item.element.getAttribute("data-media-type"))) {
           item.element.firstElementChild.pause();

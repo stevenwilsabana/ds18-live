@@ -16746,6 +16746,7 @@ body.page-template--black-friday
 iframe#chat-button {
   z-index: 9999999999999;
 }
+<<<<<<< HEAD
 
 product-media .swiperMain {
   height: none;
@@ -16835,6 +16836,8 @@ product-media .swiper-slide img {
   object-fit: cover;
 }
 
+=======
+>>>>>>> new-main
 body[id="page"] .list-collections__item {
   width: calc(25% - 10px);
 }
@@ -16891,4 +16894,16 @@ body[id="page"] .list-collections__item-list {
   letter-spacing: .5px;
   border-radius: 50px;
   flex: 1;
+}
+/* product-media .flickity-viewport {
+  height: 480px !important;
+} */
+product-media .flickity-slider {
+  display: flex;
+  align-items: center;
+}
+
+product-media .product__thumbnail-list-inner {
+  display: flex;
+  align-items: center;
 }
