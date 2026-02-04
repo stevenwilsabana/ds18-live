@@ -9,18 +9,6 @@
  */
 {
   "sections": {
-    "ccce541b-278c-4888-9a71-cd698d8540ce": {
-      "type": "custom-liquid",
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "liquid": "{{ 'product-with-variants.css' | asset_url | stylesheet_tag }}",
-        "add_vertical_spacing": false,
-        "background_type": "full_width",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)"
-      }
-    },
     "16823160841bcda229": {
       "type": "apps",
       "blocks": {
@@ -67,11 +55,22 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "affirm_pay_over_time_messaging_product_block_prcUjH": {
+          "type": "shopify://apps/affirm-pay-over-time-messaging/blocks/product-block/6dce54be-130d-4d13-9636-1e8f611b3071",
+          "settings": {
+            "logo_align": "left",
+            "font_size": 16,
+            "logo_color": "blue",
+            "logo_type": "logo",
+            "public_api_key": "",
+            "price_selector": ""
+          }
+        },
         "0af9ef19-706d-4540-b2b6-d1208827e719": {
           "type": "liquid",
           "settings": {
             "class_label": "description-custom-liquid",
-            "liquid": "{% if product.metafields[\"custom_fields\"][\"product_description\"] != blank %}\n  <div class=\"custom-field custom-field__product-description custom-field__type--multi-line-text-field\">\n    <div class=\"custom-field--value\">\n      {{ product.metafields[\"custom_fields\"][\"product_description\"] }}\n\n    </div>\n  </div>\n{% endif %}"
+            "liquid": ""
           }
         },
         "fcb1795d-b0f5-469a-9ed4-bd6bc1167768": {
@@ -102,6 +101,10 @@
           "disabled": true,
           "settings": {}
         },
+        "set_and_save_QgNXix": {
+          "type": "set_and_save",
+          "settings": {}
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -109,7 +112,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": false,
+            "show_payment_button": true,
             "atc_button_background": "rgba(0,0,0,0)",
             "atc_button_text_color": "#de2a2a",
             "buy_now_button_background": "#000000",
@@ -118,21 +121,37 @@
         },
         "7d5cb601-dbdb-451d-9198-00a7a4626c30": {
           "type": "shopify://apps/growave-loyalty-wishlist/blocks/block.product.faveButton/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "disabled": true,
           "settings": {
             "option_button_class": "",
             "custom_css": "",
             "shadow_root_options": "null"
           }
         },
+        "description_new_Gq4P6F": {
+          "type": "description_new",
+          "settings": {}
+        },
+        "tolstoy_shoppable_video_ugc_stories_block_UULdKR": {
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "6g3hq77djsb63"
+          }
+        },
+        "complete_your_system_aFXi68": {
+          "type": "complete_your_system",
+          "settings": {}
+        },
         "6532d8e6-7a94-40e0-8d61-dace36b00264": {
           "type": "liquid",
           "settings": {
             "class_label": "section-custom-liquid",
-            "liquid": "<product-payment-terms form-id=\"{{ product_form_id }}\">\n        {%- assign product_installment_form_id = 'product-installment-form-'\n          | append: section.id\n          | append: '-'\n          | append: product.id\n        -%}\n\n        {%- form 'product', product, id: product_installment_form_id -%}\n          <input type=\"hidden\" name=\"id\" value=\"{{ product.selected_or_first_available_variant.id }}\">\n          {{- form | payment_terms -}}\n        {%- endform -%}\n      </product-payment-terms>"
+            "liquid": "<product-payment-terms form-id=\"{{ product_form_id }}\" class=\"product-payment-terms--general\">\n        {%- assign product_installment_form_id = 'product-installment-form-'\n          | append: section.id\n          | append: '-'\n          | append: product.id\n        -%}\n\n        {%- form 'product', product, id: product_installment_form_id -%}\n          <input type=\"hidden\" name=\"id\" value=\"{{ product.selected_or_first_available_variant.id }}\">\n          {{- form | payment_terms -}}\n        {%- endform -%}\n      </product-payment-terms>"
           }
         },
         "4018b0a0-8a8e-4bdb-af89-815a76a54be3": {
           "type": "icons",
+          "disabled": true,
           "settings": {
             "text": "FREE SHIPING",
             "text2": "FREE RETURN",
@@ -149,10 +168,9 @@
         },
         "82d2eb46-a809-4502-818f-6ac9ed010a33": {
           "type": "liquid",
-          "disabled": true,
           "settings": {
             "class_label": "section-custom-liquid",
-            "liquid": "<div class=\"custService showOnDesk\">\n              \n\n<div class=\"footerIcons\">\n      <div class=\"fiItem\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/t/170/assets/FREE-SHIPPING-RED.png?v=1690272722\">\n        <span>FAST FREE SHIPPING</span>\n      </div>\n      \n      <div class=\"fiItem\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/t/170/assets/30-DAY-RED.png?v=1690272896\">\n        <span>30-DAY RETURNS</span>\n      </div>\n      \n      <div class=\"fiItem\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/t/170/assets/WARRANTY-RED.png?v=1690273790\">\n        <span>1 YEAR WARRANTY</span>\n      </div>\n <div class=\"fiItem\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/t/170/assets/SECURE-PAYMENT-RED.png?v=1690271554\">\n        <span>SECURE PAYMENT</span>\n      </div>\n      \n      \n   </div>\n\n<style>\n  .footerIcons{\n    display: flex;\n    justify-content: center;\n    flex-wrap: wrap;\n    order: 2;\n    margin-top: 0!important;\n  }\n  .footerIcons .fiItem {\n    width: 25% !important;\n    text-align: center;\n      font-size: 11px;\n    margin-bottom: 0 !important;\n  }\n  .footerIcons .fiItem img{\n     width: 125px; \n  }\n/*   @media screen and (max-width:440px){\n    .footerIcons img{\n      width:22%;\n    }\n  } */\n</style>\n            </div>"
+            "liquid": "<div class=\"custService showOnDesk\">               <div class=\"footerIcons\">      <div class=\"fiItem fiItem--freeshipping\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_SHIPPING.png?v=1742943179\">        <span>FREE SHIPPING ORDERS +$35</span>      </div>            <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_RETURNS.png?v=1742943180\">        <span>30-DAY RETURNS</span>      </div>            <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_WARRANTY.png?v=1742943179\">        <span>2 YEAR WARRANTY</span>      </div> <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_SECURE_PAYMENT.png?v=1742943180\">        <span>SECURE PAYMENT</span>      </div>               </div>            </div>"
           }
         },
         "b9a34910-6fd1-4a99-be97-f969f35acb81": {
@@ -166,22 +184,33 @@
             "checked_value": "Yes",
             "unchecked_value": "No"
           }
+        },
+        "contact_us_KLR3PD": {
+          "type": "contact_us",
+          "disabled": true,
+          "settings": {}
         }
       },
       "block_order": [
+        "affirm_pay_over_time_messaging_product_block_prcUjH",
         "0af9ef19-706d-4540-b2b6-d1208827e719",
         "fcb1795d-b0f5-469a-9ed4-bd6bc1167768",
         "38948dfc-afc6-4b58-b4c6-c1274ecbd8cc",
         "variant_picker",
         "ad812ac4-d419-4f67-893a-bf6a0958a6b7",
+        "set_and_save_QgNXix",
         "quantity_selector",
         "buy_buttons",
         "7d5cb601-dbdb-451d-9198-00a7a4626c30",
+        "description_new_Gq4P6F",
+        "tolstoy_shoppable_video_ugc_stories_block_UULdKR",
+        "complete_your_system_aFXi68",
         "6532d8e6-7a94-40e0-8d61-dace36b00264",
         "4018b0a0-8a8e-4bdb-af89-815a76a54be3",
         "b61df6a0-96bd-4f18-b316-79cad87c7af3",
         "82d2eb46-a809-4502-818f-6ac9ed010a33",
-        "b9a34910-6fd1-4a99-be97-f969f35acb81"
+        "b9a34910-6fd1-4a99-be97-f969f35acb81",
+        "contact_us_KLR3PD"
       ],
       "settings": {
         "show_vendor": false,
@@ -201,27 +230,32 @@
     },
     "yth-key-features": {
       "type": "yth-key-features",
+      "disabled": true,
       "custom_css": [],
       "settings": {}
     },
     "38565996-b450-499f-84bc-57c88729778e": {
       "type": "technical-data",
+      "disabled": true,
       "settings": {}
     },
     "yth-technical-data": {
       "type": "yth-technical-data",
-      "settings": {}
-    },
-    "yth-image-with-text": {
-      "type": "yth-image-with-text",
-      "settings": {}
-    },
-    "9e473855-68ae-4331-aa8a-3ea8e6c0838f": {
-      "type": "product-overview",
+      "disabled": true,
       "settings": {}
     },
     "f49606dd-35de-4475-bae5-ce64c9e42203": {
       "type": "dyno-results-v2",
+      "disabled": true,
+      "settings": {}
+    },
+    "yth-image-with-text": {
+      "type": "yth-image-with-text",
+      "disabled": true,
+      "settings": {}
+    },
+    "9e473855-68ae-4331-aa8a-3ea8e6c0838f": {
+      "type": "product-overview",
       "settings": {}
     },
     "1ce16315-efdf-44aa-8887-cf2cefc774da": {
@@ -315,6 +349,7 @@
     },
     "yth-frequently-bought": {
       "type": "yth-frequently-bought",
+      "disabled": true,
       "settings": {
         "title": ""
       }
@@ -341,6 +376,26 @@
     "78635833-e9bb-4ea7-81cd-33c8922a5f7e": {
       "type": "slideshow",
       "blocks": {
+        "64c66c59-aac7-4277-bd3d-0d96c0aa155b": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/FLASH_SALE-NVY-T800.4D-WEB-BANNER_1.jpg",
+            "mobile_image": "shopify://shop_images/FLASH_SALE-NVY-T800.4D-MOBILE.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "shopify://products/ds18-nvy-t800-4d-4-channel-marine-waterproof-amplifier-class-d-full-range-4-ohms-200x4-rms",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
         "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-1": {
           "type": "image",
           "disabled": true,
@@ -381,16 +436,16 @@
             "overlay_opacity": 0
           }
         },
-        "64c66c59-aac7-4277-bd3d-0d96c0aa155b": {
+        "image_gb84Gq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/JEEP_Build_Your_System_-_WEB-BANNER.jpg",
-            "mobile_image": "shopify://shop_images/JEEP_Build_Your_System_-_Banner_Mobile_2000x2000_9d883bfb-dbb4-4f82-947f-dfd06af09d7e.jpg",
+            "image": "shopify://shop_images/Build_Your_Slingshot-WEB-BANNER_1.jpg",
+            "mobile_image": "shopify://shop_images/Build_Your_Slingshot-Banner_Mobile_2000x2000_7fffd397-6c5a-425f-a08e-3a6476bf7428.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
             "button_1_text": "",
-            "button_1_link": "https://ds18.com/collections/build-jeep",
+            "button_1_link": "https://ds18.com/pages/shop-slingshot",
             "button_2_text": "",
             "button_2_link": "",
             "text_color": "#ffffff",
@@ -402,9 +457,10 @@
         }
       },
       "block_order": [
+        "64c66c59-aac7-4277-bd3d-0d96c0aa155b",
         "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-1",
         "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-2",
-        "64c66c59-aac7-4277-bd3d-0d96c0aa155b"
+        "image_gb84Gq"
       ],
       "settings": {
         "section_height": "auto",
@@ -420,14 +476,14 @@
         "template--17043822412092__6bf37e14-5460-4c72-9d09-94efb3d8f993-166929396635d9c4c9-0": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-17.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-46.jpg",
             "link": ""
           }
         },
         "04533037-48c7-4058-ac34-06e59a001164": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-19.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-52.jpg",
             "link": ""
           }
         },
@@ -441,21 +497,21 @@
         "aa88c81d-333f-4fd5-82e0-71fc914d7817": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-8_449de2bf-2577-41ea-b223-2ab262a7781e.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-37.jpg",
             "link": ""
           }
         },
         "bd10d11a-7584-43b9-8ae0-874bced16e21": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-27.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-54.jpg",
             "link": ""
           }
         },
         "5ceb2310-635d-49da-9491-568d1af286b7": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-21.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-39.jpg",
             "link": ""
           }
         },
@@ -469,21 +525,21 @@
         "cf2d5a27-29ac-4937-9407-f2cddcf62bb3": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-6.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-41.jpg",
             "link": ""
           }
         },
         "7e759213-2bce-4073-a8d8-bbabbb68b509": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-12.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-44.jpg",
             "link": "shopify://pages/jeep-bronco"
           }
         },
         "6ad86b36-fa89-49c9-a25c-40c92bbae977": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-18.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-50.jpg",
             "link": ""
           }
         },
@@ -497,7 +553,7 @@
         "49b54fb9-826c-43b0-8582-88dbe423e5c8": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-24.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-35.jpg",
             "link": ""
           }
         },
@@ -518,7 +574,7 @@
         "afdfd212-2ca1-4952-b33a-c8ebefa1e862": {
           "type": "image",
           "settings": {
-            "logo": "shopify://shop_images/LIFESTYLE-28.jpg",
+            "logo": "shopify://shop_images/LIFESTYLE-48.jpg",
             "link": ""
           }
         }
@@ -540,6 +596,7 @@
         "0ac92fc4-b93d-43d2-8af2-a4a8124c8207",
         "afdfd212-2ca1-4952-b33a-c8ebefa1e862"
       ],
+      "disabled": true,
       "settings": {
         "reveal_on_scroll": true,
         "subheading": "",
@@ -584,15 +641,14 @@
     }
   },
   "order": [
-    "ccce541b-278c-4888-9a71-cd698d8540ce",
     "16823160841bcda229",
     "main",
     "yth-key-features",
     "38565996-b450-499f-84bc-57c88729778e",
     "yth-technical-data",
+    "f49606dd-35de-4475-bae5-ce64c9e42203",
     "yth-image-with-text",
     "9e473855-68ae-4331-aa8a-3ea8e6c0838f",
-    "f49606dd-35de-4475-bae5-ce64c9e42203",
     "1ce16315-efdf-44aa-8887-cf2cefc774da",
     "b033b637-b65f-4f72-a262-8c6a083cc2f6",
     "yth-promotional",
