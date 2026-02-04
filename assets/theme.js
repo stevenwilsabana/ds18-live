@@ -5586,7 +5586,9 @@
 
       // start - disable not available variants
       const templateNewTemplate = document.querySelector('body.page-template--new-template');
-      if(templateNewTemplate) {
+      const hasVariant = document.querySelectorAll('input[name="option1"]')
+
+      if(templateNewTemplate && hasVariant.length > 0) {
         const te = document.querySelector('form.shopify-product-form input[name="id"]').value;
         const productVariantsData = JSON.parse(
           document.getElementById('ProductVariantss').textContent
@@ -5599,13 +5601,16 @@
         });
   
         const optionsTwo = document.querySelectorAll('input[name="option2"]')
-        optionsTwo.forEach(element => {
-          element.disabled = true;
-        });
-  
-        _variantNextSelection.forEach(element => {
-          document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
-        });
+
+        if(optionsTwo.length > 0) {
+          optionsTwo.forEach(element => {
+            element.disabled = true;
+          });
+    
+          _variantNextSelection.forEach(element => {
+            document.querySelector(`input[value="${CSS.escape(element.option2)}"]`).disabled = false;
+          });
+        }
       }
       // end
       
