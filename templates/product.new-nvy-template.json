@@ -57,6 +57,7 @@
       "blocks": {
         "affirm_pay_over_time_messaging_product_block_prcUjH": {
           "type": "shopify://apps/affirm-pay-over-time-messaging/blocks/product-block/6dce54be-130d-4d13-9636-1e8f611b3071",
+          "disabled": true,
           "settings": {
             "logo_align": "left",
             "font_size": 16,
@@ -130,10 +131,12 @@
         },
         "description_new_Gq4P6F": {
           "type": "description_new",
+          "disabled": true,
           "settings": {}
         },
         "tolstoy_shoppable_video_ugc_stories_block_UULdKR": {
           "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "disabled": true,
           "settings": {
             "publishId": "6g3hq77djsb63"
           }
@@ -144,6 +147,7 @@
         },
         "6532d8e6-7a94-40e0-8d61-dace36b00264": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "class_label": "section-custom-liquid",
             "liquid": "<product-payment-terms form-id=\"{{ product_form_id }}\" class=\"product-payment-terms--general\">\n        {%- assign product_installment_form_id = 'product-installment-form-'\n          | append: section.id\n          | append: '-'\n          | append: product.id\n        -%}\n\n        {%- form 'product', product, id: product_installment_form_id -%}\n          <input type=\"hidden\" name=\"id\" value=\"{{ product.selected_or_first_available_variant.id }}\">\n          {{- form | payment_terms -}}\n        {%- endform -%}\n      </product-payment-terms>"
@@ -168,6 +172,7 @@
         },
         "82d2eb46-a809-4502-818f-6ac9ed010a33": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "class_label": "section-custom-liquid",
             "liquid": "<div class=\"custService showOnDesk\">               <div class=\"footerIcons\">      <div class=\"fiItem fiItem--freeshipping\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_SHIPPING.png?v=1742943179\">        <span>FREE SHIPPING ORDERS +$35</span>      </div>            <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_RETURNS.png?v=1742943180\">        <span>30-DAY RETURNS</span>      </div>            <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_WARRANTY.png?v=1742943179\">        <span>2 YEAR WARRANTY</span>      </div> <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_SECURE_PAYMENT.png?v=1742943180\">        <span>SECURE PAYMENT</span>      </div>               </div>            </div>"
