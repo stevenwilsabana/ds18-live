@@ -257,34 +257,6 @@
       "type": "product-overview",
       "settings": {}
     },
-    "new_version_tap_nvy_JPT4KY": {
-      "type": "new-version-tap-nvy",
-      "blocks": {
-        "overview_DzerwF": {
-          "type": "overview",
-          "settings": {
-            "button": "OVERVIEW",
-            "background_imagen_mobile": "shopify://shop_images/PRO-X6.4BM_MOBILE_BANNER_1.jpg",
-            "background_imagen_desktop": "shopify://shop_images/PRO-X6.4BM_WEBSITE_BANNER_1.jpg",
-            "content": "{{ product.metafields.custom.nvy_overview_main_banner_content | metafield_tag }}",
-            "imagen_alignment": ""
-          }
-        },
-        "specifications_HqaTFN": {
-          "type": "specifications",
-          "settings": {
-            "button": "SPECIFICATIONS & MANUAL",
-            "specifications": "{{ product.metafields.custom.nvy_s_m_specifications | metafield_tag }}"
-          }
-        }
-      },
-      "block_order": [
-        "overview_DzerwF",
-        "specifications_HqaTFN"
-      ],
-      "name": "Taps NVY",
-      "settings": {}
-    },
     "1ce16315-efdf-44aa-8887-cf2cefc774da": {
       "type": "dyno-results",
       "disabled": true,
@@ -676,7 +648,6 @@
     "f49606dd-35de-4475-bae5-ce64c9e42203",
     "yth-image-with-text",
     "9e473855-68ae-4331-aa8a-3ea8e6c0838f",
-    "new_version_tap_nvy_JPT4KY",
     "1ce16315-efdf-44aa-8887-cf2cefc774da",
     "b033b637-b65f-4f72-a262-8c6a083cc2f6",
     "yth-promotional",
