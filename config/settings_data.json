@@ -732,6 +732,13 @@
           "enableThemeTesting": false,
           "reverseProxyUrl": ""
         }
+      },
+      "9431864395560886015": {
+        "type": "shopify://apps/polar-analytics/blocks/polar-tracker/019c2e93-19fa-7dab-8368-903d1c54902c",
+        "disabled": false,
+        "settings": {
+          "debug_mode": false
+        }
       }
     }
   },
