@@ -3,6 +3,11 @@
 {%- assign size_label_list = 'general.label.size' | t | replace: ', ', ',' | downcase | split: ',' -%}
 {%- assign product_form_id = 'product-form-' | append: section.id | append: '-' | append: product.id -%}
 
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
 
 {% if customer.b2b? %}
   <style>
@@ -56,9 +61,9 @@
       {%- endcomment -%}
       {%- when 'description_new' -%}
       
-        <div class="container-description">
+        {% comment %} <div class="container-description">
           {% render 'descrition-products' %}
-        </div>
+        </div> {% endcomment %}
 
         {% assign has_app = false %}
         {% for tag in product.tags %}
@@ -287,7 +292,7 @@
                       {%- assign color_swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />' -%}
                       {%- for value in option.values -%}
 
-                        {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
+                        {% if new_template %}
                           {%- assign option_index = option.position | minus: 1 -%}
                           {% assign swatch_variant = nil %}
                           {%- for variant in product.variants -%}

@@ -15866,11 +15866,6 @@ body#index .content-box--left.text-container {
   max-width: 100% !important;
 }
 
-body#product .product__info h1.product-meta__title.heading.h3 {
-  font-family: 'Titillium Web', sans-serif !important;
-  font-size: 28px !important;
-  text-transform: unset !important;
-}
 .logo-list__item {
   padding: 5px !important;
 }
@@ -16870,6 +16865,7 @@ body[id="page"] .list-collections__item-list {
   width: 50px;
   height: 50px;
   padding: 3px;
+  border: #ababab solid 1px
 }
 
 .color-swatch-list--mini .color-swatch__item  {
@@ -16879,7 +16875,7 @@ body[id="page"] .list-collections__item-list {
 }
 
 .color-swatch-list--mini {
-  gap: 37px;
+  gap: 44px;
 }
 
 .product-item .link-btn {

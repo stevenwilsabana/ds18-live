@@ -19,6 +19,11 @@
   {%- assign is_sold_out_product = false -%}
 {%- endif -%}
 
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
 
 
 
@@ -34,6 +39,12 @@
     
     <!-- PRODUCT META -->
     <product-meta form-id="{{ product_form_id }}" price-class="price--large" class="product-meta">
+      {%- if section.settings.show_sku and new_template -%}
+          <p class="product-meta__sku-number" data-product-sku-number>
+            {{- product.selected_or_first_available_variant.sku -}}
+          </p>
+      {%- endif -%}
+
       {%- if section.settings.show_vendor -%}
         <h2 class="product-meta__vendor heading heading--small">
           {%- assign vendor_handle = product.vendor | handle -%}
@@ -48,7 +59,7 @@
       {%- endif -%}
 
       {% unless featured %}
-        {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
+        {% if new_template %}
           {% for variant in product.variants %}
             {%- assign productTitle = variant.metafields.custom.title | split: ' ' -%}
             {% assign variantTitleStatus = "" %}
@@ -84,22 +95,22 @@
           
           <!--<span class="product-sku" style="margin-right:15px; color: #666;">{{ product.vendor }}</span>-->
 
-          {%- if section.settings.show_sku -%}
-            <span
-              class="product-meta__sku text--subdued text--xxsmall"
-              {% if product.selected_or_first_available_variant.sku == blank %}
-                style="display: none"
-              {% endif %}
-              data-product-sku-container
-            >
-              {{- 'product.general.sku' | t }}
-              <span class="product-meta__sku-number" data-product-sku-number style="margin-right:15px; color: #666;">
-                {{- product.selected_or_first_available_variant.sku -}}
+          {% unless new_template %}
+            {%- if section.settings.show_sku -%}
+              <span
+                class="product-meta__sku text--subdued text--xxsmall"
+                {% if product.selected_or_first_available_variant.sku == blank %}
+                  style="display: none"
+                {% endif %}
+                data-product-sku-container
+              >
+                {{- 'product.general.sku' | t }}
+                <span class="product-meta__sku-number" data-product-sku-number style="margin-right:15px; color: #666;">
+                  {{- product.selected_or_first_available_variant.sku -}}
+                </span>
               </span>
-            </span>
-          {%- endif -%}
-
-          
+            {%- endif -%}
+          {% endunless %}
         </div>
 
         
@@ -212,9 +223,11 @@
 
         
         <div class="container-general-prices__regular-prices">
-          <div class="units-sold-text">
-            <p>{{ product.metafields.prod.units_sold_text }}</p>
-          </div>
+          {% if product.metafields.prod.units_sold_text != blank %}
+            <div class="units-sold-text">
+              <p>{{ product.metafields.prod.units_sold_text }}</p>
+            </div>
+          {% endif %}
           {% comment %}End automatically added Judge.me widget{% endcomment %}
           <div class="product-meta__price-list-container " role="region" aria-live="polite">
             <div class="price-list" data-product-price-list>
@@ -375,12 +388,12 @@
     
 
 
-      {% if template.suffix == 'bundles' %}
+      {% comment %} {% if template.suffix == 'bundles' %}
         <p class="affirm-as-low-as" data-page-type="product" data-amount="{{ product.price }}"></p>
-      {% endif %}
+      {% endif %} {% endcomment %}
 
 
-      <div class="shipsFreeToday">
+      {% comment %} <div class="shipsFreeToday">
         <!--<div>Ships Free Next Business Day From Miami, FL, USA</div>-->
 
         {% if product.price >= 3500 %}
@@ -396,7 +409,7 @@
             <span class="tooltip__label">With some limitations - subject to verification and order volume</span>
           </span>
         </div>
-      </div>
+      </div> {% endcomment %}
           
     </product-meta>
 

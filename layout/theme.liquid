@@ -475,8 +475,14 @@
 
   {%- assign store = 'test' -%}
 
+
+  {% assign new_template_class = "" %}
+  {% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+    {% assign new_template_class = "new-template" %}
+  {% endif %}
+
   <body
-    class="no-focus-outline {{ feature_classes }} page-template--{{ template.suffix }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
+    class="no-focus-outline {{ feature_classes }} page-template--{{ new_template_class }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
     data-instant-allow-query-string
     id="{{template.name }}"
   >
