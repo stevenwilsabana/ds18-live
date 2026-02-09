@@ -273,8 +273,8 @@
         "specifications_HqaTFN": {
           "type": "specifications",
           "settings": {
-            "button": "",
-            "specifications": ""
+            "button": "SPECIFICATIONS & MANUAL",
+            "specifications": "{{ product.metafields.custom.nvy_s_m_specifications | metafield_tag }}"
           }
         }
       },
