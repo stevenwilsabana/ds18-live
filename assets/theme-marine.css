@@ -246,7 +246,7 @@ product-variants.active-imagen-multiple-variants > .product-form__option-selecto
 
 button#AddToCart,
 button#StickyAddToCart {
-  background: var( --marine ) !important;
+  background: #091154 !important;
   color: white;
 }
 
