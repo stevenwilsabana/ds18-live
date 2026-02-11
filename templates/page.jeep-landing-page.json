@@ -128,7 +128,7 @@
       "custom_css": [],
       "settings": {
         "reveal_on_scroll": false,
-        "layout": "carousel",
+        "layout": "grid",
         "subheading": "",
         "title": "",
         "background": "rgba(0,0,0,0)",
