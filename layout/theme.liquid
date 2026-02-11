@@ -410,23 +410,6 @@
             document.head.appendChild(script);
         })();
     </script>
-
-    <script src="https://cdn.logr-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('esy3ft/ds18');</script>
-
-    {% if customer %}
-      <script>
-        LogRocket.identify('{{ customer.id }}', {
-          name: '{{ customer.first_name | escape }} {{ customer.last_name | escape }}',
-          email: '{{ customer.email | escape }}',
-
-          // Optional custom properties
-          acceptsMarketing: {{ customer.accepts_marketing | json }},
-          ordersCount: {{ customer.orders_count }},
-          totalSpent: '{{ customer.total_spent }}'
-        });
-      </script>
-    {% endif %}
     
     <script>
     window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
