@@ -16815,13 +16815,8 @@ product-media .pdp-swiper-thumbnail {
 product-media .pdp-swiper-thumbnail .swiper-slide {
   width: 25%;
   height: 100%;
-  opacity: 0.4;
   height: 112.5px;
   background: transparent;
-}
-
-product-media .pdp-swiper-thumbnail .swiper-slide-thumb-active {
-  opacity: 1;
 }
 
 product-media .swiper-slide img {

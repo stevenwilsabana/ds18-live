@@ -598,7 +598,7 @@
       {%- endcomment -%}
       {%- when 'liquid' -%}
         {% if block.settings.liquid != blank %}
-          <div class="product-form__custom-liquid block--{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="product-form__custom-liquid {{ block.settings.class_label }} block--{{ block.id }}" {{ block.shopify_attributes }}>
             {{- block.settings.liquid -}}
           </div>
         {%- endif -%}
