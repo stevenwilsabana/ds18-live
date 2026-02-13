@@ -990,3 +990,43 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
 <script type="application/json" id="ProductVariantss">
 {{ product.variants | json }}
 </script>
+
+<script type="application/json" id="VariantMetafields">
+{
+  "variants": [
+    {% for v in product.variants %}
+      {
+        "id": {{ v.id | json }},
+        "title": {{ v.title | json }},
+        "section1DesktopImage": {{ v.metafields.custom.overview_section_1_image_desktop.value | json }},
+        "section1MobileImage": {{ v.metafields.custom.overview_section_1_image_mobile.value | json }},
+        "section1Heading": {{ v.metafields.custom.overview_section_1_heading | json }},
+        "section1Description": {{ v.metafields.custom.overview_section_1_description.value | json }},
+        "section2DesktopImages": [
+          {% for f in v.metafields.custom.overview_section_2_images.value %}
+            {{ f | json }}{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ],
+        "section2Heading": {{ v.metafields.custom.overview_section_2_heading | json }},
+        "section2Description": {{ v.metafields.custom.overview_section_2_description.value | json }},
+        "section3DesktopImage": {{ v.metafields.custom.overview_section_3_image_desktop.value | json }},
+        "section3MobileImage": {{ v.metafields.custom.overview_section_3_image_mobile.value | json }},
+        "section3Heading": {{ v.metafields.custom.overview_section_3_heading | json }},
+        "section3Description": {{ v.metafields.custom.overview_section_3_description.value | json }},
+        "section3Image2": {{ v.metafields.custom.overview_section_3_image_2.value | json }},
+        "section3Description2": {{ v.metafields.custom.overview_section_3_description_2.value | json }},
+        "section3Image3": {{ v.metafields.custom.overview_section_3_image_3.value | json }},
+        "section3Description3": {{ v.metafields.custom.overview_section_3_description_3.value | json }},
+        "section4Image": {{ v.metafields.custom.overview_section_4_image.value | json }},
+        "section4Heading": {{ v.metafields.custom.overview_section_4_heading | json }},
+        "section4Description": {{ v.metafields.custom.overview_section_4_description.value | json }},
+        "section5Image": {{ v.metafields.custom.overview_section_5_image.value | json }},
+        "section5Heading": {{ v.metafields.custom.overview_section_5_heading | json }},
+        "section5Description": {{ v.metafields.custom.overview_section_5_description.value | json }},
+        "manualFile": {{ v.metafields.custom.user_manual.value.url | json }},
+        "specs_html": {{ v.metafields.custom.technical_data_manual | metafield_tag | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>

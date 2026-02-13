@@ -5661,10 +5661,77 @@
       this.selectVariant((_a = this._getVariantFromOptions()) == null ? void 0 : _a.id);
       
     }
+    _updateProductDetails() {
+      const variantWithMetafields = JSON.parse(
+        document.getElementById('VariantMetafields').textContent
+      );
+
+      const selectedVariant = variantWithMetafields.variants.filter(v => {
+        return v.id == this.selectedVariant.id; // OR media.id mapping
+      });
+
+      // product page - overview - section 1
+      const OverviewSection1DesktopImage = document.querySelector('.banner-overview-nvy .banner-desktop')
+      const OverviewSection1MobileImage = document.querySelector('.banner-overview-nvy .banner-mobile')
+      const OverviewSection1Heading = document.querySelector('.banner-overview-nvy h3')
+      const OverviewSection1Description = document.querySelector('.banner-overview-nvy p')
+      if(selectedVariant[0].section1DesktopImage) {
+        OverviewSection1DesktopImage.src = selectedVariant[0].section1DesktopImage
+        OverviewSection1MobileImage.src = selectedVariant[0].section1MobileImage
+        OverviewSection1Heading.innerHTML = selectedVariant[0].section1Heading
+        OverviewSection1Description.innerHTML = selectedVariant[0].section1Description
+      }
+
+      // product page - overview - section 2 - parallax
+      const OverviewSection2DesktopImages = document.querySelectorAll('.section-parallax img.parallax-frame')
+      const OverviewSection2Heading = document.querySelector('.section-parallax h3')
+      const OverviewSection2Description = document.querySelector('.section-parallax p')
+      if(selectedVariant[0].section2DesktopImages.length > 0) {
+        OverviewSection2DesktopImages.forEach((image, index) => {
+          image.src = selectedVariant[0].section2DesktopImages[index]
+        });
+        OverviewSection2Heading.innerHTML = selectedVariant[0].section2Heading
+        OverviewSection2Description.innerHTML = selectedVariant[0].section2Description
+      }
+
+      // product page - overview - section 4
+      const OverviewSection4DesktopImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse img.show-in-desktop')
+      const OverviewSection4Heading = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse h5')
+      const OverviewSection4Description = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse p')
+      if(selectedVariant[0].section4Image) {
+        OverviewSection4DesktopImage.src = selectedVariant[0].section4Image
+        OverviewSection4Heading.innerHTML = selectedVariant[0].section4Heading
+        OverviewSection4Description.innerHTML = selectedVariant[0].section4Description
+      }
+
+      // product page - overview - section 5
+      const OverviewSection5DesktopImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 img.show-in-desktop')
+      const OverviewSection5Heading = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 h5')
+      const OverviewSection5Description = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 p')
+      if(selectedVariant[0].section5Image) {
+        OverviewSection5DesktopImage.src = selectedVariant[0].section5Image
+        OverviewSection5Heading.innerHTML = selectedVariant[0].section5Heading
+        OverviewSection5Description.innerHTML = selectedVariant[0].section5Description
+      }
+
+      // product page - specification and manuals
+      if(selectedVariant[0].specs_html) {
+        const specificationData = document.querySelector('.main-taps__container-specifications > div')
+        specificationData.innerHTML = selectedVariant[0].specs_html
+      }
+
+      if(selectedVariant[0].manualFile) {
+        const userManual = document.querySelector('.main-taps__container--item.main-taps__container-manual a')
+        userManual.href = selectedVariant[0].manualFile
+      }
+      console.log("XXXvariantWithMetafields", selectedVariant)
+    }
     _onMasterSelectorChanged() {
       var _a;
       const options = ((_a = this.selectedVariant) == null ? void 0 : _a.options) || [];
       console.log("this.selectedVariant", this.selectedVariant)
+     
+      this._updateProductDetails()
 
       // start - disable not available variants
       const templateNewTemplate = document.querySelector('body.page-template--new-template');
