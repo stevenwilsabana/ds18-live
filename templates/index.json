@@ -61,6 +61,7 @@
       "blocks": {
         "image_BWpRi7": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Car_Audio_Web_Banner_2025.jpg",
             "mobile_image": "shopify://shop_images/Car_Audio_Mobile_Banner_2025_1.webp",
@@ -80,6 +81,7 @@
         },
         "image_XwygYh": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/VISIT-NVY-BANNER_1.jpg",
             "mobile_image": "shopify://shop_images/VISIT-NVY-MOBILE-BANNER_-_Copy.jpg",
@@ -99,6 +101,7 @@
         },
         "image_N7KCcH": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/PRO-CUPOLA-WEB-BANNER_-_Copy.jpg",
             "mobile_image": "shopify://shop_images/PRO-CUPOLA-MOBILE-BANNER_-_Copy.jpg",
@@ -118,10 +121,9 @@
         },
         "image_MfTPby": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/New_Years_Web_Banner_2025.jpg",
-            "mobile_image": "shopify://shop_images/New_Years_Mobile_Banner_2025.jpg",
+            "image": "shopify://shop_images/Valentine_s_Day-WEB-BANNER_1.jpg",
+            "mobile_image": "shopify://shop_images/Valentine_s_Day-Banner_Mobile_2000x2000_1.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
