@@ -1,12 +1,44 @@
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
 <div class="banner-overview-nvy">
   <div class="banner-overview-nvy__container banner-overview-nvy__container--{{ alignment }} banner-overview-nvy__container--{{ section.id }}">
     <div class="banner-overview-nvy__imagenes">
-      <img class="banner-mobile" src="{{ backgroundMobile | image_url: width: 1000 }}">
-      <img class="banner-desktop" src="{{ backgroundDesktop | image_url: width: 4000 }}">
+
+      {% if new_template %}
+        {% assign variant = product.selected_or_first_available_variant %}
+        {% if variant.metafields.custom.overview_section_1_image_desktop.value %}
+          <img 
+            src="{{ variant.metafields.custom.custom.overview_section_1_image_mobile.value | image_url: width: 1000 }}" 
+            alt="{{ variant.title }}"
+            class="banner-mobile" 
+            width=""
+            height=""
+          >
+  
+          <img 
+            src="{{ variant.metafields.custom.overview_section_1_image_desktop.value | image_url: width: 4000 }}" 
+            alt="{{ variant.title }}"
+            class="banner-desktop" 
+            width=""
+            height=""
+          >
+        {% endif %}
+      {% else %}
+        <img class="banner-mobile" src="{{ backgroundMobile | image_url: width: 1000 }}">
+        <img class="banner-desktop" src="{{ backgroundDesktop | image_url: width: 4000 }}">
+      {% endif %}
     </div>
     <div class="banner-overview-nvy__details">
       <div class="banner-overview-nvy-content">
-        {{ content }}
+          {% if new_template %}
+            <h3>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_1_heading }}</h3>
+            <p>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_1_description }}</p>
+          {% else %}
+              {{ content }}
+          {% endif %}
       </div>
     </div>
   </div>

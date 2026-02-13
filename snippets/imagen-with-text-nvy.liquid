@@ -1,57 +1,115 @@
-{% if product.metafields.custom.nvy_image_for_banner_4_1 %}
-
-  <div class="imagen-with-text-nvy imagen-with-text-nvy--reverse imagen-with-text-nvy--4-1">
-    <div class="imagen-with-text-nvy__container">
-      <div class="imagen-with-text-nvy__imagen">
-          <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_3_1_mobile | image_url: width: 1500 }}">
-          <img loading="lazy" class="show-in-desktop" src="{{ product.metafields.custom.nvy_image_for_banner_4_1 | image_url: width: 1500 }}">
-      </div>
-      <div class="imagen-with-text-nvy__details">
-
-        <div class="container-images">
-          {% if product.metafields.custom.nvy_icons_for_banner_4_1 != blank %}
-            {% for image in product.metafields.custom.nvy_icons_for_banner_4_1.value %}
-              <img loading="lazy" src="{{ image | image_url: width: 150 }}">
-            {% endfor %}
-          {% endif %}
-        </div>
-        
-        <h5>{{ product.metafields.custom.nvy_title_for_banner_4_1 }}</h5>
-        <p>{{ product.metafields.custom.nvy_text_for_banner_4_1 }}</p>
-
-      </div>
-    </div>
-  </div>
-
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
 {% endif %}
 
 
-
-
-
-{% if product.metafields.custom.nvy_overview_end_banner_imagen %}
-
-  <div class="imagen-with-text-nvy imagen-with-text-nvy--4-0 {% unless product.metafields.custom.nvy_app_banner_desktop %}imagen-with-text-nvy--not-padding{% endunless %}">
-    <div class="imagen-with-text-nvy__container">
-      <div class="imagen-with-text-nvy__imagen">
-        <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_4_mobile | image_url: width: 1500 }}">
-        <img loading="lazy" class="show-in-desktop" src="{{ product.metafields.custom.nvy_overview_end_banner_imagen | image_url: width: 1500 }}">
-      </div>
-      <div class="imagen-with-text-nvy__details">
-
-        <h5>{{ product.metafields.custom.nvy_overview_end_banner_heading }}</h5>
-        <p>{{ product.metafields.custom.nvy_overview_end_banner_content }}</p>
-
-        <div class="container-images">
-          {% if product.metafields.custom.nvy_icons_for_banner_4 != blank %}
-            {% for image in product.metafields.custom.nvy_icons_for_banner_4.value %}
-              <img loading="lazy" src="{{ image | image_url: width: 100 }}">
-            {% endfor %}
-          {% endif %}
+{% if new_template %}
+  {% if product.selected_or_first_available_variant.metafields.custom.overview_section_4_image %}
+    <div class="imagen-with-text-nvy imagen-with-text-nvy--reverse imagen-with-text-nvy--4-1">
+      <div class="imagen-with-text-nvy__container">
+        <div class="imagen-with-text-nvy__imagen">
+            {% comment %} <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_3_1_mobile | image_url: width: 1500 }}"> {% endcomment %}
+            <img loading="lazy" class="show-in-desktop" src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_4_image | image_url: width: 1500 }}">
         </div>
-  
+        <div class="imagen-with-text-nvy__details">
+
+          {% comment %} <div class="container-images">
+            {% if product.metafields.custom.nvy_icons_for_banner_4_1 != blank %}
+              {% for image in product.metafields.custom.nvy_icons_for_banner_4_1.value %}
+                <img loading="lazy" src="{{ image | image_url: width: 150 }}">
+              {% endfor %}
+            {% endif %}
+          </div> {% endcomment %}
+          
+          <h5>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_4_heading }}</h5>
+          <p>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_4_description }}</p>
+
+        </div>
       </div>
     </div>
-  </div>
 
+  {% endif %}
+
+  {% if product.selected_or_first_available_variant.metafields.custom.overview_section_5_image %}
+
+    <div class="imagen-with-text-nvy imagen-with-text-nvy--4-0 {% unless product.metafields.custom.nvy_app_banner_desktop %}imagen-with-text-nvy--not-padding{% endunless %}">
+      <div class="imagen-with-text-nvy__container">
+        <div class="imagen-with-text-nvy__imagen">
+          {% comment %} <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_4_mobile | image_url: width: 1500 }}"> {% endcomment %}
+          <img loading="lazy" class="show-in-desktop" src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_5_image | image_url: width: 1500 }}">
+        </div>
+        <div class="imagen-with-text-nvy__details">
+
+          <h5>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_5_heading }}</h5>
+          <p>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_5_description }}</p>
+
+          {% comment %} <div class="container-images">
+            {% if product.metafields.custom.nvy_icons_for_banner_4 != blank %}
+              {% for image in product.metafields.custom.nvy_icons_for_banner_4.value %}
+                <img loading="lazy" src="{{ image | image_url: width: 100 }}">
+              {% endfor %}
+            {% endif %}
+          </div> {% endcomment %}
+    
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+
+{% else %}
+  {% if product.metafields.custom.nvy_image_for_banner_4_1 %}
+
+    <div class="imagen-with-text-nvy imagen-with-text-nvy--reverse imagen-with-text-nvy--4-1">
+      <div class="imagen-with-text-nvy__container">
+        <div class="imagen-with-text-nvy__imagen">
+            <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_3_1_mobile | image_url: width: 1500 }}">
+            <img loading="lazy" class="show-in-desktop" src="{{ product.metafields.custom.nvy_image_for_banner_4_1 | image_url: width: 1500 }}">
+        </div>
+        <div class="imagen-with-text-nvy__details">
+
+          <div class="container-images">
+            {% if product.metafields.custom.nvy_icons_for_banner_4_1 != blank %}
+              {% for image in product.metafields.custom.nvy_icons_for_banner_4_1.value %}
+                <img loading="lazy" src="{{ image | image_url: width: 150 }}">
+              {% endfor %}
+            {% endif %}
+          </div>
+          
+          <h5>{{ product.metafields.custom.nvy_title_for_banner_4_1 }}</h5>
+          <p>{{ product.metafields.custom.nvy_text_for_banner_4_1 }}</p>
+
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+
+  {% if product.metafields.custom.nvy_overview_end_banner_imagen %}
+
+    <div class="imagen-with-text-nvy imagen-with-text-nvy--4-0 {% unless product.metafields.custom.nvy_app_banner_desktop %}imagen-with-text-nvy--not-padding{% endunless %}">
+      <div class="imagen-with-text-nvy__container">
+        <div class="imagen-with-text-nvy__imagen">
+          <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_4_mobile | image_url: width: 1500 }}">
+          <img loading="lazy" class="show-in-desktop" src="{{ product.metafields.custom.nvy_overview_end_banner_imagen | image_url: width: 1500 }}">
+        </div>
+        <div class="imagen-with-text-nvy__details">
+
+          <h5>{{ product.metafields.custom.nvy_overview_end_banner_heading }}</h5>
+          <p>{{ product.metafields.custom.nvy_overview_end_banner_content }}</p>
+
+          <div class="container-images">
+            {% if product.metafields.custom.nvy_icons_for_banner_4 != blank %}
+              {% for image in product.metafields.custom.nvy_icons_for_banner_4.value %}
+                <img loading="lazy" src="{{ image | image_url: width: 100 }}">
+              {% endfor %}
+            {% endif %}
+          </div>
+    
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
 {% endif %}

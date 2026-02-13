@@ -1,5 +1,10 @@
 {{ 'styles-tap-nvy.css' | asset_url | stylesheet_tag }}
 
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
 {% if product.metafields.custom.nvy_hidden_field_3_in_mobile == true %}
   <style>
     @media only screen and (max-width: 768px){
@@ -68,12 +73,20 @@
                    alignment: block.settings.imagen_alignment
                 %}
               {% endif %}
-  
-              {% if product.metafields.custom.nvy_overview_parallax_heading or
+
+              {% if new_template %}
+                {% if product.selected_or_first_available_variant.metafields.custom.overview_section_2_heading %}
+                  {% render 'parallax-section', product: product %}
+                {% endif %}
+              {% else %}
+                {% if product.metafields.custom.nvy_overview_parallax_heading or
                     product.metafields.custom.nvy_overview_parallax_content or
                     product.metafields.custom.nvy_overview_parallax_imagen %}
                 {% render 'parallax-section', product: product %}
               {% endif %}
+              {% endif %}
+  
+              
   
               {% render 'app-section-nvy', product: product %}
               {% render 'imagen-with-text-nvy', product: product %}
@@ -88,26 +101,41 @@
 
             <div class="main-taps__container--general">
 
-              {% if product.metafields.custom.manual %}
-                <div class="main-taps__container--item main-taps__container-manual">
-                  <p>
-                    <a href="{{ product.metafields.custom.manual.value.url }}" target="_blank">
-                      {% render 'icon', icon: 'download' %}
-                      <span>DOWNLOAD THE USER MANUAL</span>
-                    </a>
-                  </p>
-                </div>
+              {% if new_template %}
+                {% if product.selected_or_first_available_variant.metafields.custom.user_manual %}
+                  <div class="main-taps__container--item main-taps__container-manual">
+                    <p>
+                      <a href="{{ product.selected_or_first_available_variant.metafields.custom.user_manual.value.url }}" target="_blank">
+                        {% render 'icon', icon: 'download' %}
+                        <span>DOWNLOAD THE USER MANUAL</span>
+                      </a>
+                    </p>
+                  </div>
+                {% endif %}
+
+                {% if product.selected_or_first_available_variant.metafields.custom.technical_data_manual %}
+                  <div class="main-taps__container--item main-taps__container-specifications">
+                    <div>{{ product.selected_or_first_available_variant.metafields.custom.technical_data_manual | metafield_tag }}</div>
+                  </div>
+                {% endif %}
+              {% else %}
+                {% if product.metafields.custom.manual %}
+                  <div class="main-taps__container--item main-taps__container-manual">
+                    <p>
+                      <a href="{{ product.metafields.custom.manual.value.url }}" target="_blank">
+                        {% render 'icon', icon: 'download' %}
+                        <span>DOWNLOAD THE USER MANUAL</span>
+                      </a>
+                    </p>
+                  </div>
+                {% endif %}
+
+                {% if block.settings.specifications %}
+                  <div class="main-taps__container--item main-taps__container-specifications">
+                    <div>{{ block.settings.specifications }}</div>
+                  </div>
+                {% endif %}
               {% endif %}
-
-
-              
-              
-              {% if block.settings.specifications %}
-                <div class="main-taps__container--item main-taps__container-specifications">
-                  <div>{{ block.settings.specifications }}</div>
-                </div>
-              {% endif %}
-
             </div>
 
           </div>
