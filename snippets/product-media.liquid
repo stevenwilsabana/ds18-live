@@ -451,9 +451,14 @@
   $(document).ready(function(){
     window.swiperThumbnail = new Swiper(".pdp-swiper-thumbnail", {
       spaceBetween: 10,
-      slidesPerView: 5,
+      slidesPerView: 4,
       freeMode: true,
       watchSlidesProgress: true,
+      breakpoints: {
+        1100: {
+          slidesPerView: 5 // tablet & up
+        }
+      }
     });
     window.swiperMain = new Swiper(".pdp-swiper-main", {
       spaceBetween: 10,

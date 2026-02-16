@@ -61,10 +61,24 @@
       {%- endcomment -%}
       {%- when 'description_new' -%}
       
-        {% comment %} <div class="container-description">
-          {% render 'descrition-products' %}
-        </div> {% endcomment %}
+        {% unless new_template %}
+          <div class="container-description">
+            {% render 'descrition-products' %}
+          </div> 
+        {% endunless %}
 
+        {% comment %} {% assign mos = product.selected_or_first_available_variant.metafields.custom.key_features.value %}
+        {% if mos %}
+<div class="pdp-key-features">
+          {% for mo in mos %}
+            <div class="pdp-key-features__item">
+              <img src="{{ mo.icon.value | image_url: width: 31 }}" alt="">
+              {{ mo.text.value }}
+            </div>
+          {% endfor %}
+</div>
+        {% endif %} {% endcomment %}
+        
         {% assign has_app = false %}
         {% for tag in product.tags %}
           {% if tag contains 'APP:' %}
