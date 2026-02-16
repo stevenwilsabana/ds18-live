@@ -142,6 +142,13 @@
             "price_selector": ""
           }
         },
+        "liquid_dernBe": {
+          "type": "liquid",
+          "settings": {
+            "class_label": "section-custom-liquid",
+            "liquid": "{% assign mos = product.selected_or_first_available_variant.metafields.custom.key_features.value %}\n        {% if mos %}\n<div class=\"pdp-key-features\">\n          {% for mo in mos %}\n            <div class=\"pdp-key-features__item\">\n              <img src=\"{{ mo.icon.value | image_url: width: 31 }}\" alt=\"\">\n              {{ mo.text.value }}\n            </div>\n          {% endfor %}\n</div>\n        {% endif %}"
+          }
+        },
         "6532d8e6-7a94-40e0-8d61-dace36b00264": {
           "type": "liquid",
           "disabled": true,
@@ -207,6 +214,7 @@
         "tolstoy_shoppable_video_ugc_stories_block_UULdKR",
         "complete_your_system_aFXi68",
         "affirm_pay_over_time_messaging_product_block_prcUjH",
+        "liquid_dernBe",
         "6532d8e6-7a94-40e0-8d61-dace36b00264",
         "4018b0a0-8a8e-4bdb-af89-815a76a54be3",
         "b61df6a0-96bd-4f18-b316-79cad87c7af3",
