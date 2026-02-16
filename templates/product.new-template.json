@@ -169,6 +169,7 @@
         },
         "82d2eb46-a809-4502-818f-6ac9ed010a33": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "class_label": "section-custom-liquid",
             "liquid": "<div class=\"custService showOnDesk\">               <div class=\"footerIcons\">      <div class=\"fiItem fiItem--freeshipping\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_SHIPPING.png?v=1742943179\">        <span>FREE SHIPPING ORDERS +$35</span>      </div>            <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_RETURNS.png?v=1742943180\">        <span>30-DAY RETURNS</span>      </div>            <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_WARRANTY.png?v=1742943179\">        <span>2 YEAR WARRANTY</span>      </div> <div class=\"fiItem\">        <img src=\"https://cdn.shopify.com/s/files/1/0018/0142/0861/files/NVY_SECURE_PAYMENT.png?v=1742943180\">        <span>SECURE PAYMENT</span>      </div>               </div>            </div>"
