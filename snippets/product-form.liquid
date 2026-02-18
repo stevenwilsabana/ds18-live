@@ -1012,6 +1012,17 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
       {
         "id": {{ v.id | json }},
         "title": {{ v.title | json }},
+        "keyFeatures": [
+          {% assign mos = v.metafields.custom.key_features.value %}
+          {% if mos %}
+            {% for mo in mos %}
+              {
+                "icon": {{ mo.icon.value | image_url: width: 31 | json }},
+                "text": {{ mo.text.value | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endif %}
+        ],
         "section1DesktopImage": {{ v.metafields.custom.overview_section_1_image_desktop.value | json }},
         "section1MobileImage": {{ v.metafields.custom.overview_section_1_image_mobile.value | json }},
         "section1Heading": {{ v.metafields.custom.overview_section_1_heading | json }},

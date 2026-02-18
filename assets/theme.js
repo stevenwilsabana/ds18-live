@@ -5719,11 +5719,23 @@
         const specificationData = document.querySelector('.main-taps__container-specifications > div')
         specificationData.innerHTML = selectedVariant[0].specs_html
       }
-
       if(selectedVariant[0].manualFile) {
         const userManual = document.querySelector('.main-taps__container--item.main-taps__container-manual a')
         userManual.href = selectedVariant[0].manualFile
       }
+
+      // product page - key features
+      const keyFeaturesItemsImg = document.querySelectorAll('.pdp-key-features__item')
+      if(selectedVariant[0].keyFeatures.length > 0) {
+        keyFeaturesItemsImg.forEach((item, index) => {
+          const itemIcon = item.querySelector('img')
+          const itemText = item.querySelector('span')
+          itemIcon.src = selectedVariant[0].keyFeatures[index].icon
+          itemText.innerHTML = selectedVariant[0].keyFeatures[index].text
+        });
+      }
+
+
       console.log("XXXvariantWithMetafields", selectedVariant)
     }
     _onMasterSelectorChanged() {
