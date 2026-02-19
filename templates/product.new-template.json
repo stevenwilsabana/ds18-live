@@ -146,7 +146,7 @@
           "type": "liquid",
           "settings": {
             "class_label": "section-custom-liquid",
-            "liquid": "{% assign mos = product.selected_or_first_available_variant.metafields.custom.key_features.value %}\n        {% if mos %}\n<div class=\"pdp-key-features\">\n          {% for mo in mos %}\n            <div class=\"pdp-key-features__item\">\n              <img src=\"{{ mo.icon.value | image_url: width: 31 }}\" alt=\"\">\n              {{ mo.text.value }}\n            </div>\n          {% endfor %}\n</div>\n        {% endif %}"
+            "liquid": "{% assign mos = product.selected_or_first_available_variant.metafields.custom.key_features.value %}\n        {% if mos %}\n<div class=\"pdp-key-features\">\n          {% for mo in mos %}\n            <div class=\"pdp-key-features__item\">\n              <img src=\"{{ mo.icon.value | image_url: width: 31 }}\" alt=\"\">\n              <span>{{ mo.text.value }}</span>\n            </div>\n          {% endfor %}\n</div>\n        {% endif %}"
           }
         },
         "6532d8e6-7a94-40e0-8d61-dace36b00264": {
