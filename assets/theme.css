@@ -2,6 +2,15 @@
  * NOTE: most of the CSS variables used are defined in the "css-variables.liquid" 
  */
 
+
+body,
+p {
+  font-size: 16px;
+  font-weight: 400 !important;
+  line-height: 1.571428571 !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
 .collapsibles-wrapper--border-bottom {
   border-bottom: 1px solid;
   border-bottom-color: #e8e8e1;
@@ -232,7 +241,7 @@ p {
   font-size: 17px;
   font-weight: 400;
   line-height: 1.571428571;
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 h1,
 h2,
@@ -260,7 +269,7 @@ span.res,
 body#product span.rating__caption,
 select option,
 span.money {
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .store-icon img {
   max-width: 165px;
@@ -10283,6 +10292,7 @@ input:checked + .popover__choice-label::after,
 
 .header__linklist-link {
   display: block;
+  font-size: 15px;
 }
 
 .header__bottom-navigation .header__linklist {
@@ -13249,11 +13259,11 @@ shopify-payment-terms {
     padding-bottom: 16px;
     background: rgb(var(--background));
     border-bottom: 1px solid rgb(var(--border-color));
-    top: calc(
+    /* top: calc(
       var(--header-height, 0px) * var(--enable-sticky-header) + var(--announcement-bar-height, 0px) *
         var(--enable-sticky-announcement-bar)
     );
-    bottom: auto;
+    bottom: auto; */
     box-shadow: 0 6px 5px -5px rgba(var(--border-color), 0.4), 0 1px rgb(var(--border-color)) inset;
     transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out, visibility 0.25s ease-in-out;
   }
@@ -15911,7 +15921,7 @@ body#index .content-box--left.text-container {
 h2.cbb-frequently-bought-title,
 .jdgm-rev-widg__title {
   font-size: 31px !important;
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   color: #333 !important;
   text-transform: uppercase;
   font-weight: 600 !important;
@@ -15937,7 +15947,7 @@ h2.cbb-frequently-bought-title,
 
 body#product h3.heading.h2 {
   font-weight: 700 !important;
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .product-form__custom-liquid p.ask a {
   text-decoration: underline !important;
@@ -16741,7 +16751,6 @@ body.page-template--black-friday
 iframe#chat-button {
   z-index: 9999999999999;
 }
-<<<<<<< HEAD
 
 product-media .swiperMain {
   height: none;
@@ -16826,8 +16835,6 @@ product-media .swiper-slide img {
   object-fit: cover;
 }
 
-=======
->>>>>>> new-main
 body[id="page"] .list-collections__item {
   width: calc(25% - 10px);
 }

@@ -102,22 +102,31 @@
             <div class="main-taps__container--general">
 
               {% if new_template %}
-                {% if product.selected_or_first_available_variant.metafields.custom.user_manual %}
-                  <div class="main-taps__container--item main-taps__container-manual">
+                <div class="main-taps__container--item main-taps__container-manual">
+                  {% if product.selected_or_first_available_variant.metafields.custom.user_manual %}
                     <p>
                       <a href="{{ product.selected_or_first_available_variant.metafields.custom.user_manual.value.url }}" target="_blank">
                         {% render 'icon', icon: 'download' %}
                         <span>DOWNLOAD THE USER MANUAL</span>
                       </a>
                     </p>
-                  </div>
-                {% endif %}
+                  {% else %}
+                    <p>
+                      <a href="" target="_blank">
+                        {% render 'icon', icon: 'download' %}
+                        <span>DOWNLOAD THE USER MANUAL</span>
+                      </a>
+                    </p>
+                  {% endif %}
+                </div>
 
-                {% if product.selected_or_first_available_variant.metafields.custom.technical_data_manual %}
-                  <div class="main-taps__container--item main-taps__container-specifications">
-                    <div>{{ product.selected_or_first_available_variant.metafields.custom.technical_data_manual | metafield_tag }}</div>
+                <div class="main-taps__container--item main-taps__container-specifications">
+                  <div>
+                    {% if product.selected_or_first_available_variant.metafields.custom.technical_data_manual %}
+                      {{ product.selected_or_first_available_variant.metafields.custom.technical_data_manual | metafield_tag }}
+                    {% endif %}
                   </div>
-                {% endif %}
+                </div>
               {% else %}
                 {% if product.metafields.custom.manual %}
                   <div class="main-taps__container--item main-taps__container-manual">

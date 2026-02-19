@@ -47,15 +47,16 @@ body#product div#main .shopify-section.shopify-section--main-product .product__i
 /* NVY LAYOUT */
 body.page-template--new-template .product-meta__sku-number {
     color: #de2a2a;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     margin: 0 0 10px;
     font-size: 20px !important;;
-    line-height: 25px !important;;
+    line-height: 25px !important;
+    font-weight: 500 !important;
 }
 
 body.page-template--new-template .product__info h1.product-meta__title  {
     color: #000;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-size: 20px !important;
     line-height: 25px;
     font-weight: 500;
@@ -74,25 +75,25 @@ body.page-template--new-template .container-general-prices .price-list .price {
     line-height: 30px;
     margin: 0;
     color: #000;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 body.page-template--new-template .container-general-prices .sales-tax .each-pair-textt {
     font-size: 18px;
     margin-left: 5px;
     font-weight: 400;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 body.page-template--new-template product-variants.active-imagen-multiple-variants>.product-form__option-selector span.product-form__option-name {
     margin-bottom: 5px;
     color: #de2a2a;
     font-weight: 700 !important;
     font-size: 15px !important;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 body.page-template--new-template product-variants.active-imagen-multiple-variants>.product-form__option-selector .product-form__option-value {
     margin-bottom: 5px;
     font-size: 15px !important;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     color: #000;
     font-weight: 600;
     margin-left: 5px;
@@ -104,12 +105,14 @@ body.page-template--new-template product-variants.active-imagen-multiple-variant
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 13px;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: default;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     cursor: pointer;
+    background-color: #f5f5f5 !important;
 }
 body.page-template--new-template product-variants.active-imagen-multiple-variants>.product-form__option-selector .color-swatch__radio:checked+label {
     border-color: #de2a2a !important;
@@ -132,7 +135,7 @@ body.page-template--new-template button#AddToCart > span {
     font-size: 18px;
     line-height: normal;
     color: #fff;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     text-align: center;
 }
 body.page-template--new-template .product {
@@ -178,7 +181,11 @@ body.page-template--new-template product-media .swiper-button-prev {
     left: 13px !important;
 }
 body.page-template--new-template product-media .product__media-item.swiper-slide {
-    height: 590px;
+    height: 450px;
+    margin-bottom: 20px;
+}
+body.page-template--new-template product-media .product__media-image-wrapper {
+    height: 100%;
 }
 
 body.page-template--new-template .affirm-as-low-as {
@@ -190,7 +197,7 @@ body.page-template--new-template .affirm-as-low-as {
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
     padding: 25px 5px;
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-size: 14px;
     /* text-align: center;
     display: flex;
@@ -202,7 +209,7 @@ body.page-template--new-template .affirm-as-low-as {
     padding: 25px 5px; */
 }
 body.page-template--new-template .section-custom-liquid--affirm #shopify-installments {
-    font-family: Montserrat, serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-size: 14px;
 }
 
@@ -243,12 +250,12 @@ body.page-template--new-template .pdp-key-features {
 }
 body.page-template--new-template .pdp-key-features__item {
     width: calc(33.3333333333% - 13.3333333333px);
-    font-size: 11px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: Montserrat, serif !important;
-    font-weight: 400;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: 500;
     color: #000;
     padding: 0 10px;
 }
@@ -289,4 +296,23 @@ body.page-template--new-template .pdp-key-features__item {
     body.page-template--new-template .product__info .product-meta {
         text-align: left;
     }
+}
+
+body.page-template--new-template .product__info h1.product-meta__title {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 500;
+    line-height: 1;
+    hyphens: auto;
+    word-break: break-word;
+    hyphenate-limit-chars: 6 2 3;
+}
+body.page-template--new-template product-variants.active-imagen-multiple-variants>.product-form__option-selector {
+    margin-bottom: 0;
+}
+body.page-template--new-template product-variants.active-imagen-multiple-variants>.product-form__option-selector:first-child {
+    margin-top: 0;
+}
+body.page-template--new-template .product-sticky-form .button {
+    font-size: 14px;
 }

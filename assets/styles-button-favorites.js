@@ -27,7 +27,7 @@ if (typeof wishlistEnhancerLoaded === 'undefined') {
               justify-content: center!important;
               border-radius: 5px!important;
               border: #de2a2a solid 1px!important;
-              font-family: 'Titillium Web', sans-serif !important;
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
               text-transform: uppercase!important;
               color: #de2a2a!important;
               background: transparent!important;

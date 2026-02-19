@@ -1048,6 +1048,10 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
         "section5Image": {{ v.metafields.custom.overview_section_5_image.value | json }},
         "section5Heading": {{ v.metafields.custom.overview_section_5_heading | json }},
         "section5Description": {{ v.metafields.custom.overview_section_5_description.value | json }},
+        "sectionBottomBannerImageDesktop": {{ v.metafields.custom.banner_bottom_section_desktop_image.value | json }},
+        "sectionBottomBannerImageMobile": {{ v.metafields.custom.banner_bottom_section_mobile_image.value | json }},
+        "sectionBottomBannerHeading": {{ v.metafields.custom.banner_bottom_section_heading | json }},
+        "sectionBottomBannerDescription": {{ v.metafields.custom.banner_bottom_section_description.value | json }},
         "manualFile": {{ v.metafields.custom.user_manual.value.url | json }},
         "specs_html": {{ v.metafields.custom.technical_data_manual | metafield_tag | json }}
       }{% unless forloop.last %},{% endunless %}

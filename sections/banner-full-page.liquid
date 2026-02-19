@@ -1,0 +1,161 @@
+<style>
+  /* ESTILOS BANNER FINAL */
+
+.banner-full-page {
+    width: 100%;
+    position: relative;
+}
+
+.banner-full-page__container {
+    position: relative;   
+}
+
+.banner-full-page__images {
+    width: 100%;
+}
+
+.banner-full-page__images img {
+    width: 100%;
+}
+
+.banner-full-page__images img.banner-full-page__images--desktop {
+    display: none;
+}
+
+.banner-full-page__overlay {
+    position: absolute;
+    top: 0;
+    height: 50%;
+    padding: 30px 20px 0;
+    overflow: hidden;
+}
+
+.banner-full-page__overlay * {
+    color: white;
+    font-family: Montserrat, serif !important;
+    text-align: center;
+}
+
+.banner-full-page__overlay h1,
+.banner-full-page__overlay h2,
+.banner-full-page__overlay h3,
+.banner-full-page__overlay h4,
+.banner-full-page__overlay h5,
+.banner-full-page__overlay h6 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 35px;
+}
+
+.banner-full-page__overlay p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.banner-full-page__overlay .banner-full-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+}
+.banner-full-page__link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (min-width: 768px){
+    .banner-full-page__images img.banner-full-page__images--mobile {
+        display: none;
+    }
+    
+    .banner-full-page__images img.banner-full-page__images--desktop {
+        display: block;
+    }
+
+
+    .banner-full-page__container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .banner-full-page__overlay {
+        width: 100%;
+        max-width: 1300px;
+        height: 100%;
+        top: 0%;
+        left: unset;
+        padding: 0;
+    }
+
+    .banner-full-page__overlay .banner-full-page-content {
+        width: 45%;
+        padding: 30px;
+        height: 100%;
+        justify-content: center;
+    }
+    
+    
+    .banner-full-page__overlay * {
+        text-align: left;
+    }
+    
+    .banner-full-page__overlay h1,
+    .banner-full-page__overlay h2,
+    .banner-full-page__overlay h3,
+    .banner-full-page__overlay h4,
+    .banner-full-page__overlay h5,
+    .banner-full-page__overlay h6 {
+        font-size: 30px;
+    }
+    
+    .banner-full-page__overlay p {
+        font-size: 14px;
+    }
+    
+}
+</style>
+
+
+
+<div class="banner-full-page__container">
+    {% if product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_desktop_image != blank %}
+      <div class="banner-full-page__images">
+        <img class="banner-full-page__images--mobile" src={{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_mobile_image | image_url: width: 1500 }}>
+        <img class="banner-full-page__images--desktop" src={{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_desktop_image | image_url: width: 1500 }}>
+      </div>  
+    
+      {% if product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_heading %}
+        {% comment %} <a class="banner-full-page__link"  href="{{ section.settings.banner_url }}"></a> {% endcomment %}
+        <div class="banner-full-page__overlay">
+          <div class="banner-full-page-content">
+            <h4>{{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_heading  }}</h4>
+            <p>{{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_description  }}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Full Page",
+    "class": "banner-full-page",
+    "tag": "section",
+    "settings": [
+    ],
+    "presets": [
+      {
+        "name": "Banner Full Page",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

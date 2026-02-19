@@ -1,15 +1,28 @@
-{% if product.metafields.custom.nvy_overview_parallax_imagen %}
-  {% assign images = product.metafields.custom.nvy_overview_parallax_imagen.value %}
-  {% assign images_count = 0 %}
-  {% for image in images %}
-    {% assign images_count = forloop.length %}
-  {% endfor %}
-{% endif %}
 
 {% assign new_template = false %}
 {% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
   {% assign new_template = true %}
 {% endif %}
+
+{% if new_template %}
+  {% if product.selected_or_first_available_variant.metafields.custom.overview_section_2_images %}
+    {% assign images = product.selected_or_first_available_variant.metafields.custom.overview_section_2_images.value %}
+    {% assign images_count = 0 %}
+    {% for image in images %}
+      {% assign images_count = forloop.length %}
+    {% endfor %}
+  {% endif %}
+{% else %}
+  {% if product.metafields.custom.nvy_overview_parallax_imagen %}
+    {% assign images = product.metafields.custom.nvy_overview_parallax_imagen.value %}
+    {% assign images_count = 0 %}
+    {% for image in images %}
+      {% assign images_count = forloop.length %}
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+
 
 <div class="section-parallax {% if images_count > 1 %}section-parallax--parallax--multi{% else %}section-parallax--parallax--single{% endif %}">
   <div class="section-parallax__container">
