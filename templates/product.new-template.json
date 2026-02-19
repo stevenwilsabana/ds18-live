@@ -692,6 +692,11 @@
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
       }
+    },
+    "banner_full_page_LLP36z": {
+      "type": "banner-full-page",
+      "name": "Banner Full Page",
+      "settings": {}
     }
   },
   "order": [
@@ -704,6 +709,7 @@
     "yth-image-with-text",
     "9e473855-68ae-4331-aa8a-3ea8e6c0838f",
     "new_version_tap_nvy_dqb4G6",
+    "banner_full_page_LLP36z",
     "1ce16315-efdf-44aa-8887-cf2cefc774da",
     "b033b637-b65f-4f72-a262-8c6a083cc2f6",
     "yth-promotional",
