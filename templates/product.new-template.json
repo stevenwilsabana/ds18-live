@@ -500,6 +500,7 @@
         "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-2",
         "image_gb84Gq"
       ],
+      "disabled": true,
       "settings": {
         "section_height": "auto",
         "transition_type": "sweep",
@@ -666,6 +667,7 @@
       "block_order": [
         "judgeme_review_widget_b8514a2f"
       ],
+      "disabled": true,
       "settings": {
         "include_horizontal_margins": true,
         "include_vertical_margins": true
@@ -673,6 +675,7 @@
     },
     "9ac67d46-b3b1-4624-a50e-e72ca94c24d7": {
       "type": "judgeme_carousel_section",
+      "disabled": true,
       "settings": {
         "maxwidth": 1920
       }
