@@ -676,6 +676,19 @@
       "settings": {
         "maxwidth": 1920
       }
+    },
+    "custom_liquid_CiUhyA": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "<style>\n  /* ESTILOS BANNER FINAL */\n\n.banner-full-page-nvy {\n    width: 100%;\n    position: relative;\n}\n\n.banner-full-page-nvy__container {\n    position: relative;   \n}\n\n.banner-full-page-nvy__images {\n    width: 100%;\n}\n\n.banner-full-page-nvy__images img {\n    width: 100%;\n}\n\n.banner-full-page-nvy__images img.banner-full-page-nvy__images--desktop {\n    display: none;\n}\n\n.banner-full-page-nvy__overlay {\n    position: absolute;\n    top: 0;\n    height: 50%;\n    padding: 30px 20px 0;\n    overflow: hidden;\n}\n\n.banner-full-page-nvy__overlay * {\n    color: white;\n    font-family: Montserrat, serif !important;\n    text-align: center;\n}\n\n.banner-full-page-nvy__overlay h1,\n.banner-full-page-nvy__overlay h2,\n.banner-full-page-nvy__overlay h3,\n.banner-full-page-nvy__overlay h4,\n.banner-full-page-nvy__overlay h5,\n.banner-full-page-nvy__overlay h6 {\n    margin: 0;\n    font-size: 30px;\n    font-weight: 500;\n    margin-bottom: 15px;\n    line-height: 35px;\n}\n\n.banner-full-page-nvy__overlay p {\n    margin: 0;\n    font-size: 15px;\n}\n\n.banner-full-page-nvy__overlay .banner-full-page-nvy-content {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    justify-content: flex-start;\n}\n.banner-full-page-nvy__link {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 9999;\n  top: 0;\n  left: 0;\n}\n\n@media only screen and (min-width: 768px){\n    .banner-full-page-nvy__images img.banner-full-page-nvy__images--mobile {\n        display: none;\n    }\n    \n    .banner-full-page-nvy__images img.banner-full-page-nvy__images--desktop {\n        display: block;\n    }\n\n\n    .banner-full-page-nvy__container {\n        display: flex;\n        justify-content: center;\n    }\n    \n    .banner-full-page-nvy__overlay {\n        width: 100%;\n        max-width: 1300px;\n        height: 100%;\n        top: 0%;\n        left: unset;\n        padding: 0;\n    }\n\n    .banner-full-page-nvy__overlay .banner-full-page-nvy-content {\n        width: 45%;\n        padding: 30px;\n        height: 100%;\n        justify-content: center;\n    }\n    \n    \n    .banner-full-page-nvy__overlay * {\n        text-align: left;\n    }\n    \n    .banner-full-page-nvy__overlay h1,\n    .banner-full-page-nvy__overlay h2,\n    .banner-full-page-nvy__overlay h3,\n    .banner-full-page-nvy__overlay h4,\n    .banner-full-page-nvy__overlay h5,\n    .banner-full-page-nvy__overlay h6 {\n        font-size: 30px;\n    }\n    \n    .banner-full-page-nvy__overlay p {\n        font-size: 14px;\n    }\n\n    \n}\n</style>\n\n\n\n<div class=\"banner-full-page-nvy__container\">\n    {% if product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_desktop_image != blank %}\n      <div class=\"banner-full-page-nvy__images\">\n        <img class=\"banner-full-page-nvy__images--mobile\" src={{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_mobile_image | image_url: width: 1500 }}>\n        <img class=\"banner-full-page-nvy__images--desktop\" src={{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_desktop_image | image_url: width: 1500 }}>\n      </div>  \n    \n      {% if product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_heading %}\n        <a class=\"banner-full-page-nvy__link\"  href=\"{{ section.settings.banner_url }}\"></a>\n        <div class=\"banner-full-page-nvy__overlay\">\n          <div class=\"banner-full-page-nvy-content\">\n            <h4>{{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_heading  }}</h4>\n            <p>{{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_description  }}</p>\n          </div>\n        </div>\n      {% endif %}\n    {% endif %}\n</div>",
+        "add_vertical_spacing": false,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
     }
   },
   "order": [
@@ -698,6 +711,7 @@
     "78635833-e9bb-4ea7-81cd-33c8922a5f7e",
     "6bf37e14-5460-4c72-9d09-94efb3d8f993",
     "judgeme_section_review_widget_09f4",
-    "9ac67d46-b3b1-4624-a50e-e72ca94c24d7"
+    "9ac67d46-b3b1-4624-a50e-e72ca94c24d7",
+    "custom_liquid_CiUhyA"
   ]
 }

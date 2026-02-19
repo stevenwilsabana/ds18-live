@@ -683,11 +683,6 @@
           "adjacent_element_selector": ""
         }
       },
-      "2567389343055140935": {
-        "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
-        "disabled": false,
-        "settings": {}
-      },
       "11874257281241916528": {
         "type": "shopify://apps/fullstory/blocks/fullstory-embed/c341ffa4-99cc-4983-be03-3cb208467fae",
         "disabled": false,
@@ -699,21 +694,8 @@
           "fs_identify_users": true
         }
       },
-      "10971383228169626963": {
-        "type": "shopify://apps/logrocket/blocks/script_initializer/be454576-0ff0-4177-8832-bfe9e6f402a8",
-        "disabled": false,
-        "settings": {
-          "app_id": "",
-          "options": "{}"
-        }
-      },
       "6628239160433917566": {
         "type": "shopify://apps/littledata-the-data-layer/blocks/LittledataLayer/45a35ed8-a2b2-46c3-84fa-6f58497c5345",
-        "disabled": false,
-        "settings": {}
-      },
-      "7313114205116804392": {
-        "type": "shopify://apps/propel-replays-heatmaps/blocks/app-embed/64fbaaa3-2d4a-49f3-aba7-86e92e44999f",
         "disabled": false,
         "settings": {}
       },
