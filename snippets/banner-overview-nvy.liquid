@@ -3,13 +3,18 @@
   {% assign new_template = true %}
 {% endif %}
 
-<div class="banner-overview-nvy">
+{% assign hiddenClass = "" %}
+{% unless product.selected_or_first_available_variant.metafields.custom.overview_section_1_image_desktop %}
+  {% assign hiddenClass = "hidden" %}
+{% endunless %}
+
+<div class="banner-overview-nvy {{ hiddenClass }}">
   <div class="banner-overview-nvy__container banner-overview-nvy__container--{{ alignment }} banner-overview-nvy__container--{{ section.id }}">
     <div class="banner-overview-nvy__imagenes">
 
       {% if new_template %}
-        {% assign variant = product.selected_or_first_available_variant %}
-        {% if variant.metafields.custom.overview_section_1_image_desktop.value %}
+        {% comment %} {% assign variant = product.selected_or_first_available_variant %}
+        {% if variant.metafields.custom.overview_section_1_image_desktop.value %} {% endcomment %}
           <img 
             src="{{ variant.metafields.custom.overview_section_1_image_mobile.value | image_url: width: 1000 }}" 
             alt="{{ variant.title }}"
@@ -25,7 +30,7 @@
             width=""
             height=""
           >
-        {% endif %}
+        {% comment %} {% endif %} {% endcomment %}
       {% else %}
         <img class="banner-mobile" src="{{ backgroundMobile | image_url: width: 1000 }}">
         <img class="banner-desktop" src="{{ backgroundDesktop | image_url: width: 4000 }}">

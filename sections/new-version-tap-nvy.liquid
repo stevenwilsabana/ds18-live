@@ -75,9 +75,9 @@
               {% endif %}
 
               {% if new_template %}
-                {% if product.selected_or_first_available_variant.metafields.custom.overview_section_2_heading %}
+                {% comment %} {% if product.selected_or_first_available_variant.metafields.custom.overview_section_2_heading %} {% endcomment %}
                   {% render 'parallax-section', product: product %}
-                {% endif %}
+                {% comment %} {% endif %} {% endcomment %}
               {% else %}
                 {% if product.metafields.custom.nvy_overview_parallax_heading or
                     product.metafields.custom.nvy_overview_parallax_content or
@@ -102,29 +102,26 @@
             <div class="main-taps__container--general">
 
               {% if new_template %}
-                <div class="main-taps__container--item main-taps__container-manual">
-                  {% if product.selected_or_first_available_variant.metafields.custom.user_manual %}
+                {% assign hiddenClass = "" %}
+                {% unless product.selected_or_first_available_variant.metafields.custom.user_manual %}
+                  {% assign hiddenClass = "hidden" %}
+                {% endunless %}
+                <div class="main-taps__container--item main-taps__container-manual {{ hiddenClass }}">
                     <p>
                       <a href="{{ product.selected_or_first_available_variant.metafields.custom.user_manual.value.url }}" target="_blank">
                         {% render 'icon', icon: 'download' %}
                         <span>DOWNLOAD THE USER MANUAL</span>
                       </a>
                     </p>
-                  {% else %}
-                    <p>
-                      <a href="" target="_blank">
-                        {% render 'icon', icon: 'download' %}
-                        <span>DOWNLOAD THE USER MANUAL</span>
-                      </a>
-                    </p>
-                  {% endif %}
                 </div>
 
-                <div class="main-taps__container--item main-taps__container-specifications">
+                {% assign hiddenClass = "" %}
+                {% unless product.selected_or_first_available_variant.metafields.custom.technical_data_manual %}
+                  {% assign hiddenClass = "hidden" %}
+                {% endunless %}
+                <div class="main-taps__container--item main-taps__container-specifications {{ hiddenClass }}">
                   <div>
-                    {% if product.selected_or_first_available_variant.metafields.custom.technical_data_manual %}
-                      {{ product.selected_or_first_available_variant.metafields.custom.technical_data_manual | metafield_tag }}
-                    {% endif %}
+                    {{ product.selected_or_first_available_variant.metafields.custom.technical_data_manual | metafield_tag }}
                   </div>
                 </div>
               {% else %}

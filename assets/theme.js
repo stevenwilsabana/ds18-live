@@ -5661,6 +5661,42 @@
       this.selectVariant((_a = this._getVariantFromOptions()) == null ? void 0 : _a.id);
       
     }
+    _runParallax() {
+      const frames = document.querySelectorAll(".parallax-frame");
+      const section = document.querySelector(".parallax-wrapper");
+      const totalFrames = frames.length;
+  
+      if (!section || totalFrames === 0) return;
+  
+      window.addEventListener("scroll", () => {
+        const isMobile = window.innerWidth <= 768;
+  
+        const scrollY = window.scrollY || window.pageYOffset;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+  
+        const progress = Math.min(
+          1,
+          Math.max(0, (scrollY - sectionTop) / (sectionHeight - window.innerHeight))
+        );
+  
+        // Índice normal
+        let frameIndex = Math.min(
+          totalFrames - 1,
+          Math.floor(progress * totalFrames)
+        );
+  
+        // Si es mobile, invertir el índice
+        if (isMobile) {
+          frameIndex = totalFrames - 1 - frameIndex;
+        }
+  
+        // Mostrar solo el frame correspondiente
+        frames.forEach((img, index) => {
+          img.style.display = index === frameIndex ? "block" : "none";
+        });
+      });
+    }
     _updateProductDetails() {
       const variantWithMetafields = JSON.parse(
         document.getElementById('VariantMetafields').textContent
@@ -5671,27 +5707,80 @@
       });
 
       // product page - overview - section 1
+      // const overviewSection1Container = document.querySelector('.banner-overview-nvy__imagenes')
       const OverviewSection1DesktopImage = document.querySelector('.banner-overview-nvy .banner-desktop')
       const OverviewSection1MobileImage = document.querySelector('.banner-overview-nvy .banner-mobile')
       const OverviewSection1Heading = document.querySelector('.banner-overview-nvy h3')
       const OverviewSection1Description = document.querySelector('.banner-overview-nvy p')
-      if(selectedVariant[0].section1DesktopImage) {
-        OverviewSection1DesktopImage.src = selectedVariant[0].section1DesktopImage
-        OverviewSection1MobileImage.src = selectedVariant[0].section1MobileImage
-        OverviewSection1Heading.innerHTML = selectedVariant[0].section1Heading
-        OverviewSection1Description.innerHTML = selectedVariant[0].section1Description
+
+      if(selectedVariant[0].section1DesktopImage && selectedVariant[0].section1MobileImage) {
+        document.querySelector('.banner-overview-nvy').classList.remove('hidden');
+        // if(OverviewSection1DesktopImage && OverviewSection1MobileImage) {
+          OverviewSection1DesktopImage.src = selectedVariant[0].section1DesktopImage
+          OverviewSection1MobileImage.src = selectedVariant[0].section1MobileImage
+          OverviewSection1Heading.innerHTML = selectedVariant[0].section1Heading
+          OverviewSection1Description.innerHTML = selectedVariant[0].section1Description
+        // } else {
+            // const imgDesktop = document.createElement("img");
+            // imgDesktop.src = selectedVariant[0].section1DesktopImage;
+            // imgDesktop.alt = selectedVariant[0].section1Heading;
+            // imgDesktop.className = "banner-desktop";
+            // imgDesktop.width = "";
+            // imgDesktop.height = "";
+            // overviewSection1Container.appendChild(imgDesktop)
+
+            // const imgMobile = document.createElement("img");
+            // imgMobile.src = selectedVariant[0].section1MobileImage;
+            // imgMobile.alt = selectedVariant[0].section1Heading;
+            // imgMobile.className = "banner-mobile";
+            // imgMobile.width = "";
+            // imgMobile.height = "";
+            // overviewSection1Container.appendChild(imgMobile)
+
+            // OverviewSection1Heading.innerHTML = selectedVariant[0].section1Heading
+            // OverviewSection1Description.innerHTML = selectedVariant[0].section1Description
+        // }
+      } else {
+        document.querySelector('.banner-overview-nvy').classList.add('hidden');
       }
 
       // product page - overview - section 2 - parallax
-      const OverviewSection2DesktopImages = document.querySelectorAll('.section-parallax img.parallax-frame')
+      const OverviewSection2Container = document.querySelector('.section-parallax')
+      const OverviewSection2DesktopImages = document.querySelector('.section-parallax .parallax-media')
+      // const OverviewSection2DesktopImages = document.querySelectorAll('.section-parallax img.parallax-frame')
       const OverviewSection2Heading = document.querySelector('.section-parallax h3')
       const OverviewSection2Description = document.querySelector('.section-parallax p')
+
+      OverviewSection2DesktopImages.innerHTML = ""
       if(selectedVariant[0].section2DesktopImages.length > 0) {
-        OverviewSection2DesktopImages.forEach((image, index) => {
-          image.src = selectedVariant[0].section2DesktopImages[index]
+        OverviewSection2Container.classList.remove("hidden")
+        OverviewSection2Container.classList.remove("section-parallax--parallax--single")
+        OverviewSection2Container.classList.remove("section-parallax--parallax--multi")
+
+        if(selectedVariant[0].section2DesktopImages.length > 1) {
+          OverviewSection2Container.classList.add("section-parallax--parallax--multi")
+        } else {
+          OverviewSection2Container.classList.add("section-parallax--parallax--single")
+        }
+
+        selectedVariant[0].section2DesktopImages.forEach((item, index) => {
+          const img = document.createElement("img");
+          img.className = "parallax-frame";
+          img.setAttribute("data-index", index + 1);
+          img.src = item;
+          img.alt = `Imagen ${index + 1}`;
+
+          if(index == 0) {
+            img.style.display = "block";
+          } else img.style.display = "none";
+          OverviewSection2DesktopImages.appendChild(img);
         });
+
         OverviewSection2Heading.innerHTML = selectedVariant[0].section2Heading
         OverviewSection2Description.innerHTML = selectedVariant[0].section2Description
+        this._runParallax();
+      } else {
+        OverviewSection2Container.classList.add('hidden')
       }
 
       // product page - overview - section 4
@@ -5699,9 +5788,12 @@
       const OverviewSection4Heading = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse h5')
       const OverviewSection4Description = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse p')
       if(selectedVariant[0].section4Image) {
+        document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse').classList.remove("hidden")
         OverviewSection4DesktopImage.src = selectedVariant[0].section4Image
         OverviewSection4Heading.innerHTML = selectedVariant[0].section4Heading
         OverviewSection4Description.innerHTML = selectedVariant[0].section4Description
+      } else {
+        document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse').classList.add("hidden")
       }
 
       // product page - overview - section 5
@@ -5709,30 +5801,79 @@
       const OverviewSection5Heading = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 h5')
       const OverviewSection5Description = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 p')
       if(selectedVariant[0].section5Image) {
+        document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0').classList.remove("hidden")
         OverviewSection5DesktopImage.src = selectedVariant[0].section5Image
         OverviewSection5Heading.innerHTML = selectedVariant[0].section5Heading
         OverviewSection5Description.innerHTML = selectedVariant[0].section5Description
+      } else {
+        document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0').classList.add("hidden")
       }
 
       // product page - specification and manuals
       if(selectedVariant[0].specs_html) {
+        document.querySelector('.main-taps__container--item.main-taps__container-specifications').classList.remove('hidden')
         const specificationData = document.querySelector('.main-taps__container-specifications > div')
         specificationData.innerHTML = selectedVariant[0].specs_html
+      } else {
+        document.querySelector('.main-taps__container--item.main-taps__container-specifications').classList.add('hidden')
       }
+
       if(selectedVariant[0].manualFile) {
+        document.querySelector('.main-taps__container--item.main-taps__container-manual').classList.remove('hidden')
         const userManual = document.querySelector('.main-taps__container--item.main-taps__container-manual a')
         userManual.href = selectedVariant[0].manualFile
+      } else {
+        document.querySelector('.main-taps__container--item.main-taps__container-manual').classList.add('hidden')
       }
 
       // product page - key features
       const keyFeaturesItemsImg = document.querySelectorAll('.pdp-key-features__item')
       if(selectedVariant[0].keyFeatures.length > 0) {
-        keyFeaturesItemsImg.forEach((item, index) => {
-          const itemIcon = item.querySelector('img')
-          const itemText = item.querySelector('span')
-          itemIcon.src = selectedVariant[0].keyFeatures[index].icon
-          itemText.innerHTML = selectedVariant[0].keyFeatures[index].text
+        document.querySelector('.pdp-key-features').innerHTML = "";
+        document.querySelector('.pdp-key-features').classList.remove('hidden')
+
+        // keyFeaturesItemsImg.forEach((item, index) => {
+        //   const itemIcon = item.querySelector('img')
+        //   const itemText = item.querySelector('span')
+        //   itemIcon.src = selectedVariant[0].keyFeatures[index].icon
+        //   itemText.innerHTML = selectedVariant[0].keyFeatures[index].text
+        // });
+
+        selectedVariant[0].keyFeatures.forEach((item, index) => {
+          const div = document.createElement("div");
+          div.className = "pdp-key-features__item";
+
+          const img = document.createElement("img");
+          img.src = item.icon;
+          img.alt = `Imagen ${index + 1}`;
+
+          const span = document.createElement("span");
+          span.innerHTML = item.text;
+
+          div.appendChild(img)
+          div.appendChild(span)
+          
+          document.querySelector('.pdp-key-features').appendChild(div);
         });
+
+      } else {
+        document.querySelector('.pdp-key-features').classList.add('hidden')
+      }
+
+      // product page - bottom banner
+      const BottomBannerImageDesktop = document.querySelector('.banner-full-page__images--desktop')
+      const BottomBannerImageMobile = document.querySelector('.banner-full-page__images--mobile')
+      const BottomBannerHeading = document.querySelector('.banner-full-page__overlay h4')
+      const BottomBannerDescription= document.querySelector('.banner-full-page__overlay p')
+
+      if(selectedVariant[0].section1DesktopImage && selectedVariant[0].section1MobileImage) {
+        document.querySelector('.banner-full-page__container').classList.remove('hidden');
+        BottomBannerImageDesktop.src = selectedVariant[0].sectionBottomBannerImageDesktop
+        BottomBannerImageMobile.src = selectedVariant[0].sectionBottomBannerImageMobile
+        BottomBannerHeading.innerHTML = selectedVariant[0].sectionBottomBannerHeading
+        BottomBannerDescription.innerHTML = selectedVariant[0].sectionBottomBannerDescription
+      } else {
+        document.querySelector('.banner-full-page__container').classList.add('hidden');
       }
 
 

@@ -71,6 +71,10 @@
   left: 0;
 }
 
+.banner-full-page__container.hidden {
+  display: none;
+}
+
 @media only screen and (min-width: 768px){
     .banner-full-page__images img.banner-full-page__images--mobile {
         display: none;
@@ -124,24 +128,23 @@
 </style>
 
 
-
-<div class="banner-full-page__container">
-    {% if product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_desktop_image != blank %}
+{% assign hiddenClass = "" %}
+{% unless product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_desktop_image %}
+  {% assign hiddenClass = "hidden" %}
+{% endunless %}
+<div class="banner-full-page__container {{ hiddenClass }}">
       <div class="banner-full-page__images">
         <img class="banner-full-page__images--mobile" src={{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_mobile_image | image_url: width: 1500 }}>
         <img class="banner-full-page__images--desktop" src={{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_desktop_image | image_url: width: 1500 }}>
       </div>  
     
-      {% if product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_heading %}
-        {% comment %} <a class="banner-full-page__link"  href="{{ section.settings.banner_url }}"></a> {% endcomment %}
-        <div class="banner-full-page__overlay">
-          <div class="banner-full-page-content">
-            <h4>{{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_heading  }}</h4>
-            <p>{{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_description  }}</p>
-          </div>
+      {% comment %} <a class="banner-full-page__link"  href="{{ section.settings.banner_url }}"></a> {% endcomment %}
+      <div class="banner-full-page__overlay">
+        <div class="banner-full-page-content">
+          <h4>{{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_heading  }}</h4>
+          <p>{{ product.selected_or_first_available_variant.metafields.custom.banner_bottom_section_description  }}</p>
         </div>
-      {% endif %}
-    {% endif %}
+      </div>
 </div>
 
 {% schema %}
