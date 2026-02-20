@@ -47,12 +47,13 @@
           {% assign variant = product.selected_or_first_available_variant %}
           {% if variant.metafields.custom.overview_section_2_images.value %}
             {% for image in variant.metafields.custom.overview_section_2_images.value %}
+              
               <img
                 class="parallax-frame" 
                 data-index="{{ forloop.index0 }}" 
                 src="{{ image | image_url: width: 1500 }}" 
                 alt="Imagen {{ forloop.index }}" 
-                style="display: none;"
+                style="display: none; {% if image contains '.gif' %} width: max-content; {% endif %}"
               >
             {% endfor %}
           {% endif %}

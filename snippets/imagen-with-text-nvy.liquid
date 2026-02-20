@@ -13,7 +13,7 @@
     <div class="imagen-with-text-nvy imagen-with-text-nvy--reverse imagen-with-text-nvy--4-1 {{ hiddenClass }}">
       <div class="imagen-with-text-nvy__container">
         <div class="imagen-with-text-nvy__imagen">
-            {% comment %} <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_3_1_mobile | image_url: width: 1500 }}"> {% endcomment %}
+            <img loading="lazy" class="show-in-mobile" src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_4_image_mobile | image_url: width: 1500 }}">
             <img loading="lazy" class="show-in-desktop" src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_4_image | image_url: width: 1500 }}">
         </div>
         <div class="imagen-with-text-nvy__details">
@@ -43,7 +43,7 @@
     <div class="imagen-with-text-nvy  imagen-with-text-nvy--4-0 {{ hiddenClass }} {% unless product.metafields.custom.nvy_app_banner_desktop %}imagen-with-text-nvy--not-padding{% endunless %}">
       <div class="imagen-with-text-nvy__container">
         <div class="imagen-with-text-nvy__imagen">
-          {% comment %} <img loading="lazy" class="show-in-mobile" src="{{ product.metafields.custom.nvy_image_for_banner_4_mobile | image_url: width: 1500 }}"> {% endcomment %}
+         <img loading="lazy" class="show-in-mobile" src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_5_image_mobile | image_url: width: 1500 }}">
           <img loading="lazy" class="show-in-desktop" src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_5_image | image_url: width: 1500 }}">
         </div>
         <div class="imagen-with-text-nvy__details">

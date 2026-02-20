@@ -1038,14 +1038,23 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
         "section3MobileImage": {{ v.metafields.custom.overview_section_3_image_mobile.value | json }},
         "section3Heading": {{ v.metafields.custom.overview_section_3_heading | json }},
         "section3Description": {{ v.metafields.custom.overview_section_3_description.value | json }},
-        "section3Image2": {{ v.metafields.custom.overview_section_3_image_2.value | json }},
-        "section3Description2": {{ v.metafields.custom.overview_section_3_description_2.value | json }},
-        "section3Image3": {{ v.metafields.custom.overview_section_3_image_3.value | json }},
-        "section3Description3": {{ v.metafields.custom.overview_section_3_description_3.value | json }},
+        "section3TinyImages": [
+          {% assign tinyImages = v.metafields.custom.overview_section_3_tiny_image.value %}
+          {% if tinyImages %}
+            {% for img in tinyImages %}
+              {
+                "image": {{ img.image.value | image_url: width: 300 | json }},
+                "description": {{ img.description.value | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endif %}
+        ],
         "section4Image": {{ v.metafields.custom.overview_section_4_image.value | json }},
+        "section4ImageMobile": {{ v.metafields.custom.overview_section_4_image_mobile.value | json }},
         "section4Heading": {{ v.metafields.custom.overview_section_4_heading | json }},
         "section4Description": {{ v.metafields.custom.overview_section_4_description.value | json }},
         "section5Image": {{ v.metafields.custom.overview_section_5_image.value | json }},
+        "section5ImageMobile": {{ v.metafields.custom.overview_section_5_image_mobile.value | json }},
         "section5Heading": {{ v.metafields.custom.overview_section_5_heading | json }},
         "section5Description": {{ v.metafields.custom.overview_section_5_description.value | json }},
         "sectionBottomBannerImageDesktop": {{ v.metafields.custom.banner_bottom_section_desktop_image.value | json }},

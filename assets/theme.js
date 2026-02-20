@@ -5783,13 +5783,55 @@
         OverviewSection2Container.classList.add('hidden')
       }
 
+       // product page - overview - section 3
+       const OverviewSection3DesktopImage = document.querySelector('.app-section-image--desktop')
+       const OverviewSection3MobileImage = document.querySelector('.app-section-image--mobile')
+       const OverviewSection3Heading = document.querySelector('.app-section-nvy__content h5')
+       const OverviewSection3Description = document.querySelector('.app-section-nvy__content p')
+       if(selectedVariant[0].section3DesktopImage) {
+         document.querySelector('.app-section-nvy').classList.remove("hidden")
+         OverviewSection3DesktopImage.src = selectedVariant[0].section3DesktopImage
+         OverviewSection3MobileImage.src = selectedVariant[0].section3MobileImage
+         OverviewSection3Heading.innerHTML = selectedVariant[0].section3Heading
+         OverviewSection3Description.innerHTML = selectedVariant[0].section3Description
+
+         if(selectedVariant[0].section3TinyImages.length > 0) {
+          document.querySelector('.app-section-nvy__items').innerHTML = "";
+  
+          selectedVariant[0].section3TinyImages.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.className = "app-section-nvy__item";
+  
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.className = "lazy";
+            img.alt = `Imagen ${index + 1}`;
+  
+            const p = document.createElement("p");
+            p.innerHTML = item.description;
+  
+            div.appendChild(img)
+            div.appendChild(p)
+            
+            document.querySelector('.app-section-nvy__items').appendChild(div);
+          });
+        } else {
+          document.querySelector('.pdp-key-features').classList.add('hidden')
+        }
+
+       } else {
+        document.querySelector('.app-section-nvy').classList.add("hidden")
+       }
+
       // product page - overview - section 4
       const OverviewSection4DesktopImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse img.show-in-desktop')
+      const OverviewSection4MobileImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse img.show-in-mobile')
       const OverviewSection4Heading = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse h5')
       const OverviewSection4Description = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse p')
       if(selectedVariant[0].section4Image) {
         document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse').classList.remove("hidden")
         OverviewSection4DesktopImage.src = selectedVariant[0].section4Image
+        OverviewSection4MobileImage.src = selectedVariant[0].section4ImageMobile
         OverviewSection4Heading.innerHTML = selectedVariant[0].section4Heading
         OverviewSection4Description.innerHTML = selectedVariant[0].section4Description
       } else {
@@ -5798,11 +5840,13 @@
 
       // product page - overview - section 5
       const OverviewSection5DesktopImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 img.show-in-desktop')
+      const OverviewSection5MobileImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse img.show-in-mobile')
       const OverviewSection5Heading = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 h5')
       const OverviewSection5Description = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 p')
       if(selectedVariant[0].section5Image) {
         document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0').classList.remove("hidden")
         OverviewSection5DesktopImage.src = selectedVariant[0].section5Image
+        OverviewSection5MobileImage.src = selectedVariant[0].section5ImageMobile
         OverviewSection5Heading.innerHTML = selectedVariant[0].section5Heading
         OverviewSection5Description.innerHTML = selectedVariant[0].section5Description
       } else {
@@ -5832,13 +5876,6 @@
         document.querySelector('.pdp-key-features').innerHTML = "";
         document.querySelector('.pdp-key-features').classList.remove('hidden')
 
-        // keyFeaturesItemsImg.forEach((item, index) => {
-        //   const itemIcon = item.querySelector('img')
-        //   const itemText = item.querySelector('span')
-        //   itemIcon.src = selectedVariant[0].keyFeatures[index].icon
-        //   itemText.innerHTML = selectedVariant[0].keyFeatures[index].text
-        // });
-
         selectedVariant[0].keyFeatures.forEach((item, index) => {
           const div = document.createElement("div");
           div.className = "pdp-key-features__item";
@@ -5855,7 +5892,6 @@
           
           document.querySelector('.pdp-key-features').appendChild(div);
         });
-
       } else {
         document.querySelector('.pdp-key-features').classList.add('hidden')
       }
@@ -5877,7 +5913,7 @@
       }
 
 
-      console.log("XXXvariantWithMetafields", selectedVariant)
+      console.log("XXXvariantWithMetafields", variantWithMetafields)
     }
     _onMasterSelectorChanged() {
       var _a;

@@ -16,7 +16,7 @@
         {% comment %} {% assign variant = product.selected_or_first_available_variant %}
         {% if variant.metafields.custom.overview_section_1_image_desktop.value %} {% endcomment %}
           <img 
-            src="{{ variant.metafields.custom.overview_section_1_image_mobile.value | image_url: width: 1000 }}" 
+            src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_1_image_mobile.value | image_url: width: 1000 }}" 
             alt="{{ variant.title }}"
             class="banner-mobile" 
             width=""
@@ -24,7 +24,7 @@
           >
   
           <img 
-            src="{{ variant.metafields.custom.overview_section_1_image_desktop.value | image_url: width: 4000 }}" 
+            src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_1_image_desktop.value | image_url: width: 4000 }}" 
             alt="{{ variant.title }}"
             class="banner-desktop" 
             width=""
