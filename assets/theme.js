@@ -5764,12 +5764,15 @@
         }
 
         selectedVariant[0].section2DesktopImages.forEach((item, index) => {
+          
           const img = document.createElement("img");
           img.className = "parallax-frame";
           img.setAttribute("data-index", index + 1);
           img.src = item;
           img.alt = `Imagen ${index + 1}`;
-
+          if (item.toLowerCase().includes(".gif")) {
+            img.style.width = "max-content";
+          }
           if(index == 0) {
             img.style.display = "block";
           } else img.style.display = "none";
