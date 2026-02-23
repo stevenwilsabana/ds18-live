@@ -328,6 +328,7 @@
     },
     "yth-promotional": {
       "type": "yth-promotional",
+      "disabled": true,
       "settings": {}
     },
     "product-content": {
