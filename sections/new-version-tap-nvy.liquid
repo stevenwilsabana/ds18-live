@@ -145,8 +145,65 @@
             </div>
 
           </div>
-          
-      {% endcase %}
+
+        {% when 'related_products' %}
+          {% comment %} recommended products {% endcomment %}
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+            <div class="main-taps__container--general" style="width: 100%;">
+              <product-recommendations section-id="{{ section.id }}" intent="related" product-id="{{ product.id }}" recommendations-count="{{ section.settings.recommendations_count }}" class="section {% unless blends_with_background %}section--flush{% endunless %}">
+                {%- if recommendations.performed and recommendations.products.size > 0 -%}
+                  <div class="section__color-wrapper">
+                    <div class="container">
+                        <header class="section__header">
+                          <div class="text-container">
+                            <h3 class="heading h3">YOU MAY ALSO LIKE</h3>
+                          </div>
+                        </header>
+              
+                      <product-list {% if settings.stagger_products_apparition %}stagger-apparition{% endif %} class="product-list product-list--center">
+                        {%- assign smallest_image_aspect_ratio = 0 -%}
+              
+                        <div class="scroller">
+                          <div class="product-list__inner product-list__inner--scroller hide-scrollbar">
+              
+                            {%- assign display_products = product.metafields["custom_fields"]["you_may_also_like"].value -%}
+              
+                            {%- if display_products == blank -%}
+                              
+                            {%- assign display_products = recommendations.products -%}
+                            {%- endif -%}
+                              
+                            
+                            {%- for product in display_products -%}
+                              {%- assign smallest_image_aspect_ratio = smallest_image_aspect_ratio | at_least: product.featured_media.aspect_ratio -%}
+              
+                              {%- capture sizes_attribute -%}(max-width: 740px) 75vw, min({{ 100.0 | divided_by: 4 | ceil }}vw, {{ 1520.0 | divided_by: 4 | ceil }}px){%- endcapture -%}
+                              {%- render 'product-item', product: product, sizes_attribute: sizes_attribute, reveal: settings.stagger_products_apparition -%}
+                            {%- endfor -%}
+                          </div>
+                        </div>
+              
+                        
+                          <prev-next-buttons class="product-list__prev-next hidden-pocket" style="--smallest-image-aspect-ratio: {{ smallest_image_aspect_ratio }}">
+                            <button class="product-list__arrow prev-next-button prev-next-button--prev" disabled data-action="prev">
+                              <span class="visually-hidden">{{ 'general.accessibility.previous' | t }}</span>
+                              {%- include 'icon' with 'nav-arrow-left', block: true, direction_aware: true -%}
+                            </button>
+              
+                            <button class="product-list__arrow prev-next-button prev-next-button--next" data-action="next">
+                              <span class="visually-hidden">{{ 'general.accessibility.next' | t }}</span>
+                              {%- include 'icon' with 'nav-arrow-right', block: true, direction_aware: true -%}
+                            </button>
+                          </prev-next-buttons>
+                        
+                      </product-list>
+                    </div>
+                  </div>
+                {%- endif -%}
+              </product-recommendations>
+            </div>
+          </div>
+        {% endcase %}
     {% endfor %}
   </div>
   
@@ -241,6 +298,25 @@
             "type": "richtext",
             "id": "specifications",
             "label": "Specifications"
+          }
+        ]
+      },
+      {
+        "name": "Related Products",
+        "type": "related_products",
+        "settings": [
+          {
+            "type": "header",
+            "content": "TAPS"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          },
+          {
+            "type": "header",
+            "content": "RELATED PRODUCTS"
           }
         ]
       }

@@ -13720,6 +13720,7 @@ shopify-payment-terms {
     top: calc(
       var(--item-width) / var(--smallest-image-aspect-ratio) / 2 - 28px
     ); /* 28px is half the height of the button */
+    top: 50%;
   }
 
   .product-list__arrow {
