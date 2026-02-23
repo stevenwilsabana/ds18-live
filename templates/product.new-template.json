@@ -287,11 +287,18 @@
             "button": "SPECIFICATIONS & MANUAL",
             "specifications": "{{ product.metafields.custom.nvy_s_m_specifications | metafield_tag }}"
           }
+        },
+        "related_products_iqVhKj": {
+          "type": "related_products",
+          "settings": {
+            "button": "RELATED PRODUCTS"
+          }
         }
       },
       "block_order": [
         "overview_DtbB9q",
-        "specifications_7fNiKp"
+        "specifications_7fNiKp",
+        "related_products_iqVhKj"
       ],
       "name": "Taps NVY",
       "settings": {}
