@@ -5905,7 +5905,7 @@
       const BottomBannerHeading = document.querySelector('.banner-full-page__overlay h4')
       const BottomBannerDescription= document.querySelector('.banner-full-page__overlay p')
 
-      if(selectedVariant[0].section1DesktopImage && selectedVariant[0].section1MobileImage) {
+      if(selectedVariant[0].sectionBottomBannerImageDesktop && selectedVariant[0].sectionBottomBannerImageMobile) {
         document.querySelector('.banner-full-page__container').classList.remove('hidden');
         BottomBannerImageDesktop.src = selectedVariant[0].sectionBottomBannerImageDesktop
         BottomBannerImageMobile.src = selectedVariant[0].sectionBottomBannerImageMobile
