@@ -417,7 +417,6 @@
     },
     "18f80877-980d-405b-a93f-9fe8ed762628": {
       "type": "product-recommendations",
-      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "You may also like",
