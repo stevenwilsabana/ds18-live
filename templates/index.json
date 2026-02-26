@@ -62,13 +62,13 @@
         "image_BWpRi7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Car_Audio_Web_Banner_2025.jpg",
-            "mobile_image": "shopify://shop_images/Car_Audio_Mobile_Banner_2025_1.webp",
+            "image": "shopify://shop_images/Harley_Davidson_New_Arrivals_Web_Banner_2025.jpg",
+            "mobile_image": "shopify://shop_images/Harley_Davidson_New_Arrivals_Mobile_Banner_2025.jpg",
             "text_position": "top_left",
             "subheading": "",
             "title": "",
             "button_1_text": "",
-            "button_1_link": "https://ds18.com/collections/new-arrivalsauto",
+            "button_1_link": "https://ds18.com/collections/harley-davidson-2",
             "button_2_text": "",
             "button_2_link": "",
             "text_color": "#ffffff",
