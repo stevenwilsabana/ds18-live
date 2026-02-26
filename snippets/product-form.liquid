@@ -376,7 +376,11 @@
                           >
                             <input class="color-swatch__radio visually-hidden" type="radio" name="option{{ option.position }}" form="{{ product_form_id }}" id="{{ option_id }}-{{ forloop.index }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-bind-value="{{ option_id }}-value">
                             <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}">
-                              <span class="visually-hidden">{{ value }}</span>
+                              {% if value contains "Ohm" %}
+                                <span class="visually-hidden">{{ value | replace: "-Ohm", "Ω" }}</span>
+                              {% else %}
+                                <span class="visually-hidden">{{ value }}</span>
+                              {% endif %}
                             </label>
                           </div>
                         
@@ -1062,7 +1066,49 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
         "sectionBottomBannerHeading": {{ v.metafields.custom.banner_bottom_section_heading | json }},
         "sectionBottomBannerDescription": {{ v.metafields.custom.banner_bottom_section_description.value | json }},
         "manualFile": {{ v.metafields.custom.user_manual.value.url | json }},
-        "specs_html": {{ v.metafields.custom.technical_data_manual | metafield_tag | json }}
+        "specs_html": {{ v.metafields.custom.technical_data_manual | metafield_tag | json }},
+        "relatedProducts": [
+          {% assign bundle = v.metafields.custom.related_products.value %}
+          {% if bundle %}
+            {% for p in bundle %}
+              {
+                "id": {{ p.id | json }},
+                "handle": {{ p.handle | json }},
+                "title": {{ p.title | json }},
+                "vendor": {{ p.vendor | json }},
+                "type": {{ p.type | json }},
+                "url": {{ p.url | json }},
+                "available": {{ p.available | json }},
+
+                "featured_image": {% if p.featured_media %}
+                  {{ p.featured_media | image_url: width: 1200 | json }}
+                {% else %}
+                  null
+                {% endif %},
+
+                "price": {{ p.price | json }},
+                "price_min": {{ p.price_min | json }},
+                "price_max": {{ p.price_max | json }},
+                "compare_at_price": {{ p.compare_at_price | json }},
+                "compare_at_price_min": {{ p.compare_at_price_min | json }},
+                "compare_at_price_max": {{ p.compare_at_price_max | json }},
+                "price_varies": {{ p.price_varies | json }},
+                "compare_at_price_varies": {{ p.compare_at_price_varies | json }},
+
+                "selected_or_first_available_variant_id": {{ p.selected_or_first_available_variant.id | json }},
+                "variant_count": {{ p.variants.size | json }},
+
+                "tags": {{ p.tags | json }},
+                "collections": {{ p.collections | map: 'handle' | json }},
+                "judgeme": {
+                  "average": {{ p.metafields.judgeme.average_rating.value | default: 0 | json }},
+                  "count": {{ p.metafields.judgeme.review_count.value | default: 0 | json }},
+                  "badge_html": {{ p.metafields.judgeme.badge | default: "" | json }}
+                }
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endif %}
+        ]
       }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
