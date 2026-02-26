@@ -293,12 +293,19 @@
           "settings": {
             "button": "RELATED PRODUCTS"
           }
+        },
+        "reviews_rB6Lbw": {
+          "type": "reviews",
+          "settings": {
+            "button": "REVIEWS"
+          }
         }
       },
       "block_order": [
         "overview_DtbB9q",
         "specifications_7fNiKp",
-        "related_products_iqVhKj"
+        "related_products_iqVhKj",
+        "reviews_rB6Lbw"
       ],
       "name": "Taps NVY",
       "settings": {}
