@@ -5715,31 +5715,10 @@
 
       if(selectedVariant[0].section1DesktopImage && selectedVariant[0].section1MobileImage) {
         document.querySelector('.banner-overview-nvy').classList.remove('hidden');
-        // if(OverviewSection1DesktopImage && OverviewSection1MobileImage) {
           OverviewSection1DesktopImage.src = selectedVariant[0].section1DesktopImage
           OverviewSection1MobileImage.src = selectedVariant[0].section1MobileImage
           OverviewSection1Heading.innerHTML = selectedVariant[0].section1Heading
           OverviewSection1Description.innerHTML = selectedVariant[0].section1Description
-        // } else {
-            // const imgDesktop = document.createElement("img");
-            // imgDesktop.src = selectedVariant[0].section1DesktopImage;
-            // imgDesktop.alt = selectedVariant[0].section1Heading;
-            // imgDesktop.className = "banner-desktop";
-            // imgDesktop.width = "";
-            // imgDesktop.height = "";
-            // overviewSection1Container.appendChild(imgDesktop)
-
-            // const imgMobile = document.createElement("img");
-            // imgMobile.src = selectedVariant[0].section1MobileImage;
-            // imgMobile.alt = selectedVariant[0].section1Heading;
-            // imgMobile.className = "banner-mobile";
-            // imgMobile.width = "";
-            // imgMobile.height = "";
-            // overviewSection1Container.appendChild(imgMobile)
-
-            // OverviewSection1Heading.innerHTML = selectedVariant[0].section1Heading
-            // OverviewSection1Description.innerHTML = selectedVariant[0].section1Description
-        // }
       } else {
         document.querySelector('.banner-overview-nvy').classList.add('hidden');
       }
@@ -5914,6 +5893,20 @@
       } else {
         document.querySelector('.banner-full-page__container').classList.add('hidden');
       }
+
+      // related products
+      const variantsRelatedProducts = document.querySelectorAll('.related-product-list__container');
+
+      variantsRelatedProducts.forEach(variant => {
+         variant.style.display = "none";
+      });
+
+      variantsRelatedProducts.forEach(variant => {
+        const variantId = variant.dataset.variantId;
+        if(variantId == this.selectedVariant.id) {
+          variant.style.display = "flex"
+        }
+      });
 
 
       console.log("XXXvariantWithMetafields", variantWithMetafields)
