@@ -1,0 +1,38 @@
+.quantity-buy-container.container-uniq-form-ds .show-quantity {
+    display: flex!important;
+}
+
+.variant-a__precio-tachado,
+.units-sold-text {
+    display: none!important;
+}
+
+product-meta.product-meta .container-general-prices .container-general-prices__regular-prices {
+    display: none!important
+}
+
+
+
+.footerIcons .fiItem.fiItem--freeshipping,
+.shipsFreeToday{
+    display: none!important;
+}
+
+.footerIcons .fiItem {
+    width: 33.333333% !important;
+}
+
+
+
+
+product-item.product-item.product-item--custom-wholesale .container-prices-b2b {
+    align-items: flex-start;
+}
+
+product-meta.product-meta {
+    padding-bottom: 0;
+}
+
+.prices-b2b-pdp {
+    margin-bottom: 10px!important;
+}

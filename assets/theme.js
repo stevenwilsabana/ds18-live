@@ -5908,6 +5908,10 @@
         }
       });
 
+      // variant SKU
+      const variantSku = document.querySelector('p.product-meta__sku-number');
+      variantSku.innerHTML =  selectedVariant[0].sku
+
 
       console.log("XXXvariantWithMetafields", variantWithMetafields)
     }

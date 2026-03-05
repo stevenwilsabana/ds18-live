@@ -1027,6 +1027,7 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
             {% endfor %}
           {% endif %}
         ],
+        "sku": {{ v.sku | json }},
         "section1DesktopImage": {{ v.metafields.custom.overview_section_1_image_desktop.value | json }},
         "section1MobileImage": {{ v.metafields.custom.overview_section_1_image_mobile.value | json }},
         "section1Heading": {{ v.metafields.custom.overview_section_1_heading | json }},

@@ -90,7 +90,7 @@
         </h2>
       {% endunless %}
 
-      <div class="row">
+      <div class="row" style="position: relative;">
         <div class="col mr-5">
           
           <!--<span class="product-sku" style="margin-right:15px; color: #666;">{{ product.vendor }}</span>-->
@@ -113,7 +113,7 @@
           {% endunless %}
         </div>
 
-        <div class="col pdp-custom-review-stars" style="position: absolute; width: 100%;height: 20px; z-index: 99999;cursor: pointer;">
+        <div class="col pdp-custom-review-stars" style="width: 100%;position: absolute; width: 100%;height: 20px; z-index: 99999;cursor: pointer;">
         </div>
         <div class="col">
             {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
