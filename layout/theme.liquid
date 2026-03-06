@@ -950,7 +950,7 @@
               const applyDiscount = (el) => {
                 let original = el.innerText;
                 let price = parseFloat(original.replace(/[^0-9.]/g, ''));
-                let discountedPrice = price * 0.8;
+                let discountedPrice = price * 0.85;
 
                 const wrapper = el.closest('.rebuy-product-price');
                 const compareAt = wrapper.querySelector('.rebuy-money.compare-at');
@@ -968,7 +968,7 @@
                       $${price.toFixed(2)}
                     </span>
                   `;
-                  discountTag.textContent = "20% OFF FOR CYBER MONDAY SALE!";
+                  discountTag.textContent = "15% OFF FOR CYBER MONDAY SALE!";
                 } else {
                   // Compare-at price exists → 40% off logic
                   let originalCompare = compareAt.querySelector('span:last-child').innerText;
