@@ -61,6 +61,7 @@
       "blocks": {
         "image_BWpRi7": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Harley_Davidson_New_Arrivals_Web_Banner_2025.jpg",
             "mobile_image": "shopify://shop_images/Harley_Davidson_New_Arrivals_Mobile_Banner_2025.jpg",
@@ -80,6 +81,7 @@
         },
         "image_XwygYh": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/VISIT-NVY-BANNER_1.jpg",
             "mobile_image": "shopify://shop_images/VISIT-NVY-MOBILE-BANNER_-_Copy.jpg",
@@ -99,6 +101,7 @@
         },
         "image_N7KCcH": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/PRO-CUPOLA-WEB-BANNER_-_Copy.jpg",
             "mobile_image": "shopify://shop_images/PRO-CUPOLA-MOBILE-BANNER_-_Copy.jpg",
@@ -138,10 +141,9 @@
         },
         "image_TixApw": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Build_Your_Slingshot-WEB-BANNER_1.jpg",
-            "mobile_image": "shopify://shop_images/Build_Your_Slingshot-Banner_Mobile_2000x2000_7fffd397-6c5a-425f-a08e-3a6476bf7428.jpg",
+            "image": "shopify://shop_images/TAX_RETURN_SALE-Banner_Web.jpg",
+            "mobile_image": "shopify://shop_images/TAX_RETURN_SALE-Banner_Mobile_2000x2000_4594adbb-b284-46ea-ab16-59d96caf32bb.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
