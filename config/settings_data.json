@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "active_campaign": false,
+    "active_campaign": true,
     "campaign_discount_crossline": 15,
     "label_campaign": "DS18 SEASON",
     "tag_campaign": "CAMPAIGN: ACTIVE",
