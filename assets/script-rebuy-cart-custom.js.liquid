@@ -293,8 +293,6 @@ function $cartInsuranceOnly(arrayProducts) {
 
     if ($protectPackage !== undefined && $array_products.length === 1) {
         jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
-    } else if ($protectPackage !== undefined) {
-        console.log("****El paquete de protección está en el carrito, pero hay más ítems.");
     } else {
       const activeCampaign = document.querySelector('body.active-campaign');
       if(activeCampaign) {
@@ -322,7 +320,7 @@ function $cartInsuranceOnly(arrayProducts) {
               // Normal price → 20% off
               el.innerHTML = `
                 <span>$${discountedPrice.toFixed(2)}</span>
-                <span style="color:red;text-decoration:line-through;">
+                <span class="rebuy-original-item-price" style="color:red;text-decoration:line-through;">
                   $${price.toFixed(2)}
                 </span>
               `;
@@ -351,7 +349,12 @@ function $cartInsuranceOnly(arrayProducts) {
   
           // Apply logic for both selectors
           selectors.forEach(selector => {
-            document.querySelectorAll(selector).forEach(applyDiscount);
+            // document.querySelectorAll(selector).forEach(applyDiscount);
+            document.querySelectorAll(selector).forEach(item => {
+              if(!item.querySelector('.rebuy-original-item-price')) {
+                applyDiscount(item)
+              }
+            });
           });
 
 
@@ -547,7 +550,7 @@ document.addEventListener('rebuy:smartcart.ready', function(event){
     $('.rebuy-cart__flyout-content .insurance-personalized').hide();
   };
   $insurance($total_price,$array_products);
-  $cartInsuranceOnly($array_products);
+  // $cartInsuranceOnly($array_products);
   setTimeout(resetIsInsuranceUpdated, 1500);
 
   $cartReady();

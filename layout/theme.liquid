@@ -1032,21 +1032,21 @@
         }
 
         if(activeCampaign) {
-          checkRebuyElement();
+          // checkRebuyElement();
           
-          waitForElement('.rebuy-cart__flyout-content.has-items', function(el) {
-              const listItems = document.querySelectorAll('.rebuy-cart__flyout-content.has-items .rebuy-cart__flyout-items > li');
+          // waitForElement('.rebuy-cart__flyout-content.has-items', function(el) {
+          //     const listItems = document.querySelectorAll('.rebuy-cart__flyout-content.has-items .rebuy-cart__flyout-items > li');
       
-              listItems.forEach(item => {
-                if(item.classList.contains('tag-specials')) {
-                  item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "Cyber Monday: 40% Off Sitewide"
-                }
-              });
-              console.log("Element exists:", el);
+          //     listItems.forEach(item => {
+          //       if(item.classList.contains('tag-specials')) {
+          //         item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "DS18 SEASON SALE: 40% Off Sitewide"
+          //       }
+          //     });
+          //     console.log("Element exists:", el);
               
-              // Do something to the element
-              el.style.color = 'red';
-          });
+          //     // Do something to the element
+          //     el.style.color = 'red';
+          // });
         }
 
         
