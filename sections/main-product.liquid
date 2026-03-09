@@ -1152,6 +1152,8 @@
 
   function $loadVariantsImage(){
     if($('.shopify-section--main-product product-media .flickity-slider').length > 0 || $('.shopify-section--main-product product-media .swiper-slide').length > 0 ){
+
+      const isNewTemplate = document.querySelector('body.page-template--new-template');
       
       var $validationAlts = $(".shopify-section--main-product product-media .flickity-slider > div[data-selector-media-alt*='VARIANT:']");
       if($validationVariants.length == 2){
@@ -1191,23 +1193,24 @@
           $soldOutImageVariantMulti();
         
       } else {
-
-        var $validationInputs = $('.shopify-section--main-product .product__info product-variants > .product-form__option-selector input');
-
-        $('.shopify-section--main-product .product__info product-variants').addClass('active-imagen-multiple-variants');
-        $('div.load-variants-general').removeClass('multiple-variants-images');
-        $('.shopify-section--main-product .product__info product-variants').show();
-
-        $($validationInputs).each(function() {
-            var $val = $(this).val();
-            var $imagen = $('.container-images-variants span[data-option="' + $val + '"]').data("imageUrl");
-            var $label = $(this).siblings("label");
-
-            if ($imagen.length > 0){
-              $label.addClass('label-with-image__active');
-              $label.prepend('<img src="' + $imagen + '">');
-            };
-        });
+        if(!isNewTemplate) {
+          var $validationInputs = $('.shopify-section--main-product .product__info product-variants > .product-form__option-selector input');
+  
+          $('.shopify-section--main-product .product__info product-variants').addClass('active-imagen-multiple-variants');
+          $('div.load-variants-general').removeClass('multiple-variants-images');
+          $('.shopify-section--main-product .product__info product-variants').show();
+  
+          $($validationInputs).each(function() {
+              var $val = $(this).val();
+              var $imagen = $('.container-images-variants span[data-option="' + $val + '"]').data("imageUrl");
+              var $label = $(this).siblings("label");
+  
+              if ($imagen.length > 0){
+                $label.addClass('label-with-image__active');
+                $label.prepend('<img src="' + $imagen + '">');
+              };
+          });
+        }
 
         buildGroups();
         checkAllGroupsAvailability();
