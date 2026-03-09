@@ -1193,13 +1193,13 @@
           $soldOutImageVariantMulti();
         
       } else {
-        if(!isNewTemplate) {
           var $validationInputs = $('.shopify-section--main-product .product__info product-variants > .product-form__option-selector input');
   
           $('.shopify-section--main-product .product__info product-variants').addClass('active-imagen-multiple-variants');
           $('div.load-variants-general').removeClass('multiple-variants-images');
           $('.shopify-section--main-product .product__info product-variants').show();
-  
+          
+        if(!isNewTemplate) {
           $($validationInputs).each(function() {
               var $val = $(this).val();
               var $imagen = $('.container-images-variants span[data-option="' + $val + '"]').data("imageUrl");
