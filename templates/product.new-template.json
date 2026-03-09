@@ -303,7 +303,7 @@
         "faqs_NTMUWr": {
           "type": "faqs",
           "settings": {
-            "button": ""
+            "button": "FAQs"
           }
         }
       },
