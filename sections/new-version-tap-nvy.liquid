@@ -68,6 +68,22 @@
     .related-product-list__item .product-item-meta__price-list-container {
       flex: 1;
     }
+
+    .custom-faqs .section-faqs {
+      max-width: 1000px;
+    }
+    .custom-faqs .accordion-faqs__item h3 {
+      font-size: 20px;
+    }
+    .custom-faqs .accordion-faqs__answer {
+      font-size: 15px;
+      line-height: normal;
+      font-weight: 400;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif !important;
+    }
+    .custom-faqs .accordion-faqs__item:hover {
+      background-color: #f8f8f8;
+    }
     @media (max-width: 1024px) {
       .related-product-list__item .product-item__image-wrapper {
         height: auto;
@@ -280,11 +296,9 @@
             </div>
           </div>
         {% when 'faqs' %}  
-          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="custom-faqs main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
             <div class="main-taps__container--general container" style="width: 100%;">
               <section class="section-faqs">
-
-                
                 <ul class="accordion-list accordion-faqs">
 
                 {% assign faqs = product.selected_or_first_available_variant.metafields.custom.faqs.value.faqs %}
