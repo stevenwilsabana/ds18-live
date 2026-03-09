@@ -299,13 +299,20 @@
           "settings": {
             "button": "REVIEWS"
           }
+        },
+        "faqs_NTMUWr": {
+          "type": "faqs",
+          "settings": {
+            "button": ""
+          }
         }
       },
       "block_order": [
         "overview_DtbB9q",
         "specifications_7fNiKp",
         "related_products_iqVhKj",
-        "reviews_rB6Lbw"
+        "reviews_rB6Lbw",
+        "faqs_NTMUWr"
       ],
       "name": "Taps NVY",
       "settings": {}
