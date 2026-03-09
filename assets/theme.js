@@ -5188,8 +5188,10 @@
         );
         
         const variantMedia = mediaData.filter(m => {
-          return m.alt && m.alt.includes(variant['sku']); // OR media.id mapping
+          return m.alt && m.alt === variant['sku']; // OR media.id mapping
         });
+
+        console.log("variantMedia", variantMedia)
 
         window.swiperMain.removeAllSlides();
         window.swiperThumbnail.removeAllSlides();
