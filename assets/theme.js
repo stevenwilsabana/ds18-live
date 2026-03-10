@@ -5915,43 +5915,45 @@
       // variant FAQs
       const faqList = document.querySelector('.section-faqs .accordion-list.accordion-faqs');
       faqList.innerHTML = "";
-      const faqs = selectedVariant[0].faqs
-      faqs.forEach(faq => {
-        const li = document.createElement("li");
-        li.className = "accordion-faqs__item";
-
-        li.innerHTML = `
-          <h3>${faq.question}</h3>
-          <div class="answer accordion-faqs__answer">
-            ${faq.answer}
-          </div>
-        `;
-
-        faqList.appendChild(li);
-      });
-      const items = document.querySelectorAll('.custom-faqs .accordion-faqs__item');
-      items.forEach(item => {
-        item.addEventListener('click', e => {
-          e.preventDefault();
+      const faqs = selectedVariant[0].faqs ? selectedVariant[0].faqs : [];
+      if(faqs.length > 0) {
+        faqs.forEach(faq => {
+          const li = document.createElement("li");
+          li.className = "accordion-faqs__item";
   
-          const answer = item.querySelector('.accordion-faqs__answer');
+          li.innerHTML = `
+            <h3>${faq.question}</h3>
+            <div class="answer accordion-faqs__answer">
+              ${faq.answer}
+            </div>
+          `;
   
-          if (item.classList.contains('active')) {
-            item.classList.remove('active');
-            answer.style.height = 0;
-          } else {
-  
-            document.querySelectorAll('.accordion-faqs__item.active').forEach(active => {
-              active.classList.remove('active');
-              const a = active.querySelector('.accordion-faqs__answer');
-              a.style.height = 0;
-            });
-  
-            item.classList.add('active');
-            answer.style.height = answer.scrollHeight + "px";
-          }
+          faqList.appendChild(li);
         });
-      });
+        const items = document.querySelectorAll('.custom-faqs .accordion-faqs__item');
+        items.forEach(item => {
+          item.addEventListener('click', e => {
+            e.preventDefault();
+    
+            const answer = item.querySelector('.accordion-faqs__answer');
+    
+            if (item.classList.contains('active')) {
+              item.classList.remove('active');
+              answer.style.height = 0;
+            } else {
+    
+              document.querySelectorAll('.accordion-faqs__item.active').forEach(active => {
+                active.classList.remove('active');
+                const a = active.querySelector('.accordion-faqs__answer');
+                a.style.height = 0;
+              });
+    
+              item.classList.add('active');
+              answer.style.height = answer.scrollHeight + "px";
+            }
+          });
+        });
+      }
       console.log("XXXvariantWithMetafields", variantWithMetafields)
     }
     _onMasterSelectorChanged() {
