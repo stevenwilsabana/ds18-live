@@ -71,6 +71,10 @@
 
     .custom-faqs .section-faqs {
       max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .custom-faqs .accordion-faqs__item h3 {
       font-size: 20px;
@@ -83,6 +87,25 @@
     }
     .custom-faqs .accordion-faqs__item:hover {
       background-color: #f8f8f8;
+    }
+
+    .custom-faqs .accordion-faqs__answer {
+      height: 0;
+      padding: 0;
+      margin-top: 10px;
+      overflow: hidden;
+      transition: height 0.3s ease;
+    }
+    .custom-faqs .section-faqs__btn {
+      background: #de2a2a;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: 20px;
     }
     @media (max-width: 1024px) {
       .related-product-list__item .product-item__image-wrapper {
@@ -300,38 +323,17 @@
             <div class="main-taps__container--general container" style="width: 100%;">
               <section class="section-faqs">
                 <ul class="accordion-list accordion-faqs">
-
-                {% assign faqs = product.selected_or_first_available_variant.metafields.custom.faqs.value.faqs %}
-
-                {% for faq in faqs %}
-                  <li class="accordion-faqs__item">
-                    <h3>{{ faq.question }}</h3>
-                    <div class="answer accordion-faqs__answer">
-                      {{ faq.answer }}
-                    </div>
-                  </li>
-                 
-                {% endfor %}
-{% comment %}                   
-                  {% for block in section.blocks %}
-                    
-                    {% case block.type %}
-
-                          {% when 'faqs' %}
-                  
-                            <li {{ block.shopify_attributes }} class="accordion-faqs__item">
-                              <h3>{{ block.settings.title_faqs }}</h3>
-                              <div class="answer accordion-faqs__answer">
-                                {{ block.settings.answere }}
-                              </div>
-                            </li>
-                  
-                    {% endcase %}
-                  
-                  {% endfor %} {% endcomment %}
-                  
+                  {% assign faqs = product.selected_or_first_available_variant.metafields.custom.faqs.value.faqs %}
+                  {% for faq in faqs %}
+                    <li class="accordion-faqs__item">
+                      <h3>{{ faq.question }}</h3>
+                      <div class="answer accordion-faqs__answer">
+                        {{ faq.answer }}
+                      </div>
+                    </li>
+                  {% endfor %}
                 </ul>
-
+                <button class="section-faqs__btn">Still have questions? Contact us</a>
               </section>
             </div>
           </div>
@@ -360,20 +362,56 @@
 </script>
 
 <script>
-  
   $(document).ready(function(){
-    $('.accordion-faqs > .accordion-faqs__item > .accordion-faqs__answer').hide();
-      
-    $('.accordion-faqs > .accordion-faqs__item').click(function() {
-      if ($(this).hasClass("active")) {
-        $(this).removeClass("active").find(".accordion-faqs__answer").stop(true, true).slideUp();
-      } else {
-        $(".accordion-faqs > .accordion-faqs__item.active .accordion-faqs__answer").stop(true, true).slideUp();
-        $(".accordion-faqs > .accordion-faqs__item.active").removeClass("active");
-        $(this).addClass("active").find(".accordion-faqs__answer").stop(true, true).slideDown();
-      }
-      return false;
+    // enable georgias chat
+    const btn = document.querySelector('.section-faqs__btn')
+    btn.addEventListener('click', () => {
+      window.GorgiasChat.open();
+    })
+
+    const items = document.querySelectorAll('.custom-faqs .accordion-faqs__item');
+
+    items.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+
+        const answer = item.querySelector('.accordion-faqs__answer');
+
+        if (item.classList.contains('active')) {
+          item.classList.remove('active');
+          answer.style.height = 0;
+        } else {
+
+          document.querySelectorAll('.accordion-faqs__item.active').forEach(active => {
+            active.classList.remove('active');
+            const a = active.querySelector('.accordion-faqs__answer');
+            a.style.height = 0;
+          });
+
+          item.classList.add('active');
+          answer.style.height = answer.scrollHeight + "px";
+        }
+      });
     });
+    // document.querySelectorAll('.custom-faqs .accordion-faqs__item').forEach(item =>
+    //   item.onclick = () => {
+    //     document.querySelectorAll('.accordion-faqs__item.active').forEach(el => el.classList.remove('active'));
+    //     item.classList.toggle('active');
+    //   }
+    // );
+
+    // $('.accordion-faqs > .accordion-faqs__item > .accordion-faqs__answer').hide();
+      
+    // $('.accordion-faqs > .accordion-faqs__item').click(function() {
+    //   if ($(this).hasClass("active")) {
+    //     $(this).removeClass("active").find(".accordion-faqs__answer").stop(true, true).slideUp();
+    //   } else {
+    //     $(".accordion-faqs > .accordion-faqs__item.active .accordion-faqs__answer").stop(true, true).slideUp();
+    //     $(".accordion-faqs > .accordion-faqs__item.active").removeClass("active");
+    //     $(this).addClass("active").find(".accordion-faqs__answer").stop(true, true).slideDown();
+    //   }
+    //   return false;
+    // });
     
   });
 </script>
