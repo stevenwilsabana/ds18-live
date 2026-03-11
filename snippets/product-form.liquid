@@ -1013,11 +1013,15 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
 {
   "variants": [
     {% for v in product.variants %}
+      {% assign meta_source = v %}
+      {% if product.has_only_default_variant %}
+        {% assign meta_source = product %}
+      {% endif %}
       {
         "id": {{ v.id | json }},
         "title": {{ v.title | json }},
         "keyFeatures": [
-          {% assign mos = v.metafields.custom.key_features.value %}
+          {% assign mos = meta_source.metafields.custom.key_features.value %}
           {% if mos %}
             {% for mo in mos %}
               {
@@ -1028,24 +1032,27 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
           {% endif %}
         ],
         "sku": {{ v.sku | json }},
-        "faqs": {{ v.metafields.custom.faqs.value.faqs | json }},
-        "section1DesktopImage": {{ v.metafields.custom.overview_section_1_image_desktop.value | json }},
-        "section1MobileImage": {{ v.metafields.custom.overview_section_1_image_mobile.value | json }},
-        "section1Heading": {{ v.metafields.custom.overview_section_1_heading | json }},
-        "section1Description": {{ v.metafields.custom.overview_section_1_description.value | json }},
+        "faqs": {{ meta_source.metafields.custom.faqs.value.faqs | json }},
+        "section1DesktopImage": {{ meta_source.metafields.custom.overview_section_1_image_desktop.value | json }},
+        "section1MobileImage": {{ meta_source.metafields.custom.overview_section_1_image_mobile.value | json }},
+        "section1Heading": {{ meta_source.metafields.custom.overview_section_1_heading | json }},
+        "section1Description": {{ meta_source.metafields.custom.overview_section_1_description.value | json }},
         "section2DesktopImages": [
-          {% for f in v.metafields.custom.overview_section_2_images.value %}
-            {{ f | json }}{% unless forloop.last %},{% endunless %}
-          {% endfor %}
+          {% assign section2Images = meta_source.metafields.custom.overview_section_2_images.value %}
+          {% if section2Images %}
+            {% for f in section2Images %}
+              {{ f | json }}{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endif %}
         ],
-        "section2Heading": {{ v.metafields.custom.overview_section_2_heading | json }},
-        "section2Description": {{ v.metafields.custom.overview_section_2_description.value | json }},
-        "section3DesktopImage": {{ v.metafields.custom.overview_section_3_image_desktop.value | json }},
-        "section3MobileImage": {{ v.metafields.custom.overview_section_3_image_mobile.value | json }},
-        "section3Heading": {{ v.metafields.custom.overview_section_3_heading | json }},
-        "section3Description": {{ v.metafields.custom.overview_section_3_description.value | json }},
+        "section2Heading": {{ meta_source.metafields.custom.overview_section_2_heading | json }},
+        "section2Description": {{ meta_source.metafields.custom.overview_section_2_description.value | json }},
+        "section3DesktopImage": {{ meta_source.metafields.custom.overview_section_3_image_desktop.value | json }},
+        "section3MobileImage": {{ meta_source.metafields.custom.overview_section_3_image_mobile.value | json }},
+        "section3Heading": {{ meta_source.metafields.custom.overview_section_3_heading | json }},
+        "section3Description": {{ meta_source.metafields.custom.overview_section_3_description.value | json }},
         "section3TinyImages": [
-          {% assign tinyImages = v.metafields.custom.overview_section_3_tiny_image.value %}
+          {% assign tinyImages = meta_source.metafields.custom.overview_section_3_tiny_image.value %}
           {% if tinyImages %}
             {% for img in tinyImages %}
               {
@@ -1055,22 +1062,22 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
             {% endfor %}
           {% endif %}
         ],
-        "section4Image": {{ v.metafields.custom.overview_section_4_image.value | json }},
-        "section4ImageMobile": {{ v.metafields.custom.overview_section_4_image_mobile.value | json }},
-        "section4Heading": {{ v.metafields.custom.overview_section_4_heading | json }},
-        "section4Description": {{ v.metafields.custom.overview_section_4_description.value | json }},
-        "section5Image": {{ v.metafields.custom.overview_section_5_image.value | json }},
-        "section5ImageMobile": {{ v.metafields.custom.overview_section_5_image_mobile.value | json }},
-        "section5Heading": {{ v.metafields.custom.overview_section_5_heading | json }},
-        "section5Description": {{ v.metafields.custom.overview_section_5_description.value | json }},
-        "sectionBottomBannerImageDesktop": {{ v.metafields.custom.banner_bottom_section_desktop_image.value | json }},
-        "sectionBottomBannerImageMobile": {{ v.metafields.custom.banner_bottom_section_mobile_image.value | json }},
-        "sectionBottomBannerHeading": {{ v.metafields.custom.banner_bottom_section_heading | json }},
-        "sectionBottomBannerDescription": {{ v.metafields.custom.banner_bottom_section_description.value | json }},
-        "manualFile": {{ v.metafields.custom.user_manual.value.url | json }},
-        "specs_html": {{ v.metafields.custom.technical_data_manual | metafield_tag | json }},
+        "section4Image": {{ meta_source.metafields.custom.overview_section_4_image.value | json }},
+        "section4ImageMobile": {{ meta_source.metafields.custom.overview_section_4_image_mobile.value | json }},
+        "section4Heading": {{ meta_source.metafields.custom.overview_section_4_heading | json }},
+        "section4Description": {{ meta_source.metafields.custom.overview_section_4_description.value | json }},
+        "section5Image": {{ meta_source.metafields.custom.overview_section_5_image.value | json }},
+        "section5ImageMobile": {{ meta_source.metafields.custom.overview_section_5_image_mobile.value | json }},
+        "section5Heading": {{ meta_source.metafields.custom.overview_section_5_heading | json }},
+        "section5Description": {{ meta_source.metafields.custom.overview_section_5_description.value | json }},
+        "sectionBottomBannerImageDesktop": {{ meta_source.metafields.custom.banner_bottom_section_desktop_image.value | json }},
+        "sectionBottomBannerImageMobile": {{ meta_source.metafields.custom.banner_bottom_section_mobile_image.value | json }},
+        "sectionBottomBannerHeading": {{ meta_source.metafields.custom.banner_bottom_section_heading | json }},
+        "sectionBottomBannerDescription": {{ meta_source.metafields.custom.banner_bottom_section_description.value | json }},
+        "manualFile": {{ meta_source.metafields.custom.user_manual.value.url | json }},
+        "specs_html": {{ meta_source.metafields.custom.technical_data_manual | metafield_tag | json }},
         "relatedProducts": [
-          {% assign bundle = v.metafields.custom.related_products.value %}
+          {% assign bundle = meta_source.metafields.custom.related_products.value %}
           {% if bundle %}
             {% for p in bundle %}
               {
