@@ -429,6 +429,13 @@
             "title_faqs": "Can I upgrade my Jeep audio in stages?",
             "answere": "<p>Yes — many customers prefer building their system over time.</p><p>A common upgrade path looks like this:</p><ol><li>Replace speakers</li><li>Add amplification</li><li>Install a subwoofer</li><li>Complete the system with additional upgrades</li></ol><p>You can explore all Jeep-focused solutions here:<br/><a href=\"https://ds18.com/pages/jeep\"><span style=\"text-decoration:underline\">https://ds18.com/pages/jeep</span></a></p><p>If you'd like help mapping out a phased plan based on your budget, start a conversation with us and we’ll walk you through it.</p>"
           }
+        },
+        "faqs_7XLyFE": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What makes a complete Jeep audio system?",
+            "answere": "<p>A well-balanced Jeep system combines:</p><ul><li>High-efficiency speakers</li><li>Dedicated multi-channel amplification</li><li>A properly matched subwoofer</li><li>Quality wiring and power management</li></ul><p>When everything works together, the result is clean, controlled output — even in demanding conditions.</p><p>Begin building your system here:<br/><a href=\"https://ds18.com/pages/jeep\"><span style=\"text-decoration:underline\">https://ds18.com/pages/jeep</span></a></p><p>If you’d prefer personalized recommendations instead of browsing categories, our Live Chat team can help design a setup around your Jeep and listening style.</p>"
+          }
         }
       },
       "block_order": [
@@ -438,7 +445,8 @@
         "faqs_mQQ3fD",
         "faqs_yc8qL3",
         "faqs_zcA7Ff",
-        "faqs_bh687W"
+        "faqs_bh687W",
+        "faqs_7XLyFE"
       ],
       "name": "FAQ's",
       "settings": {
