@@ -197,6 +197,10 @@
       "block_order": [
         "image_FgMwhk"
       ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
+      ],
       "name": "Slideshow",
       "settings": {
         "section_height": "auto",
