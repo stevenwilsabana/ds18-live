@@ -206,6 +206,23 @@
         "background": "rgba(0,0,0,0)"
       }
     },
+    "17736776368a043ce7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7e68ddd_HnWyLL": {
+          "type": "ai_gen_block_7e68ddd",
+          "settings": {
+            "spacing_desktop": 40,
+            "spacing_mobile": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7e68ddd_HnWyLL"
+      ],
+      "settings": {}
+    },
     "slideshow_p7GFDk": {
       "type": "slideshow",
       "blocks": {
@@ -240,6 +257,58 @@
         "cycle_speed": 5,
         "background": "rgba(0,0,0,0)"
       }
+    },
+    "blocks_WdLxnq": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7e68ddd_PR6kxc": {
+          "type": "ai_gen_block_7e68ddd",
+          "settings": {
+            "spacing_desktop": 40,
+            "spacing_mobile": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7e68ddd_PR6kxc"
+      ],
+      "settings": {}
+    },
+    "slideshow_hRcFXF": {
+      "type": "slideshow",
+      "blocks": {
+        "image_6q7t4g": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_4.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2026_4.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/jeep-jt-gladiator",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_6q7t4g"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
     }
   },
   "order": [
@@ -248,6 +317,9 @@
     "main",
     "4e2c9fb5-7c2b-4bec-b4d6-0fd25f534435",
     "slideshow_Pbpqx9",
-    "slideshow_p7GFDk"
+    "17736776368a043ce7",
+    "slideshow_p7GFDk",
+    "blocks_WdLxnq",
+    "slideshow_hRcFXF"
   ]
 }
