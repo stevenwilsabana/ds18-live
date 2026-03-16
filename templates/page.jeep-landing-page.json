@@ -387,10 +387,18 @@
             "title_faqs": "Is upgrading factory Jeep speakers worth it?",
             "answere": "<p>Factory systems are designed for average driving conditions. Jeeps operate in much louder environments — especially with larger tires or the top off.</p><p>Upgrading typically results in:</p><ul><li>Better projection</li><li>Cleaner highs</li><li>Stronger midrange presence</li><li>Improved clarity at highway speeds</li></ul><p>Explore compatible upgrades for your platform:</p><ul><li>JL / JLU:<a href=\"https://ds18.com/collections/jeep-jl?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jl</span></a></li><li>JT Gladiator:<a href=\"https://ds18.com/collections/jeep-jt-gladiator?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jt-gladiator</span></a></li><li>JK / JKU:<a href=\"https://ds18.com/collections/jeep-jk?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jk</span></a></li></ul><p>If you’d like help comparing options for your specific model, our team is available through Live Chat.</p>"
           }
+        },
+        "faqs_kXngMR": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What is the easiest Jeep audio upgrade?",
+            "answere": "<p>Replacing factory speakers is typically the most straightforward improvement. Many DS18 speakers align with factory mounting locations across Jeep platforms.</p><p>From there, you can expand into amplification or bass depending on how much output you want.</p><p>Model-specific collections:</p><ul><li>JL / JLU:<a href=\"https://ds18.com/collections/jeep-jl?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jl</span></a></li><li>JT Gladiator:<a href=\"https://ds18.com/collections/jeep-jt-gladiator?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jt-gladiator</span></a></li><li>JK / JKU:<a href=\"https://ds18.com/collections/jeep-jk?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jk</span></a></li></ul><p>Need help confirming fitment for your year and trim? Send us a quick message using the chat feature.</p>"
+          }
         }
       },
       "block_order": [
-        "faqs_PMzdL4"
+        "faqs_PMzdL4",
+        "faqs_kXngMR"
       ],
       "name": "FAQ's",
       "settings": {
