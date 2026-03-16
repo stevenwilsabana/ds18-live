@@ -401,12 +401,20 @@
             "title_faqs": "What are the best audio upgrades for a Jeep Wrangler?",
             "answere": "<p>The best Jeep audio upgrade depends on how you use your vehicle. Open-air driving and trail noise demand higher efficiency and stronger output than most factory systems provide.</p><p>Most Jeep owners improve their system in stages:</p><ul><li>Upgrade factory speakers</li><li>Add a dedicated amplifier</li><li>Install a properly matched subwoofer</li><li>Move into a complete Jeep-specific system</li></ul><p>To browse all available solutions, visit:<br/><a href=\"https://ds18.com/pages/jeep\"><span style=\"text-decoration:underline\">https://ds18.com/pages/jeep</span></a></p><p>If you're unsure which direction makes sense for your build, Live Chat is a quick way to get pointed in the right direction.</p>"
           }
+        },
+        "faqs_mQQ3fD": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Do I need an amplifier when upgrading my Jeep speakers?",
+            "answere": "<p>Factory radios can power aftermarket speakers, but adding an amplifier dramatically improves clarity and usable volume — especially with the top off.</p><p>An amplifier provides:</p><ul><li>Cleaner sound at higher levels</li><li>Better control over distortion</li><li>Stronger overall projection</li></ul><p>Explore amplifier options here:<br/><a href=\"https://ds18.com/collections/amplifiers\"><span style=\"text-decoration:underline\">https://ds18.com/collections/amplifiers</span></a></p><p>If you're unsure how much power your setup requires, we can help you match the right amplifier to your system through chat.</p>"
+          }
         }
       },
       "block_order": [
         "faqs_PMzdL4",
         "faqs_kXngMR",
-        "faqs_emAjfW"
+        "faqs_emAjfW",
+        "faqs_mQQ3fD"
       ],
       "name": "FAQ's",
       "settings": {
