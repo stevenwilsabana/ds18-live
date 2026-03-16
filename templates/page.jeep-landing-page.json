@@ -56,8 +56,28 @@
         "background": "rgba(0,0,0,0)"
       }
     },
+    "rich_text_PexQHP": {
+      "type": "rich-text",
+      "name": "Rich text",
+      "settings": {
+        "subheading": "",
+        "title": "Jeep Speakers & Audio Upgrades for Jeep JL, JK, and TJ",
+        "content": "<h2>Crank Your Jeep Audio with DS18 Sound Bars and Speakers Built for Jeep Owners Who Like It Loud</h2>",
+        "button_text": "",
+        "button_link": "",
+        "background_type": "full_width",
+        "text_width": "large",
+        "text_position": "center",
+        "text_alignment": "center",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "show_title": false,
         "show_breadcrumb": false,
@@ -441,6 +461,7 @@
   "order": [
     "custom_liquid_9aQtcK",
     "slideshow_wBn8n4",
+    "rich_text_PexQHP",
     "main",
     "4e2c9fb5-7c2b-4bec-b4d6-0fd25f534435",
     "slideshow_Pbpqx9",
