@@ -253,6 +253,10 @@
       "block_order": [
         "image_XhzFTg"
       ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
+      ],
       "name": "Slideshow",
       "settings": {
         "section_height": "auto",
@@ -305,6 +309,10 @@
       "block_order": [
         "image_6q7t4g"
       ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
+      ],
       "name": "Slideshow",
       "settings": {
         "section_height": "auto",
@@ -356,6 +364,10 @@
       },
       "block_order": [
         "image_VCBeNE"
+      ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
       ],
       "name": "Slideshow",
       "settings": {
