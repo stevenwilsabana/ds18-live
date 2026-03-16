@@ -377,6 +377,25 @@
         "cycle_speed": 5,
         "background": "rgba(0,0,0,0)"
       }
+    },
+    "fa_qs_imPPbr": {
+      "type": "FAQs",
+      "blocks": {
+        "faqs_PMzdL4": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Is upgrading factory Jeep speakers worth it?",
+            "answere": ""
+          }
+        }
+      },
+      "block_order": [
+        "faqs_PMzdL4"
+      ],
+      "name": "FAQ's",
+      "settings": {
+        "title": "Jeep Audio Upgrade FAQ"
+      }
     }
   },
   "order": [
@@ -390,6 +409,7 @@
     "blocks_WdLxnq",
     "slideshow_hRcFXF",
     "blocks_NrXWNf",
-    "slideshow_JpyALp"
+    "slideshow_JpyALp",
+    "fa_qs_imPPbr"
   ]
 }
