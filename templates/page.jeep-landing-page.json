@@ -422,6 +422,13 @@
             "title_faqs": "What accessories are important for a Jeep audio upgrade?",
             "answere": "<p>Supporting components are just as important as speakers and amplifiers. Proper wiring and installation accessories ensure reliability and performance.</p><p>Important additions often include:</p><ul><li><a href=\"https://ds18.com/collections/speaker-wire-and-ampkits\"><span style=\"text-decoration:underline\">Amplifier wiring kits</span></a></li><li><a href=\"https://ds18.com/collections/car-audio-accessories\"><span style=\"text-decoration:underline\">RCA interconnects</span></a></li><li><a href=\"https://ds18.com/collections/installation-solutions\"><span style=\"text-decoration:underline\">Distribution blocks</span></a></li><li><a href=\"https://ds18.com/collections/car-audio-accessories\"><span style=\"text-decoration:underline\">Sound treatment materials</span></a></li></ul><p>Installation gear can be found here:<br/><a href=\"https://ds18.com/collections/accessories\"><span style=\"text-decoration:underline\">https://ds18.com/collections/accessories</span></a></p><p>If you're building a full system and want to double-check your parts list, we’re happy to review it with you.</p>"
           }
+        },
+        "faqs_bh687W": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Can I upgrade my Jeep audio in stages?",
+            "answere": "<p>Yes — many customers prefer building their system over time.</p><p>A common upgrade path looks like this:</p><ol><li>Replace speakers</li><li>Add amplification</li><li>Install a subwoofer</li><li>Complete the system with additional upgrades</li></ol><p>You can explore all Jeep-focused solutions here:<br/><a href=\"https://ds18.com/pages/jeep\"><span style=\"text-decoration:underline\">https://ds18.com/pages/jeep</span></a></p><p>If you'd like help mapping out a phased plan based on your budget, start a conversation with us and we’ll walk you through it.</p>"
+          }
         }
       },
       "block_order": [
@@ -430,7 +437,8 @@
         "faqs_emAjfW",
         "faqs_mQQ3fD",
         "faqs_yc8qL3",
-        "faqs_zcA7Ff"
+        "faqs_zcA7Ff",
+        "faqs_bh687W"
       ],
       "name": "FAQ's",
       "settings": {
