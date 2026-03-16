@@ -1,6 +1,206 @@
+{% doc %}
+  @prompt
+    Create an H1 text and under with an h2
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-heading-block-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_horizontal }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-heading-block__h1-{{ ai_gen_id }} {
+    margin: 0 0 {{ block.settings.spacing_between }}px 0;
+    color: {{ block.settings.h1_color }};
+    font-size: {{ block.settings.h1_font_size }}px;
+    font-family: {{ block.settings.h1_font.family }}, {{ block.settings.h1_font.fallback_families }};
+    font-weight: {{ block.settings.h1_font.weight }};
+    font-style: {{ block.settings.h1_font.style }};
+    line-height: 1.2;
+  }
+
+  .ai-heading-block__h2-{{ ai_gen_id }} {
+    margin: 0;
+    color: {{ block.settings.h2_color }};
+    font-size: {{ block.settings.h2_font_size }}px;
+    font-family: {{ block.settings.h2_font.family }}, {{ block.settings.h2_font.fallback_families }};
+    font-weight: {{ block.settings.h2_font.weight }};
+    font-style: {{ block.settings.h2_font.style }};
+    line-height: 1.4;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-heading-block__h1-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.h1_font_size }}px * 0.8);
+    }
+
+    .ai-heading-block__h2-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.h2_font_size }}px * 0.8);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-heading-block-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.h1_text != blank %}
+    <h1 class="ai-heading-block__h1-{{ ai_gen_id }}">{{ block.settings.h1_text }}</h1>
+  {% endif %}
+  
+  {% if block.settings.h2_text != blank %}
+    <h2 class="ai-heading-block__h2-{{ ai_gen_id }}">{{ block.settings.h2_text }}</h2>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Heading block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "H1 heading"
+    },
+    {
+      "type": "text",
+      "id": "h1_text",
+      "label": "H1 text",
+      "default": "Main heading"
+    },
+    {
+      "type": "font_picker",
+      "id": "h1_font",
+      "label": "Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "h1_font_size",
+      "label": "Font size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "h1_color",
+      "label": "Color",
+      "default": "#282828"
+    },
+    {
+      "type": "header",
+      "content": "H2 subheading"
+    },
+    {
+      "type": "text",
+      "id": "h2_text",
+      "label": "H2 text",
+      "default": "Subheading text"
+    },
+    {
+      "type": "font_picker",
+      "id": "h2_font",
+      "label": "Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "h2_font_size",
+      "label": "Font size",
+      "min": 14,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "h2_color",
+      "label": "Color",
+      "default": "#282828"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "spacing_between",
+      "label": "Spacing between headings",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Heading block"
+    }
+  ]
+}
 {% endschema %}
