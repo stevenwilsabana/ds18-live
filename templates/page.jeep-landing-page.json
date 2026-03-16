@@ -309,6 +309,58 @@
         "cycle_speed": 5,
         "background": "rgba(0,0,0,0)"
       }
+    },
+    "blocks_NrXWNf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7e68ddd_E6GNYc": {
+          "type": "ai_gen_block_7e68ddd",
+          "settings": {
+            "spacing_desktop": 40,
+            "spacing_mobile": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7e68ddd_E6GNYc"
+      ],
+      "settings": {}
+    },
+    "slideshow_JpyALp": {
+      "type": "slideshow",
+      "blocks": {
+        "image_VCBeNE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_5.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2026_5.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/jeep-tj",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_VCBeNE"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
     }
   },
   "order": [
@@ -320,6 +372,8 @@
     "17736776368a043ce7",
     "slideshow_p7GFDk",
     "blocks_WdLxnq",
-    "slideshow_hRcFXF"
+    "slideshow_hRcFXF",
+    "blocks_NrXWNf",
+    "slideshow_JpyALp"
   ]
 }
