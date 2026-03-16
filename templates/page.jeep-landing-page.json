@@ -408,13 +408,29 @@
             "title_faqs": "Do I need an amplifier when upgrading my Jeep speakers?",
             "answere": "<p>Factory radios can power aftermarket speakers, but adding an amplifier dramatically improves clarity and usable volume — especially with the top off.</p><p>An amplifier provides:</p><ul><li>Cleaner sound at higher levels</li><li>Better control over distortion</li><li>Stronger overall projection</li></ul><p>Explore amplifier options here:<br/><a href=\"https://ds18.com/collections/amplifiers\"><span style=\"text-decoration:underline\">https://ds18.com/collections/amplifiers</span></a></p><p>If you're unsure how much power your setup requires, we can help you match the right amplifier to your system through chat.</p>"
           }
+        },
+        "faqs_yc8qL3": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Should I add a subwoofer to my Jeep?",
+            "answere": "<p>In open-air vehicles, bass is usually the first thing to disappear. A properly matched subwoofer restores depth and balances the entire system.</p><p>Browse available subwoofer options here:<br/><a href=\"https://ds18.com/collections/car-subwoofers\"><span style=\"text-decoration:underline\">https://ds18.com/collections/car-subwoofers</span></a></p><p>If cargo space or enclosure type is a concern, let us know through Live Chat and we’ll help you find a practical solution.</p>"
+          }
+        },
+        "faqs_zcA7Ff": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What accessories are important for a Jeep audio upgrade?",
+            "answere": "<p>Supporting components are just as important as speakers and amplifiers. Proper wiring and installation accessories ensure reliability and performance.</p><p>Important additions often include:</p><ul><li><a href=\"https://ds18.com/collections/speaker-wire-and-ampkits\"><span style=\"text-decoration:underline\">Amplifier wiring kits</span></a></li><li><a href=\"https://ds18.com/collections/car-audio-accessories\"><span style=\"text-decoration:underline\">RCA interconnects</span></a></li><li><a href=\"https://ds18.com/collections/installation-solutions\"><span style=\"text-decoration:underline\">Distribution blocks</span></a></li><li><a href=\"https://ds18.com/collections/car-audio-accessories\"><span style=\"text-decoration:underline\">Sound treatment materials</span></a></li></ul><p>Installation gear can be found here:<br/><a href=\"https://ds18.com/collections/accessories\"><span style=\"text-decoration:underline\">https://ds18.com/collections/accessories</span></a></p><p>If you're building a full system and want to double-check your parts list, we’re happy to review it with you.</p>"
+          }
         }
       },
       "block_order": [
         "faqs_PMzdL4",
         "faqs_kXngMR",
         "faqs_emAjfW",
-        "faqs_mQQ3fD"
+        "faqs_mQQ3fD",
+        "faqs_yc8qL3",
+        "faqs_zcA7Ff"
       ],
       "name": "FAQ's",
       "settings": {
