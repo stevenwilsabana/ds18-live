@@ -344,23 +344,6 @@
       ],
       "settings": {}
     },
-    "blocks_fMMkGg": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_7e68ddd_HryYMw": {
-          "type": "ai_gen_block_7e68ddd",
-          "settings": {
-            "spacing_desktop": 40,
-            "spacing_mobile": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_7e68ddd_HryYMw"
-      ],
-      "settings": {}
-    },
     "fa_qs_imPPbr": {
       "type": "FAQs",
       "blocks": {
@@ -408,6 +391,7 @@
         },
         "faqs_bh687W": {
           "type": "faqs",
+          "disabled": true,
           "settings": {
             "title_faqs": "Can I upgrade my Jeep audio in stages?",
             "answere": "<p>Yes — many customers prefer building their system over time.</p><p>A common upgrade path looks like this:</p><ol><li>Replace speakers</li><li>Add amplification</li><li>Install a subwoofer</li><li>Complete the system with additional upgrades</li></ol><p>You can explore all Jeep-focused solutions here:<br/><a href=\"https://ds18.com/pages/jeep\"><span style=\"text-decoration:underline\">https://ds18.com/pages/jeep</span></a></p><p>If you'd like help mapping out a phased plan based on your budget, start a conversation with us and we’ll walk you through it.</p>"
@@ -435,6 +419,23 @@
       "settings": {
         "title": "Jeep Audio Upgrade FAQ"
       }
+    },
+    "blocks_fMMkGg": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7e68ddd_HryYMw": {
+          "type": "ai_gen_block_7e68ddd",
+          "settings": {
+            "spacing_desktop": 40,
+            "spacing_mobile": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7e68ddd_HryYMw"
+      ],
+      "settings": {}
     }
   },
   "order": [
