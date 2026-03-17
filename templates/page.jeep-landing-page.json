@@ -83,6 +83,7 @@
       "block_order": [
         "ai_gen_block_f962dec_VWatrm"
       ],
+      "disabled": true,
       "settings": {}
     },
     "main": {
