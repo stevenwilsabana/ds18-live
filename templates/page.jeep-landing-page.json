@@ -207,8 +207,8 @@
         "image_XhzFTg": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Jeep_Site_Banners_2026_3.jpg",
-            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2026_3.jpg",
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_1_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2025_2.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
@@ -240,53 +240,14 @@
         "background": "rgba(0,0,0,0)"
       }
     },
-    "slideshow_Pbpqx9": {
-      "type": "slideshow",
-      "blocks": {
-        "image_FgMwhk": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Jeep_Site_Banners_2026_2.jpg",
-            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2026_2.jpg",
-            "text_position": "middle_center",
-            "subheading": "",
-            "title": "",
-            "button_1_text": "",
-            "button_1_link": "https://ds18.com/collections/jeep-jk",
-            "button_2_text": "",
-            "button_2_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_FgMwhk"
-      ],
-      "custom_css": [
-        ".slideshow__image {transition: transform 0.4s ease;}",
-        ".slideshow__image:hover {transform: scale(1.08);}"
-      ],
-      "name": "Slideshow",
-      "settings": {
-        "section_height": "auto",
-        "transition_type": "sweep",
-        "autoplay": true,
-        "cycle_speed": 5,
-        "background": "rgba(0,0,0,0)"
-      }
-    },
     "slideshow_hRcFXF": {
       "type": "slideshow",
       "blocks": {
         "image_6q7t4g": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Jeep_Site_Banners_2026_4.jpg",
-            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2026_4.jpg",
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_2_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2025_3.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
@@ -318,14 +279,53 @@
         "background": "rgba(0,0,0,0)"
       }
     },
+    "slideshow_Pbpqx9": {
+      "type": "slideshow",
+      "blocks": {
+        "image_FgMwhk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_3_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2025_4.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/jeep-jk",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_FgMwhk"
+      ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
     "slideshow_JpyALp": {
       "type": "slideshow",
       "blocks": {
         "image_VCBeNE": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Jeep_Site_Banners_2026_5.jpg",
-            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2026_5.jpg",
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_4_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2025_5.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
