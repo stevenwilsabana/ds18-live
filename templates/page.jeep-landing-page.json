@@ -409,6 +409,13 @@
     "fa_qs_imPPbr": {
       "type": "FAQs",
       "blocks": {
+        "faqs_NphtYY": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What should my first upgrade be for my Jeep audio system?",
+            "answere": "<p>If you’re just getting started, we recommend upgrading to a <strong>sound bar</strong> first. It’s one of the easiest ways to dramatically improve your Jeep’s overall sound—especially for rear fill and open-air driving where factory systems fall short.If you want a complete, plug-and-play upgrade, check out our Jeep-specific packages:</p><ul><li><a href=\"https://ds18.com/products/jl-jeep-package\" title=\"https://ds18.com/products/jl-jeep-package\"><em><strong>JL Jeep Package</strong></em></a> – Designed for <strong>Wrangler JL and JT Gladiator models</strong></li><li><a href=\"https://ds18.com/products/jk-jeep-package\" title=\"https://ds18.com/products/jk-jeep-package\"><em><strong>JK Jeep Package </strong></em></a>– Built for <strong>Wrangler JK models</strong></li></ul><p>From there, you can continue building your system with:</p><ul><li>Upgraded front speakers for better clarity and vocals</li><li>Amplifiers to add power and improve overall performance</li><li>Subwoofers for deeper bass and a fuller sound</li></ul><p>This step-by-step approach helps you get noticeable improvements at each stage while building a complete, high-performance system.</p>"
+          }
+        },
         "faqs_PMzdL4": {
           "type": "faqs",
           "settings": {
@@ -468,6 +475,7 @@
         }
       },
       "block_order": [
+        "faqs_NphtYY",
         "faqs_PMzdL4",
         "faqs_kXngMR",
         "faqs_emAjfW",
@@ -476,6 +484,9 @@
         "faqs_zcA7Ff",
         "faqs_bh687W",
         "faqs_7XLyFE"
+      ],
+      "custom_css": [
+        "a {color: blue;}"
       ],
       "name": "FAQ's",
       "settings": {
