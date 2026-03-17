@@ -56,36 +56,6 @@
         "background": "rgba(0,0,0,0)"
       }
     },
-    "17736903473886e304": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_f962dec_VWatrm": {
-          "type": "ai_gen_block_f962dec",
-          "settings": {
-            "h1_text": "Jeep Speakers & Audio Upgrades for Jeep JL, JK, and TJ",
-            "h1_font": "montserrat_n8",
-            "h1_font_size": 48,
-            "h1_color": "#282828",
-            "h2_text": "Crank Your Jeep Audio with DS18 Sound Bars and Speakers Built for Jeep Owners Who Like It Loud",
-            "h2_font": "montserrat_n4",
-            "h2_font_size": 24,
-            "h2_color": "#282828",
-            "spacing_between": 5,
-            "text_alignment": "center",
-            "desktop_width_percent": 100,
-            "padding_top": 40,
-            "padding_bottom": 40,
-            "padding_horizontal": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_f962dec_VWatrm"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -373,6 +343,7 @@
       "block_order": [
         "ai_gen_block_7e68ddd_E6GNYc"
       ],
+      "disabled": true,
       "settings": {}
     },
     "featured_collections_XCkqRw": {
@@ -405,6 +376,35 @@
         "button_background": "rgba(0,0,0,0)",
         "button_text_color": "rgba(0,0,0,0)"
       }
+    },
+    "17736903473886e304": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f962dec_VWatrm": {
+          "type": "ai_gen_block_f962dec",
+          "settings": {
+            "h1_text": "Jeep Speakers & Audio Upgrades for Jeep JL, JK, and TJ",
+            "h1_font": "montserrat_n8",
+            "h1_font_size": 48,
+            "h1_color": "#282828",
+            "h2_text": "Crank Your Jeep Audio with DS18 Sound Bars and Speakers Built for Jeep Owners Who Like It Loud",
+            "h2_font": "montserrat_n4",
+            "h2_font_size": 24,
+            "h2_color": "#282828",
+            "spacing_between": 5,
+            "text_alignment": "center",
+            "desktop_width_percent": 100,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f962dec_VWatrm"
+      ],
+      "settings": {}
     },
     "fa_qs_imPPbr": {
       "type": "FAQs",
@@ -503,7 +503,6 @@
   "order": [
     "custom_liquid_9aQtcK",
     "slideshow_wBn8n4",
-    "17736903473886e304",
     "main",
     "4e2c9fb5-7c2b-4bec-b4d6-0fd25f534435",
     "slideshow_p7GFDk",
@@ -512,6 +511,7 @@
     "slideshow_JpyALp",
     "blocks_NrXWNf",
     "featured_collections_XCkqRw",
+    "17736903473886e304",
     "fa_qs_imPPbr",
     "blocks_fMMkGg"
   ]
