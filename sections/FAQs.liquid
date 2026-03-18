@@ -32,21 +32,25 @@
 <script>
   
   $(document).ready(function(){
-    $('.accordion-faqs > .accordion-faqs__item > .accordion-faqs__answer').hide();
-      
-    $('.accordion-faqs > .accordion-faqs__item').click(function() {
-      if ($(this).hasClass("active")) {
-        $(this).removeClass("active").find(".accordion-faqs__answer").slideUp();
-      } else {
-        $(".accordion-faqs > .accordion-faqs__item.active .accordion-faqs__answer").slideUp();
-        $(".accordion-faqs > .accordion-faqs__item.active").removeClass("active");
-        $(this).addClass("active").find(".accordion-faqs__answer").slideDown();
-      }
-      return false;
-    });
-    
+  $('.accordion-faqs > .accordion-faqs__item > .accordion-faqs__answer').hide();
+
+  $('.accordion-faqs > .accordion-faqs__item').click(function(e) {
+
+    // allow links to work normally
+    if ($(e.target).closest('a').length) {
+      return;
+    }
+
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active").find(".accordion-faqs__answer").slideUp();
+    } else {
+      $(".accordion-faqs > .accordion-faqs__item.active .accordion-faqs__answer").slideUp();
+      $(".accordion-faqs > .accordion-faqs__item.active").removeClass("active");
+      $(this).addClass("active").find(".accordion-faqs__answer").slideDown();
+    }
   });
-  
+
+});
 </script>
 
 

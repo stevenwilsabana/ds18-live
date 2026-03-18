@@ -21,8 +21,44 @@
         "text_color": "rgba(0,0,0,0)"
       }
     },
+    "slideshow_wBn8n4": {
+      "type": "slideshow",
+      "blocks": {
+        "image_33THjR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2026_1.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_33THjR"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "show_title": false,
         "show_breadcrumb": false,
@@ -125,6 +161,7 @@
         "template--15227351859261__4e2c9fb5-7c2b-4bec-b4d6-0fd25f534435-16886791253a6b1721-4",
         "template--15227351859261__4e2c9fb5-7c2b-4bec-b4d6-0fd25f534435-16886791253a6b1721-5"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "reveal_on_scroll": false,
@@ -134,11 +171,359 @@
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
       }
+    },
+    "slideshow_p7GFDk": {
+      "type": "slideshow",
+      "blocks": {
+        "image_XhzFTg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_1_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2025_2.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/jeep-jl",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_XhzFTg"
+      ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
+    "slideshow_hRcFXF": {
+      "type": "slideshow",
+      "blocks": {
+        "image_6q7t4g": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_2_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2025_3.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/jeep-jt-gladiator",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_6q7t4g"
+      ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
+    "slideshow_Pbpqx9": {
+      "type": "slideshow",
+      "blocks": {
+        "image_FgMwhk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_3_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2025_4.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/jeep-jk",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_FgMwhk"
+      ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
+    "slideshow_JpyALp": {
+      "type": "slideshow",
+      "blocks": {
+        "image_VCBeNE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Jeep_Site_Banners_2026_4_1.jpg",
+            "mobile_image": "shopify://shop_images/Jeep_Site_Website_2025_5.jpg",
+            "text_position": "middle_center",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "https://ds18.com/collections/jeep-tj",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_VCBeNE"
+      ],
+      "custom_css": [
+        ".slideshow__image {transition: transform 0.4s ease;}",
+        ".slideshow__image:hover {transform: scale(1.08);}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "section_height": "auto",
+        "transition_type": "sweep",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
+    "blocks_NrXWNf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7e68ddd_E6GNYc": {
+          "type": "ai_gen_block_7e68ddd",
+          "settings": {
+            "spacing_desktop": 40,
+            "spacing_mobile": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7e68ddd_E6GNYc"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collections_XCkqRw": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_EGUa4t": {
+          "type": "collection",
+          "settings": {
+            "collection": "jeep-audio-upgrades-for-jeep-jl-jk-and-tj",
+            "label": "",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_EGUa4t"
+      ],
+      "name": "Featured collections",
+      "settings": {
+        "subheading": "",
+        "title": "DESIGNED FOR JEEP",
+        "content": "",
+        "products_count": 10,
+        "products_per_row": 4,
+        "stack_products": false,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "17736903473886e304": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f962dec_VWatrm": {
+          "type": "ai_gen_block_f962dec",
+          "settings": {
+            "h1_text": "Jeep Speakers & Audio Upgrades for Jeep JL, JK, and TJ",
+            "h1_font": "montserrat_n8",
+            "h1_font_size": 48,
+            "h1_color": "#282828",
+            "h2_text": "Crank Your Jeep Audio with DS18 Sound Bars and Speakers Built for Jeep Owners Who Like It Loud",
+            "h2_font": "montserrat_n4",
+            "h2_font_size": 24,
+            "h2_color": "#282828",
+            "spacing_between": 5,
+            "text_alignment": "center",
+            "desktop_width_percent": 100,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f962dec_VWatrm"
+      ],
+      "settings": {}
+    },
+    "fa_qs_imPPbr": {
+      "type": "FAQs",
+      "blocks": {
+        "faqs_NphtYY": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What should my first upgrade be for my Jeep audio system?",
+            "answere": "<p>If you’re just getting started, we recommend upgrading to a <strong>sound bar</strong> first. It’s one of the easiest ways to dramatically improve your Jeep’s overall sound—especially for rear fill and open-air driving where factory systems fall short.If you want a complete, plug-and-play upgrade, check out our Jeep-specific packages:</p><ul><li><a href=\"https://ds18.com/products/jl-jeep-package\" title=\"https://ds18.com/products/jl-jeep-package\"><em><strong>JL Jeep Package</strong></em></a> – Designed for <strong>Wrangler JL and JT Gladiator models</strong></li><li><a href=\"https://ds18.com/products/jk-jeep-package\" title=\"https://ds18.com/products/jk-jeep-package\"><em><strong>JK Jeep Package </strong></em></a>– Built for <strong>Wrangler JK models</strong></li></ul><p>From there, you can continue building your system with:</p><ul><li>Upgraded front speakers for better clarity and vocals</li><li>Amplifiers to add power and improve overall performance</li><li>Subwoofers for deeper bass and a fuller sound</li></ul><p>This step-by-step approach helps you get noticeable improvements at each stage while building a complete, high-performance system.</p>"
+          }
+        },
+        "faqs_PMzdL4": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Is upgrading factory Jeep speakers worth it?",
+            "answere": "<p>Factory systems are designed for average driving conditions. Jeeps operate in much louder environments — especially with larger tires or the top off.</p><p>Upgrading typically results in:</p><ul><li>Better projection</li><li>Cleaner highs</li><li>Stronger midrange presence</li><li>Improved clarity at highway speeds</li></ul><p>Explore compatible upgrades for your platform:</p><ul><li>JL / JLU:<a href=\"https://ds18.com/collections/jeep-jl?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jl</span></a></li><li>JT Gladiator:<a href=\"https://ds18.com/collections/jeep-jt-gladiator?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jt-gladiator</span></a></li><li>JK / JKU:<a href=\"https://ds18.com/collections/jeep-jk?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jk</span></a></li></ul><p>If you’d like help comparing options for your specific model, our team is available through Live Chat.</p>"
+          }
+        },
+        "faqs_kXngMR": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What is the easiest Jeep audio upgrade?",
+            "answere": "<p>Replacing factory speakers is typically the most straightforward improvement. Many DS18 speakers align with factory mounting locations across Jeep platforms.</p><p>From there, you can expand into amplification or bass depending on how much output you want.</p><p>Model-specific collections:</p><ul><li>JL / JLU:<a href=\"https://ds18.com/collections/jeep-jl?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jl</span></a></li><li>JT Gladiator:<a href=\"https://ds18.com/collections/jeep-jt-gladiator?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jt-gladiator</span></a></li><li>JK / JKU:<a href=\"https://ds18.com/collections/jeep-jk?utm_source=chatgpt.com\"> <span style=\"text-decoration:underline\">https://ds18.com/collections/jeep-jk</span></a></li></ul><p>Need help confirming fitment for your year and trim? Send us a quick message using the chat feature.</p>"
+          }
+        },
+        "faqs_emAjfW": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What are the best audio upgrades for a Jeep Wrangler?",
+            "answere": "<p>The best Jeep audio upgrade depends on how you use your vehicle. Open-air driving and trail noise demand higher efficiency and stronger output than most factory systems provide.</p><p>Most Jeep owners improve their system in stages:</p><ul><li>Upgrade factory speakers</li><li>Add a dedicated amplifier</li><li>Install a properly matched subwoofer</li><li>Move into a complete Jeep-specific system</li></ul><p>To browse all available solutions, visit:<br/><a href=\"https://ds18.com/pages/jeep\"><span style=\"text-decoration:underline\">https://ds18.com/pages/jeep</span></a></p><p>If you're unsure which direction makes sense for your build, Live Chat is a quick way to get pointed in the right direction.</p>"
+          }
+        },
+        "faqs_mQQ3fD": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Do I need an amplifier when upgrading my Jeep speakers?",
+            "answere": "<p>Factory radios can power aftermarket speakers, but adding an amplifier dramatically improves clarity and usable volume — especially with the top off.</p><p>An amplifier provides:</p><ul><li>Cleaner sound at higher levels</li><li>Better control over distortion</li><li>Stronger overall projection</li></ul><p>Explore amplifier options here:<br/><a href=\"https://ds18.com/collections/amplifiers\"><span style=\"text-decoration:underline\">https://ds18.com/collections/amplifiers</span></a></p><p>If you're unsure how much power your setup requires, we can help you match the right amplifier to your system through chat.</p>"
+          }
+        },
+        "faqs_yc8qL3": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Should I add a subwoofer to my Jeep?",
+            "answere": "<p>In open-air vehicles, bass is usually the first thing to disappear. A properly matched subwoofer restores depth and balances the entire system.</p><p>Browse available subwoofer options here:<br/><a href=\"https://ds18.com/collections/car-subwoofers\"><span style=\"text-decoration:underline\">https://ds18.com/collections/car-subwoofers</span></a></p><p>If cargo space or enclosure type is a concern, let us know through Live Chat and we’ll help you find a practical solution.</p>"
+          }
+        },
+        "faqs_zcA7Ff": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What accessories are important for a Jeep audio upgrade?",
+            "answere": "<p>Supporting components are just as important as speakers and amplifiers. Proper wiring and installation accessories ensure reliability and performance.</p><p>Important additions often include:</p><ul><li><a href=\"https://ds18.com/collections/speaker-wire-and-ampkits\"><span style=\"text-decoration:underline\">Amplifier wiring kits</span></a></li><li><a href=\"https://ds18.com/collections/car-audio-accessories\"><span style=\"text-decoration:underline\">RCA interconnects</span></a></li><li><a href=\"https://ds18.com/collections/installation-solutions\"><span style=\"text-decoration:underline\">Distribution blocks</span></a></li><li><a href=\"https://ds18.com/collections/car-audio-accessories\"><span style=\"text-decoration:underline\">Sound treatment materials</span></a></li></ul><p>Installation gear can be found here:<br/><a href=\"https://ds18.com/collections/accessories\"><span style=\"text-decoration:underline\">https://ds18.com/collections/accessories</span></a></p><p>If you're building a full system and want to double-check your parts list, we’re happy to review it with you.</p>"
+          }
+        },
+        "faqs_bh687W": {
+          "type": "faqs",
+          "disabled": true,
+          "settings": {
+            "title_faqs": "Can I upgrade my Jeep audio in stages?",
+            "answere": "<p>Yes — many customers prefer building their system over time.</p><p>A common upgrade path looks like this:</p><ol><li>Replace speakers</li><li>Add amplification</li><li>Install a subwoofer</li><li>Complete the system with additional upgrades</li></ol><p>You can explore all Jeep-focused solutions here:<br/><a href=\"https://ds18.com/pages/jeep\"><span style=\"text-decoration:underline\">https://ds18.com/pages/jeep</span></a></p><p>If you'd like help mapping out a phased plan based on your budget, start a conversation with us and we’ll walk you through it.</p>"
+          }
+        },
+        "faqs_7XLyFE": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "What makes a complete Jeep audio system?",
+            "answere": "<p>A well-balanced Jeep system combines:</p><ul><li>High-efficiency speakers</li><li>Dedicated multi-channel amplification</li><li>A properly matched subwoofer</li><li>Quality wiring and power management</li></ul><p>When everything works together, the result is clean, controlled output — even in demanding conditions.</p><p>Begin building your system here:<br/><a href=\"https://ds18.com/pages/jeep\"><span style=\"text-decoration:underline\">https://ds18.com/pages/jeep</span></a></p><p>If you’d prefer personalized recommendations instead of browsing categories, our Live Chat team can help design a setup around your Jeep and listening style.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_NphtYY",
+        "faqs_PMzdL4",
+        "faqs_kXngMR",
+        "faqs_emAjfW",
+        "faqs_mQQ3fD",
+        "faqs_yc8qL3",
+        "faqs_zcA7Ff",
+        "faqs_bh687W",
+        "faqs_7XLyFE"
+      ],
+      "custom_css": [
+        "a {color: blue;}"
+      ],
+      "name": "FAQ's",
+      "settings": {
+        "title": "Jeep Audio Upgrade FAQ"
+      }
+    },
+    "blocks_fMMkGg": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7e68ddd_HryYMw": {
+          "type": "ai_gen_block_7e68ddd",
+          "settings": {
+            "spacing_desktop": 40,
+            "spacing_mobile": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7e68ddd_HryYMw"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "custom_liquid_9aQtcK",
+    "slideshow_wBn8n4",
     "main",
-    "4e2c9fb5-7c2b-4bec-b4d6-0fd25f534435"
+    "4e2c9fb5-7c2b-4bec-b4d6-0fd25f534435",
+    "slideshow_p7GFDk",
+    "slideshow_hRcFXF",
+    "slideshow_Pbpqx9",
+    "slideshow_JpyALp",
+    "blocks_NrXWNf",
+    "featured_collections_XCkqRw",
+    "17736903473886e304",
+    "fa_qs_imPPbr",
+    "blocks_fMMkGg"
   ]
 }
