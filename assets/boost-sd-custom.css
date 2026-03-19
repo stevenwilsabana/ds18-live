@@ -118,11 +118,13 @@ predictive-search-drawer#search-drawer {
   border-radius: 25px;
   padding: 10px;
 }
-.boost-sd__suggestion-queries-item-amount,
 .boost-sd__suggestion-queries-item-vendor,
 .boost-sd__suggestion-queries-item-sku {
   display: none !important;
 }
+/* .boost-sd__suggestion-queries-item-amount {
+
+} */
 .boost-sd__suggestion-queries-item-product--right .product-options {
   display: flex;
   align-items: center;

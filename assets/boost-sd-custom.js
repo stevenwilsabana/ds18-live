@@ -159,172 +159,178 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat([
                         });
                       });
                   }
-  
-  
-                  element.options_with_values.forEach(option => {
-  
-                    switch (option.name) {
-                      case "color":
-                        option.values = option.values.map(color => {
-                          if (!color.image) return color;
+                  const priceElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-amount`)
+                  
+                  if(element.options_with_values.length === 1 && element.options_with_values[0].name == "title") {
+                    priceElement.style.display = "block"
+                  } else {
+                    priceElement.style.display = "none"
+                    element.options_with_values.forEach(option => {
     
-                          const imageUrl = imageList[String(color.image)];
-                          if (!imageUrl) return color;
+                      switch (option.name) {
+                        case "color":
+                          option.values = option.values.map(color => {
+                            if (!color.image) return color;
+      
+                            const imageUrl = imageList[String(color.image)];
+                            if (!imageUrl) return color;
+      
+                            return {
+                              ...color,
+                              imagePosition: color.image, // optional, keep original
+                              image: imageUrl
+                            };
+                          });
+                          const colorOptions = option.values
+      
+                          const colorOptionHtml = `
+                          <div class="product-options product-options--color">
+                            <p>Available Colors:</p>
+                            <ul>
+                              ${colorOptions.map(color => `
+                                <li class="color-option" title="${color.title}">
+                                  <img src="${color.image}" alt="${color.title}">
+                                </li>
+                              `).join('')}
+                            </ul>
+                          </div>
+                          `;
+              
+                          const productRoot = document.querySelector(
+                            `.boost-sd__instant-search-results 
+                            .boost-sd__instant-search-product-list-items`
+                          )?.closest('.boost-sd__instant-search-results');
+              
+                          if (!productRoot) return;
+      
+                          const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                          const TargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--color`)
+                          if (!TargetElementOptions) {
+                            targetElement?.insertAdjacentHTML(
+                              'afterend',
+                              colorOptionHtml
+                            );
+                          }
     
-                          return {
-                            ...color,
-                            imagePosition: color.image, // optional, keep original
-                            image: imageUrl
-                          };
-                        });
-                        const colorOptions = option.values
     
-                        const colorOptionHtml = `
-                        <div class="product-options product-options--color">
-                          <p>Available Colors:</p>
-                          <ul>
-                            ${colorOptions.map(color => `
-                              <li class="color-option" title="${color.title}">
-                                <img src="${color.image}" alt="${color.title}">
-                              </li>
-                            `).join('')}
-                          </ul>
-                        </div>
-                        `;
-            
-                        const productRoot = document.querySelector(
-                          `.boost-sd__instant-search-results 
-                          .boost-sd__instant-search-product-list-items`
-                        )?.closest('.boost-sd__instant-search-results');
-            
-                        if (!productRoot) return;
+                          // targetElement.append(colorOptionHtml)
+                          // targetElement.insertAdjacentHTML(
+                          //   'afterend',
+                          //   colorOptionHtml
+                          // );
+              
+                          console.log('Found populated product group:', productRoot);
+                            return;
+                          break;
     
-                        const targetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                        const TargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--color`)
-                        if (!TargetElementOptions) {
-                          targetElement?.insertAdjacentHTML(
-                            'afterend',
-                            colorOptionHtml
-                          );
-                        }
-  
-  
-                        // targetElement.append(colorOptionHtml)
-                        // targetElement.insertAdjacentHTML(
-                        //   'afterend',
-                        //   colorOptionHtml
-                        // );
-            
-                        console.log('Found populated product group:', productRoot);
+                        case "power_rating":
+                          const powerRatingOptions = option.values
+      
+                          const powerRatingOptionHtml = `
+                          <div class="product-options product-options--tiles product-options--power-rating">
+                            <p>Available Power Ratings:</p>
+                            <ul>
+                              ${powerRatingOptions.map(rating => `
+                                <li class="color-option" title="${rating.title}">
+                                  <span>${rating.title}</span>
+                                </li>
+                              `).join('')}
+                            </ul>
+                          </div>
+                          `;
+              
+                          const powerRatingProductRoot = document.querySelector(
+                            `.boost-sd__instant-search-results 
+                            .boost-sd__instant-search-product-list-items`
+                          )?.closest('.boost-sd__instant-search-results');
+              
+                          if (!powerRatingProductRoot) return;
+    
+                          const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                          const powerRatingTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
+                          if (!powerRatingTargetElementOptions) {
+                            powerRatingTargetElement?.insertAdjacentHTML(
+                              'afterend',
+                              powerRatingOptionHtml
+                            );
+                          }
                           return;
                         break;
-  
-                      case "power_rating":
-                        const powerRatingOptions = option.values
     
-                        const powerRatingOptionHtml = `
-                        <div class="product-options product-options--tiles product-options--power-rating">
-                          <p>Available Power Ratings:</p>
-                          <ul>
-                            ${powerRatingOptions.map(rating => `
-                              <li class="color-option" title="${rating.title}">
-                                <span>${rating.title}</span>
-                              </li>
-                            `).join('')}
-                          </ul>
-                        </div>
-                        `;
-            
-                        const powerRatingProductRoot = document.querySelector(
-                          `.boost-sd__instant-search-results 
-                          .boost-sd__instant-search-product-list-items`
-                        )?.closest('.boost-sd__instant-search-results');
-            
-                        if (!powerRatingProductRoot) return;
-  
-                        const powerRatingTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                        const powerRatingTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--power-rating`)
-                        if (!powerRatingTargetElementOptions) {
-                          powerRatingTargetElement?.insertAdjacentHTML(
-                            'afterend',
-                            powerRatingOptionHtml
-                          );
-                        }
-                        return;
-                      break;
-  
-                      case "size":
-                        const sizeOptions = option.values
+                        case "size":
+                          const sizeOptions = option.values
+      
+                          const sizeOptionHtml = `
+                          <div class="product-options product-options--tiles product-options--size">
+                            <p>Available Sizes:</p>
+                            <ul>
+                              ${sizeOptions.map(size => `
+                                <li class="color-option" title="${size.title}">
+                                  <span>${size.title}</span>
+                                </li>
+                              `).join('')}
+                            </ul>
+                          </div>
+                          `;
+              
+                          const sizeProductRoot = document.querySelector(
+                            `.boost-sd__instant-search-results 
+                            .boost-sd__instant-search-product-list-items`
+                          )?.closest('.boost-sd__instant-search-results');
+              
+                          if (!sizeProductRoot) return;
     
-                        const sizeOptionHtml = `
-                        <div class="product-options product-options--tiles product-options--size">
-                          <p>Available Sizes:</p>
-                          <ul>
-                            ${sizeOptions.map(size => `
-                              <li class="color-option" title="${size.title}">
-                                <span>${size.title}</span>
-                              </li>
-                            `).join('')}
-                          </ul>
-                        </div>
-                        `;
-            
-                        const sizeProductRoot = document.querySelector(
-                          `.boost-sd__instant-search-results 
-                          .boost-sd__instant-search-product-list-items`
-                        )?.closest('.boost-sd__instant-search-results');
-            
-                        if (!sizeProductRoot) return;
-  
-                        const sizeTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                        const sizeTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--size`)
-                        if (!sizeTargetElementOptions) {
-                          sizeTargetElement?.insertAdjacentHTML(
-                            'afterend',
-                            sizeOptionHtml
-                          );
-                        }
-                        return;
-                      break;
-  
-                      case "impedance":
-                        const impedanceOptions = option.values
-                        console.log("impedanceOptions", impedanceOptions)
-                        const impedanceOptionHtml = `
-                        <div class="product-options product-options--tiles product-options--impedance">
-                          <p>Available Impedances:</p>
-                          <ul>
-                            ${impedanceOptions.map(impedance => `
-                              <li class="color-option" title="${impedance.title}">
-                                <span>${impedance.title}</span>
-                              </li>
-                            `).join('')}
-                          </ul>
-                        </div>
-                        `;
-            
-                        const impedanceProductRoot = document.querySelector(
-                          `.boost-sd__instant-search-results 
-                          .boost-sd__instant-search-product-list-items`
-                        )?.closest('.boost-sd__instant-search-results');
-            
-                        if (!impedanceProductRoot) return;
-  
-                        const impedanceTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
-                        const impedanceTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--impedance`)
-                        if (!impedanceTargetElementOptions) {
-                          impedanceTargetElement?.insertAdjacentHTML(
-                            'afterend',
-                            impedanceOptionHtml
-                          );
-                        }
-                        return;
-                      break;
-                    
-                      default:
+                          const sizeTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                          const sizeTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--size`)
+                          if (!sizeTargetElementOptions) {
+                            sizeTargetElement?.insertAdjacentHTML(
+                              'afterend',
+                              sizeOptionHtml
+                            );
+                          }
+                          return;
                         break;
-                    }
-                  });
+    
+                        case "impedance":
+                          const impedanceOptions = option.values
+                          console.log("impedanceOptions", impedanceOptions)
+                          const impedanceOptionHtml = `
+                          <div class="product-options product-options--tiles product-options--impedance">
+                            <p>Available Impedances:</p>
+                            <ul>
+                              ${impedanceOptions.map(impedance => `
+                                <li class="color-option" title="${impedance.title}">
+                                  <span>${impedance.title}</span>
+                                </li>
+                              `).join('')}
+                            </ul>
+                          </div>
+                          `;
+              
+                          const impedanceProductRoot = document.querySelector(
+                            `.boost-sd__instant-search-results 
+                            .boost-sd__instant-search-product-list-items`
+                          )?.closest('.boost-sd__instant-search-results');
+              
+                          if (!impedanceProductRoot) return;
+    
+                          const impedanceTargetElement = document.querySelector(`li[data-id="${element.id}"] .boost-sd__suggestion-queries-item-price`)
+                          const impedanceTargetElementOptions = document.querySelector(`li[data-id="${element.id}"] .product-options--impedance`)
+                          if (!impedanceTargetElementOptions) {
+                            impedanceTargetElement?.insertAdjacentHTML(
+                              'afterend',
+                              impedanceOptionHtml
+                            );
+                          }
+                          return;
+                        break;
+                      
+                        default:
+                          break;
+                      }
+                    });
+                  }
+  
                 });
               });
             }
