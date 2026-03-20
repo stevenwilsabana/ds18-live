@@ -15,7 +15,6 @@
     },
     "main": {
       "type": "main-collection",
-      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 52,
@@ -32,6 +31,7 @@
     },
     "collection-banner": {
       "type": "collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "show_collection_title": true,
@@ -55,7 +55,11 @@
       "block_order": [
         "64b9e54d-2658-4473-925f-8a11579beae6"
       ],
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
     }
   },
   "order": [
