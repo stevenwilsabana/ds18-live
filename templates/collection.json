@@ -15,6 +15,7 @@
     },
     "main": {
       "type": "main-collection",
+      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 52,
@@ -42,11 +43,25 @@
         "image_overlay_opacity": 30,
         "quick_links": ""
       }
+    },
+    "7a78d453-3926-4039-a13c-778fa1010058": {
+      "type": "apps",
+      "blocks": {
+        "64b9e54d-2658-4473-925f-8a11579beae6": {
+          "type": "shopify://apps/boost-ai-search-filter/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "64b9e54d-2658-4473-925f-8a11579beae6"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "new_header_collection_GDJMbx",
     "main",
-    "collection-banner"
+    "collection-banner",
+    "7a78d453-3926-4039-a13c-778fa1010058"
   ]
 }

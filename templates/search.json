@@ -11,6 +11,7 @@
   "sections": {
     "custom_liquid_46H3bM": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -23,6 +24,7 @@
     },
     "main": {
       "type": "main-search",
+      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 400,
@@ -39,6 +41,7 @@
     },
     "custom_liquid_6N9tLQ": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -48,11 +51,25 @@
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
       }
+    },
+    "229aa0fc-561b-4838-8bb1-92e997c1bbf5": {
+      "type": "apps",
+      "blocks": {
+        "5a29030f-7c63-49e3-8e84-ceb784e57c4e": {
+          "type": "shopify://apps/boost-ai-search-filter/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "5a29030f-7c63-49e3-8e84-ceb784e57c4e"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "custom_liquid_46H3bM",
     "main",
-    "custom_liquid_6N9tLQ"
+    "custom_liquid_6N9tLQ",
+    "229aa0fc-561b-4838-8bb1-92e997c1bbf5"
   ]
 }
