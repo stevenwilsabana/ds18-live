@@ -16905,3 +16905,37 @@ product-media .product__thumbnail-list-inner {
   display: flex;
   align-items: center;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 95px;
+  right: 26px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+  display: none;
+}
+.back-to-top__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px 0 #00000012;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+}
+.back-to-top__icon:hover {
+  border: 2px solid #e5e5e5;
+}
+@media only screen and (max-width: 767px) {
+  .back-to-top {
+    right: 10px;
+  }
+}
