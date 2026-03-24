@@ -1,1 +1,107 @@
-{"sections":{"2c505fce-2c21-4c21-abc1-5e666432d653":{"type":"custom-liquid","settings":{"subheading":"","title":"","liquid":"{{ 'styles-page-blog.css' | asset_url | stylesheet_tag }}\n\n{{ 'script-page-blog.js' | asset_url | script_tag }}","add_vertical_spacing":false,"background_type":"full_width","background":"rgba(0,0,0,0)","text_color":"rgba(0,0,0,0)"}},"main":{"type":"main-page","settings":{"show_title":true,"show_breadcrumb":false,"page_width":"large"}},"a83f72db-98b9-40f0-a99f-1cbb8c8c99c4":{"type":"blog-posts-page","settings":{"blog":"blog","tag":"TAG: NEW ARRIVALS","subheading":"","title":"NEW ARRIVALS","show_excerpt":true}},"blog_posts_page_k3bjpX":{"type":"blog-posts-page","settings":{"blog":"blog","tag":"TAG: PRODUCTS","subheading":"","title":"Tech Tips and Tricks","show_excerpt":true}},"blog_posts_page_XpQY9Q":{"type":"blog-posts-page","settings":{"blog":"blog","tag":"TAG: SPOTLIGHT","subheading":"","title":"Team Member Spotlight","show_excerpt":true}},"6d002a27-3dc3-4434-93b3-2c9b2574d783":{"type":"blog-posts-page","settings":{"blog":"blog","tag":"TAG: EVENTS","subheading":"","title":"Events","show_excerpt":true}},"4ee6067e-79f0-4de4-aada-18c7caf7a46c":{"type":"blog-posts-page","disabled":true,"settings":{"blog":"blog","tag":"TAG: SALES","subheading":"","title":"Sales","show_excerpt":true}}},"order":["2c505fce-2c21-4c21-abc1-5e666432d653","main","a83f72db-98b9-40f0-a99f-1cbb8c8c99c4","blog_posts_page_k3bjpX","blog_posts_page_XpQY9Q","6d002a27-3dc3-4434-93b3-2c9b2574d783","4ee6067e-79f0-4de4-aada-18c7caf7a46c"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "2c505fce-2c21-4c21-abc1-5e666432d653": {
+      "type": "custom-liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "{{ 'styles-page-blog.css' | asset_url | stylesheet_tag }}\n\n{{ 'script-page-blog.js' | asset_url | script_tag }}",
+        "add_vertical_spacing": false,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "show_breadcrumb": false,
+        "page_width": "large"
+      }
+    },
+    "a83f72db-98b9-40f0-a99f-1cbb8c8c99c4": {
+      "type": "blog-posts-page",
+      "settings": {
+        "blog": "blog",
+        "tag": "TAG: NEW ARRIVALS",
+        "subheading": "",
+        "title": "NEW ARRIVALS",
+        "show_excerpt": true
+      }
+    },
+    "blog_posts_page_k3bjpX": {
+      "type": "blog-posts-page",
+      "settings": {
+        "blog": "blog",
+        "tag": "TAG: PRODUCTS",
+        "subheading": "",
+        "title": "Tech Tips and Tricks",
+        "show_excerpt": true
+      }
+    },
+    "blog_posts_page_XpQY9Q": {
+      "type": "blog-posts-page",
+      "settings": {
+        "blog": "blog",
+        "tag": "TAG: SPOTLIGHT",
+        "subheading": "",
+        "title": "Team Member Spotlight",
+        "show_excerpt": true
+      }
+    },
+    "6d002a27-3dc3-4434-93b3-2c9b2574d783": {
+      "type": "blog-posts-page",
+      "settings": {
+        "blog": "blog",
+        "tag": "TAG: EVENTS",
+        "subheading": "",
+        "title": "Events",
+        "show_excerpt": true
+      }
+    },
+    "4ee6067e-79f0-4de4-aada-18c7caf7a46c": {
+      "type": "blog-posts-page",
+      "disabled": true,
+      "settings": {
+        "blog": "blog",
+        "tag": "TAG: SALES",
+        "subheading": "",
+        "title": "Sales",
+        "show_excerpt": true
+      }
+    },
+    "custom_liquid_pT33MU": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "{% assign blog_search_id = section.id | default: 'custom-liquid-blog-search' %}\n\n<style>\n  .blog-search-{{ blog_search_id }} {\n    width: 100%;\n    max-width: 100%;\n  }\n\n  .blog-search-form-{{ blog_search_id }} {\n    width: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    margin-bottom: 50px;\n  }\n\n  .blog-search-input-wrapper-{{ blog_search_id }} {\n    flex-grow: 1;\n    max-width: 700px;\n  }\n\n  .blog-search-input-{{ blog_search_id }} {\n    width: 100%;\n    padding: 12px 18px;\n    border: 1px solid #cccccc;\n    border-radius: 6px;\n    background-color: #ffffff;\n    color: #282828;\n    font-size: 16px;\n  }\n\n  .blog-search-input-{{ blog_search_id }}::placeholder {\n    color: #999999;\n  }\n\n  .blog-search-input-{{ blog_search_id }}:focus {\n    outline: none;\n    border-color: #405de6;\n  }\n\n  .blog-search-button-{{ blog_search_id }} {\n    padding: 12px 24px;\n    background-color: #405de6;\n    color: #ffffff;\n    border: none;\n    border-radius: 6px;\n    font-size: 16px;\n    font-weight: 600;\n    cursor: pointer;\n    white-space: nowrap;\n  }\n\n  .blog-search-button-{{ blog_search_id }}:hover {\n    background-color: #282828;\n  }\n\n  @media screen and (max-width: 749px) {\n    .blog-search-form-{{ blog_search_id }} {\n      flex-direction: column;\n    }\n\n    .blog-search-button-{{ blog_search_id }} {\n      width: 100%;\n      max-width: 700px;\n    }\n  }\n</style>\n\n<div class=\"blog-search-{{ blog_search_id }}\">\n  <form action=\"/search\" method=\"get\" class=\"blog-search-form-{{ blog_search_id }}\" role=\"search\">\n    <input type=\"hidden\" name=\"type\" value=\"article\">\n\n    <div class=\"blog-search-input-wrapper-{{ blog_search_id }}\">\n      <input\n        type=\"search\"\n        name=\"q\"\n        class=\"blog-search-input-{{ blog_search_id }}\"\n        placeholder=\"Search blog posts\"\n        value=\"{{ search.terms | escape }}\"\n        aria-label=\"Search blog posts\"\n      >\n    </div>\n\n    <button type=\"submit\" class=\"blog-search-button-{{ blog_search_id }}\">\n      Search\n    </button>\n  </form>\n</div>",
+        "add_vertical_spacing": true,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    }
+  },
+  "order": [
+    "2c505fce-2c21-4c21-abc1-5e666432d653",
+    "main",
+    "custom_liquid_pT33MU",
+    "a83f72db-98b9-40f0-a99f-1cbb8c8c99c4",
+    "blog_posts_page_k3bjpX",
+    "blog_posts_page_XpQY9Q",
+    "6d002a27-3dc3-4434-93b3-2c9b2574d783",
+    "4ee6067e-79f0-4de4-aada-18c7caf7a46c"
+  ]
+}
