@@ -16250,7 +16250,18 @@ quick-buy-drawer .blue_theme_icons {
 }
 
 .container-labels-home > p {
-  background: #de2a2a;
+  background-color: rgb(236, 247, 240);
+  color: #333;
+  border-radius: 8px;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  padding: 1px 10px;
+  line-height: 23px;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
 }
 
 .product-item-meta__price-list-container--campaign {
