@@ -11,7 +11,6 @@
   "sections": {
     "custom_liquid_46H3bM": {
       "type": "custom-liquid",
-      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -24,7 +23,6 @@
     },
     "main": {
       "type": "main-search",
-      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 400,
@@ -41,7 +39,6 @@
     },
     "custom_liquid_6N9tLQ": {
       "type": "custom-liquid",
-      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -51,19 +48,6 @@
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
       }
-    },
-    "4a471ab8-f066-42b4-8f77-b82d8d86a1c0": {
-      "type": "apps",
-      "blocks": {
-        "2770f940-ae53-48a8-98fd-2c924c82f59e": {
-          "type": "shopify://apps/boost-ai-search-filter/blocks/product-filter/7fc998ae-a150-4367-bab8-505d8a4503f7",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "2770f940-ae53-48a8-98fd-2c924c82f59e"
-      ],
-      "settings": {}
     },
     "104ce90c-cdab-48aa-a25a-cc9a906d51ac": {
       "type": "apps",
@@ -80,11 +64,9 @@
     }
   },
   "order": [
-    "4a471ab8-f066-42b4-8f77-b82d8d86a1c0",
     "custom_liquid_46H3bM",
     "main",
     "custom_liquid_6N9tLQ",
     "104ce90c-cdab-48aa-a25a-cc9a906d51ac"
-  ],
-  "wrapper": ".boost-sd__product-filter-fallback"
+  ]
 }
