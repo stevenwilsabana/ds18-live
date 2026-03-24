@@ -16198,7 +16198,7 @@ span.loader-button__text {
 .container-labels-home {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 10px;
 }
 
@@ -16871,6 +16871,9 @@ body[id="page"].ds18-store .list-collections__item-list {
 @media only screen and (max-width: 767px) {
   body[id="page"].ds18-store .list-collections__item {
     width: 100%;
+  }
+  .container-labels-home {
+    justify-content: center;
   }
 }
 
