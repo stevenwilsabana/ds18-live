@@ -23,6 +23,7 @@
     },
     "main": {
       "type": "main-search",
+      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 400,
@@ -60,7 +61,10 @@
       "block_order": [
         "a6c3bc44-b80d-4e91-892d-ca0c56bff5f1"
       ],
-      "settings": {}
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
     }
   },
   "order": [
