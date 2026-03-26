@@ -110,7 +110,6 @@
     },
     "main": {
       "type": "main-collection-nvy",
-      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 52,
