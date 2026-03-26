@@ -460,7 +460,7 @@
   {%- assign store = 'test' -%}
 
   <body
-    class="no-focus-outline {% if customer.b2b? %} customer-b2b {% endif %} {% if is_nvy_page %} nvy-store {% else %} ds18-store {% endif %} {{ feature_classes }} page-template--{{ template.suffix }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
+    class="no-focus-outline {{ template.name }} {% if customer.b2b? %} customer-b2b {% endif %} {% if is_nvy_page %} nvy-store {% else %} ds18-store {% endif %} {{ feature_classes }} page-template--{{ template.suffix }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
     data-instant-allow-query-string
     id="{{template.name }}"
   >
