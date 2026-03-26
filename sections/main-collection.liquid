@@ -107,7 +107,7 @@
 <section>
   <div class="container">
     <product-facet section-id="{{ section.id }}" class="product-facet">
-      {% comment %} {%- if section.settings.show_filters and collection.filters != empty -%}
+      {%- if section.settings.show_filters and collection.filters != empty -%}
         {%- if section.settings.filter_position == 'always_visible' -%}
           <div class="product-facet__aside">
             <safe-sticky offset="30" class="product-facet__aside-inner">
@@ -128,7 +128,7 @@
         {%- else -%}
           {%- render 'facet-filters', filters: collection.filters, filters_position: section.settings.filter_position -%}
         {%- endif -%}
-      {%- endif -%} {% endcomment %}
+      {%- endif -%}
 
 
     {% if customer.b2b? %}
