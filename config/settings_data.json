@@ -308,11 +308,11 @@
       "countdown-timer": {
         "type": "countdown-timer",
         "settings": {
-          "active_countdown": false,
-          "background": "#000000",
+          "active_countdown": true,
+          "background": "#23a424",
           "color": "#ffffff",
-          "deadline": "December 01, 2025 23:59:00",
-          "message": "Final Hours of Cyber Monday Sale —",
+          "deadline": "March 29, 2026 23:59:00",
+          "message": "Hurry Up! DS18 SEASON Is Almost Over",
           "link": "shopify://collections/best-sellers-all",
           "button": "",
           "text_counter": "Offer ends in"
