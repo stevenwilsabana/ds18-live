@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "active_campaign": true,
+    "active_campaign": false,
     "campaign_discount_crossline": 15,
     "label_campaign": "DS18 Season Sale",
     "tag_campaign": "CAMPAIGN: ACTIVE",
@@ -308,7 +308,7 @@
       "countdown-timer": {
         "type": "countdown-timer",
         "settings": {
-          "active_countdown": true,
+          "active_countdown": false,
           "background": "#23a424",
           "color": "#ffffff",
           "deadline": "March 29, 2026 23:59:00",
