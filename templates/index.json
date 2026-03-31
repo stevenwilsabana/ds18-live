@@ -48,6 +48,7 @@
       "block_order": [
         "f6708712-6f92-4e6b-8703-c5d8c6596a53"
       ],
+      "disabled": true,
       "settings": {
         "section_height": "auto",
         "transition_type": "sweep",
@@ -166,12 +167,25 @@
         "image_MfTPby",
         "image_TixApw"
       ],
+      "disabled": true,
       "settings": {
         "section_height": "auto",
         "transition_type": "sweep",
         "autoplay": true,
         "cycle_speed": 5,
         "background": "rgba(0,0,0,0)"
+      }
+    },
+    "video_banner_8m8cmT": {
+      "type": "video-banner",
+      "name": "Video Banner",
+      "settings": {
+        "videoMobile": "https://cdn.shopify.com/videos/c/o/v/e2d798748c0a4d5982ff9d9ce3725a90.mp4",
+        "videoDesktop": "https://cdn.shopify.com/videos/c/o/v/e2d798748c0a4d5982ff9d9ce3725a90.mp4",
+        "heading": "PROJECT360",
+        "details": "RECONE YOUR SPEAKER IN SECONDS",
+        "link": "https://ds18.com/collections/project360-mid-high-loudspeaker",
+        "button": "SHOP NOW"
       }
     },
     "bd246d27-9954-49c8-8ec6-7ef2cf9bb690": {
@@ -229,51 +243,6 @@
         "e35b0122-236d-4fdd-a882-60f9c7a19cf6"
       ],
       "settings": {}
-    },
-    "as_seen_on_4MiKg3": {
-      "type": "as-seen-on",
-      "blocks": {
-        "logo_XR7nWc": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/sams-garage-logo.jpg",
-            "message": ""
-          }
-        },
-        "logo_diqMDQ": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/pimp-my-ride.jpg",
-            "message": ""
-          }
-        },
-        "logo_4kn4C4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/netflix.jpg",
-            "message": ""
-          }
-        },
-        "logo_8jteFm": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/hulu.jpg",
-            "message": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_XR7nWc",
-        "logo_diqMDQ",
-        "logo_4kn4C4",
-        "logo_8jteFm"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "AS SEEN ON",
-        "background": "#ffffff",
-        "dots": "#000000"
-      }
     },
     "featured-collections": {
       "type": "featured-collections",
@@ -1454,8 +1423,8 @@
     "custom_liquid_kHj9fh",
     "slideshow",
     "slideshow_JgBmjd",
+    "video_banner_8m8cmT",
     "bd246d27-9954-49c8-8ec6-7ef2cf9bb690",
-    "as_seen_on_4MiKg3",
     "featured-collections",
     "eef515a4-b2be-4d44-afec-99bcc5700923",
     "collection_list_kA3UUy",
