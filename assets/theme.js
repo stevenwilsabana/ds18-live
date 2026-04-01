@@ -6605,7 +6605,24 @@
 document.addEventListener("DOMContentLoaded", function () {
   checkFiltersOnLoad();
   scrollToTop();
+  showUnifiedAccountRewards();
 });
+
+function showUnifiedAccountRewards() {
+  const btn = document.querySelector('.header-icon-account__button');
+  const menu = document.querySelector('.account-popover');
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+
+  // Click outside to close
+  document.addEventListener("click", (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove("active");
+    }
+  });
+}
 
 function scrollToTop() {
   const btn = document.getElementById("back-to-top");

@@ -195,11 +195,6 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
               </div>
             </div>
           </div>
-
-
-
-
-
           
           {%- comment -%}IMPLEMENTATION NOTE: this icon is hidden by the "popup" section if it is disabled{%- endcomment -%}
           <button is="toggle-button" class="header__icon-wrapper tap-area hidden-phone {% unless section.settings.show_icons %}hidden-desk{% endunless %}" aria-controls="newsletter-popup" aria-expanded="false">
@@ -213,25 +208,58 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
             </a>
           {%- endif -%}
 
-          {% unless customer.b2b? %}
-            <a href="/pages/reward" class="header__icon-wrapper tap-area header__icon-wrapper--rewards">
-              {%- render 'icon' with 'star-navigation' -%}
-              <span>Rewards</span>
-            </a>
-
-          {% else %}
-
+          {% if customer.b2b? %}
             <a id="favorites" class="header__icon-wrapper tap-area header__icon-wrapper--rewards" href="/pages/wishlist" target="_blank">
               {%- render 'icon' with 'heart' -%}
               <span>Favorites</span>
             </a>
-            
-          {% endunless %}
+          {% endif %}
 
           {%- if shop.customer_accounts_enabled -%}
-            <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__icon-wrapper tap-area hidden-phone {% unless section.settings.show_icons %}hidden-desk{% endunless %}" aria-label="{% if customer %}{{ 'header.general.account' | t | escape }}{% else %}{{ 'header.general.login' | t | escape }}{% endif %}">
-              {%- render 'icon' with 'header-customer' -%}
-            </a>
+            <div class="header-icon-account" style="position: relative;">
+              <button class="header-icon-account__button">
+                {%- render 'icon' with 'header-customer' -%}
+                <span class="header-icon-account__circle"></span>
+              </button>
+              <div class="account-popover" role="dialog" aria-label="Account">
+                <div class="account-popover__card">
+                  <div class="account-popover__summary">
+                    <div class="account-popover__avatar" aria-hidden="true">
+                      <svg focusable="false" width="18" height="17" class="icon icon--header-customer   " viewBox="0 0 18 17">
+                        <circle cx="9" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"></circle>
+                        <path d="M1 17v0a4 4 0 014-4h8a4 4 0 014 4v0" fill="none" stroke="currentColor" stroke-width="1"></path>
+                      </svg>
+                    </div>
+                    
+
+                    <div class="account-popover__copy">
+                      <h2 class="account-popover__title">My Account</h2>
+                      <p class="account-popover__subtitle">Sign in to access your account</p>
+                    </div>
+                  </div>
+
+                  <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="account-popover__cta" aria-label="{% if customer %}{{ 'header.general.account' | t | escape }}{% else %}{{ 'header.general.login' | t | escape }}{% endif %}" class="">
+                    Sign In / Create Account
+                  </a>
+
+                  <div class="account-popover__divider" target-element-id="1774966374113"></div>
+                  
+                  <a href="/pages/reward" class="account-popover__rewards">
+                    <div class="account-popover__avatar-star" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" style="width: 18px; height: 18px; color: rgb(222, 42, 42); stroke-width: 1.5;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                    </div>
+
+                    <div class="account-popover__copy">
+                      <h2 class="account-popover__title">Join Rewards</h2>
+                      <p class="account-popover__subtitle">Earn points on every purchase</p>
+                    </div>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" style="width: 16px; height: 16px; color: rgba(255, 255, 255, 0.3); margin-left: auto;" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg>
+                  </a>
+
+                </div>
+              </div>
+            </div>
           {%- endif -%}
 
 
