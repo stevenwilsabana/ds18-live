@@ -227,6 +227,22 @@
         "transition_effect": "slide"
       }
     },
+    "video_VfrAtP": {
+      "type": "video",
+      "name": "Video",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "link": "",
+        "button": "",
+        "video_url": "https://www.youtube.com/watch?v=oYeuxTQqiHI&t=1s",
+        "background_type": "boxed",
+        "video_size": "medium",
+        "autoplay": true,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
     "yth-key-features": {
       "type": "yth-key-features",
       "disabled": true,
@@ -636,22 +652,6 @@
       "type": "judgeme_carousel_section",
       "settings": {
         "maxwidth": 1920
-      }
-    },
-    "video_VfrAtP": {
-      "type": "video",
-      "name": "Video",
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "link": "",
-        "button": "",
-        "video_url": "https://www.youtube.com/watch?v=oYeuxTQqiHI&t=1s",
-        "background_type": "full_width",
-        "video_size": "auto",
-        "autoplay": true,
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)"
       }
     }
   },
