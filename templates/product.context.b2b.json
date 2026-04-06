@@ -1,1 +1,26 @@
-{"parent":"product.json","context":{"b2b":true},"sections":{"main":{"settings":{},"blocks":{"82d2eb46-a809-4502-818f-6ac9ed010a33":{"disabled":true,"settings":{}}}}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.json",
+  "context": {
+    "market": "all-b2b"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "82d2eb46-a809-4502-818f-6ac9ed010a33": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    }
+  }
+}
