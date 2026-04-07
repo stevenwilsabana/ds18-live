@@ -1440,8 +1440,13 @@ body.page-template--new-template .product-meta__sku-number {
     line-height: 25px !important;
     font-weight: 500 !important;
 }
+body#product .product__info h1.product-meta__title.heading.h3 {
+    font-family: Titillium Web, sans-serif !important;
+    font-size: 28px !important;
+    text-transform: unset !important;
+  }
 
-body.page-template--new-template .product__info h1.product-meta__title  {
+body#product.page-template--new-template .product__info h1.product-meta__title.heading.h3 {
     color: #000;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-size: 20px !important;
@@ -1511,10 +1516,16 @@ body.page-template--new-template product-variants.active-imagen-multiple-variant
     max-width: 1300px !important;
 } */
 body.page-template--new-template button#AddToCart {
-    border-radius: 0;
     padding: 20px;
-    background: #000;
-    max-height: max-content;
+    background: #de2a2a;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    max-height: 49px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 body.page-template--new-template button#AddToCart > span {
     font-weight: 700;
@@ -1688,7 +1699,7 @@ body.page-template--new-template .pdp-key-features__item {
     }
 }
 
-body.page-template--new-template .product__info h1.product-meta__title {
+body#product.page-template--new-template .product__info h1.product-meta__title.heading.h3 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-size: 25px !important;
     margin-bottom: 30px;
@@ -1723,6 +1734,9 @@ body.page-template--new-template  .product-list__inner--scroller {
 }
 body.page-template--new-template  product-item.product-item .product-item__general-product .variants-metafiels {
     display: none;
+}
+body.page-template--new-template .col.container-labels p {
+    margin-bottom: 20px !important;
 }
 
 @media only screen and (max-width: 1300px){ 

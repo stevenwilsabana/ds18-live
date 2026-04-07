@@ -464,12 +464,18 @@
     window.swiperMain = new Swiper(".pdp-swiper-main", {
       spaceBetween: 10,
       zoom: true,
+      loop: true,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
       thumbs: {
         swiper: window.swiperThumbnail,
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true, // ✅ stops on hover
       },
     });
 
