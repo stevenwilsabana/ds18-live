@@ -11,7 +11,6 @@
   "sections": {
     "custom_liquid_46H3bM": {
       "type": "custom-liquid",
-      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -41,7 +40,6 @@
     },
     "custom_liquid_6N9tLQ": {
       "type": "custom-liquid",
-      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -52,25 +50,27 @@
         "text_color": "rgba(0,0,0,0)"
       }
     },
-    "4a471ab8-f066-42b4-8f77-b82d8d86a1c0": {
+    "104ce90c-cdab-48aa-a25a-cc9a906d51ac": {
       "type": "apps",
       "blocks": {
-        "2770f940-ae53-48a8-98fd-2c924c82f59e": {
-          "type": "shopify://apps/boost-ai-search-filter/blocks/product-filter/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "a6c3bc44-b80d-4e91-892d-ca0c56bff5f1": {
+          "type": "shopify://apps/boost-ai-search-filter/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
           "settings": {}
         }
       },
       "block_order": [
-        "2770f940-ae53-48a8-98fd-2c924c82f59e"
+        "a6c3bc44-b80d-4e91-892d-ca0c56bff5f1"
       ],
-      "settings": {}
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
     }
   },
   "order": [
-    "4a471ab8-f066-42b4-8f77-b82d8d86a1c0",
     "custom_liquid_46H3bM",
     "main",
-    "custom_liquid_6N9tLQ"
-  ],
-  "wrapper": ".boost-sd__product-filter-fallback"
+    "custom_liquid_6N9tLQ",
+    "104ce90c-cdab-48aa-a25a-cc9a906d51ac"
+  ]
 }

@@ -153,7 +153,7 @@
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
       
-    {% render 'boost-sd-fallback' %}
+    
     {%- if tinyscript -%}{{ content_for_header }}{%- else -%}{% render 'tiny-script-control' %}{%- endif -%}
     {% render 'judgeme_core' %}
 
@@ -466,7 +466,7 @@
   {% endif %}
 
   <body
-    class="no-focus-outline {% if is_nvy_page %} nvy-store {% else %} ds18-store {% endif %} {{ feature_classes }} page-template--{{ template.suffix }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
+    class="no-focus-outline page-type-{{ template.name }} {% if customer.b2b? %} customer-b2b {% endif %} {% if is_nvy_page %} nvy-store {% else %} ds18-store {% endif %} {{ feature_classes }} page-template--{{ template.suffix }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
     data-instant-allow-query-string
     id="{{template.name }}"
   >

@@ -16957,3 +16957,8 @@ product-media .product__thumbnail-list-inner {
     right: 10px;
   }
 }
+body.page-type-collection.customer-b2b .shopify-section--collection-banner,
+body.page-type-collection.customer-b2b .shopify-section--apps {
+  display: none;
+  
+}
