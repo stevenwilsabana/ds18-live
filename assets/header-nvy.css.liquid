@@ -11,7 +11,7 @@ div#shopify-section-header-nvy store-header.header {
 }
 
 [dir=ltr] .header__linklist-item:not(:last-child) {
-    margin-right: 60px;
+    margin-right: 30px;
 }
 
 
@@ -118,5 +118,17 @@ ul.mobile-nav.list--unstyled a {
     .nvy-open-search svg.icon--close {
         right: 6px;
         top: 9px;
+    }
+}
+
+@media only screen and (max-width: 1360px) {
+    .header__linklist-link {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    [dir=ltr] .header__linklist-item:not(:last-child) {
+        margin-right: 22px;
     }
 }

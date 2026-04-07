@@ -152,20 +152,23 @@
   
       
       <div class="product-item-meta">
-  
-        {% unless customer.b2b? %}
-          {% if settings.active_campaign == true %}
-    
-            {% if product.tags contains settings.tag_campaign %}
-              {% if settings.label_campaign != '' %}
-                <div class="container-labels-home">
-                  <p>{{ settings.label_campaign }}</p>
-                </div>
+        {% if product.available %}
+          {% unless customer.b2b? %}
+            {% if settings.active_campaign == true %}
+              {% if product.tags contains settings.tag_campaign %}
+                {% if settings.label_campaign != '' %}
+                  <div class="container-labels-home">
+                    <p>
+                      {% render 'icon-fire' %}
+                      {{ settings.label_campaign }}
+                    </p>
+                  </div>
+                {% endif %}
               {% endif %}
+        
             {% endif %}
-      
-          {% endif %}
-        {% endunless %}
+          {% endunless %}
+        {% endif %}
   
   
         

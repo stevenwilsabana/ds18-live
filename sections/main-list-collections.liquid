@@ -86,6 +86,12 @@
   </div>
 </section>
 
+{% if request.path == '/collections' %}
+  <script>
+    window.location.replace('/');
+  </script>
+{% endif %}
+
 {% schema %}
 {
   "name": "List collections",

@@ -10,8 +10,8 @@
 {
   "current": {
     "active_campaign": false,
-    "campaign_discount_crossline": 20,
-    "label_campaign": "CYBER MONDAY SALE",
+    "campaign_discount_crossline": 15,
+    "label_campaign": "DS18 Season Sale",
     "tag_campaign": "CAMPAIGN: ACTIVE",
     "background_new_arrival_label": "#ffffff",
     "color_new_arrival_label": "#ff0000",
@@ -309,13 +309,13 @@
         "type": "countdown-timer",
         "settings": {
           "active_countdown": false,
-          "background": "#000000",
+          "background": "#23a424",
           "color": "#ffffff",
-          "deadline": "December 01, 2025 23:59:00",
-          "message": "Final Hours of Cyber Monday Sale —",
+          "deadline": "March 29, 2026 23:59:00",
+          "message": "Hurry Up! DS18 SEASON is almost over.",
           "link": "shopify://collections/best-sellers-all",
           "button": "",
-          "text_counter": "Offer ends in"
+          "text_counter": "Sale ends in"
         }
       },
       "search-files": {
@@ -703,6 +703,24 @@
         "type": "shopify://apps/crazy-egg/blocks/app-embed/7ea73823-6ad9-4252-a63e-088397d54aed",
         "disabled": false,
         "settings": {}
+      },
+      "3576686563519644491": {
+        "type": "shopify://apps/vwo/blocks/vwo-smartcode/2ce905b2-3842-4d20-b6b0-8c51fc208426",
+        "disabled": false,
+        "settings": {
+          "vwoAccountId": "1191790",
+          "codeType": "ASYNC",
+          "settingsTolerance": 2000,
+          "enableThemeTesting": false,
+          "reverseProxyUrl": ""
+        }
+      },
+      "9431864395560886015": {
+        "type": "shopify://apps/polar-analytics/blocks/polar-tracker/019c2e93-19fa-7dab-8368-903d1c54902c",
+        "disabled": false,
+        "settings": {
+          "debug_mode": false
+        }
       }
     }
   },

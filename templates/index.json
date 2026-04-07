@@ -48,6 +48,7 @@
       "block_order": [
         "f6708712-6f92-4e6b-8703-c5d8c6596a53"
       ],
+      "disabled": true,
       "settings": {
         "section_height": "auto",
         "transition_type": "sweep",
@@ -62,13 +63,13 @@
         "image_BWpRi7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Car_Audio_Web_Banner_2025.jpg",
-            "mobile_image": "shopify://shop_images/Car_Audio_Mobile_Banner_2025_1.webp",
+            "image": "shopify://shop_images/Harley_Davidson_New_Arrivals_Web_Banner_2025.jpg",
+            "mobile_image": "shopify://shop_images/Harley_Davidson_New_Arrivals_Mobile_Banner_2025.jpg",
             "text_position": "top_left",
             "subheading": "",
             "title": "",
             "button_1_text": "",
-            "button_1_link": "https://ds18.com/collections/new-arrivalsauto",
+            "button_1_link": "https://ds18.com/collections/harley-davidson-2",
             "button_2_text": "",
             "button_2_link": "",
             "text_color": "#ffffff",
@@ -120,8 +121,8 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/New_Years_Web_Banner_2025.jpg",
-            "mobile_image": "shopify://shop_images/New_Years_Mobile_Banner_2025.jpg",
+            "image": "shopify://shop_images/Valentine_s_Day-WEB-BANNER_1.jpg",
+            "mobile_image": "shopify://shop_images/Valentine_s_Day-Banner_Mobile_2000x2000_1.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
@@ -140,13 +141,13 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Build_Your_Slingshot-WEB-BANNER_1.jpg",
-            "mobile_image": "shopify://shop_images/Build_Your_Slingshot-Banner_Mobile_2000x2000_7fffd397-6c5a-425f-a08e-3a6476bf7428.jpg",
+            "image": "shopify://shop_images/TAX_RETURN_SALE-Banner_Web.jpg",
+            "mobile_image": "shopify://shop_images/TAX_RETURN_SALE-Banner_Mobile_2000x2000_4594adbb-b284-46ea-ab16-59d96caf32bb.jpg",
             "text_position": "middle_center",
             "subheading": "",
             "title": "",
             "button_1_text": "",
-            "button_1_link": "https://ds18.com/pages/shop-slingshot",
+            "button_1_link": "https://ds18.com/collections/best-sellers-all",
             "button_2_text": "",
             "button_2_link": "",
             "text_color": "#ffffff",
@@ -164,12 +165,25 @@
         "image_MfTPby",
         "image_TixApw"
       ],
+      "disabled": true,
       "settings": {
         "section_height": "auto",
         "transition_type": "sweep",
         "autoplay": true,
         "cycle_speed": 5,
         "background": "rgba(0,0,0,0)"
+      }
+    },
+    "video_banner_tCdiJn": {
+      "type": "video-banner",
+      "name": "Video Banner",
+      "settings": {
+        "videoMobile": "https://cdn.shopify.com/videos/c/o/v/e2d798748c0a4d5982ff9d9ce3725a90.mp4",
+        "videoDesktop": "https://cdn.shopify.com/videos/c/o/v/e2d798748c0a4d5982ff9d9ce3725a90.mp4",
+        "heading": "PROJECT360",
+        "details": "Recone Your Speaker in Seconds!",
+        "link": "https://ds18.com/collections/project360-mid-high-loudspeaker",
+        "button": "SHOP NOW"
       }
     },
     "bd246d27-9954-49c8-8ec6-7ef2cf9bb690": {
@@ -227,51 +241,6 @@
         "e35b0122-236d-4fdd-a882-60f9c7a19cf6"
       ],
       "settings": {}
-    },
-    "as_seen_on_4MiKg3": {
-      "type": "as-seen-on",
-      "blocks": {
-        "logo_XR7nWc": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/sams-garage-logo.jpg",
-            "message": ""
-          }
-        },
-        "logo_diqMDQ": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/pimp-my-ride.jpg",
-            "message": ""
-          }
-        },
-        "logo_4kn4C4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/netflix.jpg",
-            "message": ""
-          }
-        },
-        "logo_8jteFm": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/hulu.jpg",
-            "message": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_XR7nWc",
-        "logo_diqMDQ",
-        "logo_4kn4C4",
-        "logo_8jteFm"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "AS SEEN ON",
-        "background": "#ffffff",
-        "dots": "#000000"
-      }
     },
     "featured-collections": {
       "type": "featured-collections",
@@ -997,10 +966,10 @@
         "74858f23-9ab0-4bff-8745-2146ad48c17a": {
           "type": "reviews-home",
           "settings": {
-            "product_review": "new-edition-towers-exclusive",
+            "product_review": "copy-of-hydro-6-5-marine-towers-with-integrated-rgb-led-lights-300-watts-red",
             "title_review": "Clear sound and loud!!",
-            "review": "Just what i wanted! rocking 4 towers on my center console! pushing 200 rms to each tower",
-            "buyer": "Amanda",
+            "review": "Just what i wanted! rocking 4 towers on my center console! pushing 150 rms to each tower",
+            "buyer": "Alex G",
             "date": "4 days ago"
           }
         },
@@ -1452,8 +1421,8 @@
     "custom_liquid_kHj9fh",
     "slideshow",
     "slideshow_JgBmjd",
+    "video_banner_tCdiJn",
     "bd246d27-9954-49c8-8ec6-7ef2cf9bb690",
-    "as_seen_on_4MiKg3",
     "featured-collections",
     "eef515a4-b2be-4d44-afec-99bcc5700923",
     "collection_list_kA3UUy",

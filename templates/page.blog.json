@@ -80,7 +80,7 @@
         "show_excerpt": true
       }
     },
-    "custom_liquid_dGLcjy": {
+    "custom_liquid_pT33MU": {
       "type": "custom-liquid",
       "name": "Custom Liquid",
       "settings": {
@@ -97,7 +97,7 @@
   "order": [
     "2c505fce-2c21-4c21-abc1-5e666432d653",
     "main",
-    "custom_liquid_dGLcjy",
+    "custom_liquid_pT33MU",
     "a83f72db-98b9-40f0-a99f-1cbb8c8c99c4",
     "blog_posts_page_k3bjpX",
     "blog_posts_page_XpQY9Q",

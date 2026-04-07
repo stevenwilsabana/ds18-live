@@ -410,23 +410,6 @@
             document.head.appendChild(script);
         })();
     </script>
-
-    <script src="https://cdn.logr-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('esy3ft/ds18');</script>
-
-    {% if customer %}
-      <script>
-        LogRocket.identify('{{ customer.id }}', {
-          name: '{{ customer.first_name | escape }} {{ customer.last_name | escape }}',
-          email: '{{ customer.email | escape }}',
-
-          // Optional custom properties
-          acceptsMarketing: {{ customer.accepts_marketing | json }},
-          ordersCount: {{ customer.orders_count }},
-          totalSpent: '{{ customer.total_spent }}'
-        });
-      </script>
-    {% endif %}
     
     <script>
     window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
@@ -464,6 +447,7 @@
     })();
   </script>
   <script type="module" blocking="render" fetchpriority="high" src="https://cdn.intelligems.io/esm/2e4b623b759f/bundle.js" async></script>
+  <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script><script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.15-min.js.gz"></script><script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('d469d6796ab2186c07822f749c2aa496', {"autocapture":{"elementInteractions":true}});</script>
   </head>
 
 
@@ -482,10 +466,16 @@
   {% endif %}
 
   <body
-    class="no-focus-outline {{ feature_classes }} page-template--{{ new_template_class }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
+    class="no-focus-outline {% if is_nvy_page %} nvy-store {% else %} ds18-store {% endif %} {{ feature_classes }} page-template--{{ template.suffix }} {% if settings.active_campaign == true %}active-campaign{% endif %}"
     data-instant-allow-query-string
     id="{{template.name }}"
   >
+
+    <button id="back-to-top" class="back-to-top" title="Scroll to the top of the page" tabindex="0" aria-hidden="false"> 
+      <div class="back-to-top__icon">
+        <svg width="30px" height="30px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="chevronUpIconTitle" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="chevronUpIconTitle">Chevron Up</title> <polyline points="6 14 12 8 18 14 18 14"/> </svg>
+      </div>
+    </button>
     
     {%- comment -%}Common SVG definitions that we are re-using in several places{%- endcomment -%}
     <svg class="visually-hidden">
@@ -973,7 +963,7 @@
               const applyDiscount = (el) => {
                 let original = el.innerText;
                 let price = parseFloat(original.replace(/[^0-9.]/g, ''));
-                let discountedPrice = price * 0.8;
+                let discountedPrice = price * 0.85;
 
                 const wrapper = el.closest('.rebuy-product-price');
                 const compareAt = wrapper.querySelector('.rebuy-money.compare-at');
@@ -991,7 +981,7 @@
                       $${price.toFixed(2)}
                     </span>
                   `;
-                  discountTag.textContent = "20% OFF FOR CYBER MONDAY SALE!";
+                  discountTag.textContent = "15% OFF FOR DS18 SEASON SALE!";
                 } else {
                   // Compare-at price exists → 40% off logic
                   let originalCompare = compareAt.querySelector('span:last-child').innerText;
@@ -1003,7 +993,7 @@
                     </span>
                   `;
 
-                  discountTag.textContent = "40% OFF FOR CYBER MONDAY SALE!";
+                  discountTag.textContent = "40% OFF FOR DS18 SEASON SALE";
                   compareAt.style.display = "none";
                 }
 
@@ -1055,21 +1045,21 @@
         }
 
         if(activeCampaign) {
-          checkRebuyElement();
+          // checkRebuyElement();
           
-          waitForElement('.rebuy-cart__flyout-content.has-items', function(el) {
-              const listItems = document.querySelectorAll('.rebuy-cart__flyout-content.has-items .rebuy-cart__flyout-items > li');
+          // waitForElement('.rebuy-cart__flyout-content.has-items', function(el) {
+          //     const listItems = document.querySelectorAll('.rebuy-cart__flyout-content.has-items .rebuy-cart__flyout-items > li');
       
-              listItems.forEach(item => {
-                if(item.classList.contains('tag-specials')) {
-                  item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "Cyber Monday: 40% Off Sitewide"
-                }
-              });
-              console.log("Element exists:", el);
+          //     listItems.forEach(item => {
+          //       if(item.classList.contains('tag-specials')) {
+          //         item.querySelector('.rebuy-cart__flyout-item-discount-message').textContent = "DS18 SEASON SALE: 40% Off Sitewide"
+          //       }
+          //     });
+          //     console.log("Element exists:", el);
               
-              // Do something to the element
-              el.style.color = 'red';
-          });
+          //     // Do something to the element
+          //     el.style.color = 'red';
+          // });
         }
 
         
