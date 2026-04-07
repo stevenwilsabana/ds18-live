@@ -11,12 +11,10 @@
   "sections": {
     "new_header_collection_GDJMbx": {
       "type": "new-header-collection",
-      "disabled": true,
       "settings": {}
     },
     "main": {
       "type": "main-collection",
-      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 52,

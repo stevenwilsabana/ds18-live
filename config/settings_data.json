@@ -620,7 +620,7 @@
         "type": "shopify://apps/boost-ai-search-discovery/blocks/boost-sd-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
         "disabled": false,
         "settings": {
-          "templateId": "h_IYGqda6l"
+          "templateId": "FqbRhTVscx"
         }
       },
       "17428600031447253342": {
@@ -681,17 +681,6 @@
           "cart_drawer_total_selector": "",
           "add_to_cart_selector": "",
           "adjacent_element_selector": ""
-        }
-      },
-      "11874257281241916528": {
-        "type": "shopify://apps/fullstory/blocks/fullstory-embed/c341ffa4-99cc-4983-be03-3cb208467fae",
-        "disabled": false,
-        "settings": {
-          "fs_org_id": "o-24BN2X-na1",
-          "fs_host": "fullstory.com",
-          "fs_script": "edge.fullstory.com/s/fs.js",
-          "fs_namespace": "FS",
-          "fs_identify_users": true
         }
       },
       "6628239160433917566": {
