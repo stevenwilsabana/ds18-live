@@ -1,8 +1,13 @@
 {{ 'styles-description-product.css' | asset_url | stylesheet_tag }}
 
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
 <section class="description-product">
     <ul class="description-product__accordion-list">
-      {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
+      {% if new_template %}
         {% assign variant = product.selected_or_first_available_variant %}
         <li class="description-container accordion--richtext accordion--key-features">
             <h3>Key Features</h3>
@@ -72,7 +77,7 @@
         {% endif %}
       {% endcomment %}
 
-      {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
+      {% if new_template %}
         {% assign variant = product.selected_or_first_available_variant %}
         <li class="details-container accordion--json accordion--technical-data">
             <h3>Technical Data - Manual</h3>
@@ -248,7 +253,7 @@
         {% endif %}
       {% endif %}
 
-      {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
+      {% if new_template %}
         {% assign variant = product.selected_or_first_available_variant %}
         <li class="description-container accordion--richtext accordion--product-overview">
             <h3>Product Overview</h3>

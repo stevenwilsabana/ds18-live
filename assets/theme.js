@@ -5188,7 +5188,7 @@
         );
         
         const variantMedia = mediaData.filter(m => {
-          return m.alt && m.alt.includes(variant['sku']); // OR media.id mapping
+          return m.alt && m.alt === variant['sku']; // OR media.id mapping
         });
 
         window.swiperMain.removeAllSlides();
@@ -5661,10 +5661,307 @@
       this.selectVariant((_a = this._getVariantFromOptions()) == null ? void 0 : _a.id);
       
     }
+    _runParallax() {
+      const frames = document.querySelectorAll(".parallax-frame");
+      const section = document.querySelector(".parallax-wrapper");
+      const totalFrames = frames.length;
+  
+      if (!section || totalFrames === 0) return;
+  
+      window.addEventListener("scroll", () => {
+        const isMobile = window.innerWidth <= 768;
+  
+        const scrollY = window.scrollY || window.pageYOffset;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+  
+        const progress = Math.min(
+          1,
+          Math.max(0, (scrollY - sectionTop) / (sectionHeight - window.innerHeight))
+        );
+  
+        // Índice normal
+        let frameIndex = Math.min(
+          totalFrames - 1,
+          Math.floor(progress * totalFrames)
+        );
+  
+        // Si es mobile, invertir el índice
+        if (isMobile) {
+          frameIndex = totalFrames - 1 - frameIndex;
+        }
+  
+        // Mostrar solo el frame correspondiente
+        frames.forEach((img, index) => {
+          img.style.display = index === frameIndex ? "block" : "none";
+        });
+      });
+    }
+    _updateProductDetails() {
+      const variantWithMetafields = JSON.parse(
+        document.getElementById('VariantMetafields').textContent
+      );
+
+      const selectedVariant = variantWithMetafields.variants.filter(v => {
+        return v.id == this.selectedVariant.id; // OR media.id mapping
+      });
+
+      // product page - overview - section 1
+      // const overviewSection1Container = document.querySelector('.banner-overview-nvy__imagenes')
+      const OverviewSection1DesktopImage = document.querySelector('.banner-overview-nvy .banner-desktop')
+      const OverviewSection1MobileImage = document.querySelector('.banner-overview-nvy .banner-mobile')
+      const OverviewSection1Heading = document.querySelector('.banner-overview-nvy h3')
+      const OverviewSection1Description = document.querySelector('.banner-overview-nvy p')
+
+      if(selectedVariant[0].section1DesktopImage && selectedVariant[0].section1MobileImage) {
+        document.querySelector('.banner-overview-nvy').classList.remove('hidden');
+          OverviewSection1DesktopImage.src = selectedVariant[0].section1DesktopImage
+          OverviewSection1MobileImage.src = selectedVariant[0].section1MobileImage
+          OverviewSection1Heading.innerHTML = selectedVariant[0].section1Heading
+          OverviewSection1Description.innerHTML = selectedVariant[0].section1Description
+      } else {
+        document.querySelector('.banner-overview-nvy').classList.add('hidden');
+      }
+
+      // product page - overview - section 2 - parallax
+      const OverviewSection2Container = document.querySelector('.section-parallax')
+      const OverviewSection2DesktopImages = document.querySelector('.section-parallax .parallax-media')
+      // const OverviewSection2DesktopImages = document.querySelectorAll('.section-parallax img.parallax-frame')
+      const OverviewSection2Heading = document.querySelector('.section-parallax h3')
+      const OverviewSection2Description = document.querySelector('.section-parallax p')
+
+      OverviewSection2DesktopImages.innerHTML = ""
+      if(selectedVariant[0].section2DesktopImages.length > 0) {
+        OverviewSection2Container.classList.remove("hidden")
+        OverviewSection2Container.classList.remove("section-parallax--parallax--single")
+        OverviewSection2Container.classList.remove("section-parallax--parallax--multi")
+
+        if(selectedVariant[0].section2DesktopImages.length > 1) {
+          OverviewSection2Container.classList.add("section-parallax--parallax--multi")
+        } else {
+          OverviewSection2Container.classList.add("section-parallax--parallax--single")
+        }
+
+        selectedVariant[0].section2DesktopImages.forEach((item, index) => {
+          
+          const img = document.createElement("img");
+          img.className = "parallax-frame";
+          img.setAttribute("data-index", index + 1);
+          img.src = item;
+          img.alt = `Imagen ${index + 1}`;
+          if (item.toLowerCase().includes(".gif")) {
+            img.style.width = "max-content";
+          }
+          if(index == 0) {
+            img.style.display = "block";
+          } else img.style.display = "none";
+          OverviewSection2DesktopImages.appendChild(img);
+        });
+
+        OverviewSection2Heading.innerHTML = selectedVariant[0].section2Heading
+        OverviewSection2Description.innerHTML = selectedVariant[0].section2Description
+        this._runParallax();
+      } else {
+        OverviewSection2Container.classList.add('hidden')
+      }
+
+       // product page - overview - section 3
+       const OverviewSection3DesktopImage = document.querySelector('.app-section-image--desktop')
+       const OverviewSection3MobileImage = document.querySelector('.app-section-image--mobile')
+       const OverviewSection3Heading = document.querySelector('.app-section-nvy__content h5')
+       const OverviewSection3Description = document.querySelector('.app-section-nvy__content p')
+       if(selectedVariant[0].section3DesktopImage) {
+         document.querySelector('.app-section-nvy').classList.remove("hidden")
+         OverviewSection3DesktopImage.src = selectedVariant[0].section3DesktopImage
+         OverviewSection3MobileImage.src = selectedVariant[0].section3MobileImage
+         OverviewSection3Heading.innerHTML = selectedVariant[0].section3Heading
+         OverviewSection3Description.innerHTML = selectedVariant[0].section3Description
+
+         if(selectedVariant[0].section3TinyImages.length > 0) {
+          document.querySelector('.app-section-nvy__items').innerHTML = "";
+  
+          selectedVariant[0].section3TinyImages.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.className = "app-section-nvy__item";
+  
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.className = "lazy";
+            img.alt = `Imagen ${index + 1}`;
+  
+            const p = document.createElement("p");
+            p.innerHTML = item.description;
+  
+            div.appendChild(img)
+            div.appendChild(p)
+            
+            document.querySelector('.app-section-nvy__items').appendChild(div);
+          });
+        } else {
+          document.querySelector('.pdp-key-features').classList.add('hidden')
+        }
+
+       } else {
+        document.querySelector('.app-section-nvy').classList.add("hidden")
+       }
+
+      // product page - overview - section 4
+      const OverviewSection4DesktopImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse img.show-in-desktop')
+      const OverviewSection4MobileImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse img.show-in-mobile')
+      const OverviewSection4Heading = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse h5')
+      const OverviewSection4Description = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse p')
+      if(selectedVariant[0].section4Image) {
+        document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse').classList.remove("hidden")
+        OverviewSection4DesktopImage.src = selectedVariant[0].section4Image
+        OverviewSection4MobileImage.src = selectedVariant[0].section4ImageMobile
+        OverviewSection4Heading.innerHTML = selectedVariant[0].section4Heading
+        OverviewSection4Description.innerHTML = selectedVariant[0].section4Description
+      } else {
+        document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse').classList.add("hidden")
+      }
+
+      // product page - overview - section 5
+      const OverviewSection5DesktopImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 img.show-in-desktop')
+      const OverviewSection5MobileImage = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--reverse img.show-in-mobile')
+      const OverviewSection5Heading = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 h5')
+      const OverviewSection5Description = document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0 p')
+      if(selectedVariant[0].section5Image) {
+        document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0').classList.remove("hidden")
+        OverviewSection5DesktopImage.src = selectedVariant[0].section5Image
+        OverviewSection5MobileImage.src = selectedVariant[0].section5ImageMobile
+        OverviewSection5Heading.innerHTML = selectedVariant[0].section5Heading
+        OverviewSection5Description.innerHTML = selectedVariant[0].section5Description
+      } else {
+        document.querySelector('.imagen-with-text-nvy.imagen-with-text-nvy--4-0').classList.add("hidden")
+      }
+
+      // product page - specification and manuals
+      if(selectedVariant[0].specs_html) {
+        document.querySelector('.main-taps__container--item.main-taps__container-specifications').classList.remove('hidden')
+        const specificationData = document.querySelector('.main-taps__container-specifications > div')
+        specificationData.innerHTML = selectedVariant[0].specs_html
+      } else {
+        document.querySelector('.main-taps__container--item.main-taps__container-specifications').classList.add('hidden')
+      }
+
+      if(selectedVariant[0].manualFile) {
+        document.querySelector('.main-taps__container--item.main-taps__container-manual').classList.remove('hidden')
+        const userManual = document.querySelector('.main-taps__container--item.main-taps__container-manual a')
+        userManual.href = selectedVariant[0].manualFile
+      } else {
+        document.querySelector('.main-taps__container--item.main-taps__container-manual').classList.add('hidden')
+      }
+
+      // product page - key features
+      const keyFeaturesItemsImg = document.querySelectorAll('.pdp-key-features__item')
+      if(selectedVariant[0].keyFeatures.length > 0) {
+        document.querySelector('.pdp-key-features').innerHTML = "";
+        document.querySelector('.pdp-key-features').classList.remove('hidden')
+
+        selectedVariant[0].keyFeatures.forEach((item, index) => {
+          const div = document.createElement("div");
+          div.className = "pdp-key-features__item";
+
+          const img = document.createElement("img");
+          img.src = item.icon;
+          img.alt = `Imagen ${index + 1}`;
+
+          const span = document.createElement("span");
+          span.innerHTML = item.text;
+
+          div.appendChild(img)
+          div.appendChild(span)
+          
+          document.querySelector('.pdp-key-features').appendChild(div);
+        });
+      } else {
+        document.querySelector('.pdp-key-features').classList.add('hidden')
+      }
+
+      // product page - bottom banner
+      const BottomBannerImageDesktop = document.querySelector('.banner-full-page__images--desktop')
+      const BottomBannerImageMobile = document.querySelector('.banner-full-page__images--mobile')
+      const BottomBannerHeading = document.querySelector('.banner-full-page__overlay h4')
+      const BottomBannerDescription= document.querySelector('.banner-full-page__overlay p')
+
+      if(selectedVariant[0].sectionBottomBannerImageDesktop && selectedVariant[0].sectionBottomBannerImageMobile) {
+        document.querySelector('.banner-full-page__container').classList.remove('hidden');
+        BottomBannerImageDesktop.src = selectedVariant[0].sectionBottomBannerImageDesktop
+        BottomBannerImageMobile.src = selectedVariant[0].sectionBottomBannerImageMobile
+        BottomBannerHeading.innerHTML = selectedVariant[0].sectionBottomBannerHeading
+        BottomBannerDescription.innerHTML = selectedVariant[0].sectionBottomBannerDescription
+      } else {
+        document.querySelector('.banner-full-page__container').classList.add('hidden');
+      }
+
+      // related products
+      const variantsRelatedProducts = document.querySelectorAll('.related-product-list__container');
+
+      variantsRelatedProducts.forEach(variant => {
+         variant.style.display = "none";
+      });
+
+      variantsRelatedProducts.forEach(variant => {
+        const variantId = variant.dataset.variantId;
+        if(variantId == this.selectedVariant.id) {
+          variant.style.display = "flex"
+        }
+      });
+
+      // variant SKU
+      const variantSku = document.querySelector('p.product-meta__sku-number');
+      variantSku.innerHTML =  selectedVariant[0].sku
+
+      // variant FAQs
+      const faqList = document.querySelector('.section-faqs .accordion-list.accordion-faqs');
+      faqList.innerHTML = "";
+      const faqs = selectedVariant[0].faqs ? selectedVariant[0].faqs : [];
+      if(faqs.length > 0) {
+        faqs.forEach(faq => {
+          const li = document.createElement("li");
+          li.className = "accordion-faqs__item";
+  
+          li.innerHTML = `
+            <h3>${faq.question}</h3>
+            <div class="answer accordion-faqs__answer">
+              ${faq.answer}
+            </div>
+          `;
+  
+          faqList.appendChild(li);
+        });
+        const items = document.querySelectorAll('.custom-faqs .accordion-faqs__item');
+        items.forEach(item => {
+          item.addEventListener('click', e => {
+            e.preventDefault();
+    
+            const answer = item.querySelector('.accordion-faqs__answer');
+    
+            if (item.classList.contains('active')) {
+              item.classList.remove('active');
+              answer.style.height = 0;
+            } else {
+    
+              document.querySelectorAll('.accordion-faqs__item.active').forEach(active => {
+                active.classList.remove('active');
+                const a = active.querySelector('.accordion-faqs__answer');
+                a.style.height = 0;
+              });
+    
+              item.classList.add('active');
+              answer.style.height = answer.scrollHeight + "px";
+            }
+          });
+        });
+      }
+      console.log("XXXvariantWithMetafields", variantWithMetafields)
+    }
     _onMasterSelectorChanged() {
       var _a;
       const options = ((_a = this.selectedVariant) == null ? void 0 : _a.options) || [];
       console.log("this.selectedVariant", this.selectedVariant)
+     
+      this._updateProductDetails()
 
       // start - disable not available variants
       const templateNewTemplate = document.querySelector('body.page-template--new-template');

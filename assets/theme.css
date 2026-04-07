@@ -2,6 +2,15 @@
  * NOTE: most of the CSS variables used are defined in the "css-variables.liquid" 
  */
 
+
+body,
+p {
+  font-size: 16px;
+  font-weight: 400 !important;
+  line-height: 1.571428571 !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
 .collapsibles-wrapper--border-bottom {
   border-bottom: 1px solid;
   border-bottom-color: #e8e8e1;
@@ -232,7 +241,7 @@ p {
   font-size: 17px;
   font-weight: 400;
   line-height: 1.571428571;
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 h1,
 h2,
@@ -260,7 +269,7 @@ span.res,
 body#product span.rating__caption,
 select option,
 span.money {
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .store-icon img {
   max-width: 165px;
@@ -10283,6 +10292,7 @@ input:checked + .popover__choice-label::after,
 
 .header__linklist-link {
   display: block;
+  font-size: 15px;
 }
 
 .header__bottom-navigation .header__linklist {
@@ -13249,11 +13259,12 @@ shopify-payment-terms {
     padding-bottom: 16px;
     background: rgb(var(--background));
     border-bottom: 1px solid rgb(var(--border-color));
-    top: calc(
+    border-top: 1px solid #000;
+    /* top: calc(
       var(--header-height, 0px) * var(--enable-sticky-header) + var(--announcement-bar-height, 0px) *
         var(--enable-sticky-announcement-bar)
     );
-    bottom: auto;
+    bottom: auto; */
     box-shadow: 0 6px 5px -5px rgba(var(--border-color), 0.4), 0 1px rgb(var(--border-color)) inset;
     transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out, visibility 0.25s ease-in-out;
   }
@@ -13710,6 +13721,7 @@ shopify-payment-terms {
     top: calc(
       var(--item-width) / var(--smallest-image-aspect-ratio) / 2 - 28px
     ); /* 28px is half the height of the button */
+    top: 50%;
   }
 
   .product-list__arrow {
@@ -15866,11 +15878,6 @@ body#index .content-box--left.text-container {
   max-width: 100% !important;
 }
 
-body#product .product__info h1.product-meta__title.heading.h3 {
-  font-family: 'Titillium Web', sans-serif !important;
-  font-size: 28px !important;
-  text-transform: unset !important;
-}
 .logo-list__item {
   padding: 5px !important;
 }
@@ -15916,7 +15923,7 @@ body#product .product__info h1.product-meta__title.heading.h3 {
 h2.cbb-frequently-bought-title,
 .jdgm-rev-widg__title {
   font-size: 31px !important;
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   color: #333 !important;
   text-transform: uppercase;
   font-weight: 600 !important;
@@ -15942,7 +15949,7 @@ h2.cbb-frequently-bought-title,
 
 body#product h3.heading.h2 {
   font-weight: 700 !important;
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .product-form__custom-liquid p.ask a {
   text-decoration: underline !important;
@@ -16689,6 +16696,7 @@ body.page-template--black-friday
   body.page-template--black-friday .multi-column__image-wrapper {
     width: auto;
     border-radius: 0;
+    
     margin-bottom: 10px;
   }
   body.page-template--black-friday .multi-column__item .multi-column__text-container {
@@ -16830,13 +16838,8 @@ product-media .pdp-swiper-thumbnail {
 product-media .pdp-swiper-thumbnail .swiper-slide {
   width: 25%;
   height: 100%;
-  opacity: 0.4;
   height: 112.5px;
   background: transparent;
-}
-
-product-media .pdp-swiper-thumbnail .swiper-slide-thumb-active {
-  opacity: 1;
 }
 
 product-media .swiper-slide img {
@@ -16881,6 +16884,7 @@ body[id="page"].ds18-store .list-collections__item-list {
   width: 50px;
   height: 50px;
   padding: 3px;
+  border: #ababab solid 1px
 }
 
 .color-swatch-list--mini .color-swatch__item  {
@@ -16890,7 +16894,7 @@ body[id="page"].ds18-store .list-collections__item-list {
 }
 
 .color-swatch-list--mini {
-  gap: 37px;
+  gap: 44px;
 }
 
 .product-item .link-btn {

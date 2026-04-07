@@ -1,117 +1,8 @@
-<style>
-
-  
-  .pushowl-widget-node.pushowl-widget-node--desktop {
-      display: none !important;
-  }
-
-  
-  .product__info .product__info_continer .product-form ul {
-      list-style-type: disc;
-  }
-
-  @media only screen and (min-width: 1200px){
-      .product__zoom-button {
-          display: none;
-      }
-
-      img.zoomImg {
-          cursor: zoom-in;
-      }
-
-      .image-zoom-product-page {
-        cursor: zoom-in;
-      }
-  }
-</style>
-
-{{ 'new-styles-pdp.css' | asset_url | stylesheet_tag }}
-{{ 'styles-testing-prices-pdp.css' | asset_url | stylesheet_tag }}
-
-<!-- NEW ESTILES EDITS ESTILOS PRODUCT GRID -->
-{{ 'styles-grid-products-recommendation.css' | asset_url | stylesheet_tag }}
-{{ 'new-styles-version-pdp.css' | asset_url | stylesheet_tag }}
-
+{{ 'styles-pdp.css' | asset_url | stylesheet_tag }}
 
 {% if customer.b2b? %}
-  {{ 'styles-product-pages-b2b.css' | asset_url | stylesheet_tag }}
+  {{ 'style-pdp-b2b.css' | asset_url | stylesheet_tag }}
 {% endif %}
-
-
-<style>
-  .footerIcons{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    order: 2;
-    margin-top: 0!important;
-  }
-  .footerIcons .fiItem {
-    width: 25% !important;
-    text-align: center;
-      font-size: 11px;
-    margin-bottom: 0 !important;
-  }
-  .footerIcons .fiItem img{
-     width: 125px; 
-  }
-/*   @media screen and (max-width:440px){
-    .footerIcons img{
-      width:22%;
-    }
-  } */
-</style>
-
-
-
-<!-- Estilos B2B -->
-  {% if customer.b2b? %}
-    <style>
-      .quantity-buy-container.container-uniq-form-ds .show-quantity {
-          display: flex!important;
-      }
-  
-      .variant-a__precio-tachado,
-      .units-sold-text {
-          display: none!important;
-      }
-      
-      product-meta.product-meta .container-general-prices .container-general-prices__regular-prices {
-          display: none!important
-      }
-
-
-
-      .footerIcons .fiItem.fiItem--freeshipping,
-      .shipsFreeToday{
-          display: none!important;
-      }
-      
-      .footerIcons .fiItem {
-          width: 33.333333% !important;
-      }
-
-
-      
-      
-      product-item.product-item.product-item--custom-wholesale .container-prices-b2b {
-          align-items: flex-start;
-      }
-      
-      product-meta.product-meta {
-          padding-bottom: 0;
-      }
-      
-      .prices-b2b-pdp {
-          margin-bottom: 10px!important;
-      }
-
-      
-    </style>
-
-    
-  {% endif %}
-
 
 
 {% if product.id == 7194385383485 %}
@@ -1261,6 +1152,8 @@
 
   function $loadVariantsImage(){
     if($('.shopify-section--main-product product-media .flickity-slider').length > 0 || $('.shopify-section--main-product product-media .swiper-slide').length > 0 ){
+
+      const isNewTemplate = document.querySelector('body.page-template--new-template');
       
       var $validationAlts = $(".shopify-section--main-product product-media .flickity-slider > div[data-selector-media-alt*='VARIANT:']");
       if($validationVariants.length == 2){
@@ -1300,23 +1193,24 @@
           $soldOutImageVariantMulti();
         
       } else {
-
-        var $validationInputs = $('.shopify-section--main-product .product__info product-variants > .product-form__option-selector input');
-
-        $('.shopify-section--main-product .product__info product-variants').addClass('active-imagen-multiple-variants');
-        $('div.load-variants-general').removeClass('multiple-variants-images');
-        $('.shopify-section--main-product .product__info product-variants').show();
-
-        $($validationInputs).each(function() {
-            var $val = $(this).val();
-            var $imagen = $('.container-images-variants span[data-option="' + $val + '"]').data("imageUrl");
-            var $label = $(this).siblings("label");
-
-            if ($imagen.length > 0){
-              $label.addClass('label-with-image__active');
-              $label.prepend('<img src="' + $imagen + '">');
-            };
-        });
+          var $validationInputs = $('.shopify-section--main-product .product__info product-variants > .product-form__option-selector input');
+  
+          $('.shopify-section--main-product .product__info product-variants').addClass('active-imagen-multiple-variants');
+          $('div.load-variants-general').removeClass('multiple-variants-images');
+          $('.shopify-section--main-product .product__info product-variants').show();
+          
+        if(!isNewTemplate) {
+          $($validationInputs).each(function() {
+              var $val = $(this).val();
+              var $imagen = $('.container-images-variants span[data-option="' + $val + '"]').data("imageUrl");
+              var $label = $(this).siblings("label");
+  
+              if ($imagen.length > 0){
+                $label.addClass('label-with-image__active');
+                $label.prepend('<img src="' + $imagen + '">');
+              };
+          });
+        }
 
         buildGroups();
         checkAllGroupsAvailability();

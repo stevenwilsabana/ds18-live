@@ -26,10 +26,10 @@ a.resto.mobile-only{display:none;}
 
 body,
 p {
-  font-size: 16px !important;
+  font-size: 15px !important;
   font-weight: 400 !important;
   line-height: 1.571428571 !important;
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .shipsFreeToday #shipping-truck {
   width: 50px;
@@ -319,12 +319,6 @@ a.text {
 .product__info product-inventory.product-form__inventory-wrapper {
   display: none;
 }
-body#product .product__info h1.product-meta__title.heading.h3 {
-  margin: 5px 0px;
-  text-transform: uppercase;
-  font-size: 40px;
-  font-family: font, arial narrow, arial, sans-serif;
-}
 button#StickyAddToCart {
   background: red;
 }
@@ -347,7 +341,7 @@ button#AddToCart {
 }
 h3.heading.h3 {
   font-size: 31px;
-  font-family: Titillium Web, sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 native-carousel.text-with-icons {
   padding-left: 22px;

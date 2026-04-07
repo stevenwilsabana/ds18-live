@@ -1,5 +1,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
 {%- if product.media.size > 0 -%}
   {%- assign selected_media = product.selected_variant.featured_media | default: product.featured_media -%}
 
@@ -13,7 +18,7 @@
 
   {% assign filtered_media_ids = '' %}
 
-  {% if product.template_suffix != 'new-template' and product.template_suffix != 'product-with-variants' %}
+  {% unless new_template %}
     {%- for media in product.media -%}
       {%- if media.alt contains '#' -%}
         {%- assign alt_parts = media.alt | split: '#' -%}
@@ -40,7 +45,7 @@
         {%- endfor -%}
       {% endif %}
     {% endfor %} 
-  {% endif %}
+  {% endunless %}
   
   {%- assign filtered_media_ids = filtered_media_ids | split: ',' | compact -%}
 
@@ -58,7 +63,7 @@
 
 
       <div class="product__media-list-wrapper" style="max-width: {{ max_width }}px">
-        {% if product.template_suffix == 'new-template' or product.template_suffix == 'product-with-variants' %}
+        {% if new_template %}
           <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper pdp-swiper-main">
             <div class="swiper-wrapper">
               {%- for media in product.media -%}
@@ -91,7 +96,10 @@
               {%- endfor -%}
             </div>
           </div>
-          <button class="swiper-button-prev" aria-label="Previous image"></button>
+          <button class="swiper-button-prev" aria-label="Previous image"><svg version="1.1" id="icon-preview-slider" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+          <path d="M14.3,26.5l18.4,18.4c0.8,0.8,2.2,0.8,3.1,0c0.8-0.8,0.8-2.2,0-3.1L18.9,25L35.7,8.2c0.8-0.8,0.8-2.2,0-3.1
+            c-0.4-0.4-1-0.6-1.5-0.6s-1.1,0.2-1.5,0.6L14.3,23.5C13.4,24.3,13.4,25.7,14.3,26.5z"></path>
+          </svg></button>
           <div thumbsSlider="" class="swiper pdp-swiper-thumbnail pdp-thumb-slider">
             <div class="swiper-wrapper">
               {%- for media in product.media -%}
@@ -109,7 +117,10 @@
               {%- endfor -%}
             </div>
             </div>
-          <button class="swiper-button-next" aria-label="Next image"></button>
+          <button class="swiper-button-next" aria-label="Next image"><svg version="1.1" id="icon-next-slider" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+          <path d="M35.7,23.5L17.4,5.1c-0.8-0.8-2.2-0.8-3.1,0c-0.8,0.8-0.8,2.2,0,3.1L31.1,25L14.3,41.8c-0.8,0.8-0.8,2.2,0,3.1
+            c0.4,0.4,1,0.6,1.5,0.6c0.6,0,1.1-0.2,1.5-0.6l18.4-18.4C36.6,25.7,36.6,24.3,35.7,23.5z"></path>
+          </svg></button>
         {% endif %}
 
 
@@ -145,7 +156,7 @@
         "prevNextButtons": true
       }
       {%- endcapture -%}
-      {% if product.template_suffix != 'new-template' and product.template_suffix != 'product-with-variants' %}
+      {% unless new_template %}
         <flickity-carousel {% comment %}click-nav{% endcomment %} flickity-config="{{ flickity_config | escape }}" id="product-{{ section.id }}-{{ product.id }}-media-list" class="product__media-list">
           {% assign current_variant = product.selected_or_first_available_variant %}
           {% assign mediaCount = product.media.size %}
@@ -229,7 +240,7 @@
               </div>
           {%- endfor -%}
         </flickity-carousel>
-      {%- endif -%}
+      {%- endunless -%}
 
 
       {%- if section.settings.enable_image_zoom -%}
@@ -249,7 +260,7 @@
       </button>
     {%- endif -%}
 
-    {% if product.template_suffix != 'new-template' and product.template_suffix != 'product-with-variants' %}
+    {% unless new_template %}
 
       {%- if product.media.size > 1 -%}
         
@@ -319,7 +330,7 @@
         </flickity-controls>
         
       {%- endif -%}
-    {%- endif -%}
+    {%- endunless -%}
 
     {%- if section.settings.enable_image_zoom -%}
       {%- comment -%}This code MUST NOT be changed, and is part of the PhotoSwipe required interface{%- endcomment -%}
@@ -444,6 +455,11 @@
       slidesPerView: 4,
       freeMode: true,
       watchSlidesProgress: true,
+      breakpoints: {
+        1100: {
+          slidesPerView: 5 // tablet & up
+        }
+      }
     });
     window.swiperMain = new Swiper(".pdp-swiper-main", {
       spaceBetween: 10,

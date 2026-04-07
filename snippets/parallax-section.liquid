@@ -1,27 +1,78 @@
-{% if product.metafields.custom.nvy_overview_parallax_imagen %}
-  {% assign images = product.metafields.custom.nvy_overview_parallax_imagen.value %}
-  {% assign images_count = 0 %}
-  {% for image in images %}
-    {% assign images_count = forloop.length %}
-  {% endfor %}
+
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
+{% if new_template %}
+  {% if product.selected_or_first_available_variant.metafields.custom.overview_section_2_images %}
+    {% assign images = product.selected_or_first_available_variant.metafields.custom.overview_section_2_images.value %}
+    {% assign images_count = 0 %}
+    {% for image in images %}
+      {% assign images_count = forloop.length %}
+    {% endfor %}
+  {% endif %}
+{% else %}
+  {% if product.metafields.custom.nvy_overview_parallax_imagen %}
+    {% assign images = product.metafields.custom.nvy_overview_parallax_imagen.value %}
+    {% assign images_count = 0 %}
+    {% for image in images %}
+      {% assign images_count = forloop.length %}
+    {% endfor %}
+  {% endif %}
 {% endif %}
 
 
-<div class="section-parallax {% if images_count > 1 %}section-parallax--parallax--multi{% else %}section-parallax--parallax--single{% endif %}">
+<div class="section-parallax {% if images_count > 1 %}section-parallax--parallax--multi{% elsif images_count == 1 %}section-parallax--parallax--single{% else %}hidden{% endif %}">
   <div class="section-parallax__container">
-    {% if product.metafields.custom.nvy_overview_parallax_heading %}
-      <h3>{{ product.metafields.custom.nvy_overview_parallax_heading }}</h3>
-    {% endif %}
-    {% if product.metafields.custom.nvy_overview_parallax_content %}
-      <p>{{ product.metafields.custom.nvy_overview_parallax_content }}</p>
-    {% endif %}
 
+    {% if new_template %}
+        <h3>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_2_heading }}</h3>
+        <p>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_2_description }}</p>
+    {% else %}
+      {% if product.metafields.custom.nvy_overview_parallax_heading %}
+        <h3>{{ product.metafields.custom.nvy_overview_parallax_heading }}</h3>
+      {% endif %}
+      {% if product.metafields.custom.nvy_overview_parallax_content %}
+        <p>{{ product.metafields.custom.nvy_overview_parallax_content }}</p>
+      {% endif %}
+    {% endif %}
 
     <!-- Scroll controlado -->
     <section class="parallax-wrapper {% if product.metafields.custom.nvy_image_for_banner_2_static_mobile %}parallax-wrapper-desktop{% endif %}">
       <div class="parallax-sticky">
         <div class="parallax-media">
-          {% if product.metafields.custom.nvy_overview_parallax_imagen %}
+
+        {% if new_template %}
+          {% assign variant = product.selected_or_first_available_variant %}
+          {% if variant.metafields.custom.overview_section_2_images.value %}
+            {% for image in variant.metafields.custom.overview_section_2_images.value %}
+              
+              <img
+                class="parallax-frame" 
+                data-index="{{ forloop.index0 }}" 
+                src="{{ image | image_url: width: 1500 }}" 
+                alt="Imagen {{ forloop.index }}" 
+                style="display: none; {% if image contains '.gif' %} width: max-content; {% endif %}"
+              >
+            {% endfor %}
+          {% endif %}
+        {% else %}
+            {% if product.metafields.custom.nvy_overview_parallax_imagen %}
+              {% for image in product.metafields.custom.nvy_overview_parallax_imagen.value %}
+                <img
+                  class="parallax-frame" 
+                  data-index="{{ forloop.index0 }}" 
+                  src="{{ image | image_url: width: 1500 }}" 
+                  alt="Imagen {{ forloop.index }}" 
+                  style="display: none;"
+                >
+              {% endfor %}
+            {% endif %}
+        {% endif %}
+          
+
+          {% comment %} {% if product.metafields.custom.nvy_overview_parallax_imagen %}
             {% for image in product.metafields.custom.nvy_overview_parallax_imagen.value %}
               <img
                 class="parallax-frame" 
@@ -31,7 +82,7 @@
                 style="display: none;"
               >
             {% endfor %}
-          {% endif %}
+          {% endif %} {% endcomment %}
         </div>
       </div>
     </section>

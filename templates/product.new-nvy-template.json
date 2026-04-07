@@ -55,6 +55,18 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "affirm_pay_over_time_messaging_product_block_prcUjH": {
+          "type": "shopify://apps/affirm-pay-over-time-messaging/blocks/product-block/6dce54be-130d-4d13-9636-1e8f611b3071",
+          "disabled": true,
+          "settings": {
+            "logo_align": "left",
+            "font_size": 16,
+            "logo_color": "blue",
+            "logo_type": "logo",
+            "public_api_key": "",
+            "price_selector": ""
+          }
+        },
         "0af9ef19-706d-4540-b2b6-d1208827e719": {
           "type": "liquid",
           "settings": {
@@ -119,10 +131,12 @@
         },
         "description_new_Gq4P6F": {
           "type": "description_new",
+          "disabled": true,
           "settings": {}
         },
         "tolstoy_shoppable_video_ugc_stories_block_UULdKR": {
           "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "disabled": true,
           "settings": {
             "publishId": "6g3hq77djsb63"
           }
@@ -130,24 +144,6 @@
         "complete_your_system_aFXi68": {
           "type": "complete_your_system",
           "settings": {}
-        },
-        "affirm_pay_over_time_messaging_product_block_prcUjH": {
-          "type": "shopify://apps/affirm-pay-over-time-messaging/blocks/product-block/6dce54be-130d-4d13-9636-1e8f611b3071",
-          "settings": {
-            "logo_align": "left",
-            "font_size": 16,
-            "logo_color": "blue",
-            "logo_type": "logo",
-            "public_api_key": "",
-            "price_selector": ""
-          }
-        },
-        "liquid_dernBe": {
-          "type": "liquid",
-          "settings": {
-            "class_label": "section-custom-liquid",
-            "liquid": "{% assign hiddenClass = \"\" %}\n{% unless product.selected_or_first_available_variant.metafields.custom.key_features.value %}\n  {% assign hiddenClass = \"hidden\" %}\n{% endunless %}\n<div class=\"pdp-key-features {{ hiddenClass }}\">\n          {% for mo in product.selected_or_first_available_variant.metafields.custom.key_features.value %}\n            <div class=\"pdp-key-features__item\">\n              <img src=\"{{ mo.icon.value | image_url: width: 31 }}\" alt=\"\">\n              <span>{{ mo.text.value }}</span>\n            </div>\n          {% endfor %}\n</div>"
-          }
         },
         "6532d8e6-7a94-40e0-8d61-dace36b00264": {
           "type": "liquid",
@@ -201,6 +197,7 @@
         }
       },
       "block_order": [
+        "affirm_pay_over_time_messaging_product_block_prcUjH",
         "0af9ef19-706d-4540-b2b6-d1208827e719",
         "fcb1795d-b0f5-469a-9ed4-bd6bc1167768",
         "38948dfc-afc6-4b58-b4c6-c1274ecbd8cc",
@@ -213,8 +210,6 @@
         "description_new_Gq4P6F",
         "tolstoy_shoppable_video_ugc_stories_block_UULdKR",
         "complete_your_system_aFXi68",
-        "affirm_pay_over_time_messaging_product_block_prcUjH",
-        "liquid_dernBe",
         "6532d8e6-7a94-40e0-8d61-dace36b00264",
         "4018b0a0-8a8e-4bdb-af89-815a76a54be3",
         "b61df6a0-96bd-4f18-b316-79cad87c7af3",
@@ -268,60 +263,6 @@
       "type": "product-overview",
       "settings": {}
     },
-    "new_version_tap_nvy_dqb4G6": {
-      "type": "new-version-tap-nvy",
-      "blocks": {
-        "overview_DtbB9q": {
-          "type": "overview",
-          "settings": {
-            "button": "OVERVIEW",
-            "background_imagen_mobile": "shopify://shop_images/PRO-X6.4BM_MOBILE_BANNER_1.jpg",
-            "background_imagen_desktop": "shopify://shop_images/PRO-X6.4BM_WEBSITE_BANNER_1.jpg",
-            "content": "{{ product.metafields.custom.nvy_overview_main_banner_content | metafield_tag }}",
-            "imagen_alignment": ""
-          }
-        },
-        "specifications_7fNiKp": {
-          "type": "specifications",
-          "settings": {
-            "button": "SPECIFICATIONS & MANUAL",
-            "specifications": "{{ product.metafields.custom.nvy_s_m_specifications | metafield_tag }}"
-          }
-        },
-        "related_products_iqVhKj": {
-          "type": "related_products",
-          "settings": {
-            "button": "RELATED PRODUCTS"
-          }
-        },
-        "reviews_rB6Lbw": {
-          "type": "reviews",
-          "settings": {
-            "button": "REVIEWS"
-          }
-        },
-        "faqs_NTMUWr": {
-          "type": "faqs",
-          "settings": {
-            "button": "FAQs"
-          }
-        }
-      },
-      "block_order": [
-        "overview_DtbB9q",
-        "specifications_7fNiKp",
-        "related_products_iqVhKj",
-        "reviews_rB6Lbw",
-        "faqs_NTMUWr"
-      ],
-      "name": "Taps NVY",
-      "settings": {}
-    },
-    "banner_full_page_LLP36z": {
-      "type": "banner-full-page",
-      "name": "Banner Full Page",
-      "settings": {}
-    },
     "1ce16315-efdf-44aa-8887-cf2cefc774da": {
       "type": "dyno-results",
       "disabled": true,
@@ -342,7 +283,6 @@
     },
     "yth-promotional": {
       "type": "yth-promotional",
-      "disabled": true,
       "settings": {}
     },
     "product-content": {
@@ -421,7 +361,6 @@
     },
     "yth-related-products": {
       "type": "yth-related-products",
-      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "Related products",
@@ -528,7 +467,6 @@
         "template--15206951649341__78635833-e9bb-4ea7-81cd-33c8922a5f7e-image-2",
         "image_gb84Gq"
       ],
-      "disabled": true,
       "settings": {
         "section_height": "auto",
         "transition_type": "sweep",
@@ -695,7 +633,6 @@
       "block_order": [
         "judgeme_review_widget_b8514a2f"
       ],
-      "disabled": true,
       "settings": {
         "include_horizontal_margins": true,
         "include_vertical_margins": true
@@ -703,7 +640,6 @@
     },
     "9ac67d46-b3b1-4624-a50e-e72ca94c24d7": {
       "type": "judgeme_carousel_section",
-      "disabled": true,
       "settings": {
         "maxwidth": 1920
       }
@@ -718,8 +654,6 @@
     "f49606dd-35de-4475-bae5-ce64c9e42203",
     "yth-image-with-text",
     "9e473855-68ae-4331-aa8a-3ea8e6c0838f",
-    "new_version_tap_nvy_dqb4G6",
-    "banner_full_page_LLP36z",
     "1ce16315-efdf-44aa-8887-cf2cefc774da",
     "b033b637-b65f-4f72-a262-8c6a083cc2f6",
     "yth-promotional",

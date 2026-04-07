@@ -1,4 +1,139 @@
 {{ 'styles-tap-nvy.css' | asset_url | stylesheet_tag }}
+{{ 'styles-faqs.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .related-product-list__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 50px;
+      gap: 10px;
+      align-items: stretch;
+    }
+    .related-product-list__item {
+      width: calc(20% - 5px);
+      height: auto;
+      font-size: 18px;
+      display: flex;
+      justify-content: flex-start;
+      background: #fff;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 15px 15px 20px;
+      border: 1px solid #ded7d7;
+      border-radius: 5px;
+    }
+
+    .related-product-list__item .product-item__image-wrapper {
+      height: 210px;
+    }
+
+    .related-product-list__item product-item.product-item .product-item-meta .jdgm-widget {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .related-product-list__item .product-item-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      height: 100%;
+    }
+    .related-product-list__item product-item.product-item .cta-buttons-eject .number-input {
+      display: none;
+    }
+    .related-product-list__item product-item.product-item .cta-buttons-eject button.btn {
+      max-width: 100% !important;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .related-product-list__item .product-item-meta__swatch-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: flex-start;
+    }
+    .related-product-list__item .product-item .link-btn {
+      text-align: center;
+    }
+    .related-product-list__item product-item.product-item {
+      height: 100%;
+    }
+    .related-product-list__item .product-item__general-product {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .related-product-list__item .product-item-meta__price-list-container {
+      flex: 1;
+    }
+
+    .custom-faqs .section-faqs {
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .custom-faqs .accordion-faqs__item h3 {
+      font-size: 20px;
+    }
+    .custom-faqs .accordion-faqs__answer {
+      font-size: 15px;
+      line-height: normal;
+      font-weight: 400;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif !important;
+    }
+    .custom-faqs .accordion-faqs__item:hover {
+      background-color: #f8f8f8;
+    }
+
+    .custom-faqs .accordion-faqs__answer {
+      height: 0;
+      padding: 0;
+      margin-top: 10px;
+      overflow: hidden;
+      transition: height 0.3s ease;
+    }
+    .custom-faqs .section-faqs__btn {
+      background: #de2a2a;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+    @media (max-width: 1024px) {
+      .related-product-list__item .product-item__image-wrapper {
+        height: auto;
+      }
+
+      .related-product-list .main-taps__container--general.container {
+        overflow-x: auto;
+      }
+      .related-product-list__container {
+        width: 1400px;
+      }
+    }
+    @media (max-width: 767px) {
+      .related-product-list__container {
+        width: 1300px;
+      }
+      .related-product-list {
+        width: 100%;
+      }
+    }
+
+  </style>
+
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
 
 {% if product.metafields.custom.nvy_hidden_field_3_in_mobile == true %}
   <style>
@@ -68,12 +203,20 @@
                    alignment: block.settings.imagen_alignment
                 %}
               {% endif %}
-  
-              {% if product.metafields.custom.nvy_overview_parallax_heading or
+
+              {% if new_template %}
+                {% comment %} {% if product.selected_or_first_available_variant.metafields.custom.overview_section_2_heading %} {% endcomment %}
+                  {% render 'parallax-section', product: product %}
+                {% comment %} {% endif %} {% endcomment %}
+              {% else %}
+                {% if product.metafields.custom.nvy_overview_parallax_heading or
                     product.metafields.custom.nvy_overview_parallax_content or
                     product.metafields.custom.nvy_overview_parallax_imagen %}
                 {% render 'parallax-section', product: product %}
               {% endif %}
+              {% endif %}
+  
+              
   
               {% render 'app-section-nvy', product: product %}
               {% render 'imagen-with-text-nvy', product: product %}
@@ -88,31 +231,113 @@
 
             <div class="main-taps__container--general">
 
-              {% if product.metafields.custom.manual %}
-                <div class="main-taps__container--item main-taps__container-manual">
-                  <p>
-                    <a href="{{ product.metafields.custom.manual.value.url }}" target="_blank">
-                      {% render 'icon', icon: 'download' %}
-                      <span>DOWNLOAD THE USER MANUAL</span>
-                    </a>
-                  </p>
+              {% if new_template %}
+                {% assign hiddenClass = "" %}
+                {% unless product.selected_or_first_available_variant.metafields.custom.user_manual %}
+                  {% assign hiddenClass = "hidden" %}
+                {% endunless %}
+                <div class="main-taps__container--item main-taps__container-manual {{ hiddenClass }}">
+                    <p>
+                      <a href="{{ product.selected_or_first_available_variant.metafields.custom.user_manual.value.url }}" target="_blank">
+                        {% render 'icon', icon: 'download' %}
+                        <span>DOWNLOAD THE USER MANUAL</span>
+                      </a>
+                    </p>
                 </div>
-              {% endif %}
 
-
-              
-              
-              {% if block.settings.specifications %}
-                <div class="main-taps__container--item main-taps__container-specifications">
-                  <div>{{ block.settings.specifications }}</div>
+                {% assign hiddenClass = "" %}
+                {% unless product.selected_or_first_available_variant.metafields.custom.technical_data_manual %}
+                  {% assign hiddenClass = "hidden" %}
+                {% endunless %}
+                <div class="main-taps__container--item main-taps__container-specifications {{ hiddenClass }}">
+                  <div>
+                    {{ product.selected_or_first_available_variant.metafields.custom.technical_data_manual | metafield_tag }}
+                  </div>
                 </div>
-              {% endif %}
+              {% else %}
+                {% if product.metafields.custom.manual %}
+                  <div class="main-taps__container--item main-taps__container-manual">
+                    <p>
+                      <a href="{{ product.metafields.custom.manual.value.url }}" target="_blank">
+                        {% render 'icon', icon: 'download' %}
+                        <span>DOWNLOAD THE USER MANUAL</span>
+                      </a>
+                    </p>
+                  </div>
+                {% endif %}
 
+                {% if block.settings.specifications %}
+                  <div class="main-taps__container--item main-taps__container-specifications">
+                    <div>{{ block.settings.specifications }}</div>
+                  </div>
+                {% endif %}
+              {% endif %}
             </div>
 
           </div>
-          
-      {% endcase %}
+
+        {% when 'related_products' %}
+
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="related-product-list main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+            <div class="main-taps__container--general container" style="width: 100%;">
+              {%- for v in product.variants -%}
+                {%- assign relatedProducts = v.metafields.custom.related_products.value -%}
+              
+                <div 
+                  class="related-product-list__container"
+                  data-variant-id="{{ v.id }}"
+                  {% unless v.id == product.selected_or_first_available_variant.id %}
+                    style="display: none;"
+                  {% endunless %}
+                >
+                  {%- if relatedProducts != blank -%}
+                    {%- for productItem in relatedProducts -%}
+                      <div class="related-product-list__item">
+                        {%- capture sizes_attribute -%}
+                          (max-width: 720px) 75vw,
+                          min({{ 100.0 | divided_by: 4 | ceil }}vw,
+                          {{ 1520.0 | divided_by: 4 | ceil }}px)
+                        {%- endcapture -%}
+              
+                        {%- render 'product-item',
+                          product: productItem,
+                          sizes_attribute: sizes_attribute,
+                          reveal: settings.stagger_products_apparition
+                        -%}
+                      </div>
+                    {%- endfor -%}
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+      
+        {% when 'reviews' %}  
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+            <div class="main-taps__container--general container" style="width: 100%;">
+              <!-- Start of Judge.me code -->{% assign has_legacy = false %}{% if product.metafields.judgeme.widget.size > 20 %}{% assign has_legacy = true %}{% endif %}<div style='clear:both'></div><div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-product-title='{{ product.title | escape }}' data-id='{{ product.id }}' data-product-id='{{ product.id }}' data-widget='review' data-auto-install='false' data-shop-reviews-count='{{ shop.metafields.judgeme.shop_reviews_count | default: 0 | escape }}' data-entry-point='review_widget.js' data-entry-key='review-widget/main.js'>{% if has_legacy %}<div class='jdgm-legacy-widget-content' style='display: none;'>{{ product.metafields.judgeme.widget }}</div>{% endif %}</div>{% if product.metafields.judgeme.review_widget_data %}<script>jdgm.data ||= {}; jdgm.data.reviewWidget ||= {}; jdgm.data.reviewWidget[{{ product.id }}] = {{ product.metafields.judgeme.review_widget_data }}</script>{% endif %}<!-- End of Judge.me code -->
+            </div>
+          </div>
+        {% when 'faqs' %}  
+          <div {{ block.shopify_attributes }} id="tabs-{{ forloop.index }}" class="custom-faqs main-taps__container main-taps__container--global main-taps__container--{{ block.settings.button | handleize }}">  
+            <div class="main-taps__container--general container" style="width: 100%;">
+              <section class="section-faqs">
+                <ul class="accordion-list accordion-faqs">
+                  {% assign faqs = product.selected_or_first_available_variant.metafields.custom.faqs.value.faqs %}
+                  {% for faq in faqs %}
+                    <li class="accordion-faqs__item">
+                      <h3>{{ faq.question }}</h3>
+                      <div class="answer accordion-faqs__answer">
+                        {{ faq.answer }}
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+                <button class="section-faqs__btn">Still have questions? Contact us</a>
+              </section>
+            </div>
+          </div>
+        {% endcase %}
     {% endfor %}
   </div>
   
@@ -135,6 +360,62 @@
   });
   
 </script>
+
+<script>
+  $(document).ready(function(){
+    // enable georgias chat
+    const btn = document.querySelector('.section-faqs__btn')
+    btn.addEventListener('click', () => {
+      window.GorgiasChat.open();
+    })
+
+    const items = document.querySelectorAll('.custom-faqs .accordion-faqs__item');
+
+    items.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+
+        const answer = item.querySelector('.accordion-faqs__answer');
+
+        if (item.classList.contains('active')) {
+          item.classList.remove('active');
+          answer.style.height = 0;
+        } else {
+
+          document.querySelectorAll('.accordion-faqs__item.active').forEach(active => {
+            active.classList.remove('active');
+            const a = active.querySelector('.accordion-faqs__answer');
+            a.style.height = 0;
+          });
+
+          item.classList.add('active');
+          answer.style.height = answer.scrollHeight + "px";
+        }
+      });
+    });
+    // document.querySelectorAll('.custom-faqs .accordion-faqs__item').forEach(item =>
+    //   item.onclick = () => {
+    //     document.querySelectorAll('.accordion-faqs__item.active').forEach(el => el.classList.remove('active'));
+    //     item.classList.toggle('active');
+    //   }
+    // );
+
+    // $('.accordion-faqs > .accordion-faqs__item > .accordion-faqs__answer').hide();
+      
+    // $('.accordion-faqs > .accordion-faqs__item').click(function() {
+    //   if ($(this).hasClass("active")) {
+    //     $(this).removeClass("active").find(".accordion-faqs__answer").stop(true, true).slideUp();
+    //   } else {
+    //     $(".accordion-faqs > .accordion-faqs__item.active .accordion-faqs__answer").stop(true, true).slideUp();
+    //     $(".accordion-faqs > .accordion-faqs__item.active").removeClass("active");
+    //     $(this).addClass("active").find(".accordion-faqs__answer").stop(true, true).slideDown();
+    //   }
+    //   return false;
+    // });
+    
+  });
+</script>
+  
 
 {% schema %}
   {
@@ -207,6 +488,63 @@
             "type": "richtext",
             "id": "specifications",
             "label": "Specifications"
+          }
+        ]
+      },
+      {
+        "name": "Related Products",
+        "type": "related_products",
+        "settings": [
+          {
+            "type": "header",
+            "content": "TAPS"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          },
+          {
+            "type": "header",
+            "content": "RELATED PRODUCTS"
+          }
+        ]
+      },
+      {
+        "name": "Reviews",
+        "type": "reviews",
+        "settings": [
+          {
+            "type": "header",
+            "content": "TAPS"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          },
+          {
+            "type": "header",
+            "content": "REVIEWS"
+          }
+        ]
+      },
+      {
+        "name": "FAQs",
+        "type": "faqs",
+        "settings": [
+          {
+            "type": "header",
+            "content": "TAPS"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          },
+          {
+            "type": "header",
+            "content": "FAQs"
           }
         ]
       }

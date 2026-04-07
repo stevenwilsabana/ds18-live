@@ -3,6 +3,11 @@
 {%- assign size_label_list = 'general.label.size' | t | replace: ', ', ',' | downcase | split: ',' -%}
 {%- assign product_form_id = 'product-form-' | append: section.id | append: '-' | append: product.id -%}
 
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
 
 {% if customer.b2b? %}
   <style>
@@ -56,10 +61,24 @@
       {%- endcomment -%}
       {%- when 'description_new' -%}
       
-        <div class="container-description">
-          {% render 'descrition-products' %}
-        </div>
+        {% unless new_template %}
+          <div class="container-description">
+            {% render 'descrition-products' %}
+          </div> 
+        {% endunless %}
 
+        {% comment %} {% assign mos = product.selected_or_first_available_variant.metafields.custom.key_features.value %}
+        {% if mos %}
+<div class="pdp-key-features">
+          {% for mo in mos %}
+            <div class="pdp-key-features__item">
+              <img src="{{ mo.icon.value | image_url: width: 31 }}" alt="">
+              {{ mo.text.value }}
+            </div>
+          {% endfor %}
+</div>
+        {% endif %} {% endcomment %}
+        
         {% assign has_app = false %}
         {% for tag in product.tags %}
           {% if tag contains 'APP:' %}
@@ -287,7 +306,7 @@
                       {%- assign color_swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />' -%}
                       {%- for value in option.values -%}
 
-                        {% if product.template_suffix == "new-template" or product.template_suffix == "product-with-variants" %}
+                        {% if new_template %}
                           {%- assign option_index = option.position | minus: 1 -%}
                           {% assign swatch_variant = nil %}
                           {%- for variant in product.variants -%}
@@ -304,7 +323,7 @@
                               data-variant-imagen="variant-{{ namePhoto | handleize }}"
                             >
                               <input class="color-swatch__radio visually-hidden" type="radio" name="option{{ option.position }}" form="{{ product_form_id }}" id="{{ option_id }}-{{ forloop.index }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-bind-value="{{ option_id }}-value">
-                              <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}; background: url('{{ swatch_variant.featured_media | image_url: width: 72 }}') !important">
+                              <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}; background-image: url('{{ swatch_variant.featured_media | image_url: width: 72 }}') !important">
                                 <span class="visually-hidden"></span>
                               </label>
                           </div>
@@ -357,7 +376,11 @@
                           >
                             <input class="color-swatch__radio visually-hidden" type="radio" name="option{{ option.position }}" form="{{ product_form_id }}" id="{{ option_id }}-{{ forloop.index }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-bind-value="{{ option_id }}-value">
                             <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}">
-                              <span class="visually-hidden">{{ value }}</span>
+                              {% if value contains "Ohm" %}
+                                <span class="visually-hidden">{{ value | replace: "-Ohm", "Ω" }}</span>
+                              {% else %}
+                                <span class="visually-hidden">{{ value }}</span>
+                              {% endif %}
                             </label>
                           </div>
                         
@@ -593,7 +616,7 @@
       {%- endcomment -%}
       {%- when 'liquid' -%}
         {% if block.settings.liquid != blank %}
-          <div class="product-form__custom-liquid block--{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="product-form__custom-liquid {{ block.settings.class_label }} block--{{ block.id }}" {{ block.shopify_attributes }}>
             {{- block.settings.liquid -}}
           </div>
         {%- endif -%}
@@ -984,4 +1007,119 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
 
 <script type="application/json" id="ProductVariantss">
 {{ product.variants | json }}
+</script>
+
+<script type="application/json" id="VariantMetafields">
+{
+  "variants": [
+    {% for v in product.variants %}
+      {% assign meta_source = v %}
+      {% if product.has_only_default_variant %}
+        {% assign meta_source = product %}
+      {% endif %}
+      {
+        "id": {{ v.id | json }},
+        "title": {{ v.title | json }},
+        "keyFeatures": [
+          {% assign mos = meta_source.metafields.custom.key_features.value %}
+          {% if mos %}
+            {% for mo in mos %}
+              {
+                "icon": {{ mo.icon.value | image_url: width: 31 | json }},
+                "text": {{ mo.text.value | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endif %}
+        ],
+        "sku": {{ v.sku | json }},
+        "faqs": {{ meta_source.metafields.custom.faqs.value.faqs | json }},
+        "section1DesktopImage": {{ meta_source.metafields.custom.overview_section_1_image_desktop.value | json }},
+        "section1MobileImage": {{ meta_source.metafields.custom.overview_section_1_image_mobile.value | json }},
+        "section1Heading": {{ meta_source.metafields.custom.overview_section_1_heading | json }},
+        "section1Description": {{ meta_source.metafields.custom.overview_section_1_description.value | json }},
+        "section2DesktopImages": [
+          {% assign section2Images = meta_source.metafields.custom.overview_section_2_images.value %}
+          {% if section2Images %}
+            {% for f in section2Images %}
+              {{ f | json }}{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endif %}
+        ],
+        "section2Heading": {{ meta_source.metafields.custom.overview_section_2_heading | json }},
+        "section2Description": {{ meta_source.metafields.custom.overview_section_2_description.value | json }},
+        "section3DesktopImage": {{ meta_source.metafields.custom.overview_section_3_image_desktop.value | json }},
+        "section3MobileImage": {{ meta_source.metafields.custom.overview_section_3_image_mobile.value | json }},
+        "section3Heading": {{ meta_source.metafields.custom.overview_section_3_heading | json }},
+        "section3Description": {{ meta_source.metafields.custom.overview_section_3_description.value | json }},
+        "section3TinyImages": [
+          {% assign tinyImages = meta_source.metafields.custom.overview_section_3_tiny_image.value %}
+          {% if tinyImages %}
+            {% for img in tinyImages %}
+              {
+                "image": {{ img.image.value | image_url: width: 300 | json }},
+                "description": {{ img.description.value | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endif %}
+        ],
+        "section4Image": {{ meta_source.metafields.custom.overview_section_4_image.value | json }},
+        "section4ImageMobile": {{ meta_source.metafields.custom.overview_section_4_image_mobile.value | json }},
+        "section4Heading": {{ meta_source.metafields.custom.overview_section_4_heading | json }},
+        "section4Description": {{ meta_source.metafields.custom.overview_section_4_description.value | json }},
+        "section5Image": {{ meta_source.metafields.custom.overview_section_5_image.value | json }},
+        "section5ImageMobile": {{ meta_source.metafields.custom.overview_section_5_image_mobile.value | json }},
+        "section5Heading": {{ meta_source.metafields.custom.overview_section_5_heading | json }},
+        "section5Description": {{ meta_source.metafields.custom.overview_section_5_description.value | json }},
+        "sectionBottomBannerImageDesktop": {{ meta_source.metafields.custom.banner_bottom_section_desktop_image.value | json }},
+        "sectionBottomBannerImageMobile": {{ meta_source.metafields.custom.banner_bottom_section_mobile_image.value | json }},
+        "sectionBottomBannerHeading": {{ meta_source.metafields.custom.banner_bottom_section_heading | json }},
+        "sectionBottomBannerDescription": {{ meta_source.metafields.custom.banner_bottom_section_description.value | json }},
+        "manualFile": {{ meta_source.metafields.custom.user_manual.value.url | json }},
+        "specs_html": {{ meta_source.metafields.custom.technical_data_manual | metafield_tag | json }},
+        "relatedProducts": [
+          {% assign bundle = meta_source.metafields.custom.related_products.value %}
+          {% if bundle %}
+            {% for p in bundle %}
+              {
+                "id": {{ p.id | json }},
+                "handle": {{ p.handle | json }},
+                "title": {{ p.title | json }},
+                "vendor": {{ p.vendor | json }},
+                "type": {{ p.type | json }},
+                "url": {{ p.url | json }},
+                "available": {{ p.available | json }},
+
+                "featured_image": {% if p.featured_media %}
+                  {{ p.featured_media | image_url: width: 1200 | json }}
+                {% else %}
+                  null
+                {% endif %},
+
+                "price": {{ p.price | json }},
+                "price_min": {{ p.price_min | json }},
+                "price_max": {{ p.price_max | json }},
+                "compare_at_price": {{ p.compare_at_price | json }},
+                "compare_at_price_min": {{ p.compare_at_price_min | json }},
+                "compare_at_price_max": {{ p.compare_at_price_max | json }},
+                "price_varies": {{ p.price_varies | json }},
+                "compare_at_price_varies": {{ p.compare_at_price_varies | json }},
+
+                "selected_or_first_available_variant_id": {{ p.selected_or_first_available_variant.id | json }},
+                "variant_count": {{ p.variants.size | json }},
+
+                "tags": {{ p.tags | json }},
+                "collections": {{ p.collections | map: 'handle' | json }},
+                "judgeme": {
+                  "average": {{ p.metafields.judgeme.average_rating.value | default: 0 | json }},
+                  "count": {{ p.metafields.judgeme.review_count.value | default: 0 | json }},
+                  "badge_html": {{ p.metafields.judgeme.badge | default: "" | json }}
+                }
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endif %}
+        ]
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
 </script>

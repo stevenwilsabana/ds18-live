@@ -1,24 +1,43 @@
-{% if product.metafields.custom.nvy_app_banner_desktop %}
 
-  <div class="app-section-nvy">
+{% assign new_template = false %}
+{% if product.template_suffix == 'new-template' or product.template_suffix == 'new-nvy-template' or product.template_suffix == 'product-with-variants' %}
+  {% assign new_template = true %}
+{% endif %}
+
+
+{% if new_template %}
+  {% assign hiddenClass = "" %}
+  {% unless product.selected_or_first_available_variant.metafields.custom.overview_section_3_image_desktop %}
+    {% assign hiddenClass = "hidden" %}
+  {% endunless %} 
+  <div class="app-section-nvy {{ hiddenClass }}">
     <div class="app-section-nvy__container">
-  
       <div class="app-section-nvy__images">
-        <img loading="lazy" class="app-section-image--mobile" src="{{ product.metafields.custom.nvy_app_banner_mobile | image_url: width: 1000 }}">
-        <img loading="lazy" class="app-section-image--desktop" src="{{ product.metafields.custom.nvy_app_banner_desktop | image_url: width: 2000 }}">
+        <img loading="lazy" class="app-section-image--mobile" width="" height="" src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_3_image_mobile.value | image_url: width: 1000 }}">
+        <img loading="lazy" class="app-section-image--desktop" width="" height="" src="{{ product.selected_or_first_available_variant.metafields.custom.overview_section_3_image_desktop | image_url: width: 2000 }}">
       </div>
       <div class="app-section-nvy__details">
         <div class="app-section-nvy__content">
-          <h5>{{ product.metafields.custom.nvy_overview_app_heading }}</h5>
-          <p>{{ product.metafields.custom.nvy_overview_app_content }}</p>
+          <h5>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_3_heading }}</h5>
+          <p>{{ product.selected_or_first_available_variant.metafields.custom.overview_section_3_description }}</p>
         </div>
-
 
         {% assign counterImagesItem = 0 %}
         {% for image_url in product.metafields.custom.nvy_overview_app_items.value %}
           {% assign counterImagesItem = counterImagesItem | plus: 1 %}
         {% endfor %}
+        <div class="app-section-nvy__items {% if counterImagesItem >= 3 %}app-section-nvy__items--tree-items-mobile-desktop{% endif %}">
+          {% for item in product.selected_or_first_available_variant.metafields.custom.overview_section_3_tiny_image.value %}
+            <div class="app-section-nvy__item">
+              <img loading="lazy" src="{{ item.image.value | image_url: width: 300 }}">
+              <p>{{ item.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
+
+
         
+{% comment %}         
         <div class="app-section-nvy__items {% if counterImagesItem >= 3 %}app-section-nvy__items--tree-items-mobile-desktop{% endif %}">
           {% for image in product.metafields.custom.nvy_overview_app_items.value %}
             <div class="app-section-nvy__item">
@@ -26,10 +45,46 @@
               <p>{{ image.alt }}</p>
             </div>
           {% endfor %}
-        </div>
+        </div> {% endcomment %}
       </div>
       
     </div>
   </div>
-
+{% else %}
+  {% if product.metafields.custom.nvy_app_banner_desktop %}
+  
+    <div class="app-section-nvy">
+      <div class="app-section-nvy__container">
+    
+        <div class="app-section-nvy__images">
+          <img loading="lazy" class="app-section-image--mobile" src="{{ product.metafields.custom.nvy_app_banner_mobile | image_url: width: 1000 }}">
+          <img loading="lazy" class="app-section-image--desktop" src="{{ product.metafields.custom.nvy_app_banner_desktop | image_url: width: 2000 }}">
+        </div>
+        <div class="app-section-nvy__details">
+          <div class="app-section-nvy__content">
+            <h5>{{ product.metafields.custom.nvy_overview_app_heading }}</h5>
+            <p>{{ product.metafields.custom.nvy_overview_app_content }}</p>
+          </div>
+  
+  
+          {% assign counterImagesItem = 0 %}
+          {% for image_url in product.metafields.custom.nvy_overview_app_items.value %}
+            {% assign counterImagesItem = counterImagesItem | plus: 1 %}
+          {% endfor %}
+          
+          <div class="app-section-nvy__items {% if counterImagesItem >= 3 %}app-section-nvy__items--tree-items-mobile-desktop{% endif %}">
+            {% for image in product.metafields.custom.nvy_overview_app_items.value %}
+              <div class="app-section-nvy__item">
+                <img loading="lazy" src="{{ image | image_url: width: 300 }}">
+                <p>{{ image.alt }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+  {% endif %}
 {% endif %}
+
