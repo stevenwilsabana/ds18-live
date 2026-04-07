@@ -15,6 +15,7 @@
     },
     "main": {
       "type": "main-collection",
+      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 52,
@@ -31,6 +32,7 @@
     },
     "collection-banner": {
       "type": "collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "show_collection_title": true,
