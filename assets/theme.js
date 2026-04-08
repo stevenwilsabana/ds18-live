@@ -6413,3 +6413,69 @@ function checkFiltersOnLoad() {
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("DOM ready with jQuery");
+  function reziseReview($review){
+    var $height = $($review).map(function (){ return $(this).outerHeight(true); }).get();
+    var minHeight = Math.max.apply(null, $height); $($review).css({ 'min-height': minHeight });
+  };
+
+  $('.reviews-new-home__container-reviews .container-reviews__slider').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    prevArrow: $('.slick-button-custom--prev'),
+    nextArrow: $('.slick-button-custom--next'),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: false
+        }
+      }
+    ]
+  });
+
+  $('.reviews-new-home__container-reviews .container-reviews__slider').on('sliderLoaded', function() {
+    var $review = ".container-reviews__slider .reviews-new-home__review";
+    reziseReview($review);
+    $('.section-reviews-home').animate({ opacity: 1 }, 300);
+  });
+
+  $('.reviews-new-home__container-reviews .container-reviews__slider').trigger('sliderLoaded');
+});
+
+jQuery(function($) {
+  jQuery(window).on('load', function () {
+    jQuery('.the-shop-calendar').parents('.shopify-section.shopify-section--apps').addClass('section-calendar-custom-events');
+  });
+
+  jQuery('a.test-test-test.header__icon-wrapper.tap-area.hidden-lap.hidden-desk').click(function(){
+      jQuery('.predictive-search__input').click();
+    console.log('Open Search');
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var newHref = '/collections/ds18-polaris-slingshot-audio-b2b';
+
+  $('mobile-navigation .drawer__content > ul.mobile-nav > li.mobile-nav__item > .mobile-nav__link').each(function() {
+    if ($(this).text().trim() === 'Slingshot') {
+      $(this).attr('href', newHref);
+    }
+  });
+
+  $('desktop-navigation li.header__linklist-item[data-item-title="Slingshot"] a.header__linklist-link').each(function() {
+    $(this).attr('href', newHref);
+  });
+});
+
+window.addEventListener('load', () => {
+  const cookie_banner = document.getElementById('shopify-pc__banner');
+  if(cookie_banner) cookie_banner.style.opacity = 1;
+});

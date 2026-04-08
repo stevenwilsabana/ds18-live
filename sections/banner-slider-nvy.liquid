@@ -26,7 +26,7 @@
 </div>
 
 <script>
-  $(document).ready(function() {
+  document.addEventListener("DOMContentLoaded", function() {
     var container = $('.banner-slider-nvy__container--{{ section.id }}');
     container.find('.slider-banner--{{ section.id }}').slick({
       slidesToShow: 1,

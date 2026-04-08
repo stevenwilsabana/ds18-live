@@ -25,7 +25,7 @@ function renderDropAHint(id){
 
 /* FUNCIÓN PARA CARGAR DROP A HINT */
 
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   var $id = $('.product-form__buy-buttons .shopify-product-form input[name="id"]').val();
   renderDropAHint($id);
   $('.quantity-buy-container.container-uniq-form-ds .product-form__quantity').append('<div class="buttons-container-drop-a-hint"></div>');

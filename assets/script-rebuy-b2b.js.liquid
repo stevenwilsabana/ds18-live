@@ -1,3 +1,4 @@
+(function($) {
 if (window.location.href.indexOf("package-protection") > -1){
     window.location.replace("https://ds18.com");
 };
@@ -652,3 +653,4 @@ $(document).on('change', '#insurange-rebuy', function() {
     jQuery.post('/cart/update.js', { updates: { 40776860926013: 0, 40750606188605: 0, 40750606221373: 0, 40750606254141: 0, 40750606286909: 0, 40750606319677: 0, 40750606352445: 0 }});
   };
 });
+})(jQuery);

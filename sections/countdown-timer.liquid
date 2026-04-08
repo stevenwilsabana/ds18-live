@@ -1,4 +1,7 @@
-{{ 'style-countdown-timer.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'style-countdown-timer.css' | asset_url | stylesheet_tag }} {% endcomment %}
+<link rel="preload" href="{{ 'style-countdown-timer.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'style-countdown-timer.css' | asset_url }}"></noscript>
+
 
 
 <style>
@@ -87,8 +90,11 @@
     
     	// Expired
     	document.getElementById("countdownTimer").innerHTML = "Expired";
-        $('section.countdown-timer').hide();
-      
+      // Hide the section with class "countdown-timer"
+      let section = document.querySelector("section.countdown-timer");
+      if (section) {
+          section.style.display = "none";
+      }
     };
   
   }, 1000);

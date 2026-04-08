@@ -21,9 +21,12 @@
   </div>
   
 </div>
-
+{% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> {% endcomment %}
 <script>
-  $(document).ready(function() {
+  
+document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     var container = $('.product-block-nvy__container--{{ section.id }}');
     container.find('.slider-product--{{ section.id }}').slick({
       slidesToShow: 4,
@@ -61,6 +64,7 @@
         }
       ]
     });
+  });
   });
 </script>
 

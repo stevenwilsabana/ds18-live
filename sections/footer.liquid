@@ -41,7 +41,7 @@
                   <div class="footer__item-content">
                     <ul class="linklist list--unstyled" role="list">
                       {%- for link in menu.links -%}
-                        <li class="linklist__item">
+                        <li class="linklist__item footer-menu--{{ link.title | handleize }}">
                           <a href="{{ link.url }}" class="link--faded">{{ link.title }}</a>
                         </li>
                       {%- endfor -%}
@@ -284,6 +284,26 @@
     </div>
   </cookie-bar>
 {%- endif -%}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const storeName = localStorage.getItem('store-name');
+
+  if(storeName == 'nvy') {
+    const footerLinks = document.querySelectorAll('footer a');
+    footerLinks.forEach(link => {
+      const href = link.getAttribute('href') || '';
+  
+      if (href.includes('/pages/manuals')) {
+        const newHref = href.replace("/pages/manuals", "/pages/search-manuals-nvy");
+        link.setAttribute("href", newHref);
+      } else {
+        console.warn(`✖ Missing manuals path: ${href}`);
+      }
+    });
+  }
+});
+</script>
 
 {% schema %}
 {

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
 
   $(".complete-the-look__products .ctl-product:lt(3)").css("display", "flex");
     

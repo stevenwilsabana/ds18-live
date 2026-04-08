@@ -84,7 +84,7 @@
       {%- when 'variant_customs' -%}
 
         <script>
-          $(document).ready(function() {
+          document.addEventListener("DOMContentLoaded", function() {
             var $sectionsVariants = $('.product-form .container-variant');
             var $emptySections = $sectionsVariants.filter(function() {
                 return $(this).find('.container-variant__content').children().length === 0;
@@ -492,7 +492,7 @@
 
 
         <script>
-          $(document).ready(function() {
+          document.addEventListener("DOMContentLoaded", function() {
             var $sectionsCompleteSystem = $('.product-form .complete-the-look');
             var $emptySectionsCompleteSystem = $sectionsCompleteSystem.filter(function() {
                 return $(this).find('.complete-the-look__products').children().length === 0;
@@ -725,7 +725,7 @@
         {% endif %}
 
         <script>
-          $(document).ready(function() {
+          document.addEventListener("DOMContentLoaded", function() {
             var $sectionsSoldOut = $('.product-form .container-sold-out-products');
             var $emptySectionsSoldOut = $sectionsSoldOut.filter(function() {
                 return $(this).find('.container-sold-out-products__content').children().length === 0;

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   $('.quantity-buy-container.container-uniq-form-ds .product-form__quantity').before('<div class="show-quantity" style="display:none;"><p><i class="fa-solid fa-dolly"></i><span>Availability:</span><span class="stock"></span></p></div>');
   var variantSelect = $('.product-form__buy-buttons .shopify-product-form input[name="id"]').val();
   $changeVariantEvent(variantSelect);

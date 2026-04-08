@@ -58,7 +58,10 @@
 
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
 
+
+(function($) {
     $(document).on('click', '#{{ section.id }}-button-desktop.button-active-sound--off', function() {
       $('#{{ section.id }}-video-desktop').prop("muted", false);
       $('#{{ section.id }}-video-mobile').prop("muted", true);
@@ -74,7 +77,6 @@
     });
 
 
-
     $(document).on('click', '#{{ section.id }}-button-mobile.button-active-sound--off', function() {
       $('#{{ section.id }}-video-mobile').prop("muted", false);
       $('#{{ section.id }}-video-desktop').prop("muted", true);
@@ -88,7 +90,8 @@
       $(this).replaceWith('<button id="{{ section.id }}-button-mobile" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>');
       $('#{{ section.id }}-button-desktop').replaceWith('<button id="{{ section.id }}-button-desktop" class="button-active-sound--off"><i class="fa-solid fa-volume-xmark"></i></button>');
     });
-  
+    })(jQuery);
+    });
 </script>
 
 {% schema %}

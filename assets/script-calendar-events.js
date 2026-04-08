@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
     var targetNode = document.querySelector('.elfsight-sapp-5a90b4bd-cda0-45d3-974a-413df35a69a9');
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {

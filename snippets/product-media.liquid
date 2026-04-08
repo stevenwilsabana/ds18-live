@@ -321,7 +321,7 @@
 
 <!-- SCRIPT BUTTON TECH DATA DEBAJO DE MEDIA -->
 <script>
-  $(document).ready(function(){
+  document.addEventListener("DOMContentLoaded", function() {
   
       if ($('.shopify-section.yth-technical-data').length > 0 && $.trim($('.shopify-section.yth-technical-data #load-more').html()) !== '') {
         $('.btn-view-technical-data').removeClass('disable-btn-td');

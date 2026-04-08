@@ -1,5 +1,5 @@
 /* CAMBIOS DE VARIANTES */
-
+(function($) {
 $(document).on("click", "product-item.product-item .product-item__general-product .variants-metafiels button.label-variant", function () {
   let item = $(this).parents('.product-item__general-product');
   let templates = item.next('.templates-collection');
@@ -104,7 +104,7 @@ $('product-item.product-item .number-input').each(function() {
 
 /* AGREGAR AL CARRITO */
 
-function addToCartCollection(id) {
+window.addToCartCollection = function(id) {
   
   const $button = $(event.target);
   const $container = $button.closest('.cta-buttons-eject');
@@ -148,3 +148,4 @@ function addToCartCollection(id) {
     }
   });
 }
+})(jQuery);

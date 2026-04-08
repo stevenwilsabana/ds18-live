@@ -684,38 +684,38 @@
 
 
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
 
-
-  $(document).on('click','.active-zoom_product-page',function(event){
-      $('.product__zoom-button').click();
-  });
-  
-  function zoomProduct(){
-    $('.image-zoom-product-page')
-    .wrap('<span style="display:inline-block"></span>')
-    .css('display', 'block')
-    .parent()
-    .zoom({
-      url: $(this).find('img').attr('data-zoom')
+    $(document).on('click','.active-zoom_product-page',function(event){
+        $('.product__zoom-button').click();
     });
-  };
-
-  function checkScreenWidth() {
-    if ($(window).width() > 1200) {
-      zoomProduct();
+    
+    function zoomProduct(){
+      $('.image-zoom-product-page')
+      .wrap('<span style="display:inline-block"></span>')
+      .css('display', 'block')
+      .parent()
+      .zoom({
+        url: $(this).find('img').attr('data-zoom')
+      });
     };
-  };
 
-  checkScreenWidth();
+    function checkScreenWidth() {
+      if ($(window).width() > 1200) {
+        zoomProduct();
+      };
+    };
 
-  $(window).resize(function() {
     checkScreenWidth();
+
+    $(window).resize(function() {
+      checkScreenWidth();
+    });
+
+
+    var $productBase = '{{ product.metafields.custom.name_base_for_bundle }}';
+    var $basePrice = ({{ product.price }} / 100);
   });
-
-
-  var $productBase = '{{ product.metafields.custom.name_base_for_bundle }}';
-  var $basePrice = ({{ product.price }} / 100);
-  
 </script>
 
 

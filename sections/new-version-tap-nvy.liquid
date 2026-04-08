@@ -120,7 +120,7 @@
 
 <script>
 
-  $(document).ready(function(){
+document.addEventListener("DOMContentLoaded", function() {
     $('.main-taps__container--{{ section.id }} .main-taps__container-buttons button.button-tap').first().addClass('active-button');
     $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global').hide();
     $('.main-taps__container--{{ section.id }} .main-taps__container-taps .main-taps__container--global').first().show();

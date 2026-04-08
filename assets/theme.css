@@ -16742,3 +16742,6 @@ body.page-template--black-friday
 iframe#chat-button {
   z-index: 9999999999999;
 }
+#shopify-pc__banner {
+  opacity: 0;
+}
