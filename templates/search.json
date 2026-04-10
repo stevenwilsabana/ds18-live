@@ -11,6 +11,7 @@
   "sections": {
     "custom_liquid_46H3bM": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -23,6 +24,7 @@
     },
     "main": {
       "type": "main-search",
+      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 400,
@@ -39,6 +41,7 @@
     },
     "custom_liquid_6N9tLQ": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
