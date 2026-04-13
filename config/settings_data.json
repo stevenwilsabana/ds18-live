@@ -683,17 +683,6 @@
           "adjacent_element_selector": ""
         }
       },
-      "11874257281241916528": {
-        "type": "shopify://apps/fullstory/blocks/fullstory-embed/c341ffa4-99cc-4983-be03-3cb208467fae",
-        "disabled": false,
-        "settings": {
-          "fs_org_id": "o-24BN2X-na1",
-          "fs_host": "fullstory.com",
-          "fs_script": "edge.fullstory.com/s/fs.js",
-          "fs_namespace": "FS",
-          "fs_identify_users": true
-        }
-      },
       "6628239160433917566": {
         "type": "shopify://apps/littledata-the-data-layer/blocks/LittledataLayer/45a35ed8-a2b2-46c3-84fa-6f58497c5345",
         "disabled": false,
@@ -721,6 +710,21 @@
         "settings": {
           "debug_mode": false
         }
+      },
+      "11599650373883811531": {
+        "type": "shopify://apps/easysearch-ymm/blocks/easysearch-embed-widgets/6d82686b-b68a-4b5e-98e3-e07b2b53d810",
+        "disabled": false,
+        "settings": {
+          "placement_main_selector": "",
+          "placement_fitment_selector": "",
+          "placement_ft_selector": "",
+          "insert_method": "prepend"
+        }
+      },
+      "2878693861365564508": {
+        "type": "shopify://apps/easysearch-ymm/blocks/easysearch-embed-garage/6d82686b-b68a-4b5e-98e3-e07b2b53d810",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
