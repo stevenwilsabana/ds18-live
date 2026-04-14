@@ -171,10 +171,54 @@
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
       }
+    },
+    "fa_qs_CwzHm4": {
+      "type": "FAQs",
+      "blocks": {
+        "faqs_fwFGWU": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Question 1",
+            "answere": "<p>ff</p>"
+          }
+        },
+        "faqs_tQjFG3": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Question 2",
+            "answere": "<p>aaa</p>"
+          }
+        },
+        "faqs_giAfX6": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Question 3",
+            "answere": "<p>ffaaa</p>"
+          }
+        },
+        "faqs_P9gNFM": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Question 4",
+            "answere": "<p>ff</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_fwFGWU",
+        "faqs_tQjFG3",
+        "faqs_giAfX6",
+        "faqs_P9gNFM"
+      ],
+      "name": "FAQ's",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
     }
   },
   "order": [
     "main",
-    "collection_list_NGmnhY"
+    "collection_list_NGmnhY",
+    "fa_qs_CwzHm4"
   ]
 }
