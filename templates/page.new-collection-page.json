@@ -24,7 +24,7 @@
         "collection_tFGGFG": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "gen-x-series",
             "image": "shopify://shop_images/GNX-SERIES-COAXIAL.jpg",
             "subheading": "Better",
             "title": "GEN-X SERIES",
@@ -38,7 +38,7 @@
         "collection_UqiwQ3": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "zxi-series",
             "image": "shopify://shop_images/ZXI-SERIES-COAXIAL.jpg",
             "subheading": "BEST",
             "title": "ZXI SERIES",
@@ -52,7 +52,7 @@
         "collection_fWi7wH": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "exl-series-1",
             "image": "shopify://shop_images/EXL-SERIES-COAXIAL.jpg",
             "subheading": "Premium",
             "title": "EXL SERIES",
@@ -66,7 +66,7 @@
         "collection_gAddMt": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "dxq-series",
             "image": "shopify://shop_images/DXQ-SERIES-COAXIAL.jpg",
             "subheading": "SQ/Audiophile",
             "title": "DXQ SERIES",
@@ -140,7 +140,7 @@
         "collection_wRzeBb": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "coaxials-and-components",
             "subheading": "",
             "title": "",
             "link_text": "VIEW ALL",
@@ -171,10 +171,54 @@
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
       }
+    },
+    "fa_qs_CwzHm4": {
+      "type": "FAQs",
+      "blocks": {
+        "faqs_fwFGWU": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Question 1",
+            "answere": "<p>ff</p>"
+          }
+        },
+        "faqs_tQjFG3": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Question 2",
+            "answere": "<p>aaa</p>"
+          }
+        },
+        "faqs_giAfX6": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Question 3",
+            "answere": "<p>ffaaa</p>"
+          }
+        },
+        "faqs_P9gNFM": {
+          "type": "faqs",
+          "settings": {
+            "title_faqs": "Question 4",
+            "answere": "<p>ff</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_fwFGWU",
+        "faqs_tQjFG3",
+        "faqs_giAfX6",
+        "faqs_P9gNFM"
+      ],
+      "name": "FAQ's",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
     }
   },
   "order": [
     "main",
-    "collection_list_NGmnhY"
+    "collection_list_NGmnhY",
+    "fa_qs_CwzHm4"
   ]
 }
