@@ -21,62 +21,6 @@
     "collection_list_NGmnhY": {
       "type": "collection-list",
       "blocks": {
-        "collection_cdC8Hw": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/BETTER-COMPONENT-COAXIAL.jpg",
-            "subheading": "",
-            "title": "BEST COMPONENT COAXIAL SET",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_qAn83h": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/BETTER-COMPONET-COAXIAL.jpg",
-            "subheading": "",
-            "title": "BETTER COMPONENT COAXIAL SET",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_gAddMt": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/DXQ-SERIES-COAXIAL.jpg",
-            "subheading": "",
-            "title": "DXQ SERIES",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_fWi7wH": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/EXL-SERIES-COAXIAL.jpg",
-            "subheading": "",
-            "title": "EXL SERIES",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_tFGGFG": {
           "type": "collection",
           "settings": {
@@ -84,20 +28,6 @@
             "image": "shopify://shop_images/GNX-SERIES-COAXIAL.jpg",
             "subheading": "",
             "title": "GEN-X SERIES",
-            "link_text": "",
-            "link_url": "",
-            "text_color": "rgba(0,0,0,0)",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_zMMYEM": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/SELECT-SERIE-COAXIAL.jpg",
-            "subheading": "",
-            "title": "SELECT SERIES",
             "link_text": "",
             "link_url": "",
             "text_color": "rgba(0,0,0,0)",
@@ -119,8 +49,82 @@
             "overlay_opacity": 30
           }
         },
+        "collection_fWi7wH": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/EXL-SERIES-COAXIAL.jpg",
+            "subheading": "",
+            "title": "EXL SERIES",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_gAddMt": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/DXQ-SERIES-COAXIAL.jpg",
+            "subheading": "",
+            "title": "DXQ SERIES",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_cdC8Hw": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/BETTER-COMPONENT-COAXIAL.jpg",
+            "subheading": "",
+            "title": "BEST COMPONENT COAXIAL SET",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_qAn83h": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/BETTER-COMPONET-COAXIAL.jpg",
+            "subheading": "",
+            "title": "BETTER COMPONENT COAXIAL SET",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_zMMYEM": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/SELECT-SERIE-COAXIAL.jpg",
+            "subheading": "",
+            "title": "SELECT SERIES",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_8M7bGX": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "",
             "image": "shopify://shop_images/COAXIAL-PACKAGES.jpg",
@@ -148,13 +152,13 @@
         }
       },
       "block_order": [
+        "collection_tFGGFG",
+        "collection_UqiwQ3",
+        "collection_fWi7wH",
+        "collection_gAddMt",
         "collection_cdC8Hw",
         "collection_qAn83h",
-        "collection_gAddMt",
-        "collection_fWi7wH",
-        "collection_tFGGFG",
         "collection_zMMYEM",
-        "collection_UqiwQ3",
         "collection_8M7bGX",
         "collection_wRzeBb"
       ],
