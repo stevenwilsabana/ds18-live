@@ -132,6 +132,19 @@
             "overlay_color": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_wRzeBb": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "subheading": "",
+            "title": "",
+            "link_text": "VIEW ALL",
+            "link_url": "shopify://collections/coaxials-and-components",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
@@ -142,7 +155,8 @@
         "collection_tFGGFG",
         "collection_zMMYEM",
         "collection_UqiwQ3",
-        "collection_8M7bGX"
+        "collection_8M7bGX",
+        "collection_wRzeBb"
       ],
       "name": "Collection list",
       "settings": {
