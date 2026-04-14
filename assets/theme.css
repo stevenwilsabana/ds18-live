@@ -16953,3 +16953,55 @@ product-media .product__thumbnail-list-inner {
     right: 10px;
   }
 }
+body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid > div.container {
+  max-width: 1300px;
+}
+body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid .list-collections__item-list {
+  gap: 30px;
+}
+body[id=page].ds18-store.page-template--new-collection-page .list-collections__item {
+  width: calc(33.3333% - 30px);
+  border-radius: 10px;
+}
+body[id=page].ds18-store.page-template--new-collection-page .list-collections__item h3 {
+  color: #fff;
+  font-weight: 600;
+  padding: 0 45px;
+  line-height: 22px;
+}
+body[id=page].ds18-store.page-template--new-collection-page .section__header h3.heading.h2 {
+  text-align: center;
+  text-transform: none;
+}
+body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid .list-collections__item-list > a:last-child {
+  background: #5d5d5d;
+}
+body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid .list-collections__item-list > a:last-child .list-collections__item-image {
+  opacity: 0;
+}
+body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid .list-collections__item-list > a:last-child span.heading {
+  font-size: 23px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+@media only screen and (max-width: 767px) {
+  body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid .list-collections__item-list {
+    gap: 20px;
+    justify-content: center;
+  }
+  body[id=page].ds18-store.page-template--new-collection-page .list-collections__item {
+    width: calc(50% - 20px);
+  }
+  body[id=page].ds18-store.page-template--new-collection-page .list-collections__item h3 {
+    padding: 0 10px;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0;
+  }
+  body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid .list-collections__item-list > a:last-child span.heading {
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0;
+  }
+}
