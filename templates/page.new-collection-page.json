@@ -24,7 +24,7 @@
         "collection_tFGGFG": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "gen-x-series",
             "image": "shopify://shop_images/GNX-SERIES-COAXIAL.jpg",
             "subheading": "Better",
             "title": "GEN-X SERIES",
@@ -38,7 +38,7 @@
         "collection_UqiwQ3": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "zxi-series",
             "image": "shopify://shop_images/ZXI-SERIES-COAXIAL.jpg",
             "subheading": "BEST",
             "title": "ZXI SERIES",
@@ -52,7 +52,7 @@
         "collection_fWi7wH": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "n-exl-series",
             "image": "shopify://shop_images/EXL-SERIES-COAXIAL.jpg",
             "subheading": "Premium",
             "title": "EXL SERIES",
@@ -66,7 +66,7 @@
         "collection_gAddMt": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "dxq-series",
             "image": "shopify://shop_images/DXQ-SERIES-COAXIAL.jpg",
             "subheading": "SQ/Audiophile",
             "title": "DXQ SERIES",
@@ -140,7 +140,7 @@
         "collection_wRzeBb": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "coaxials-and-components",
             "subheading": "",
             "title": "",
             "link_text": "VIEW ALL",
