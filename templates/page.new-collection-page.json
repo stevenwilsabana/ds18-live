@@ -214,11 +214,30 @@
       "settings": {
         "title": "Frequently Asked Questions"
       }
+    },
+    "blocks_DdJDAU": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7e68ddd_dL97kE": {
+          "type": "ai_gen_block_7e68ddd",
+          "settings": {
+            "spacing_desktop": 60,
+            "spacing_mobile": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7e68ddd_dL97kE"
+      ],
+      "name": "Vertical spacer",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "collection_list_NGmnhY",
-    "fa_qs_CwzHm4"
+    "fa_qs_CwzHm4",
+    "blocks_DdJDAU"
   ]
 }
