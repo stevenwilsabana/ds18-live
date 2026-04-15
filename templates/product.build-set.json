@@ -158,7 +158,7 @@
       "type": "apps",
       "blocks": {
         "0176d9dd-1b04-42f6-9ff9-f4e1e3ec44fa": {
-          "type": "shopify://apps/boost-ai-search-discovery/blocks/recommendation/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "type": "shopify://apps/boost-ai-search-filter/blocks/recommendation/7fc998ae-a150-4367-bab8-505d8a4503f7",
           "disabled": true,
           "settings": {
             "widgetId": "productpage-864816",
@@ -395,7 +395,7 @@
       "type": "product-recommendations",
       "settings": {
         "subheading": "",
-        "title": "You may also like",
+        "title": "Complete Your System",
         "recommendations_count": 10,
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
@@ -709,7 +709,12 @@
       "blocks": {
         "judgeme_review_widget_b8514a2f": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
         }
       },
       "block_order": [

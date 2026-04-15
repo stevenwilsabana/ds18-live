@@ -132,7 +132,7 @@
           "settings": {}
         },
         "tolstoy_shoppable_video_ugc_stories_block_UULdKR": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "6g3hq77djsb63"
           }
@@ -366,7 +366,7 @@
       "type": "product-recommendations",
       "settings": {
         "subheading": "",
-        "title": "You may also like",
+        "title": "Complete Your System",
         "recommendations_count": 10,
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
