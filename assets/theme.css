@@ -16966,7 +16966,7 @@ body[id=page].ds18-store.page-template--new-collection-page .list-collections__i
   border-radius: 10px;
 }
 body[id=page].ds18-store.page-template--new-collection-page .list-collections__item h3 {
-  color: #fff;
+  color: #000;
   font-weight: 600;
   padding: 0 10px;
   line-height: 22px;
@@ -16977,7 +16977,7 @@ body[id=page].ds18-store.page-template--new-collection-page .list-collections__i
   top: 0;
 }
 body[id=page].ds18-store.page-template--new-collection-page .list-collections__item p {
-  color: #fff;
+  color: #000;
   margin: 0;
   padding: 0;
   margin-top: 3px;
@@ -16991,8 +16991,9 @@ body[id=page].ds18-store.page-template--new-collection-page .section__header h3.
 body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid .list-collections__item-list > a:last-child {
   width: 100%;
   max-width: 240px;
-  background-color: #de2a2a;
+  background-color: #5d5d5d;
   height: 60px;
+  margin-top: 30px;
 }
 body[id=page].ds18-store.page-template--new-collection-page .list-collections--grid .list-collections__item-list > a:last-child .list-collections__item-image-wrapper {
   display: none;
