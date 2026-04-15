@@ -340,6 +340,26 @@
   {%- endif -%}
 </section>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () { 
+  // Get query string
+    const params = new URLSearchParams(window.location.search);
+
+    // Access specific parameters
+    const type = params.get("type");
+    const q = params.get("q");
+
+    if(type == "article") {
+      document.querySelector('.boost-sd__product-filter-fallback > div:first-child').style.display = "none";
+      document.querySelector('.boost-sd__product-filter-fallback > div:last-child .page-header.page-header--secondary').style.display = "none";
+    } else {
+      document.querySelector('.boost-sd__product-filter-fallback .blog-search-field').style.display = "none";
+      document.querySelector('.boost-sd__product-filter-fallback > div:last-child').style.display = "none";
+     
+    }
+  });
+</script>
+
 {% schema %}
 {
   "name": "Search",
