@@ -25,7 +25,7 @@
           "type": "collection",
           "settings": {
             "collection": "gen-x-series",
-            "image": "shopify://shop_images/GNX-SERIES-COAXIAL.jpg",
+            "image": "shopify://shop_images/GNX-SERIES-COAXIAL_1.jpg",
             "subheading": "Better",
             "title": "GEN-X SERIES",
             "link_text": "",
@@ -39,7 +39,7 @@
           "type": "collection",
           "settings": {
             "collection": "zxi-series",
-            "image": "shopify://shop_images/ZXI-SERIES-COAXIAL.jpg",
+            "image": "shopify://shop_images/ZXI-SERIES-COAXIAL_1.jpg",
             "subheading": "BEST",
             "title": "ZXI SERIES",
             "link_text": "",
@@ -53,7 +53,7 @@
           "type": "collection",
           "settings": {
             "collection": "exl-series-1",
-            "image": "shopify://shop_images/EXL-SERIES-COAXIAL.jpg",
+            "image": "shopify://shop_images/EXL-SERIES-COAXIAL_1.jpg",
             "subheading": "Premium",
             "title": "EXL SERIES",
             "link_text": "",
@@ -67,7 +67,7 @@
           "type": "collection",
           "settings": {
             "collection": "dxq-series",
-            "image": "shopify://shop_images/DXQ-SERIES-COAXIAL.jpg",
+            "image": "shopify://shop_images/DXQ-SERIES-COAXIAL_1.jpg",
             "subheading": "SQ/Audiophile",
             "title": "DXQ SERIES",
             "link_text": "",
