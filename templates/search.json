@@ -9,6 +9,22 @@
  */
 {
   "sections": {
+    "4a471ab8-f066-42b4-8f77-b82d8d86a1c0": {
+      "type": "apps",
+      "blocks": {
+        "2770f940-ae53-48a8-98fd-2c924c82f59e": {
+          "type": "shopify://apps/boost-ai-search-filter/blocks/product-filter/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "2770f940-ae53-48a8-98fd-2c924c82f59e"
+      ],
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
+    },
     "custom_liquid_46H3bM": {
       "type": "custom-liquid",
       "disabled": true,
@@ -22,9 +38,21 @@
         "text_color": "rgba(0,0,0,0)"
       }
     },
+    "custom_liquid_rhicL6": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "{% assign blog_search_id = section.id | default: 'custom-liquid-blog-search' %}\n\n<style>\n  .blog-search-{{ blog_search_id }} {\n    width: 100%;\n    max-width: 100%;\n  }\n\n  .blog-search-form-{{ blog_search_id }} {\n    width: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    margin-bottom: 50px;\n  }\n\n  .blog-search-input-wrapper-{{ blog_search_id }} {\n    flex-grow: 1;\n    max-width: 700px;\n  }\n\n  .blog-search-input-{{ blog_search_id }} {\n    width: 100%;\n    padding: 12px 18px;\n    border: 1px solid #cccccc;\n    border-radius: 6px;\n    background-color: #ffffff;\n    color: #282828;\n    font-size: 16px;\n  }\n\n  .blog-search-input-{{ blog_search_id }}::placeholder {\n    color: #999999;\n  }\n\n  .blog-search-input-{{ blog_search_id }}:focus {\n    outline: none;\n    border-color: #405de6;\n  }\n\n  .blog-search-button-{{ blog_search_id }} {\n    padding: 12px 24px;\n    background-color: #405de6;\n    color: #ffffff;\n    border: none;\n    border-radius: 6px;\n    font-size: 16px;\n    font-weight: 600;\n    cursor: pointer;\n    white-space: nowrap;\n  }\n\n  .blog-search-button-{{ blog_search_id }}:hover {\n    background-color: #282828;\n  }\n\n  @media screen and (max-width: 749px) {\n    .blog-search-form-{{ blog_search_id }} {\n      flex-direction: column;\n    }\n\n    .blog-search-button-{{ blog_search_id }} {\n      width: 100%;\n      max-width: 700px;\n    }\n  }\n</style>\n\n<div class=\"blog-search-field blog-search-{{ blog_search_id }}\">\n<h1 style=\"text-align:center;\">Blog Search Results</h1>\n  <form action=\"/search\" method=\"get\" class=\"blog-search-form-{{ blog_search_id }}\" role=\"search\">\n    <input type=\"hidden\" name=\"type\" value=\"article\">\n\n    <div class=\"blog-search-input-wrapper-{{ blog_search_id }}\">\n      <input\n        type=\"search\"\n        name=\"q\"\n        class=\"blog-search-input-{{ blog_search_id }}\"\n        placeholder=\"Search blog posts\"\n        value=\"{{ search.terms | escape }}\"\n        aria-label=\"Search blog posts\"\n      >\n    </div>\n\n    <button type=\"submit\" class=\"blog-search-button-{{ blog_search_id }}\">\n      Search\n    </button>\n  </form>\n</div>",
+        "add_vertical_spacing": true,
+        "background_type": "full_width",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
     "main": {
       "type": "main-search",
-      "disabled": true,
       "settings": {
         "show_sort_by": true,
         "products_per_page": 400,
@@ -51,24 +79,12 @@
         "background": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
       }
-    },
-    "4a471ab8-f066-42b4-8f77-b82d8d86a1c0": {
-      "type": "apps",
-      "blocks": {
-        "2770f940-ae53-48a8-98fd-2c924c82f59e": {
-          "type": "shopify://apps/boost-ai-search-filter/blocks/product-filter/7fc998ae-a150-4367-bab8-505d8a4503f7",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "2770f940-ae53-48a8-98fd-2c924c82f59e"
-      ],
-      "settings": {}
     }
   },
   "order": [
     "4a471ab8-f066-42b4-8f77-b82d8d86a1c0",
     "custom_liquid_46H3bM",
+    "custom_liquid_rhicL6",
     "main",
     "custom_liquid_6N9tLQ"
   ],
