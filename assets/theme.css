@@ -17072,3 +17072,37 @@ product-media .product__thumbnail-list-inner {
     opacity: 1;
   }
 }
+
+.header-help-navigation {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background-color: #3a2828;
+  border: 1px solid #712929;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+.header-help-navigation__icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.header-help-navigation__icon > svg {
+  fill: #fff;
+}
+.header-help-navigation__text {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.header-help-navigation__circle {
+  background-color: #42c94f;
+    right: -5px;
+    top: -5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 4px;
+    animation: pulse 2s ease-out infinite;
+    position: absolute;
+    border: 1px solid #1a1a1a;
+}

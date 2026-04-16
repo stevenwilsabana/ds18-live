@@ -175,7 +175,15 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
       <div class="header__secondary-links">
         <div class="header__icon-list">
           <div class="features-items-navigation features-items-navigation--desktop">
-            <div class="features-items__item features-items__item--phone" onclick="window.open('tel:305-928-8734');">
+            <div class="header-help-navigation">
+              <div class="header-help-navigation__icon">
+                {% render 'icon', icon: 'phone' %}
+                <span class="header-help-navigation__circle"></span>
+              </div>
+              <span class="header-help-navigation__text">HELP</span>
+            </div>
+
+            {% comment %} <div class="features-items__item features-items__item--phone" onclick="window.open('tel:305-928-8734');">
               <div class="features-items__item--imagen">
                 {% render 'icon', icon: 'phone' %}
               </div>
@@ -193,7 +201,7 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
                 <p>Chat with a Real Person</p>
                 <p class="alterno">Chat Now</p>
               </div>
-            </div>
+            </div> {% endcomment %}
           </div>
           
           {%- comment -%}IMPLEMENTATION NOTE: this icon is hidden by the "popup" section if it is disabled{%- endcomment -%}
