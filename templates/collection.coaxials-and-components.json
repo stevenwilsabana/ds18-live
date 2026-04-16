@@ -49,7 +49,7 @@
         "content_position": "right",
         "text_align": "left",
         "enable_overlay": true,
-        "overlay_opacity": 20,
+        "overlay_opacity": 10,
         "overlay_color": "#000000",
         "heading_color": "#ffffff",
         "subheading_color": "#d9d9d9",
