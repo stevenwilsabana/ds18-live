@@ -715,6 +715,11 @@
         "type": "shopify://apps/whatconverts/blocks/tracking/d7b55a5f-477a-452c-8760-a3e5c5badb93",
         "disabled": false,
         "settings": {}
+      },
+      "4252583770683550135": {
+        "type": "shopify://apps/redo/blocks/redo_app_embed/c613644b-6df4-4d11-b336-43a5c06745a1",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
