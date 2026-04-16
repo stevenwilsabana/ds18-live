@@ -327,6 +327,16 @@
       #Banner-{{ section.id }} .custom-image-banner__description p:last-child {
         margin-bottom: 0;
       }
+
+      @media screen and (max-width: 1200px) {
+        #Banner-{{ section.id }}.custom-image-banner--text-left .custom-image-banner__content {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+      }
     
       @media screen and (max-width: 749px) {
         #Banner-{{ section.id }} {
@@ -363,10 +373,11 @@
 
         #Banner-{{ section.id }}.custom-image-banner--text-left .custom-image-banner__content {
             text-align: center;
+            align-items: center;
         }
-
         #Banner-{{ section.id }} .custom-image-banner__description {
             width: 100%;
         }
+
       }
     </style>
