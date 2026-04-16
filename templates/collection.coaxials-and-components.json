@@ -44,7 +44,7 @@
         "subheading": "{{ collection.metafields.custom.sub_heading.value }}",
         "description": "<p>{{ collection.metafields.custom.description | metafield_tag }}</p>",
         "banner_height": 300,
-        "banner_height_mobile": 400,
+        "banner_height_mobile": 600,
         "content_max_width": 1520,
         "content_position": "right",
         "text_align": "left",
