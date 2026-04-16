@@ -48,7 +48,7 @@
         "content_max_width": 1520,
         "content_position": "right",
         "text_align": "left",
-        "enable_overlay": true,
+        "enable_overlay": false,
         "overlay_opacity": 10,
         "overlay_color": "#000000",
         "heading_color": "#ffffff",
