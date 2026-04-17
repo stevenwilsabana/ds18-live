@@ -175,13 +175,49 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
       <div class="header__secondary-links">
         <div class="header__icon-list">
           <div class="features-items-navigation features-items-navigation--desktop">
-            <div class="header-help-navigation">
+            <button class="header-help-navigation">
               <div class="header-help-navigation__icon">
                 {% render 'icon', icon: 'phone' %}
                 <span class="header-help-navigation__circle"></span>
               </div>
               <span class="header-help-navigation__text">HELP</span>
-            </div>
+            </button>
+             <div class="header-icon-account" style="position: relative;">
+                  <div class="help-popover" role="dialog" aria-label="Account">
+                    <div class="help-popover__heading">
+                      <span>Call or Chat</span>
+                      <span>with an audio expert</span>
+                    </div>
+                    <a href="tel:+3059288734" class="help-popover__card help-popover__card--call-now">
+                      <div class="help-popover__summary">
+                        <div class="help-popover__avatar-icon" aria-hidden="true">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone" style="width: 18px; height: 18px; color: rgb(222, 42, 42); stroke-width: 1.5;" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.2a2 2 0 0 1 2.11-.45c.83.3 1.71.51 2.61.63A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="help-popover__copy">
+                          <h2 class="help-popover__title">(305) 928-8734</h2>
+                          <p class="help-popover__subtitle">Talk to a Real Person</p>
+                        </div>
+                      </div>
+                    </a>
+                    <button class="help-popover__card help-popover__card--chat-now">
+                      <div class="help-popover__summary">
+                        <div class="help-popover__avatar-icon" aria-hidden="true">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle" style="width: 18px; height: 18px; color: rgb(222, 42, 42); stroke-width: 1.5;" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+                        </div>
+                        <div class="help-popover__copy">
+                          <div class="help-popover__title-two-cols-container">
+                            <h2 class="help-popover__title">Chat Now</h2>
+                            <div class="help-popover__second-col-green">
+                              <span class="help-popover__circle"></span>
+                              <span>ONLINE</span>
+                            </div>
+                          </div>
+                          <p class="help-popover__subtitle">Chat with a Real Person</p>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
 
             {% comment %} <div class="features-items__item features-items__item--phone" onclick="window.open('tel:305-928-8734');">
               <div class="features-items__item--imagen">
@@ -367,6 +403,11 @@ SEARCH DRAWER
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     localStorage.setItem('store-name', 'ds18');
+
+    const btn = document.querySelector('.help-popover__card--chat-now')
+    btn.addEventListener('click', () => {
+      window.GorgiasChat.open();
+    })
   });
 </script>
 

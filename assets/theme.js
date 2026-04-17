@@ -6606,11 +6606,28 @@ document.addEventListener("DOMContentLoaded", function () {
   checkFiltersOnLoad();
   scrollToTop();
   showUnifiedAccountRewards();
+  showHelpCallChat();
 });
 
 function showUnifiedAccountRewards() {
   const btn = document.querySelector('.header-icon-account__button');
   const menu = document.querySelector('.account-popover');
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+
+  // Click outside to close
+  document.addEventListener("click", (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove("active");
+    }
+  });
+}
+
+function showHelpCallChat() {
+  const btn = document.querySelector('.header-help-navigation');
+  const menu = document.querySelector('.help-popover');
 
   btn.addEventListener("click", () => {
     menu.classList.toggle("active");
